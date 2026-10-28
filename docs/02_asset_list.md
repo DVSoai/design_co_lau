@@ -24,6 +24,8 @@ Có bốn loại hạng mục:
 
 ## Giai đoạn 1 — Bộ mẫu chuẩn
 
+- [ ] `chr_dbl_rig_greybox` — **bước 1: đã dựng bản thử, chưa duyệt**. Khối màu 96 px, 16 mảnh có khớp, 13 clip/48 khung trong `prototype/rig/`; bảng bộ phận, đo ảnh nghiêng và thời lượng tại `16_rig_nhan_vat.md`. Có công tắc rig/cung, xem pose và contact sheet. Chờ người dùng duyệt tỉ lệ/khớp/pose trước khi vẽ; không đóng `chr_dbl_parts`, trang bị hay động tác thành phẩm.
+
 - [ ] `chr_dbl_t1` — bộ phận thay thế trang bị bậc 1 (áo, quần, vũ khí Đao/Cung), chung điểm khớp và dữ liệu hoạt ảnh; không vẽ lại cả động tác (P3)
 - [ ] `chr_dbl_anim_dao_t1`, `chr_dbl_anim_cung_t1` — dữ liệu ghép bộ phận theo từng frame (vị trí, góc, thứ tự lớp, thời lượng, hit/spawn), đủ số khung trong `09_animation_spec.md`; số khung đang chưa chốt phải dựng/duyệt trước khi đóng hạng mục. Lộn đỉnh/chiêu lớn có thể thêm khung vẽ riêng khi cần (P4)
 - [ ] `map_dao_uc_bg`, `map_dao_uc_tiles` — cảnh nền và tileset Đào Úc (P9, P10). Khi duyệt cảnh nền, sao chép thành `art/reference/ref_map_hoa_lu.png` cho tới khi có cảnh làng Hoa Lư

@@ -1,0 +1,35 @@
+{
+  "image": "art/reference/ref_dinh_bo_linh.png",
+  "sha256": "62507c983bebc6fbeef3b8673356cb2c825052dac7a900fef36649c2b4be0cd3",
+  "image_size": [
+    1735,
+    576
+  ],
+  "side_roi": [
+    610,
+    20,
+    780,
+    570
+  ],
+  "silhouette_y": [
+    40,
+    560
+  ],
+  "manual_neck_y": 174,
+  "manual_hip_y": 299,
+  "height_source_px": 520,
+  "segments": {
+    "head_hair": {
+      "source_px": 134,
+      "at_96_px": 24.738
+    },
+    "torso": {
+      "source_px": 125,
+      "at_96_px": 23.077
+    },
+    "legs_feet": {
+      "source_px": 261,
+      "at_96_px": 48.185
+    }
+  }
+}

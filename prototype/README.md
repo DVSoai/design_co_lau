@@ -266,3 +266,29 @@ RAM; đổi công tắc cập nhật slider JUMP_HEIGHT, trọng lực và vận
 chế độ đó. Các thông số còn lại dùng chung; không ghi đè tuning.gd. Bộ kiểm tra
 cũ chạy trong chế độ cũ, rồi kiểm tra riêng chế độ cổ điển và bật/tắt công tắc.
 Chưa thử lại cảm giác điều khiển trên điện thoại Android thật trong môi trường này.
+
+## Giai đoạn 1 — Rig greybox (chưa duyệt)
+
+Giữ **Godot 4.7.2 Standard**. F5 chạy A0 gốc; bấm **Mở rig greybox** để sang cảnh mới
+`rig/rig_greybox.tscn` (hoặc mở cảnh và F6). Mã player/world và thông số A0 giữ nguyên.
+Mở ⚙: **Rig greybox** bật/tắt thay sprite, **Vũ khí cung** đổi đao/cung; bộ chọn
+**Theo trạng thái thật A0** hoặc clip riêng để xem 3 nhát Đao, bắn, hurt/ngã.
+**Về A0 gốc** nằm trong bảng ⚙. Cung chỉ đổi hoạt ảnh, không thêm đạn/hitbox mới.
+F1 hiện điểm khớp. Cảnh mới dùng lại điều khiển PC/cảm ứng A0, không lưu tùy chọn.
+
+Dữ liệu `rig/data/parts.json` và `animations.json` là nguồn bộ phận/pose/thời lượng,
+không dùng ảnh game khác. Xem bảng khớp, trạng thái đề xuất và phép đo tại
+`../docs/16_rig_nhan_vat.md`. Đây là ngoại lệ prototype, không phải mã game thật.
+
+Sau ba lệnh headless ở trên, chạy thêm:
+
+```sh
+godot --headless --path prototype --script res://tests/rig_smoke.gd
+godot --headless --path prototype --script res://rig/export_frames.gd
+python prototype/rig/render_contact_sheets.py
+```
+
+Contact sheet tại `rig/contact_sheets/`, raster từ polygon đã được chính scene
+Godot tính transform, không phải screenshot GPU toàn cảnh. Đo lại ảnh nguồn bằng
+`python prototype/rig/measure_reference.py`; ngưỡng tách silhouette và mốc cổ/hông
+chọn bằng mắt được ghi rõ trong script và tài liệu. Khối màu chưa duyệt mỹ thuật.
