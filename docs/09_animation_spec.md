@@ -50,6 +50,15 @@ khi lên/xuống và không chèn khung treo đỉnh. Khinh công cần lần b�
 - Chém cơ bản: 0,30 s, cửa sổ trúng 0,10–0,20 s, hồi thêm 0,15 s sau động tác. Bảng combo bên dưới là đề xuất ngoài phạm vi nghiệm thu A0; khi dựng nhát cơ bản phải chia timeline để khớp nhịp này, không dùng số khung cũ để đổi thời điểm hit.
 - Vệt chém/hiệu ứng trúng đòn và số sát thương luôn ở lớp vẽ trên nhân vật, hình nộm và quái; lộn người không thay đổi thứ tự lớp hoặc hộp đánh.
 
+### Bản thử rig greybox Giai đoạn 1 (chưa duyệt)
+
+`16_rig_nhan_vat.md` và `prototype/rig/data/animations.json` dựng thử các động tác
+chung/Đao/Cung bằng khối màu. Đề xuất **6 pose lộn trong 0,20 s**, khóa kết thúc 360°,
+và **2 pose quay đầu trong 0,05 s**; hai tổng thời gian giữ A0, số pose chưa được duyệt.
+Chém cơ bản 4 pose chia 0,10/0,10/0,05/0,05 s để giữ cửa sổ trúng A0; combo 2–3
+và bắn thường theo bảng bên dưới chỉ xem, chưa thêm cơ chế mới vào A0.
+Không thay bảng số khung thành phẩm hay đánh dấu các mục này Đã duyệt vì có greybox.
+
 ## Phái Đao
 
 Đòn thường là chuỗi ba nhát; bấm tiếp trong khung `cancel` thì sang nhát sau.
