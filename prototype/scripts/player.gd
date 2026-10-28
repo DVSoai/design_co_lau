@@ -11,6 +11,10 @@ var hits: Array[Node] = []
 var slash: Area2D
 var sprite: Sprite2D
 var debug_enabled := false
+var idle_phase := 0.0
+var run_phase := 0.0
+var pulse_scale := Vector2.ONE
+var pulse_elapsed := T.SPRITE_SCALE_RECOVERY
 
 func _ready() -> void:
 	collision_layer = 2
@@ -42,6 +46,8 @@ func _ready() -> void:
 	add_child(slash)
 
 func _physics_process(delta: float) -> void:
+	var was_grounded := is_on_floor()
+	var jumped := false
 	var axis := Input.get_axis("left", "right")
 	if axis != 0:
 		facing = signf(axis)
@@ -53,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		buffered_jump = tuning.value("JUMP_BUFFER")
 	if (Input.is_action_just_pressed("jump") or buffered_jump > 0) and (is_on_floor() or coyote > 0):
 		velocity.y = tuning.jump_speed()
+		jumped = true
 		buffered_jump = 0
 		coyote = 0
 	velocity.y += tuning.gravity() * delta
@@ -63,6 +70,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		buffered_jump = 0
 		coyote = 0
+		pulse_elapsed = T.SPRITE_SCALE_RECOVERY
 	cooldown_elapsed += delta
 	if Input.is_action_just_pressed("slash") and attack_time < 0 and cooldown_elapsed >= tuning.value("ATTACK_COOLDOWN"):
 		attack_time = 0
@@ -78,7 +86,41 @@ func _physics_process(delta: float) -> void:
 			if body.has_method("take_hit") and not hits.has(body):
 				hits.append(body)
 				body.take_hit(T.DAMAGE)
+	_update_sprite_motion(delta, jumped, not was_grounded and is_on_floor())
 	queue_redraw()
+
+func _update_sprite_motion(delta: float, jumped: bool, landed: bool) -> void:
+	# Sprite là sibling của các CollisionShape2D/Area2D: không truyền transform.
+	if not tuning.fake_motion_enabled():
+		idle_phase = 0.0
+		run_phase = 0.0
+		pulse_elapsed = T.SPRITE_SCALE_RECOVERY
+		sprite.position = T.SPRITE_OFFSET
+		sprite.rotation = 0.0
+		sprite.scale = Vector2.ONE
+		return
+	if jumped or landed:
+		pulse_scale = T.JUMP_SPRITE_SCALE if jumped else T.LAND_SPRITE_SCALE
+		pulse_elapsed = 0.0
+	var weight := clampf(pulse_elapsed / T.SPRITE_SCALE_RECOVERY, 0.0, 1.0)
+	sprite.scale = pulse_scale.lerp(Vector2.ONE, weight)
+	pulse_elapsed += delta
+	sprite.rotation = 0.0
+	var bob := 0.0
+	if is_on_floor():
+		if absf(velocity.x) > T.RUN_MOTION_THRESHOLD:
+			run_phase = fmod(run_phase + TAU * absf(velocity.x) * delta / T.RUN_STEP_DISTANCE, TAU)
+			bob = sin(run_phase) * T.RUN_BOB_AMPLITUDE
+			sprite.rotation = deg_to_rad(T.RUN_LEAN_DEGREES) * signf(velocity.x)
+			idle_phase = 0.0
+		else:
+			idle_phase = fmod(idle_phase + TAU * delta / T.IDLE_BOB_PERIOD, TAU)
+			bob = sin(idle_phase) * T.IDLE_BOB_AMPLITUDE
+			run_phase = 0.0
+	# Dời tâm ảnh theo scale/rotation để giữ mốc chân khi squash/lean.
+	sprite.position = (T.SPRITE_OFFSET * sprite.scale).rotated(sprite.rotation) + Vector2(0, bob)
+	if is_hit_active():
+		sprite.position.x += facing * T.SLASH_SPRITE_SHIFT
 
 func is_hit_active() -> bool:
 	return attack_time >= T.HIT_START and attack_time < T.HIT_END

@@ -20,11 +20,18 @@ var values: Dictionary = {}
 func _init() -> void:
 	var source: Script = Defaults
 	var defaults := source.get_script_constant_map()
+	values["FAKE_MOTION_ENABLED"] = Defaults.FAKE_MOTION_ENABLED
 	for row in SLIDERS:
 		values[row[0]] = Defaults.CAMERA_DEAD_ZONE.x if row[0] == "CAMERA_DEAD_ZONE.x" else defaults[row[0]]
 
 func value(key: String) -> float:
 	return float(values[key])
+
+func fake_motion_enabled() -> bool:
+	return bool(values["FAKE_MOTION_ENABLED"])
+
+func set_fake_motion_enabled(enabled: bool) -> void:
+	values["FAKE_MOTION_ENABLED"] = enabled
 
 func set_value(key: String, number: float) -> void:
 	for row in SLIDERS:
