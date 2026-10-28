@@ -114,13 +114,13 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 97 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 125 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
 
 Nút **⚙** ở góc trên phải luôn hiện trên PC và cảm ứng. Bấm để mở/đóng
-bảng; cuộn để xem đủ 10 thanh trượt. Mỗi thanh hiện tên, số và đơn vị.
+bảng; cuộn để xem đủ 13 thanh trượt. Mỗi thanh hiện tên, số và đơn vị.
 Các thay đổi tác dụng ngay cho chạy/gia tốc, nhảy, camera và nhịp chém;
 trọng lực/vận tốc nhảy tự tính lại. Giữ ATTACK_DURATION tối thiểu 0,22 s
 để cửa sổ trúng [0,10; 0,20) s vẫn nằm trong động tác.
@@ -131,8 +131,9 @@ không lưu hoặc ghi đè file cấu hình.
 
 Mặc định RUN_SPEED=200 px/s, TIME_TO_APEX=0,38 s: tầm nhảy ngang lý thuyết
 200 × 2 × 0,38 = **152 px**, lớn hơn 1,5 × hố 96 px = **144 px**.
-Đây là tầm lý thuyết khi đã đạt tốc độ chạy, cùng cao độ cất/hạ cánh;
-không bảo đảm nhảy từ đứng yên. Smoke test assert điều kiện này từ hình học hố thật.
+Đây là tầm lý thuyết với vận tốc ngang 200 px/s, cùng cao độ cất/hạ cánh.
+Vùng chéo trong Kiểu cổ điển dùng 0,8 × tốc độ nên tầm tương ứng là 121,6 px
+khi chưa khinh công. Ở kiểu cũ, cần chạy lấy đà để đạt tốc độ này. Smoke test assert điều kiện này từ hình học hố thật.
 
 ## Chuyển động giả (không thêm khung hình)
 
@@ -155,8 +156,10 @@ cảm giác hình ảnh trên điện thoại; headless kiểm tra transform và
 ## Kết quả thử PC và bảo vệ thông số
 
 Người dùng thử bằng Godot 4.7.2 trên PC ngày 28/10/2026, thấy ổn với bộ mặc
-định, không chỉnh thông số. Kết quả được ghi trong `docs/13_thong_so.md` và
-`docs/05_log.md`: vẫn Tạm thời, chờ thử Android và xác nhận của người dùng.
+định, không chỉnh thông số. Kết quả này thuộc bộ trước khi thêm Kiểu cổ điển
+(kiểu cũ nhảy 80 px); không xác nhận chế độ cổ điển mới nhảy 96 px.
+Kết quả được ghi trong `docs/13_thong_so.md` và `docs/05_log.md`: vẫn Tạm thời,
+chờ thử Android và xác nhận của người dùng.
 
 Nút ⚙, thanh trượt, công tắc và nút Sao chép không nhận focus bàn phím.
 Phím mũi tên tiếp tục dùng để chơi, không chuyển focus hoặc đổi số; con lăn
@@ -215,7 +218,8 @@ Các công tắc trong ⚙ chỉ đổi trong RAM và có trong văn bản Sao c
   nhảy lần nữa khi chạm đất. Tắt để chỉ nhảy một lần mỗi lần bấm.
 - **Giữ lâu nhảy cao**: mặc định tắt. Khi bật, nhả toàn bộ nút/phím nhảy sớm
   giảm vận tốc đi lên còn 50%; giữ đến đỉnh cho đủ độ cao.
-- **Xoay khi nhảy chéo**: mặc định bật. Nhảy bắt đầu từ vùng chéo trái/phải thì sprite xoay
+- **Xoay khi nhảy chéo**: chỉ áp dụng khi **tắt Kiểu cổ điển**, mặc định bật.
+  Nhảy bắt đầu từ vùng chéo trái/phải thì sprite xoay
   một vòng theo hướng nhảy; thời gian danh nghĩa bằng 2 × TIME_TO_APEX,
   phủ pha lên và rơi cùng cao độ. Khi chạm đất thì kết thúc, kể cả đáp lên bậc
   sớm; rơi lâu hơn thời gian danh nghĩa thì giữ góc đã đủ một vòng cho tới khi
@@ -226,3 +230,39 @@ Bảng ⚙ chặn các vùng cảm ứng phía dưới bảng khi đang mở. Đ
 Khi xuất APK nhớ bật **Screen → Immersive Mode**, theo phần Android ở trên.
 Headless kiểm tra vùng chéo, giữ nhảy, nhảy cao/thấp và bố cục ở 1600×720,
 2400×1080, 1920×1080. Cần thử lại thao tác ngón cái và độ đọc trên điện thoại thật.
+
+## Kiểu cổ điển (mặc định bật)
+
+Công tắc **Kiểu cổ điển** và **Khinh công** trong ⚙ đều mặc định bật.
+Đây là cơ chế tự triển khai trong prototype, không dùng mã hoặc tài nguyên game khác.
+
+- Bấm hướng chạy đạt RUN_SPEED ngay. Buông hướng giảm vận tốc về 0 trong
+  STOP_TIME (0,08 s). Bấm hướng ngược trên đất thì khung đầu đổi mặt, đứng
+  TURN_TIME (0,05 s) rồi chạy; nhả trong nhịp đứng sẽ chỉ quay mặt.
+- Trên không, hướng trái/phải nhận tốc độ ngay, không có nhịp quay đầu.
+  Giữ vùng chéo dùng 0,8 × RUN_SPEED; nút hướng riêng dùng đủ RUN_SPEED.
+- JUMP_HEIGHT mặc định 96 px, TIME_TO_APEX 0,38 s: g ≈ 1329,64 px/s²,
+  JUMP_SPEED ≈ −505,26 px/s. Cùng một trọng lực khi lên và xuống, không chèn
+  thời gian đứng ở đỉnh. Tích phân vị trí midpoint cho thời gian lên/xuống đối
+  xứng; đầu ra kiểm tra trên mặt đất cùng cao độ là 23/23 khung ở 60 Hz.
+  FALL_SPEED_MAX tự tính bằng 2 × |JUMP_SPEED|, mặc định ≈ 1010,53 px/s.
+- **Khinh công**: chỉ khi đang đi lên và |vy| ≤ 30% |JUMP_SPEED|, nhả toàn bộ
+  nút/phím nhảy rồi bấm mới được bật thêm một lần với 0,7 × JUMP_SPEED.
+  Bấm sớm không xếp hàng để tự bật khinh công; giữ liên tục không phải lần bấm mới.
+  Tối đa một lần cho mỗi cú nhảy, quyền bật thêm reset khi chạm đất.
+- Mỗi pha nhảy bắt đầu lộn khi vận tốc lên vào ngưỡng 30%, theo hướng mặt lúc đó.
+  Sprite xoay một vòng trong APEX_FLIP_TIME (0,2 s); khinh công có thêm một vòng.
+  Nếu hai vòng đến sát nhau, vòng sau đợi vòng trước xong. Trên mặt đất cùng
+  cao độ với mặc định, cả hai hoàn tất trước khi đáp đất. Va chạm đất/đầu hoặc
+  đổi chế độ có thể kết thúc pha bay sớm. Hitbox không xoay.
+  Kiểu cổ điển bỏ xoay chậm suốt nhảy chéo; Chuyển động giả vẫn là công tắc tổng.
+- Có thanh trượt STOP_TIME, TURN_TIME và APEX_FLIP_TIME, đơn vị giây.
+  ACCELERATION vẫn chỉnh được nhưng chỉ tác động khi dùng kiểu cũ.
+
+Tắt Kiểu cổ điển để trở về tăng/giảm tốc bằng ACCELERATION, đổi mặt ngay khi
+đổi hướng, tích phân và rơi như trước, không có khinh công/lộn đỉnh. Mặc định
+chiều cao kiểu cũ là 80 px. Hai chế độ nhớ riêng giá trị chiều cao đã chỉnh trong
+RAM; đổi công tắc cập nhật slider JUMP_HEIGHT, trọng lực và vận tốc nhảy theo
+chế độ đó. Các thông số còn lại dùng chung; không ghi đè tuning.gd. Bộ kiểm tra
+cũ chạy trong chế độ cũ, rồi kiểm tra riêng chế độ cổ điển và bật/tắt công tắc.
+Chưa thử lại cảm giác điều khiển trên điện thoại Android thật trong môi trường này.

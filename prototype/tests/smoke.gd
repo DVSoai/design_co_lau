@@ -23,6 +23,8 @@ func run() -> void:
 	check(jump_range >= 1.5 * gap_width, "default horizontal jump range has 1.5x gap margin")
 	var world = load("res://main.tscn").instantiate()
 	root.add_child(world)
+	check(world.tuning.flag("CLASSIC_CONTROLS") and world.tuning.flag("AIR_JUMP_ENABLED") and is_equal_approx(world.tuning.value("JUMP_HEIGHT"), 96.0), "classic controls and air jump default on with 96 px jump")
+	world.tuning_panel.switches["CLASSIC_CONTROLS"].button_pressed = false
 	await frames(10)
 	var p = world.player
 	check(p.is_on_floor(), "player lands on ground")
@@ -153,6 +155,7 @@ func run() -> void:
 	await test_android_layout(world)
 	await test_touch_slider(world)
 	await test_dpad_and_jump(world)
+	await load("res://tests/classic_checks.gd").new().run(self, world, check)
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)
 
@@ -396,7 +399,7 @@ func measure_jump(world: Node, early_release: bool, variable: bool) -> float:
 func test_dpad_and_jump(world: Node) -> void:
 	world.tuning_panel.panel.hide()
 	world.touch_controls.release_all()
-	world.tuning.set_value("JUMP_HEIGHT", T.JUMP_HEIGHT)
+	world.tuning.set_value("JUMP_HEIGHT", T.LEGACY_JUMP_HEIGHT)
 	world.tuning.set_value("TIME_TO_APEX", T.TIME_TO_APEX)
 	world.tuning.set_value("RUN_SPEED", T.RUN_SPEED)
 	world.tuning.set_flag("HOLD_AUTO_JUMP", true)
