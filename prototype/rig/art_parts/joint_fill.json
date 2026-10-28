@@ -6,12 +6,12 @@
   },
   "upper_arm_near": {
     "radius": 4.0,
-    "color": "#E99A69",
+    "color": "#C3A98A",
     "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "upper_arm_far": {
     "radius": 4.0,
-    "color": "#A38269",
+    "color": "#C3A98A",
     "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "forearm_near": {
@@ -21,7 +21,7 @@
   },
   "forearm_far": {
     "radius": 3.5,
-    "color": "#B66C49",
+    "color": "#E99A69",
     "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "hand_near": {
@@ -41,7 +41,7 @@
   },
   "thigh_far": {
     "radius": 4.0,
-    "color": "#6B4A35",
+    "color": "#59443E",
     "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "shin_near": {

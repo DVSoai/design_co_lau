@@ -76,8 +76,9 @@ asset, không tuyên bố bộ phận đã qua kiểm tra.
 `tools/cut_parts.py` co mọi mảnh theo **một s=96/846** cho x/y, dùng trung vị
 ô nguồn, giữ aspect và đo lại khớp theo hình. Không ép vào ô greybox: cấu hình
 art ở parts.json, greybox ở parts_greybox.json. Viền chỉ ở đường bao dáng đứng,
-không bôi vào mặt cắt/vùng bù khớp. Đầu sau co chưa sửa mắt/mũi/miệng; chờ
-Claude trả ma trận. Báo cáo và script nguyên văn tại
+không bôi vào mặt cắt/vùng bù khớp. Đầu hiện áp nguyên ma trận người dùng gửi: **đầu do Claude vẽ tay từng pixel**.
+Tay trên/cẳng tay có ngoại lệ rút trục dài còn 60%; da dùng skin, áo dùng fabric,
+ngoài quần không dùng pants trừ ánh tóc #59443E của ma trận đầu. Báo cáo và script nguyên văn tại
 `reports/g1_parts_art_report.md`; vẫn đang làm, chưa duyệt.
 
 ## Kích thước

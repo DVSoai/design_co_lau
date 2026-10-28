@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One isotropic source-to-character scale. No facial pixel edits. No greybox size fitting."""
+"""Shared body scale; authorized 0.60 arm-length exception; immutable Claude head."""
 import json,math,hashlib,shutil
 from pathlib import Path
 import numpy as np
@@ -46,6 +46,32 @@ def sample_uniform(rgb,mask,s):
                 out[y,x,:3]=np.median(rgb[y0:y1,x0:x1][tile],axis=0);out[y,x,3]=255
     return out
 
+def claude_head():
+    colours={'O':'17151A','H':'342923','L':'59443E','D':'78432E','s':'B66C49','k':'E99A69','W':'FFD0A0'}
+    rows=(ROOT/'art/concept/characters/chr_dbl_parts_work/claude_head/matrix.txt').read_text().splitlines()
+    assert len(rows)==25 and all(len(row)==23 for row in rows)
+    a=np.zeros((25,23,4),np.uint8)
+    for y,row in enumerate(rows):
+        for x,c in enumerate(row):
+            if c!='.':a[y,x]=[*bytes.fromhex(colours[c]),255]
+    return a
+
+def colour_part(id,a,groups):
+    mask=a[:,:,3]>0
+    if id=='head':return claude_head()
+    garment=mask.copy() if id=='body' else mask&(np.indices(mask.shape)[0]<a.shape[0]*.48) if id.startswith('upper_arm_') else np.zeros(mask.shape,bool)
+    belt=mask&(np.indices(mask.shape)[0]>=a.shape[0]*.56)&(np.indices(mask.shape)[0]<=a.shape[0]*.68) if id=='body' else np.zeros(mask.shape,bool)
+    garment &= ~belt
+    for y,x in zip(*np.where(mask&~garment)):
+        palette=groups['belt'] if belt[y,x] else groups['pants']+groups['skin'] if id.startswith('thigh_') else groups['skin'] if id.startswith(('upper_arm_','forearm_','hand_','shin_','foot_')) else groups['fabric']+groups['belt']
+        a[y,x,:3]=nearest(a[y,x,:3],palette)
+    ys,xs=np.where(garment)
+    if len(xs):
+        lum=a[ys,xs,:3].astype(float)@np.array([.2126,.7152,.0722]);order=np.argsort(lum,kind='stable')
+        for rank,k in enumerate(order):
+            q=rank/len(order);a[ys[k],xs[k],:3]=groups['fabric'][0 if q<.15 else 1 if q<.35 else 2 if q<.90 else 3]
+    return a
+
 def main():
     work=ROOT/'art/concept/characters/chr_dbl_parts_work';manifest=json.loads((work/'manifest.json').read_text());source=ROOT/manifest['source']
     rgb=np.array(Image.open(source).convert('RGB'));groups=load_groups(ROOT/'art/reference/palette.gpl');pal=[c for name in GROUPS for c in groups[name]]
@@ -60,20 +86,21 @@ def main():
         id=item['id'];box=item['source_box'];x0,y0,x1,y1=box;crop=rgb[y0:y1,x0:x1];mask=~green_mask(crop)
         if id=='head':crop=crop[:LANDMARKS[id]['crop_bottom']];mask=mask[:len(crop)]
         a=sample_uniform(crop,mask,s)
-        # Palette role: dark source lines become material shadows, not seam ink.
-        # On the face preserve the source-derived nearest colours; no feature patches.
-        for y,x in zip(*np.where(a[:,:,3]>0)):
-            palette=pal[2:]
-            if id=='head':
-                sx=(x+.5)/s;sy=(y+.5)/s
-                face=(135<=sx<=173 and 123<=sy<=154) or (144<=sx<=180 and 160<=sy<=197) or (sx>172 and 100<=sy<=180)
-                palette=pal if face else (pal[13:] if sy<180 else pal[2:6])
-            a[y,x,:3]=nearest(a[y,x,:3],palette)
+        if id.startswith(('upper_arm_','forearm_')):
+            # User-authorized exception: shorten only the longitudinal arm axis.
+            old_h=len(a);new_h=math.ceil(old_h*.60);short=np.zeros((new_h,a.shape[1],4),np.uint8)
+            for yy in range(new_h):
+                region=a[int(yy/.60):min(old_h,math.ceil((yy+1)/.60))]
+                for xx in range(a.shape[1]):
+                    cells=region[:,xx];fg=cells[:,3]>0
+                    if fg.mean()>=.35:short[yy,xx]=[*np.median(cells[fg,:3],axis=0).astype(np.uint8),255]
+            a=short;pivot[id][1]*=.60
+        a=colour_part(id,a,groups)
         # Hands/feet retain dark/mid/light skin by a luminance quantile mapping, not aspect changes.
         if id.startswith(('hand_','foot_')):
             ys,xs=np.where(a[:,:,3]>0);lum=a[ys,xs,:3].astype(float)@np.array([.2126,.7152,.0722]);order=np.argsort(lum,kind='stable')
             for rank,k in enumerate(order):a[ys[k],xs[k],:3]=pal[[2,4,5][min(2,rank*3//len(order))]]
-        for cluster in components(a[:,:,3]>0):
+        for cluster in ([] if id=='head' else components(a[:,:,3]>0)):
             if len(cluster)<2:
                 for x,y in cluster:a[y,x]=0
         Image.fromarray(a).save(raw/f'{id}.png');Image.fromarray(a).save(out/f'{id}.png');shutil.copyfile(out/f'{id}.png',dest/f'{id}.png')
@@ -86,6 +113,7 @@ def main():
             parent=p['parent'];attach=(np.array(LANDMARKS[parent]['grip'])-LANDMARKS[parent]['pivot'])*s
         else:
             parent=p['parent'];attach=(np.array(LANDMARKS[parent]['end'])-LANDMARKS[parent]['pivot'])*s
+        if p['parent'].startswith(('upper_arm_','forearm_')):attach[1]*=.60
         p['attach']=attach.tolist()
         if id.startswith('foot_'):p['angle_limit']=[-75,75]
         p['occluded_fill']='Unoutlined automatic material at true joint; no greybox frame fitting'
@@ -96,16 +124,16 @@ def main():
             px,py=p['pivot'];patch=a[max(0,int(py-radius-1)):min(len(a),math.ceil(py+radius+2)),max(0,int(px-radius-1)):min(a.shape[1],math.ceil(px+radius+2))]
             inside=patch[patch[:,:,3]>0,:3]
             if not len(inside):inside=a[a[:,:,3]>0,:3]
-            colour=nearest(np.median(inside,axis=0),pal[2:6] if id=='head' else pal[2:])
+            colour=nearest(np.median(inside,axis=0),groups['skin'] if id.startswith(('head','forearm_','hand_','shin_')) else groups['fabric'] if id.startswith('upper_arm_') else groups['pants'])
             fills[id]={'radius':radius,'color':'#'+''.join(f'{v:02X}' for v in colour),'method':'automatic unoutlined joint material, not a drawn body outline'}
-        print(f'{id}: source={crop.shape[1]}x{crop.shape[0]} -> {p["size"]}; pivot={np.round(p["pivot"],3).tolist()}; attach={np.round(p["attach"],3).tolist()}; SAME s')
+        print(f'{id}: source={crop.shape[1]}x{crop.shape[0]} -> {p["size"]}; pivot={np.round(p["pivot"],3).tolist()}; attach={np.round(p["attach"],3).tolist()}; shared s, arm-longitudinal=0.60 if applicable')
     definition['status']='Đề xuất — common-scale art measurements, chưa duyệt';definition['common_scale']=s;definition['source_height']=height;definition['source_spans']=measures;definition['parts']=list(parts.values());definition['rotation_center']=[0,-sum(measures[2:])*s]
     bow=LANDMARKS['bow'];definition['bow_string']['top']=((np.array(bow['top'])-bow['pivot'])*s).tolist();definition['bow_string']['bottom']=((np.array(bow['bottom'])-bow['pivot'])*s).tolist();definition['bow_string']['hand_anchor']=((np.array(LANDMARKS['hand_near']['grip'])-LANDMARKS['hand_near']['pivot'])*s).tolist()
     (ROOT/'prototype/rig/data/parts.json').write_text(json.dumps(definition,ensure_ascii=False,indent=2)+'\n');(dest/'joint_fill.json').write_text(json.dumps(fills,indent=2)+'\n')
-    measurements={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'scale':s,'height_source':height,'source_spans':measures,'guide':[24,24,48],'scaled_spans':[measures[0]*s,measures[1]*s,sum(measures[2:])*s],'landmarks_manual':LANDMARKS,'parts':rows,'neck_below_chin_px':(219-197)*s,'face_width_px':(200-80)*s,'head_width_px':parts['head']['size'][0]}
+    measurements={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'scale':s,'height_source':height,'source_spans':measures,'guide':[24,24,48],'scaled_spans':[measures[0]*s,measures[1]*s,sum(measures[2:])*s],'landmarks_manual':LANDMARKS,'parts':rows,'arm_length_scale':.60,'head_source':'đầu do Claude vẽ tay từng pixel','neck_below_chin_px':3,'face_width_px':(200-80)*s,'head_width_px':parts['head']['size'][0]}
     (work/'uniform_measurements.json').write_text(json.dumps(measurements,ensure_ascii=False,indent=2)+'\n')
-    head=np.array(Image.open(raw/'head.png'));text=matrix(head,pal);(work/'head_uniform_unedited.txt').write_text(text+'\n');Image.fromarray(head).save(work/'head_uniform_unedited.png')
-    print('HEAD UNEDITED after common-scale sampling; no feature edit file read:');print(text)
+    head=np.array(Image.open(raw/'head.png'));text=matrix(head,pal);(work/'head_claude.txt').write_text(text+'\n');Image.fromarray(head).save(work/'head_claude.png')
+    print('HEAD: đầu do Claude vẽ tay từng pixel; exact supplied matrix, no cleanup or feature edits:');print(text)
     print('Palette:',{c:'#'+''.join(f'{v:02X}' for v in col) for c,col in zip('0123456789ABCDEFG',pal)})
     print(f'Head neck below chin: {measurements["neck_below_chin_px"]:.3f}px; source face span / frame width={measurements["face_width_px"]/parts["head"]["size"][0]:.3f}')
 if __name__=='__main__':main()

@@ -304,3 +304,29 @@ Góc pose/IK được tác giả script tính trước và ghi JSON; không sử
 Pipeline/lệnh tái tạo, ma trận và đầu ra tại
 `reports/g1_parts_art_report.md`; số 17 dành cho `17_ngoai_hinh.md`. Mọi art/khớp
 mới vẫn Đề xuất/đang làm, chưa duyệt.
+
+## 9. Đầu Claude và tay rút ngắn theo duyệt mới
+
+Theo ma trận người dùng gửi: **đầu do Claude vẽ tay từng pixel**. PNG đầu giữ
+23×25, pivot/attach không đổi; so RGBA từng pixel với ma trận đầu vào. Không
+thực hiện làm sạch/bôi viền hoặc sửa feature trên đầu. Cổ được kiểm không hở
+ở cả 48 frame. H là màu tóc, O là nét; L=#59443E là ngoại lệ ánh tóc, không phải
+cho phép dùng nhóm pants trên da hay áo.
+
+Ngoại lệ do người dùng cho phép: upper_arm/forearm rút trục dài còn 60%, giữ
+chiều ngang; các phần khác vẫn giữ s chung. Đầu ngón đo từ scene ở y=−33 khi
+đứng duỗi, y=−32 ở idle, cả hai tay, trong khoảng −30…−34.
+
+| Mảnh | Khung cũ → mới | Pivot cũ → mới | Attach cũ → mới |
+|---|---|---|---|
+| `upper_arm_near` | (10, 26) → (10, 16) | (4.766, 1.362) → (4.766, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_near` | (8, 19) → (8, 12) | (3.404, 1.135) → (3.404, 0.681) | (0.34, 22.922) → (0.34, 13.753) |
+| `hand_near` | (10, 13) → (10, 13) | (2.95, 1.021) → (2.95, 1.021) | (0.113, 16.227) → (0.113, 9.736) |
+| `upper_arm_far` | (10, 26) → (10, 16) | (4.652, 1.362) → (4.652, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_far` | (7, 19) → (7, 12) | (3.291, 1.135) → (3.291, 0.681) | (0.227, 22.922) → (0.227, 13.753) |
+| `hand_far` | (10, 14) → (10, 14) | (2.837, 1.021) → (2.837, 1.021) | (0.113, 15.887) → (0.113, 9.532) |
+
+Màu áo: #C3A98A chủ đạo, bóng #89745E/#554638, #EAD8B8 ≤15% số pixel vải.
+Các nhóm chất liệu kiểm riêng cho từng PNG, ngoài quần không dùng pants trừ L
+trên tóc Claude. Tỉ lệ từng màu và ma trận nguyên văn ở
+`reports/g1_parts_art_report.md`. Các mục 7–8 là lịch sử trước lần chỉnh này.

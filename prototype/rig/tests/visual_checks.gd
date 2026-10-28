@@ -48,8 +48,12 @@ func run() -> void:
 					var bow: Node2D = rig.joints.bow
 					var hand: Node2D = rig.joints.hand_far
 					var shoulder: Vector2 = rig.joints.upper_arm_far.global_position
+					var measured_reach := 0.0
+					for part_data in rig.definition.parts:
+						if part_data.id in ["forearm_far", "hand_far"]:
+							measured_reach += Vector2(part_data.attach[0],part_data.attach[1]).length()
 					var axis := bow.to_global(Vector2(0,19))-bow.to_global(Vector2(0,-19))
-					bow_correct = bow_correct and absf(axis.x) < 0.001 and bow.global_position.distance_to(hand.to_global(Vector2(rig.definition.parts[-1].attach[0],rig.definition.parts[-1].attach[1]))) < 0.001 and is_equal_approx(hand.global_position.y,shoulder.y) and (hand.global_position.x-shoulder.x)*direction > 27.9
+					bow_correct = bow_correct and absf(axis.x) < 0.001 and bow.global_position.distance_to(hand.to_global(Vector2(rig.definition.parts[-1].attach[0],rig.definition.parts[-1].attach[1]))) < 0.001 and is_equal_approx(hand.global_position.y,shoulder.y) and (hand.global_position.x-shoulder.x)*direction > measured_reach*.999
 					var grip: Array = rig.definition.bow_string.hand_anchor
 					var anchor: Vector2 = rig.joints.hand_near.to_global(Vector2(grip[0],grip[1]))
 					string_correct = string_correct and rig.bow_string.visible and rig.bow_string.to_global(rig.bow_string.points[1]).distance_to(anchor) < 0.001

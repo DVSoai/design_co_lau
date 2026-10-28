@@ -20,6 +20,8 @@ def main():
     for item in frame['geometry']:
         if item['kind']!='sprite':continue
         id=item['id'];p=parts[id];a=np.array(Image.open(raw/f'{id}.png').convert('RGBA'));m=item['transform'];count=0
+        if id=='head':
+            Image.fromarray(a).save(out/f'{id}.png');shutil.copyfile(out/f'{id}.png',dest/f'{id}.png');continue
         # Exclude the cut planes around proximal and distal joints from border painting.
         joints=[p['pivot']]+[[p['pivot'][i]+c['attach'][i] for i in range(2)] for c in parts.values() if c['parent']==id]
         for y,x in zip(*np.where(a[:,:,3]>0)):
@@ -45,7 +47,7 @@ def main():
             for colour in protected:ink|=np.all(image[:,:,:3]==colour,axis=2)
             for y,x in zip(*np.where(interior&ink)):
                 id=owners[y,x]
-                if id not in items:continue
+                if id not in items or id=='head':continue
                 m=items[id]['transform'];a,b,c,d,tx,ty=m;det=a*d-b*c;wx=x+.5-origin[0]-tx;wy=y+.5-origin[1]-ty
                 sx=int(math.floor((d*wx-c*wy)/det));sy=int(math.floor((-b*wx+a*wy)/det))
                 original=np.array(Image.open(raw/f'{id}.png').convert('RGBA'));current=np.array(Image.open(out/f'{id}.png').convert('RGBA'))

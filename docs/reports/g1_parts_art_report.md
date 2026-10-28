@@ -1,211 +1,225 @@
-# Báo cáo G1 — Bộ phận bậc 0, co theo tỉ lệ chung
+# G1 — Đầu Claude, sửa chất liệu và chiều dài tay
 
-**Đang làm — chưa duyệt.** Báo cáo chuyển khỏi số 17; số đó dành cho
-`17_ngoai_hinh.md`. Lượt này không sinh imagegen mới. Dùng lại concept một tờ
-16 mảnh, tham chiếu `art/reference/ref_dinh_bo_linh.png`; prompt gốc ở 05_log.
+**Đang làm — chưa duyệt toàn bộ art.** Theo ma trận người dùng gửi:
+**đầu do Claude vẽ tay từng pixel**. Không imagegen trong lượt này.
 
-## 1. Sửa nguyên nhân méo hình
+## Đầu nguyên pixel
 
-Bản trước ép từng mảnh vào ô greybox, nên chiều ngang/dọc bị co khác nhau.
-Bản này giữ một **s=96/846=0,113475177305** cho cả hai trục của mọi bộ phận.
-Mỗi ô đích lấy trung vị vùng nguồn rộng/cao **1/s=8,8125 px**; ceil chỉ giữ
-ô cuối cùng, không tính lại sx/sy theo kích thước PNG. Không NEAREST để thu nhỏ.
+23×25, giữ pivot (9,418;24,738) và attach (0;−24,284). Pipeline không cleanup
+hay bôi viền trên đầu. So RGBA trùng ma trận bên dưới, cả PNG nguồn và bản rig.
+Cổ khớp thân: khe lớn nhất 0,00 px trong 48 frame.
 
-Ghép thử theo mốc 24/24/48 trong docs/16: đường nguồn từ búi tóc đến cổ 218 px,
-cổ tới điểm ghép quần dưới vạt áo 214 px, chân 176+152+86=414 px. Tổng 846.
-Sau co là **24,738 / 24,284 / 46,979 px**. Các mốc được chọn bằng mắt, dữ liệu
-đầy đủ trong `uniform_measurements.json`; đây là khớp đề xuất, không phải
-phân đoạn giải phẫu tự động hay tỉ lệ đã duyệt. Dáng đứng duỗi từ scene cao
-**96 px**; idle thở/gập gối cao 95 px. Không kéo giãn ảnh để các pose đều cao 96.
-
-Cấu hình greybox lưu nguyên ở `parts_greybox.json`, pose ở
-`animations_greybox.json`; art dùng parts.json/animations.json đo/retarget mới.
-Công tắc dựng đúng cấu hình từng chế độ. Khung/pivot/attach cũ→mới xem
-[docs/16](../16_rig_nhan_vat.md#bảng-greybox-cũ--art-đo-lại). Physics/hitbox A0 không đổi.
-
-## 2. Viền và vùng nối
-
-- Chuyển nét tối bên trong mảnh thành bóng vật liệu; tóc dùng tông tối vật liệu.
-  Vùng màu nguồn của mắt/mũi/miệng được giữ, không đọc danh sách chỉnh feature.
-- Bôi viền 1 px **chỉ tại đường bao dáng đứng xuất từ scene**, bỏ các mặt cắt
-  cổ/vai/khuỷu/cổ tay/hông/gối/cổ chân. Nét vừa bôi nếu lọt vào trong một trong
-  hai dáng idle/đứng duỗi được trả lại màu raw; không thay pixel tối feature nguồn.
-- Vùng bù tự động dùng màu vật liệu, không viền. Các đĩa màu dưới khớp chỉ
-  lấp phần ảnh bị cắt do pivot sát mép; không đổi bone hay collider. Cổ tay có
-  vùng bù nhỏ tối đa 3 px, không thêm đĩa ở chân hoặc vũ khí.
-- Tay/chân có đủ skin tối/trung/sáng; bàn chân giữ chiều ngang nguồn để đọc gót/mũi.
-
-## 3. Ma trận đầu CHƯA sửa feature
-
-Đầu mới **23×25**. Crop nguồn 200×219; cằm mốc y=197, cổ còn (219−197)×s
-≈**2,496 px**, tương ứng khoảng ba hàng raster. Phần da mặt đo được ngang
-**13/23≈56,52%**, vượt mức 40%. Chưa sửa mắt/mũi/miệng. Claude sẽ gửi ma trận sửa.
-
-PNG raw sau co: `art/concept/characters/chr_dbl_parts_work/head_uniform_unedited.png`.
-Ma trận tương ứng `.txt`, `.` trong suốt; ký tự 0…G tương ứng 17 màu dưới đây.
-Đây là ma trận sau co/ép palette, trước viền bao ngoài. Những head_before/head_after
-cũ chỉ còn là bằng chứng bản bị loại, không phải đầu hiện tại.
-
-| Chỉ số | Hex | Nhóm |
+| Ký tự | Hex | Vai trò |
 |---|---|---|
-| 0 | #17151A | outline |
-| 1 | #342923 | outline |
-| 2 | #78432E | skin |
-| 3 | #B66C49 | skin |
-| 4 | #E99A69 | skin |
-| 5 | #FFD0A0 | skin |
-| 6 | #554638 | fabric |
-| 7 | #89745E | fabric |
-| 8 | #C3A98A | fabric |
-| 9 | #EAD8B8 | fabric |
-| A | #3D2D24 | belt |
-| B | #6B4A35 | belt |
-| C | #98765A | belt |
-| D | #322B2B | pants |
-| E | #59443E | pants |
-| F | #80614D | pants |
-| G | #A38269 | pants |
+| O | #17151A | Nét |
+| H | #342923 | Tóc |
+| L | #59443E | Ánh tóc (ngoại lệ màu pants) |
+| D | #78432E | Da tối |
+| s | #B66C49 | Da bóng |
+| k | #E99A69 | Da trung |
+| W | #FFD0A0 | Da sáng |
+
+`.` trong suốt. Ma trận đúng nguyên văn người dùng cung cấp:
 
 ```text
-........DDDDD..........
-.......DDDDDD..........
-.....DDDDDDDD..........
-.....DDDDDDDD..........
-.....DDDDDDDDDDD.......
-......DDDDDDDDDDDD.DD..
-....DDDDDDDDDDDDDDDD...
-...DDDDDDDDDDDDDDDDDD..
-..DDDDDDDDDDDDDDDDDDDD.
-..DDDDDDDDDDDDDDDDDDDDD
-..DDDDDDDDDDDDDDDDDDDDD
-.DDDDDDDDDDDDDDDDDGD000
-.DDDDDDDDDDDDDDDEGGD00.
-.DDDDDDDDDDDDDDDDGGD00.
-.DDDDDDDDGDDDGG310A00..
-.DDDDDDDFGDDDGG414A0...
-.DDDDDDDDGFGDGG5443....
-...DDDDDDGGGGGGGGGG....
-....DDDDDDFGGGGG443....
-....DDDDDGGGGGGG540....
-....22233443455543.....
-.....234444432454D.....
-....2444444432222......
-........45443..........
-.........4442..........
+........OOO............
+.......OHLHO...........
+.......OHHHO...........
+........OHO............
+....O.OOHHOOO.O........
+...OHOHHHHHHHOHO.......
+..OHHHHHLHHHHHHHO.O....
+.OHHHHHHHHHHLHHHHOHO...
+.OHHHLHHHHHHHHHHHHHHO..
+OHHHHHHHHHHHHHHHHHHHO..
+.OHHHHHHHHHHHHHHHHHHHO.
+OHHHHHHHHHHHHHHHOkHHO..
+.OHHHHHHHHHHHHHOkkWkO..
+OHHHHHHHHHHHHHskOOOkkO.
+.OHHHHHHHHHHHsksOWkkkO.
+.OHHHHHHHHHHDssksskkkkO
+..OHHHHHHHHHDkskkkkkkkO
+..OHHHHHHHHHsDkkkkkkksO
+...OHHHHHHHOsskkkkkDDO.
+....OHHHHHHOskkkkkkkkO.
+.....OHHHOOOsskkkkkkO..
+......OOOssssskkkkOO...
+........OsskkOOOOO.....
+........OsskkO.........
+........OsskkO.........
 ```
 
-## 4. Pixel outline trong dáng đứng
+## Tay: cũ → mới
 
-Dùng alpha/affine thật xuất từ scene, ghép theo z ở 128×128, một pixel được
-coi là nội bộ nếu cả bốn láng giềng đều có mực. Đếm cả hai màu nhóm outline.
-Đứng duỗi có **8 / 1344 pixel = 0.5952%**, tất cả ở đầu/mặt lấy từ nguồn;
-**0 pixel ở mối nối**. Ngưỡng tự soát gần 0 là ≤1% và không có pixel nội bộ
-ngoài đầu; đây không phải duyệt mỹ thuật. Không sửa khuôn mặt để ép số thành 0.
+Chỉ tay trên/cẳng tay có ngoại lệ co riêng trục dài 0,60; giữ nguyên chiều ngang.
+Đầu ngón y=−33 ở đứng duỗi, −32 ở idle, cả gần/xa; gốc chân y=0.
+Khung/mốc ghép cập nhật như sau, x/y theo px, bảng làm tròn 3 số:
 
-Tọa độ gốc 0, texture_x/y dùng trực tiếp cho ma trận đầu:
+| Mảnh | Khung cũ → mới | Pivot cũ → mới | Attach cũ → mới |
+|---|---|---|---|
+| `upper_arm_near` | (10, 26) → (10, 16) | (4.766, 1.362) → (4.766, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_near` | (8, 19) → (8, 12) | (3.404, 1.135) → (3.404, 0.681) | (0.34, 22.922) → (0.34, 13.753) |
+| `hand_near` | (10, 13) → (10, 13) | (2.95, 1.021) → (2.95, 1.021) | (0.113, 16.227) → (0.113, 9.736) |
+| `upper_arm_far` | (10, 26) → (10, 16) | (4.652, 1.362) → (4.652, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_far` | (7, 19) → (7, 12) | (3.291, 1.135) → (3.291, 0.681) | (0.227, 22.922) → (0.227, 13.753) |
+| `hand_far` | (10, 14) → (10, 14) | (2.837, 1.021) → (2.837, 1.021) | (0.113, 15.887) → (0.113, 9.532) |
 
-| Canvas x,y (đứng duỗi) | Mảnh | Texture x,y |
-|---|---|---|
-| 75,35 | head | 20,11 |
-| 76,35 | head | 21,11 |
-| 75,36 | head | 20,12 |
-| 75,37 | head | 20,13 |
-| 71,38 | head | 16,14 |
-| 72,38 | head | 17,14 |
-| 74,38 | head | 19,14 |
-| 71,39 | head | 16,15 |
+Các bộ phận khác vẫn dùng s=96/846, greybox gốc giữ riêng. Frame counts, duration,
+events 13 động tác giữ nguyên; không sửa A0 player/hitbox/physics.
 
-## 5. Kết quả script trên file thật
+## Nhóm màu và tỉ lệ áo
+
+- Đầu: đúng ma trận O/H/L/skin; L chỉ là ánh tóc.
+- Body: fabric/belt + viền ngoài, không pants.
+- Upper_arm: fabric trên ống tay, skin dưới; forearm/hand/shin/foot: skin + viền ngoài.
+- Thigh là quần: pants và da lộ ở gối; vũ khí dùng fabric/belt + viền ngoài.
+- Phần bù khớp dùng chất liệu đúng nhóm, không có viền.
+
+Tỉ lệ dưới đây lấy mẫu số là **pixel vải** (bốn màu fabric), loại viền/belt/da.
+Đây là mẫu số chặt hơn lấy toàn PNG tay có cả da.
+
+| Mảnh | #554638 bóng | #89745E bóng | #C3A98A chủ đạo | #EAD8B8 sáng |
+|---|---|---|---|---|
+| body | 33 px / 12.132% | 45 px / 16.544% | 164 px / 60.294% | 30 px / 11.029% |
+| upper_arm_near | 11 px / 15.068% | 15 px / 20.548% | 40 px / 54.795% | 7 px / 9.589% |
+| upper_arm_far | 11 px / 15.714% | 14 px / 20.000% | 38 px / 54.286% | 7 px / 10.000% |
+
+## Kiểm palette, khớp và nét trong dáng
+
+PNG: 0 pixel ngoài palette, 0 bán trong suốt, 0 sai nhóm; đầu trùng tuyệt đối
+ma trận Claude. Khe khớp ≤1 px: 672 cặp/48 frame/13 động tác, lớn nhất 0,50 px.
+Đo từ affine scene và PNG alpha thật + lớp bù khớp; raster 4×, kiểm khoảng nền
+giữa hai mảnh theo tám hướng và distance field. Không phải kiểm GPU Android.
+
+O nội bộ trong idle/đứng duỗi: **17**, đều ở đầu Claude. H là màu tô tóc theo
+ma trận, báo riêng (197 pixel nội bộ trong idle), không coi toàn màu H là nét lỗi.
+**Ngoài đầu: 0 nét nội bộ.** Đầu được giữ nguyên, không sửa nét người dùng gửi.
+Tọa độ (0-based) trong texture đầu:
+
+- (10,4), canvas đứng (65,28).
+- (16,11), canvas đứng (71,35).
+- (15,12), canvas đứng (70,36).
+- (16,13), canvas đứng (71,37).
+- (17,13), canvas đứng (72,37).
+- (18,13), canvas đứng (73,37).
+- (16,14), canvas đứng (71,38).
+- (11,18), canvas đứng (66,42).
+- (11,19), canvas đứng (66,43).
+- (9,20), canvas đứng (64,44).
+- (10,20), canvas đứng (65,44).
+- (11,20), canvas đứng (66,44).
+- (7,21), canvas đứng (62,45).
+- (8,21), canvas đứng (63,45).
+- (8,22), canvas đứng (63,46).
+- (13,22), canvas đứng (68,46).
+- (8,23), canvas đứng (63,47).
+
+## Đầu ra script nguyên văn
 
 ```text
 SOURCE neutral assembly: head=218, torso=214, legs=414; H=846px; guide=24/24/48; s=96/846=0.113475177305 on BOTH axes
 Scaled anatomical spans: [24.7376, 24.2837, 46.9787] ; no independent per-part scale
-head: source=200x219 -> [23, 25]; pivot=[9.418, 24.738]; attach=[0.0, -24.284]; SAME s
-body: source=144x255 -> [17, 29]; pivot=[7.376, 26.099]; attach=[0.0, -46.979]; SAME s
-upper_arm_near: source=84x227 -> [10, 26]; pivot=[4.766, 1.362]; attach=[0.34, -20.993]; SAME s
-upper_arm_far: source=83x228 -> [10, 26]; pivot=[4.652, 1.362]; attach=[0.34, -20.993]; SAME s
-forearm_near: source=62x166 -> [8, 19]; pivot=[3.404, 1.135]; attach=[0.34, 22.922]; SAME s
-forearm_far: source=60x162 -> [7, 19]; pivot=[3.291, 1.135]; attach=[0.227, 22.922]; SAME s
-hand_near: source=84x114 -> [10, 13]; pivot=[2.95, 1.021]; attach=[0.113, 16.227]; SAME s
-hand_far: source=83x115 -> [10, 14]; pivot=[2.837, 1.021]; attach=[0.113, 15.887]; SAME s
-thigh_near: source=132x204 -> [15, 24]; pivot=[7.376, 1.362]; attach=[1.5, 0.0]; SAME s
-thigh_far: source=130x204 -> [15, 24]; pivot=[7.262, 1.362]; attach=[-1.5, 0.0]; SAME s
-shin_near: source=72x186 -> [9, 22]; pivot=[4.085, 1.362]; attach=[-0.113, 19.972]; SAME s
-shin_far: source=72x183 -> [9, 21]; pivot=[3.972, 1.362]; attach=[-0.113, 19.972]; SAME s
-foot_near: source=161x105 -> [19, 12]; pivot=[4.993, 2.156]; attach=[-0.113, 17.248]; SAME s
-foot_far: source=156x105 -> [18, 12]; pivot=[4.879, 2.156]; attach=[-0.113, 17.248]; SAME s
-dao: source=64x353 -> [8, 41]; pivot=[3.518, 32.908]; attach=[1.816, 6.355]; SAME s
-bow: source=85x356 -> [10, 41]; pivot=[1.589, 20.879]; attach=[1.816, 6.355]; SAME s
-HEAD UNEDITED after common-scale sampling; no feature edit file read:
-........DDDDD..........
-.......DDDDDD..........
-.....DDDDDDDD..........
-.....DDDDDDDD..........
-.....DDDDDDDDDDD.......
-......DDDDDDDDDDDD.DD..
-....DDDDDDDDDDDDDDDD...
-...DDDDDDDDDDDDDDDDDD..
-..DDDDDDDDDDDDDDDDDDDD.
-..DDDDDDDDDDDDDDDDDDDDD
-..DDDDDDDDDDDDDDDDDDDDD
-.DDDDDDDDDDDDDDDDDGD000
-.DDDDDDDDDDDDDDDEGGD00.
-.DDDDDDDDDDDDDDDDGGD00.
-.DDDDDDDDGDDDGG310A00..
-.DDDDDDDFGDDDGG414A0...
-.DDDDDDDDGFGDGG5443....
-...DDDDDDGGGGGGGGGG....
-....DDDDDDFGGGGG443....
-....DDDDDGGGGGGG540....
-....22233443455543.....
-.....234444432454D.....
-....2444444432222......
-........45443..........
-.........4442..........
+head: source=200x219 -> [23, 25]; pivot=[9.418, 24.738]; attach=[0.0, -24.284]; shared s, arm-longitudinal=0.60 if applicable
+body: source=144x255 -> [17, 29]; pivot=[7.376, 26.099]; attach=[0.0, -46.979]; shared s, arm-longitudinal=0.60 if applicable
+upper_arm_near: source=84x227 -> [10, 16]; pivot=[4.766, 0.817]; attach=[0.34, -20.993]; shared s, arm-longitudinal=0.60 if applicable
+upper_arm_far: source=83x228 -> [10, 16]; pivot=[4.652, 0.817]; attach=[0.34, -20.993]; shared s, arm-longitudinal=0.60 if applicable
+forearm_near: source=62x166 -> [8, 12]; pivot=[3.404, 0.681]; attach=[0.34, 13.753]; shared s, arm-longitudinal=0.60 if applicable
+forearm_far: source=60x162 -> [7, 12]; pivot=[3.291, 0.681]; attach=[0.227, 13.753]; shared s, arm-longitudinal=0.60 if applicable
+hand_near: source=84x114 -> [10, 13]; pivot=[2.95, 1.021]; attach=[0.113, 9.736]; shared s, arm-longitudinal=0.60 if applicable
+hand_far: source=83x115 -> [10, 14]; pivot=[2.837, 1.021]; attach=[0.113, 9.532]; shared s, arm-longitudinal=0.60 if applicable
+thigh_near: source=132x204 -> [15, 24]; pivot=[7.376, 1.362]; attach=[1.5, 0.0]; shared s, arm-longitudinal=0.60 if applicable
+thigh_far: source=130x204 -> [15, 24]; pivot=[7.262, 1.362]; attach=[-1.5, 0.0]; shared s, arm-longitudinal=0.60 if applicable
+shin_near: source=72x186 -> [9, 22]; pivot=[4.085, 1.362]; attach=[-0.113, 19.972]; shared s, arm-longitudinal=0.60 if applicable
+shin_far: source=72x183 -> [9, 21]; pivot=[3.972, 1.362]; attach=[-0.113, 19.972]; shared s, arm-longitudinal=0.60 if applicable
+foot_near: source=161x105 -> [19, 12]; pivot=[4.993, 2.156]; attach=[-0.113, 17.248]; shared s, arm-longitudinal=0.60 if applicable
+foot_far: source=156x105 -> [18, 12]; pivot=[4.879, 2.156]; attach=[-0.113, 17.248]; shared s, arm-longitudinal=0.60 if applicable
+dao: source=64x353 -> [8, 41]; pivot=[3.518, 32.908]; attach=[1.816, 6.355]; shared s, arm-longitudinal=0.60 if applicable
+bow: source=85x356 -> [10, 41]; pivot=[1.589, 20.879]; attach=[1.816, 6.355]; shared s, arm-longitudinal=0.60 if applicable
+HEAD: đầu do Claude vẽ tay từng pixel; exact supplied matrix, no cleanup or feature edits:
+........000............
+.......01E10...........
+.......01110...........
+........010............
+....0.0011000.0........
+...0101111111010.......
+..011111E11111110.0....
+.01111111111E1111010...
+.0111E111111111111110..
+011111111111111111110..
+.011111111111111111110.
+011111111111111104110..
+.01111111111111044540..
+0111111111111134000440.
+.011111111111343054440.
+.0111111111123343344440
+..011111111124344444440
+..011111111132444444430
+...0111111103344444220.
+....011111103444444440.
+.....0111000334444440..
+......00033333444400...
+........0334400000.....
+........033440.........
+........033440.........
 Palette: {'0': '#17151A', '1': '#342923', '2': '#78432E', '3': '#B66C49', '4': '#E99A69', '5': '#FFD0A0', '6': '#554638', '7': '#89745E', '8': '#C3A98A', '9': '#EAD8B8', 'A': '#3D2D24', 'B': '#6B4A35', 'C': '#98765A', 'D': '#322B2B', 'E': '#59443E', 'F': '#80614D', 'G': '#A38269'}
-Head neck below chin: 2.496px; source face span / frame width=0.592
+Head neck below chin: 3.000px; source face span / frame width=0.592
 Retargeted art poses: 13 clips/48 frames; unchanged duration/events; foot targets retained; geometry from common-scale parts
-Removed generated internal-outline samples: 27
-Standing silhouette outline pixels painted per source piece: {'body': 42, 'head': 62, 'upper_arm_far': 0, 'forearm_far': 0, 'hand_far': 0, 'thigh_far': 19, 'shin_far': 21, 'foot_far': 24, 'upper_arm_near': 0, 'forearm_near': 0, 'hand_near': 7, 'thigh_near': 16, 'shin_near': 10, 'foot_near': 34, 'dao': 5}
+Removed generated internal-outline samples: 30
+Standing silhouette outline pixels painted per source piece: {'body': 41, 'upper_arm_far': 0, 'forearm_far': 0, 'hand_far': 0, 'thigh_far': 19, 'shin_far': 21, 'foot_far': 24, 'upper_arm_near': 0, 'forearm_near': 0, 'hand_near': 5, 'thigh_near': 10, 'shin_near': 23, 'foot_near': 34, 'dao': 7}
 Cut planes and joint overdraw remain unoutlined; facial feature edit lists not read.
-idle: height=95px; internal outline pixels=8; positions=[{'x': 75, 'y': 36, 'part': 'head', 'texture_x': 20, 'texture_y': 11}, {'x': 76, 'y': 36, 'part': 'head', 'texture_x': 21, 'texture_y': 11}, {'x': 75, 'y': 37, 'part': 'head', 'texture_x': 20, 'texture_y': 12}, {'x': 75, 'y': 38, 'part': 'head', 'texture_x': 20, 'texture_y': 13}, {'x': 71, 'y': 39, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 72, 'y': 39, 'part': 'head', 'texture_x': 17, 'texture_y': 14}, {'x': 74, 'y': 39, 'part': 'head', 'texture_x': 19, 'texture_y': 14}, {'x': 71, 'y': 40, 'part': 'head', 'texture_x': 16, 'texture_y': 15}]
-standing_neutral: height=96px; internal outline pixels=8; positions=[{'x': 75, 'y': 35, 'part': 'head', 'texture_x': 20, 'texture_y': 11}, {'x': 76, 'y': 35, 'part': 'head', 'texture_x': 21, 'texture_y': 11}, {'x': 75, 'y': 36, 'part': 'head', 'texture_x': 20, 'texture_y': 12}, {'x': 75, 'y': 37, 'part': 'head', 'texture_x': 20, 'texture_y': 13}, {'x': 71, 'y': 38, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 72, 'y': 38, 'part': 'head', 'texture_x': 17, 'texture_y': 14}, {'x': 74, 'y': 38, 'part': 'head', 'texture_x': 19, 'texture_y': 14}, {'x': 71, 'y': 39, 'part': 'head', 'texture_x': 16, 'texture_y': 15}]
-Head face skin span=13/23=0.5652; neck below chin=2.4965px; no facial edit data applied
-hand_near: skin counts {'dark': 24, 'mid': 29, 'light': 29}
+body: forbidden group pixels=0
+body shirt counts/percent: {'#554638': 33, '#89745E': 45, '#C3A98A': 164, '#EAD8B8': 30} {'#554638': 12.132, '#89745E': 16.544, '#C3A98A': 60.294, '#EAD8B8': 11.029}
+Head exact Claude matrix: True
+head: forbidden group pixels=0
+upper_arm_far: forbidden group pixels=0
+upper_arm_far shirt counts/percent: {'#554638': 11, '#89745E': 14, '#C3A98A': 38, '#EAD8B8': 7} {'#554638': 15.714, '#89745E': 20.0, '#C3A98A': 54.286, '#EAD8B8': 10.0}
+forearm_far: forbidden group pixels=0
+hand_far: forbidden group pixels=0
+thigh_far: forbidden group pixels=0
+shin_far: forbidden group pixels=0
+foot_far: forbidden group pixels=0
+upper_arm_near: forbidden group pixels=0
+upper_arm_near shirt counts/percent: {'#554638': 11, '#89745E': 15, '#C3A98A': 40, '#EAD8B8': 7} {'#554638': 15.068, '#89745E': 20.548, '#C3A98A': 54.795, '#EAD8B8': 9.589}
+forearm_near: forbidden group pixels=0
+hand_near: forbidden group pixels=0
+thigh_near: forbidden group pixels=0
+shin_near: forbidden group pixels=0
+foot_near: forbidden group pixels=0
+dao: forbidden group pixels=0
+bow: forbidden group pixels=0
+idle hand_far: fingertip bottom y=-32 px from feet
+idle hand_near: fingertip bottom y=-32 px from feet
+standing_neutral hand_far: fingertip bottom y=-33 px from feet
+standing_neutral hand_near: fingertip bottom y=-33 px from feet
+Material/Claude/arm failures: 0
+idle H hair-fill pixels inside silhouette: 197
+idle: height=95px; internal outline pixels=17; positions=[{'x': 65, 'y': 29, 'part': 'head', 'texture_x': 10, 'texture_y': 4}, {'x': 71, 'y': 36, 'part': 'head', 'texture_x': 16, 'texture_y': 11}, {'x': 70, 'y': 37, 'part': 'head', 'texture_x': 15, 'texture_y': 12}, {'x': 71, 'y': 38, 'part': 'head', 'texture_x': 16, 'texture_y': 13}, {'x': 72, 'y': 38, 'part': 'head', 'texture_x': 17, 'texture_y': 13}, {'x': 73, 'y': 38, 'part': 'head', 'texture_x': 18, 'texture_y': 13}, {'x': 71, 'y': 39, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 66, 'y': 43, 'part': 'head', 'texture_x': 11, 'texture_y': 18}, {'x': 66, 'y': 44, 'part': 'head', 'texture_x': 11, 'texture_y': 19}, {'x': 64, 'y': 45, 'part': 'head', 'texture_x': 9, 'texture_y': 20}, {'x': 65, 'y': 45, 'part': 'head', 'texture_x': 10, 'texture_y': 20}, {'x': 66, 'y': 45, 'part': 'head', 'texture_x': 11, 'texture_y': 20}, {'x': 62, 'y': 46, 'part': 'head', 'texture_x': 7, 'texture_y': 21}, {'x': 63, 'y': 46, 'part': 'head', 'texture_x': 8, 'texture_y': 21}, {'x': 63, 'y': 47, 'part': 'head', 'texture_x': 8, 'texture_y': 22}, {'x': 68, 'y': 47, 'part': 'head', 'texture_x': 13, 'texture_y': 22}, {'x': 63, 'y': 48, 'part': 'head', 'texture_x': 8, 'texture_y': 23}]
+standing_neutral H hair-fill pixels inside silhouette: 197
+standing_neutral: height=96px; internal outline pixels=17; positions=[{'x': 65, 'y': 28, 'part': 'head', 'texture_x': 10, 'texture_y': 4}, {'x': 71, 'y': 35, 'part': 'head', 'texture_x': 16, 'texture_y': 11}, {'x': 70, 'y': 36, 'part': 'head', 'texture_x': 15, 'texture_y': 12}, {'x': 71, 'y': 37, 'part': 'head', 'texture_x': 16, 'texture_y': 13}, {'x': 72, 'y': 37, 'part': 'head', 'texture_x': 17, 'texture_y': 13}, {'x': 73, 'y': 37, 'part': 'head', 'texture_x': 18, 'texture_y': 13}, {'x': 71, 'y': 38, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 66, 'y': 42, 'part': 'head', 'texture_x': 11, 'texture_y': 18}, {'x': 66, 'y': 43, 'part': 'head', 'texture_x': 11, 'texture_y': 19}, {'x': 64, 'y': 44, 'part': 'head', 'texture_x': 9, 'texture_y': 20}, {'x': 65, 'y': 44, 'part': 'head', 'texture_x': 10, 'texture_y': 20}, {'x': 66, 'y': 44, 'part': 'head', 'texture_x': 11, 'texture_y': 20}, {'x': 62, 'y': 45, 'part': 'head', 'texture_x': 7, 'texture_y': 21}, {'x': 63, 'y': 45, 'part': 'head', 'texture_x': 8, 'texture_y': 21}, {'x': 63, 'y': 46, 'part': 'head', 'texture_x': 8, 'texture_y': 22}, {'x': 68, 'y': 46, 'part': 'head', 'texture_x': 13, 'texture_y': 22}, {'x': 63, 'y': 47, 'part': 'head', 'texture_x': 8, 'texture_y': 23}]
+Head face skin span=13/23=0.5652; neck below chin=3.0000px; Claude pixel matrix applied unchanged
+hand_near: skin counts {'dark': 28, 'mid': 29, 'light': 29}
 hand_far: skin counts {'dark': 29, 'mid': 29, 'light': 28}
 foot_near: skin counts {'dark': 22, 'mid': 37, 'light': 43}
-foot_far: skin counts {'dark': 23, 'mid': 37, 'light': 41}
+foot_far: skin counts {'dark': 22, 'mid': 38, 'light': 41}
 Uniform-art checks failures: 0
 PASS: body size=(17, 29) expected=[17, 29] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: head size=(23, 25) expected=[23, 25] off_palette=0 semi_alpha=0 scene_copy_identical=True
-PASS: upper_arm_far size=(10, 26) expected=[10, 26] off_palette=0 semi_alpha=0 scene_copy_identical=True
-PASS: forearm_far size=(7, 19) expected=[7, 19] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: upper_arm_far size=(10, 16) expected=[10, 16] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: forearm_far size=(7, 12) expected=[7, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: hand_far size=(10, 14) expected=[10, 14] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: thigh_far size=(15, 24) expected=[15, 24] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: shin_far size=(9, 21) expected=[9, 21] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: foot_far size=(18, 12) expected=[18, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
-PASS: upper_arm_near size=(10, 26) expected=[10, 26] off_palette=0 semi_alpha=0 scene_copy_identical=True
-PASS: forearm_near size=(8, 19) expected=[8, 19] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: upper_arm_near size=(10, 16) expected=[10, 16] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: forearm_near size=(8, 12) expected=[8, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: hand_near size=(10, 13) expected=[10, 13] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: thigh_near size=(15, 24) expected=[15, 24] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: shin_near size=(9, 22) expected=[9, 22] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: foot_near size=(19, 12) expected=[19, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: dao size=(8, 41) expected=[8, 41] off_palette=0 semi_alpha=0 scene_copy_identical=True
 PASS: bow size=(10, 41) expected=[10, 41] off_palette=0 semi_alpha=0 scene_copy_identical=True
-Joint checks: 672; max seam=0.50px; background samples=49; failures=0
+Joint checks: 672; max seam=0.50px; background samples=52; failures=0
 Scope: all 48 authored frames / 13 actions, visible child-parent pairs; not a claim about every interpolated time or Android GPU output.
-```
-
-Kiểm khớp: 672 cặp hiện trong 48 frame/13 động tác. Raster nearest 4× từ
-affine Sprite2D, đọc alpha PNG thật và lớp bù màu thật của scene. Quét dây cung
-theo tám hướng trong đĩa quanh khớp; chỉ nền bị kẹp giữa hai mảnh mới tính.
-Độ dày khe = hai lần khoảng cách tới union mực gần nhất; chiều dài đường lướt
-ghi riêng. Ngưỡng ≤1 px và tâm khớp cách mực ≤1 px. Kết quả lớn nhất 0,50 px,
-0 lỗi. Không khẳng định kiểm mọi thời điểm nội suy hay GPU Android.
-
-## 6. Contact sheet và chạy lại
-
-```text
 prototype/rig/contact_sheets/art/chr_dbl_anim_apex_flip_art.png 960x160 frames=6
 prototype/rig/contact_sheets/art/chr_dbl_anim_fall_art.png 320x160 frames=2
 prototype/rig/contact_sheets/art/chr_dbl_anim_hurt_art.png 320x160 frames=2
@@ -224,10 +238,7 @@ prototype/rig/contact_sheets/art/chr_dbl_anim_turn_art.png 320x160 frames=2
 idle: 128x128 -> 512x512 using Image.resize(..., Image.Resampling.NEAREST) from saved 1x
 ```
 
-Có 15 tờ art (13 động tác và hai hướng trái), idle 1× và ×4. ×4 đọc file 1×
-đã lưu rồi Image.resize(NEAREST); không imagegen, không dựng pose thứ hai.
-
-Thứ tự tái tạo bằng Godot **4.7.2 Standard**:
+## Tái tạo
 
 ```sh
 python tools/cut_parts.py
@@ -238,21 +249,22 @@ python tools/outline_parts.py
 godot --headless --path prototype --editor --import --quit
 godot --headless --path prototype --script res://rig/export_frames.gd -- --art
 python tools/render_parts_scene.py
-python tools/check_parts.py
+python tools/check_parts_roles.py
 python tools/check_parts_uniform.py
+python tools/check_parts.py
 ```
 
-Chạy ba lệnh README, rig smoke, visual_checks, art_checks; nguyên đầu ra ở
-commit message. Chưa thử lại Android. Mọi hình/khớp mới chưa duyệt; chờ Claude
-soát ma trận và người dùng chơi/xem hình thật.
+Dùng Godot 4.7.2 Standard. Ba lệnh headless README và rig tests có nguyên đầu ra
+trong commit message. Contact sheet từ scene, idle ×4 đọc PNG 1× rồi phóng NEAREST.
+Chưa thử Android mới; không coi kiểm kỹ thuật là duyệt mỹ thuật toàn bộ.
 
-## 7. Script đã chạy, nguyên văn
+## Script đã chạy nguyên văn
 
 ### tools/cut_parts.py
 
 ```python
 #!/usr/bin/env python3
-"""One isotropic source-to-character scale. No facial pixel edits. No greybox size fitting."""
+"""Shared body scale; authorized 0.60 arm-length exception; immutable Claude head."""
 import json,math,hashlib,shutil
 from pathlib import Path
 import numpy as np
@@ -299,6 +311,32 @@ def sample_uniform(rgb,mask,s):
                 out[y,x,:3]=np.median(rgb[y0:y1,x0:x1][tile],axis=0);out[y,x,3]=255
     return out
 
+def claude_head():
+    colours={'O':'17151A','H':'342923','L':'59443E','D':'78432E','s':'B66C49','k':'E99A69','W':'FFD0A0'}
+    rows=(ROOT/'art/concept/characters/chr_dbl_parts_work/claude_head/matrix.txt').read_text().splitlines()
+    assert len(rows)==25 and all(len(row)==23 for row in rows)
+    a=np.zeros((25,23,4),np.uint8)
+    for y,row in enumerate(rows):
+        for x,c in enumerate(row):
+            if c!='.':a[y,x]=[*bytes.fromhex(colours[c]),255]
+    return a
+
+def colour_part(id,a,groups):
+    mask=a[:,:,3]>0
+    if id=='head':return claude_head()
+    garment=mask.copy() if id=='body' else mask&(np.indices(mask.shape)[0]<a.shape[0]*.48) if id.startswith('upper_arm_') else np.zeros(mask.shape,bool)
+    belt=mask&(np.indices(mask.shape)[0]>=a.shape[0]*.56)&(np.indices(mask.shape)[0]<=a.shape[0]*.68) if id=='body' else np.zeros(mask.shape,bool)
+    garment &= ~belt
+    for y,x in zip(*np.where(mask&~garment)):
+        palette=groups['belt'] if belt[y,x] else groups['pants']+groups['skin'] if id.startswith('thigh_') else groups['skin'] if id.startswith(('upper_arm_','forearm_','hand_','shin_','foot_')) else groups['fabric']+groups['belt']
+        a[y,x,:3]=nearest(a[y,x,:3],palette)
+    ys,xs=np.where(garment)
+    if len(xs):
+        lum=a[ys,xs,:3].astype(float)@np.array([.2126,.7152,.0722]);order=np.argsort(lum,kind='stable')
+        for rank,k in enumerate(order):
+            q=rank/len(order);a[ys[k],xs[k],:3]=groups['fabric'][0 if q<.15 else 1 if q<.35 else 2 if q<.90 else 3]
+    return a
+
 def main():
     work=ROOT/'art/concept/characters/chr_dbl_parts_work';manifest=json.loads((work/'manifest.json').read_text());source=ROOT/manifest['source']
     rgb=np.array(Image.open(source).convert('RGB'));groups=load_groups(ROOT/'art/reference/palette.gpl');pal=[c for name in GROUPS for c in groups[name]]
@@ -313,20 +351,21 @@ def main():
         id=item['id'];box=item['source_box'];x0,y0,x1,y1=box;crop=rgb[y0:y1,x0:x1];mask=~green_mask(crop)
         if id=='head':crop=crop[:LANDMARKS[id]['crop_bottom']];mask=mask[:len(crop)]
         a=sample_uniform(crop,mask,s)
-        # Palette role: dark source lines become material shadows, not seam ink.
-        # On the face preserve the source-derived nearest colours; no feature patches.
-        for y,x in zip(*np.where(a[:,:,3]>0)):
-            palette=pal[2:]
-            if id=='head':
-                sx=(x+.5)/s;sy=(y+.5)/s
-                face=(135<=sx<=173 and 123<=sy<=154) or (144<=sx<=180 and 160<=sy<=197) or (sx>172 and 100<=sy<=180)
-                palette=pal if face else (pal[13:] if sy<180 else pal[2:6])
-            a[y,x,:3]=nearest(a[y,x,:3],palette)
+        if id.startswith(('upper_arm_','forearm_')):
+            # User-authorized exception: shorten only the longitudinal arm axis.
+            old_h=len(a);new_h=math.ceil(old_h*.60);short=np.zeros((new_h,a.shape[1],4),np.uint8)
+            for yy in range(new_h):
+                region=a[int(yy/.60):min(old_h,math.ceil((yy+1)/.60))]
+                for xx in range(a.shape[1]):
+                    cells=region[:,xx];fg=cells[:,3]>0
+                    if fg.mean()>=.35:short[yy,xx]=[*np.median(cells[fg,:3],axis=0).astype(np.uint8),255]
+            a=short;pivot[id][1]*=.60
+        a=colour_part(id,a,groups)
         # Hands/feet retain dark/mid/light skin by a luminance quantile mapping, not aspect changes.
         if id.startswith(('hand_','foot_')):
             ys,xs=np.where(a[:,:,3]>0);lum=a[ys,xs,:3].astype(float)@np.array([.2126,.7152,.0722]);order=np.argsort(lum,kind='stable')
             for rank,k in enumerate(order):a[ys[k],xs[k],:3]=pal[[2,4,5][min(2,rank*3//len(order))]]
-        for cluster in components(a[:,:,3]>0):
+        for cluster in ([] if id=='head' else components(a[:,:,3]>0)):
             if len(cluster)<2:
                 for x,y in cluster:a[y,x]=0
         Image.fromarray(a).save(raw/f'{id}.png');Image.fromarray(a).save(out/f'{id}.png');shutil.copyfile(out/f'{id}.png',dest/f'{id}.png')
@@ -339,6 +378,7 @@ def main():
             parent=p['parent'];attach=(np.array(LANDMARKS[parent]['grip'])-LANDMARKS[parent]['pivot'])*s
         else:
             parent=p['parent'];attach=(np.array(LANDMARKS[parent]['end'])-LANDMARKS[parent]['pivot'])*s
+        if p['parent'].startswith(('upper_arm_','forearm_')):attach[1]*=.60
         p['attach']=attach.tolist()
         if id.startswith('foot_'):p['angle_limit']=[-75,75]
         p['occluded_fill']='Unoutlined automatic material at true joint; no greybox frame fitting'
@@ -349,16 +389,16 @@ def main():
             px,py=p['pivot'];patch=a[max(0,int(py-radius-1)):min(len(a),math.ceil(py+radius+2)),max(0,int(px-radius-1)):min(a.shape[1],math.ceil(px+radius+2))]
             inside=patch[patch[:,:,3]>0,:3]
             if not len(inside):inside=a[a[:,:,3]>0,:3]
-            colour=nearest(np.median(inside,axis=0),pal[2:6] if id=='head' else pal[2:])
+            colour=nearest(np.median(inside,axis=0),groups['skin'] if id.startswith(('head','forearm_','hand_','shin_')) else groups['fabric'] if id.startswith('upper_arm_') else groups['pants'])
             fills[id]={'radius':radius,'color':'#'+''.join(f'{v:02X}' for v in colour),'method':'automatic unoutlined joint material, not a drawn body outline'}
-        print(f'{id}: source={crop.shape[1]}x{crop.shape[0]} -> {p["size"]}; pivot={np.round(p["pivot"],3).tolist()}; attach={np.round(p["attach"],3).tolist()}; SAME s')
+        print(f'{id}: source={crop.shape[1]}x{crop.shape[0]} -> {p["size"]}; pivot={np.round(p["pivot"],3).tolist()}; attach={np.round(p["attach"],3).tolist()}; shared s, arm-longitudinal=0.60 if applicable')
     definition['status']='Đề xuất — common-scale art measurements, chưa duyệt';definition['common_scale']=s;definition['source_height']=height;definition['source_spans']=measures;definition['parts']=list(parts.values());definition['rotation_center']=[0,-sum(measures[2:])*s]
     bow=LANDMARKS['bow'];definition['bow_string']['top']=((np.array(bow['top'])-bow['pivot'])*s).tolist();definition['bow_string']['bottom']=((np.array(bow['bottom'])-bow['pivot'])*s).tolist();definition['bow_string']['hand_anchor']=((np.array(LANDMARKS['hand_near']['grip'])-LANDMARKS['hand_near']['pivot'])*s).tolist()
     (ROOT/'prototype/rig/data/parts.json').write_text(json.dumps(definition,ensure_ascii=False,indent=2)+'\n');(dest/'joint_fill.json').write_text(json.dumps(fills,indent=2)+'\n')
-    measurements={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'scale':s,'height_source':height,'source_spans':measures,'guide':[24,24,48],'scaled_spans':[measures[0]*s,measures[1]*s,sum(measures[2:])*s],'landmarks_manual':LANDMARKS,'parts':rows,'neck_below_chin_px':(219-197)*s,'face_width_px':(200-80)*s,'head_width_px':parts['head']['size'][0]}
+    measurements={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'scale':s,'height_source':height,'source_spans':measures,'guide':[24,24,48],'scaled_spans':[measures[0]*s,measures[1]*s,sum(measures[2:])*s],'landmarks_manual':LANDMARKS,'parts':rows,'arm_length_scale':.60,'head_source':'đầu do Claude vẽ tay từng pixel','neck_below_chin_px':3,'face_width_px':(200-80)*s,'head_width_px':parts['head']['size'][0]}
     (work/'uniform_measurements.json').write_text(json.dumps(measurements,ensure_ascii=False,indent=2)+'\n')
-    head=np.array(Image.open(raw/'head.png'));text=matrix(head,pal);(work/'head_uniform_unedited.txt').write_text(text+'\n');Image.fromarray(head).save(work/'head_uniform_unedited.png')
-    print('HEAD UNEDITED after common-scale sampling; no feature edit file read:');print(text)
+    head=np.array(Image.open(raw/'head.png'));text=matrix(head,pal);(work/'head_claude.txt').write_text(text+'\n');Image.fromarray(head).save(work/'head_claude.png')
+    print('HEAD: đầu do Claude vẽ tay từng pixel; exact supplied matrix, no cleanup or feature edits:');print(text)
     print('Palette:',{c:'#'+''.join(f'{v:02X}' for v in col) for c,col in zip('0123456789ABCDEFG',pal)})
     print(f'Head neck below chin: {measurements["neck_below_chin_px"]:.3f}px; source face span / frame width={measurements["face_width_px"]/parts["head"]["size"][0]:.3f}')
 if __name__=='__main__':main()
@@ -428,6 +468,8 @@ def main():
     for item in frame['geometry']:
         if item['kind']!='sprite':continue
         id=item['id'];p=parts[id];a=np.array(Image.open(raw/f'{id}.png').convert('RGBA'));m=item['transform'];count=0
+        if id=='head':
+            Image.fromarray(a).save(out/f'{id}.png');shutil.copyfile(out/f'{id}.png',dest/f'{id}.png');continue
         # Exclude the cut planes around proximal and distal joints from border painting.
         joints=[p['pivot']]+[[p['pivot'][i]+c['attach'][i] for i in range(2)] for c in parts.values() if c['parent']==id]
         for y,x in zip(*np.where(a[:,:,3]>0)):
@@ -453,7 +495,7 @@ def main():
             for colour in protected:ink|=np.all(image[:,:,:3]==colour,axis=2)
             for y,x in zip(*np.where(interior&ink)):
                 id=owners[y,x]
-                if id not in items:continue
+                if id not in items or id=='head':continue
                 m=items[id]['transform'];a,b,c,d,tx,ty=m;det=a*d-b*c;wx=x+.5-origin[0]-tx;wy=y+.5-origin[1]-ty
                 sx=int(math.floor((d*wx-c*wy)/det));sy=int(math.floor((-b*wx+a*wy)/det))
                 original=np.array(Image.open(raw/f'{id}.png').convert('RGBA'));current=np.array(Image.open(out/f'{id}.png').convert('RGBA'))
@@ -469,6 +511,92 @@ def main():
     print('Removed generated internal-outline samples:',cleared)
     print('Standing silhouette outline pixels painted per source piece:',counts)
     print('Cut planes and joint overdraw remain unoutlined; facial feature edit lists not read.')
+if __name__=='__main__':main()
+```
+
+### tools/check_parts_roles.py
+
+```python
+"""Check immutable Claude head, material groups, shirt budget and evaluated fingertip height."""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from cut_parts import claude_head
+from snap_pixel import load_groups
+from render_parts_scene import sprite_layer
+ROOT=Path(__file__).resolve().parents[1]
+def main():
+ g=load_groups(ROOT/'art/reference/palette.gpl');outline=g['outline'];errors=[];report={}
+ for p in json.loads((ROOT/'prototype/rig/data/parts.json').read_text())['parts']:
+  id=p['id'];a=np.array(Image.open(ROOT/f'art/sprites/characters/chr_dbl_parts/{id}.png').convert('RGBA'))
+  allowed=outline+(g['pants']+g['skin'] if id.startswith('thigh_') else g['skin'] if id.startswith(('forearm_','hand_','shin_','foot_')) else g['fabric']+g['skin'] if id.startswith('upper_arm_') else g['fabric']+g['belt'])
+  if id=='head':allowed=outline+[g['pants'][1]]+g['skin'];same=np.array_equal(a,claude_head());print('Head exact Claude matrix:',same);errors+=[] if same else ['head changed']
+  bad=[(int(x),int(y)) for y,x in zip(*np.where(a[:,:,3]>0)) if tuple(a[y,x,:3]) not in allowed]
+  report[id]={'forbidden_group_pixels':len(bad)};print(f'{id}: forbidden group pixels={len(bad)}');errors+=bad
+  if id=='body' or id.startswith('upper_arm_'):
+   counts={('#'+''.join(f'{v:02X}' for v in c)):int((np.all(a[:,:,:3]==c,axis=2)&(a[:,:,3]>0)).sum()) for c in g['fabric']};total=sum(counts.values());ratio=counts['#EAD8B8']/max(1,total);dominant=max(counts,key=counts.get)
+   report[id]['shirt_counts']=counts;report[id]['shirt_percent']={k:round(100*v/max(1,total),3) for k,v in counts.items()};print(id,'shirt counts/percent:',counts,report[id]['shirt_percent'])
+   if ratio>.15 or dominant!='#C3A98A':errors.append(f'{id} shirt budget')
+ data=json.loads((ROOT/'prototype/rig/reports/evaluated_art_frames.json').read_text());tips={}
+ for name in ['idle','standing_neutral']:
+  for item in data[name]['frames'][0]['geometry']:
+   if item['id'] not in ['hand_near','hand_far']:continue
+   mask=np.array(sprite_layer(item,(160,160),(80,126)))[:,:,3]>0;ys,xs=np.where(mask);tip=int(ys.max())+1-126;tips[name+'_'+item['id']]=tip
+   print(f'{name} {item["id"]}: fingertip bottom y={tip} px from feet')
+   if not -34<=tip<=-30:errors.append(f'{name} fingertip {tip}')
+ report['fingertips']=tips;report['failures']=len(errors);(ROOT/'prototype/rig/reports/material_checks.json').write_text(json.dumps(report,indent=2)+'\n');print('Material/Claude/arm failures:',len(errors));raise SystemExit(1 if errors else 0)
+if __name__=='__main__':main()
+```
+
+### tools/check_parts_uniform.py
+
+```python
+"""Measure actual PNG palette/face colours and outline inside evaluated standing silhouette."""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from render_parts_scene import layers
+from snap_pixel import load_groups
+ROOT=Path(__file__).resolve().parents[1]
+def main():
+    groups=load_groups(ROOT/'art/reference/palette.gpl');data=json.loads((ROOT/'prototype/rig/reports/evaluated_art_frames.json').read_text());results={};failure=0
+    for name in ['idle','standing_neutral']:
+        im=Image.new('RGBA',(128,128));owners=np.full((128,128),'',object)
+        for id,layer in layers(data[name]['frames'][0],(128,128),(64,120)):
+            owners[np.array(layer)[:,:,3]>0]=id;im.alpha_composite(layer)
+        a=np.array(im);mask=a[:,:,3]>0;p=np.pad(mask,1);inner=mask&p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:]
+        dark=np.zeros(mask.shape,bool)
+        # O is stroke; Claude explicitly uses H as hair fill, report it separately.
+        dark=np.all(a[:,:,:3]==groups['outline'][0],axis=2)
+        hair_fill=int((inner&np.all(a[:,:,:3]==groups['outline'][1],axis=2)).sum())
+        print(name,'H hair-fill pixels inside silhouette:',hair_fill)
+        coords=[]
+        items={i['id']:i for i in data[name]['frames'][0]['geometry'] if i['kind']=='sprite'}
+        for y,x in zip(*np.where(inner&dark)):
+            id=str(owners[y,x]);point={'x':int(x),'y':int(y),'part':id}
+            if id in items:
+                aa,b,c,d,tx,ty=items[id]['transform'];det=aa*d-b*c;wx=x+.5-64-tx;wy=y+.5-120-ty
+                point['texture_x']=int(np.floor((d*wx-c*wy)/det));point['texture_y']=int(np.floor((-b*wx+aa*wy)/det))
+            coords.append(point)
+        ys,xs=np.where(mask);h=int(ys.max()-ys.min()+1);results[name]={'height_px':h,'interior_outline_count':len(coords),'positions':coords,'opaque_pixels':int(mask.sum()),'interior_outline_percent':round(100*len(coords)/int(mask.sum()),4)}
+        print(f'{name}: height={h}px; internal outline pixels={len(coords)}; positions={coords}')
+        # Claude's supplied head intentionally uses outline colours as hair fill.
+        # Report them, but only reject unintended interior ink outside immutable head.
+        failure+=any(c['part']!='head' for c in coords)
+        if name=='standing_neutral':failure+=h!=96
+    head=np.array(Image.open(ROOT/'art/sprites/characters/chr_dbl_parts/head.png').convert('RGBA'));skin=np.zeros(head.shape[:2],bool)
+    for colour in groups['skin']:skin|=np.all(head[:,:,:3]==colour,axis=2)&(head[:,:,3]>0)
+    measured=json.loads((ROOT/'art/concept/characters/chr_dbl_parts_work/uniform_measurements.json').read_text());skin[int(measured['landmarks_manual']['head']['chin_y']*measured['scale'])+1:]=False
+    ys,xs=np.where(skin);span=int(xs.max()-xs.min()+1);ratio=span/head.shape[1]
+    print(f'Head face skin span={span}/{head.shape[1]}={ratio:.4f}; neck below chin={measured["neck_below_chin_px"]:.4f}px; Claude pixel matrix applied unchanged')
+    results['face']={'width':span,'frame_width':head.shape[1],'ratio':ratio,'neck_below_chin':measured['neck_below_chin_px']};failure+=ratio<.4 or not 2<=measured['neck_below_chin_px']<=3
+    for id in ['hand_near','hand_far','foot_near','foot_far']:
+        a=np.array(Image.open(ROOT/f'art/sprites/characters/chr_dbl_parts/{id}.png').convert('RGBA'));counts={label:int(np.all(a[:,:,:3]==colour,axis=2).sum()) for label,colour in [('dark',groups['skin'][0]),('mid',groups['skin'][2]),('light',groups['skin'][3])]}
+        print(f'{id}: skin counts {counts}');failure+=not all(counts.values());results[id]=counts
+    results['failures']=int(failure);(ROOT/'prototype/rig/reports/uniform_art_checks.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
+    print('Uniform-art checks failures:',failure);raise SystemExit(1 if failure else 0)
 if __name__=='__main__':main()
 ```
 
@@ -556,52 +684,6 @@ def main():
     print(f'Joint checks: {checks}; max seam={max(d["max_gap_px"] for d in details):.2f}px; background samples={sum(d["background_samples"] for d in details)}; failures={failed}')
     print('Scope: all 48 authored frames / 13 actions, visible child-parent pairs; not a claim about every interpolated time or Android GPU output.')
     raise SystemExit(1 if failed else 0)
-if __name__=='__main__':main()
-```
-
-### tools/check_parts_uniform.py
-
-```python
-"""Measure actual PNG palette/face colours and outline inside evaluated standing silhouette."""
-from pathlib import Path
-import json
-import numpy as np
-from PIL import Image
-from render_parts_scene import layers
-from snap_pixel import load_groups
-ROOT=Path(__file__).resolve().parents[1]
-def main():
-    groups=load_groups(ROOT/'art/reference/palette.gpl');data=json.loads((ROOT/'prototype/rig/reports/evaluated_art_frames.json').read_text());results={};failure=0
-    for name in ['idle','standing_neutral']:
-        im=Image.new('RGBA',(128,128));owners=np.full((128,128),'',object)
-        for id,layer in layers(data[name]['frames'][0],(128,128),(64,120)):
-            owners[np.array(layer)[:,:,3]>0]=id;im.alpha_composite(layer)
-        a=np.array(im);mask=a[:,:,3]>0;p=np.pad(mask,1);inner=mask&p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:]
-        dark=np.zeros(mask.shape,bool)
-        for color in groups['outline']:dark|=np.all(a[:,:,:3]==color,axis=2)
-        coords=[]
-        items={i['id']:i for i in data[name]['frames'][0]['geometry'] if i['kind']=='sprite'}
-        for y,x in zip(*np.where(inner&dark)):
-            id=str(owners[y,x]);point={'x':int(x),'y':int(y),'part':id}
-            if id in items:
-                aa,b,c,d,tx,ty=items[id]['transform'];det=aa*d-b*c;wx=x+.5-64-tx;wy=y+.5-120-ty
-                point['texture_x']=int(np.floor((d*wx-c*wy)/det));point['texture_y']=int(np.floor((-b*wx+aa*wy)/det))
-            coords.append(point)
-        ys,xs=np.where(mask);h=int(ys.max()-ys.min()+1);results[name]={'height_px':h,'interior_outline_count':len(coords),'positions':coords,'opaque_pixels':int(mask.sum()),'interior_outline_percent':round(100*len(coords)/int(mask.sum()),4)}
-        print(f'{name}: height={h}px; internal outline pixels={len(coords)}; positions={coords}')
-        failure+=len(coords)/int(mask.sum())>.01 or any(c['part']!='head' for c in coords)
-        if name=='standing_neutral':failure+=h!=96
-    head=np.array(Image.open(ROOT/'art/sprites/characters/chr_dbl_parts/head.png').convert('RGBA'));skin=np.zeros(head.shape[:2],bool)
-    for colour in groups['skin']:skin|=np.all(head[:,:,:3]==colour,axis=2)&(head[:,:,3]>0)
-    measured=json.loads((ROOT/'art/concept/characters/chr_dbl_parts_work/uniform_measurements.json').read_text());skin[int(measured['landmarks_manual']['head']['chin_y']*measured['scale'])+1:]=False
-    ys,xs=np.where(skin);span=int(xs.max()-xs.min()+1);ratio=span/head.shape[1]
-    print(f'Head face skin span={span}/{head.shape[1]}={ratio:.4f}; neck below chin={measured["neck_below_chin_px"]:.4f}px; no facial edit data applied')
-    results['face']={'width':span,'frame_width':head.shape[1],'ratio':ratio,'neck_below_chin':measured['neck_below_chin_px']};failure+=ratio<.4 or not 2<=measured['neck_below_chin_px']<=3
-    for id in ['hand_near','hand_far','foot_near','foot_far']:
-        a=np.array(Image.open(ROOT/f'art/sprites/characters/chr_dbl_parts/{id}.png').convert('RGBA'));counts={label:int(np.all(a[:,:,:3]==colour,axis=2).sum()) for label,colour in [('dark',groups['skin'][0]),('mid',groups['skin'][2]),('light',groups['skin'][3])]}
-        print(f'{id}: skin counts {counts}');failure+=not all(counts.values());results[id]=counts
-    results['failures']=int(failure);(ROOT/'prototype/rig/reports/uniform_art_checks.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
-    print('Uniform-art checks failures:',failure);raise SystemExit(1 if failure else 0)
 if __name__=='__main__':main()
 ```
 
