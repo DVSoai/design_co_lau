@@ -272,3 +272,11 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Trần chính xác 10 hay 15%, cách chuẩn hóa từng chỉ số, mẫu IAP/ingame từng ô, biến thể nón và mặt nạ lịch sử (tuồng/chèo cần duyệt cách điệu, không khẳng định tồn tại nguyên dạng thế kỷ 10).
 - Số liệu riêng thay bảng tham khảo, thiết kế HUD cuối, mốc hiệu ứng/frame.
 - Phương án phát hành Việt Nam và kết luận luật sư; tác quyền cần rà nội dung/hash khi có bộ nguồn đối chiếu.
+
+## 29/10/2026 — Trung tính hóa tài liệu repo công khai
+
+- **Mã:** `neutral_references`; từ main `87ade17`, nhánh `docs/neutral-references`. Chỉ sửa docs/ và AGENTS.md.
+- Repo công khai: bỏ tên thương mại/đối chiếu vật phẩm và các phát biểu về tiếp cận mã hoặc dữ liệu sản phẩm khác; bỏ danh sách liên kết tham khảo riêng, cột đối chiếu, giữ cột Cờ Lau. Viết mô tả cơ chế bằng ngôn ngữ của dự án.
+- Giữ quyết định, cơ chế, bảng số Cờ Lau và dấu “Phải tự đặt lại số trước Mốc A”. Đơn vị giá tham khảo chưa quy đổi được ghi rõ, không coi là giá tiền đồng đã chốt.
+- Thay từ mô tả trang phục bị cấm trong prompt bằng cách diễn đạt tương đương; không bỏ ràng buộc lịch sử. Nhật ký các lượt cũ giữ nguyên byte, kể cả prompt lịch sử.
+- Chạy phép rà theo yêu cầu; toàn bộ kết quả còn lại chỉ thuộc các mục nhật ký cũ, không có dòng ngoài nhật ký. Nguyên đầu ra trong commit message và báo cáo trả người dùng.

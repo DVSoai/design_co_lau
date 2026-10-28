@@ -19,7 +19,7 @@ Style: 2D pixel art for a side-scrolling mobile action RPG, semi-realistic propo
 Khối AVOID dùng cho mọi prompt (dán nguyên văn):
 
 ```
-Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
 
 **Quyết định P0:** phương án B trong bảng so sánh là *pixel bán hiện đại*, không phải STYLE-B vẽ tay trong khuôn P0 lịch sử của `03_prompts.md`. Xem ngoại lệ và prompt đã dùng trong `05_log.md`. Không tự thay STYLE đã duyệt bằng STYLE-B vẽ tay.
@@ -121,7 +121,7 @@ Các bậc trang bị chỉ thay áo, quần, vũ khí tương ứng, cùng hệ
 - **Tóc:** **Đinh Bộ Lĩnh búi tóc nhỏ trên đỉnh đầu**, không dùng tóc dài buộc đuôi bay. Nhân vật khác có thể búi tóc hoặc dùng khăn chít đầu che tóc.
 - **Vũ khí:** đao lưỡi rộng một cạnh, giáo, nỏ, cung tre hoặc cung sừng, khiên mây tròn.
 - **Kiến trúc:** nhà gỗ sàn mái tranh, mái ngói đất nung đơn giản, thành đất đắp lũy, cổng gỗ, chòi canh, chùa gỗ nhỏ. Kinh đô Hoa Lư là thành đất nối các dãy núi đá vôi.
-- **Cấm:** áo dài, nón quai thao, long bào, đồ samurai và ninja, kiếm katana, kiến trúc mái cong kiểu cung đình Trung Hoa.
+- **Cấm:** áo dài, nón quai thao, long bào, trang phục võ sĩ và chiến binh bí mật Nhật Bản, kiếm katana, kiến trúc mái cong kiểu cung đình Trung Hoa.
 
 Chi tiết ngoại hình cụ thể của từng nhân vật là mở rộng cho game, vì sử không ghi.
 

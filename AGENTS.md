@@ -51,7 +51,7 @@ Các giai đoạn trong `02_asset_list.md` sắp theo thứ tự nên làm để
   - Chỉ có hai ngoại lệ, và không có ngoại lệ nào khác:
   - **Khuôn P0** (khám phá phong cách, giai đoạn 0): chạy ba bản, một bản dùng STYLE-A, một bản dùng STYLE-B, và một bản **không có khối STYLE** để xem công cụ tự đề xuất gì. Cả ba bản vẫn phải có khối AVOID. Sau giai đoạn 0, không còn prompt nào được bỏ khối STYLE.
   - **Tranh `cs03_3`** (cảnh giai thoại rồng vàng): giữ khối STYLE, nhưng trong khối AVOID bỏ hai cụm `fantasy monsters` và `magic glow effects`, vì đây là cảnh huyền thoại duy nhất của game theo storyboard. Mọi cụm khác của AVOID giữ nguyên.
-- **Không đưa vào prompt** tên game khác, tên studio, tên họa sĩ, nhân vật có bản quyền hay thương hiệu nào; đặc biệt không nhắc Ninja School. GDD có nhắc Ninja School ở các cột đối chiếu; đó là ghi chú nội bộ, không phải hướng dẫn thiết kế.
+- **Không đưa vào prompt** tên game khác, studio, họa sĩ, nhân vật có bản quyền hay thương hiệu. Chỉ mô tả đặc điểm thị giác và bối cảnh riêng của dự án.
 - **Không có chữ trong ảnh.** Chữ giao diện do game vẽ bằng font. Mockup màn hình dùng thanh giữ chỗ thay chữ; phần chữ ghi trong đặc tả `06_screens.md`.
 - **Nền trong suốt:** tạo trên nền phẳng #00FF00 rồi tách bằng script của skill. Nhân vật có màu xanh lá thì dùng nền #FF00FF.
 - **Không ghi đè file đã duyệt** trong `art/approved/` hay `design/*/approved/`. Bản mới lưu thành phiên bản mới (`_v2`, `_v3`).
