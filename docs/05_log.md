@@ -83,3 +83,12 @@ Wide, poster-style concept board comparing three visual directions for a realist
 - **Trạng thái:** **đã duyệt cho phép làm A0, chưa nghiệm thu A0**. Chỉ khi người dùng chơi thử Android và chốt thông số mới cập nhật trạng thái Tạm thời → Đã duyệt ở `docs/13_thong_so.md` và ghi nhật ký.
 - **Mốc A nhóm 1:** đánh dấu hai mục đã duyệt: phong cách B — pixel bán hiện đại (P0) và bảng palette_v3 32 màu, dựa theo quyết định đã ghi trong nhật ký.
 - **PR lần này chỉ sửa tài liệu, không viết mã Godot.**
+
+## 28/10/2026 — Tổ chức repo thiết kế và game thật
+
+- **Mã:** `repo_split`.
+- **Thay đổi:** thêm mục “Tổ chức repo” vào `README.md` và `AGENTS.md`: `design_co_lau` giữ tài liệu thiết kế, art nguồn, script và `prototype/` cho A0; mã A0 là mã bỏ đi, chỉ kiểm chứng thiết kế.
+- **Mốc A:** chỉ tạo repo game thật `co_lau_game` sau khi Mốc A được duyệt; nguyên mẫu A0 là ngoại lệ giới hạn trong repo thiết kế, không thay thế việc duyệt mốc.
+- **Nguồn art:** chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script và ghi commit nguồn của `design_co_lau` mỗi lần chép.
+- **Phiên bản thiết kế:** khi qua Mốc A, gắn tag `design-vX.Y`; repo game ghi tag đang theo và giữ bản sao `docs/GDD.md` từ đúng tag đó.
+- **Phạm vi:** chỉ cập nhật tài liệu theo yêu cầu người dùng; chưa tạo repo game, tag, prototype hay script chuyển art, không viết mã và không đánh dấu Mốc A đã duyệt.
