@@ -20,9 +20,12 @@ Dùng **Godot 4.7.2 stable**, bản Standard (GDScript), renderer Compatibility.
    Đứng cạnh hình nộm tại x=490 và chém: mỗi đòn chỉ hiện một số sát thương.
    Các khối nổi hiện dùng va chạm đặc, không phải bục một chiều.
 
-Viewport 960×540, canvas_items, scale số nguyên, texture nearest.
-Đổi kích thước cửa sổ để thử viền trống tại kích thước không chia hết;
-màn hình nhỏ hơn viewport vẫn cần kiểm tra độ đọc trên thiết bị.
+Kích thước thiết kế 960×540, canvas_items, aspect **expand**, scale **fractional**
+mặc định, texture nearest. Viewport logic mở rộng theo tỉ lệ màn hình thật;
+không ép màn hình dài vào khung 16:9. Phóng lẻ có thể làm các pixel có bề rộng
+hiển thị không đều, dù texture vẫn nearest. Bảng ⚙ có công tắc **Phóng nguyên/lẻ**
+(bật = integer, tắt = fractional) để so sánh trực tiếp; integer có thể lại tạo viền.
+Nút cảm ứng, ⚙, bảng và giới hạn camera cập nhật theo viewport mỗi lần resize.
 PNG placeholder được chép nguyên từ
 `art/sprites/characters/chr_dbl_idle_side_96.png` của commit
 `3423fa9`; shader chỉ ẩn nền xanh #00FF00 lúc vẽ, không sửa ảnh nguồn.
@@ -61,6 +64,18 @@ Các con số mới là giá trị thử A0, không tự chốt thông số chí
 5. **Project → Export → Add → Android**. Đặt package duy nhất, ví dụ
    `org.colau.a0prototype`; orientation **Landscape**; bật arm64-v8a
    (thêm armeabi-v7a nếu thiết bị cần). Giữ Compatibility, tắt Gradle build.
+   Trong preset Android bật **Screen → Immersive Mode** (`screen/immersive_mode=true`)
+   để ẩn cả thanh trạng thái và thanh điều hướng. Dự án đặt
+   `display/window/size/mode.mobile=3` (Fullscreen trên Android); PC vẫn chạy cửa sổ.
+   Giữ **Landscape** và export template 4.7.2 khớp editor. Nếu dùng file
+   export_presets.cfg đã có, kiểm tra lại mục sau trong phần [preset.N.options]:
+
+   ```ini
+   screen/immersive_mode=true
+   ```
+
+   Project Settings đã bật `rendering/textures/vram_compression/import_etc2_astc=true`;
+   chờ import lại rồi xuất/cài lại APK để cấu hình mới có hiệu lực.
    Không cần quyền Internet hay Google Play.
 6. Chọn **Export Project**, bật **Export With Debug**, lưu APK **ngoài checkout**,
    ví dụ thư mục Downloads. Đây là APK thử cài trực tiếp, không phải AAB phát hành.
@@ -71,7 +86,12 @@ Các con số mới là giá trị thử A0, không tự chốt thông số chí
    màn hình cảm ứng; thử giữ trái/phải đồng thời bấm nhảy/chém bằng ngón thứ hai.
    Nút dùng TouchScreenButton để giữ action theo từng ngón.
 9. Kiểm tra chạy/nhảy, coyote/jump buffer, hitbox, camera, nhịp chém, mép màn hình
-   và độ đọc của nhân vật 96 px. Có thể nối bàn phím gửi F1 để xem debug.
+   và độ đọc của nhân vật 96 px. Dòng Screen / Window / Viewport / Scale xuất hiện
+   trong bảng ⚙; F1 cũng hiện dòng này. Screen là độ phân giải màn hình vật lý,
+   Window là diện tích cửa sổ app; Viewport là vùng logic sau stretch.
+   Trên headless, Screen dùng kích thước cửa sổ mô phỏng.
+   So sánh Phóng nguyên/lẻ ngay trên máy, kiểm tra immersive sau khi xuất APK.
+   Có thể nối bàn phím gửi F1 để xem debug.
    Ghi nhận thiết bị và cảm giác để người dùng nghiệm thu A0; không coi headless là nghiệm thu Android.
 
 Chưa xuất APK hoặc chạy trên thiết bị Android trong môi trường này.
@@ -93,7 +113,7 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 37 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 59 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
@@ -139,5 +159,26 @@ Người dùng thử bằng Godot 4.7.2 trên PC ngày 28/10/2026, thấy ổn v
 
 Nút ⚙, thanh trượt, công tắc và nút Sao chép không nhận focus bàn phím.
 Phím mũi tên tiếp tục dùng để chơi, không chuyển focus hoặc đổi số; con lăn
-chỉ cuộn danh sách, không thay giá trị thanh trượt. Kéo bằng chuột/cảm ứng
-vẫn là cách chỉnh trực tiếp.
+chỉ cuộn danh sách, không thay giá trị thanh trượt. Mỗi slider cao tối thiểu 44 px;
+chỉ kéo ngang **bắt đầu trên núm** (vùng chạm rộng tối thiểu 32 px) mới đổi số.
+Bấm hoặc vuốt từ rãnh không nhảy giá trị. Hướng kéo được khóa sau 8 px: vuốt dọc
+cuộn bảng, kể cả bắt đầu trên núm; kéo ngang chỉnh giá trị. Chuột và cảm ứng cùng
+áp dụng quy tắc này.
+
+## Kiểm tra hiển thị Android trong headless
+
+Smoke test resize Window thực của Godot và kiểm tra stretch transform phủ kín cửa sổ,
+không có offset/viền letterbox, với ba trường hợp mặc định fractional + expand:
+
+| Window mô phỏng | Viewport logic | Hệ số phóng |
+|---|---|---|
+| 1920×1080 | 960×540 | 2 |
+| 2400×1080 | 1200×540 | 2 |
+| 1600×720 | 1200×540 | 1,333333 |
+
+Test xác nhận nút cảm ứng, ⚙ và bảng nằm trong viewport, camera dùng giới hạn mới,
+công tắc phóng hoạt động. Sự kiện touch được đưa qua Input.parse_input_event để
+kiểm tra cuộn dọc không đổi số và kéo ngang từ núm vẫn chỉnh được. Trong headless
+bật mô phỏng touchscreen chỉ ở test để ScrollContainer nhận gesture như thiết bị touch.
+Đây là kiểm tra bố cục/phép biến đổi và input, không phải ảnh chụp màn hình Android.
+Chưa xuất lại APK hoặc xác minh thanh hệ thống immersive trên điện thoại trong môi trường này.

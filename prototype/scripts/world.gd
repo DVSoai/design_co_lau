@@ -13,6 +13,7 @@ var camera: Camera2D
 var debug_label: Label
 var debug_enabled := false
 var camera_anchor := T.SPAWN
+var touch_buttons: Dictionary = {}
 
 func _ready() -> void:
 	_register_input("left", [KEY_A, KEY_LEFT])
@@ -37,7 +38,7 @@ func _ready() -> void:
 	dummy.position = T.DUMMY_POSITION
 	add_child(dummy)
 	camera = Camera2D.new()
-	camera.position = T.VIEWPORT / 2
+	camera.position = get_viewport().get_visible_rect().size / 2
 	add_child(camera)
 	var layer := CanvasLayer.new()
 	add_child(layer)
@@ -50,14 +51,30 @@ func _ready() -> void:
 	tuning_panel.tuning = tuning
 	layer.add_child(tuning_panel)
 	# TouchScreenButton giữ action theo từng ngón, hỗ trợ chạy + nhảy/chém.
+	for action in ["left", "right", "jump", "slash"]:
+		var caption: String = {"left": "←", "right": "→", "jump": "NHẢY", "slash": "CHÉM"}[action]
+		_touch_button(layer, action, caption, Vector2.ZERO)
+	get_viewport().size_changed.connect(_layout_touch_buttons)
+	_layout_touch_buttons()
+
+func _layout_touch_buttons() -> void:
+	var rect := get_viewport().get_visible_rect()
 	var size: Vector2 = T.TOUCH_BUTTON_SIZE
 	var margin: float = T.TOUCH_MARGIN
 	var stride: float = size.x + T.TOUCH_GAP
-	var y: float = T.VIEWPORT.y - size.y - margin
-	_touch_button(layer, "left", "←", Vector2(margin, y))
-	_touch_button(layer, "right", "→", Vector2(margin + stride, y))
-	_touch_button(layer, "jump", "NHẢY", Vector2(T.VIEWPORT.x - margin - stride - size.x, y))
-	_touch_button(layer, "slash", "CHÉM", Vector2(T.VIEWPORT.x - margin - size.x, y))
+	var y: float = rect.end.y - size.y - margin
+	touch_buttons["left"].position = Vector2(rect.position.x + margin, y) + size / 2
+	touch_buttons["right"].position = Vector2(rect.position.x + margin + stride, y) + size / 2
+	touch_buttons["jump"].position = Vector2(rect.end.x - margin - stride - size.x, y) + size / 2
+	touch_buttons["slash"].position = Vector2(rect.end.x - margin - size.x, y) + size / 2
+
+func camera_target() -> Vector2:
+	var half := get_viewport().get_visible_rect().size / 2
+	var target := camera_anchor + Vector2(player.facing * tuning.value("CAMERA_LOOK_AHEAD"), 0)
+	# Nếu viewport rộng/cao hơn bản đồ, căn giữa thay vì clamp với min > max.
+	target.x = clampf(target.x, half.x, T.WORLD_SIZE.x - half.x) if half.x * 2 < T.WORLD_SIZE.x else T.WORLD_SIZE.x / 2
+	target.y = clampf(camera_anchor.y, half.y, T.WORLD_SIZE.y - half.y) if half.y * 2 < T.WORLD_SIZE.y else T.WORLD_SIZE.y / 2
+	return target
 
 func _register_input(action: String, keys: Array) -> void:
 	if InputMap.has_action(action):
@@ -70,6 +87,7 @@ func _register_input(action: String, keys: Array) -> void:
 
 func _touch_button(layer: CanvasLayer, action: String, caption: String, pos: Vector2) -> void:
 	var button := TouchScreenButton.new()
+	touch_buttons[action] = button
 	button.action = action
 	button.position = pos + T.TOUCH_BUTTON_SIZE / 2
 	button.visibility_mode = TouchScreenButton.VISIBILITY_TOUCHSCREEN_ONLY
@@ -100,12 +118,14 @@ func _process(delta: float) -> void:
 	var difference: Vector2 = player.position - camera_anchor
 	camera_anchor.x += signf(difference.x) * maxf(0, absf(difference.x) - tuning.value("CAMERA_DEAD_ZONE.x"))
 	camera_anchor.y += signf(difference.y) * maxf(0, absf(difference.y) - T.CAMERA_DEAD_ZONE.y)
-	var target := camera_anchor + Vector2(player.facing * tuning.value("CAMERA_LOOK_AHEAD"), 0)
-	target.x = clampf(target.x, T.VIEWPORT.x / 2, T.WORLD_SIZE.x - T.VIEWPORT.x / 2)
-	target.y = T.VIEWPORT.y / 2 # Bản đồ A0 cao đúng một viewport.
+	var target := camera_target()
 	camera.position = camera.position.lerp(target, 1 - exp(-T.CAMERA_RESPONSE * delta))
+	# Sau đổi tỉ lệ/viewport, clamp cả vị trí camera hiện tại ngay lập tức.
+	var half := get_viewport().get_visible_rect().size / 2
+	camera.position.x = clampf(camera.position.x, half.x, T.WORLD_SIZE.x - half.x) if half.x * 2 < T.WORLD_SIZE.x else T.WORLD_SIZE.x / 2
+	camera.position.y = clampf(camera.position.y, half.y, T.WORLD_SIZE.y - half.y) if half.y * 2 < T.WORLD_SIZE.y else T.WORLD_SIZE.y / 2
 	if debug_enabled:
-		var lines := PackedStringArray(["F1: debug | Cyan: player | Red: active slash | Yellow: dummy"])
+		var lines := PackedStringArray([tuning_panel.display_info(), "F1: debug | Cyan: player | Red: active slash | Yellow: dummy"])
 		# Hiển thị tất cả hằng số cấu hình, kể cả thông số suy ra.
 		var tuning_script: Script = load("res://config/tuning.gd")
 		var constants := tuning_script.get_script_constant_map()

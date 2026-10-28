@@ -150,6 +150,8 @@ func run() -> void:
 	p._update_sprite_motion(T.IDLE_BOB_PERIOD / 4, false, false)
 	check(world.tuning.fake_motion_enabled() and not p.sprite.position.is_equal_approx(T.SPRITE_OFFSET), "gear switch re-enables fake motion")
 	await test_tuning_input(world)
+	await test_android_layout(world)
+	await test_touch_slider(world)
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)
 
@@ -229,3 +231,106 @@ func test_tuning_input(world: Node) -> void:
 	mouse_button_at(finish, MOUSE_BUTTON_LEFT, false)
 	await process_frame
 	check(not is_equal_approx(world.tuning.value("RUN_SPEED"), before["RUN_SPEED"]), "mouse drag still updates slider with focus disabled")
+
+func test_android_layout(world: Node) -> void:
+	var original_size := root.size
+	root.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
+	for physical in [Vector2i(1920, 1080), Vector2i(2400, 1080), Vector2i(1600, 720)]:
+		root.size = physical
+		await process_frame
+		await process_frame
+		var visible := root.get_visible_rect()
+		var coverage: Rect2 = root.get_stretch_transform() * visible
+		print("Android layout: ", physical, " viewport=", visible.size, " stretch=", root.get_stretch_transform().get_scale())
+		check(coverage.position.is_zero_approx() and coverage.size.is_equal_approx(Vector2(physical)), "fractional expand fills %s without letterbox" % physical)
+		var controls_inside := visible.encloses(world.tuning_panel.toggle.get_global_rect()) and visible.encloses(world.tuning_panel.panel.get_global_rect())
+		for button: TouchScreenButton in world.touch_buttons.values():
+			controls_inside = controls_inside and visible.encloses(Rect2(button.position - T.TOUCH_BUTTON_SIZE / 2, T.TOUCH_BUTTON_SIZE))
+		check(controls_inside, "touch controls, gear and panel stay inside %s" % physical)
+		var slash_edge: Vector2 = world.touch_buttons["slash"].position + T.TOUCH_BUTTON_SIZE / 2
+		var left_edge: Vector2 = world.touch_buttons["left"].position - T.TOUCH_BUTTON_SIZE / 2
+		check(slash_edge.is_equal_approx(visible.end - Vector2.ONE * T.TOUCH_MARGIN) and is_equal_approx(left_edge.x, visible.position.x + T.TOUCH_MARGIN) and is_equal_approx(world.tuning_panel.toggle.get_global_rect().end.x, visible.end.x - 12), "buttons remain anchored to live viewport corners at %s" % physical)
+		var half := visible.size / 2
+		world.camera_anchor = Vector2.ZERO
+		var left: Vector2 = world.camera_target()
+		world.camera_anchor = T.WORLD_SIZE
+		var right: Vector2 = world.camera_target()
+		check(left.x >= half.x and right.x <= T.WORLD_SIZE.x - half.x, "camera limits use live viewport at %s" % physical)
+	world.tuning_panel.scale_toggle.button_pressed = true
+	await process_frame
+	check(root.content_scale_stretch == Window.CONTENT_SCALE_STRETCH_INTEGER, "gear switches live stretch to integer")
+	world.tuning_panel.scale_toggle.button_pressed = false
+	await process_frame
+	check(root.content_scale_stretch == Window.CONTENT_SCALE_STRETCH_FRACTIONAL, "gear switches live stretch back to fractional")
+	root.size = original_size
+	await process_frame
+	await process_frame
+	check("Screen" in world.tuning_panel.info_label.text and "Viewport" in world.tuning_panel.info_label.text and "Scale" in world.tuning_panel.info_label.text, "gear shows physical screen, viewport and current scale")
+	world.debug_enabled = true
+	world._process(0.0)
+	check(world.debug_label.text.begins_with("Screen") and "Viewport" in world.debug_label.text and "Scale" in world.debug_label.text, "F1 debug includes the same live display diagnostics")
+	world.debug_enabled = false
+
+func screen_touch(point: Vector2, pressed: bool) -> void:
+	var event := InputEventScreenTouch.new()
+	event.index = 0
+	event.position = root.get_stretch_transform() * point
+	event.pressed = pressed
+	Input.parse_input_event(event)
+	Input.flush_buffered_events()
+
+func screen_drag(point: Vector2, relative: Vector2) -> void:
+	var event := InputEventScreenDrag.new()
+	event.index = 0
+	event.position = root.get_stretch_transform() * point
+	event.relative = root.get_stretch_transform().basis_xform(relative)
+	Input.parse_input_event(event)
+	Input.flush_buffered_events()
+
+func test_touch_slider(world: Node) -> void:
+	# Headless không có thiết bị touch: bật hint để native ScrollContainer xử lý.
+	var old_touch := Input.emulate_touch_from_mouse
+	var old_mouse := Input.emulate_mouse_from_touch
+	Input.emulate_touch_from_mouse = true
+	Input.emulate_mouse_from_touch = true
+	var ui = world.tuning_panel
+	ui.panel.show()
+	var slider: HSlider = ui.sliders["RUN_SPEED"]
+	ui.scroll.ensure_control_visible(slider)
+	await process_frame
+	await process_frame
+	var before: Dictionary = world.tuning.values.duplicate(true)
+	var start := slider.global_position + Vector2(slider.size.x * 0.1, slider.size.y / 2)
+	# Kéo ngang từ rãnh (ngoài núm) cũng không được đổi giá trị.
+	screen_touch(start, true)
+	screen_drag(start + Vector2(50, 0), Vector2(50, 0))
+	screen_touch(start + Vector2(50, 0), false)
+	check(world.tuning.values == before, "horizontal touch starting on track cannot change slider value")
+	var scroll_before: int = ui.scroll.scroll_vertical
+	screen_touch(start, true)
+	for step in range(1, 5):
+		screen_drag(start - Vector2(0, step * 15), Vector2(0, -15))
+		await process_frame
+	screen_touch(start - Vector2(0, 60), false)
+	check(world.tuning.values == before, "vertical touch swipe across slider track never changes tuning")
+	check(ui.scroll.scroll_vertical > scroll_before, "vertical touch swipe scrolls the tuning panel")
+	await frames(20)
+	ui.scroll.ensure_control_visible(slider)
+	await process_frame
+	start = slider.global_position + slider.thumb_center()
+	screen_touch(start, true)
+	screen_drag(start + Vector2(0, -40), Vector2(0, -40))
+	screen_touch(start + Vector2(0, -40), false)
+	check(world.tuning.values == before, "vertical gesture starting on thumb does not drift its value")
+	await frames(20)
+	ui.scroll.ensure_control_visible(slider)
+	await process_frame
+	start = slider.global_position + slider.thumb_center()
+	screen_touch(start, true)
+	screen_drag(start + Vector2(60, 0), Vector2(60, 0))
+	screen_touch(start + Vector2(60, 0), false)
+	check(not is_equal_approx(world.tuning.value("RUN_SPEED"), before["RUN_SPEED"]), "horizontal touch drag starting on thumb adjusts value")
+	check(slider.size.y >= 44, "slider touch area is at least 44 px high")
+
+	Input.emulate_touch_from_mouse = old_touch
+	Input.emulate_mouse_from_touch = old_mouse
