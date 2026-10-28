@@ -37,14 +37,12 @@ Wide, poster-style concept board comparing three visual directions for a realist
 - **Ảnh tham chiếu:** không có ảnh tham chiếu đính kèm cho vòng hai.
 - **Kết quả:** giữ hướng B; P0 duyệt phong cách, các file concept tách cột chỉ phục vụ tham khảo.
 
-
 ## 28/10/2026 — chr_dbl_base, palette, kích thước sprite
 
 - **chr_dbl_base:** duyệt v9 làm ảnh mẫu. Không ép màu, không tách lớp trên ảnh mẫu khổ lớn: đã thử (v9_pal, v9_pal_v3, parts khổ 280×724) và loại vì chia vùng bằng khung chữ nhật, lấp lỗ bằng khối màu phẳng, màu ngoài bảng.
 - **palette:** duyệt palette_v3, 32 màu, gpl khớp png.
 - **Báo cáo giả:** nhiều bảng trình bày trước đó do $imagegen vẽ, số liệu không khớp file thật; file chr_dbl_idle_side_96.png chưa từng tồn tại. Đã thêm QUY TẮC BÁO CÁO KIỂM TRA vào AGENTS.md.
 - **Kích thước sprite:** ở 64 px phong cách B mất gương mặt. Đề xuất đổi sang màn hình gốc 960×540, nhân vật người cao 96 px, canvas 128×128 (Tạm thời), chờ người dùng xác nhận rồi cập nhật 13_thong_so và 01_art_bible.
-
 
 ## 28/10/2026 — Bản dự án chuẩn v2 → v3: kích thước và thử sprite
 
@@ -63,7 +61,6 @@ Wide, poster-style concept board comparing three visual directions for a realist
 - `tools/check_sprite.py` bổ sung thống kê theo nhóm và số pixel thuộc nhóm cấm; chưa chạy được trên v2 vì v2 chưa tồn tại.
 - `docs/10_storyboard.md`: đổi cutscene 640×360 sang 960×540.
 - Trạng thái: CHƯA DUYỆT; cần concept đúng một nhân vật, đúng native grid 96±2 rồi chạy lại.
-
 
 ## 28/10/2026 — Phân loại sprite chính là PLACEHOLDER, chuẩn bị nguyên mẫu
 
@@ -92,5 +89,3 @@ Wide, poster-style concept board comparing three visual directions for a realist
 - **Nguồn art:** chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script và ghi commit nguồn của `design_co_lau` mỗi lần chép.
 - **Phiên bản thiết kế:** khi qua Mốc A, gắn tag `design-vX.Y`; repo game ghi tag đang theo và giữ bản sao `docs/GDD.md` từ đúng tag đó.
 - **Phạm vi:** chỉ cập nhật tài liệu theo yêu cầu người dùng; không tạo thêm repo game, tag, prototype hay script chuyển art, không viết mã và không đánh dấu Mốc A đã duyệt.
-
-- **Cập nhật hiện trạng theo người dùng:** `co_lau_game` đã tồn tại và đã được thêm; điều kiện Mốc A áp dụng cho việc bắt đầu triển khai game thật.
