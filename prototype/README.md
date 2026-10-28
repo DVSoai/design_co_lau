@@ -93,7 +93,7 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 33 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 37 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
@@ -130,3 +130,14 @@ Mọi biên độ/thời gian nằm trong config/tuning.gd:
 
 Công tắc chỉ lưu trong bộ nhớ và có trong văn bản “Sao chép”. Chưa đánh giá
 cảm giác hình ảnh trên điện thoại; headless kiểm tra transform và hitbox.
+
+## Kết quả thử PC và bảo vệ thông số
+
+Người dùng thử bằng Godot 4.7.2 trên PC ngày 28/10/2026, thấy ổn với bộ mặc
+định, không chỉnh thông số. Kết quả được ghi trong `docs/13_thong_so.md` và
+`docs/05_log.md`: vẫn Tạm thời, chờ thử Android và xác nhận của người dùng.
+
+Nút ⚙, thanh trượt, công tắc và nút Sao chép không nhận focus bàn phím.
+Phím mũi tên tiếp tục dùng để chơi, không chuyển focus hoặc đổi số; con lăn
+chỉ cuộn danh sách, không thay giá trị thanh trượt. Kéo bằng chuột/cảm ứng
+vẫn là cách chỉnh trực tiếp.

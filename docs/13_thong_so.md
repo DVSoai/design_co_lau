@@ -14,9 +14,9 @@ Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log
 | Thông số | Giá trị | Trạng thái | Chốt khi | Ảnh hưởng tới | Nguồn |
 |---|---|---|---|---|---|
 | Phong cách | Pixel bán hiện đại khoảng 4 đầu, 32 màu | Đã duyệt (28/10/2026) | — | Mọi ảnh, P1–P17, nhân vật, quái, boss, bối cảnh, UI, VFX, trang bị | `01_art_bible.md` |
-| Độ phân giải gốc | 960×540, phóng ×2 lên 1920×1080, lọc nearest | Tạm thời | Sau P0 | Mọi mockup, sprite, bố cục màn hình | `01_art_bible.md`, GDD Phần 6 |
+| Độ phân giải gốc | 960×540, phóng ×2 lên 1920×1080, lọc nearest | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Người dùng thử Android và xác nhận | Mọi mockup, sprite, bố cục màn hình | `prototype/config/tuning.gd`; kết quả PC 28/10/2026 |
 | Bảng màu | 16 màu khung xương, mở rộng thành 32 | Tạm thời | Giai đoạn 0, khi có ảnh gốc | Mọi sprite | `01_art_bible.md` |
-| Chiều cao nhân vật người | Khoảng 96 điểm ảnh, khung 128×128, chân cách đáy 8 px | Tạm thời | Bộ mẫu chuẩn giai đoạn 1 | Sprite người, hộp va chạm | `01_art_bible.md` |
+| Chiều cao nhân vật người | 96 px, khung 128×128, chân cách đáy 8 px | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Người dùng thử Android và xác nhận | Sprite người, hộp va chạm | `prototype/config/tuning.gd`; kết quả PC 28/10/2026 |
 | Chiều cao boss người | Khoảng 132 điểm ảnh, khung 192×192 (cưỡi thú 192×160) | Tạm thời | Giai đoạn 1 | Sprite boss, đấu trường | `01_art_bible.md` |
 | Khung quái thú | Nhỏ 64×64, lớn 128×96 | Tạm thời | Giai đoạn 1 | Sprite quái | `01_art_bible.md` |
 | Ô tile | 32×32 | Tạm thời | Giai đoạn 1, khi duyệt tileset Đào Úc | Mọi tileset và bố cục bản đồ | `01_art_bible.md`, `08_map_layout.md` |
@@ -54,12 +54,40 @@ Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log
 
 | Thông số | Giá trị | Trạng thái | Chốt khi | Ảnh hưởng tới | Nguồn |
 |---|---|---|---|---|---|
-| Hộp va chạm nhân vật | 16×44 | Tạm thời | Chơi thử bản mẫu | Bố cục bản đồ | `08_map_layout.md` |
-| Tốc độ chạy | 112 điểm ảnh/giây (3,5 ô) | Tạm thời | Chơi thử | Bố cục, nhịp chơi | `08_map_layout.md` |
-| Độ cao nhảy | 80 điểm ảnh (2,5 ô); bậc tối đa 2 ô | Tạm thời | Chơi thử | Mọi bố cục bản đồ | `08_map_layout.md` |
+| Hộp va chạm nhân vật (`PLAYER_BOX`) | 24×88 px | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Người dùng thử Android và xác nhận | Bố cục bản đồ, va chạm | `prototype/config/tuning.gd`; kết quả PC 28/10/2026 |
+| Tốc độ chạy (`RUN_SPEED`) | 200 px/s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Người dùng thử Android và xác nhận | Bố cục, nhịp chơi | `prototype/config/tuning.gd`; kết quả PC 28/10/2026 |
+| Độ cao nhảy (`JUMP_HEIGHT`) | 80 px (2,5 ô); bậc tối đa 2 ô | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Người dùng thử Android và xác nhận | Mọi bố cục bản đồ | `prototype/config/tuning.gd`; kết quả PC 28/10/2026 |
 | Khe rộng nhất | 3 ô | Tạm thời | Chơi thử | Mọi bố cục bản đồ | `08_map_layout.md` |
 | Tốc độ thú cưỡi | Ngựa ×1,6; trâu ×1,2, nhảy 1,5 ô; voi không nhảy | Tạm thời | Chơi thử | Bản đồ có thú cưỡi, boss Tiên Du | `08_map_layout.md` |
 | Kích thước bản đồ | Làng 40–60 ô, đánh quái 80–120 ô, đấu trường 30–40 ô, ải 40 ô | Tạm thời | Khi duyệt từng bố cục | Bố cục | `08_map_layout.md` |
+
+## Bộ thông số A0 đã thử trên PC
+
+Ngày 28/10/2026, người dùng chơi thử A0 bằng **Godot 4.7.2 trên PC** và thấy ổn
+với bộ mặc định trong `prototype/config/tuning.gd`, không chỉnh giá trị nào.
+Độ phân giải 960×540 và nhân vật 96 px hiển thị ổn trên PC; các dòng tương ứng,
+RUN_SPEED, JUMP_HEIGHT và PLAYER_BOX ở bảng trên đã được ghi nhận cùng trạng thái.
+Đây chưa phải nghiệm thu A0 hoặc duyệt thông số cuối cùng. Chỉ chuyển sang
+**Đã duyệt** sau khi người dùng thử trên điện thoại Android và xác nhận.
+
+| Thông số | Giá trị mặc định đã thử | Trạng thái | Ảnh hưởng tới |
+|---|---|---|---|
+| `ACCELERATION` | 900 px/s² | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Tăng tốc, hãm và quãng chạy lấy đà |
+| `TIME_TO_APEX` | 0,38 s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Nhịp nhảy, tầm nhảy |
+| `GRAVITY (suy ra)` | ≈ 1108 px/s² = 2 × 80 / 0,38² | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Rơi và va chạm |
+| `JUMP_SPEED (suy ra)` | ≈ −421 px/s = −2 × 80 / 0,38 | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Vận tốc bật nhảy |
+| `COYOTE_TIME` | 0,10 s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Nhảy sau khi rời mép |
+| `JUMP_BUFFER` | 0,12 s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Nhảy đệm trước khi chạm đất |
+| `CAMERA_DEAD_ZONE` | (100, 60) px; nửa rộng × nửa cao | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Vùng chết camera |
+| `CAMERA_LOOK_AHEAD` | 100 px | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Tầm nhìn trước theo hướng chạy |
+| `CAMERA_RESPONSE` | 5 /s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Độ đáp ứng camera |
+| `ATTACK_DURATION; HIT_START–HIT_END` | 0,30 s; cửa sổ trúng 0,10–0,20 s | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Nhịp chém và thời điểm gây sát thương |
+| `ATTACK_COOLDOWN` | 0,15 s sau khi hết động tác | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Khoảng cách giữa các đòn |
+| `SLASH_BOX` | 56×56 px | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Vùng trúng đòn chém |
+| `SLASH_OFFSET` | (34, −52) px từ chân; x theo hướng nhìn | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Vị trí hitbox chém |
+| `FAKE_MOTION_ENABLED` | Bật | Tạm thời — đạt thử PC (Godot 4.7.2, 28/10/2026), chờ thử Android | Chuyển động giả của sprite; không đổi hitbox |
+
+Nguồn: `prototype/config/tuning.gd` và xác nhận thử PC của người dùng.
 
 ## Hoạt ảnh
 

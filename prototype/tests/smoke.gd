@@ -149,5 +149,83 @@ func run() -> void:
 	p.idle_phase = 0.0
 	p._update_sprite_motion(T.IDLE_BOB_PERIOD / 4, false, false)
 	check(world.tuning.fake_motion_enabled() and not p.sprite.position.is_equal_approx(T.SPRITE_OFFSET), "gear switch re-enables fake motion")
+	await test_tuning_input(world)
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)
+
+func mouse_button_at(point: Vector2, button: MouseButton, pressed: bool) -> void:
+	var event := InputEventMouseButton.new()
+	event.position = point
+	event.global_position = point
+	event.button_index = button
+	event.pressed = pressed
+	root.push_input(event, true)
+
+func test_tuning_input(world: Node) -> void:
+	var ui = world.tuning_panel
+	ui.panel.show()
+	await process_frame
+	await process_frame
+	# Click thanh trượt trước khi thử phím, tái hiện tình huống vừa chỉnh số.
+	var first: HSlider = ui.sliders["RUN_SPEED"]
+	var first_scroll := first.get_parent().get_parent() as ScrollContainer
+	first_scroll.ensure_control_visible(first)
+	await process_frame
+	var thumb := first.global_position + Vector2(8 + (first.size.x - 16) * first.ratio, first.size.y / 2)
+	mouse_button_at(thumb, MOUSE_BUTTON_LEFT, true)
+	mouse_button_at(thumb, MOUSE_BUTTON_LEFT, false)
+	var before: Dictionary = world.tuning.values.duplicate(true)
+	var arrows_unchanged := true
+	for repeat in range(6):
+		for key in [KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_DOWN]:
+			var event := InputEventKey.new()
+			event.keycode = key
+			event.physical_keycode = key
+			event.pressed = true
+			event.echo = repeat > 0
+			root.push_input(event, true)
+			await process_frame
+			arrows_unchanged = arrows_unchanged and world.tuning.values == before
+			event = event.duplicate()
+			event.pressed = false
+			root.push_input(event, true)
+	check(arrows_unchanged and world.tuning.values == before, "repeated arrow keys leave all tuning values unchanged while panel is open")
+	var sliders_safe := true
+	var wheels_unchanged := true
+	for slider: HSlider in ui.sliders.values():
+		sliders_safe = sliders_safe and slider.focus_mode == Control.FOCUS_NONE and not slider.scrollable
+		var scroll := slider.get_parent().get_parent() as ScrollContainer
+		scroll.ensure_control_visible(slider)
+		await process_frame
+		var point := slider.get_global_rect().get_center()
+		var motion := InputEventMouseMotion.new()
+		motion.position = point
+		root.push_input(motion, true)
+		for repeat in range(4):
+			for button in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
+				mouse_button_at(point, button, true)
+				mouse_button_at(point, button, false)
+				wheels_unchanged = wheels_unchanged and world.tuning.values == before
+		await process_frame
+	check(sliders_safe and wheels_unchanged and world.tuning.values == before, "wheel events over every slider leave all tuning values unchanged")
+	var controls_safe: bool = ui.toggle.focus_mode == Control.FOCUS_NONE and ui.motion_toggle.focus_mode == Control.FOCUS_NONE
+	var column = ui.sliders["RUN_SPEED"].get_parent()
+	for child in column.get_children():
+		if child is Button:
+			controls_safe = controls_safe and child.focus_mode == Control.FOCUS_NONE
+	check(controls_safe, "gear, checkbox and copy button cannot take keyboard focus")
+	var slider: HSlider = ui.sliders["RUN_SPEED"]
+	var scroll := slider.get_parent().get_parent() as ScrollContainer
+	scroll.ensure_control_visible(slider)
+	await process_frame
+	var start := slider.global_position + Vector2(8 + (slider.size.x - 16) * slider.ratio, slider.size.y / 2)
+	var finish := start + Vector2(50, 0)
+	mouse_button_at(start, MOUSE_BUTTON_LEFT, true)
+	var drag := InputEventMouseMotion.new()
+	drag.position = finish
+	drag.relative = finish - start
+	drag.button_mask = MOUSE_BUTTON_MASK_LEFT
+	root.push_input(drag, true)
+	mouse_button_at(finish, MOUSE_BUTTON_LEFT, false)
+	await process_frame
+	check(not is_equal_approx(world.tuning.value("RUN_SPEED"), before["RUN_SPEED"]), "mouse drag still updates slider with focus disabled")
