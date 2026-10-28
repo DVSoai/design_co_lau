@@ -1,6 +1,6 @@
 # Đặc tả hoạt ảnh
 
-Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và giao diện cần những động tác nào, bao nhiêu khung, chạy nhanh bao nhiêu, có lặp không, và khung nào gây sát thương. Bảng động tác tạo bằng khuôn P4 phải đủ các động tác ở đây. Số khung là đề xuất; khi chỉnh tay có thể thêm hoặc bớt một hai khung, miễn giữ đúng **khung gây sát thương** và **tổng thời gian**, vì hai thứ đó gắn với hồi chiêu và cảm giác đánh.
+Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và giao diện cần những động tác nào, bao nhiêu khung, chạy nhanh bao nhiêu, có lặp không, và khung nào gây sát thương. Bảng động tác tạo bằng khuôn P4 phải đủ các động tác ở đây. Số khung là đề xuất; khi dựng dữ liệu ghép và sửa pixel bằng script có thể thêm hoặc bớt một hai khung, miễn giữ đúng **khung gây sát thương** và **tổng thời gian**, vì hai thứ đó gắn với hồi chiêu và cảm giác đánh.
 
 ## Quy ước
 
@@ -13,7 +13,7 @@ Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và gi
   - `cancel` — từ khung này có thể bấm động tác khác để ngắt.
   - `sfx` — khung phát âm thanh.
 - **Hướng:** chỉ vẽ hướng phải; hướng trái lật ngang trong game. Vì vậy vũ khí không được có chi tiết chỉ đúng một phía (ví dụ chữ khắc).
-- **Lớp bộ phận:** Đinh Bộ Lĩnh vẽ bốn lớp đầu, thân, chân, vũ khí. Mọi bộ trang bị phải khớp đúng khung và điểm neo của bảng động tác bậc 1.
+- **Bộ phận và frame:** `chr_dbl_parts` gồm đầu kèm tóc, thân, cánh tay trên/dưới gần/xa, đùi/cẳng chân gần/xa, bàn tay và vũ khí; từng mảnh có khớp và phần vẽ bù. `chr_dbl_anim_*` ghi vị trí/góc/thứ tự lớp, thời lượng và sự kiện theo từng frame. Trang bị `chr_dbl_t1`…`t7` chỉ thay áo/quần/vũ khí cùng khớp, không vẽ lại chuỗi động tác.
 
 ## Đinh Bộ Lĩnh — động tác chung
 
@@ -21,7 +21,9 @@ Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và gi
 |---|---|---|---|---|
 | Đứng thở | 4 | 6 | Có | — |
 | Chạy | 6 | 12 | Có | sfx bước chân khung 2, 5 |
-| Nhảy lên | 2 | 12 | Không | — |
+| Nhảy lên | 2 (đề xuất) | theo quỹ đạo A0, lên đỉnh 0,38 s | Không | chuyển vào lộn tại cửa sổ vận tốc 30% |
+| Lộn người ở đỉnh / khinh công | Chưa chốt số khung | tổng 0,20 s/vòng | Không | một vòng 360° theo hướng mặt; không xoay hitbox |
+| Quay đầu | Chưa chốt số khung | tổng 0,05 s | Không | khung đầu đổi mặt; đứng trong TURN_TIME rồi chạy |
 | Rơi | 2 | 12 | Có | — |
 | Chạm đất | 2 | 12 | Không | sfx khung 1, bụi đất |
 | Trúng đòn | 2 | 12 | Không | — |
@@ -33,6 +35,20 @@ Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và gi
 | Cưỡi thú, đánh thường | 4 | 12 | Không | hit 3 |
 | Lên cấp | 6 | 12 | Không | cột sáng |
 | Mừng (nhận thưởng, thắng boss) | 4 | 8 | Không | — |
+
+### Nhịp di chuyển và lộn người đã chốt từ A0
+
+**Đã duyệt (A0, 28/10/2026)** về nhịp/thao tác tại commit `7973729`,
+Godot 4.7.2, Realme RMX3760. Nhảy cao 96 px, lên đỉnh 0,38 s, cùng trọng lực
+khi lên/xuống và không chèn khung treo đỉnh. Khinh công cần lần bấm mới khi còn
+đi lên trong cửa sổ ≤30% |JUMP_SPEED|, bật thêm 0,7 lần, tối đa một lần/cú nhảy.
+
+- Mọi cú nhảy và cú khinh công cần **khung lộn người ở đỉnh**, một vòng 360° theo hướng mặt trong APEX_FLIP_TIME=0,20 s. Dựng pose ghép bộ phận theo từng khung, thay xoay nguyên sprite tạm của A0; lộn đỉnh/chiêu lớn được vẽ thêm khung riêng nếu cần để đọc rõ. Giữ đúng tỉ lệ và điểm khớp của mọi mảnh. Không xoay body hoặc hitbox theo hình.
+- Bắt đầu lộn khi vận tốc lên vào cửa sổ 30%; vòng của khinh công vẫn phải đủ một vòng. Nếu hai vòng tới sát nhau, xếp vòng sau sau vòng trước như mẫu A0. Kiểm tra kết thúc trước khi đáp đất trên quỹ đạo cùng cao độ; kiểm tra đáp lên bậc/va trần riêng, không chèn thời gian giữ nhân vật trên không để đủ khung.
+- Quay đầu bám TURN_TIME=0,05 s: khung logic đầu chỉ đổi hướng mặt, giữ vị trí rồi mới chạy; chạm nhẹ chỉ quay mặt. Không kéo dài nhịp quay theo số khung ở tốc độ 12 fps. Chạy đạt 200 px/s ngay khi bấm, buông hãm trong STOP_TIME=0,08 s.
+- Số khung nghệ thuật, chia thời lượng từng khung và bộ sprite thành phẩm còn phải dựng/duyệt ở Mốc A. Tổng thời gian A0 đã chốt thắng tốc độ 12/15 fps đề xuất nếu hai thứ không khớp.
+- Chém cơ bản: 0,30 s, cửa sổ trúng 0,10–0,20 s, hồi thêm 0,15 s sau động tác. Bảng combo bên dưới là đề xuất ngoài phạm vi nghiệm thu A0; khi dựng nhát cơ bản phải chia timeline để khớp nhịp này, không dùng số khung cũ để đổi thời điểm hit.
+- Vệt chém/hiệu ứng trúng đòn và số sát thương luôn ở lớp vẽ trên nhân vật, hình nộm và quái; lộn người không thay đổi thứ tự lớp hoặc hộp đánh.
 
 ## Phái Đao
 

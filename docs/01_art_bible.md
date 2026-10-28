@@ -26,7 +26,7 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 
 ## Bảng màu chính
 
-Bảng màu cuối cùng có 32 màu; 16 màu dưới đây là khung xương. Khi chỉnh tay sprite, mọi màu phải quy về bảng này hoặc các sắc độ đã thêm vào bảng.
+**Đã duyệt palette_v3**, xác nhận tại A0 ngày 28/10/2026: bảng 32 màu trong `art/reference/palette.gpl` và `palette.png`. 16 màu dưới đây là khung xương tham khảo. Khi chỉnh tay sprite, mọi màu phải quy về bảng này hoặc các sắc độ đã thêm vào bảng.
 
 | Tên | Mã | Dùng cho |
 |---|---|---|
@@ -48,16 +48,32 @@ Bảng màu cuối cùng có 32 màu; 16 màu dưới đây là khung xương. K
 | Trắng bông lau | #F4F1E8 | Bông lau, cờ lau |
 
 
-## Quy định nguồn tạo sprite theo loại asset (28/10/2026)
+## Quy trình nhân vật chính: ghép bộ phận (28/10/2026)
 
-- Quy trình **$imagegen + `tools/snap_pixel.py` chỉ áp dụng cho quái, NPC, tile và vật phẩm**. Các ảnh này vẫn phải qua kiểm tra kỹ thuật, tự soát mỹ thuật và người dùng duyệt.
-- **Sprite nhân vật chính Đinh Bộ Lĩnh không được coi là thành phẩm từ $imagegen + snap_pixel**. Sprite nhân vật chính cần được **sửa tay bằng công cụ pixel art (ví dụ Aseprite) hoặc thuê họa sĩ vẽ**, rồi kiểm tra palette, kích thước, đường chân và hoạt ảnh trước khi duyệt.
-- `art/sprites/characters/chr_dbl_idle_side_96.png` hiện là **PLACEHOLDER đạt kỹ thuật nhưng chưa đạt mỹ thuật**, chỉ dùng tạm khi kiểm thử nguyên mẫu; không thay ảnh tham chiếu `art/reference/ref_dinh_bo_linh.png`, không đưa vào `art/approved/`.
-- Quy định này thay thế hướng dẫn pipeline tự động trước đây **đối với nhân vật chính**; các quy định chung về kiểm tra file thật và báo cáo script vẫn giữ nguyên.
+Người dùng **không thuê họa sĩ**. Nhân vật chính dùng quy trình
+**imagegen → snap_pixel → sửa pixel bằng script → kiểm tra bằng check_sprite**,
+rồi **Claude/người dùng duyệt từng bộ phận dựa trên script kiểm tra và bằng mắt**.
+Quy trình này thay quy định cũ loại nhân vật chính khỏi pipeline và yêu cầu chỉnh
+tay bằng công cụ pixel art/thuê họa sĩ. Quái, NPC, tile và vật phẩm tiếp tục qua
+pipeline tạo ảnh/chuẩn hóa, báo cáo file thật và duyệt mỹ thuật tương ứng.
+
+- **`chr_dbl_parts`:** bộ bộ phận theo tỉ lệ nhân vật cao 96 px, không phải mỗi mảnh đều cao 96 px. Gồm đầu kèm tóc, thân; cánh tay trên/dưới gần và xa; đùi/cẳng chân gần và xa; bàn tay gần/xa và vũ khí. Mỗi mảnh có điểm khớp trong tọa độ pixel cục bộ, điểm gắn với mảnh cha và vùng vẽ bù phía bị che để khi xoay không thủng vai, khuỷu, hông, gối hoặc cổ tay.
+- **`chr_dbl_anim_*`:** dữ liệu ghép theo từng khung: id bộ phận, vị trí, góc, thứ tự lớp; kèm thời lượng và sự kiện hit/spawn theo `09_animation_spec.md`. Dữ liệu chuyển pose từng khung, không phải chỉ xoay toàn bộ ảnh đứng. Lộn ở đỉnh/chiêu lớn được bổ sung khung vẽ riêng nếu ghép bộ phận chưa đủ rõ.
+- **`chr_dbl_t1`…`chr_dbl_t7`:** bộ phận thay thế áo, quần, vũ khí; giữ chung id khớp, tỉ lệ và dữ liệu động tác. Không vẽ lại toàn bộ chuỗi hoạt ảnh cho từng bậc trang bị.
+- **Duyệt:** so script (palette_v3, kích thước/tỉ lệ, khớp, đường chân, độ kín khi ghép) và xem từng bộ phận cùng các pose ghép thật ở 1×/phóng NEAREST. Chạy kiểm tra kỹ thuật không thay duyệt mỹ thuật; không ghi đè ảnh đã duyệt. Lưu prompt, ảnh nguồn, script sửa, dữ liệu khớp/khung và báo cáo trong nhật ký.
+- **Ảnh cũ:** `art/sprites/characters/chr_dbl_idle_side_96.png` tiếp tục là PLACEHOLDER, không tự được duyệt lại; ảnh gốc `art/reference/ref_dinh_bo_linh.png` vẫn là tham chiếu. Lát cắt mẫu Giai đoạn 1 dùng bộ phận mới đã duyệt để thay placeholder, xem `02_asset_list.md`.
+
+**Phạm vi công cụ hiện có:** `snap_pixel.py` và `check_sprite.py` hiện kiểm một
+nhân vật nguyên khung 128×128, silhouette 96 px, chân cách đáy 8 px, nền xanh và
+bản ×4. Chúng **chưa có chế độ kiểm mảnh/khớp/dữ liệu hoạt ảnh**. Khi sản xuất bộ
+phận cần bổ sung chế độ phù hợp hoặc báo cáo kiểm riêng cho từng mảnh, giữ kiểm
+sprite ghép chuẩn bằng check_sprite; không đổi kích thước từng mảnh thành 96 px
+chỉ để ép qua kiểm tra. Việc cập nhật tài liệu lần này không sửa công cụ hay tạo
+asset, không tuyên bố bộ phận đã qua kiểm tra.
 
 ## Kích thước
 
-Game dựng ở độ phân giải gốc **960×540** (16:9), phóng **×2** lên **1920×1080** bằng lọc nearest. Các thông số dưới đây **Tạm thời**, chờ kiểm tra mẫu chuẩn trên thiết bị thật.
+**Đã duyệt (A0, 28/10/2026):** khung thiết kế **960×540**, nhân vật người **96 px trong khung 128×128**. Dùng `canvas_items`, aspect `expand`, scale `fractional`, lọc nearest; viewport thực rộng 960–1200 px logic theo tỉ lệ màn hình (1600×720 → 1200×540, hệ số 4/3). Android fullscreen + immersive. Kết quả trên Realme RMX3760, Godot 4.7.2, commit `7973729`; không ép mọi thiết bị phóng nguyên ×2. Các kích thước boss, thú, tile, icon và nền bên dưới vẫn **Tạm thời**; A0 không duyệt sprite mỹ thuật thành phẩm.
 
 - **Nhân vật người:** cao khoảng 96 điểm ảnh, đặt trong khung 128×128, chân cách đáy khung 8 điểm ảnh. Mọi khung động tác dùng chung một đường chân.
 - **Boss người:** cao khoảng 132 điểm ảnh, khung 192×192. Boss cưỡi ngựa hay voi dùng khung 192×160.
@@ -67,18 +83,26 @@ Game dựng ở độ phân giải gốc **960×540** (16:9), phóng **×2** lê
 - **Chân dung hội thoại:** 128×128, chỉ đầu và vai.
 - **Cảnh nền:** mỗi lớp rộng 1920, cao 540 để lặp lại khi cuộn.
 
-### Quy trình sprite (tạm thời, áp dụng cho `chr_dbl_idle_side_96`)
+### Sản xuất và kiểm bộ phận nhân vật chính
 
-1. Dùng `$imagegen` **chỉ để vẽ ảnh concept** nhân vật pixel art cỡ lớn, nền xanh `#00FF00`, khối pixel rõ; concept không phải sprite được duyệt.
-2. Chạy `tools/snap_pixel.py`: ước lượng chu kỳ ô pixel theo hai trục bằng tự tương quan/tần số của chênh lệch pixel kề nhau; lấy trung vị màu mỗi ô (bỏ ô có trên 50% nền xanh); ép màu về `art/reference/palette.gpl` theo khoảng cách có trọng số độ sáng; co giãn nearest đến chiều cao **96 px**; căn giữa trên canvas **128×128**, chân cách đáy **8 px**.
-3. Sửa tay trong Aseprite: viền, mắt, tay, các pixel lẻ. **Chưa thực hiện bước này trong bản thử tự động.**
-4. Chạy `tools/check_sprite.py` trên PNG thật: kích thước, bbox, chiều cao, khoảng cách đáy, đếm pixel từng màu, 0 pixel ngoài palette (trừ nền), nền đúng `#00FF00`; xác nhận ảnh ×4 được tạo bằng `Image.resize(..., Image.Resampling.NEAREST)` từ bản 1×.
+1. Dùng imagegen theo ảnh tham chiếu và STYLE/AVOID đã duyệt để tạo bộ phận, bao gồm phần vẽ bù bị che; giữ nhất quán lưới pixel và tỉ lệ nhân vật ghép cao 96 px.
+2. Chuẩn hóa lưới/màu bằng snap_pixel theo quy cách phù hợp bộ phận; script sửa viền, pixel lạc, phần che, nền và vùng nối. Giữ dữ liệu ảnh nguồn; không co một lưới nghệ thuật sai thành đúng 96 px để giả đạt chuẩn.
+3. Ghi id mảnh, khớp, mảnh cha, vị trí gốc và lớp gần/xa. Dựng ảnh ghép kiểm đứng chuẩn trong khung 128×128, mốc chân cách đáy 8 px; so tỉ lệ với ảnh tham chiếu.
+4. Kiểm file thật bằng check_sprite và báo cáo bổ sung cho mảnh/khớp: palette, kích thước, điểm nối, độ kín ở nhiều góc, thứ tự lớp và dữ liệu từng frame. Công cụ nguyên khung hiện có chỉ kiểm pose chuẩn đáp ứng hợp đồng của nó; các pose co chân/lộn phải có phép kiểm phù hợp, không được ép silhouette mọi frame cao đúng 96 px.
+5. Claude/người dùng duyệt từng bộ phận bằng báo cáo script và bằng mắt, rồi duyệt các chuỗi ghép. Thêm khung riêng cho lộn/chiêu lớn khi cần; không bắt buộc Aseprite, sửa tay hoặc thuê họa sĩ.
+6. Dựng lát cắt Đào Úc + nhân vật ghép bộ phận + một quái trong prototype để duyệt cuối Giai đoạn 1. Chỉ mở Giai đoạn 2 sau khi duyệt đủ giai đoạn trước, bao gồm lát cắt này.
 
-Không dùng imagegen để dựng báo cáo, bảng số liệu, ảnh so sánh hoặc bản ×4. Chỉ kiểm tra bằng script trên file thật.
+Ảnh ×4 chỉ tạo từ ảnh 1× thật bằng `Image.resize(..., Image.Resampling.NEAREST)`;
+bảng so sánh phải ghép bằng script từ file thật, không tạo báo cáo bằng imagegen.
 
 ## Nhân vật vẽ theo bộ phận
 
-Đinh Bộ Lĩnh vẽ thành bốn lớp chồng lên nhau: đầu (mặt và tóc), thân (áo và tay), chân (quần và giày), vũ khí. Mỗi bộ trang bị chỉ thay lớp tương ứng. Vì vậy mọi bậc trang bị phải giữ đúng dáng người, độ dài tay chân và vị trí khớp của ảnh gốc.
+Bộ phận có điểm khớp cho đầu/cổ, thân/vai/hông, cánh tay trên–dưới gần/xa,
+đùi–cẳng chân gần/xa, bàn tay và tay cầm vũ khí. Ghi rõ hệ tọa độ cục bộ,
+khớp cha–con và lớp vẽ ở mỗi frame; phần bị che vẫn phải vẽ đủ để ghép khi đổi góc.
+Các bậc trang bị chỉ thay áo, quần, vũ khí tương ứng, cùng hệ khớp và cùng dữ liệu
+động tác. Chiều dài cụ thể từng mảnh và bộ pose phải được duyệt khi dựng
+`chr_dbl_parts`, không tự coi ảnh chia ô/chia vùng chữ nhật cũ là bộ phần đã duyệt.
 
 ## Trang phục thế kỷ 10
 
@@ -116,6 +140,13 @@ Màu cờ là mở rộng cho game, đặt sao cho hai sứ quân đánh liền 
 
 ## Giao diện
 
-Chất liệu khung giao diện là gỗ sơn mài tối màu, đan tre và viền đồng, có họa tiết bông lau kín đáo. Không có chữ trong ảnh. Bố cục các màn đã chốt ở Phần 5 của `GDD.md`: màn chơi (máu, khí ở góc trên trái; bản đồ nhỏ và nút menu, túi đồ, Nạp ở góc trên phải; cần điều khiển góc dưới trái; nút đánh và 6 ô chiêu góc dưới phải), menu nhân vật 7 thẻ, màn hội thoại, cửa hàng, thợ rèn, nạp và cửa hàng ngân phiếu, chọn ô nhân vật.
+Chất liệu khung giao diện là gỗ sơn mài tối màu, đan tre và viền đồng, có họa tiết bông lau kín đáo. Không có chữ trong ảnh. Bố cục HUD trong trận theo chuẩn A0 ở `06_screens.md`: vòng cấp, máu/nội lực trên trái; menu và bản đồ nhỏ trên phải; d-pad 3 nút với hai vùng chéo vô hình dưới trái; cụm CHÉM/đổi mục tiêu/bình dưới phải; 5 ô kỹ năng giữa đáy. Hình nút thành phẩm sẽ vẽ riêng theo phong cách Việt (có thể tham khảo hoa văn trống đồng), không dùng ảnh hay biểu tượng game khác. Các màn còn lại tra Phần 5 `GDD.md` và đặc tả `06_screens.md`, tiếp tục duyệt ở Mốc A.
 
 Ba loại tiền có biểu tượng riêng: tiền đồng (đồng xu đồng có lỗ vuông), ngân lượng (thỏi bạc), ngân phiếu (tờ giấy đổi bạc có dấu son).
+
+## Thứ tự lớp trong trận (chốt từ A0)
+
+Hiệu ứng đòn đánh (vệt chém, tia lửa trúng đòn) và số sát thương **luôn vẽ đè
+lên nhân vật, hình nộm và quái**. Khi dựng scene hoặc sprite sheet phải giữ lớp
+hiệu ứng/số cao hơn lớp thân, không để thứ tự node khiến quái che mất phản hồi
+trúng đòn. Lộn người chỉ đổi hình hoạt ảnh, không xoay hitbox hoặc đổi lớp vẽ.
