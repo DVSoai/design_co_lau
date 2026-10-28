@@ -1,0 +1,47 @@
+{
+  "head": {
+    "radius": 4.0,
+    "color": "#E99A69",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "upper_arm_far": {
+    "radius": 4.0,
+    "color": "#A38269",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "forearm_far": {
+    "radius": 3.5,
+    "color": "#B66C49",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "thigh_far": {
+    "radius": 5.0,
+    "color": "#6B4A35",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "shin_far": {
+    "radius": 4.0,
+    "color": "#78432E",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "upper_arm_near": {
+    "radius": 4.0,
+    "color": "#FFD0A0",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "forearm_near": {
+    "radius": 3.5,
+    "color": "#E99A69",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "thigh_near": {
+    "radius": 5.0,
+    "color": "#6B4A35",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  },
+  "shin_near": {
+    "radius": 4.0,
+    "color": "#80614D",
+    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+  }
+}

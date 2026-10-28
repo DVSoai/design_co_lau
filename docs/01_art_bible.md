@@ -71,6 +71,16 @@ sprite ghép chuẩn bằng check_sprite; không đổi kích thước từng m�
 chỉ để ép qua kiểm tra. Việc cập nhật tài liệu lần này không sửa công cụ hay tạo
 asset, không tuyên bố bộ phận đã qua kiểm tra.
 
+### Pipeline bộ phận bậc 0 đang làm
+
+`tools/cut_parts.py` hiện tách 16 vùng concept, dùng hàm snap_pixel để nắn lưới,
+co bằng trung vị từng ô theo parts.json, ép 17 màu và vẽ bù tự động. Kiểm riêng
+bằng `tools/check_parts.py` trên PNG và pose/alpha xuất từ scene; báo cáo, ma trận
+đầu và script nguyên văn ở `17_parts_art_report.md`. Do khung cố định có thể cắt
+mất đầu tròn, rig có lớp màu bù tự động dưới các khớp cổ/vai/khuỷu/hông/gối,
+không thêm bone hoặc đổi hitbox. Đây là bản đang làm, không phải bộ phận đã duyệt;
+`check_sprite.py` vẫn giữ hợp đồng kiểm sprite nguyên khung như trên.
+
 ## Kích thước
 
 **Đã duyệt (A0, 28/10/2026):** khung thiết kế **960×540**, nhân vật người **96 px trong khung 128×128**. Dùng `canvas_items`, aspect `expand`, scale `fractional`, lọc nearest; viewport thực rộng 960–1200 px logic theo tỉ lệ màn hình (1600×720 → 1200×540, hệ số 4/3). Android fullscreen + immersive. Kết quả trên Realme RMX3760, Godot 4.7.2, commit `7973729`; không ép mọi thiết bị phóng nguyên ×2. Các kích thước boss, thú, tile, icon và nền bên dưới vẫn **Tạm thời**; A0 không duyệt sprite mỹ thuật thành phẩm.

@@ -1,0 +1,16 @@
+[
+  {"x":13,"y":12,"index":2,"note":"eyebrow shadow"},
+  {"x":14,"y":12,"index":4,"note":"upper eyelid skin"},
+  {"x":15,"y":12,"index":4,"note":"brow/nose bridge"},
+  {"x":13,"y":13,"index":5,"note":"eye light"},
+  {"x":14,"y":13,"index":0,"note":"single eye pupil"},
+  {"x":15,"y":13,"index":4,"note":"nose bridge"},
+  {"x":16,"y":13,"index":4,"note":"nose silhouette"},
+  {"x":15,"y":14,"index":5,"note":"nose highlight"},
+  {"x":16,"y":14,"index":4,"note":"nose tip"},
+  {"x":15,"y":15,"index":2,"note":"nostril shadow"},
+  {"x":14,"y":16,"index":4,"note":"cheek"},
+  {"x":14,"y":17,"index":2,"note":"mouth"},
+  {"x":13,"y":17,"index":2,"note":"mouth continuation"},
+  {"x":14,"y":18,"index":4,"note":"chin"}
+]

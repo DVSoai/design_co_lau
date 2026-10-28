@@ -215,3 +215,24 @@ rig smoke và các kiểm tra bổ sung bằng **Godot 4.7.2.stable.official.ed1
 đầu ra nguyên văn nằm trong commit sửa này. Chỉ sửa `prototype/rig/` và tài liệu
 này; nhật ký lần chỉnh được ghi tại đây theo phạm vi người dùng, không sửa 05_log.
 Rig/pose vẫn **Đề xuất — chưa duyệt**, chưa thử Android mới.
+
+## 7. Bộ phận vẽ bậc 0 (đang làm, chưa duyệt)
+
+Trong cảnh rig, ⚙ có **Bộ phận vẽ / Khối màu (bật = vẽ)**, mặc định bật.
+Mỗi mảnh dùng Sprite2D nearest, texture bản sao đúng byte từ
+`art/sprites/characters/chr_dbl_parts/`, giữ size/pivot/attach/layer đã có.
+Không đổi pose JSON, hitbox hay điều khiển. Tắt để trở lại các khối màu.
+
+Các khung cố định/pivot sát mép không chứa trọn đầu tròn ở một số góc gập.
+Ngoài phần vẽ bù bán nguyệt trong PNG, script sinh metadata màu/vùng đầu tròn
+`prototype/rig/art_parts/joint_fill.json`; scene vẽ lớp bù tự động dưới ảnh tại
+cổ, vai, khuỷu, hông và gối (hai nửa bán nguyệt, cùng màu vùng gần khớp).
+Lớp bù có thể vượt mép khung ảnh một ít để không hở khi xoay, không thêm bone hay
+thay kích thước PNG/collision. Không thêm lớp bù tròn ở bàn chân/tay/vũ khí để
+tránh biến chân đất/tay cầm thành khối tròn lớn. Phần này là vẽ bù bằng script,
+chưa duyệt thẩm mỹ; không giả là họa sĩ đã vẽ phần giải phẫu bị che.
+
+Ảnh concept, bước xử lý, hai ma trận đầu 24×18, kiểm PNG/khớp và script nguyên
+văn tại `17_parts_art_report.md`. Contact sheet texture ở
+`prototype/rig/contact_sheets/art/`; idle ×4 chỉ phóng NEAREST từ file 1× thật.
+Claude/người dùng còn phải soát khuôn mặt và mọi bộ phận, chưa thử Android mới.
