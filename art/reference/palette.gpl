@@ -1,0 +1,36 @@
+GIMP Palette
+Name: Co Lau Palette v3
+Columns: 8
+# 32 colors, background #00FF00 separate
+ 23  21  26 outline
+ 52  41  35 outline
+120  67  46 skin
+182 108  73 skin
+233 154 105 skin
+255 208 160 skin
+ 85  70  56 fabric
+137 116  94 fabric
+195 169 138 fabric
+234 216 184 fabric
+ 61  45  36 belt
+107  74  53 belt
+152 118  90 belt
+ 50  43  43 pants
+ 89  68  62 pants
+128  97  77 pants
+163 130 105 pants
+ 72  95  96 limestone
+113 139 135 limestone
+165 184 176 limestone
+217 221 208 limestone
+ 49  91  56 young_rice
+ 93 141  77 young_rice
+163 191 108 young_rice
+201 161  76 ripe_rice
+240 212 125 ripe_rice
+ 36  84 110 water
+ 66 137 163 water
+137 196 210 water
+142  53  46 reed_red
+189  90  72 reed_red
+255 247 233 highlight

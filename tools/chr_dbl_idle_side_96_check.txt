@@ -1,0 +1,38 @@
+sprite=/mnt/data/project_v3_work/CoLauKhoiNghia/art/sprites/characters/chr_dbl_idle_side_96.png
+size=128x128
+bbox_exclusive=(49, 24, 79, 120)
+character_height=96
+bottom_margin=8
+palette_colors=32
+unique_colors_including_background=23
+outside_palette_pixels=0
+nonopaque_pixels=0
+semitransparent_pixels=0
+background_other_than_00FF00=0
+x4_nearest_exact_match=True
+pixel_counts:
+  #00FF00 14469
+  #17151A 595
+  #322B2B 1
+  #342923 130
+  #3D2D24 119
+  #554638 3
+  #59443E 39
+  #6B4A35 2
+  #78432E 143
+  #80614D 25
+  #89745E 1
+  #8E352E 42
+  #98765A 1
+  #A38269 27
+  #B66C49 65
+  #BD5A48 47
+  #C3A98A 13
+  #C9A14C 5
+  #E99A69 251
+  #EAD8B8 37
+  #F0D47D 306
+  #FFD0A0 62
+  #FFF7E9 1
+TOTAL=16384
+PASS=True

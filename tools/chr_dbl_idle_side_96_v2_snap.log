@@ -1,0 +1,14 @@
+input=art/concept/characters/chr_dbl_concept_side_big_v2.png
+crop_size=259x815
+grid_period_x=5 grid_period_y=6
+grid_cells=52x136
+groups=outline,skin,fabric,belt,pants palette_colors=17
+grid_x_scores=[(2, 0.12057), (3, 0.18612), (4, 0.39009), (5, 0.60991), (6, 0.46508), (7, 0.14951), (8, 0.16248), (9, 0.26705), (10, 0.32522), (11, 0.33971), (12, 0.24979), (13, 0.17358), (14, 0.19424), (15, 0.17822), (16, 0.14758)]
+grid_y_scores=[(2, -0.01184), (3, 0.01227), (4, 0.06417), (5, 0.5887), (6, 0.60917), (7, 0.0311), (8, -0.00858), (9, 0.00169), (10, 0.165), (11, 0.62179), (12, 0.27377), (13, -0.05786), (14, -0.03819), (15, -0.02246), (16, 0.3026)]
+Traceback (most recent call last):
+  File "/mnt/data/colau_v4_work/CoLauKhoiNghia/tools/snap_pixel.py", line 90, in <module>
+    run(ap.parse_args())
+    ~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/colau_v4_work/CoLauKhoiNghia/tools/snap_pixel.py", line 64, in run
+    raise ValueError(f'REJECT: native character grid height={oh}, expected 96±2; no resizing or output')
+ValueError: REJECT: native character grid height=136, expected 96±2; no resizing or output
