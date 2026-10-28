@@ -402,6 +402,32 @@ func test_dpad_and_jump(world: Node) -> void:
 	world.tuning.set_flag("HOLD_AUTO_JUMP", true)
 	world.tuning.set_flag("VARIABLE_JUMP", false)
 	var buttons: Dictionary = world.touch_buttons
+	world.debug_enabled = false
+	world._process(0.0)
+	var visible_movement := 0
+	for key in ["left", "right", "jump", "diag_left", "diag_right"]:
+		if buttons[key].visible:
+			visible_movement += 1
+	check(visible_movement == 3 and buttons.diag_left.hit_only and buttons.diag_right.hit_only and buttons.diag_left.caption.is_empty() and buttons.diag_right.caption.is_empty(), "only three movement buttons are drawn; diagonal zones have no normal drawing")
+	var d: float = T.TOUCH_BUTTON_SIZE.x
+	check(is_equal_approx(buttons.right.position.x - buttons.left.position.x, 2.2 * d) and is_equal_approx(buttons.left.position.y - buttons.jump.position.y, 1.35 * d) and is_equal_approx(buttons.jump.position.x, (buttons.left.position.x + buttons.right.position.x) / 2), "d-pad follows 2.2d spacing and 1.35d jump height with centered up button")
+	check(is_equal_approx(buttons.diag_left.position.x + buttons.diag_left.size.x, buttons.jump.position.x) and is_equal_approx(buttons.diag_right.position.x, buttons.jump.position.x + d) and is_equal_approx(buttons.diag_left.position.y, buttons.jump.position.y) and is_equal_approx(buttons.diag_right.position.y, buttons.jump.position.y), "invisible zones are adjacent to both sides of up on the same row")
+	var saved_position: Vector2 = buttons.diag_left.position
+	buttons.diag_left.position = buttons.jump.position
+	check(world.touch_controls._hit(buttons.jump.position + Vector2.ONE * d / 3) == "jump", "up button wins hit priority when a diagonal region overlaps")
+	buttons.diag_left.position = saved_position
+	for side in ["left", "right"]:
+		var zone: Control = buttons["diag_" + side]
+		var saved: Vector2 = zone.position
+		zone.position = buttons[side].position
+		check(world.touch_controls._hit(zone.position + zone.size / 2) == "diag_" + side, "diagonal wins hit priority over lower direction " + side)
+		zone.position = saved
+	world.debug_enabled = true
+	world._process(0.0)
+	check(buttons.diag_left.visible and buttons.diag_right.visible and buttons.diag_left.hit_only and buttons.diag_right.hit_only, "F1 enables outline-only diagonal diagnostics")
+	world.debug_enabled = false
+	world._process(0.0)
+	check(not buttons.diag_left.visible and not buttons.diag_right.visible and world.touch_controls._hit(buttons.diag_left.position + buttons.diag_left.size / 2) == "diag_left", "diagonal zones remain touchable with debug drawing hidden")
 	check(buttons.diag_left.position.x < buttons.jump.position.x and buttons.diag_right.position.x > buttons.jump.position.x and is_equal_approx(buttons.diag_left.size.x, T.TOUCH_BUTTON_SIZE.x * 0.9), "diagonal jump regions are on matching sides and 0.9x wide")
 	for direction in [-1, 1]:
 		await settle_player(world)
@@ -410,7 +436,9 @@ func test_dpad_and_jump(world: Node) -> void:
 		control_touch(0, center, true)
 		await frames(3)
 		check(world.player.velocity.x * direction > 0 and world.player.velocity.y < 0 and Input.is_action_pressed("touch_jump"), "diagonal region jumps and holds direction %d" % direction)
-		check(buttons[key].held and buttons[key].scale.is_equal_approx(Vector2.ONE * 0.95), "held diagonal region has pressed feedback")
+		var side: String = "left" if direction < 0 else "right"
+		var opposite: String = "right" if direction < 0 else "left"
+		check(buttons.jump.held and buttons[side].held and not buttons[opposite].held and buttons.jump.scale.is_equal_approx(Vector2.ONE * 0.95) and buttons[side].scale.is_equal_approx(Vector2.ONE * 0.95), "invisible diagonal lights up and shrinks jump plus matching direction")
 		var body_rotation: float = world.player.rotation
 		world.player.set_physics_process(false)
 		world.player.spin_elapsed = world.player.spin_duration / 4
@@ -425,6 +453,26 @@ func test_dpad_and_jump(world: Node) -> void:
 		world.tuning_panel.switches["DIAGONAL_SPIN_ENABLED"].button_pressed = true
 		control_touch(0, center, false)
 		check(not Input.is_action_pressed("touch_left") and not Input.is_action_pressed("touch_right") and not Input.is_action_pressed("touch_jump"), "releasing diagonal clears its held actions")
+	# Vuốt cùng một ngón qua các vùng không làm mất action đang dùng chung.
+	control_touch(0, buttons.diag_left.position + buttons.diag_left.size / 2, true)
+	var drag := InputEventScreenDrag.new()
+	drag.index = 0
+	drag.position = buttons.jump.position + buttons.jump.size / 2
+	root.push_input(drag, true)
+	check(Input.is_action_pressed("touch_jump") and not Input.is_action_pressed("touch_left") and buttons.jump.held and not buttons.left.held, "sliding from diagonal to up keeps jump and releases direction feedback")
+	drag = drag.duplicate()
+	drag.position = buttons.diag_right.position + buttons.diag_right.size / 2
+	root.push_input(drag, true)
+	check(Input.is_action_pressed("touch_jump") and Input.is_action_pressed("touch_right") and buttons.jump.held and buttons.right.held, "sliding to opposite diagonal updates direction and both visible highlights")
+	drag = drag.duplicate()
+	drag.position = buttons.right.position + buttons.right.size / 2
+	root.push_input(drag, true)
+	check(not Input.is_action_pressed("touch_jump") and Input.is_action_pressed("touch_right") and not buttons.jump.held, "sliding down to right retains direction without jump")
+	drag = drag.duplicate()
+	drag.position = Vector2.ZERO
+	root.push_input(drag, true)
+	check(not Input.is_action_pressed("touch_right") and not buttons.right.held, "sliding outside all regions releases actions and feedback")
+	control_touch(0, Vector2.ZERO, false)
 	# Một ngón ở vùng chéo, ngón thứ hai ở trái: nhả vùng chéo vẫn giữ trái.
 	control_touch(0, buttons.diag_left.get_global_rect().get_center(), true)
 	control_touch(1, buttons.left.get_global_rect().get_center(), true)

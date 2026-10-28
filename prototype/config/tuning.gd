@@ -61,6 +61,9 @@ const JUMP_RELEASE_MULTIPLIER := 0.5 # tỉ lệ vận tốc khi nhả sớm
 const DIAGONAL_SPIN_ENABLED := true # chỉ xoay Sprite2D
 const DIAGONAL_SPIN_TURNS := 1.0 # vòng/nhảy; thời gian = 2 × TIME_TO_APEX
 const HUD_VISIBLE := true # HUD giữ chỗ, không có hệ thống game
+const DPAD_RIGHT_OFFSET_RATIO := 2.2 # lần d, khoảng lệch x giữa hai nút dưới
+const DPAD_UP_OFFSET_RATIO := 1.35 # lần d, khoảng lệch y của nút ↑
+const DIAGONAL_DEBUG_BORDER_WIDTH := 1.0 # px, chỉ vẽ viền vùng chéo khi F1
 const DIAGONAL_WIDTH_RATIO := 0.9 # lần nút di chuyển
 const SLASH_BUTTON_RATIO := 1.4 # lần nút di chuyển
 const SMALL_BUTTON_RATIO := 0.65 # lần nút di chuyển

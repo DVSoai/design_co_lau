@@ -83,7 +83,7 @@ Các con số mới là giá trị thử A0, không tự chốt thông số chí
    máy tính. Chạy `adb devices`, rồi `adb install -r /đường/dẫn/a0.apk`;
    hoặc chép APK và cho phép cài từ nguồn tương ứng.
 8. Mở app ở hướng ngang. D-pad bên trái có ←/→ ở dưới, ↑ ở trên giữa,
-   hai vùng ↖/↗ ở hai bên ↑. Cụm chém/bình/đổi mục tiêu ở bên phải, năm ô kỹ năng
+   hai vùng chạm vô hình ở hai bên ↑. Cụm chém/bình/đổi mục tiêu ở bên phải, năm ô kỹ năng
    ở giữa đáy; xem phần bố cục cảm ứng phía dưới. Thử nhiều ngón đồng thời.
    Các nút cũng được vẽ trên PC để xem bố cục và thử bằng chuột.
 9. Kiểm tra chạy/nhảy, coyote/jump buffer, hitbox, camera, nhịp chém, mép màn hình
@@ -114,7 +114,7 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 85 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 97 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
@@ -192,8 +192,12 @@ biểu tượng hay mã của game khác. Nút di chuyển 84 px logic, cách m�
 nhưng vùng bắt chạm không co. Chữ/mũi tên tối thiểu 22 px logic.
 Tất cả kích thước, tỉ lệ, khoảng cách và alpha nằm trong config/tuning.gd.
 
-- Trái: ← và → ở hàng dưới; ↑ ở hàng trên giữa. Hai vùng ↖/↗ rộng 0,9 lần
-  nút giữ hướng tương ứng và nhảy. Trượt ra khỏi vùng thì nhả action; nhả một
+- Trái chỉ có **ba nút nhìn thấy: ←, →, ↑**. Với d = 84 px, ← ở x0,
+  → ở x0 + 2,2d; ↑ căn giữa ở y = lower_y − 1,35d. Hai vùng chéo **vô hình**
+  rộng 0,9d, cao d, sát hai mép bên của ↑, cùng hàng với ↑. Chạm vùng chéo
+  giữ hướng tương ứng và nhảy, đồng thời làm sáng viền ↑ và nút ←/→ cùng phía.
+  Chỉ F1 debug mới vẽ viền mảnh của vùng chéo, không có nền/chữ/mũi tên.
+  Ưu tiên bắt chạm: ↑, sau đó vùng chéo, sau đó ←/→. Trượt ra khỏi vùng thì nhả action; nhả một
   ngón không hủy action mà ngón khác đang giữ. Bàn phím và touch dùng action
   riêng, không nhả nhầm phím PC đang giữ. Không còn nút nhảy ở bên phải.
 - Phải: CHÉM tròn đường kính 1,4 lần nút di chuyển. Trên là ĐỔI (đổi mục tiêu,
@@ -207,11 +211,11 @@ Tất cả kích thước, tỉ lệ, khoảng cách và alpha nằm trong confi
 
 Các công tắc trong ⚙ chỉ đổi trong RAM và có trong văn bản Sao chép:
 
-- **Giữ để nhảy lại**: mặc định bật. Giữ ↑, vùng chéo hoặc phím nhảy sẽ tự
+- **Giữ để nhảy lại**: mặc định bật. Giữ ↑, vùng chéo vô hình hoặc phím nhảy sẽ tự
   nhảy lần nữa khi chạm đất. Tắt để chỉ nhảy một lần mỗi lần bấm.
 - **Giữ lâu nhảy cao**: mặc định tắt. Khi bật, nhả toàn bộ nút/phím nhảy sớm
   giảm vận tốc đi lên còn 50%; giữ đến đỉnh cho đủ độ cao.
-- **Xoay khi nhảy chéo**: mặc định bật. Nhảy bắt đầu từ ↖/↗ thì sprite xoay
+- **Xoay khi nhảy chéo**: mặc định bật. Nhảy bắt đầu từ vùng chéo trái/phải thì sprite xoay
   một vòng theo hướng nhảy; thời gian danh nghĩa bằng 2 × TIME_TO_APEX,
   phủ pha lên và rơi cùng cao độ. Khi chạm đất thì kết thúc, kể cả đáp lên bậc
   sớm; rơi lâu hơn thời gian danh nghĩa thì giữ góc đã đủ một vòng cho tới khi

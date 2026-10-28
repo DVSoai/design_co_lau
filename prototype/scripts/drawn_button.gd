@@ -4,6 +4,7 @@ const T = preload("res://config/tuning.gd")
 var caption := ""
 var round_shape := false
 var held := false
+var hit_only := false # vùng chéo: ẩn mặc định, chỉ viền debug khi visible
 var tint := Color(0.08, 0.1, 0.14)
 
 func _ready() -> void:
@@ -19,10 +20,13 @@ func contains(point: Vector2) -> bool:
 func set_held(active: bool) -> void:
 	held = active
 	pivot_offset = size / 2
-	scale = Vector2.ONE * (T.TOUCH_PRESSED_SCALE if held else 1.0)
+	scale = Vector2.ONE * (T.TOUCH_PRESSED_SCALE if held and not hit_only else 1.0)
 	queue_redraw()
 
 func _draw() -> void:
+	if hit_only:
+		draw_rect(Rect2(Vector2.ZERO, size).grow(-T.DIAGONAL_DEBUG_BORDER_WIDTH / 2), T.TOUCH_BORDER, false, T.DIAGONAL_DEBUG_BORDER_WIDTH)
+		return # không nền, không chữ/mũi tên, không feedback riêng
 	var fill := Color(tint, T.TOUCH_FILL_ALPHA)
 	var border: Color = T.TOUCH_PRESSED_BORDER if held else T.TOUCH_BORDER
 	if round_shape:
