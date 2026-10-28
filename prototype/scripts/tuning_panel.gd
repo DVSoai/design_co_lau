@@ -1,5 +1,6 @@
 extends Control
 
+const T = preload("res://config/tuning.gd")
 const ThumbSlider = preload("res://scripts/thumb_slider.gd")
 const RuntimeTuning = preload("res://config/runtime_tuning.gd")
 var tuning: RefCounted
@@ -10,6 +11,8 @@ var motion_toggle: CheckButton
 var scale_toggle: CheckButton
 var info_label: Label
 var scroll: ScrollContainer
+var switches: Dictionary = {}
+var previous_hud := true
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -19,7 +22,17 @@ func _ready() -> void:
 	toggle.text = "⚙"
 	toggle.tooltip_text = "Chỉnh thông số A0"
 	toggle.position = Vector2(904, 8)
-	toggle.size = Vector2(44, 40)
+	toggle.custom_minimum_size = T.GEAR_SIZE
+	toggle.size = T.GEAR_SIZE
+	toggle.add_theme_font_size_override("font_size", T.TOUCH_FONT_SIZE)
+	for state in ["normal", "hover", "pressed"]:
+		var style := StyleBoxFlat.new()
+		style.bg_color = Color(0.08, 0.1, 0.14, T.TOUCH_FILL_ALPHA)
+		style.border_color = T.TOUCH_PRESSED_BORDER if state == "pressed" else T.TOUCH_BORDER
+		style.set_border_width_all(int(T.TOUCH_BORDER_WIDTH))
+		toggle.add_theme_stylebox_override(state, style)
+	toggle.button_down.connect(func() -> void: toggle.scale = Vector2.ONE * T.TOUCH_PRESSED_SCALE)
+	toggle.button_up.connect(func() -> void: toggle.scale = Vector2.ONE)
 	add_child(toggle)
 	panel = PanelContainer.new()
 	panel.position = Vector2(510, 54)
@@ -55,6 +68,15 @@ func _ready() -> void:
 	motion_toggle.button_pressed = tuning.fake_motion_enabled()
 	motion_toggle.toggled.connect(tuning.set_fake_motion_enabled)
 	column.add_child(motion_toggle)
+	for row in [["HOLD_AUTO_JUMP", "Giữ để nhảy lại"], ["VARIABLE_JUMP", "Giữ lâu nhảy cao"], ["DIAGONAL_SPIN_ENABLED", "Xoay khi nhảy chéo"], ["HUD_VISIBLE", "Hiện HUD giữ chỗ"]]:
+		var key: String = row[0]
+		var check := CheckButton.new()
+		check.focus_mode = Control.FOCUS_NONE
+		check.text = row[1]
+		check.button_pressed = tuning.flag(key)
+		check.toggled.connect(func(enabled: bool) -> void: tuning.set_flag(key, enabled))
+		switches[key] = check
+		column.add_child(check)
 	for row in RuntimeTuning.SLIDERS:
 		var key: String = row[0]
 		var label := Label.new()
@@ -87,11 +109,17 @@ func _ready() -> void:
 
 func _layout() -> void:
 	var rect := get_viewport().get_visible_rect()
-	toggle.position = Vector2(rect.end.x - toggle.size.x - 12, rect.position.y + 8)
-	var height := maxf(120, minf(366, rect.size.y - 174))
-	scroll.custom_minimum_size = Vector2(438, height)
-	panel.size = Vector2(438, height)
-	panel.position = Vector2(rect.end.x - panel.size.x - 12, rect.position.y + 54)
+	var margin: float = T.TOUCH_MARGIN
+	var gap: float = T.TOUCH_GAP
+	var reserve: float = T.HUD_MAP_SIZE.x + T.HUD_MENU_SIZE.x + 2 * gap if tuning.flag("HUD_VISIBLE") else 0.0
+	toggle.position = Vector2(rect.end.x - margin - reserve - toggle.size.x, rect.position.y + margin)
+	toggle.pivot_offset = toggle.size / 2
+	var panel_y: float = rect.position.y + margin + (maxf(T.HUD_MAP_SIZE.y, T.GEAR_SIZE.y) if tuning.flag("HUD_VISIBLE") else T.GEAR_SIZE.y) + gap
+	var controls_top: float = rect.end.y - margin - 2 * T.TOUCH_BUTTON_SIZE.y - gap
+	var height := maxf(T.TUNING_PANEL_MIN_HEIGHT, minf(T.TUNING_PANEL_MAX_HEIGHT, controls_top - gap - panel_y))
+	scroll.custom_minimum_size = Vector2(T.TUNING_PANEL_WIDTH, height)
+	panel.size = Vector2(T.TUNING_PANEL_WIDTH, height)
+	panel.position = Vector2(rect.end.x - panel.size.x - margin, panel_y)
 
 func display_info() -> String:
 	var viewport_size := get_viewport().get_visible_rect().size
@@ -102,3 +130,6 @@ func display_info() -> String:
 
 func _process(_delta: float) -> void:
 	info_label.text = display_info()
+	if previous_hud != tuning.flag("HUD_VISIBLE"):
+		previous_hud = tuning.flag("HUD_VISIBLE")
+		_layout()

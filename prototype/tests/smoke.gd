@@ -152,6 +152,7 @@ func run() -> void:
 	await test_tuning_input(world)
 	await test_android_layout(world)
 	await test_touch_slider(world)
+	await test_dpad_and_jump(world)
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)
 
@@ -244,12 +245,26 @@ func test_android_layout(world: Node) -> void:
 		print("Android layout: ", physical, " viewport=", visible.size, " stretch=", root.get_stretch_transform().get_scale())
 		check(coverage.position.is_zero_approx() and coverage.size.is_equal_approx(Vector2(physical)), "fractional expand fills %s without letterbox" % physical)
 		var controls_inside := visible.encloses(world.tuning_panel.toggle.get_global_rect()) and visible.encloses(world.tuning_panel.panel.get_global_rect())
-		for button: TouchScreenButton in world.touch_buttons.values():
-			controls_inside = controls_inside and visible.encloses(Rect2(button.position - T.TOUCH_BUTTON_SIZE / 2, T.TOUCH_BUTTON_SIZE))
+		for button: Control in world.touch_buttons.values():
+			controls_inside = controls_inside and visible.encloses(button.get_global_rect())
 		check(controls_inside, "touch controls, gear and panel stay inside %s" % physical)
-		var slash_edge: Vector2 = world.touch_buttons["slash"].position + T.TOUCH_BUTTON_SIZE / 2
-		var left_edge: Vector2 = world.touch_buttons["left"].position - T.TOUCH_BUTTON_SIZE / 2
-		check(slash_edge.is_equal_approx(visible.end - Vector2.ONE * T.TOUCH_MARGIN) and is_equal_approx(left_edge.x, visible.position.x + T.TOUCH_MARGIN) and is_equal_approx(world.tuning_panel.toggle.get_global_rect().end.x, visible.end.x - 12), "buttons remain anchored to live viewport corners at %s" % physical)
+		var slash_edge: Vector2 = world.touch_buttons["slash"].get_global_rect().end
+		var left_edge: Vector2 = world.touch_buttons["left"].position
+		check(slash_edge.is_equal_approx(visible.end - Vector2.ONE * T.TOUCH_MARGIN) and is_equal_approx(left_edge.x, visible.position.x + T.TOUCH_MARGIN) and is_equal_approx(world.tuning_panel.toggle.get_global_rect().end.x, world.touch_buttons["menu"].position.x - T.TOUCH_GAP), "buttons remain anchored to live viewport corners at %s" % physical)
+		var bounds: Array[Rect2] = [world.tuning_panel.toggle.get_global_rect()]
+		for button: Control in world.touch_buttons.values():
+			if button.visible:
+				bounds.append(button.get_global_rect())
+		for hud_rect: Rect2 in world.touch_controls.hud_rects.values():
+			bounds.append(hud_rect)
+		var no_overlap := true
+		var within_margin := true
+		var safe := visible.grow(-T.TOUCH_MARGIN)
+		for i in bounds.size():
+			within_margin = within_margin and safe.encloses(bounds[i])
+			for j in range(i + 1, bounds.size()):
+				no_overlap = no_overlap and not bounds[i].intersects(bounds[j])
+		check(no_overlap and within_margin, "all controls and HUD stay 24 px inside viewport without overlap at %s" % physical)
 		var half := visible.size / 2
 		world.camera_anchor = Vector2.ZERO
 		var left: Vector2 = world.camera_target()
@@ -334,3 +349,128 @@ func test_touch_slider(world: Node) -> void:
 
 	Input.emulate_touch_from_mouse = old_touch
 	Input.emulate_mouse_from_touch = old_mouse
+
+func control_touch(id: int, point: Vector2, pressed: bool) -> void:
+	var event := InputEventScreenTouch.new()
+	event.index = id
+	event.position = point
+	event.pressed = pressed
+	root.push_input(event, true)
+
+func settle_player(world: Node) -> void:
+	world.player.set_physics_process(false)
+	world.touch_controls.release_all()
+	Input.action_release("jump")
+	Input.action_release("left")
+	Input.action_release("right")
+	await frames(2) # kết thúc các cạnh press/release từ ca trước
+	world.player.buffered_jump = 0.0
+	world.player.coyote = 0.0
+	world.player.spin_direction = 0.0
+	world.player.position = T.SPAWN
+	world.player.velocity = Vector2.ZERO
+	world.player.was_jump_held = false
+	world.player.set_physics_process(true)
+	await frames(8)
+
+func measure_jump(world: Node, early_release: bool, variable: bool) -> float:
+	world.tuning.set_flag("HOLD_AUTO_JUMP", false)
+	world.tuning.set_flag("VARIABLE_JUMP", variable)
+	await settle_player(world)
+	var start_y: float = world.player.position.y
+	var min_y := start_y
+	var airborne := false
+	Input.action_press("jump")
+	for index in range(100):
+		await physics_frame
+		if index == 2 and early_release:
+			Input.action_release("jump")
+		min_y = minf(min_y, world.player.position.y)
+		airborne = airborne or not world.player.is_on_floor()
+		if airborne and world.player.is_on_floor():
+			break
+	Input.action_release("jump")
+	await frames(2)
+	return start_y - min_y
+
+func test_dpad_and_jump(world: Node) -> void:
+	world.tuning_panel.panel.hide()
+	world.touch_controls.release_all()
+	world.tuning.set_value("JUMP_HEIGHT", T.JUMP_HEIGHT)
+	world.tuning.set_value("TIME_TO_APEX", T.TIME_TO_APEX)
+	world.tuning.set_value("RUN_SPEED", T.RUN_SPEED)
+	world.tuning.set_flag("HOLD_AUTO_JUMP", true)
+	world.tuning.set_flag("VARIABLE_JUMP", false)
+	var buttons: Dictionary = world.touch_buttons
+	check(buttons.diag_left.position.x < buttons.jump.position.x and buttons.diag_right.position.x > buttons.jump.position.x and is_equal_approx(buttons.diag_left.size.x, T.TOUCH_BUTTON_SIZE.x * 0.9), "diagonal jump regions are on matching sides and 0.9x wide")
+	for direction in [-1, 1]:
+		await settle_player(world)
+		var key := "diag_left" if direction < 0 else "diag_right"
+		var center: Vector2 = buttons[key].get_global_rect().get_center()
+		control_touch(0, center, true)
+		await frames(3)
+		check(world.player.velocity.x * direction > 0 and world.player.velocity.y < 0 and Input.is_action_pressed("touch_jump"), "diagonal region jumps and holds direction %d" % direction)
+		check(buttons[key].held and buttons[key].scale.is_equal_approx(Vector2.ONE * 0.95), "held diagonal region has pressed feedback")
+		var body_rotation: float = world.player.rotation
+		world.player.set_physics_process(false)
+		world.player.spin_elapsed = world.player.spin_duration / 4
+		world.player._update_sprite_motion(0.0, false, false)
+		check(is_equal_approx(world.player.sprite.rotation, direction * PI / 2), "diagonal fake spin follows direction at quarter flight")
+		world.player.spin_elapsed = world.player.spin_duration
+		world.player._update_sprite_motion(0.0, false, false)
+		check(is_equal_approx(world.player.sprite.rotation, direction * TAU) and is_equal_approx(world.player.rotation, body_rotation) and is_zero_approx(world.player.get_child(0).rotation), "diagonal completes 360 degrees without rotating body or hitbox")
+		world.tuning_panel.switches["DIAGONAL_SPIN_ENABLED"].button_pressed = false
+		world.player._update_sprite_motion(0.0, false, false)
+		check(is_zero_approx(world.player.sprite.rotation), "gear disables diagonal spin")
+		world.tuning_panel.switches["DIAGONAL_SPIN_ENABLED"].button_pressed = true
+		control_touch(0, center, false)
+		check(not Input.is_action_pressed("touch_left") and not Input.is_action_pressed("touch_right") and not Input.is_action_pressed("touch_jump"), "releasing diagonal clears its held actions")
+	# Một ngón ở vùng chéo, ngón thứ hai ở trái: nhả vùng chéo vẫn giữ trái.
+	control_touch(0, buttons.diag_left.get_global_rect().get_center(), true)
+	control_touch(1, buttons.left.get_global_rect().get_center(), true)
+	control_touch(0, Vector2.ZERO, false)
+	check(Input.is_action_pressed("touch_left") and not Input.is_action_pressed("touch_jump"), "multitouch release preserves another finger's direction")
+	control_touch(1, Vector2.ZERO, false)
+	await settle_player(world)
+	var count: int = world.player.jump_count
+	var up: Vector2 = buttons.jump.get_global_rect().get_center()
+	control_touch(0, up, true)
+	await frames(110)
+	check(world.player.jump_count >= count + 2, "holding up repeats jump after landing")
+	control_touch(0, up, false)
+	world.tuning_panel.switches["HOLD_AUTO_JUMP"].button_pressed = false
+	await settle_player(world)
+	count = world.player.jump_count
+	control_touch(0, up, true)
+	await frames(110)
+	check(world.player.jump_count == count + 1, "auto-jump switch off permits only one jump per hold")
+	control_touch(0, up, false)
+	var full_height := await measure_jump(world, false, true)
+	var short_height := await measure_jump(world, true, true)
+	print("Variable jump: held height=", full_height, " early-release height=", short_height)
+	check(short_height < full_height * 0.75, "early release gives lower jump when variable jump is enabled")
+	var default_height := await measure_jump(world, true, false)
+	check(default_height > short_height * 1.3, "variable jump off retains full-height early-release jump")
+	world.tuning_panel.switches["HOLD_AUTO_JUMP"].button_pressed = true
+	world.tuning_panel.switches["VARIABLE_JUMP"].button_pressed = false
+	check(world.tuning.flag("HOLD_AUTO_JUMP") and not world.tuning.flag("VARIABLE_JUMP"), "jump toggle defaults are auto-repeat on and variable height off")
+	var initial_count: int = world.touch_controls.health_count
+	control_touch(0, buttons.health.get_global_rect().get_center(), true)
+	control_touch(0, Vector2.ZERO, false)
+	check(world.touch_controls.health_count == initial_count - 1, "health placeholder decrements count on press")
+	control_touch(0, buttons.target.get_global_rect().get_center(), true)
+	control_touch(0, Vector2.ZERO, false)
+	control_touch(0, buttons.skill_1.get_global_rect().get_center(), true)
+	control_touch(0, Vector2.ZERO, false)
+	world.tuning_panel.switches["HUD_VISIBLE"].button_pressed = false
+	await process_frame
+	await process_frame
+	check(not buttons.menu.visible and is_equal_approx(world.tuning_panel.toggle.get_global_rect().end.x, root.get_visible_rect().end.x - T.TOUCH_MARGIN), "HUD switch hides menu and frees top-right space")
+	world.tuning_panel.switches["HUD_VISIBLE"].button_pressed = true
+	await process_frame
+	await process_frame
+	check(buttons.menu.visible and world.tuning_panel.toggle.size.x >= 56 and world.tuning_panel.toggle.size.y >= 56, "HUD can be restored and gear is at least 56x56")
+	world.dummy.take_hit(T.DAMAGE)
+	var damage_label: Label = world.dummy.get_child(world.dummy.get_child_count() - 1)
+	check(world.player.slash_effect.z_index > world.dummy.z_index and damage_label.z_index > world.dummy.z_index and not damage_label.z_as_relative, "slash trail and damage text render above dummy")
+	world.touch_controls.release_all()

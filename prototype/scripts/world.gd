@@ -4,6 +4,7 @@ const T = preload("res://config/tuning.gd")
 const Player = preload("res://scripts/player.gd")
 const RuntimeTuning = preload("res://config/runtime_tuning.gd")
 const TuningPanel = preload("res://scripts/tuning_panel.gd")
+const TouchControls = preload("res://scripts/touch_controls.gd")
 const Dummy = preload("res://scripts/dummy.gd")
 var tuning := RuntimeTuning.new()
 var tuning_panel: Control
@@ -14,6 +15,7 @@ var debug_label: Label
 var debug_enabled := false
 var camera_anchor := T.SPAWN
 var touch_buttons: Dictionary = {}
+var touch_controls: Control
 
 func _ready() -> void:
 	_register_input("left", [KEY_A, KEY_LEFT])
@@ -50,23 +52,11 @@ func _ready() -> void:
 	tuning_panel = TuningPanel.new()
 	tuning_panel.tuning = tuning
 	layer.add_child(tuning_panel)
-	# TouchScreenButton giữ action theo từng ngón, hỗ trợ chạy + nhảy/chém.
-	for action in ["left", "right", "jump", "slash"]:
-		var caption: String = {"left": "←", "right": "→", "jump": "NHẢY", "slash": "CHÉM"}[action]
-		_touch_button(layer, action, caption, Vector2.ZERO)
-	get_viewport().size_changed.connect(_layout_touch_buttons)
-	_layout_touch_buttons()
-
-func _layout_touch_buttons() -> void:
-	var rect := get_viewport().get_visible_rect()
-	var size: Vector2 = T.TOUCH_BUTTON_SIZE
-	var margin: float = T.TOUCH_MARGIN
-	var stride: float = size.x + T.TOUCH_GAP
-	var y: float = rect.end.y - size.y - margin
-	touch_buttons["left"].position = Vector2(rect.position.x + margin, y) + size / 2
-	touch_buttons["right"].position = Vector2(rect.position.x + margin + stride, y) + size / 2
-	touch_buttons["jump"].position = Vector2(rect.end.x - margin - stride - size.x, y) + size / 2
-	touch_buttons["slash"].position = Vector2(rect.end.x - margin - size.x, y) + size / 2
+	touch_controls = TouchControls.new()
+	touch_controls.tuning = tuning
+	touch_controls.tuning_panel = tuning_panel
+	layer.add_child(touch_controls)
+	touch_buttons = touch_controls.buttons
 
 func camera_target() -> Vector2:
 	var half := get_viewport().get_visible_rect().size / 2
@@ -84,28 +74,6 @@ func _register_input(action: String, keys: Array) -> void:
 		var event := InputEventKey.new()
 		event.physical_keycode = key
 		InputMap.action_add_event(action, event)
-
-func _touch_button(layer: CanvasLayer, action: String, caption: String, pos: Vector2) -> void:
-	var button := TouchScreenButton.new()
-	touch_buttons[action] = button
-	button.action = action
-	button.position = pos + T.TOUCH_BUTTON_SIZE / 2
-	button.visibility_mode = TouchScreenButton.VISIBILITY_TOUCHSCREEN_ONLY
-	var shape := RectangleShape2D.new()
-	shape.size = T.TOUCH_BUTTON_SIZE
-	button.shape = shape
-	button.shape_centered = false
-	var panel := Polygon2D.new()
-	var size: Vector2 = T.TOUCH_BUTTON_SIZE
-	panel.polygon = PackedVector2Array([Vector2.ZERO, Vector2(size.x, 0), size, Vector2(0, size.y)])
-	panel.position = -size / 2
-	panel.color = Color(0.1, 0.12, 0.15, 0.55)
-	button.add_child(panel)
-	var label := Label.new()
-	label.text = caption
-	label.position = Vector2(22, 30) - size / 2
-	button.add_child(label)
-	layer.add_child(button)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug"):
