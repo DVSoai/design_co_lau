@@ -95,7 +95,7 @@ của bộ thử PC trước đây; các mục ngoài phạm vi A0 giữ trạng
 | `Kích thước d-pad` | d=84 px logic; lệch hai nút dưới 2,2d; ↑ cao hơn 1,35d và căn giữa; vùng chéo rộng 0,9d, cao d | Đã duyệt (A0, 28/10/2026) |
 | `Lề và chữ nút` | Cách mép ít nhất 24 px logic; chữ/mũi tên ≥22 px logic, neo viewport thật khi resize | Đã duyệt (A0, 28/10/2026) |
 | `Cụm phải` | CHÉM tròn 1,4d ở góc dưới phải; đổi mục tiêu phía trên; bình máu trên-trái và bình nội lực bên trái CHÉM | Đã duyệt (A0, 28/10/2026) |
-| `Hàng kỹ năng` | 5 ô vuông giữa đáy, cạnh 0,7d, cách nhau 6 px | Đã duyệt (A0, 28/10/2026) |
+| `Hàng kỹ năng` | 5 ô vuông giữa đáy, cạnh 0,7d, cách nhau 6 px; 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô | Đã duyệt (A0, 28/10/2026) |
 | `HUD trên` | Vòng cấp, máu đỏ/nội lực xanh ở trái; menu và bản đồ nhỏ 120×80 ở phải | Đã duyệt (A0, 28/10/2026) |
 
 Nguồn: `prototype/config/tuning.gd`, `prototype/project.godot` và README xuất Android

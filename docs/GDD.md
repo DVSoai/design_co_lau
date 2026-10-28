@@ -648,7 +648,7 @@ Người chơi bỏ nhiều viên đá (dưới cấp 12) vào, game cộng tổ
 
 Ví dụ: 3 viên đá cấp 1 (3 điểm) luyện ra đá cấp 2 (4 điểm) với tỉ lệ 75%; 4 viên thì 100%. Đây là cách "3 viên ra 1" người chơi Ninja School quen thuộc.
 
-Phí luyện theo cấp viên đích (yên): cấp 2 = 40, cấp 3 = 160, cấp 4 = 640, cấp 5 = 2.560, cấp 6 = 10.240, cấp 7 = 40.960, cấp 8 = 163.840, cấp 9 = 655.360, cấp 10 = 1.310.720, cấp 11 = 3.932.160, cấp 12 = 11.796.480.
+Phí luyện tham khảo từ Ninja School theo cấp viên đích (yên của nguồn; chưa quy đổi sang tiền đồng): cấp 2 = 40, cấp 3 = 160, cấp 4 = 640, cấp 5 = 2.560, cấp 6 = 10.240, cấp 7 = 40.960, cấp 8 = 163.840, cấp 9 = 655.360, cấp 10 = 1.310.720, cấp 11 = 3.932.160, cấp 12 = 11.796.480.
 
 ### Tách đồ
 
@@ -664,7 +664,7 @@ Món đồ từ +12 trở lên có thể dịch chuyển bằng 20 viên Hồn t
 
 Tinh luyện có 9 cấp, chỉ làm được với đồ đã dịch chuyển và với trang bị thú cưỡi. Mỗi lần thành công, mọi dòng chỉ số của món đồ tăng thêm theo bậc, bậc sau tăng nhiều hơn bậc trước (ví dụ dòng "tăng tấn công cho chủ" của trang bị thú tăng lần lượt 50, 60, 70, 90, 130, 180, 250, 350, 550). Thất bại thì mất nguyên liệu và tiền nhưng không rớt cấp.
 
-| Cấp | Nguyên liệu | Tiền (yên) | Tỉ lệ ghi trong code | Tỉ lệ thực tế |
+| Cấp | Nguyên liệu | Tiền tham khảo (yên Ninja School; chưa quy đổi) | Tỉ lệ ghi trong code | Tỉ lệ thực tế |
 |---|---|---|---|---|
 | 1 | 3 Tử tinh thạch sơ | 150.000 | 50% | 64% |
 | 2 | 5 Tử tinh thạch sơ | 247.500 | 45% | 58% |
@@ -1209,17 +1209,22 @@ Do dịch chuyển cần 20 viên và mỗi lần nâng sao thú cưỡi cần 1
 
 ## 1. Màn hình chơi và điều khiển
 
-Giao diện tham khảo client Ninja School bản 2.0.1 bạn gửi, nhưng chuyển từ bàn phím điện thoại cũ sang màn hình cảm ứng nằm ngang. Client Ninja School gán 6 kỹ năng vào các phím Q, W, E, 7, 8, 9 và có nút Tự đánh; game mình giữ đúng 6 ô kỹ năng và chế độ tự đánh.
+Giao diện cảm ứng nằm ngang giữ cụm điều khiển theo kết quả A0 đã chốt. HUD A0 chỉ là các khối giữ chỗ để thử cụm điều khiển, không thay cho HUD đầy đủ; các thành phần bổ sung dưới đây có vị trí chốt ở Mốc A. Hàng kỹ năng có 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Chế độ Tự đánh giữ theo mô tả bên dưới.
 
 | Vị trí | Thành phần |
 |---|---|
-| Góc trên trái | Chân dung Đinh Bộ Lĩnh, cấp, thanh HP và MP, biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) |
-| Góc trên phải | Bản đồ nhỏ, tên bản đồ, nút menu, nút túi đồ, nút Nạp |
+| Góc trên trái | Vòng cấp độ, thanh máu và thanh nội lực; thêm dải biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) dưới hai thanh — vị trí chốt ở Mốc A |
+| Góc trên phải | Nút menu, bản đồ nhỏ; thêm tên bản đồ dưới bản đồ nhỏ, nút túi đồ và nút cửa hàng (bản đầu: chỉ cửa hàng món vĩnh viễn, không có ngân phiếu nạp) — vị trí chốt ở Mốc A |
 | Cạnh phải, giữa | Theo dõi nhiệm vụ: tên nhiệm vụ chính và tiến độ (ví dụ "Đánh lợn rừng 12/20"); chạm vào để tự tìm đường |
-| Góc dưới trái | Cần điều khiển ảo, nút nhảy |
-| Góc dưới phải | Nút tấn công lớn, 6 ô kỹ năng xếp vòng cung quanh nó, nút lên xuống thú cưỡi |
-| Giữa cạnh dưới | 2 ô dùng nhanh cho thuốc HP và MP, nút Tự đánh |
+| Góc dưới trái | D-pad 3 nút nhìn thấy (←, →, ↑ nhảy), hai vùng chéo vô hình sát hai bên ↑ để nhảy chéo; không dùng cần analog ảo hay phím nhảy tách riêng |
+| Góc dưới phải | Nút CHÉM lớn ở góc; đổi mục tiêu phía trên; bình máu phía trên bên trái và bình nội lực bên trái CHÉM |
+| Cụm phải, bổ sung ngoài A0 | Nút Tự đánh và nút lên/xuống thú cưỡi; chức năng giữ nguyên, vị trí chốt ở Mốc A, không được che cụm CHÉM hay hàng 5 ô kỹ năng ở viewport 960 px |
+| Giữa đáy | Hàng 5 ô kỹ năng vuông |
 | Sát đáy | Thanh kinh nghiệm chạy ngang màn hình |
+
+Kích thước và neo cụm nút xem [HUD trong trận](06_screens.md#hud-trong-trận-chuẩn-từ-a0) và [bảng thông số](13_thong_so.md). Nút Tự đánh và thao tác lên/xuống thú cưỡi chưa có vị trí chốt trong HUD A0; cần duyệt bố cục ở Mốc A.
+
+**Di chuyển và nhảy:** kiểu cổ điển đạt tốc độ chạy ngay khi bấm, buông thì hãm ngắn; quay đầu có nhịp dừng và khung đầu chỉ đổi mặt. Trên không đổi hướng tức thì. Nhảy dùng cùng trọng lực khi lên và xuống, không treo ở đỉnh; giữ ↑ hoặc vùng chéo thì nhảy lại khi chạm đất. Nhảy chéo bằng vùng chạm vô hình, đồng thời giữ hướng tương ứng. Khinh công cần nhả rồi bấm lại gần đỉnh khi còn đi lên để bật thêm, tối đa một lần mỗi cú nhảy; giữ liên tục không tính là bấm mới. Mỗi cú nhảy và cú khinh công đều có lộn người ở đỉnh, chỉ xoay hình nhân vật, không xoay hitbox. Các tốc độ, thời gian và cửa sổ kích hoạt lấy từ [13_thong_so.md](13_thong_so.md); kiểu cũ chỉ giữ trong prototype để so sánh.
 
 Mỗi ô kỹ năng hiện vòng hồi chiêu và chuyển xám khi không đủ MP, giống thông báo "Không đủ MP để sử dụng" của Ninja School. Chạm vào quái để khóa mục tiêu; thanh máu của mục tiêu hiện ở giữa cạnh trên, kèm tên và loại (thường, tinh anh, thủ lĩnh, boss).
 
@@ -1235,7 +1240,7 @@ Client Ninja School có bảy thẻ chính: Hành trang, Kỹ năng, Tiềm năn
 |---|---|---|
 | Hành trang | Lưới ô đồ; tiền đồng, ngân lượng, ngân phiếu | Sử dụng, bỏ đi, bán, sắp xếp, khóa chống bán nhầm |
 | Trang bị | Hình nhân vật ở giữa, 10 ô trang bị xung quanh | Chạm ô để xem chỉ số, tháo ra, so sánh với món trong túi |
-| Kỹ năng | Cây kỹ năng của phái, điểm kỹ năng còn lại | Cộng điểm, kéo chiêu vào 6 ô trên màn hình chơi |
+| Kỹ năng | Cây kỹ năng của phái, điểm kỹ năng còn lại | Cộng điểm; 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô |
 | Tiềm năng | Bốn chỉ số Sức mạnh, Thân pháp, Thể lực, Khí lực; điểm còn lại | Cộng 1, cộng nhiều (nhập số) |
 | Thông tin | Bảng chỉ số đầy đủ và danh vọng | Chỉ xem |
 | Thú cưỡi | Thú đang dùng, cấp, sao, thanh kinh nghiệm x/1.000, 4 ô trang bị thú | Cho ăn, nâng sao, đổi thú |
@@ -1318,7 +1323,7 @@ Game làm bằng **Godot 4** (dùng bản ổn định mới nhất lúc bắt �
 
 Một số quyết định kỹ thuật nên chốt sớm:
 
-- **Độ phân giải gốc 640×360**, phóng to theo số nguyên, lọc ảnh kiểu nearest cho pixel art (cài trong Project Settings: kích thước cửa sổ, chế độ stretch và scale mode integer). Đây là thông số tạm thời, chốt sau khi xác nhận phong cách ở P0.
+- **Hiển thị đã duyệt A0:** độ phân giải gốc **960×540**; stretch **canvas_items**, aspect **expand**, scale **fractional**, lọc texture **nearest**. Viewport logic rộng **960–1200 px** theo tỉ lệ máy. Nhân vật người cao **96 px**, khung **128×128**. Android chạy **fullscreen + immersive**, ẩn thanh trạng thái và thanh điều hướng. Chi tiết và trạng thái duyệt xem `13_thong_so.md`.
 - **Nhân vật vẽ theo bộ phận,** giống Ninja School (bảng NPC trong database lưu riêng head, body, leg). Đầu, thân, chân và vũ khí là bốn lớp Sprite2D chồng lên nhau, cùng chạy theo một AnimationPlayer, nên mặc đồ nào thì đổi đúng lớp đó — khớp với quyết định ngoại hình chỉ đổi theo vũ khí và quần áo.
 - **Số ngẫu nhiên có hạt giống lưu trong file lưu** (RandomNumberGenerator, lưu cả seed và state). Việc này giúp kết quả tái lập được khi kiểm thử, và cùng với việc lưu ngay sau mỗi lần rèn, chặn kiểu tắt game giữa chừng để rèn lại. Nó **không** chống được việc chép file lưu ra trước khi rèn rồi chép đè lại. Bản offline chấp nhận giới hạn này vì người chơi chỉ ảnh hưởng game của chính mình; chỉ bản online, khi máy chủ tung số ngẫu nhiên, mới chặn được (mục 7).
 - **Va chạm đơn giản:** hộp chữ nhật cho nhân vật và quái, vùng tấn công là hộp theo tầm của chiêu (Ninja School dùng đúng cách này: mỗi chiêu có dx, dy là tầm ngang và dọc).
@@ -1352,7 +1357,7 @@ Mỗi ô nhân vật là một file riêng trong thư mục dữ liệu người
 
 - **Phiên bản dữ liệu,** để cập nhật game sau này vẫn đọc được file cũ và chuyển đổi.
 - **Định danh ô** và trạng thái liên kết với máy chủ (chưa liên kết, đã liên kết với tài khoản nào).
-- **Nhân vật:** cấp, kinh nghiệm, phái, bốn điểm tiềm năng, điểm kỹ năng từng chiêu, 6 ô chiêu, HP và MP hiện tại, danh hiệu.
+- **Nhân vật:** cấp, kinh nghiệm, phái, bốn điểm tiềm năng, điểm kỹ năng từng chiêu, HP và MP hiện tại, danh hiệu; lưu lựa chọn và thứ tự 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô.
 - **Đồ đạc:** 10 ô trang bị, hành trang, số ô đã mở rộng. Mỗi món lưu id mẫu, cấp cường hóa, các dòng chỉ số hiện tại, đã dịch chuyển chưa, cấp tinh luyện, số lượng, khóa hay không. Cách lưu món đồ kèm danh sách dòng chỉ số giống hệt cách Ninja School lưu (id, upgrade, option).
 - **Thú cưỡi:** các con thú đã có, con đang dùng, cấp, kinh nghiệm, sao, 4 ô trang bị thú.
 - **Tiến độ:** nhiệm vụ đang làm và số đếm từng bước, danh sách nhiệm vụ đã xong, cờ cốt truyện, việc làng đang hiện ở từng vùng, danh vọng vùng, số sao từng ải, công trình căn cứ Hoa Lư, điểm dịch chuyển đã mở.
@@ -1477,7 +1482,7 @@ Lộ trình code này chỉ bắt đầu sau khi qua mốc A trong danh sách ch
 - **Nền kinh tế tiền đồng và tỉ giá ngân phiếu:** quy đổi giá yên của Ninja School sang tiền đồng, sau bản chơi thử lát cắt dọc.
 - **Tên và chỉ số từng món trang bị** theo 7 bậc, và tám món mang dấu ấn sứ quân.
 - **Đối chiếu sử liệu:** vị trí Bình Kiều, năm sinh Đinh Bộ Lĩnh, thần tích các sứ quân.
-- **Phong cách mỹ thuật cuối cùng:** mặc định pixel art chibi ở độ phân giải gốc 640×360, xác nhận sau khi xem ba ảnh P0 trong Design Kit.
+- **Phong cách đã chốt (không còn là quyết định mở):** phương án B, pixel bán hiện đại, dáng khoảng 4 đầu, **palette_v3 32 màu**. Theo `01_art_bible.md`; không dùng khối STYLE-B vẽ tay lịch sử.
 - **Kịch bản và lời thoại** cho 59 nhiệm vụ và khoảng 20 cutscene.
 
 ## 7. Chuẩn bị cho bản online sau này
@@ -1504,7 +1509,7 @@ Phần này là bộ prompt để tạo bản thiết kế hình ảnh cho nhân
 
 Khó nhất khi dùng AI vẽ là giữ cho hàng trăm hình trông như cùng một game. Cách làm dưới đây giải quyết việc đó theo thứ tự.
 
-**Bước 1 — Chốt phong cách.** Chạy prompt ở mục 3 để ra ba phương án phong cách cho cùng một cảnh. Chọn một, rồi chỉ dùng đúng một khối phong cách ở mục 2 cho mọi prompt về sau. Đề xuất phương án A (pixel art chibi), vì nhân vật nhỏ, đọc rõ trên điện thoại, chạy nhẹ trên máy yếu và hợp với cách vẽ nhân vật theo bộ phận đã chốt ở Phần 6.
+**Bước 1 — Theo phong cách đã duyệt.** Phương án B là pixel bán hiện đại, khoảng 4 đầu, palette_v3 32 màu. Không mở lại lựa chọn P0; dùng nguyên văn STYLE và AVOID hiện hành trong `01_art_bible.md`.
 
 **Bước 2 — Tạo ảnh gốc của Đinh Bộ Lĩnh.** Chạy prompt 4.1 nhiều lần đến khi có một bản ưng ý. Đây là **ảnh gốc** của cả game: tỉ lệ đầu thân, độ dày nét viền, cách tô bóng của mọi nhân vật khác đều so theo nó.
 
@@ -1520,17 +1525,9 @@ Khó nhất khi dùng AI vẽ là giữ cho hàng trăm hình trông như cùng 
 
 Mỗi prompt ở các mục sau kết thúc bằng `[STYLE]` và `[AVOID]`. Khi dùng, thay hai chữ này bằng nguyên văn khối tương ứng dưới đây.
 
-**STYLE-A — pixel art chibi (đề xuất):**
+**STYLE — pixel bán hiện đại (phương án B đã duyệt):**
 
-```
-Style: 2D pixel art for a side-scrolling mobile action RPG, chibi proportions about 3 heads tall, clean 1-pixel dark outline, limited palette of 32 colors, soft 2-tone cel shading, bright readable colors, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
-```
-
-**STYLE-B — vẽ tay 2D (phương án dự phòng):**
-
-```
-Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
-```
+Dùng nguyên văn khối STYLE trong `01_art_bible.md`, mục Phong cách. Phương án B đã duyệt không phải khối STYLE-B vẽ tay của khuôn P0 lịch sử trong `03_prompts.md`. Bảng màu áp dụng là palette_v3 32 màu.
 
 **AVOID — dán sau mọi prompt:**
 
@@ -1542,10 +1539,10 @@ Khối AVOID chặn những lỗi hay gặp khi AI vẽ "cổ trang Á Đông": 
 
 ## 3. Prompt khám phá phong cách
 
-Chạy prompt này một lần với từng phương án (thay `[STYLE]` bằng STYLE-A, rồi STYLE-B), và một lần không có khối phong cách để xem AI tự đề xuất gì.
+P0 đã hoàn tất. Prompt dưới đây chỉ để tra cứu bố cục; nếu dùng cho ảnh mới, `[STYLE]` và `[AVOID]` phải lấy nguyên văn từ `01_art_bible.md`, không chạy lại các phương án lịch sử.
 
 ```
-Game key art mockup: a young Vietnamese warrior with a short broadsword stands on a dirt path beside a rice field at dawn, limestone karst mountains reflected in still water behind him, a bamboo-fenced village with thatched roofs on the left, a tall white reed-plume flag planted next to him. Side-scrolling camera, the character in the left third of the frame, a simple health bar and six round skill buttons as placeholder UI at the bottom right. [STYLE] [AVOID]
+Game key art mockup: a young Vietnamese warrior with a short broadsword stands on a dirt path beside a rice field at dawn, limestone karst mountains reflected in still water behind him, a bamboo-fenced village with thatched roofs on the left, a tall white reed-plume flag planted next to him. Side-scrolling camera, the character in the left third of the frame, a level ring and health and energy bars at the top left, a menu and minimap at the top right, three visible directional buttons and invisible diagonal touch zones at the bottom left, an attack cluster at the bottom right, and five square skill slots centered along the bottom. [STYLE] [AVOID]
 ```
 
 ## 4. Đinh Bộ Lĩnh
@@ -1726,7 +1723,7 @@ Trước khi duyệt một hình, nên soát bốn điều:
 
 1. **Lịch sử:** không có đồ samurai, long bào, áo dài thời Nguyễn hay nón quai thao.
 2. **Đồng bộ:** đặt cạnh ảnh gốc Đinh Bộ Lĩnh, tỉ lệ đầu thân, độ dày nét viền và cách tô bóng phải giống nhau.
-3. **Dễ đọc trên điện thoại:** thu ảnh về kích thước thật trong game (nhân vật cao khoảng 64 điểm ảnh) mà vẫn nhận ra ai là ai, phái nào, quái nào.
+3. **Dễ đọc trên điện thoại:** thu ảnh về kích thước thật trong game (nhân vật người cao 96 điểm ảnh trong khung 128×128) mà vẫn nhận ra ai là ai, phái nào, quái nào.
 4. **Màu cờ:** lính và boss mỗi sứ quân đúng màu ở mục 7.
 
 Hình đạt cả bốn điều thì đưa sang bước chỉnh tay và tách lớp. Khi đủ bộ của nhân vật chính, một vùng bản đồ và bộ khung giao diện, đó là đủ để bắt đầu dựng bản mẫu chiến đấu như lộ trình ở Phần 6.

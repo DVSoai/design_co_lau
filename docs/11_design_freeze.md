@@ -87,6 +87,8 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 ### 4. Giao diện
 
+- [ ] Bố cục HUD đầy đủ (hiệu ứng, tên bản đồ, túi đồ, cửa hàng, Tự đánh, thú cưỡi) đã duyệt trên viewport 960 và 1200 px.
+
 - [ ] Bộ khung giao diện đã duyệt.
 - [ ] Mockup và đặc tả đủ 22 màn trong `06_screens.md`.
 - [ ] Mockup riêng cho các trạng thái khác bố cục của bản đầu, gồm SCR-13 thẻ Gói (mất mạng, đang chờ Google Play, đã sở hữu).
