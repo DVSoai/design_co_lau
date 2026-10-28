@@ -1,8 +1,9 @@
 # Danh sách chốt thiết kế
 
-Có hai mốc, mỗi mốc một danh sách. Codex không tự đánh dấu mục nào; chỉ đánh dấu khi người dùng nói đã duyệt. Sau khi qua một mốc, mọi thay đổi thiết kế phải ghi vào `docs/05_log.md` kèm lý do.
+Có ba mốc cho bản offline: A0 (thử cảm giác), A (duyệt thiết kế trước code game thật), B (trước khi phát hành). Codex không tự đánh dấu mục nào; chỉ đánh dấu khi người dùng nói đã duyệt. Sau khi qua một mốc, mọi thay đổi thiết kế phải ghi vào `docs/05_log.md` kèm lý do.
 
-- **Mốc A — Trước khi code:** duyệt toàn bộ thiết kế gameplay, giao diện, bản đồ, nhân vật, hoạt ảnh và mọi quy tắc ảnh hưởng tới trải nghiệm. Qua mốc A mới mở thư mục code.
+- **Mốc A0 — Bản thử cảm giác:** được người dùng cho phép tạo prototype kỹ thuật riêng trong `prototype/`, không phải code game thật.
+- **Mốc A — Trước khi code game thật:** duyệt toàn bộ thiết kế gameplay, giao diện, bản đồ, nhân vật, hoạt ảnh và mọi quy tắc ảnh hưởng tới trải nghiệm. Qua mốc A mới mở thư mục code.
 - **Mốc B — Trước khi phát hành:** hồ sơ pháp lý, cách xác định tuổi, bảng giá thương mại, thanh toán thật, kiểm tra quyền sử dụng tài nguyên.
 
 Chuyển phần pháp lý sang mốc B không có nghĩa là bỏ qua. Nếu yêu cầu pháp lý buộc thay đổi một quy tắc đã chốt ở mốc A (ví dụ cách giới hạn giờ chơi, hay luồng nạp), thì sửa thiết kế, ghi nhật ký, và duyệt lại phần bị ảnh hưởng.
@@ -11,7 +12,7 @@ Chuyển phần pháp lý sang mốc B không có nghĩa là bỏ qua. Nếu yê
 
 Các quyết định dưới đây người dùng đã đồng ý; tài liệu đã cập nhật theo. Đây không phải mục chờ duyệt.
 
-- Phong cách mặc định là pixel art chibi; xác nhận lần cuối sau khi xem ba ảnh P0.
+- Đã chọn **B — pixel bán hiện đại** (28/10/2026); P0 đã duyệt, xem `docs/05_log.md`.
 - Không có hồi sinh tại chỗ. Thua thì về điểm hồi sinh; trong trận boss có nút "Đánh lại".
 - Thêm SCR-14 Bản đồ vùng, cho đi nhanh miễn phí tới làng, căn cứ và điểm hồi sinh đã mở.
 - SCR-22 Căn cứ Hoa Lư có 4 công trình, mỗi công trình 3 cấp, không có thời gian chờ xây. Lợi ích: trại lính (tướng đi cùng mạnh hơn), kho lương (tăng lương thảo tối đa), chuồng ngựa (tặng thức ăn thú), lò rèn (giảm phí rèn 5%, 10%, 15%). Chi phí vật liệu và các con số khác chưa chốt.
@@ -21,12 +22,46 @@ Các quyết định dưới đây người dùng đã đồng ý; tài liệu �
 - Engine Godot 4 với GDScript. Có kế hoạch chuẩn bị chuyển online nhưng chưa làm phần online (`14_online_migration.md`).
 - Hoàn tiền: số dư nạp được âm, khóa giao dịch dùng ngân phiếu nạp cho tới khi bù xong; không thu hồi món đã mua, không khóa gameplay; sổ giao dịch chống áp dụng hoàn tiền hai lần.
 
-## Mốc A — Trước khi code
+## Mốc A0 — Bản thử cảm giác
+
+**Trạng thái:** Người dùng đã duyệt phạm vi ngoại lệ cho nguyên mẫu kỹ thuật. **Chưa qua A0** cho tới khi chơi thử và ký duyệt thông số. Quy tắc không code trước Mốc A vẫn giữ nguyên với **game thật**.
+
+### Mục đích
+
+Kiểm tra và chốt các thông số hiện **Tạm thời**:
+- Độ phân giải gốc **960×540**, nhân ×2 thành 1920×1080, nhân vật chính cao **96 px**.
+- Tốc độ chạy; độ cao và thời gian nhảy.
+- Va chạm và hitbox.
+- Camera: vùng chết và tầm nhìn trước.
+- Nhịp đòn chém cơ bản.
+
+### Phạm vi
+
+- Một dự án **Godot 4 riêng** trong thư mục `prototype/`.
+- Hình tạm: sprite **PLACEHOLDER** và khối màu.
+- Một bản đồ thử dài khoảng **ba màn hình ngang**, gồm đất bằng, bậc cao, hố và bục nổi.
+- Đi, nhảy, rơi, chém thường và **một hình nộm nhận đòn**.
+- **Không** có giao diện, lưu game, vật phẩm, nhiệm vụ hoặc âm thanh.
+
+### Quy tắc
+
+- Mã trong `prototype/` là **mã bỏ đi**, không chép sang game thật.
+- Mọi thông số của nguyên mẫu đặt trong **một file cấu hình**.
+- Ngoại lệ A0 không mở khóa code game thật; quy tắc **không code trước Mốc A** giữ nguyên cho game thật.
+
+### Điều kiện qua A0
+
+- [ ] Người dùng trực tiếp chơi thử nguyên mẫu trên **điện thoại Android**.
+- [ ] Người dùng chốt độ phân giải, nhân vật 96 px, tốc độ chạy, độ cao/thời gian nhảy, va chạm/hitbox, camera và nhịp chém.
+- [ ] Cập nhật kết quả trong `docs/13_thong_so.md` từ **Tạm thời → Đã duyệt**, ghi nhật ký `docs/05_log.md`.
+- [ ] Sau A0 tiếp tục **Mốc A** đầy đủ, không coi A0 thay thế A.
+
+## Mốc A — Trước khi code game thật
 
 ### 1. Phong cách và nhân vật chính
 
-- [ ] Xác nhận phong cách sau P0 và khối STYLE cuối cùng.
-- [ ] Bảng màu 32 màu đã chốt và lưu thành file palette (`art/reference/palette.png` và `.gpl` hoặc `.ase`).
+- [x] Xác nhận phong cách sau P0 và khối STYLE cuối cùng. *(Đã duyệt B ngày 28/10/2026; xem `docs/05_log.md`.)*
+- [x] Bảng màu 32 màu đã chốt và lưu thành file palette (`art/reference/palette.png` và `.gpl` hoặc `.ase`). *(Đã duyệt palette_v3; xem `docs/05_log.md`.)*
 - [ ] Ảnh gốc Đinh Bộ Lĩnh và bảng tách lớp đã duyệt.
 - [ ] Đủ 7 bậc trang bị, cả bản cầm đao và cầm cung.
 - [ ] Bảng động tác phái Đao và phái Cung ở bậc 1, đủ động tác trong `09_animation_spec.md`.
@@ -105,4 +140,4 @@ Các quyết định dưới đây người dùng đã đồng ý; tài liệu �
 
 ## Ký duyệt
 
-Khi qua mỗi mốc, người dùng ghi vào cuối file này: ngày, phiên bản các tài liệu, và một câu "Đã qua mốc A" hoặc "Đã qua mốc B".
+Khi qua mỗi mốc, người dùng ghi ở cuối file: ngày, phiên bản tài liệu và câu "Đã qua mốc A0", "Đã qua mốc A" hoặc "Đã qua mốc B". Việc cho phép thực hiện A0 không có nghĩa A0 đã nghiệm thu.
