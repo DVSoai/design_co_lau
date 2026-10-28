@@ -2,6 +2,13 @@
 
 Thư mục này dùng để hoàn thiện **toàn bộ thiết kế** của game Cờ Lau Khởi Nghĩa trước khi viết code: hình ảnh nhân vật và bản đồ, mockup từng màn hình và các trạng thái giao diện, luồng tương tác, bố cục bản đồ chơi được, đặc tả hoạt ảnh, storyboard nhiệm vụ và cutscene. Thiết kế chỉ được coi là xong khi qua mốc A ở `docs/11_design_freeze.md`. Chưa qua mốc A thì chưa code.
 
+## Tổ chức repo
+
+- **`design_co_lau`:** lưu tài liệu thiết kế, art nguồn, script và `prototype/` cho nguyên mẫu A0. Mã trong `prototype/` là mã bỏ đi, chỉ dùng kiểm chứng thiết kế; không phát triển thành game thật.
+- **`co_lau_game`:** repo riêng cho game thật, đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A được duyệt. Quy tắc chưa qua Mốc A thì chưa code áp dụng cho game thật; nguyên mẫu A0 trong `prototype/` là ngoại lệ giới hạn, không thay thế việc duyệt Mốc A.
+- **Chuyển art:** chỉ chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script. Mỗi lần chép phải ghi commit nguồn của `design_co_lau`; không đưa concept hay placeholder chưa duyệt vào luồng chuyển art này.
+- **Chốt phiên bản:** khi qua Mốc A, gắn tag `design-vX.Y` cho bản thiết kế đã duyệt. Repo game phải ghi rõ tag thiết kế đang theo và giữ bản sao `docs/GDD.md` lấy từ đúng tag đó.
+
 ## Nguyên tắc offline
 
 Cờ Lau Khởi Nghĩa là game chơi offline hoàn chỉnh. Không thiết kế nào được bắt người chơi có mạng hay đăng nhập để chơi. Bản phát hành đầu tiên chỉ bán món vĩnh viễn qua Google Play, không có ngân phiếu nạp và không có máy chủ riêng; mạng chỉ dùng để mua và khôi phục món đã mua. Mọi thiết kế về ngân phiếu nạp là cho bản sau, không làm mockup hay code cho bản đầu (`docs/12_ngan_phieu.md`, mục 0). Trong `docs/GDD.md`, mọi tiêu đề có nhãn **[Phạm vi sau]** là phần giữ sẵn cho bản có ngân phiếu nạp hoặc bản online: đọc để hiểu, không thiết kế mockup và không triển khai trong bản đầu. Ngân phiếu thưởng tiêu offline. Khi thiết kế một màn hay một luồng, nếu thấy chỗ nào mất mạng làm người chơi kẹt, đó là lỗi thiết kế cần báo người dùng. Quy tắc chi tiết ở `docs/12_ngan_phieu.md`.
