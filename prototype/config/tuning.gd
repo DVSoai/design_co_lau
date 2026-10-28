@@ -11,6 +11,18 @@ const COYOTE_TIME := 0.10 # s sau khi rời mép
 const JUMP_BUFFER := 0.12 # s giữ yêu cầu nhảy trước khi chạm đất
 const PLAYER_BOX := Vector2(24, 88) # px, rộng × cao; gốc ở chân
 const SPRITE_OFFSET := Vector2(0, -56) # px; chân hình cách đáy PNG 8 px
+# Chuyển động giả chỉ biến đổi Sprite2D, không đổi body/Area2D.
+const FAKE_MOTION_ENABLED := true # bật mặc định; công tắc ⚙ chỉ đổi trong RAM
+const IDLE_BOB_AMPLITUDE := 1.0 # px, biên độ ± theo trục y
+const IDLE_BOB_PERIOD := 1.2 # s/chu kỳ
+const RUN_BOB_AMPLITUDE := 2.0 # px, biên độ ± theo bước chân
+const RUN_STEP_DISTANCE := 100.0 # px/chu kỳ: period = distance / abs(speed)
+const RUN_LEAN_DEGREES := 4.0 # độ theo hướng vận tốc chạy
+const RUN_MOTION_THRESHOLD := 1.0 # px/s, dưới ngưỡng này coi là đứng yên
+const JUMP_SPRITE_SCALE := Vector2(0.9, 1.1) # tỉ lệ x/y lúc bật nhảy
+const LAND_SPRITE_SCALE := Vector2(1.15, 0.85) # tỉ lệ x/y lúc chạm đất
+const SPRITE_SCALE_RECOVERY := 0.1 # s, hồi tuyến tính về (1, 1)
+const SLASH_SPRITE_SHIFT := 4.0 # px theo hướng nhìn trong cửa sổ trúng
 const VIEWPORT := Vector2(960, 540) # px, khớp project.godot
 const CAMERA_DEAD_ZONE := Vector2(100, 60) # px, nửa rộng × nửa cao
 const CAMERA_LOOK_AHEAD := 100.0 # px theo hướng nhìn

@@ -5,6 +5,7 @@ var tuning: RefCounted
 var panel: PanelContainer
 var toggle: Button
 var sliders: Dictionary = {}
+var motion_toggle: CheckButton
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -30,6 +31,11 @@ func _ready() -> void:
 	var title := Label.new()
 	title.text = "A0 — chỉnh trực tiếp (không lưu)"
 	column.add_child(title)
+	motion_toggle = CheckButton.new()
+	motion_toggle.text = "Chuyển động giả"
+	motion_toggle.button_pressed = tuning.fake_motion_enabled()
+	motion_toggle.toggled.connect(tuning.set_fake_motion_enabled)
+	column.add_child(motion_toggle)
 	for row in RuntimeTuning.SLIDERS:
 		var key: String = row[0]
 		var label := Label.new()

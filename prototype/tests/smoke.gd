@@ -97,5 +97,57 @@ func run() -> void:
 	check("RUN_SPEED = 300" in world.tuning.as_text() and "GRAVITY = 800" in world.tuning.as_text(), "clipboard text contains current and derived values")
 	world.tuning_panel.toggle.pressed.emit()
 	check(not world.tuning_panel.panel.visible, "gear closes tuning panel")
+	# Đo transform sprite độc lập, giữ trạng thái vật lý đứng trên đất.
+	p.position = T.SPAWN
+	p.velocity = Vector2.ZERO
+	await frames(10)
+	p.set_physics_process(false)
+	p.attack_time = -1
+	p.pulse_elapsed = T.SPRITE_SCALE_RECOVERY
+	p.idle_phase = 0.0
+	var body_transform: Transform2D = p.transform
+	var body_shape = p.get_child(0)
+	var hitbox_transform: Transform2D = body_shape.transform
+	var slash_transform: Transform2D = p.slash.transform
+	p._update_sprite_motion(T.IDLE_BOB_PERIOD / 4, false, false)
+	check(is_equal_approx(p.sprite.position.y - T.SPRITE_OFFSET.y, 1.0), "idle bob reaches +1 px at quarter period")
+	p._update_sprite_motion(T.IDLE_BOB_PERIOD / 2, false, false)
+	check(is_equal_approx(p.sprite.position.y - T.SPRITE_OFFSET.y, -1.0), "idle bob reaches -1 px at three-quarter period")
+	p.velocity.x = 100.0
+	p.run_phase = 0.0
+	p._update_sprite_motion(0.1, false, false)
+	var slow_phase: float = p.run_phase
+	check(is_equal_approx(rad_to_deg(p.sprite.rotation), 4.0), "running leans 4 degrees right")
+	p.velocity.x = -200.0
+	p.run_phase = 0.0
+	p._update_sprite_motion(0.1, false, false)
+	check(is_equal_approx(p.run_phase, slow_phase * 2) and is_equal_approx(rad_to_deg(p.sprite.rotation), -4.0), "step frequency scales with speed and lean follows left movement")
+	p.velocity = Vector2.ZERO
+	p._update_sprite_motion(0.0, true, false)
+	check(p.sprite.scale.is_equal_approx(Vector2(0.9, 1.1)), "takeoff stretches sprite to 0.9 x 1.1")
+	p._update_sprite_motion(T.SPRITE_SCALE_RECOVERY, false, false)
+	p._update_sprite_motion(0.0, false, false)
+	check(p.sprite.scale.is_equal_approx(Vector2.ONE), "takeoff scale recovers in 0.1 seconds")
+	p._update_sprite_motion(0.0, false, true)
+	check(p.sprite.scale.is_equal_approx(Vector2(1.15, 0.85)), "landing squashes sprite to 1.15 x 0.85")
+	p._update_sprite_motion(T.SPRITE_SCALE_RECOVERY, false, false)
+	p._update_sprite_motion(0.0, false, false)
+	check(p.sprite.scale.is_equal_approx(Vector2.ONE), "landing scale recovers in 0.1 seconds")
+	p.attack_time = (T.HIT_START + T.HIT_END) / 2
+	p.facing = -1
+	p._update_sprite_motion(0.0, false, false)
+	check(is_equal_approx(p.sprite.position.x - T.SPRITE_OFFSET.x, -4.0), "slash shifts sprite 4 px toward facing inside hit window")
+	p.attack_time = T.HIT_END
+	p._update_sprite_motion(0.0, false, false)
+	check(is_equal_approx(p.sprite.position.x, T.SPRITE_OFFSET.x), "slash shift stops outside hit window")
+	check(p.transform == body_transform and body_shape.transform == hitbox_transform and p.slash.transform == slash_transform and body_shape.shape.size == T.PLAYER_BOX, "sprite motion leaves body and hitbox transforms and dimensions unchanged")
+	world.tuning_panel.motion_toggle.button_pressed = false
+	p._update_sprite_motion(0.0, true, false)
+	check(not world.tuning.fake_motion_enabled() and p.sprite.position == T.SPRITE_OFFSET and p.sprite.scale == Vector2.ONE and is_zero_approx(p.sprite.rotation), "gear switch disables all fake motion and restores neutral transform")
+	check("FAKE_MOTION_ENABLED = false" in world.tuning.as_text(), "clipboard text includes live motion switch")
+	world.tuning_panel.motion_toggle.button_pressed = true
+	p.idle_phase = 0.0
+	p._update_sprite_motion(T.IDLE_BOB_PERIOD / 4, false, false)
+	check(world.tuning.fake_motion_enabled() and not p.sprite.position.is_equal_approx(T.SPRITE_OFFSET), "gear switch re-enables fake motion")
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)

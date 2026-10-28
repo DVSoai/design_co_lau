@@ -93,7 +93,7 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 19 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 33 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
@@ -112,3 +112,21 @@ Mặc định RUN_SPEED=200 px/s, TIME_TO_APEX=0,38 s: tầm nhảy ngang lý th
 200 × 2 × 0,38 = **152 px**, lớn hơn 1,5 × hố 96 px = **144 px**.
 Đây là tầm lý thuyết khi đã đạt tốc độ chạy, cùng cao độ cất/hạ cánh;
 không bảo đảm nhảy từ đứng yên. Smoke test assert điều kiện này từ hình học hố thật.
+
+## Chuyển động giả (không thêm khung hình)
+
+Bảng ⚙ có công tắc **Chuyển động giả**, mặc định bật. Tắt sẽ trả sprite về vị
+trí, góc và scale gốc ngay ở tick vật lý kế tiếp; bật lại để so sánh cảm giác.
+Chỉ Sprite2D đổi transform; CharacterBody2D, hitbox người chơi và Area2D chém
+không đổi. Không sửa PNG hoặc thêm frame hoạt ảnh.
+
+Mọi biên độ/thời gian nằm trong config/tuning.gd:
+- Đứng yên nhún ±1 px, chu kỳ 1,2 s.
+- Chạy nhấp nhô ±2 px, một chu kỳ mỗi 100 px di chuyển (0,5 s ở 200 px/s),
+  nghiêng 4° theo hướng chạy; giữ mốc chân khi nghiêng/co giãn.
+- Bật nhảy scale (0,9; 1,1), chạm đất (1,15; 0,85); hồi tuyến tính về (1; 1)
+  trong 0,1 s. Không phát lại pulse nhảy khi chỉ đi ra khỏi mép.
+- Chém dịch sprite 4 px theo hướng nhìn chỉ trong cửa sổ trúng.
+
+Công tắc chỉ lưu trong bộ nhớ và có trong văn bản “Sao chép”. Chưa đánh giá
+cảm giác hình ảnh trên điện thoại; headless kiểm tra transform và hitbox.
