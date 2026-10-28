@@ -11,6 +11,7 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	toggle = Button.new()
+	toggle.focus_mode = Control.FOCUS_NONE
 	toggle.text = "⚙"
 	toggle.tooltip_text = "Chỉnh thông số A0"
 	toggle.position = Vector2(904, 8)
@@ -32,6 +33,7 @@ func _ready() -> void:
 	title.text = "A0 — chỉnh trực tiếp (không lưu)"
 	column.add_child(title)
 	motion_toggle = CheckButton.new()
+	motion_toggle.focus_mode = Control.FOCUS_NONE
 	motion_toggle.text = "Chuyển động giả"
 	motion_toggle.button_pressed = tuning.fake_motion_enabled()
 	motion_toggle.toggled.connect(tuning.set_fake_motion_enabled)
@@ -41,6 +43,8 @@ func _ready() -> void:
 		var label := Label.new()
 		column.add_child(label)
 		var slider := HSlider.new()
+		slider.focus_mode = Control.FOCUS_NONE
+		slider.scrollable = false
 		slider.min_value = row[1]
 		slider.max_value = row[2]
 		slider.step = row[3]
@@ -55,6 +59,7 @@ func _ready() -> void:
 		)
 		column.add_child(slider)
 	var copy := Button.new()
+	copy.focus_mode = Control.FOCUS_NONE
 	copy.text = "Sao chép"
 	copy.custom_minimum_size.y = 40
 	copy.pressed.connect(func() -> void: DisplayServer.clipboard_set(tuning.as_text()))
