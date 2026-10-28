@@ -86,3 +86,12 @@ Tạo ảnh tốn hạn mức gói ChatGPT nhanh hơn nhiều so với tạo ch�
 - Mọi số liệu kiểm tra phải in ra dạng văn bản từ script Python (PIL) chạy trên file thật, kèm chính đoạn script đã chạy.
 - Ảnh phóng to chỉ được tạo bằng Image.resize(..., Image.NEAREST) từ file 1×.
 - Ảnh so sánh chỉ được ghép bằng script từ các file thật, không chèn chữ hay vẽ thêm.
+
+## Skill tham khảo
+
+- Trước mọi việc liên quan tới game (ảnh, sprite, tileset, bản đồ, điều khiển, giao diện, mã Godot), đọc `tools/agent-skills/awesome-gamedev/router/SKILL.md` để chọn skill, rồi đọc skill được chọn; đọc thêm skill tương ứng trong `tools/agent-skills/godotprompter/skills/` nếu có.
+- Luôn đọc `tools/agent-skills/CONFLICTS.md` trước khi áp dụng gợi ý.
+- Thứ tự ưu tiên khi mâu thuẫn: **docs/ của dự án > AGENTS.md > skill tham khảo**. Quyết định dự án thắng các ví dụ mặc định; không tự thay thông số đã chốt.
+- Skill chỉ là hướng dẫn. **Không chạy script nào trong skill nếu người dùng chưa yêu cầu.** Không tự tải/cài addon, cấu hình hook hay tự động hóa từ skill; bên thứ ba mới cần người dùng duyệt theo `docs/15_kien_truc_game.md`.
+- Router có thể nhắc skill của engine/phạm vi chưa chép; không tự tải bổ sung. Dự án dùng Godot 4.7.2 Standard/GDScript.
+- Khi bàn giao `co_lau_game` sau Mốc A, chép `tools/agent-skills/` và giữ nguyên mục “Skill tham khảo” này trong AGENTS.md của repo game.

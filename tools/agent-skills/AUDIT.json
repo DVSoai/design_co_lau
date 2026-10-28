@@ -1,0 +1,2357 @@
+{
+  "date": "2026-10-28",
+  "sources": {
+    "awesome-gamedev": {
+      "commit": "19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9"
+    },
+    "godotprompter": {
+      "commit": "d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6"
+    }
+  },
+  "files": [
+    {
+      "source": "awesome-gamedev",
+      "path": "router/SKILL.md",
+      "upstream_sha256": "69c1167073530655dac859e33c4b8893903b94f13326ef1c85f152b8008418ba",
+      "final_sha256": "34eca0686014b896a946f0675c0e4b256c4f79c3f41ae83f7959da48db7a576e",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "router/references/custom-engines.md",
+      "upstream_sha256": "0880a19b3e150e064751af2890573a47652dffcd7586809c2135d14f47dc151a",
+      "final_sha256": "0880a19b3e150e064751af2890573a47652dffcd7586809c2135d14f47dc151a",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "router/references/engine-detection.md",
+      "upstream_sha256": "914b3fa795eca0df8842b632e3ee09aabc9c6a81884ece29ac6a67f4907f5f68",
+      "final_sha256": "914b3fa795eca0df8842b632e3ee09aabc9c6a81884ece29ac6a67f4907f5f68",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "router/references/routing-table.md",
+      "upstream_sha256": "2048329d5c29e2d09de7de130a99de44a8a63c7fe27212bea02d53cc59c73a5b",
+      "final_sha256": "2048329d5c29e2d09de7de130a99de44a8a63c7fe27212bea02d53cc59c73a5b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-2d-movement/SKILL.md",
+      "upstream_sha256": "ea396576540acb85f0ca2050a96cfa6399a03668971bb320ef612e52a32c8f0a",
+      "final_sha256": "1fe7adeba0dc39d1ab35741b0c40a3c31bb9154e99711498ece0c74908db4cd3",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-2d-movement/references/controller-recipes.md",
+      "upstream_sha256": "bcf89d3e8a820d75a78ed32eaa8eaf20c01ea1a8154791f58a8e3546d6fb0fba",
+      "final_sha256": "bcf89d3e8a820d75a78ed32eaa8eaf20c01ea1a8154791f58a8e3546d6fb0fba",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-3d-essentials/SKILL.md",
+      "upstream_sha256": "6164f02300775b7db62a79ca9f65f8dc2232efa64268fb330621cf898bbec73d",
+      "final_sha256": "04aba23abeb1d40a949da8d784609ab6a63d5b93c037a8d7b97c295d593ef948",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-3d-essentials/references/scene-and-environment.md",
+      "upstream_sha256": "94d016b194b9d2a5d5ffa3b9cef531b639b15413740f0132ba9f4cc0cba03c34",
+      "final_sha256": "94d016b194b9d2a5d5ffa3b9cef531b639b15413740f0132ba9f4cc0cba03c34",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-animation/SKILL.md",
+      "upstream_sha256": "43a339c8445b804ba84c32889ec9e4ca80e323003df74a35bcf4d3a7c8e9e99b",
+      "final_sha256": "b2503b88639f4d91c29333a33cbbeebb20fea70621f38e6dae17b03876a4bd36",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-animation/references/animation-tree-and-tween.md",
+      "upstream_sha256": "488900f895505dc6190b6e3626a4367c841dfda6ed288de8cf68a9891775c159",
+      "final_sha256": "488900f895505dc6190b6e3626a4367c841dfda6ed288de8cf68a9891775c159",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-audio/SKILL.md",
+      "upstream_sha256": "9ed39d72403eef39e2cbedb1015262ee8413f4f71c91734ba25f82eece839b5b",
+      "final_sha256": "d4bb6622aa6f73d7daf2dddaaa8f41c83e46ca2408364008bd069bf9b32c1360",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-audio/references/buses-and-effects.md",
+      "upstream_sha256": "f84f5c91fc78631670315b4c63643603841ad1ca1f211a7891c8bc408f8c3e80",
+      "final_sha256": "f84f5c91fc78631670315b4c63643603841ad1ca1f211a7891c8bc408f8c3e80",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-csharp/SKILL.md",
+      "upstream_sha256": "3b8d85099d5014d640858bed2d18fd5901b20803492e466b3fb5a82f079486c5",
+      "final_sha256": "300a825e71e339d60f85be3ecc927f490408ce9426355d90f8efa52799623331",
+      "changes": [
+        {
+          "lines": [
+            27,
+            29
+          ],
+          "reason": "autonomous script/dependency execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-csharp/references/csharp-setup-and-interop.md",
+      "upstream_sha256": "e15d5d5f8f6019d627e7d01818a4004d8229e039975387497466346073f3a1d5",
+      "final_sha256": "bb54a3c118a2e6d1af8a2144c87141e599cc06f0d78b4efd89bc86887ea24129",
+      "changes": [
+        {
+          "lines": [
+            5,
+            17
+          ],
+          "reason": "installation/automatic workflow section: Project setup"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-export/SKILL.md",
+      "upstream_sha256": "473552185df50d5ab4a2ef874f47e08ffd7f6f552e191a7a5922c288b29800a6",
+      "final_sha256": "5dd24b028d0291cb691dcbfc8275ecb3841fcc3326206656f09fee06a2c21532",
+      "changes": [
+        {
+          "lines": [
+            27,
+            30
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            99,
+            99
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "made frontmatter installation wording descriptive only"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-export/references/presets-and-cli.md",
+      "upstream_sha256": "ab2388a1870a0b813d110066bb54bad9f3787d067d13043d10944baec5b13dc1",
+      "final_sha256": "e0bc95fd3ef37ac41fa082d28362f4d8e78d385b37f055aac9b6b9d778da27bd",
+      "changes": [
+        {
+          "lines": [
+            33,
+            46
+          ],
+          "reason": "download/install command or automatic CI configuration block"
+        },
+        {
+          "lines": [
+            77,
+            78
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-gdscript/SKILL.md",
+      "upstream_sha256": "9039fb6de0980495fbc77fb87aae22256d92e7b5cca558b9e318b53dbf557459",
+      "final_sha256": "5481e4420f1e6c2bd5c4a3ac309514bba8ef2c6dd1206845aa54014c07620e04",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-gdscript/references/annotations-and-typing.md",
+      "upstream_sha256": "b905cae5114ecbbba2cac14ad49b05a2c252535a670f5a1d701b41def3a90f78",
+      "final_sha256": "b905cae5114ecbbba2cac14ad49b05a2c252535a670f5a1d701b41def3a90f78",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-gdscript-headless-testing/SKILL.md",
+      "upstream_sha256": "980ecf1815cb179bc92749e419e3d5c87cc998413c57ed87035e34dc45e87034",
+      "final_sha256": "e112a87254cc912d7bfc8e89a3ee75be549d785281e8553248d0cfd35fcc95f8",
+      "changes": [
+        {
+          "lines": [
+            135,
+            151
+          ],
+          "reason": "download/install command or automatic CI configuration block; installation/automatic workflow section: 3. CI step (GitHub Actions) that gates on the exit code"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-multiplayer/SKILL.md",
+      "upstream_sha256": "353319ed255916977fa21de4888496b404f400ee63b823db3ff743f5023b9cb6",
+      "final_sha256": "7b2720ac03e7da30559a182fb72de4b9e5383fa4baba6de395c638325ae5c8c2",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-multiplayer/references/replication-and-rpc.md",
+      "upstream_sha256": "05908f3ea13f0ceb21ddc561e7cc8c62e0f71e1b88cbb25cd7c13e8b7f3f6f39",
+      "final_sha256": "05908f3ea13f0ceb21ddc561e7cc8c62e0f71e1b88cbb25cd7c13e8b7f3f6f39",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-nodes-scenes/SKILL.md",
+      "upstream_sha256": "fc0096a774a8581678180ed0e71039eea52533411b4b45dee708ebad10c920af",
+      "final_sha256": "6157716d6a8d2e65a4a91d159b6e643a53d9ca88316dae3363e0a2c942786981",
+      "changes": [
+        {
+          "lines": [
+            39,
+            46
+          ],
+          "reason": "autonomous script/dependency execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-nodes-scenes/references/tree-and-instancing.md",
+      "upstream_sha256": "be3c86180bd18dd46bfdfd7a47317bdb50fc6942cfc3e3d7342b4d0f7834b7a4",
+      "final_sha256": "be3c86180bd18dd46bfdfd7a47317bdb50fc6942cfc3e3d7342b4d0f7834b7a4",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-nodes-scenes/scripts/check_godot_project.py",
+      "upstream_sha256": "779b2130ce00c9566b6a1972dc49916bc270922e1df7fb705a93cc0d5053ef85",
+      "final_sha256": "8a407dba583c60e955c985a72e365c710321bc000abad0cff8e915ecb5b255cf",
+      "changes": [
+        {
+          "lines": [
+            4,
+            6
+          ],
+          "reason": "autonomous execution directive in helper docstring; installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-physics/SKILL.md",
+      "upstream_sha256": "e318719b45091bc2731eb2ebd256027f23f7f50a39b06eb7047608cf8426b297",
+      "final_sha256": "135334e78e4f752144d01f065dc3e722c3355872ebc524d38f28a34c3e3decae",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-physics/references/bodies-and-queries.md",
+      "upstream_sha256": "5d1616f73d9f0161df501cbcb1bdbbc3c4b8c2abb687172e1d02a5d5e7907223",
+      "final_sha256": "5d1616f73d9f0161df501cbcb1bdbbc3c4b8c2abb687172e1d02a5d5e7907223",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-resources/SKILL.md",
+      "upstream_sha256": "1c89eb8eaef4ac889c21640822d454d41a9017e4ca205d4044b73d5fd017aa13",
+      "final_sha256": "df1d7b40ce2d55f130602ae5fca73288be9a85c9552a005c051752b73201a632",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-resources/references/resource-patterns.md",
+      "upstream_sha256": "a848b0be5d5d78307ffa8a91152ffb3b03204cd742a3edd289e03873aab77425",
+      "final_sha256": "a848b0be5d5d78307ffa8a91152ffb3b03204cd742a3edd289e03873aab77425",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-shaders/SKILL.md",
+      "upstream_sha256": "e96ac075c0d85f14af8de2a3f92bc4f0389a9bb9e9ac32bc1519f2aa4679d6be",
+      "final_sha256": "bb9d9bc6982ae9f074c8d8daa3d4c937d8b1310c84fefb7de3e93d465f02f4d6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-shaders/references/shading-language.md",
+      "upstream_sha256": "406987a5728ac06e5a93b878d390387545a0f118a014b65a65d0e003bf3a64c9",
+      "final_sha256": "406987a5728ac06e5a93b878d390387545a0f118a014b65a65d0e003bf3a64c9",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-signals-groups/SKILL.md",
+      "upstream_sha256": "eccc8d79a708eff3ff2b1f108baaf8bf3bf3c39e73e396973ea605a6a1190784",
+      "final_sha256": "c985eee13e234d0a1af3519776c481296d30e228bf23d19ba4225eda03ed98a2",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-signals-groups/references/signal-patterns.md",
+      "upstream_sha256": "7f28a8fccf5aef6029e85d2ee8817dcb4d58c0344744f1a421f059ed61fbab4d",
+      "final_sha256": "7f28a8fccf5aef6029e85d2ee8817dcb4d58c0344744f1a421f059ed61fbab4d",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-tilemap/SKILL.md",
+      "upstream_sha256": "c92a7103c764963a4d065a637941bb537f2409e54277d05aa05ea2bf8fc75971",
+      "final_sha256": "0b49ac69ec58b2bad8b45a80ca7eb27d0c8ef0396bbf5948d4f3bce1118b4110",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-tilemap/references/tileset-and-terrains.md",
+      "upstream_sha256": "c2486c7bacdd3f099d981f50b1aa881a7647bb14112b343370f76e1753d12ed8",
+      "final_sha256": "c2486c7bacdd3f099d981f50b1aa881a7647bb14112b343370f76e1753d12ed8",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-ui-control/SKILL.md",
+      "upstream_sha256": "0b2cc92d670cc2274f6579748a1703ec6a2bf70dc3d2875985deea1018f05bdc",
+      "final_sha256": "1241cd35164e5aaee6b7223bcc072dc24fb90585fbf6d084513e5273c7936adb",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/godot/godot-ui-control/references/layout-and-theming.md",
+      "upstream_sha256": "5f54eed206cd7d7f5fecffd2ce1c189739eba5b5e18b2d1773f9ba7202427f66",
+      "final_sha256": "5f54eed206cd7d7f5fecffd2ce1c189739eba5b5e18b2d1773f9ba7202427f66",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/ai-behavior-trees-utility-ai/SKILL.md",
+      "upstream_sha256": "64936e8a9177931945cdabb2f04fccd3266f273cd6bffa2eaceef9f30c28396e",
+      "final_sha256": "325e88d675e24d01edde31e5377456caa30faff55cf1690117511529ffe9b741",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/ai-behavior-trees-utility-ai/references/behavior-tree-core.md",
+      "upstream_sha256": "ba72c1400780af5f634eee083c23f1976ec77146d4acf48ec73786e758049143",
+      "final_sha256": "ba72c1400780af5f634eee083c23f1976ec77146d4acf48ec73786e758049143",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/ai-behavior-trees-utility-ai/references/best-practices-and-pitfalls.md",
+      "upstream_sha256": "8ff83984ad998bc949d7524bae38c4d5b1acec34ff24587fdc9a9e9952c23c53",
+      "final_sha256": "8ff83984ad998bc949d7524bae38c4d5b1acec34ff24587fdc9a9e9952c23c53",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/ai-behavior-trees-utility-ai/references/practical-examples.md",
+      "upstream_sha256": "2b32bdd643a47d319d7a2b3a9d7c9fa25401f09774d6fe674c1bcf90eaea7248",
+      "final_sha256": "2b32bdd643a47d319d7a2b3a9d7c9fa25401f09774d6fe674c1bcf90eaea7248",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/ai-behavior-trees-utility-ai/references/utility-ai-system.md",
+      "upstream_sha256": "156ee87846a4c319be358d2ced18dbcdeeccc31d1ea96f0019867db19c53ef47",
+      "final_sha256": "156ee87846a4c319be358d2ced18dbcdeeccc31d1ea96f0019867db19c53ef47",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/audio-design/SKILL.md",
+      "upstream_sha256": "6644943d62dc49b29e142259c54e27d0cca68f404de3f4ade58778b663f7ca02",
+      "final_sha256": "c8d49402167a2a0a01026d80647cafda8408d1b414ea2242e75f5e27a1afd410",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/audio-design/references/adaptive-music.md",
+      "upstream_sha256": "1aa1a14bc163f248583f7385c27cb36aa8748014df2b1d499c77c2b0846365ba",
+      "final_sha256": "1aa1a14bc163f248583f7385c27cb36aa8748014df2b1d499c77c2b0846365ba",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/camera-systems/SKILL.md",
+      "upstream_sha256": "419dc9912b1ab007b17df615fc2347158255b63f93000b43b4c4ed1b5605d01e",
+      "final_sha256": "49c8e63e5b103e856a7b1f3b8fef550525fb11f39d282826ef29f904239ef1d3",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/camera-systems/references/follow-and-framing.md",
+      "upstream_sha256": "7664d4ab898e183a41bfe2ded1c71c5e16704575545a711830707df60e3a88fa",
+      "final_sha256": "7664d4ab898e183a41bfe2ded1c71c5e16704575545a711830707df60e3a88fa",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/SKILL.md",
+      "upstream_sha256": "36cd246a434fefe1e36feff066597a6268d9f63364bee387ee65a22f03838b5d",
+      "final_sha256": "325a63243b7d21f9a2222e221337ded125395c32a5722be28d3efecc037e1112",
+      "changes": [
+        {
+          "lines": [
+            97,
+            100
+          ],
+          "reason": "autonomous script/dependency execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "changed implicit helper invocation to passive reference"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/references/art-direction.md",
+      "upstream_sha256": "19b2ccb827eae0c6c4cd3648ab7febb82e44706bef8515f2e8912de23dec0a5c",
+      "final_sha256": "19b2ccb827eae0c6c4cd3648ab7febb82e44706bef8515f2e8912de23dec0a5c",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/references/provenance.md",
+      "upstream_sha256": "098d3cf915cd66e8ff0ad3a639964167edf2280f9e23efbae3ea6242d5bea3db",
+      "final_sha256": "098d3cf915cd66e8ff0ad3a639964167edf2280f9e23efbae3ea6242d5bea3db",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/references/raster-pipeline.md",
+      "upstream_sha256": "d7a5714628fd8f4b66d03e060488e353b163b811112b164af218beb2b6450a02",
+      "final_sha256": "d7a5714628fd8f4b66d03e060488e353b163b811112b164af218beb2b6450a02",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/references/three-d-pipeline.md",
+      "upstream_sha256": "ee6ed7c373e15ffeb8e6b275618482f028279a8146f01b6cfe6a8411cb8a3db4",
+      "final_sha256": "ee6ed7c373e15ffeb8e6b275618482f028279a8146f01b6cfe6a8411cb8a3db4",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/assets/art-direction-brief.md",
+      "upstream_sha256": "6d5dc4f9f5fcb24300bab9ce7dbd56d5c948ba41da3cca2d3b3d235fee5fb72c",
+      "final_sha256": "6d5dc4f9f5fcb24300bab9ce7dbd56d5c948ba41da3cca2d3b3d235fee5fb72c",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/assets/asset-manifest.json",
+      "upstream_sha256": "6cce05638c11b80eb5c8f776cf187f479a2579f1a1729b0970b1cc8e5fab4c8e",
+      "final_sha256": "6cce05638c11b80eb5c8f776cf187f479a2579f1a1729b0970b1cc8e5fab4c8e",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/scripts/asset_report.py",
+      "upstream_sha256": "99f4b38f9c4fe036f97ab1d4effd7f6931b62d24a90330a5a2f5ae71e7d1a77c",
+      "final_sha256": "99f4b38f9c4fe036f97ab1d4effd7f6931b62d24a90330a5a2f5ae71e7d1a77c",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/scripts/build_preview_sheet.py",
+      "upstream_sha256": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
+      "final_sha256": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/create-game-assets/scripts/requirements.txt",
+      "upstream_sha256": "bbced595a25debee9232fbb784d35ee4f04967d3dbc528e8c3073d3e9adbe2ca",
+      "final_sha256": "bbced595a25debee9232fbb784d35ee4f04967d3dbc528e8c3073d3e9adbe2ca",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/dialogue-systems/SKILL.md",
+      "upstream_sha256": "8d7576b4d702cc3c3db0abc90b2e5375b73e63d72479ffef73b5797237bde30b",
+      "final_sha256": "ad20c8a590b2ceb7d043e286e209a4f4a60d3b8f4ccc3ac52a6c649f2b36fab8",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/dialogue-systems/references/ink-and-yarn.md",
+      "upstream_sha256": "c43275e04428ad8edb374f83477046a12d525b1535cc286d3f4c8e8e159c991e",
+      "final_sha256": "c43275e04428ad8edb374f83477046a12d525b1535cc286d3f4c8e8e159c991e",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/dialogue-systems/references/runner.md",
+      "upstream_sha256": "9d70ca1cb7a518170300c06bfb88984230e71ee23ff0b7b225f3355a22cb4fe4",
+      "final_sha256": "7dbe5a3f3e8886ec6d5d40646456600951867795c9ed39963b89d527f3e44bc9",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "converted omitted-file links to pinned upstream references",
+          "targets": [
+            "ev(node.left",
+            "ev(v"
+          ]
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-ai/SKILL.md",
+      "upstream_sha256": "5c193ac1debc8ec9ed8f44be7a05d12d817ac390e1fa82018bcae4f2ff53fbd8",
+      "final_sha256": "43f6319cb14af32a80c155e9190606bbca243ac6f379c06c366bffc06a60e751",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-ai/references/behavior-trees.md",
+      "upstream_sha256": "eed3fdb943801a7696f2ca03a54d60fc9111a63c5c817e567516b5e2df2c04a9",
+      "final_sha256": "eed3fdb943801a7696f2ca03a54d60fc9111a63c5c817e567516b5e2df2c04a9",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-ai/references/pathfinding.md",
+      "upstream_sha256": "75d6c8397fc5ff2fb8ac3dd74e7b4f881331f2531f40b6f8db451f14adb6534d",
+      "final_sha256": "75d6c8397fc5ff2fb8ac3dd74e7b4f881331f2531f40b6f8db451f14adb6534d",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-feel/SKILL.md",
+      "upstream_sha256": "48971c7ad1fbb39069cb165f0e45f88c13776585870d69d5de8a04bbe0988e28",
+      "final_sha256": "ec7e7d640f54bfb1a10a8d4d421fa5777903c1b5ddd7b8a3d24b2c591954e16e",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-feel/references/feedback-recipes.md",
+      "upstream_sha256": "f8cca962733b0b1f5d1db75fe966f6e13bf11015e39a04a849d6ff5c3e0e835e",
+      "final_sha256": "f8cca962733b0b1f5d1db75fe966f6e13bf11015e39a04a849d6ff5c3e0e835e",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-ui-ux/SKILL.md",
+      "upstream_sha256": "54816447c4d07f9ab65782ebb7138dd0927c9cd84a3647e8806f2a86a3a094ff",
+      "final_sha256": "29bf3c20276df447ec2b3c091d2944b64ed0c6adb9c60202181538c0189ac0ea",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/game-ui-ux/references/layout-and-flow.md",
+      "upstream_sha256": "961fc8c8e45a1ee5120e1deef9f6aef932ae3949e6f1ce26548b9d7616775d73",
+      "final_sha256": "961fc8c8e45a1ee5120e1deef9f6aef932ae3949e6f1ce26548b9d7616775d73",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/input-systems/SKILL.md",
+      "upstream_sha256": "638bd3c07746a09e3945e81c0b9a2ca90c75d2f8a63c0be3c285d75475790b1f",
+      "final_sha256": "05c6c9832a3c98a0ab429d3b4a56cb3fea7be1e81a4cb1be0df9f62d320a1043",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/input-systems/references/buffering-and-accessibility.md",
+      "upstream_sha256": "dadd5fc9f7bbe88daeeb506e4e1b447267e232273a08ca32095a78f31aea0d84",
+      "final_sha256": "cddb4433f7a85d5231845290e22b339387aa140073624aefdcbdaa6233577729",
+      "changes": [
+        {
+          "lines": [
+            58,
+            59
+          ],
+          "reason": "removed external artwork retrieval instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/level-design/SKILL.md",
+      "upstream_sha256": "9dd60fec5dc09957f7836739da96b5a2bcff2b46ecaab020f0a9ccff7463ba3a",
+      "final_sha256": "cdaf4a86992bc86ff6f9fa3686409ca603af4945e8bc158b7b4a9a8eeffab2dd",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/level-design/references/pacing-and-flow.md",
+      "upstream_sha256": "e8e3940f585e376f353aefea009befe8199a1871f99d34d7b2340cb35cb61872",
+      "final_sha256": "e8e3940f585e376f353aefea009befe8199a1871f99d34d7b2340cb35cb61872",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/performance-optimization/SKILL.md",
+      "upstream_sha256": "287161d2ed49670a051271c8fade5a7265fda5109d39c218c02598dca7983e2a",
+      "final_sha256": "b8523cdf137285c92fba33bb3e6f8122ff8a778c674b2fe56eb9eca903cb79cd",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/performance-optimization/references/profiling-and-budgets.md",
+      "upstream_sha256": "e68c43d5e66ec0f2fe60e0c0121c85360144ab7da5876ce6e2e3f26a2244e284",
+      "final_sha256": "e68c43d5e66ec0f2fe60e0c0121c85360144ab7da5876ce6e2e3f26a2244e284",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/physics-tuning/SKILL.md",
+      "upstream_sha256": "3e0f3d9ad049e552235cb98612381c82361fff582391c4d5584438309a14c35f",
+      "final_sha256": "31268768e965121b8d507ec5351e4bd2464f1ba29c7262ec4704900ddfae1373",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/physics-tuning/references/timestep-and-ccd.md",
+      "upstream_sha256": "de507b0bee47cfa3ca5d051d0c4100f99736186e26cdb9488c252d6cc8d6f9ab",
+      "final_sha256": "de507b0bee47cfa3ca5d051d0c4100f99736186e26cdb9488c252d6cc8d6f9ab",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/procedural-gen/SKILL.md",
+      "upstream_sha256": "4bd422eff2c28dbb12e0edf7ef68f3e98bcbbdf4d430815ba6da2d0692630cc4",
+      "final_sha256": "326537c79602b2a617b65a1b0951b3da11a1bc9050b937c2ba966bee17d566e0",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/procedural-gen/references/dungeon-generation.md",
+      "upstream_sha256": "808451354e49b779111383827dba7c97964ce34647bbb3e33e21ae53728ca43c",
+      "final_sha256": "808451354e49b779111383827dba7c97964ce34647bbb3e33e21ae53728ca43c",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/procedural-gen/references/noise.md",
+      "upstream_sha256": "4f4da0458cdebcd4323ee36da9e25032d5f3a52b3cf8b46177eced6cf79597ab",
+      "final_sha256": "4f4da0458cdebcd4323ee36da9e25032d5f3a52b3cf8b46177eced6cf79597ab",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/save-systems/SKILL.md",
+      "upstream_sha256": "17a7e580cdb8ee2fe654fe1b2d9ba3066c57ef1ea6a8cd9cc69141ebaea16224",
+      "final_sha256": "ef877b359bd86583dd3fd2d90d3111d0a98ad3f999527557eae03462fd4b72d5",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "converted omitted-file links to pinned upstream references",
+          "targets": [
+            "data"
+          ]
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/save-systems/references/versioning-and-migration.md",
+      "upstream_sha256": "a95ee265936b5bb332934ae19a90c02c70f927adb3898e5a95ce1877abe9873c",
+      "final_sha256": "31b969ba08302391580b4b6c05ba1338458fe67d0173025f9bcda806ed097262",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "converted omitted-file links to pinned upstream references",
+          "targets": [
+            "data"
+          ]
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/shader-programming/SKILL.md",
+      "upstream_sha256": "a13ed34325b8c18f0c6982edb1a5aede99497a26b9e00fc19e9ce01e566f9923",
+      "final_sha256": "408ef75c4ad6fa1248b1407f72f5ee55c67234c9a5a97d55d8db1f6ced9b7609",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/disciplines/shader-programming/references/effects.md",
+      "upstream_sha256": "af47d6efff3741f587e8f7a5338fce251b91a1a4b7fe514742edae8b5a84f71b",
+      "final_sha256": "af47d6efff3741f587e8f7a5338fce251b91a1a4b7fe514742edae8b5a84f71b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/genres/rpg/SKILL.md",
+      "upstream_sha256": "023d5305787c1c56b1e2be31aa9a2e4be48aac7e3d828198d4745fd1fabcb807",
+      "final_sha256": "b549a00f0db3ebd586b771f4460edd7c7e481270de9121ff2df6ebf8262191ab",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/genres/rpg/references/stats-combat-quests.md",
+      "upstream_sha256": "f48f556a5108a12c1c96990e379ab517c663f147d42d0f1831dd81644947d748",
+      "final_sha256": "f48f556a5108a12c1c96990e379ab517c663f147d42d0f1831dd81644947d748",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/genres/platformer/SKILL.md",
+      "upstream_sha256": "4a6f3887d6e3f8ed03fc3aec3d3a76aeb859b72ed7a4b70f4e83cc706e6a2e15",
+      "final_sha256": "48e5fc2c53f60829f8342a6ce75822299d14fe16483722f9207a419cf85166d6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/genres/platformer/references/feel-tuning.md",
+      "upstream_sha256": "6873494513777bda6f77dfa4d825acabab61c415127c7cc3c22a7069af322598",
+      "final_sha256": "6873494513777bda6f77dfa4d825acabab61c415127c7cc3c22a7069af322598",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "skills/workflows/prototype-fast/SKILL.md",
+      "upstream_sha256": "02491395c621833d2252f7a33a96aa11f26eb48523fea167c68272fb3c785ba1",
+      "final_sha256": "b9a2f3a8897d920226d51222209a640f202976b69baae8324d4720fc8cc3a873",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "LICENSE",
+      "upstream_sha256": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+      "final_sha256": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "NOTICE",
+      "upstream_sha256": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8",
+      "final_sha256": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "docs/SKILL-FORMAT.md",
+      "upstream_sha256": "bd71d3477900793c7a1f2a582e94af819670343c96474c8819f170a9790a7101",
+      "final_sha256": "a59eef46d3b5d01da8cc2f66b9882d86b529c1fc6f58c23364675d13bcdeb26b",
+      "changes": [
+        {
+          "lines": [
+            117,
+            118
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            125,
+            164
+          ],
+          "reason": "installation/automatic workflow section: Router and distribution wiring; installation/automatic workflow section: Validation; installation/automatic workflow section: `agents/openai.yaml`"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "converted omitted-file links to pinned upstream references",
+          "targets": [
+            "../CONTRIBUTING.md",
+            "../templates/SKILL.template.md"
+          ]
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "awesome-gamedev",
+      "path": "docs/VERSION-SUPPORT.md",
+      "upstream_sha256": "a8d30fe79b820a271096cd3bd9cbc249d988af863c5f0c8cfc88cf0558f0abb4",
+      "final_sha256": "a8d30fe79b820a271096cd3bd9cbc249d988af863c5f0c8cfc88cf0558f0abb4",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/player-controller/SKILL.md",
+      "upstream_sha256": "28ee7202622b367a61f4398c34e6ab91b68b9ea096006928293588b6bee7bcfd",
+      "final_sha256": "8bd8f2cbee1276097a5ba4ae694bfb4b52a082f46f3db7069769a49d6a4fc716",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/player-controller/references/common-movement-recipes.md",
+      "upstream_sha256": "51e97f43d25394b6e5248451249bd8f3c9422d29d87e6053e5b354b0165aa8ef",
+      "final_sha256": "51e97f43d25394b6e5248451249bd8f3c9422d29d87e6053e5b354b0165aa8ef",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/mobile-development/SKILL.md",
+      "upstream_sha256": "0953f3f5ea398dd0ffab08d3494064a10f12693e0dc864d4421e99a7d7eb2854",
+      "final_sha256": "3acf237769e8cb92367d618e63eec294f019bc8855489a4aac49d56b6c9045f9",
+      "changes": [
+        {
+          "lines": [
+            26,
+            26
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            28,
+            28
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/mobile-development/references/crash-debugging.md",
+      "upstream_sha256": "9f327e8a8ebd1d79d0009bbfc9f08e0c0176f0f092d1e9b5ca09721b20ab82d3",
+      "final_sha256": "f3044652173d219121cba12a807052c555c44196a850a212c6e2a54e286ddb76",
+      "changes": [
+        {
+          "lines": [
+            9,
+            9
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/mobile-development/references/iap-and-ads.md",
+      "upstream_sha256": "3ddfa65196feea6fd8f7b163f8358631cd1d88042fbdf800bbd1ddcdd83acd65",
+      "final_sha256": "3ddfa65196feea6fd8f7b163f8358631cd1d88042fbdf800bbd1ddcdd83acd65",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/mobile-development/references/plugins.md",
+      "upstream_sha256": "d894d02d78a275c04df5db9a5a95afc16d0805ee50b85060bab1421a190e1f5b",
+      "final_sha256": "d894d02d78a275c04df5db9a5a95afc16d0805ee50b85060bab1421a190e1f5b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/responsive-ui/SKILL.md",
+      "upstream_sha256": "3576e7c12df58a994b462970f5cb4fba2b8cbfcc71b219a1d4e518d7ccb99778",
+      "final_sha256": "d0ffa5c622d1c6d57592d6e5f370d880492d2ec745e731c5745563116beced76",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/responsive-ui/references/adaptive-layouts.md",
+      "upstream_sha256": "627e85f2fcdedfe12b36ddf0e0a815cd8344a58cda016a3177d36fb95fdbcacf",
+      "final_sha256": "9fdff55177d77e911f3ae7783395396c502a1103482fa86cb818b7fdca9741c6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/responsive-ui/references/dpi-scaling.md",
+      "upstream_sha256": "b04121f18e11bfa283c8267ca0d5032c1b6812efd8f3fb95304583cb62263a98",
+      "final_sha256": "ea171aa1462342bd5c2cf446c48eccf517dae6e7e7221e29040614a296463db6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/responsive-ui/references/mobile.md",
+      "upstream_sha256": "a973cb414070b97b3aad06e16399aa84d45788232b28cfc4661e332cd8e42a34",
+      "final_sha256": "25dd4c08b1789da8abcad1998840d9aae3569f04b7a320e32c1881108a440a57",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/responsive-ui/references/pixel-art-setup.md",
+      "upstream_sha256": "d84ddb84117cb0f5b40937876c6c8c5b8c9c9e9e93a6836b4f622454549705bc",
+      "final_sha256": "56609799398e9e2cc4d02eba935fca52a88a46dc20956ac61d5f2dc691debb46",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/hud-system/SKILL.md",
+      "upstream_sha256": "89040b6096135523ffacd85f0a441835bb58c244c27d749949139ff8acf04073",
+      "final_sha256": "00e62e4ec72d90965f4c5484ae2de2a989200d15cd5842fecbe1003b08c11765",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/hud-system/references/damage-numbers.md",
+      "upstream_sha256": "c751b0aaa3a16afada04c802989f13e047555964f0d5d721f26a1d1610102553",
+      "final_sha256": "bb47aafd49fb2d2218a0ac45dcb686c853e0f85601b5d26f9867957ce0dc5c94",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/hud-system/references/interaction-prompts.md",
+      "upstream_sha256": "de6880c5e2ef4286606c018cfacf1fad3a5df94b29fb55062a877ccb2e75235c",
+      "final_sha256": "4b2cab8e278030520d5a312a7ca83c758c46a487659f59ecbb4d3db311bbd6d7",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/hud-system/references/minimap.md",
+      "upstream_sha256": "b55015f2b48464efb7d0288e02c92bd9e4d2025223c9e409d89b8ab9c5b6b18f",
+      "final_sha256": "9b562c2bc64106a000574a73a68b0f540a32cfec2fb561d06b14546a3f495881",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/hud-system/references/notifications.md",
+      "upstream_sha256": "36b2f39cc6964686d171a0d7086ff03606e57cc60d785bd1603754bfdca3d469",
+      "final_sha256": "a52663df2f5533aab29c6e8a898d7d2d13f2af5fc916ff7cb6b41fc502baf266",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/save-load/SKILL.md",
+      "upstream_sha256": "78a70d1499255f06d37d357d187c1fec44bb9560eb23d30ef838670976d74a82",
+      "final_sha256": "14b66b237c175cbbbcb1bf02af5d6cbbc25e7dec2f275790be1b635eaaff03cd",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/save-load/references/configfile.md",
+      "upstream_sha256": "4da565ae95b38ac6ea54a5f1862ca41fa3561d0a3feb60dc37394c63f8970fe1",
+      "final_sha256": "f7270fdbfcb3e1cf94cf9d980f8344d0286ba97ebea8196d538da6fa7bce5fc6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/save-load/references/json-saves.md",
+      "upstream_sha256": "cbea8b6387353561a1016f0106c0c5d1c80ec89d9484d4aae9e197573c4d684d",
+      "final_sha256": "5f77522c1cea00f296e9333fd980c6f9f128f4533e29958eecce9fd11802d621",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/save-load/references/save-architecture.md",
+      "upstream_sha256": "00a0e2b9f3ce071a9df60934dbcb49670c2f9d0148f1c25173d0f275e71e06ad",
+      "final_sha256": "a2f0f0dee5afa6c18c8dc4ced7cd32ff747f1b9878bb37b62b850985f6a1d21a",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/save-load/references/version-migration.md",
+      "upstream_sha256": "04d44565a11e9a08509aba45b45ba85c1c4566d816ae29e4f74dd0ca9d39393b",
+      "final_sha256": "8a578b5ca36588d71ec4d91bc4e22f0729b329ffa776c12ef9a1aae533c728b8",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/inventory-system/SKILL.md",
+      "upstream_sha256": "6bfd5c3220c8e245e6044d7b0262d3322376543bceeaf2d7c5261fcbf697de66",
+      "final_sha256": "278b26c8f55859b6f446ab3aafeb6081d507c9310acae6e273b94f8de8f887e1",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/inventory-system/references/core-classes.md",
+      "upstream_sha256": "ba7d0a1b3200c602ed3c5bb01ab3b4cf5f5d308027038af0f6dd42a002fa409e",
+      "final_sha256": "ba7d0a1b3200c602ed3c5bb01ab3b4cf5f5d308027038af0f6dd42a002fa409e",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/inventory-system/references/equipment.md",
+      "upstream_sha256": "0752322955c5e0622a334e3de88bb07926be9d38833c0a3ed13d101e7ce16327",
+      "final_sha256": "3841efe277c8dd45b4e90bf610810d69947234ce8b2bf824d33e19834602316b",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/inventory-system/references/serialization.md",
+      "upstream_sha256": "ecf9625dd325b412ce76174a752f71c3118d5c622c884e270406a761ac384f34",
+      "final_sha256": "34bb8fffe62453e1abf6d28aa0d24350e812f7ece8159e417b7dba6b12640368",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/inventory-system/references/ui-binding.md",
+      "upstream_sha256": "22e2f2e810c872784cc38725d3760710f987a15cde8c9bf8383f8822a7131a7a",
+      "final_sha256": "bacb604f49cf78d02600e5298846613788f12e1e36a621586c34e874f29daf0b",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/state-machine/SKILL.md",
+      "upstream_sha256": "f3c6189143283e9cf9377e192abf2381597e67104d194f891489c228ed141852",
+      "final_sha256": "e17b591511d164095d8b8ad99777ea78cab3f738b1e5f073b57c650731326b28",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/state-machine/references/hierarchical-and-parallel.md",
+      "upstream_sha256": "4a21b680490e763ec76e5a908cde9ba6c2236dbd4b9c6cd99a4d660b4a7a938b",
+      "final_sha256": "4a21b680490e763ec76e5a908cde9ba6c2236dbd4b9c6cd99a4d660b4a7a938b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/SKILL.md",
+      "upstream_sha256": "1058eba6a3388f698b52c3740d5d98ec8497ab2cce3e585cbda8623a686ec902",
+      "final_sha256": "7d819f90a6d3d32f476498f403cd8956093f775ad4371bd30c46f7e0a0005c44",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/references/collections.md",
+      "upstream_sha256": "2da9225907d4bdfcfa1e70c8e50eecb57db7f4cf1ff360aa5c4887fae290148c",
+      "final_sha256": "03b54994ad9c8e8bbb1fba1e000045d193fd2de2432416621d51cde3bd726cbc",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/references/configuration-pattern.md",
+      "upstream_sha256": "7ea267c19d8ebd827e88c17d65f9338018919983863bb918472063b35146ca5e",
+      "final_sha256": "358994b5d2081e876f2786694b79ebd572639bb4c608567469cce58493ad5b26",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/references/editor-integration.md",
+      "upstream_sha256": "cd174eb2a36156db2a0a8ef6b6065e723ad6ba26fc948593e332286539e9cb79",
+      "final_sha256": "f4ad3ee24ab63caca3f8ddba36d31a9375a90adfa173b1662a3f611373daa022",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/references/saving-resources.md",
+      "upstream_sha256": "2da35ffb2eebbeb6ce2187e592b83b1cb7063763ce2f5e05845fb154208f4a24",
+      "final_sha256": "51aff93a0162825361388c76f1f890b1e892f586103fd4d45ceb762e8148dbf6",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/resource-pattern/references/sharing-vs-unique.md",
+      "upstream_sha256": "d8bff21173b5625c12277d1a688aa89565e94d0967ad6518b2928b8644dc11ea",
+      "final_sha256": "9c35c7d170591fa73a81b49e5f2e586998a43e604baffda310144b740625e71c",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/scene-organization/SKILL.md",
+      "upstream_sha256": "74d417c0c376f31f57c7155388496e4c250a93dd284c32d3ec0a31aa3178c0be",
+      "final_sha256": "5a273ca7c67b603150d52eecadff641f666b8609dafa7c794c111dace860df3e",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/godot-testing/SKILL.md",
+      "upstream_sha256": "9ee92e4d063177c4fd7b20ee030fab7823d1f56c3c449f9b4465b99fd8e95c38",
+      "final_sha256": "428aa8a4e9c15a48745c9836aa15dbde107ebab06a1a6d902709e380b13191e2",
+      "changes": [
+        {
+          "lines": [
+            17,
+            17
+          ],
+          "reason": "removed only the framework installation row; kept framework comparison table"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/godot-testing/references/running-tests.md",
+      "upstream_sha256": "869eba0e139774c9e13c0f592936bc18618a1f487dea7ab4cf1afa888d1e6625",
+      "final_sha256": "32b9217f900429b8d4c1da7f6a3ab1c3d0272294fede28f88e5b0db753f50a8f",
+      "changes": [
+        {
+          "lines": [
+            49,
+            120
+          ],
+          "reason": "download/install command or automatic CI configuration block; installation/automatic workflow section: GitHub Actions CI"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/godot-testing/references/tdd-workflow.md",
+      "upstream_sha256": "a0ce3dd8c29625df55be0eeebda1de0c5d76d5bf50ea6af0d08fa0ee137192c0",
+      "final_sha256": "71320d32947a292771bbdf2d5eed7dd5c03f12a1ab313cf270277b020f1c8a70",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/godot-testing/references/testing-patterns.md",
+      "upstream_sha256": "e529c280f6d927267944c33ac515504e152301ce047610f9cb87eecb01108b07",
+      "final_sha256": "0477cb70c8f20ee07a579e6a233dd343c71ce0edd33836eff7cb1b6c9353ffd2",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/export-pipeline/SKILL.md",
+      "upstream_sha256": "bec873eb7bdf300ff02edff33dee4658a88161f7e9b320b1fc6dd68fa52a3acf",
+      "final_sha256": "4b0e8f80b2ac07a66438ce78ea0bb9294185639e1b62faacf586caf1b37efb04",
+      "changes": [
+        {
+          "lines": [
+            20,
+            21
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            165,
+            172
+          ],
+          "reason": "installation/automatic workflow section: 4. CI/CD with GitHub Actions"
+        },
+        {
+          "lines": [
+            187,
+            187
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            210,
+            220
+          ],
+          "reason": "installation/automatic workflow section: CI Workflow Note"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/export-pipeline/references/ci-cd-github-actions.md",
+      "upstream_sha256": "99e431236f690b0b825382d3a9991a5cc5e65f20da4c504a6c8134874db922c3",
+      "final_sha256": "fabc12c367e227707d98cf4d072e280d88b985700c0d5d1e046b81b7313ad119",
+      "changes": [
+        {
+          "lines": [
+            7,
+            79
+          ],
+          "reason": "download/install command or automatic CI configuration block"
+        },
+        {
+          "lines": [
+            81,
+            81
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "trimmed trailing blank lines (format only)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/export-pipeline/references/distribution-itch-steam.md",
+      "upstream_sha256": "2078444fef4e492afb74e8a6f121abe570ab69d89a7a8db0a43f4013f2e96611",
+      "final_sha256": "5a1890a5c7d828a10c3bf29cbf2de5fc9efd39c37749b4c10e507bf613d8d6e9",
+      "changes": [
+        {
+          "lines": [
+            9,
+            20
+          ],
+          "reason": "download/install command or automatic CI configuration block; installation/automatic workflow section: Install Butler"
+        },
+        {
+          "lines": [
+            45,
+            76
+          ],
+          "reason": "download/install command or automatic CI configuration block; installation/automatic workflow section: GitHub Actions — Deploy to itch.io"
+        },
+        {
+          "lines": [
+            82,
+            82
+          ],
+          "reason": "installation/network or autonomous execution instruction"
+        },
+        {
+          "lines": [
+            81,
+            81
+          ],
+          "reason": "removed remaining manual SDK download instruction (upstream line)"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice to modified reference/helper"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/export-pipeline/references/steam-release-planning.md",
+      "upstream_sha256": "22578251c8f727989faf06320c5085111c53475a5668a9a14ea4642735fac6ca",
+      "final_sha256": "22578251c8f727989faf06320c5085111c53475a5668a9a14ea4642735fac6ca",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/export-pipeline/references/versioning.md",
+      "upstream_sha256": "4b2da3035da6ff340c7e274d629c4f93abeac067040bd75474d8d5be48302181",
+      "final_sha256": "4b2da3035da6ff340c7e274d629c4f93abeac067040bd75474d8d5be48302181",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/SKILL.md",
+      "upstream_sha256": "62bc11f1235cfc224f183ee8f807af9c65052b375d4cf0f50064ae2cd25273d8",
+      "final_sha256": "f341f9dadfbe1c90307e8f7089c818b280af96c81615193ef4b263b0d4d8d60d",
+      "changes": [
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/animation-markers.md",
+      "upstream_sha256": "1459b29bc9d6c88eee082ade75cd4d8258ba4d6c215ae209429a09ee972ef96d",
+      "final_sha256": "1459b29bc9d6c88eee082ade75cd4d8258ba4d6c215ae209429a09ee972ef96d",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/blend-spaces.md",
+      "upstream_sha256": "f091c8d39312d07aae4da44c57965a9dd94ef0f639d06c6d90d5efa21e2a6cfd",
+      "final_sha256": "f091c8d39312d07aae4da44c57965a9dd94ef0f639d06c6d90d5efa21e2a6cfd",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/bone-constraints.md",
+      "upstream_sha256": "cc1d52ebf0da5b4c4103852a0abdc6fb51f64d579fc47fa30674bebf02d4de23",
+      "final_sha256": "cc1d52ebf0da5b4c4103852a0abdc6fb51f64d579fc47fa30674bebf02d4de23",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/common-pitfalls.md",
+      "upstream_sha256": "3e42ef0f8619b65a8262d6496fb0733f0f306107c113c5a38159dc89dafbeb93",
+      "final_sha256": "3e42ef0f8619b65a8262d6496fb0733f0f306107c113c5a38159dc89dafbeb93",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/common-recipes.md",
+      "upstream_sha256": "bf87c680e80f5063f117e04882d9bfb7d41a4e897f4a8bad7ba0d63820369d4d",
+      "final_sha256": "bf87c680e80f5063f117e04882d9bfb7d41a4e897f4a8bad7ba0d63820369d4d",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/ik-recipes.md",
+      "upstream_sha256": "d49c8a22123af33cd1f3b1b415fc2d45b939f053039e5bb9cf1be2fa8122c266",
+      "final_sha256": "d49c8a22123af33cd1f3b1b415fc2d45b939f053039e5bb9cf1be2fa8122c266",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/ik-solver-comparison.md",
+      "upstream_sha256": "057db3e39f6c9cf03064d40b053d742d318acb552530c992103a4a75740ff5d6",
+      "final_sha256": "057db3e39f6c9cf03064d40b053d742d318acb552530c992103a4a75740ff5d6",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/retargeting.md",
+      "upstream_sha256": "f317f406a4f3e05e17b136b918f4cf7eb45e17ddff5d272b78e5bb90da7a6711",
+      "final_sha256": "f317f406a4f3e05e17b136b918f4cf7eb45e17ddff5d272b78e5bb90da7a6711",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/skeleton-modifiers.md",
+      "upstream_sha256": "ef0c70868e71d24eece914eb53835a81603ba29802992cde0a7a23451ba66dd9",
+      "final_sha256": "ef0c70868e71d24eece914eb53835a81603ba29802992cde0a7a23451ba66dd9",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/sprite-animation.md",
+      "upstream_sha256": "400d5a9fcc8cc165ed4cfd098ed4256fb23580acbfb153d1164576c2ff004bf7",
+      "final_sha256": "400d5a9fcc8cc165ed4cfd098ed4256fb23580acbfb153d1164576c2ff004bf7",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/animation-system/references/state-machine-examples.md",
+      "upstream_sha256": "a1f5889ca4451b940d4ba8f99e9e6c5d130a8c109bfb89bd7a5d62b02c49ab48",
+      "final_sha256": "a1f5889ca4451b940d4ba8f99e9e6c5d130a8c109bfb89bd7a5d62b02c49ab48",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/beehave/SKILL.md",
+      "upstream_sha256": "59b35eb91269559112962691483f0c3924b15ffdff47dfa2023a16ac1a4a5e1a",
+      "final_sha256": "409a9b9880b4bb6ec911f165d380fad90dee35819cf6aae9160bcd6425573131",
+      "changes": [
+        {
+          "lines": [
+            28,
+            37
+          ],
+          "reason": "installation/automatic workflow section: 2. Install & enable"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/beehave/references/custom-nodes.md",
+      "upstream_sha256": "50a80d18113aa4c5f0b5ff9210ce1cb7bd07e1e39f75bf83b75d1ef81110643d",
+      "final_sha256": "50a80d18113aa4c5f0b5ff9210ce1cb7bd07e1e39f75bf83b75d1ef81110643d",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/limboai/SKILL.md",
+      "upstream_sha256": "ccb42e8ee7fa7517058eb63c4c65b13af8d1a6e1a5fc501ed73bb3afa8315f79",
+      "final_sha256": "1a58f819735cc362371b356602532226cd0ec31c53c1a7c2d9f1aa7bcbe35b5f",
+      "changes": [
+        {
+          "lines": [
+            26,
+            62
+          ],
+          "reason": "installation/automatic workflow section: 2. Install & setup"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/limboai/references/hsm.md",
+      "upstream_sha256": "71f7a465dec00a03eb11889444861bd33ded324fc3fa7295ec0fbcc896e4fa20",
+      "final_sha256": "71f7a465dec00a03eb11889444861bd33ded324fc3fa7295ec0fbcc896e4fa20",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/phantom-camera/SKILL.md",
+      "upstream_sha256": "c3c91da45ca0fee1513772e42a88fe65c3de18f7f61278cfab7d46540f9fbb0c",
+      "final_sha256": "ef7b6fe1b89052ff86ecb133e8a45fb1487115a8d095f68018c29dcb72679ec1",
+      "changes": [
+        {
+          "lines": [
+            29,
+            49
+          ],
+          "reason": "installation/automatic workflow section: 2. Install & setup"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/phantom-camera/references/follow-modes.md",
+      "upstream_sha256": "daf024e8eea1d017f99edf8b82f492a60952f9b1d7ab4a98babd984267c2602b",
+      "final_sha256": "daf024e8eea1d017f99edf8b82f492a60952f9b1d7ab4a98babd984267c2602b",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "skills/dialogue-manager/SKILL.md",
+      "upstream_sha256": "e7736ca353939078ddea211c80938cc88d89bb58dc235504d609fb8e30200d6c",
+      "final_sha256": "3b91b3b4d8a5f52966644e359e09e0a320cf628a941bfc128f68a80b5a41b239",
+      "changes": [
+        {
+          "lines": [
+            30,
+            54
+          ],
+          "reason": "installation/automatic workflow section: 2. Install & setup"
+        },
+        {
+          "lines": [
+            0,
+            0
+          ],
+          "reason": "added project precedence and no-execution notice"
+        }
+      ],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    },
+    {
+      "source": "godotprompter",
+      "path": "LICENSE",
+      "upstream_sha256": "075667c180b39c81507891dd1411f3861b7da6b860d9b912841ed9f949c66277",
+      "final_sha256": "075667c180b39c81507891dd1411f3861b7da6b860d9b912841ed9f949c66277",
+      "changes": [],
+      "review": "full-file static scan; targeted review of command/automation matches; no execution"
+    }
+  ]
+}
