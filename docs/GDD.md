@@ -1209,15 +1209,16 @@ Do dịch chuyển cần 20 viên và mỗi lần nâng sao thú cưỡi cần 1
 
 ## 1. Màn hình chơi và điều khiển
 
-Giao diện cảm ứng nằm ngang theo kết quả A0 đã chốt. Hàng kỹ năng có 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Chế độ Tự đánh giữ theo mô tả bên dưới.
+Giao diện cảm ứng nằm ngang giữ cụm điều khiển theo kết quả A0 đã chốt. HUD A0 chỉ là các khối giữ chỗ để thử cụm điều khiển, không thay cho HUD đầy đủ; các thành phần bổ sung dưới đây có vị trí chốt ở Mốc A. Hàng kỹ năng có 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Chế độ Tự đánh giữ theo mô tả bên dưới.
 
 | Vị trí | Thành phần |
 |---|---|
-| Góc trên trái | Vòng cấp độ, thanh máu và thanh nội lực |
-| Góc trên phải | Nút menu, bản đồ nhỏ |
+| Góc trên trái | Vòng cấp độ, thanh máu và thanh nội lực; thêm dải biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) dưới hai thanh — vị trí chốt ở Mốc A |
+| Góc trên phải | Nút menu, bản đồ nhỏ; thêm tên bản đồ dưới bản đồ nhỏ, nút túi đồ và nút cửa hàng (bản đầu: chỉ cửa hàng món vĩnh viễn, không có ngân phiếu nạp) — vị trí chốt ở Mốc A |
 | Cạnh phải, giữa | Theo dõi nhiệm vụ: tên nhiệm vụ chính và tiến độ (ví dụ "Đánh lợn rừng 12/20"); chạm vào để tự tìm đường |
 | Góc dưới trái | D-pad 3 nút nhìn thấy (←, →, ↑ nhảy), hai vùng chéo vô hình sát hai bên ↑ để nhảy chéo; không dùng cần analog ảo hay phím nhảy tách riêng |
 | Góc dưới phải | Nút CHÉM lớn ở góc; đổi mục tiêu phía trên; bình máu phía trên bên trái và bình nội lực bên trái CHÉM |
+| Cụm phải, bổ sung ngoài A0 | Nút Tự đánh và nút lên/xuống thú cưỡi; chức năng giữ nguyên, vị trí chốt ở Mốc A, không được che cụm CHÉM hay hàng 5 ô kỹ năng ở viewport 960 px |
 | Giữa đáy | Hàng 5 ô kỹ năng vuông |
 | Sát đáy | Thanh kinh nghiệm chạy ngang màn hình |
 

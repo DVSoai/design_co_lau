@@ -173,3 +173,12 @@ Số dòng dưới đây tính trên main `5577fa5` trước khi sửa; nội du
 - **Đối chiếu nguồn:** giữ yên/xu/lượng khi đang mô tả Ninja School hoặc cột “Gốc Ninja School”, gồm Phần 1 mục hệ thống, Phần 2 mục 4 và 10, bảng đổi tên và việc còn phải chốt. Đây không phải tên tiền của Cờ Lau; mọi chỗ mô tả tiền game hiện tại dùng tiền đồng/ngân lượng/ngân phiếu. Giữ “yên” trong yên ngựa/đất nước đã yên, cùng các từ số lượng, lực lượng… theo nghĩa thường.
 - **HUD ngoài A0 (Phần 5, mục 1):** vị trí nút Tự đánh và thao tác lên/xuống thú cưỡi chưa được chốt; giữ chức năng, chưa gán vị trí mới hay coi là đã duyệt A0. Người dùng quyết khi duyệt HUD Mốc A.
 - **Prompt lịch sử (Phần 7):** khối AVOID và quy trình chuyển sprite cũ vẫn là nội dung tham khảo; dùng `01_art_bible.md`/`04_review.md` khi sản xuất, không mở lại quy trình ghép bộ phận đã chốt.
+
+## 28/10/2026 — Bổ sung HUD đầy đủ sau đồng bộ GDD
+
+- **Mã:** `gdd_full_hud_restore`. Sửa trên nhánh `docs/gdd-sync-a0`; HUD A0 chỉ là khối giữ chỗ để kiểm chứng cụm điều khiển, không thay cho HUD đầy đủ.
+- **GDD Phần 5 mục 1 và 06_screens — HUD trong trận:** thêm lại dải hiệu ứng thức ăn/chiêu hỗ trợ/choáng dưới thanh máu và nội lực; tên bản đồ dưới bản đồ nhỏ, nút túi đồ và nút cửa hàng ở cụm trên phải. Bản đầu chỉ có cửa hàng món vĩnh viễn, không có ngân phiếu nạp; sửa tên Túi đồ/Nạp trong SCR-05 cho khớp.
+- **Cụm phải:** bổ sung nút Tự đánh và lên/xuống thú cưỡi; chức năng giữ nguyên. Các thành phần bổ sung đều ghi “vị trí chốt ở Mốc A”; không che cụm CHÉM hoặc hàng 5 ô kỹ năng ở viewport 960 px.
+- **Giữ nguyên:** d-pad và vùng chéo, CHÉM, đổi mục tiêu, hai bình, hàng 5 ô kỹ năng cùng các kích thước/thao tác A0 đã duyệt. Không sửa prototype hay bảng thông số.
+- **Cửa duyệt:** thêm checklist chưa đánh dấu tại Mốc A nhóm 4 trong `11_design_freeze.md`, yêu cầu duyệt HUD đầy đủ trên viewport 960 và 1200 px. File này được sửa theo yêu cầu bổ sung cụ thể trong cùng lượt; ngoài ba file nêu đầu yêu cầu chỉ thêm đúng checklist này.
+- **Kiểm tra:** soát khác biệt tài liệu và lỗi khoảng trắng; đây là cập nhật đặc tả, chưa dựng hay thử bố cục HUD đầy đủ trên thiết bị.

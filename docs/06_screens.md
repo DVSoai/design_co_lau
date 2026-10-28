@@ -22,21 +22,24 @@ Mỗi màn hình cần hai sản phẩm thiết kế: **mockup hình ảnh** t�
 
 ## HUD trong trận (chuẩn từ A0)
 
-**Đã duyệt (A0, 28/10/2026)** về bố cục và thao tác, theo thử Android trên
+**Đã duyệt (A0, 28/10/2026)** về cụm điều khiển và thao tác, theo thử Android trên
 Realme RMX3760 (1600×720), Godot 4.7.2, commit `7973729`.
 Áp dụng cho SCR-05 và nền bố cục của SCR-06/SCR-07. Khung thiết kế 960×540,
 `canvas_items`, `expand`, `fractional`, nearest; viewport thực rộng 960–1200 px
 logic. Android dùng fullscreen + immersive. Không đặt vị trí dựa vào độ rộng 960
 cố định; cập nhật neo góc theo viewport khi đổi kích thước.
 
-| Cụm | Bố cục và thao tác đã chốt |
+HUD A0 chỉ là các khối giữ chỗ để thử cụm điều khiển, không thay cho HUD đầy đủ. Các thành phần bổ sung ghi rõ **vị trí chốt ở Mốc A**; không coi toàn bộ HUD sản phẩm là đã duyệt.
+
+| Cụm | Bố cục, thao tác A0 và phần bổ sung chờ Mốc A |
 |---|---|
 | Trái | Chỉ 3 nút nhìn thấy ←, → và ↑ nhảy. Với d=84 px: ← ở (x0, lower_y), → ở (x0+2,2d, lower_y), ↑ ở (x0+1,1d, lower_y−1,35d). Hai vùng chéo vô hình, rộng 0,9d, cao d, cùng hàng ↑ và sát hai mép bên ↑ |
 | Bắt chạm cụm trái | Ưu tiên ↑ > vùng chéo > ←/→. Vùng chéo giữ hướng và nhảy, cùng sáng ↑ và nút hướng; vuốt giữa vùng và đa chạm không làm nhả action của ngón khác. Chỉ bản debug mới hiện viền vùng chéo |
 | Phải | CHÉM tròn đường kính 1,4d=117,6 px ở góc dưới phải; đổi mục tiêu tròn ở trên; bình máu ở trên-trái, bình nội lực bên trái CHÉM. Nút nhỏ 0,65d=54,6 px, có số đếm bình |
+| Phải, bổ sung ngoài A0 | Nút Tự đánh và nút lên/xuống thú cưỡi; chức năng giữ nguyên, vị trí chốt ở Mốc A. Không được che cụm CHÉM hay hàng 5 ô kỹ năng ở viewport 960 px |
 | Giữa đáy | 5 ô chiêu vuông cạnh 0,7d=58,8 px, cách nhau 6 px, căn giữa theo viewport |
-| Trên trái | Vòng cấp độ, thanh máu đỏ và thanh nội lực xanh; trong A0 là các khối giữ chỗ |
-| Trên phải | Menu và bản đồ nhỏ 120×80 px logic. Nút chỉnh ⚙ của prototype tối thiểu 56×56; là công cụ thử, không mặc định trở thành nút của HUD sản phẩm |
+| Trên trái | Vòng cấp độ, thanh máu đỏ và thanh nội lực xanh; trong A0 là các khối giữ chỗ. Thêm dải biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) dưới hai thanh — vị trí chốt ở Mốc A |
+| Trên phải | Menu và bản đồ nhỏ 120×80 px logic. Thêm tên bản đồ dưới bản đồ nhỏ, nút túi đồ, nút cửa hàng (bản đầu: chỉ cửa hàng món vĩnh viễn, không có ngân phiếu nạp) — vị trí chốt ở Mốc A. Nút chỉnh ⚙ của prototype tối thiểu 56×56; là công cụ thử, không mặc định trở thành nút của HUD sản phẩm |
 | Lề và chữ | Cách mép viewport ít nhất 24 px logic; chữ/mũi tên nút ít nhất 22 px logic. Khi chạm: viền sáng hơn, hình nút scale 0,95; vùng bắt chạm không co |
 
 Quy tắc xếp chiêu: 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Áp dụng cho HUD SCR-05 và thẻ Kỹ năng SCR-09c.
@@ -89,7 +92,7 @@ font, không chèn chữ vào ảnh asset. Mockup thành phẩm vẫn phải duy
 ### SCR-05 Màn chơi (HUD)
 
 - **Bố cục:** theo mục **HUD trong trận (chuẩn từ A0)**: d-pad 3 nút và 2 vùng chéo vô hình bên trái; CHÉM/đổi mục tiêu/bình bên phải; 5 ô kỹ năng giữa đáy; cấp/HP/MP trên trái, menu/bản đồ nhỏ trên phải.
-- **Thành phần ngoài A0:** biểu tượng hiệu ứng, theo dõi nhiệm vụ, lên/xuống thú cưỡi, Túi đồ/Nạp, Tự đánh, kinh nghiệm và máu mục tiêu còn cần đặc tả vị trí ở Mốc A; không chen lấn các vùng điều khiển đã chốt. Bộ tọa độ cũ theo khung 640 px, cần điều khiển ảo và 6 ô chiêu vòng cung được thay bằng bố cục A0.
+- **Thành phần ngoài A0:** biểu tượng hiệu ứng, theo dõi nhiệm vụ, lên/xuống thú cưỡi, Túi đồ/Cửa hàng món vĩnh viễn, Tự đánh, kinh nghiệm và máu mục tiêu còn cần đặc tả vị trí ở Mốc A; không chen lấn các vùng điều khiển đã chốt. Bộ tọa độ cũ theo khung 640 px, cần điều khiển ảo và 6 ô chiêu vòng cung được thay bằng bố cục A0.
 - **Trạng thái ô chiêu:** sẵn sàng; đang hồi (vòng quét tối và số giây); không đủ MP (xám, viền lam); chưa học (ổ khóa); bị khóa khi cưỡi trâu hoặc voi (gạch chéo).
 - **Trạng thái khác:** Tự đánh bật (nút sáng, biểu tượng xoay chậm); Tự đánh bị tắt trong trận boss (nút xám); HP dưới 25% (viền màn đỏ nhịp chậm); đang cưỡi thú (đổi bộ nút); nhiệm vụ hoàn thành (dấu chấm than vàng trên ô theo dõi).
 - **Thông báo nổi:** nhặt đồ (trượt từ trái, tối đa 3 dòng); lên cấp (giữa màn, hiệu ứng cột sáng); mở hệ thống mới (thẻ lớn giữa màn, chạm để đóng).
