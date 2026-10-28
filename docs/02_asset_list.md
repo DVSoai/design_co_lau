@@ -92,3 +92,15 @@ Có bốn loại hạng mục:
 
 - [ ] `art_key_visual` — ảnh chính cho trang Cửa hàng Play
 - [ ] `art_logo_ideas` — phác ý logo, không chữ. Logo thật do người thiết kế.
+
+## Part_set và thời trang — chưa duyệt art
+
+- [ ] chr_dbl_t1…t7: mỗi bậc 4 part_set áo/quần/đao/cung, tổng 63 mảnh thay thế; mô tả tại 17_ngoai_hinh.md.
+- [ ] `fsh_head_<ten>` — khăn/búi tóc: head; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_shirt_<ten>` — áo: body + upper_arm_near/far; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_pants_<ten>` — quần: thigh_near/far + shin_near/far; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_weapon_<ten>` — vũ khí: dao hoặc bow theo phái; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_cape_<ten>` — áo choàng: cape sau lưng, khớp vai; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_face_<ten>` — khăn che mặt/mặt nạ tuồng/chèo: face_overlay trên mặt; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_mount_<ten>` — thú cưỡi ngoại hình; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_title_<ten>` — danh hiệu: hình trên đầu; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.

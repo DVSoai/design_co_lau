@@ -63,6 +63,8 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 ### 1. Phong cách và nhân vật chính
 
+- [ ] Hệ thống ngoại hình (17_ngoai_hinh.md) đã duyệt.
+
 - [x] Xác nhận phong cách sau P0 và khối STYLE cuối cùng. *(Đã duyệt B ngày 28/10/2026; xem `docs/05_log.md`.)*
 - [x] Bảng màu 32 màu đã chốt và lưu thành file palette (`art/reference/palette.png` và `.gpl` hoặc `.ase`). *(Đã duyệt palette_v3; xem `docs/05_log.md`.)*
 - [ ] Ảnh gốc Đinh Bộ Lĩnh và bộ `chr_dbl_parts` (khớp, phần vẽ bù, lớp gần/xa) đã duyệt.
@@ -115,6 +117,9 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 ### 8. Quy tắc nghiệp vụ
 
+- [ ] Chỉ số và giới hạn của thời trang đã chốt cùng cân bằng kinh tế.
+- [ ] Mọi bảng số tự đặt lại, không trùng nguồn tham khảo.
+
 - [ ] Quy tắc trong `12_ngan_phieu.md` cho bản đầu đã duyệt: mục 1 đến 4 (phần ngân phiếu thưởng), mục 10, mục 12.
 - [ ] Các con số căn cứ Hoa Lư (vật liệu mỗi cấp, mức tăng tướng, lương thảo, thức ăn thú) đã chốt cùng bản cân bằng kinh tế.
 
@@ -126,6 +131,8 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 - [ ] Quy ước id và phân loại logic trong `14_online_migration.md` đã duyệt; danh sách hạng mục và dữ liệu mẫu dùng đúng quy ước id.
 
 ## Mốc B — Trước khi phát hành
+
+- [ ] Chọn phương án phát hành tại Việt Nam (doanh nghiệp / nhà phát hành / chưa mở bán) và có xác nhận của luật sư.
 
 - [ ] Hồ sơ cung cấp dịch vụ trò chơi điện tử theo quy định hiện hành, có ý kiến luật sư (xếp loại bản đầu: game tải về có thanh toán qua Google Play, không có máy chủ riêng).
 - [ ] Cách xác định tuổi và giới hạn giờ chơi cho người dưới 18 tuổi (SCR-21); nếu luật sư yêu cầu khác thiết kế hiện tại thì quay lại sửa và duyệt lại.

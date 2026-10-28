@@ -147,7 +147,7 @@ Với game một người chơi không có giao dịch giữa người chơi, r�
 Chỉ bán **món vĩnh viễn**, mua thẳng bằng tiền thật qua Google Play (loại sản phẩm không tiêu hao). Không bán tiền tệ, không bán vật phẩm tiêu hao, không bán thứ gì tăng sức mạnh chiến đấu ngoài túi da mở rộng hành trang.
 
 - **Gói khởi đầu:** mua được một lần; gồm một bộ đồ thời trang riêng, túi da cấp 3 và một khoản ngân phiếu thưởng.
-- **Đồ thời trang:** khăn, mũ, áo choàng, chỉ đổi ngoại hình.
+- **Đồ thời trang:** khăn, mũ, áo choàng, thời trang theo ô, có chỉ số theo 17_ngoai_hinh.md.
 - **Thú cưỡi ngoại hình:** ngựa ô, ngựa bạch, voi trắng; chỉ số bằng thú cùng loại.
 - **Túi da cấp 3:** mở sớm 12 ô hành trang (túi da cấp 1 và 2 chỉ nhận từ nhiệm vụ hoặc mua bằng ngân phiếu thưởng).
 
@@ -193,3 +193,9 @@ Bản đầu không có máy chủ để xác minh đơn hàng, nên một bản
 ### Sao lưu
 
 Bản đầu không có sao lưu đám mây của riêng game. Game bật tính năng sao lưu tự động của Android cho thư mục lưu, để người chơi đổi máy cùng tài khoản Google có cơ hội giữ được tiến độ; tính năng này phụ thuộc cài đặt máy của người chơi, nên không hứa chắc với người chơi.
+
+### Bổ sung mục 12 — thời trang bản đầu
+
+Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
+
+SKU/entitlement vĩnh viễn thuộc tài khoản Google Play, dùng chung 3 ô; mặc/bỏ/ẩn là trạng thái từng ô. Khôi phục/cấp lại idempotent. Gói bộ phải liệt kê từng entitlement theo ô, không cấp chỉ số lặp. Không ngân phiếu nạp bản đầu.
