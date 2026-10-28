@@ -8,20 +8,31 @@ python tools/render_layout.py design/maps/lay_dao_uc_v1.md design/maps/lay_dao_u
 
 Bố cục vẽ bằng lưới chữ thay vì tạo ảnh AI, vì cần đúng từng ô. Sau khi duyệt, lưới này là bản vẽ để dựng bản đồ thật trong Godot (TileMapLayer) mà không phải đoán.
 
-> **Lưu ý đổi độ phân giải:** các số ô/màn được cập nhật theo viewport 960×540; bố cục map cũ, camera, hitbox và khoảng nhảy cần kiểm thử lại trước khi duyệt.
+> **Sau A0 (28/10/2026):** dùng số đo đã chốt từ commit `7973729`, xem `13_thong_so.md`. Viewport logic rộng 960–1200 px; mọi bố cục mẫu cũ vẫn cần soát lại theo khả năng di chuyển, camera và vùng nút đã đổi, chưa được tự duyệt.
 
-## 1. Số đo di chuyển (đề xuất, chỉnh khi chơi thử)
+## 1. Số đo di chuyển (chuẩn A0)
 
-Bố cục phải khớp với khả năng di chuyển của nhân vật, nếu không sẽ có bục không nhảy tới được. Các con số dưới đây là đề xuất ban đầu; khi chơi thử bản mẫu mà đổi số thì phải soát lại mọi bố cục.
+Người dùng đã nghiệm thu Kiểu cổ điển trên Realme RMX3760 (Android, 1600×720),
+Godot 4.7.2, commit `7973729`. Số đo di chuyển được chốt tại A0; giới hạn **bố cục
+an toàn** vẫn phải thử theo từng bục/khe, không coi trần vật lý là mức bố trí mặc định.
 
-- **Ô lưới:** 32×32 điểm ảnh. Màn hình gốc 960×540 thấy được 30 ô ngang, khoảng 17 ô dọc.
-- **Nhân vật:** hộp va chạm rộng 16, cao 44 điểm ảnh (**thông số cũ, phải thử lại khi nhân vật cao 96 px**) (khoảng nửa ô ngang, gần 1,5 ô dọc).
-- **Chạy:** 112 điểm ảnh mỗi giây, tức 3,5 ô mỗi giây.
-- **Nhảy:** cao tối đa 80 điểm ảnh (2,5 ô). Vì vậy **bậc cao nhất leo được là 2 ô**, chừa nửa ô cho dễ.
-- **Nhảy xa khi chạy:** tối đa khoảng 4 ô. **Khe rộng nhất nên đặt là 3 ô.**
-- **Rơi:** không mất máu khi rơi. Rơi xuống nước sâu thì về điểm đứng gần nhất và mất 10% HP.
-- **Thú cưỡi:** ngựa chạy nhanh gấp 1,6 lần và nhảy như người; trâu nhanh gấp 1,2 lần, nhảy thấp 1,5 ô; voi chỉ ở trận Kiều Công Hãn, không nhảy.
-- **Camera:** theo người chơi theo chiều ngang, vùng chết rộng 4 ô ở giữa màn; theo chiều dọc chỉ dịch khi người chơi đứng trên bục cao hơn 3 ô.
+- **Ô lưới:** hiện dùng 32×32 px (kích thước tile còn Tạm thời). Viewport 960–1200 px logic thấy 30–37,5 ô ngang; cao 540 px, khoảng 17 ô.
+- **Nhân vật:** cao 96 px, khung 128×128, hộp va chạm 24×88 px.
+- **Chạy:** 200 px/s, nhận ngay khi bấm. Hãm STOP_TIME=0,08 s; quay đầu đứng TURN_TIME=0,05 s, khung đầu đổi mặt. Trên không đổi hướng ngay; vùng chéo dùng 160 px/s (0,8 lần).
+- **Một cú nhảy:** JUMP_HEIGHT=96 px, TIME_TO_APEX=0,38 s, g=2×96/0,38²≈1329,64 px/s², JUMP_SPEED≈−505,26 px/s. Lên/xuống cùng trọng lực, không treo ở đỉnh. Vận tốc rơi chặn tại 2×|JUMP_SPEED|≈1010,53 px/s.
+- **Độ cao leo tối đa bằng một nhảy:** trần lý thuyết 96 px (3 ô nếu tile 32 px). Mức bậc an toàn 2 ô cũ chưa tự đổi thành 3 ô được duyệt: cần thử khoảng ngang, mép bục, hitbox và biên an toàn. Bục cao đúng 96 px ở sát trần nhảy không bảo đảm đáp được.
+- **Khinh công:** khi còn đi lên và vận tốc lên còn ≤30% |JUMP_SPEED|, nhả rồi bấm mới để bật thêm 0,7×JUMP_SPEED; tối đa một lần/cú nhảy. Phần cao thêm là (0,7×505,263)²/(2×1329,640)=**47,04 px**. Bấm gần đỉnh cho trần tổng gần **96+47,04=143,04 px** (4,47 ô); bấm ở đầu cửa sổ, độ cao trước bật là 96×(1−0,3²)=87,36 px nên tổng **134,4 px**. Đây là tính liên tục; khung mô phỏng, thời điểm bấm và va chạm làm độ cao thực thấp hơn trần. Chưa duyệt bậc 4 ô làm đường bắt buộc.
+- **Tầm ngang một nhảy cùng cao độ:** 200×(2×0,38)=**152 px** (4,75 ô); giữ vùng chéo: 160×0,76=**121,6 px** (3,8 ô), chưa tính khinh công. Khe 3 ô/96 px cũ chỉ còn đề xuất, không phải giới hạn đã duyệt. Với biên an toàn 1,5 lần bề rộng khe, nhảy chéo 121,6 px chưa đủ cho khe 96 px (cần 144 px); phải thử và giảm khe/thêm bục nếu dùng làm đường bắt buộc.
+- **Đệm nhảy:** COYOTE_TIME=0,10 s; JUMP_BUFFER=0,12 s. Giữ để nhảy lại bật; giữ lâu nhảy cao tắt.
+- **Camera:** DEAD_ZONE=(100,60) px là nửa rộng/nửa cao, LOOK_AHEAD=100 px, RESPONSE=5 /s; giới hạn theo viewport thật và biên bản đồ. Bản đồ nhiều tầng phải kiểm tra camera dọc riêng; A0 chỉ thử bản đồ cao một viewport.
+- **Rơi và thú cưỡi:** quy tắc không mất máu khi rơi/nước sâu mất 10% HP, ngựa ×1,6, trâu ×1,2 nhảy 1,5 ô, voi không nhảy vẫn là thiết kế ngoài A0, cần kiểm tra và duyệt riêng.
+
+### Vùng nhìn và vùng bị điều khiển che (từ A0)
+
+- Thiết kế đồng thời cho viewport **960–1200 px logic**, không suy ra mọi điện thoại đều thấy đúng một số ô ngang.
+- Chừa vùng đáy khoảng **140 px logic** dưới các cụm nút làm vùng bị che; không đặt hố hay bẫy ngay dưới cụm trái và cụm phải trong khung nhìn dự kiến. D-pad và vùng chéo phía trên còn cần kiểm tra vùng che thực tế, không coi 140 px là toàn bộ chiều cao cụm.
+- Mặt đất chính nên cao hơn hàng nút, để thấy đường chân, mép vực và điểm đáp. Khi bố trí thế giới phải kiểm tra qua camera ở cả hai hướng chạy; không chỉ chừa vùng trên ảnh nền tĩnh.
+- Rà quỹ đạo một nhảy và khinh công, cửa sổ thao tác, độ rộng bục và khả năng nhìn điểm đáp. Không tăng khe hoặc bậc hàng loạt chỉ từ công thức tối đa.
 
 ## 2. Kích thước và quy ước chung
 
@@ -62,12 +73,12 @@ Mỗi file `lay_<tên>_v<số>.md` gồm:
 2. **Lưới bố cục** trong khối mã có nhãn `layout` (để script đọc được).
 3. **Chú thích từng điểm:** mỗi `N`, `m`, `M`, `B`, `c`, `D`, `E` là gì, ví dụ "m tại cột 14: 3 thổ phỉ, hồi sinh sau 20 giây".
 4. **Nhịp chơi:** người chơi đi từ đâu tới đâu, gặp gì trước, chỗ nào nghỉ, chỗ nào khó.
-5. **Kiểm tra số đo:** liệt kê mọi bậc cao hơn 2 ô và mọi khe rộng hơn 3 ô (phải bằng 0, hoặc có dây leo hay bục phụ).
+5. **Kiểm tra số đo:** ghi độ cao/rộng bằng px, quỹ đạo thường/chéo/khinh công và biên an toàn theo mục 1. Bậc 2 ô/khe 3 ô cũ chỉ là mốc rà soát tạm; vượt mốc phải thử hoặc có bục phụ/dây leo.
 6. **Câu hỏi còn mở.**
 
 ## 4. Ví dụ: Đào Úc (giai đoạn 1)
 
-Cấp 10 đến 15. Nơi diễn ra nhiệm vụ 9 (tụ nghĩa, đấu với Đinh Điền), 14 (giữ ba cổng trước ba đợt quân Hậu Ngô) và 15 (đánh tướng tiên phong Hậu Ngô). Rộng 100 ô (5 màn), cao 14 ô.
+Cấp 10 đến 15. Nơi diễn ra nhiệm vụ 9 (tụ nghĩa, đấu với Đinh Điền), 14 (giữ ba cổng trước ba đợt quân Hậu Ngô) và 15 (đánh tướng tiên phong Hậu Ngô). Rộng 100 ô (khoảng 2,67–3,33 viewport mới), cao 14 ô. Mẫu chưa được duyệt lại sau A0; các nhãn Màn 1–5 trong nhịp cũ dưới đây là đoạn kịch bản 20 ô, không còn là số màn nhìn thấy thực.
 
 ```layout
 ....................................................................................................
@@ -86,7 +97,7 @@ ES.N..........m...m.....m...m.###############.m.........m.m.D.....m...D...m..M..
 ####################################################################################################
 ```
 
-Nhịp chơi: người chơi vào từ trái (`E`, `S`), gặp Nguyễn Bặc (`N`) ngay đầu bản đồ. Màn 1 và 2 là đất trống với thổ phỉ, có bục cao giữ rương. Màn 3 có gò đất và một hố chông nhỏ (`^`) dạy người chơi nhảy qua chướng ngại, rồi bãi nước nông. Màn 4 là trại có ba cổng gỗ (`D`), nơi diễn ra trận giữ ba cổng ở nhiệm vụ 14; đội trưởng Hậu Ngô (`M`) đứng trước cổng thứ ba. Màn 5 là lũy đất cao của tướng tiên phong (`B`) với lính cung đứng trên lũy, đúng cơ chế mưa tên ở pha 2 (Phần 4 GDD). Bậc thang `===` ở cột 84 giúp leo lên lũy cao 3 ô, vì nhảy chỉ được 2 ô.
+Nhịp chơi: người chơi vào từ trái (`E`, `S`), gặp Nguyễn Bặc (`N`) ngay đầu bản đồ. Màn 1 và 2 là đất trống với thổ phỉ, có bục cao giữ rương. Màn 3 có gò đất và một hố chông nhỏ (`^`) dạy người chơi nhảy qua chướng ngại, rồi bãi nước nông. Màn 4 là trại có ba cổng gỗ (`D`), nơi diễn ra trận giữ ba cổng ở nhiệm vụ 14; đội trưởng Hậu Ngô (`M`) đứng trước cổng thứ ba. Màn 5 là lũy đất cao của tướng tiên phong (`B`) với lính cung đứng trên lũy, đúng cơ chế mưa tên ở pha 2 (Phần 4 GDD). Bậc thang `===` ở cột 84 vẫn cần giữ làm hỗ trợ: lũy 3 ô bằng trần 96 px của một nhảy theo A0; không suy ra điểm đáp ở trần này đã an toàn. Phải soát lại quỹ đạo và vùng nút trước khi duyệt.
 
 ## 5. Ví dụ: ải Tam Điệp (giai đoạn 3)
 
@@ -151,7 +162,8 @@ Mỗi dòng: mã, kích thước đề xuất, điểm đặc biệt của bố 
 
 ## 7. Tự soát bố cục
 
-- Chạy script, xem ảnh: không có bậc nào cao hơn 2 ô và khe nào rộng hơn 3 ô mà không có bục phụ hay dây leo.
+- Chạy script và soát quỹ đạo theo mục 1: trần một nhảy 96 px, khinh công gần 143,04 px; khe an toàn/bậc dùng thực tế chưa chốt chỉ bằng công thức. Mọi chỗ vượt mốc tạm bậc 2 ô/khe 3 ô cần thử hoặc có bục phụ/dây leo.
+- Soát ở viewport 960 và 1200 px logic, mặt đất/điểm đáp nhìn rõ; vùng đáy khoảng 140 px dưới cụm trái/phải không che hố/bẫy trong lúc điều khiển.
 - Mỗi màn hình có ít nhất một vùng sinh quái (trừ làng).
 - Mọi vật phẩm nhiệm vụ và NPC trong nhiệm vụ của bản đồ đều có vị trí trên lưới.
 - Đấu trường boss đủ chỗ cho mọi cơ chế của boss đó (Phần 4 GDD, mục 3).

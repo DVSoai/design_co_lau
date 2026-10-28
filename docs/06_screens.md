@@ -6,9 +6,9 @@ Mỗi màn hình cần hai sản phẩm thiết kế: **mockup hình ảnh** t�
 
 ## Quy ước chung
 
-**Khung tọa độ.** Mọi số đo tính trên độ phân giải gốc 960×540 (điện thoại nằm ngang), gốc tọa độ ở góc trên bên trái. Chừa vùng an toàn 16 điểm ảnh ở hai cạnh trái phải cho tai thỏ và bo góc màn hình; không đặt nút trong vùng này.
+**Khung tọa độ.** Mọi số đo tính trên độ phân giải gốc 960×540 (điện thoại nằm ngang), gốc tọa độ ở góc trên bên trái. Quy ước chung ngoài HUD chừa vùng an toàn 16 điểm ảnh ở hai cạnh; riêng HUD trong trận theo chuẩn A0 bên dưới, lề nút ít nhất 24 px logic và neo theo viewport thực. Khi dựng mockup phải soát tai thỏ và bo góc màn hình.
 
-**Cỡ chạm.** Nút bấm nhỏ nhất 20×20 (khoảng 60 điểm ảnh thật trên máy 1080p). Nút đánh 56×56, ô chiêu 32×32, ô vật phẩm 28×28.
+**Cỡ chạm.** Ngoài HUD, cỡ chạm nhỏ nhất 20×20 còn là đề xuất. Riêng nút đánh, di chuyển, kỹ năng và bình trong trận dùng kích thước đã chốt ở mục HUD chuẩn từ A0, thay cho bộ 56/32/28 px cũ.
 
 **Chữ.** Dùng một font có đủ dấu tiếng Việt, cỡ tối thiểu 8 điểm ảnh gốc cho chữ phụ và 10 cho chữ chính. Không đặt chữ trong ảnh; mockup dùng thanh giữ chỗ.
 
@@ -19,6 +19,35 @@ Mỗi màn hình cần hai sản phẩm thiết kế: **mockup hình ảnh** t�
 **Nguyên tắc offline:** không màn nào được chặn người chơi vì mất mạng, trừ đúng các nút nạp, dùng ngân phiếu nạp và sao lưu (`12_ngan_phieu.md`, mục 1).
 
 **Màu hiếm của vật phẩm** (viền ô): thường xám #8A8F98, tốt xanh #5E9441, hiếm lam #2E4FA3, quý tím #6B4A8C, dấu ấn sứ quân vàng #D9A520.
+
+## HUD trong trận (chuẩn từ A0)
+
+**Đã duyệt (A0, 28/10/2026)** về bố cục và thao tác, theo thử Android trên
+Realme RMX3760 (1600×720), Godot 4.7.2, commit `7973729`.
+Áp dụng cho SCR-05 và nền bố cục của SCR-06/SCR-07. Khung thiết kế 960×540,
+`canvas_items`, `expand`, `fractional`, nearest; viewport thực rộng 960–1200 px
+logic. Android dùng fullscreen + immersive. Không đặt vị trí dựa vào độ rộng 960
+cố định; cập nhật neo góc theo viewport khi đổi kích thước.
+
+| Cụm | Bố cục và thao tác đã chốt |
+|---|---|
+| Trái | Chỉ 3 nút nhìn thấy ←, → và ↑ nhảy. Với d=84 px: ← ở (x0, lower_y), → ở (x0+2,2d, lower_y), ↑ ở (x0+1,1d, lower_y−1,35d). Hai vùng chéo vô hình, rộng 0,9d, cao d, cùng hàng ↑ và sát hai mép bên ↑ |
+| Bắt chạm cụm trái | Ưu tiên ↑ > vùng chéo > ←/→. Vùng chéo giữ hướng và nhảy, cùng sáng ↑ và nút hướng; vuốt giữa vùng và đa chạm không làm nhả action của ngón khác. Chỉ bản debug mới hiện viền vùng chéo |
+| Phải | CHÉM tròn đường kính 1,4d=117,6 px ở góc dưới phải; đổi mục tiêu tròn ở trên; bình máu ở trên-trái, bình nội lực bên trái CHÉM. Nút nhỏ 0,65d=54,6 px, có số đếm bình |
+| Giữa đáy | 5 ô kỹ năng vuông cạnh 0,7d=58,8 px, cách nhau 6 px, căn giữa theo viewport |
+| Trên trái | Vòng cấp độ, thanh máu đỏ và thanh nội lực xanh; trong A0 là các khối giữ chỗ |
+| Trên phải | Menu và bản đồ nhỏ 120×80 px logic. Nút chỉnh ⚙ của prototype tối thiểu 56×56; là công cụ thử, không mặc định trở thành nút của HUD sản phẩm |
+| Lề và chữ | Cách mép viewport ít nhất 24 px logic; chữ/mũi tên nút ít nhất 22 px logic. Khi chạm: viền sáng hơn, hình nút scale 0,95; vùng bắt chạm không co |
+
+Kiểu cổ điển và khinh công là chuẩn di chuyển, xem `13_thong_so.md`.
+Giữ để nhảy lại bật, giữ lâu nhảy cao tắt. HUD ẩn/hiện trong A0 chỉ để so diện tích
+cảnh; chức năng game của menu, bình, kỹ năng, bản đồ nhỏ còn phải đặc tả/duyệt ở
+Mốc A. Không coi việc chấp nhận các khối placeholder là duyệt hình nút thành phẩm.
+
+**Hình nút sẽ vẽ riêng theo phong cách Việt**, phù hợp art bible: chất liệu gỗ,
+tre, viền đồng; có thể dùng hoa văn trống đồng làm ví dụ hướng trang trí.
+Không dùng ảnh, biểu tượng hay mã của game khác. Chữ giao diện do game vẽ bằng
+font, không chèn chữ vào ảnh asset. Mockup thành phẩm vẫn phải duyệt riêng.
 
 ## Danh sách màn hình
 
@@ -57,15 +86,8 @@ Mỗi màn hình cần hai sản phẩm thiết kế: **mockup hình ảnh** t�
 
 ### SCR-05 Màn chơi (HUD)
 
-- **Bố cục:**
-  - Góc trên trái (16,8 – 200,52): chân dung, cấp, thanh HP đỏ, thanh MP lam, hàng biểu tượng hiệu ứng (thức ăn, chiêu hỗ trợ, choáng).
-  - Góc trên phải (440,8 – 624,64): bản đồ nhỏ 64×48, tên bản đồ; hàng nút Menu, Túi đồ, Nạp.
-  - Cạnh phải giữa (520,80 – 624,150): theo dõi nhiệm vụ, tối đa 2 dòng; chạm để tự tìm đường.
-  - Góc dưới trái: cần điều khiển ảo (vùng 120×120), nút nhảy cạnh trên phải cần điều khiển.
-  - Góc dưới phải: nút đánh 56×56; 6 ô chiêu 32×32 xếp vòng cung; nút lên xuống thú cưỡi.
-  - Giữa cạnh dưới: 2 ô dùng nhanh (thuốc HP, MP), nút Tự đánh.
-  - Sát đáy: thanh kinh nghiệm cao 3 điểm ảnh.
-  - Giữa cạnh trên: thanh máu mục tiêu đang khóa (tên, loại: thường, tinh anh, thủ lĩnh).
+- **Bố cục:** theo mục **HUD trong trận (chuẩn từ A0)**: d-pad 3 nút và 2 vùng chéo vô hình bên trái; CHÉM/đổi mục tiêu/bình bên phải; 5 ô kỹ năng giữa đáy; cấp/HP/MP trên trái, menu/bản đồ nhỏ trên phải.
+- **Thành phần ngoài A0:** biểu tượng hiệu ứng, theo dõi nhiệm vụ, lên/xuống thú cưỡi, Túi đồ/Nạp, Tự đánh, kinh nghiệm và máu mục tiêu còn cần đặc tả vị trí ở Mốc A; không chen lấn các vùng điều khiển đã chốt. Bộ tọa độ cũ theo khung 640 px, cần điều khiển ảo và 6 ô chiêu vòng cung được thay bằng bố cục A0.
 - **Trạng thái ô chiêu:** sẵn sàng; đang hồi (vòng quét tối và số giây); không đủ MP (xám, viền lam); chưa học (ổ khóa); bị khóa khi cưỡi trâu hoặc voi (gạch chéo).
 - **Trạng thái khác:** Tự đánh bật (nút sáng, biểu tượng xoay chậm); Tự đánh bị tắt trong trận boss (nút xám); HP dưới 25% (viền màn đỏ nhịp chậm); đang cưỡi thú (đổi bộ nút); nhiệm vụ hoàn thành (dấu chấm than vàng trên ô theo dõi).
 - **Thông báo nổi:** nhặt đồ (trượt từ trái, tối đa 3 dòng); lên cấp (giữa màn, hiệu ứng cột sáng); mở hệ thống mới (thẻ lớn giữa màn, chạm để đóng).

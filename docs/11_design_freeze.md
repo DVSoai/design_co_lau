@@ -24,12 +24,12 @@ Các quyết định dưới đây người dùng đã đồng ý; tài liệu �
 
 ## Mốc A0 — Bản thử cảm giác
 
-**Trạng thái:** Người dùng đã duyệt phạm vi ngoại lệ cho nguyên mẫu kỹ thuật. **Chưa qua A0** cho tới khi chơi thử và ký duyệt thông số. Quy tắc không code trước Mốc A vẫn giữ nguyên với **game thật**.
+**Trạng thái: Đã qua mốc A0 (28/10/2026).** Người dùng đã chơi thử và chấp nhận bộ mặc định Kiểu cổ điển tại commit `7973729`, trên Realme RMX3760 (Android, 1600×720), Godot 4.7.2. Số đo/thao tác được ghi Đã duyệt trong `13_thong_so.md`; sprite/HUD thành phẩm và toàn bộ Mốc A chưa được coi là duyệt. Quy tắc không code trước Mốc A vẫn giữ nguyên với **game thật**.
 
 ### Mục đích
 
-Kiểm tra và chốt các thông số hiện **Tạm thời**:
-- Độ phân giải gốc **960×540**, nhân ×2 thành 1920×1080, nhân vật chính cao **96 px**.
+Các thông số cảm giác dưới đây đã chốt tại A0; mục khác giữ trạng thái trong `13_thong_so.md`:
+- Khung thiết kế **960×540**, stretch canvas_items/expand/fractional/nearest theo viewport thực; Android fullscreen + immersive; nhân vật chính **96 px**, khung 128×128.
 - Tốc độ chạy; độ cao và thời gian nhảy.
 - Va chạm và hitbox.
 - Camera: vùng chết và tầm nhìn trước.
@@ -41,20 +41,23 @@ Kiểm tra và chốt các thông số hiện **Tạm thời**:
 - Hình tạm: sprite **PLACEHOLDER** và khối màu.
 - Một bản đồ thử dài khoảng **ba màn hình ngang**, gồm đất bằng, bậc cao, hố và bục nổi.
 - Đi, nhảy, rơi, chém thường và **một hình nộm nhận đòn**.
-- **Không** có giao diện, lưu game, vật phẩm, nhiệm vụ hoặc âm thanh.
+- Nút/HUD và bảng chỉnh trong prototype chỉ là giữ chỗ để thử. Không có giao diện game thành phẩm, lưu game, hệ thống vật phẩm, nhiệm vụ hoặc âm thanh.
 
 ### Quy tắc
 
 - Mã trong `prototype/` là **mã bỏ đi**, không chép sang game thật.
 - Mọi thông số của nguyên mẫu đặt trong **một file cấu hình**.
+- Ngoại lệ prototype tiếp theo: lát cắt cuối Giai đoạn 1 gồm Đào Úc + nhân vật ghép bộ phận + một quái, được người dùng cho phép dựng trong `prototype/` để duyệt trước Giai đoạn 2; không phải mã game thật. Xem `02_asset_list.md`.
 - Ngoại lệ A0 không mở khóa code game thật; quy tắc **không code trước Mốc A** giữ nguyên cho game thật.
 
 ### Điều kiện qua A0
 
-- [ ] Người dùng trực tiếp chơi thử nguyên mẫu trên **điện thoại Android**.
-- [ ] Người dùng chốt độ phân giải, nhân vật 96 px, tốc độ chạy, độ cao/thời gian nhảy, va chạm/hitbox, camera và nhịp chém.
-- [ ] Cập nhật kết quả trong `docs/13_thong_so.md` từ **Tạm thời → Đã duyệt**, ghi nhật ký `docs/05_log.md`.
-- [ ] Sau A0 tiếp tục **Mốc A** đầy đủ, không coi A0 thay thế A.
+- [x] Người dùng trực tiếp chơi thử nguyên mẫu trên **điện thoại Android**.
+- [x] Người dùng chốt độ phân giải, nhân vật 96 px, tốc độ chạy, độ cao/thời gian nhảy, va chạm/hitbox, camera và nhịp chém.
+- [x] Cập nhật kết quả trong `docs/13_thong_so.md` từ **Tạm thời → Đã duyệt**, ghi nhật ký `docs/05_log.md`.
+- [x] Sau A0 tiếp tục **Mốc A** đầy đủ, không coi A0 thay thế A.
+
+Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy ra chỉ từ kiểm tra headless. Tiếp tục Mốc A đầy đủ; bố cục bản đồ/HUD mỹ thuật còn phải soát và duyệt riêng.
 
 ## Mốc A — Trước khi code game thật
 
@@ -62,10 +65,10 @@ Kiểm tra và chốt các thông số hiện **Tạm thời**:
 
 - [x] Xác nhận phong cách sau P0 và khối STYLE cuối cùng. *(Đã duyệt B ngày 28/10/2026; xem `docs/05_log.md`.)*
 - [x] Bảng màu 32 màu đã chốt và lưu thành file palette (`art/reference/palette.png` và `.gpl` hoặc `.ase`). *(Đã duyệt palette_v3; xem `docs/05_log.md`.)*
-- [ ] Ảnh gốc Đinh Bộ Lĩnh và bảng tách lớp đã duyệt.
-- [ ] Đủ 7 bậc trang bị, cả bản cầm đao và cầm cung.
-- [ ] Bảng động tác phái Đao và phái Cung ở bậc 1, đủ động tác trong `09_animation_spec.md`.
-- [ ] Một bộ sprite chuẩn đã chỉnh tay đúng kích thước làm mẫu cho mọi sprite sau.
+- [ ] Ảnh gốc Đinh Bộ Lĩnh và bộ `chr_dbl_parts` (khớp, phần vẽ bù, lớp gần/xa) đã duyệt.
+- [ ] Đủ 7 bộ phận trang bị thay thế (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác.
+- [ ] Dữ liệu ghép từng frame phái Đao và phái Cung ở bậc 1, đủ động tác trong `09_animation_spec.md`; khung đặc biệt bổ sung khi cần.
+- [ ] Bộ nhân vật chính ghép bộ phận đúng tỉ lệ 96 px, từng mảnh/khớp/frame được Claude/người dùng duyệt bằng script kiểm tra và bằng mắt; không yêu cầu thuê họa sĩ hoặc chỉnh tay.
 
 ### 2. Thế giới
 
@@ -79,7 +82,7 @@ Kiểm tra và chốt các thông số hiện **Tạm thời**:
 
 - [ ] File bố cục và ảnh dựng bằng script cho đủ 29 bản đồ, đã qua mục tự soát trong `08_map_layout.md`.
 - [ ] Đấu trường của 11 boss có bố cục khớp cơ chế từng boss.
-- [ ] Số đo di chuyển đã chốt; nếu đổi, mọi bố cục đã soát lại.
+- [x] Số đo di chuyển đã chốt tại A0 (28/10/2026), xem `13_thong_so.md`. Việc soát mọi bố cục theo số mới còn thuộc các mục bố cục chưa duyệt bên trên; không tự đánh dấu 29 bản đồ đã hoàn tất.
 - [ ] Bản đồ vùng (SCR-14) của 5 vùng, có đánh dấu các điểm dịch chuyển.
 
 ### 4. Giao diện
@@ -125,7 +128,7 @@ Kiểm tra và chốt các thông số hiện **Tạm thời**:
 - [ ] Cách xác định tuổi và giới hạn giờ chơi cho người dưới 18 tuổi (SCR-21); nếu luật sư yêu cầu khác thiết kế hiện tại thì quay lại sửa và duyệt lại.
 - [ ] Giá các món vĩnh viễn bán bằng tiền thật.
 - [ ] Thanh toán Google Play cho món vĩnh viễn chạy thật: mua, xác nhận đơn, khôi phục, thanh toán đang chờ, hoàn tiền.
-- [ ] Nhân vật chính, 11 boss và logo đã được vẽ lại hoặc chỉnh tay đáng kể.
+- [ ] Nhân vật chính: bộ phận và dữ liệu ghép được kiểm, sửa pixel bằng script và Claude/người dùng duyệt từng phần bằng mắt; hồ sơ nguồn/sửa/duyệt đầy đủ. 11 boss và logo được vẽ lại hoặc chỉnh tay đáng kể theo quy trình thành phẩm riêng.
 - [ ] `docs/05_log.md` đầy đủ, lưu cùng các file trung gian.
 - [ ] Điều khoản dùng thương mại của công cụ tạo ảnh và giấy phép font đã kiểm tra.
 - [ ] Bảng "Rà soát bản quyền" ở Phần 2 GDD, mục 9 đã rà hết.
@@ -141,3 +144,5 @@ Kiểm tra và chốt các thông số hiện **Tạm thời**:
 ## Ký duyệt
 
 Khi qua mỗi mốc, người dùng ghi ở cuối file: ngày, phiên bản tài liệu và câu "Đã qua mốc A0", "Đã qua mốc A" hoặc "Đã qua mốc B". Việc cho phép thực hiện A0 không có nghĩa A0 đã nghiệm thu.
+
+28/10/2026 — Đã qua mốc A0. Thử trên Realme RMX3760 (Android, 1600×720), Godot 4.7.2, commit 7973729.
