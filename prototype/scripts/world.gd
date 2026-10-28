@@ -2,7 +2,11 @@ extends Node2D
 
 const T = preload("res://config/tuning.gd")
 const Player = preload("res://scripts/player.gd")
+const RuntimeTuning = preload("res://config/runtime_tuning.gd")
+const TuningPanel = preload("res://scripts/tuning_panel.gd")
 const Dummy = preload("res://scripts/dummy.gd")
+var tuning := RuntimeTuning.new()
+var tuning_panel: Control
 var player: CharacterBody2D
 var dummy: StaticBody2D
 var camera: Camera2D
@@ -26,6 +30,7 @@ func _ready() -> void:
 		body.add_child(shape)
 		add_child(body)
 	player = Player.new()
+	player.tuning = tuning
 	player.position = T.SPAWN
 	add_child(player)
 	dummy = Dummy.new()
@@ -41,6 +46,9 @@ func _ready() -> void:
 	debug_label.add_theme_font_size_override("font_size", 14)
 	debug_label.visible = false
 	layer.add_child(debug_label)
+	tuning_panel = TuningPanel.new()
+	tuning_panel.tuning = tuning
+	layer.add_child(tuning_panel)
 	# TouchScreenButton giữ action theo từng ngón, hỗ trợ chạy + nhảy/chém.
 	var size: Vector2 = T.TOUCH_BUTTON_SIZE
 	var margin: float = T.TOUCH_MARGIN
@@ -90,9 +98,9 @@ func _process(delta: float) -> void:
 		dummy.queue_redraw()
 	# Vùng chết quanh anchor; look-ahead tiến mượt, không giật khi đổi hướng.
 	var difference: Vector2 = player.position - camera_anchor
-	camera_anchor.x += signf(difference.x) * maxf(0, absf(difference.x) - T.CAMERA_DEAD_ZONE.x)
+	camera_anchor.x += signf(difference.x) * maxf(0, absf(difference.x) - tuning.value("CAMERA_DEAD_ZONE.x"))
 	camera_anchor.y += signf(difference.y) * maxf(0, absf(difference.y) - T.CAMERA_DEAD_ZONE.y)
-	var target := camera_anchor + Vector2(player.facing * T.CAMERA_LOOK_AHEAD, 0)
+	var target := camera_anchor + Vector2(player.facing * tuning.value("CAMERA_LOOK_AHEAD"), 0)
 	target.x = clampf(target.x, T.VIEWPORT.x / 2, T.WORLD_SIZE.x - T.VIEWPORT.x / 2)
 	target.y = T.VIEWPORT.y / 2 # Bản đồ A0 cao đúng một viewport.
 	camera.position = camera.position.lerp(target, 1 - exp(-T.CAMERA_RESPONSE * delta))
@@ -103,7 +111,7 @@ func _process(delta: float) -> void:
 		var constants := tuning_script.get_script_constant_map()
 		for key in constants:
 			if key != "TERRAIN":
-				lines.append("%s = %s" % [key, str(constants[key])])
+				lines.append("%s = %s" % [key, str(tuning.current_value(key, constants[key]))])
 		debug_label.text = "\n".join(lines)
 		debug_label.scale = Vector2(0.75, 0.75)
 	queue_redraw()
@@ -112,4 +120,4 @@ func _draw() -> void:
 	for rect: Rect2 in T.TERRAIN:
 		draw_rect(rect, Color(0.36, 0.46, 0.30) if rect.size.y >= 32 else Color(0.62, 0.55, 0.34))
 	if debug_enabled:
-		draw_rect(Rect2(camera_anchor - T.CAMERA_DEAD_ZONE, T.CAMERA_DEAD_ZONE * 2), Color(0.8, 0.8, 1, 0.7), false, 1)
+		draw_rect(Rect2(camera_anchor - Vector2(tuning.value("CAMERA_DEAD_ZONE.x"), T.CAMERA_DEAD_ZONE.y), Vector2(tuning.value("CAMERA_DEAD_ZONE.x"), T.CAMERA_DEAD_ZONE.y) * 2), Color(0.8, 0.8, 1, 0.7), false, 1)

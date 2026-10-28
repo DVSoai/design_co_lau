@@ -53,7 +53,7 @@ Các con số mới là giá trị thử A0, không tự chốt thông số chí
    Nếu chưa có, tạo keystore thử bằng:
 
    ```sh
-   keytool -keygenpair -keystore debug.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US"
+   keytool -genkeypair -keystore debug.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US"
    ```
 
    Chọn file đó trong Android Debug Keystore của editor, user `androiddebugkey`,
@@ -93,5 +93,22 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test 11 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 19 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
+
+## Bảng chỉnh khi chạy
+
+Nút **⚙** ở góc trên phải luôn hiện trên PC và cảm ứng. Bấm để mở/đóng
+bảng; cuộn để xem đủ 10 thanh trượt. Mỗi thanh hiện tên, số và đơn vị.
+Các thay đổi tác dụng ngay cho chạy/gia tốc, nhảy, camera và nhịp chém;
+trọng lực/vận tốc nhảy tự tính lại. Giữ ATTACK_DURATION tối thiểu 0,22 s
+để cửa sổ trúng [0,10; 0,20) s vẫn nằm trong động tác.
+Nút **Sao chép** đưa toàn bộ thông số hiện tại, kể cả trọng lực/vận tốc nhảy,
+vào clipboard hệ điều hành (cần chạy có màn hình; headless chỉ kiểm tra nội dung).
+Giá trị chỉ nằm trong bộ nhớ, khởi động lại sẽ lấy mặc định từ tuning.gd;
+không lưu hoặc ghi đè file cấu hình.
+
+Mặc định RUN_SPEED=200 px/s, TIME_TO_APEX=0,38 s: tầm nhảy ngang lý thuyết
+200 × 2 × 0,38 = **152 px**, lớn hơn 1,5 × hố 96 px = **144 px**.
+Đây là tầm lý thuyết khi đã đạt tốc độ chạy, cùng cao độ cất/hạ cánh;
+không bảo đảm nhảy từ đứng yên. Smoke test assert điều kiện này từ hình học hố thật.

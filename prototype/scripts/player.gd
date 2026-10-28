@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 const T = preload("res://config/tuning.gd")
+var tuning: RefCounted
 var facing := 1.0
 var coyote := 0.0
 var buffered_jump := 0.0
 var attack_time := -1.0
-var cooldown := 0.0
+var cooldown_elapsed := INF
 var hits: Array[Node] = []
 var slash: Area2D
 var sprite: Sprite2D
@@ -45,16 +46,16 @@ func _physics_process(delta: float) -> void:
 	if axis != 0:
 		facing = signf(axis)
 	sprite.flip_h = facing < 0
-	velocity.x = move_toward(velocity.x, axis * T.RUN_SPEED, T.ACCELERATION * delta)
-	coyote = T.COYOTE_TIME if is_on_floor() else maxf(0, coyote - delta)
+	velocity.x = move_toward(velocity.x, axis * tuning.value("RUN_SPEED"), tuning.value("ACCELERATION") * delta)
+	coyote = tuning.value("COYOTE_TIME") if is_on_floor() else maxf(0, coyote - delta)
 	buffered_jump = maxf(0, buffered_jump - delta)
 	if Input.is_action_just_pressed("jump"):
-		buffered_jump = T.JUMP_BUFFER
-	if buffered_jump > 0 and coyote > 0:
-		velocity.y = T.JUMP_SPEED
+		buffered_jump = tuning.value("JUMP_BUFFER")
+	if (Input.is_action_just_pressed("jump") or buffered_jump > 0) and (is_on_floor() or coyote > 0):
+		velocity.y = tuning.jump_speed()
 		buffered_jump = 0
 		coyote = 0
-	velocity.y += T.GRAVITY * delta
+	velocity.y += tuning.gravity() * delta
 	move_and_slide()
 	position.x = clampf(position.x, T.PLAYER_BOX.x / 2, T.WORLD_SIZE.x - T.PLAYER_BOX.x / 2)
 	if position.y > T.FALL_RESET_Y:
@@ -62,15 +63,15 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		buffered_jump = 0
 		coyote = 0
-	cooldown = maxf(0, cooldown - delta)
-	if Input.is_action_just_pressed("slash") and attack_time < 0 and cooldown <= 0:
+	cooldown_elapsed += delta
+	if Input.is_action_just_pressed("slash") and attack_time < 0 and cooldown_elapsed >= tuning.value("ATTACK_COOLDOWN"):
 		attack_time = 0
 		hits.clear()
 	if attack_time >= 0:
 		attack_time += delta
-		if attack_time >= T.ATTACK_DURATION:
+		if attack_time >= tuning.value("ATTACK_DURATION"):
 			attack_time = -1
-			cooldown = T.ATTACK_COOLDOWN
+			cooldown_elapsed = 0.0
 	slash.position = Vector2(T.SLASH_OFFSET.x * facing, T.SLASH_OFFSET.y)
 	if is_hit_active():
 		for body in slash.get_overlapping_bodies():

@@ -1,15 +1,15 @@
 extends RefCounted
 
 # Các giá trị A0 chỉ là tạm thời; không chốt thông số thiết kế.
-const RUN_SPEED := 112.0 # px/s
+const RUN_SPEED := 200.0 # px/s
 const ACCELERATION := 900.0 # px/s², cả tăng tốc và hãm
 const JUMP_HEIGHT := 80.0 # px
-const TIME_TO_APEX := 0.35 # s
+const TIME_TO_APEX := 0.38 # s
 const GRAVITY := 2.0 * JUMP_HEIGHT / (TIME_TO_APEX * TIME_TO_APEX) # px/s²
 const JUMP_SPEED := -2.0 * JUMP_HEIGHT / TIME_TO_APEX # px/s
 const COYOTE_TIME := 0.10 # s sau khi rời mép
 const JUMP_BUFFER := 0.12 # s giữ yêu cầu nhảy trước khi chạm đất
-const PLAYER_BOX := Vector2(16, 44) # px, rộng × cao; gốc ở chân
+const PLAYER_BOX := Vector2(24, 88) # px, rộng × cao; gốc ở chân
 const SPRITE_OFFSET := Vector2(0, -56) # px; chân hình cách đáy PNG 8 px
 const VIEWPORT := Vector2(960, 540) # px, khớp project.godot
 const CAMERA_DEAD_ZONE := Vector2(100, 60) # px, nửa rộng × nửa cao
@@ -19,8 +19,8 @@ const ATTACK_DURATION := 0.30 # s từ bắt đầu đến hết động tác
 const HIT_START := 0.10 # s từ đầu đòn
 const HIT_END := 0.20 # s từ đầu đòn; cuối cửa sổ trúng
 const ATTACK_COOLDOWN := 0.15 # s sau khi hết động tác
-const SLASH_BOX := Vector2(48, 42) # px, rộng × cao
-const SLASH_OFFSET := Vector2(30, -34) # px từ chân, x theo hướng nhìn
+const SLASH_BOX := Vector2(56, 56) # px, rộng × cao
+const SLASH_OFFSET := Vector2(34, -52) # px từ chân, x theo hướng nhìn
 const SLASH_ARC_RADIUS := 48.0 # px, vệt chém tạm
 const DAMAGE := 10 # điểm sát thương/đòn
 const DAMAGE_FLOAT_TIME := 0.65 # s
@@ -29,7 +29,7 @@ const WORLD_SIZE := Vector2(2880, 540) # px, ba màn hình ngang
 const SPAWN := Vector2(100, 460) # px
 const FALL_RESET_Y := 720.0 # px; rơi khỏi bản đồ thì về điểm đầu
 const DUMMY_POSITION := Vector2(490, 460) # px
-const DUMMY_BOX := Vector2(32, 76) # px
+const DUMMY_BOX := Vector2(32, 88) # px
 const TOUCH_BUTTON_SIZE := Vector2(100, 90) # px trên viewport 960×540
 const TOUCH_MARGIN := 18.0 # px
 const TOUCH_GAP := 12.0 # px

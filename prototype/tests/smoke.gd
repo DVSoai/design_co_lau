@@ -16,6 +16,11 @@ func frames(count: int) -> void:
 		await physics_frame
 
 func run() -> void:
+	var gap_width: float = T.TERRAIN[1].position.x - T.TERRAIN[0].end.x
+	var jump_range: float = T.RUN_SPEED * 2 * T.TIME_TO_APEX
+	print("Jump range: %.1f px; gap: %.1f px; required: %.1f px" % [jump_range, gap_width, 1.5 * gap_width])
+	assert(jump_range >= 1.5 * gap_width, "Jump range must cover at least 1.5 × gap width")
+	check(jump_range >= 1.5 * gap_width, "default horizontal jump range has 1.5x gap margin")
 	var world = load("res://main.tscn").instantiate()
 	root.add_child(world)
 	await frames(10)
@@ -74,5 +79,23 @@ func run() -> void:
 	await process_frame
 	Input.action_release("debug")
 	check(not world.debug_enabled and not world.debug_label.visible, "F1 action disables debug")
+	world.tuning_panel.toggle.pressed.emit()
+	check(world.tuning_panel.panel.visible, "gear opens tuning panel")
+	world.tuning_panel.sliders["RUN_SPEED"].value = 300.0
+	check(is_equal_approx(world.tuning.value("RUN_SPEED"), 300.0), "slider updates live run speed")
+	p.position = T.SPAWN
+	p.velocity = Vector2.ZERO
+	Input.action_press("right")
+	await frames(30)
+	Input.action_release("right")
+	check(p.velocity.x > T.RUN_SPEED, "player consumes live speed instead of default")
+	world.tuning_panel.sliders["JUMP_HEIGHT"].value = 100.0
+	world.tuning_panel.sliders["TIME_TO_APEX"].value = 0.5
+	check(is_equal_approx(world.tuning.gravity(), 800.0) and is_equal_approx(world.tuning.jump_speed(), -400.0), "jump gravity and velocity recalculate immediately")
+	var fresh = load("res://config/runtime_tuning.gd").new()
+	check(is_equal_approx(fresh.value("RUN_SPEED"), T.RUN_SPEED), "runtime edits leave tuning defaults unchanged")
+	check("RUN_SPEED = 300" in world.tuning.as_text() and "GRAVITY = 800" in world.tuning.as_text(), "clipboard text contains current and derived values")
+	world.tuning_panel.toggle.pressed.emit()
+	check(not world.tuning_panel.panel.visible, "gear closes tuning panel")
 	print("A0 smoke failures: ", failures)
 	quit(0 if failures == 0 else 1)
