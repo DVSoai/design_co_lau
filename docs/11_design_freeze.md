@@ -118,6 +118,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 ### 9. Thông số và tài liệu nguồn
 
+- [ ] Kiến trúc co_lau_game (`15_kien_truc_game.md`) đã duyệt.
 - [ ] Mọi thông số trong `13_thong_so.md` ở trạng thái **Đã duyệt**, hoặc được người dùng chấp nhận giữ **Tạm thời** kèm điều kiện chốt.
 - [ ] `docs/GDD.md` của bản kit đang dùng khớp với các tài liệu `docs/06` đến `docs/14`; mọi chỗ mâu thuẫn đã sửa ở cả hai bên.
 - [ ] Quy ước id và phân loại logic trong `14_online_migration.md` đã duyệt; danh sách hạng mục và dữ liệu mẫu dùng đúng quy ước id.
