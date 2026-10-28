@@ -1,0 +1,157 @@
+{
+  "idle": {
+    "height_px": 95,
+    "interior_outline_count": 8,
+    "positions": [
+      {
+        "x": 75,
+        "y": 36,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 11
+      },
+      {
+        "x": 76,
+        "y": 36,
+        "part": "head",
+        "texture_x": 21,
+        "texture_y": 11
+      },
+      {
+        "x": 75,
+        "y": 37,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 12
+      },
+      {
+        "x": 75,
+        "y": 38,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 13
+      },
+      {
+        "x": 71,
+        "y": 39,
+        "part": "head",
+        "texture_x": 16,
+        "texture_y": 14
+      },
+      {
+        "x": 72,
+        "y": 39,
+        "part": "head",
+        "texture_x": 17,
+        "texture_y": 14
+      },
+      {
+        "x": 74,
+        "y": 39,
+        "part": "head",
+        "texture_x": 19,
+        "texture_y": 14
+      },
+      {
+        "x": 71,
+        "y": 40,
+        "part": "head",
+        "texture_x": 16,
+        "texture_y": 15
+      }
+    ],
+    "opaque_pixels": 1496,
+    "interior_outline_percent": 0.5348
+  },
+  "standing_neutral": {
+    "height_px": 96,
+    "interior_outline_count": 8,
+    "positions": [
+      {
+        "x": 75,
+        "y": 35,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 11
+      },
+      {
+        "x": 76,
+        "y": 35,
+        "part": "head",
+        "texture_x": 21,
+        "texture_y": 11
+      },
+      {
+        "x": 75,
+        "y": 36,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 12
+      },
+      {
+        "x": 75,
+        "y": 37,
+        "part": "head",
+        "texture_x": 20,
+        "texture_y": 13
+      },
+      {
+        "x": 71,
+        "y": 38,
+        "part": "head",
+        "texture_x": 16,
+        "texture_y": 14
+      },
+      {
+        "x": 72,
+        "y": 38,
+        "part": "head",
+        "texture_x": 17,
+        "texture_y": 14
+      },
+      {
+        "x": 74,
+        "y": 38,
+        "part": "head",
+        "texture_x": 19,
+        "texture_y": 14
+      },
+      {
+        "x": 71,
+        "y": 39,
+        "part": "head",
+        "texture_x": 16,
+        "texture_y": 15
+      }
+    ],
+    "opaque_pixels": 1344,
+    "interior_outline_percent": 0.5952
+  },
+  "face": {
+    "width": 13,
+    "frame_width": 23,
+    "ratio": 0.5652173913043478,
+    "neck_below_chin": 2.49645390070922
+  },
+  "hand_near": {
+    "dark": 24,
+    "mid": 29,
+    "light": 29
+  },
+  "hand_far": {
+    "dark": 29,
+    "mid": 29,
+    "light": 28
+  },
+  "foot_near": {
+    "dark": 22,
+    "mid": 37,
+    "light": 43
+  },
+  "foot_far": {
+    "dark": 23,
+    "mid": 37,
+    "light": 41
+  },
+  "failures": 0
+}

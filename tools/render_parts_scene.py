@@ -30,7 +30,7 @@ def layers(frame,size=(160,160),origin=(80,126),scale=1):
 def main():
     data=json.loads((ROOT/'prototype/rig/reports/evaluated_art_frames.json').read_text())
     out=ROOT/'prototype/rig/contact_sheets/art';out.mkdir(parents=True,exist_ok=True)
-    names=['idle','run','jump_up','apex_flip','slash_1','shoot','hurt']
+    names=[name for name in data if name!='standing_neutral']
     for name in names:
         sheet=Image.new('RGBA',(160*len(data[name]['frames']),160),(32,40,50,255))
         for i,frame in enumerate(data[name]['frames']):
@@ -42,6 +42,6 @@ def main():
     idle=Image.new('RGBA',(128,128))
     for _,layer in layers(data['idle']['frames'][0],(128,128),(64,120)):idle.alpha_composite(layer)
     idle.save(out/'chr_dbl_idle_art_1x.png')
-    idle.resize((512,512),Image.Resampling.NEAREST).save(out/'chr_dbl_idle_art_4x.png')
+    Image.open(out/'chr_dbl_idle_art_1x.png').resize((512,512),Image.Resampling.NEAREST).save(out/'chr_dbl_idle_art_4x.png')
     print('idle: 128x128 -> 512x512 using Image.resize(..., Image.Resampling.NEAREST) from saved 1x')
 if __name__=='__main__':main()

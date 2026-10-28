@@ -10,7 +10,7 @@
         {
           "body_position": [
             0,
-            -47
+            -45.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -19,28 +19,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 15.570086410388237,
-            "shin_far": -23.15834662391692,
-            "foot_far": 7.588260213528684,
+            "thigh_far": 17.03353223581929,
+            "shin_far": -25.605990534672657,
+            "foot_far": 8.572458298853366,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 7.588260213528679,
-            "shin_near": -23.15834662391692,
-            "foot_near": 15.570086410388244,
+            "thigh_near": 5.9687484280916845,
+            "shin_near": -25.605990534672657,
+            "foot_near": 19.63724210658097,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.16666666666666666,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -46
+            -44.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -49,28 +49,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 20.953295341101278,
-            "shin_far": -33.73535712225281,
-            "foot_far": 12.78206178115153,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 12.782061781151524,
-            "shin_near": -33.73535712225281,
-            "foot_near": 20.95329534110128,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.16666666666666666,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -45
+            -43.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -79,28 +79,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 25.068072167436227,
-            "shin_far": -41.766312084635615,
-            "foot_far": 16.69823991719939,
+            "thigh_far": 26.62097142844774,
+            "shin_far": -45.76924124693656,
+            "foot_far": 19.148269818488817,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 16.6982399171994,
-            "shin_near": -41.766312084635615,
-            "foot_near": 25.06807216743622,
+            "thigh_near": 14.912266960308935,
+            "shin_near": -45.76924124693651,
+            "foot_near": 30.85697428662757,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.16666666666666666,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -46
+            -44.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -109,22 +109,22 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 20.953295341101278,
-            "shin_far": -33.73535712225281,
-            "foot_far": 12.78206178115153,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 12.782061781151524,
-            "shin_near": -33.73535712225281,
-            "foot_near": 20.95329534110128,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.16666666666666666,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -140,7 +140,7 @@
         {
           "body_position": [
             0,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -149,28 +149,28 @@
             "upper_arm_far": 0,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 39.41769031253242,
-            "shin_far": -71.45890231399063,
-            "foot_far": 26.041212001458213,
+            "thigh_far": 42.121591278455476,
+            "shin_far": -77.7852465318244,
+            "foot_far": 29.66365525336891,
             "upper_arm_near": 0,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 5.324906348367504,
-            "shin_near": -45.41575785233702,
-            "foot_near": 34.090851503969525,
+            "thigh_near": 1.212634839388766,
+            "shin_near": -47.7679696124535,
+            "foot_near": 40.55533477306473,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -42
+            -40.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -179,28 +179,28 @@
             "upper_arm_far": 28,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 36.29896905791356,
-            "shin_far": -96.3377025719195,
-            "foot_far": 52.038733514005926,
+            "thigh_far": 35.49972273410385,
+            "shin_far": -106.48847030423484,
+            "foot_far": 62.98874757013098,
             "upper_arm_near": -28,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 22.95451020494144,
-            "shin_near": -61.968148097244494,
-            "foot_near": 31.01363789230306,
+            "thigh_near": 21.80777417168421,
+            "shin_near": -67.85452157650288,
+            "foot_near": 38.04674740481866,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -40
+            -38.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -209,28 +209,28 @@
             "upper_arm_far": 15,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 9.743562136624146,
-            "shin_far": -73.13780121809708,
-            "foot_far": 56.39423908147294,
+            "thigh_far": 5.260064518970919,
+            "shin_far": -79.32654747457323,
+            "foot_far": 67.06648295560231,
             "upper_arm_near": -15,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 41.852450719454005,
-            "shin_near": -63.5487344115482,
-            "foot_near": 14.696283692094193,
+            "thigh_near": 44.01393213635357,
+            "shin_near": -68.61156320016637,
+            "foot_near": 17.597631063812795,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -239,28 +239,28 @@
             "upper_arm_far": 0,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": -5.080515556998392,
-            "shin_far": -35.044735507768564,
-            "foot_far": 34.12525106476696,
+            "thigh_far": -7.879413722514106,
+            "shin_far": -37.9060945606361,
+            "foot_far": 39.7855082831502,
             "upper_arm_near": 0,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 44.66877427795703,
-            "shin_near": -69.2982873354859,
-            "foot_near": 18.629513057528868,
+            "thigh_near": 46.77151048112452,
+            "shin_near": -75.21089388915873,
+            "foot_near": 22.4393834080342,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -42
+            -40.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -269,28 +269,28 @@
             "upper_arm_far": -28,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 15.059194061823053,
-            "shin_far": -57.992000531745184,
-            "foot_far": 34.93280646992213,
+            "thigh_far": 14.871499117828197,
+            "shin_far": -64.40771266186847,
+            "foot_far": 41.53621354404026,
             "upper_arm_near": 28,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 45.076928514175556,
-            "shin_near": -98.26454705965665,
-            "foot_near": 45.1876185454811,
+            "thigh_near": 43.8177914077725,
+            "shin_near": -108.0979370011514,
+            "foot_near": 56.280145593378876,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -40
+            -38.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -299,22 +299,22 @@
             "upper_arm_far": -15,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 36.91851803900878,
-            "shin_far": -65.92893964666581,
-            "foot_far": 22.01042160765703,
+            "thigh_far": 39.743208239681636,
+            "shin_far": -71.46997316284117,
+            "foot_far": 24.726764923159532,
             "upper_arm_near": 15,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 22.144993666704924,
-            "shin_near": -87.50220464672701,
-            "foot_near": 58.35721098002208,
+            "thigh_near": 15.702911287425316,
+            "shin_near": -94.23453491405083,
+            "foot_near": 71.5316236266255,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -339,7 +339,7 @@
         {
           "body_position": [
             0,
-            -40
+            -38.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -348,28 +348,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 38.26997447871123,
-            "shin_far": -85.37996992443742,
-            "foot_far": 39.109995445726184,
+            "thigh_far": 39.84442831249996,
+            "shin_far": -94.02770772884132,
+            "foot_far": 46.183279416341364,
             "upper_arm_near": -30,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 35.49944677379951,
-            "shin_near": -94.77296895290152,
-            "foot_near": 51.27352217910202,
+            "thigh_near": 31.988324530963894,
+            "shin_near": -103.86209369364204,
+            "foot_near": 63.873769162678144,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.19,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -393,7 +393,7 @@
           "duration": 0.19,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -409,7 +409,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -433,13 +433,13 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 60,
           "angles": {
@@ -463,13 +463,13 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 120,
           "angles": {
@@ -493,13 +493,13 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 180,
           "angles": {
@@ -523,13 +523,13 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 240,
           "angles": {
@@ -553,13 +553,13 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 300,
           "angles": {
@@ -583,7 +583,7 @@
           "duration": 0.03333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -599,7 +599,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -623,13 +623,13 @@
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -653,7 +653,7 @@
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -669,7 +669,7 @@
         {
           "body_position": [
             0,
-            -39
+            -37.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -678,28 +678,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 36.01596528893216,
-            "shin_far": -71.83635062480764,
-            "foot_far": 27.820385335875475,
+            "thigh_far": 38.5129652348877,
+            "shin_far": -78.55034136336297,
+            "foot_far": 32.03737612847526,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 20.898098573367836,
-            "shin_near": -74.24791490454146,
-            "foot_near": 45.34981633117363,
+            "thigh_near": 17.203351248042566,
+            "shin_near": -80.53750680131799,
+            "foot_near": 55.334155553275416,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -46
+            -44.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -708,22 +708,22 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 20.953295341101278,
-            "shin_far": -33.73535712225281,
-            "foot_far": 12.78206178115153,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 12.782061781151524,
-            "shin_near": -33.73535712225281,
-            "foot_near": 20.95329534110128,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
             "dao": 0,
             "bow": 0
           },
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -744,7 +744,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -768,13 +768,13 @@
           "duration": 0.025,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -798,7 +798,7 @@
           "duration": 0.025,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -814,7 +814,7 @@
         {
           "body_position": [
             -2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -823,28 +823,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 39.704642868863345,
-            "shin_far": -50.66882769168493,
-            "foot_far": 20.96418482282158,
+            "thigh_far": 41.03797192630885,
+            "shin_far": -54.893436102291524,
+            "foot_far": 23.855464175982675,
             "upper_arm_near": -110,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 21.55567417776743,
-            "shin_near": -42.88007534464164,
-            "foot_near": 31.32440116687421,
+            "thigh_near": 18.367217183557713,
+            "shin_near": -46.41595742692702,
+            "foot_near": 38.04874024336931,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.1,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             3,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -853,28 +853,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 22.033251102593034,
-            "shin_far": -41.55336617983807,
-            "foot_far": 9.520115077245034,
+            "thigh_far": 24.5227672975375,
+            "shin_far": -44.542739881936086,
+            "foot_far": 10.019972584398595,
             "upper_arm_near": -40,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 12.596289654497735,
-            "shin_near": -51.055027100066745,
-            "foot_near": 28.458737445569014,
+            "thigh_near": 10.811063761139156,
+            "shin_near": -55.506080234195636,
+            "foot_near": 34.69501647305648,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.1,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -883,28 +883,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 23.573217172559378,
-            "shin_far": -43.3746874714456,
-            "foot_far": 11.801470298886217,
+            "thigh_far": 25.94951467911099,
+            "shin_far": -46.82527704314745,
+            "foot_far": 12.87576236403646,
             "upper_arm_near": 55,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 12.779914123690723,
-            "shin_near": -50.253850060407636,
-            "foot_near": 29.473935936716913,
+            "thigh_near": 10.674015847284334,
+            "shin_near": -54.55246878466346,
+            "foot_near": 35.87845293737912,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.05,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -913,22 +913,22 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 30.753204974846923,
-            "shin_far": -47.25637725189025,
-            "foot_far": 16.503172277043326,
+            "thigh_far": 32.68864975640451,
+            "shin_far": -51.24570738019442,
+            "foot_far": 18.55705762378992,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 16.503172277043326,
-            "shin_near": -47.25637725189025,
-            "foot_near": 30.753204974846923,
+            "thigh_near": 13.839584245353441,
+            "shin_near": -51.24570738019442,
+            "foot_near": 37.40612313484098,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.05,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -953,7 +953,7 @@
         {
           "body_position": [
             2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -962,28 +962,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 21.32440116687421,
-            "shin_far": -42.88007534464164,
-            "foot_far": 11.555674177767429,
+            "thigh_far": 23.75692924427078,
+            "shin_far": -46.41595742692702,
+            "foot_far": 12.65902818265624,
             "upper_arm_near": -100,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 10.96418482282159,
-            "shin_near": -50.66882769168493,
-            "foot_near": 29.704642868863335,
+            "thigh_near": 8.80508959515998,
+            "shin_near": -54.893436102291524,
+            "foot_near": 36.08834650713154,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             -3,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -992,28 +992,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 38.45873744556902,
-            "shin_far": -51.055027100066745,
-            "foot_far": 22.596289654497728,
+            "thigh_far": 39.587674519568296,
+            "shin_far": -55.506080234195636,
+            "foot_far": 25.918405714627337,
             "upper_arm_near": -30,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 19.52011507724503,
-            "shin_near": -41.55336617983807,
-            "foot_near": 32.033251102593034,
+            "thigh_near": 15.889091519222209,
+            "shin_near": -44.542739881936086,
+            "foot_near": 38.653648362713874,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             -2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1022,28 +1022,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 37.47393593671692,
-            "shin_far": -50.253850060407636,
-            "foot_far": 20.779914123690716,
+            "thigh_far": 38.85964761166102,
+            "shin_far": -54.55246878466346,
+            "foot_far": 23.692821173002443,
             "upper_arm_near": 65,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 19.80147029888621,
-            "shin_near": -43.3746874714456,
-            "foot_near": 31.573217172559385,
+            "thigh_near": 16.54849077246213,
+            "shin_near": -46.8252770431475,
+            "foot_near": 38.27678627068537,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1052,22 +1052,22 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 30.753204974846923,
-            "shin_far": -47.25637725189025,
-            "foot_far": 16.503172277043326,
+            "thigh_far": 32.68864975640451,
+            "shin_far": -51.24570738019442,
+            "foot_far": 18.55705762378992,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 16.503172277043326,
-            "shin_near": -47.25637725189025,
-            "foot_near": 30.753204974846923,
+            "thigh_near": 13.839584245353441,
+            "shin_near": -51.24570738019442,
+            "foot_near": 37.40612313484098,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -1092,7 +1092,7 @@
         {
           "body_position": [
             -3,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1101,28 +1101,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 40.686999566764854,
-            "shin_far": -51.462961306780855,
-            "foot_far": 22.775961740016005,
+            "thigh_far": 41.76377199375496,
+            "shin_far": -55.84121095402284,
+            "foot_far": 26.077438960267887,
             "upper_arm_near": -140,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 21.26275643294014,
-            "shin_near": -41.0377796113587,
-            "foot_near": 31.77502317841856,
+            "thigh_near": 17.697658436489277,
+            "shin_near": -44.113220927368126,
+            "foot_near": 38.415562490878855,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             -2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1131,28 +1131,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 37.47393593671692,
-            "shin_far": -50.253850060407636,
-            "foot_far": 20.779914123690716,
+            "thigh_far": 38.85964761166102,
+            "shin_far": -54.55246878466346,
+            "foot_far": 23.692821173002443,
             "upper_arm_near": -115,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 19.80147029888621,
-            "shin_near": -43.3746874714456,
-            "foot_near": 31.573217172559385,
+            "thigh_near": 16.54849077246213,
+            "shin_near": -46.8252770431475,
+            "foot_near": 38.27678627068537,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             3,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1161,28 +1161,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 19.775023178418568,
-            "shin_far": -41.0377796113587,
-            "foot_far": 9.262756432940135,
+            "thigh_far": 22.32127778116741,
+            "shin_far": -44.113220927368126,
+            "foot_far": 9.791943146200715,
             "upper_arm_near": 20,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 10.775961740016001,
-            "shin_near": -51.462961306780855,
-            "foot_near": 28.686999566764857,
+            "thigh_near": 8.93879996721153,
+            "shin_near": -55.84121095402284,
+            "foot_near": 34.90241098681131,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             2,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1191,28 +1191,28 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 23.573217172559378,
-            "shin_far": -43.3746874714456,
-            "foot_far": 11.801470298886217,
+            "thigh_far": 25.94951467911099,
+            "shin_far": -46.82527704314745,
+            "foot_far": 12.87576236403646,
             "upper_arm_near": 65,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 12.779914123690723,
-            "shin_near": -50.253850060407636,
-            "foot_near": 29.473935936716913,
+            "thigh_near": 10.674015847284334,
+            "shin_near": -54.55246878466346,
+            "foot_near": 35.87845293737912,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -44
+            -42.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1221,22 +1221,22 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 30.753204974846923,
-            "shin_far": -47.25637725189025,
-            "foot_far": 16.503172277043326,
+            "thigh_far": 32.68864975640451,
+            "shin_far": -51.24570738019442,
+            "foot_far": 18.55705762378992,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 16.503172277043326,
-            "shin_near": -47.25637725189025,
-            "foot_near": 30.753204974846923,
+            "thigh_near": 13.839584245353441,
+            "shin_near": -51.24570738019442,
+            "foot_near": 37.40612313484098,
             "dao": 10,
             "bow": 0
           },
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -1261,21 +1261,21 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
             "head": 0,
-            "upper_arm_far": -90,
-            "forearm_far": 0,
-            "hand_far": 0,
+            "upper_arm_far": -89.43273359014206,
+            "forearm_far": -0.15801780182299552,
+            "hand_far": -0.4092486080349388,
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -65.23041317340905,
-            "forearm_near": -53.67905936885164,
-            "hand_near": 90,
+            "upper_arm_near": -72.50211793047175,
+            "forearm_near": -40.969876796066146,
+            "hand_near": 23.4719947265379,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
@@ -1285,27 +1285,27 @@
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
             "head": 0,
-            "upper_arm_far": -90,
-            "forearm_far": 0,
-            "hand_far": 0,
+            "upper_arm_far": -89.43273359014206,
+            "forearm_far": -0.15801780182299552,
+            "hand_far": -0.4092486080349388,
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -63.325878656991065,
-            "forearm_near": -91.1753804797346,
-            "hand_near": 90,
+            "upper_arm_near": -62.09400351208068,
+            "forearm_near": -99.43732117453172,
+            "hand_near": 71.53132468661241,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
@@ -1315,26 +1315,26 @@
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
             "head": 0,
-            "upper_arm_far": -90,
-            "forearm_far": 0,
-            "hand_far": 0,
+            "upper_arm_far": -89.43273359014206,
+            "forearm_far": -0.15801780182299552,
+            "hand_far": -0.4092486080349388,
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -76.23470166956538,
-            "forearm_near": -139.37386288291833,
+            "upper_arm_near": -93.07580533735636,
+            "forearm_near": -145.22469050693644,
             "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
@@ -1345,27 +1345,27 @@
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
             "head": 0,
-            "upper_arm_far": -90,
-            "forearm_far": 0,
-            "hand_far": 0,
+            "upper_arm_far": -89.43273359014206,
+            "forearm_far": -0.15801780182299552,
+            "hand_far": -0.4092486080349388,
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -65.23041317340905,
-            "forearm_near": -53.67905936885164,
-            "hand_near": 90,
+            "upper_arm_near": -72.50211793047175,
+            "forearm_near": -40.969876796066146,
+            "hand_near": 23.4719947265379,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
@@ -1375,27 +1375,27 @@
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
             "head": 0,
-            "upper_arm_far": -90,
-            "forearm_far": 0,
-            "hand_far": 0,
+            "upper_arm_far": -89.43273359014206,
+            "forearm_far": -0.15801780182299552,
+            "hand_far": -0.4092486080349388,
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -52.36742553368736,
-            "forearm_near": -76.50660117844832,
-            "hand_near": 90,
+            "upper_arm_near": -57.316028613221796,
+            "forearm_near": -75.40139819355248,
+            "hand_near": 42.717426806774284,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
@@ -1405,7 +1405,7 @@
           "duration": 0.06666666666666667,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -1436,7 +1436,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1460,13 +1460,13 @@
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1490,7 +1490,7 @@
           "duration": 0.08333333333333333,
           "root_position": [
             0,
-            -48
+            -46.97872340425532
           ]
         }
       ],
@@ -1506,7 +1506,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": 0,
           "angles": {
@@ -1530,13 +1530,13 @@
           "duration": 0.1,
           "root_position": [
             0,
-            -48.0
+            -46.97872340425532
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": -30,
           "angles": {
@@ -1560,13 +1560,13 @@
           "duration": 0.1,
           "root_position": [
             0,
-            -44.5692195892334
+            -43.54794299348872
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": -65,
           "angles": {
@@ -1590,13 +1590,13 @@
           "duration": 0.1,
           "root_position": [
             0,
-            -25.7235202789307
+            -24.70224368318602
           ]
         },
         {
           "body_position": [
             0,
-            -48
+            -46.97872340425532
           ],
           "root_angle": -90,
           "angles": {
@@ -1620,12 +1620,13 @@
           "duration": 0.1,
           "root_position": [
             0,
-            -10.0
+            -8.97872340425532
           ]
         }
       ],
       "events": [],
       "end_root_angle": -90
     }
-  }
+  },
+  "status": "Đề xuất — retarget geometry only; original frame counts/timings retained"
 }

@@ -16,8 +16,20 @@ var art_enabled := true
 var joint_fill: Dictionary = {}
 
 func _ready() -> void:
-	definition = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/parts.json"))
-	clips = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/animations.json"))["clips"]
+	_build(true)
+
+func _build(use_art: bool) -> void:
+	for child in get_children():
+		child.free()
+	joints.clear()
+	shapes.clear()
+	paths.clear()
+	sprites.clear()
+	joint_fill.clear()
+	current_clip = ""
+	art_enabled = use_art
+	definition = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/parts.json" if use_art else "res://rig/data/parts_greybox.json"))
+	clips = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/animations.json" if use_art else "res://rig/data/animations_greybox.json"))["clips"]
 	pivot_root = Node2D.new()
 	pivot_root.name = "PoseRoot"
 	# Rotation centre at torso centre, not at the feet.
@@ -72,7 +84,7 @@ func _ready() -> void:
 	for key in clips:
 		library.add_animation(key, _make_animation(clips[key]))
 	player.add_animation_library("", library)
-	set_art_enabled(true)
+	_apply_art_visibility()
 	set_weapon("dao")
 	play_clip("idle")
 
@@ -114,7 +126,18 @@ func _make_animation(clip: Dictionary) -> Animation:
 	return anim
 
 func set_art_enabled(value: bool) -> void:
+	if player != null and art_enabled != value:
+		var old_weapon := weapon
+		var old_clip := current_clip
+		_build(value)
+		set_weapon(old_weapon)
+		if clips.has(old_clip):
+			play_clip(old_clip)
 	art_enabled = value
+	_apply_art_visibility()
+
+func _apply_art_visibility() -> void:
+	var value := art_enabled
 	for id in shapes:
 		shapes[id].self_modulate.a = 0.0 if value else 1.0
 		sprites[id].visible = value

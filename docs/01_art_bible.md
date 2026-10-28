@@ -73,13 +73,12 @@ asset, không tuyên bố bộ phận đã qua kiểm tra.
 
 ### Pipeline bộ phận bậc 0 đang làm
 
-`tools/cut_parts.py` hiện tách 16 vùng concept, dùng hàm snap_pixel để nắn lưới,
-co bằng trung vị từng ô theo parts.json, ép 17 màu và vẽ bù tự động. Kiểm riêng
-bằng `tools/check_parts.py` trên PNG và pose/alpha xuất từ scene; báo cáo, ma trận
-đầu và script nguyên văn ở `17_parts_art_report.md`. Do khung cố định có thể cắt
-mất đầu tròn, rig có lớp màu bù tự động dưới các khớp cổ/vai/khuỷu/hông/gối,
-không thêm bone hoặc đổi hitbox. Đây là bản đang làm, không phải bộ phận đã duyệt;
-`check_sprite.py` vẫn giữ hợp đồng kiểm sprite nguyên khung như trên.
+`tools/cut_parts.py` co mọi mảnh theo **một s=96/846** cho x/y, dùng trung vị
+ô nguồn, giữ aspect và đo lại khớp theo hình. Không ép vào ô greybox: cấu hình
+art ở parts.json, greybox ở parts_greybox.json. Viền chỉ ở đường bao dáng đứng,
+không bôi vào mặt cắt/vùng bù khớp. Đầu sau co chưa sửa mắt/mũi/miệng; chờ
+Claude trả ma trận. Báo cáo và script nguyên văn tại
+`reports/g1_parts_art_report.md`; vẫn đang làm, chưa duyệt.
 
 ## Kích thước
 

@@ -20,7 +20,7 @@ def main():
     # in all chords in eight directions through each joint disk. Exterior air is not a seam.
     scale=4;size=(640,640);origin=(320,504)
     for name,clip in data.items():
-        if name.endswith('_left'):continue
+        if name not in json.loads((ROOT/'prototype/rig/data/animations.json').read_text())['clips']:continue
         for index,frame in enumerate(clip['frames']):
             sprites={p['id']:p for p in frame['geometry'] if p['kind']=='sprite'}
             masks={id:np.asarray(sprite_layer(p,size,origin,scale))[:,:,3]>0 for id,p in sprites.items()}

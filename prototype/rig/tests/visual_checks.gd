@@ -39,15 +39,19 @@ func run() -> void:
 					if key == "run":
 						var ankle: Vector2 = rig.joints["foot_"+side].global_position-rig.global_position
 						if absf(bottom) < 0.001:
-							planted = planted and is_equal_approx(ankle.y, -4.0)
+							var ankle_down := -INF
+							for vertex in shape.polygon:
+								ankle_down = maxf(ankle_down, vertex.y)
+							planted = planted and is_equal_approx(ankle.y, -ankle_down)
 						planted = planted and bottom <= 0.001
 				if key == "shoot":
 					var bow: Node2D = rig.joints.bow
 					var hand: Node2D = rig.joints.hand_far
 					var shoulder: Vector2 = rig.joints.upper_arm_far.global_position
 					var axis := bow.to_global(Vector2(0,19))-bow.to_global(Vector2(0,-19))
-					bow_correct = bow_correct and absf(axis.x) < 0.001 and bow.global_position.distance_to(hand.global_position) < 0.001 and is_equal_approx(hand.global_position.y,shoulder.y) and (hand.global_position.x-shoulder.x)*direction > 27.9
-					var anchor: Vector2 = rig.joints.hand_near.to_global(Vector2(0,1))
+					bow_correct = bow_correct and absf(axis.x) < 0.001 and bow.global_position.distance_to(hand.to_global(Vector2(rig.definition.parts[-1].attach[0],rig.definition.parts[-1].attach[1]))) < 0.001 and is_equal_approx(hand.global_position.y,shoulder.y) and (hand.global_position.x-shoulder.x)*direction > 27.9
+					var grip: Array = rig.definition.bow_string.hand_anchor
+					var anchor: Vector2 = rig.joints.hand_near.to_global(Vector2(grip[0],grip[1]))
 					string_correct = string_correct and rig.bow_string.visible and rig.bow_string.to_global(rig.bow_string.points[1]).distance_to(anchor) < 0.001
 				time += float(frame.duration)
 		check(correct_layers, "direction %+.0f: near layers remain above far in every clip" % direction)

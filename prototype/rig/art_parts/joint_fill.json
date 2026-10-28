@@ -1,47 +1,57 @@
 {
   "head": {
     "radius": 4.0,
+    "color": "#B66C49",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
+  },
+  "upper_arm_near": {
+    "radius": 4.0,
     "color": "#E99A69",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "upper_arm_far": {
     "radius": 4.0,
     "color": "#A38269",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "method": "automatic unoutlined joint material, not a drawn body outline"
+  },
+  "forearm_near": {
+    "radius": 4.0,
+    "color": "#E99A69",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "forearm_far": {
     "radius": 3.5,
     "color": "#B66C49",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   },
-  "thigh_far": {
-    "radius": 5.0,
-    "color": "#6B4A35",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
-  },
-  "shin_far": {
-    "radius": 4.0,
-    "color": "#78432E",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
-  },
-  "upper_arm_near": {
-    "radius": 4.0,
-    "color": "#FFD0A0",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
-  },
-  "forearm_near": {
-    "radius": 3.5,
+  "hand_near": {
+    "radius": 3.0,
     "color": "#E99A69",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "method": "automatic unoutlined joint material, not a drawn body outline"
+  },
+  "hand_far": {
+    "radius": 3.0,
+    "color": "#E99A69",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "thigh_near": {
-    "radius": 5.0,
+    "radius": 4.0,
+    "color": "#80614D",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
+  },
+  "thigh_far": {
+    "radius": 4.0,
     "color": "#6B4A35",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   },
   "shin_near": {
     "radius": 4.0,
-    "color": "#80614D",
-    "method": "automatic proximal joint underpaint: two semicircles, no new bone/PNG; supports cap clipped by fixed frame"
+    "color": "#E99A69",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
+  },
+  "shin_far": {
+    "radius": 4.0,
+    "color": "#B66C49",
+    "method": "automatic unoutlined joint material, not a drawn body outline"
   }
 }
