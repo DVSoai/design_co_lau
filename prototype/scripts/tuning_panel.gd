@@ -7,6 +7,7 @@ var tuning: RefCounted
 var panel: PanelContainer
 var toggle: Button
 var sliders: Dictionary = {}
+var slider_labels: Dictionary = {}
 var motion_toggle: CheckButton
 var scale_toggle: CheckButton
 var info_label: Label
@@ -68,18 +69,23 @@ func _ready() -> void:
 	motion_toggle.button_pressed = tuning.fake_motion_enabled()
 	motion_toggle.toggled.connect(tuning.set_fake_motion_enabled)
 	column.add_child(motion_toggle)
-	for row in [["HOLD_AUTO_JUMP", "Giữ để nhảy lại"], ["VARIABLE_JUMP", "Giữ lâu nhảy cao"], ["DIAGONAL_SPIN_ENABLED", "Xoay khi nhảy chéo"], ["HUD_VISIBLE", "Hiện HUD giữ chỗ"]]:
+	for row in [["CLASSIC_CONTROLS", "Kiểu cổ điển"], ["AIR_JUMP_ENABLED", "Khinh công"], ["HOLD_AUTO_JUMP", "Giữ để nhảy lại"], ["VARIABLE_JUMP", "Giữ lâu nhảy cao"], ["DIAGONAL_SPIN_ENABLED", "Xoay khi nhảy chéo"], ["HUD_VISIBLE", "Hiện HUD giữ chỗ"]]:
 		var key: String = row[0]
 		var check := CheckButton.new()
 		check.focus_mode = Control.FOCUS_NONE
 		check.text = row[1]
 		check.button_pressed = tuning.flag(key)
-		check.toggled.connect(func(enabled: bool) -> void: tuning.set_flag(key, enabled))
+		check.toggled.connect(func(enabled: bool) -> void:
+			tuning.set_flag(key, enabled)
+			if key == "CLASSIC_CONTROLS":
+				_refresh_sliders()
+		)
 		switches[key] = check
 		column.add_child(check)
 	for row in RuntimeTuning.SLIDERS:
 		var key: String = row[0]
 		var label := Label.new()
+		slider_labels[key] = label
 		column.add_child(label)
 		var slider := ThumbSlider.new()
 		slider.focus_mode = Control.FOCUS_NONE
@@ -133,3 +139,9 @@ func _process(_delta: float) -> void:
 	if previous_hud != tuning.flag("HUD_VISIBLE"):
 		previous_hud = tuning.flag("HUD_VISIBLE")
 		_layout()
+
+func _refresh_sliders() -> void:
+	for row in RuntimeTuning.SLIDERS:
+		var key: String = row[0]
+		sliders[key].set_value_no_signal(tuning.value(key))
+		slider_labels[key].text = "%s: %.2f %s" % [key, tuning.value(key), row[4]]

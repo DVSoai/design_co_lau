@@ -5,6 +5,9 @@ const Defaults = preload("res://config/tuning.gd")
 const SLIDERS := [
 	["RUN_SPEED", 50.0, 500.0, 1.0, "px/s"],
 	["ACCELERATION", 100.0, 3000.0, 10.0, "px/s²"],
+	["STOP_TIME", 0.0, 0.3, 0.01, "s"],
+	["TURN_TIME", 0.0, 0.2, 0.01, "s"],
+	["APEX_FLIP_TIME", 0.05, 0.3, 0.01, "s"],
 	["JUMP_HEIGHT", 20.0, 200.0, 1.0, "px"],
 	["TIME_TO_APEX", 0.15, 0.8, 0.01, "s"],
 	["COYOTE_TIME", 0.0, 0.3, 0.01, "s"],
@@ -16,12 +19,13 @@ const SLIDERS := [
 	["ATTACK_COOLDOWN", 0.0, 1.0, 0.01, "s"],
 ]
 var values: Dictionary = {}
+var mode_heights := {true: Defaults.JUMP_HEIGHT, false: Defaults.LEGACY_JUMP_HEIGHT}
 
 func _init() -> void:
 	var source: Script = Defaults
 	var defaults := source.get_script_constant_map()
 	values["FAKE_MOTION_ENABLED"] = Defaults.FAKE_MOTION_ENABLED
-	for key in ["HOLD_AUTO_JUMP", "VARIABLE_JUMP", "DIAGONAL_SPIN_ENABLED", "HUD_VISIBLE"]:
+	for key in ["HOLD_AUTO_JUMP", "VARIABLE_JUMP", "DIAGONAL_SPIN_ENABLED", "HUD_VISIBLE", "CLASSIC_CONTROLS", "AIR_JUMP_ENABLED"]:
 		values[key] = defaults[key]
 	for row in SLIDERS:
 		values[row[0]] = Defaults.CAMERA_DEAD_ZONE.x if row[0] == "CAMERA_DEAD_ZONE.x" else defaults[row[0]]
@@ -48,6 +52,8 @@ func jump_speed() -> float:
 	return -2.0 * value("JUMP_HEIGHT") / value("TIME_TO_APEX")
 
 func current_value(key: String, fallback: Variant) -> Variant:
+	if key == "FALL_SPEED_MAX":
+		return Defaults.FALL_SPEED_MULTIPLIER * absf(jump_speed())
 	if key == "GRAVITY":
 		return gravity()
 	if key == "JUMP_SPEED":
@@ -68,4 +74,7 @@ func flag(key: String) -> bool:
 	return bool(values[key])
 
 func set_flag(key: String, enabled: bool) -> void:
+	if key == "CLASSIC_CONTROLS" and enabled != flag(key):
+		mode_heights[flag(key)] = value("JUMP_HEIGHT")
+		values["JUMP_HEIGHT"] = mode_heights[enabled]
 	values[key] = enabled

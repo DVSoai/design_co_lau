@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal physics_stepped
+
 const SlashEffect = preload("res://scripts/slash_effect.gd")
 const T = preload("res://config/tuning.gd")
 var tuning: RefCounted
@@ -17,6 +19,20 @@ var spin_direction := 0.0
 var spin_elapsed := 0.0
 var spin_duration := 1.0
 var jump_count := 0
+var extra_jump_count := 0
+var flip_completion_count := 0
+var turn_remaining := 0.0
+var braking := false
+var brake_speed := 0.0
+var classic_previous := T.CLASSIC_CONTROLS
+var extra_jump_used := false
+var air_cycle_active := false
+var phase_needs_flip := false
+var flip_queue: Array[float] = []
+var flip_running := false
+var flip_elapsed := 0.0
+var flip_direction := 1.0
+var apex_flip_angle := 0.0
 var debug_enabled := false
 var idle_phase := 0.0
 var run_phase := 0.0
@@ -60,31 +76,75 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var was_grounded := is_on_floor()
 	var jumped := false
+	var classic: bool = tuning.flag("CLASSIC_CONTROLS")
+	if classic != classic_previous:
+		classic_previous = classic
+		turn_remaining = 0.0
+		braking = false
+		_clear_classic_air()
+	if was_grounded:
+		extra_jump_used = false
+		air_cycle_active = false
 	var axis := clampf(Input.get_axis("left", "right") + Input.get_axis("touch_left", "touch_right"), -1.0, 1.0)
-	if axis != 0:
-		facing = signf(axis)
+	if classic:
+		_classic_horizontal(axis, delta)
+	else:
+		if axis != 0:
+			facing = signf(axis)
+		velocity.x = move_toward(velocity.x, axis * tuning.value("RUN_SPEED"), tuning.value("ACCELERATION") * delta)
 	sprite.flip_h = facing < 0
-	velocity.x = move_toward(velocity.x, axis * tuning.value("RUN_SPEED"), tuning.value("ACCELERATION") * delta)
 	coyote = tuning.value("COYOTE_TIME") if is_on_floor() else maxf(0, coyote - delta)
 	buffered_jump = maxf(0, buffered_jump - delta)
 	var jump_held := Input.is_action_pressed("jump") or Input.is_action_pressed("touch_jump")
 	var jump_pressed := Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("touch_jump")
+	if classic:
+		jump_pressed = jump_held and not was_jump_held
 	if jump_pressed:
 		buffered_jump = tuning.value("JUMP_BUFFER")
 	if (jump_pressed or buffered_jump > 0 or (tuning.flag("HOLD_AUTO_JUMP") and jump_held and is_on_floor())) and (is_on_floor() or coyote > 0):
 		velocity.y = tuning.jump_speed()
 		jumped = true
 		jump_count += 1
+		if classic:
+			air_cycle_active = true
+			extra_jump_used = false
+			phase_needs_flip = true
+			flip_queue.clear()
+			flip_running = false
+			apex_flip_angle = 0.0
+			turn_remaining = 0.0
+			if axis != 0:
+				facing = signf(axis)
+				velocity.x = axis * tuning.value("RUN_SPEED") * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
 		spin_direction = (-1.0 if Input.is_action_pressed("touch_diagonal_left") else 1.0) if (Input.is_action_pressed("touch_diagonal_left") or Input.is_action_pressed("touch_diagonal_right")) else 0.0
 		spin_elapsed = 0.0
 		spin_duration = 2.0 * tuning.value("TIME_TO_APEX")
 		buffered_jump = 0
 		coyote = 0
+	if classic:
+		_queue_apex_if_ready()
+		if jump_pressed and not was_grounded and air_cycle_active and not extra_jump_used and tuning.flag("AIR_JUMP_ENABLED") and velocity.y < 0 and absf(velocity.y) <= T.AIR_JUMP_WINDOW_RATIO * absf(tuning.jump_speed()):
+			velocity.y = T.AIR_JUMP_SPEED_RATIO * tuning.jump_speed()
+			extra_jump_used = true
+			extra_jump_count += 1
+			phase_needs_flip = true
+			buffered_jump = 0.0
+			jumped = true
 	if tuning.flag("VARIABLE_JUMP") and was_jump_held and not jump_held and velocity.y < 0:
 		velocity.y *= T.JUMP_RELEASE_MULTIPLIER
 	was_jump_held = jump_held
-	velocity.y += tuning.gravity() * delta
-	move_and_slide()
+	if classic:
+		# Tích phân midpoint cho vị trí, giữ velocity là vận tốc cuối bước.
+		var cap: float = T.FALL_SPEED_MULTIPLIER * absf(tuning.jump_speed())
+		velocity.y = minf(velocity.y, cap)
+		var next_vertical := minf(velocity.y + tuning.gravity() * delta, cap)
+		velocity.y = (velocity.y + next_vertical) / 2
+		move_and_slide()
+		if not is_on_floor() and not is_on_ceiling():
+			velocity.y = next_vertical
+	else:
+		velocity.y += tuning.gravity() * delta
+		move_and_slide()
 	position.x = clampf(position.x, T.PLAYER_BOX.x / 2, T.WORLD_SIZE.x - T.PLAYER_BOX.x / 2)
 	if position.y > T.FALL_RESET_Y:
 		position = T.SPAWN
@@ -93,10 +153,15 @@ func _physics_process(delta: float) -> void:
 		coyote = 0
 		pulse_elapsed = T.SPRITE_SCALE_RECOVERY
 		spin_direction = 0.0
+		_clear_classic_air()
 	if is_on_floor():
 		spin_direction = 0.0
+		_clear_classic_air()
 	elif not jumped:
 		spin_elapsed += delta
+	if classic and not is_on_floor():
+		_queue_apex_if_ready()
+		_advance_apex_flip(delta)
 	cooldown_elapsed += delta
 	if (Input.is_action_just_pressed("slash") or Input.is_action_just_pressed("touch_slash")) and attack_time < 0 and cooldown_elapsed >= tuning.value("ATTACK_COOLDOWN"):
 		attack_time = 0
@@ -115,6 +180,7 @@ func _physics_process(delta: float) -> void:
 	_update_sprite_motion(delta, jumped, not was_grounded and is_on_floor())
 	slash_effect.queue_redraw()
 	queue_redraw()
+	physics_stepped.emit()
 
 func _update_sprite_motion(delta: float, jumped: bool, landed: bool) -> void:
 	# Sprite là sibling của các CollisionShape2D/Area2D: không truyền transform.
@@ -148,7 +214,9 @@ func _update_sprite_motion(delta: float, jumped: bool, landed: bool) -> void:
 	sprite.position = (T.SPRITE_OFFSET * sprite.scale).rotated(sprite.rotation) + Vector2(0, bob)
 	if is_hit_active():
 		sprite.position.x += facing * T.SLASH_SPRITE_SHIFT
-	if tuning.flag("DIAGONAL_SPIN_ENABLED") and spin_direction != 0 and not is_on_floor():
+	if tuning.flag("CLASSIC_CONTROLS"):
+		sprite.rotation += apex_flip_angle
+	elif tuning.flag("DIAGONAL_SPIN_ENABLED") and spin_direction != 0 and not is_on_floor():
 		# Xoay quanh tâm ảnh, không xoay quanh chân hay bất kỳ hitbox nào.
 		sprite.rotation += spin_direction * TAU * T.DIAGONAL_SPIN_TURNS * clampf(spin_elapsed / spin_duration, 0.0, 1.0)
 
@@ -159,3 +227,63 @@ func _draw() -> void:
 	if debug_enabled:
 		draw_rect(Rect2(Vector2(-T.PLAYER_BOX.x / 2, -T.PLAYER_BOX.y), T.PLAYER_BOX), Color.CYAN, false, 1)
 		draw_rect(Rect2(slash.position - T.SLASH_BOX / 2, T.SLASH_BOX), Color.RED if is_hit_active() else Color(0.6, 0.4, 0.2), false, 1)
+
+func _diagonal_held() -> bool:
+	return Input.is_action_pressed("touch_diagonal_left") or Input.is_action_pressed("touch_diagonal_right")
+
+func _classic_horizontal(axis: float, delta: float) -> void:
+	if axis != 0:
+		braking = false
+		if not is_on_floor():
+			facing = signf(axis)
+			turn_remaining = 0.0
+			velocity.x = axis * tuning.value("RUN_SPEED") * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
+			return
+		if signf(axis) != facing:
+			facing = signf(axis)
+			turn_remaining = tuning.value("TURN_TIME")
+			velocity.x = 0.0
+			return # khung đầu chỉ quay mặt, kể cả TURN_TIME = 0
+		if turn_remaining > 0:
+			turn_remaining = maxf(0.0, turn_remaining - delta)
+			if turn_remaining > 0.000001:
+				velocity.x = 0.0
+				return
+		velocity.x = axis * tuning.value("RUN_SPEED")
+	else:
+		if turn_remaining > 0:
+			turn_remaining = 0.0
+			velocity.x = 0.0 # nhả trong nhịp quay: chỉ đổi mặt
+		if not braking:
+			brake_speed = absf(velocity.x)
+			braking = true
+		var stop: float = tuning.value("STOP_TIME")
+		velocity.x = move_toward(velocity.x, 0.0, brake_speed * delta / stop) if stop > 0 else 0.0
+
+func _clear_classic_air() -> void:
+	extra_jump_used = false
+	air_cycle_active = false
+	phase_needs_flip = false
+	flip_running = false
+	flip_queue.clear()
+	apex_flip_angle = 0.0
+
+func _queue_apex_if_ready() -> void:
+	if phase_needs_flip and air_cycle_active and velocity.y <= 0 and velocity.y >= T.AIR_JUMP_WINDOW_RATIO * tuning.jump_speed():
+		flip_queue.append(facing)
+		phase_needs_flip = false
+
+func _advance_apex_flip(delta: float) -> void:
+	if not flip_running:
+		if flip_queue.is_empty():
+			apex_flip_angle = 0.0
+			return
+		flip_direction = flip_queue.pop_front()
+		flip_elapsed = 0.0
+		flip_running = true
+	var duration: float = tuning.value("APEX_FLIP_TIME")
+	flip_elapsed = minf(flip_elapsed + delta, duration)
+	apex_flip_angle = flip_direction * TAU * flip_elapsed / duration
+	if flip_elapsed >= duration:
+		flip_running = false
+		flip_completion_count += 1

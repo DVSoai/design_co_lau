@@ -3,7 +3,7 @@ extends RefCounted
 # Các giá trị A0 chỉ là tạm thời; không chốt thông số thiết kế.
 const RUN_SPEED := 200.0 # px/s
 const ACCELERATION := 900.0 # px/s², cả tăng tốc và hãm
-const JUMP_HEIGHT := 80.0 # px
+const JUMP_HEIGHT := 96.0 # px
 const TIME_TO_APEX := 0.38 # s
 const GRAVITY := 2.0 * JUMP_HEIGHT / (TIME_TO_APEX * TIME_TO_APEX) # px/s²
 const JUMP_SPEED := -2.0 * JUMP_HEIGHT / TIME_TO_APEX # px/s
@@ -88,3 +88,16 @@ const TUNING_PANEL_MAX_HEIGHT := 366.0 # px
 const TUNING_PANEL_MIN_HEIGHT := 120.0 # px
 const COMBAT_EFFECT_Z := 20 # lớp vẽ trên thân nhân vật/hình nộm
 const DAMAGE_TEXT_Z := 30 # lớp vẽ số sát thương
+
+# Kiểu cổ điển; nhánh cũ dùng lại chiều cao cũ khi tắt công tắc.
+const CLASSIC_CONTROLS := true # mặc định bật
+const AIR_JUMP_ENABLED := true # khinh công, tối đa một lần mỗi cú nhảy
+const LEGACY_JUMP_HEIGHT := 80.0 # px, mặc định của kiểu điều khiển cũ
+const STOP_TIME := 0.08 # s, giảm tốc từ vận tốc hiện tại về 0
+const TURN_TIME := 0.05 # s, nhịp đứng khi đổi mặt trên mặt đất
+const APEX_FLIP_TIME := 0.2 # s/vòng lộn, chỉ Sprite2D
+const FALL_SPEED_MULTIPLIER := 2.0 # lần |JUMP_SPEED|
+const FALL_SPEED_MAX := FALL_SPEED_MULTIPLIER * absf(JUMP_SPEED) # px/s, suy ra
+const CLASSIC_DIAGONAL_SPEED_RATIO := 0.8 # lần RUN_SPEED khi giữ vùng chéo
+const AIR_JUMP_WINDOW_RATIO := 0.3 # lần |JUMP_SPEED|, chỉ khi còn đi lên
+const AIR_JUMP_SPEED_RATIO := 0.7 # lần JUMP_SPEED của cú bật thêm
