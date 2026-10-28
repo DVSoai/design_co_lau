@@ -32,6 +32,13 @@ func _ready() -> void:
 		rig.visible = value
 		player.sprite.visible = not value
 	)
+	var art_toggle := CheckButton.new()
+	art_toggle.text = "Bộ phận vẽ / Khối màu (bật = vẽ)"
+	art_toggle.button_pressed = true
+	art_toggle.focus_mode = Control.FOCUS_NONE
+	column.add_child(art_toggle)
+	column.move_child(art_toggle, 2)
+	art_toggle.toggled.connect(rig.set_art_enabled)
 	bow_toggle = CheckButton.new()
 	bow_toggle.text = "Vũ khí cung (chỉ xem, không đổi hitbox)"
 	bow_toggle.focus_mode = Control.FOCUS_NONE

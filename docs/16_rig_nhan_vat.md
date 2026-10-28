@@ -54,7 +54,7 @@ text=json.dumps(result,ensure_ascii=False,indent=2)
 print(text)
 ```
 
-## 2. Hệ khớp và bộ phận
+## 2. Hệ khớp và bộ phận greybox cũ
 
 Chọn **cây Node2D + AnimationPlayer**. Mỗi mảnh cứng là một Polygon2D con của
 Node2D tại khớp; không skin/biến dạng lưới nên không cần Skeleton2D/IK. Cấu trúc này
@@ -64,7 +64,7 @@ nạp track từ JSON, không viết pose trong mã. AnimationTree chưa cần c
 Tọa độ px logic: x phải, y xuống. Pivot tính từ góc trên-trái khung mảnh. `attach`
 là vị trí pivot trong hệ khớp cha; root nằm ở chân, tâm xoay hình tại (0,−48).
 Mảnh body nghỉ tại (0,−48). Bảng là dữ liệu đề xuất, cùng nguồn với
-`prototype/rig/data/parts.json`; góc độ tính tương đối khớp cha, dương theo chiều kim
+`prototype/rig/data/parts_greybox.json`; góc độ tính tương đối khớp cha, dương theo chiều kim
 đồng hồ. Xoay toàn vòng chỉ ở PoseRoot, không áp giới hạn cục bộ cho vòng lộn.
 Thứ tự z tuyệt đối: số nhỏ ở xa, số lớn ở gần; polygon không cộng z cha.
 
@@ -215,3 +215,118 @@ rig smoke và các kiểm tra bổ sung bằng **Godot 4.7.2.stable.official.ed1
 đầu ra nguyên văn nằm trong commit sửa này. Chỉ sửa `prototype/rig/` và tài liệu
 này; nhật ký lần chỉnh được ghi tại đây theo phạm vi người dùng, không sửa 05_log.
 Rig/pose vẫn **Đề xuất — chưa duyệt**, chưa thử Android mới.
+
+## 7. Bộ phận vẽ bậc 0 — bản ép ô cũ đã bị thay
+
+Mục này lưu cách làm lượt đầu đã bị loại về tỉ lệ; dùng **mục 8** và báo cáo mới cho hiện trạng.
+
+Trong cảnh rig, ⚙ có **Bộ phận vẽ / Khối màu (bật = vẽ)**, mặc định bật.
+Mỗi mảnh dùng Sprite2D nearest, texture bản sao đúng byte từ
+`art/sprites/characters/chr_dbl_parts/`, giữ size/pivot/attach/layer đã có.
+Không đổi pose JSON, hitbox hay điều khiển. Tắt để trở lại các khối màu.
+
+Các khung cố định/pivot sát mép không chứa trọn đầu tròn ở một số góc gập.
+Ngoài phần vẽ bù bán nguyệt trong PNG, script sinh metadata màu/vùng đầu tròn
+`prototype/rig/art_parts/joint_fill.json`; scene vẽ lớp bù tự động dưới ảnh tại
+cổ, vai, khuỷu, hông và gối (hai nửa bán nguyệt, cùng màu vùng gần khớp).
+Lớp bù có thể vượt mép khung ảnh một ít để không hở khi xoay, không thêm bone hay
+thay kích thước PNG/collision. Không thêm lớp bù tròn ở bàn chân/tay/vũ khí để
+tránh biến chân đất/tay cầm thành khối tròn lớn. Phần này là vẽ bù bằng script,
+chưa duyệt thẩm mỹ; không giả là họa sĩ đã vẽ phần giải phẫu bị che.
+
+Ảnh concept, bước xử lý, hai ma trận đầu 24×18, kiểm PNG/khớp và script nguyên
+văn tại `reports/g1_parts_art_report.md`. Contact sheet texture ở
+`prototype/rig/contact_sheets/art/`; idle ×4 chỉ phóng NEAREST từ file 1× thật.
+Claude/người dùng còn phải soát khuôn mặt và mọi bộ phận, chưa thử Android mới.
+
+## 8. Co art theo một hệ số chung (thay cách ép ô ở mục 7)
+
+Bản art trước bị méo vì mỗi mảnh co độc lập vào ô greybox. Lượt này dùng lại tờ
+concept, không sinh ảnh mới. Giữ nguyên cấu hình gốc thành `parts_greybox.json`
+và pose tương ứng `animations_greybox.json`. Công tắc art/khối màu dựng lại
+đúng bộ khớp/pose riêng cho từng chế độ, không chỉ nhét ảnh art vào khung cũ.
+
+Các mốc nguồn được chọn bằng mắt trên crop thật và ghi trong
+`tools/cut_parts.py`/`uniform_measurements.json`, không giả là nhận dạng tự động.
+Đường ghép thử theo hướng dẫn đầu/thân/chân 24/24/48: đầu tới cổ 218 px, cổ tới
+điểm ghép quần dưới vạt áo 214 px, hông→gối 176 px, gối→cổ chân 152 px,
+cổ chân→gót/đế 86 px. Tổng **846 px**, nên **s=96/846=0,113475177305** cho cả
+x/y của mọi mảnh. Sau co các đoạn là **24,738 / 24,284 / 46,979 px**, không ép
+từng đoạn đúng 24/24/48. Mốc ghép quần dưới vạt áo là điểm rig tạm, cần duyệt
+chứ không khẳng định là mốc giải phẫu chính xác. Lấy trung vị theo ô có bước
+1/s ở cả hai trục; ceil chỉ thêm ô cuối, không đổi tỉ lệ theo kích thước ảnh đích.
+
+### Bảng greybox cũ → art đo lại
+
+Mọi tọa độ px, attach trong hệ khớp cha; số bảng làm tròn 3 chữ số, JSON giữ
+độ chính xác. Nhịp 13 động tác/48 frame và marker không đổi; pose art retarget
+theo chiều dài mảnh mới để giữ chân tiếp đất, không đổi physics A0.
+
+| Mảnh | Khung cũ → mới | Pivot cũ → mới | Attach cũ → mới |
+|---|---|---|---|
+| `head` | 18×24 → 23×25 | (9, 24) → (9.418, 24.738) | (0, -24) → (0, -24.284) |
+| `body` | 20×26 → 17×29 | (10, 24) → (7.376, 26.099) | (0, -48) → (0, -46.979) |
+| `upper_arm_near` | 8×19 → 10×26 | (4, 2) → (4.766, 1.362) | (0, -21) → (0.34, -20.993) |
+| `upper_arm_far` | 8×19 → 10×26 | (4, 2) → (4.652, 1.362) | (0, -21) → (0.34, -20.993) |
+| `forearm_near` | 7×17 → 8×19 | (3, 2) → (3.404, 1.135) | (0, 15) → (0.34, 22.922) |
+| `forearm_far` | 7×17 → 7×19 | (3, 2) → (3.291, 1.135) | (0, 15) → (0.227, 22.922) |
+| `hand_near` | 7×8 → 10×13 | (3, 2) → (2.95, 1.021) | (0, 13) → (0.113, 16.227) |
+| `hand_far` | 7×8 → 10×14 | (3, 2) → (2.837, 1.021) | (0, 13) → (0.113, 15.887) |
+| `thigh_near` | 10×24 → 15×24 | (5, 2) → (7.376, 1.362) | (2, 0) → (1.5, 0) |
+| `thigh_far` | 10×24 → 15×24 | (5, 2) → (7.262, 1.362) | (-2, 0) → (-1.5, 0) |
+| `shin_near` | 8×24 → 9×22 | (4, 2) → (4.085, 1.362) | (0, 22) → (-0.113, 19.972) |
+| `shin_far` | 8×24 → 9×21 | (4, 2) → (3.972, 1.362) | (0, 22) → (-0.113, 19.972) |
+| `foot_near` | 14×6 → 19×12 | (4, 2) → (4.993, 2.156) | (0, 22) → (-0.113, 17.248) |
+| `foot_far` | 14×6 → 18×12 | (4, 2) → (4.879, 2.156) | (0, 22) → (-0.113, 17.248) |
+| `dao` | 5×34 → 8×41 | (2, 28) → (3.518, 32.908) | (0, 4) → (1.816, 6.355) |
+| `bow` | 6×38 → 10×41 | (3, 19) → (1.589, 20.879) | (0, 0) → (1.816, 6.355) |
+
+Giới hạn cổ chân art đề xuất ±75° để giữ đế chân ngang với đoạn chân đã đo
+(lớn nhất đang dùng khoảng 71,54°); greybox vẫn ±60°. Cổ tay giữ giới hạn cũ.
+Góc pose/IK được tác giả script tính trước và ghi JSON; không sửa player A0.
+
+- Viền chỉ được bôi ở đường bao dáng đứng xuất từ scene. Mặt cắt cổ/vai/khuỷu/
+  cổ tay/hông/gối/cổ chân và phần bù tự động không có viền. Script xóa nét viền
+  do chính nó bôi nếu nét đó lọt vào trong ở cả dáng idle lẫn đứng duỗi.
+- Nét tối tóc được phân loại vào màu vật liệu; vùng mắt/mũi/miệng giữ màu lấy
+  mẫu từ concept. **Không đọc/áp dụng tools/chr_dbl_head_edits.json, không sửa
+  feature pixel**. Ma trận mới là **23 cột × 25 dòng** sau co, kèm bảng màu ở
+  `reports/g1_parts_art_report.md`; chờ Claude gửi ma trận đã sửa.
+- Cắt cổ dưới cằm còn khoảng 2,50 px; da mặt chiếm 13/23≈56,52% bề rộng ô đầu.
+- Tay/chân giữ 3 sắc da sáng/trung/tối. Chân giữ tỉ lệ nguồn để thấy gót/mũi chân,
+  không thêm đĩa bù ở bàn chân. Lớp bù khớp vẫn chỉ là màu vật liệu, không có viền.
+- Dáng đứng duỗi từ scene cao đúng 96 px. Idle thở/gập gối thấp hơn một pixel,
+  không kéo giãn mảnh cho mọi pose đều cao 96.
+- Báo cáo hiện liệt kê 8 pixel màu outline nội bộ, tất cả ở đầu/mặt lấy từ nguồn;
+  không còn pixel viền nội bộ ở các mối nối. Giữ chúng để Claude soát, không
+  tự sửa mắt/mũi/miệng chỉ để ép số đo thành 0.
+
+Pipeline/lệnh tái tạo, ma trận và đầu ra tại
+`reports/g1_parts_art_report.md`; số 17 dành cho `17_ngoai_hinh.md`. Mọi art/khớp
+mới vẫn Đề xuất/đang làm, chưa duyệt.
+
+## 9. Đầu Claude và tay rút ngắn theo duyệt mới
+
+Theo ma trận người dùng gửi: **đầu do Claude vẽ tay từng pixel**. PNG đầu giữ
+23×25, pivot/attach không đổi; so RGBA từng pixel với ma trận đầu vào. Không
+thực hiện làm sạch/bôi viền hoặc sửa feature trên đầu. Cổ được kiểm không hở
+ở cả 48 frame. H là màu tóc, O là nét; L=#59443E là ngoại lệ ánh tóc, không phải
+cho phép dùng nhóm pants trên da hay áo.
+
+Ngoại lệ do người dùng cho phép: upper_arm/forearm rút trục dài còn 60%, giữ
+chiều ngang; các phần khác vẫn giữ s chung. Đầu ngón đo từ scene ở y=−33 khi
+đứng duỗi, y=−32 ở idle, cả hai tay, trong khoảng −30…−34.
+
+| Mảnh | Khung cũ → mới | Pivot cũ → mới | Attach cũ → mới |
+|---|---|---|---|
+| `upper_arm_near` | (10, 26) → (10, 16) | (4.766, 1.362) → (4.766, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_near` | (8, 19) → (8, 12) | (3.404, 1.135) → (3.404, 0.681) | (0.34, 22.922) → (0.34, 13.753) |
+| `hand_near` | (10, 13) → (10, 13) | (2.95, 1.021) → (2.95, 1.021) | (0.113, 16.227) → (0.113, 9.736) |
+| `upper_arm_far` | (10, 26) → (10, 16) | (4.652, 1.362) → (4.652, 0.817) | (0.34, -20.993) → (0.34, -20.993) |
+| `forearm_far` | (7, 19) → (7, 12) | (3.291, 1.135) → (3.291, 0.681) | (0.227, 22.922) → (0.227, 13.753) |
+| `hand_far` | (10, 14) → (10, 14) | (2.837, 1.021) → (2.837, 1.021) | (0.113, 15.887) → (0.113, 9.532) |
+
+Màu áo: #C3A98A chủ đạo, bóng #89745E/#554638, #EAD8B8 ≤15% số pixel vải.
+Các nhóm chất liệu kiểm riêng cho từng PNG, ngoài quần không dùng pants trừ L
+trên tóc Claude. Tỉ lệ từng màu và ma trận nguyên văn ở
+`reports/g1_parts_art_report.md`. Các mục 7–8 là lịch sử trước lần chỉnh này.

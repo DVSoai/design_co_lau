@@ -1,0 +1,527 @@
+{
+  "status": "Đang làm — chưa duyệt",
+  "source": "art/concept/characters/chr_dbl_parts_concept.png",
+  "source_sha256": "055019d238730991b5b46cfb8c0530960a4f303264f4bb8351e9abda929ed916",
+  "palette": [
+    [
+      23,
+      21,
+      26
+    ],
+    [
+      52,
+      41,
+      35
+    ],
+    [
+      120,
+      67,
+      46
+    ],
+    [
+      182,
+      108,
+      73
+    ],
+    [
+      233,
+      154,
+      105
+    ],
+    [
+      255,
+      208,
+      160
+    ],
+    [
+      85,
+      70,
+      56
+    ],
+    [
+      137,
+      116,
+      94
+    ],
+    [
+      195,
+      169,
+      138
+    ],
+    [
+      234,
+      216,
+      184
+    ],
+    [
+      61,
+      45,
+      36
+    ],
+    [
+      107,
+      74,
+      53
+    ],
+    [
+      152,
+      118,
+      90
+    ],
+    [
+      50,
+      43,
+      43
+    ],
+    [
+      89,
+      68,
+      62
+    ],
+    [
+      128,
+      97,
+      77
+    ],
+    [
+      163,
+      130,
+      105
+    ]
+  ],
+  "parts": [
+    {
+      "id": "head",
+      "source_box": [
+        135,
+        34,
+        335,
+        260
+      ],
+      "source_area": 26846,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        100,
+        113
+      ],
+      "size": [
+        18,
+        24
+      ],
+      "pivot": [
+        9,
+        24
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/head.png"
+    },
+    {
+      "id": "body",
+      "source_box": [
+        494,
+        35,
+        638,
+        290
+      ],
+      "source_area": 25855,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        72,
+        128
+      ],
+      "size": [
+        20,
+        26
+      ],
+      "pivot": [
+        10,
+        24
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/body.png"
+    },
+    {
+      "id": "upper_arm_near",
+      "source_box": [
+        848,
+        50,
+        932,
+        277
+      ],
+      "source_area": 13742,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        42,
+        114
+      ],
+      "size": [
+        8,
+        19
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/upper_arm_near.png"
+    },
+    {
+      "id": "upper_arm_far",
+      "source_box": [
+        1218,
+        50,
+        1301,
+        278
+      ],
+      "source_area": 13507,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        42,
+        114
+      ],
+      "size": [
+        8,
+        19
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/upper_arm_far.png"
+    },
+    {
+      "id": "forearm_near",
+      "source_box": [
+        193,
+        307,
+        255,
+        473
+      ],
+      "source_area": 8173,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        31,
+        83
+      ],
+      "size": [
+        7,
+        17
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/forearm_near.png"
+    },
+    {
+      "id": "forearm_far",
+      "source_box": [
+        527,
+        312,
+        587,
+        474
+      ],
+      "source_area": 7653,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        30,
+        81
+      ],
+      "size": [
+        7,
+        17
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/forearm_far.png"
+    },
+    {
+      "id": "hand_near",
+      "source_box": [
+        860,
+        351,
+        944,
+        465
+      ],
+      "source_area": 6355,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        42,
+        57
+      ],
+      "size": [
+        7,
+        8
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/hand_near.png"
+    },
+    {
+      "id": "hand_far",
+      "source_box": [
+        1219,
+        351,
+        1302,
+        466
+      ],
+      "source_area": 6293,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        42,
+        58
+      ],
+      "size": [
+        7,
+        8
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/hand_far.png"
+    },
+    {
+      "id": "thigh_near",
+      "source_box": [
+        165,
+        514,
+        297,
+        718
+      ],
+      "source_area": 20813,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        66,
+        102
+      ],
+      "size": [
+        10,
+        24
+      ],
+      "pivot": [
+        5,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/thigh_near.png"
+    },
+    {
+      "id": "thigh_far",
+      "source_box": [
+        496,
+        514,
+        626,
+        718
+      ],
+      "source_area": 20700,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        65,
+        102
+      ],
+      "size": [
+        10,
+        24
+      ],
+      "pivot": [
+        5,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/thigh_far.png"
+    },
+    {
+      "id": "shin_near",
+      "source_box": [
+        852,
+        526,
+        924,
+        712
+      ],
+      "source_area": 10514,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        36,
+        93
+      ],
+      "size": [
+        8,
+        24
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/shin_near.png"
+    },
+    {
+      "id": "shin_far",
+      "source_box": [
+        1208,
+        526,
+        1280,
+        709
+      ],
+      "source_area": 10251,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        36,
+        92
+      ],
+      "size": [
+        8,
+        24
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/shin_far.png"
+    },
+    {
+      "id": "foot_near",
+      "source_box": [
+        175,
+        873,
+        336,
+        978
+      ],
+      "source_area": 9392,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        81,
+        53
+      ],
+      "size": [
+        14,
+        6
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/foot_near.png"
+    },
+    {
+      "id": "foot_far",
+      "source_box": [
+        502,
+        870,
+        658,
+        975
+      ],
+      "source_area": 8946,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        78,
+        53
+      ],
+      "size": [
+        14,
+        6
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/foot_far.png"
+    },
+    {
+      "id": "dao",
+      "source_box": [
+        887,
+        715,
+        951,
+        1068
+      ],
+      "source_area": 12075,
+      "detected_grid": [
+        2,
+        2
+      ],
+      "snapped_grid": [
+        32,
+        177
+      ],
+      "size": [
+        5,
+        34
+      ],
+      "pivot": [
+        2,
+        28
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/dao.png"
+    },
+    {
+      "id": "bow",
+      "source_box": [
+        1229,
+        713,
+        1314,
+        1069
+      ],
+      "source_area": 7707,
+      "detected_grid": [
+        2,
+        3
+      ],
+      "snapped_grid": [
+        43,
+        119
+      ],
+      "size": [
+        6,
+        38
+      ],
+      "pivot": [
+        3,
+        19
+      ],
+      "file": "art/sprites/characters/chr_dbl_parts/bow.png"
+    }
+  ],
+  "automatic_fill": "median-material semicircles at joint ends, within prescribed canvas; not artist-painted hidden anatomy"
+}

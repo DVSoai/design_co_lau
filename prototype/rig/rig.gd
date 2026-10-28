@@ -11,15 +11,31 @@ var weapon := "dao"
 var current_clip := ""
 var debug_joints := false
 var bow_string: Line2D
+var sprites: Dictionary = {}
+var art_enabled := true
+var joint_fill: Dictionary = {}
 
 func _ready() -> void:
-	definition = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/parts.json"))
-	clips = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/animations.json"))["clips"]
+	_build(true)
+
+func _build(use_art: bool) -> void:
+	for child in get_children():
+		child.free()
+	joints.clear()
+	shapes.clear()
+	paths.clear()
+	sprites.clear()
+	joint_fill.clear()
+	current_clip = ""
+	art_enabled = use_art
+	definition = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/parts.json" if use_art else "res://rig/data/parts_greybox.json"))
+	clips = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/animations.json" if use_art else "res://rig/data/animations_greybox.json"))["clips"]
 	pivot_root = Node2D.new()
 	pivot_root.name = "PoseRoot"
 	# Rotation centre at torso centre, not at the feet.
 	pivot_root.position = Vector2(definition.rotation_center[0], definition.rotation_center[1])
 	add_child(pivot_root)
+	var fills: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://rig/art_parts/joint_fill.json"))
 	for part in definition.parts:
 		var joint := Node2D.new()
 		joint.name = part.id
@@ -39,6 +55,22 @@ func _ready() -> void:
 		shape.z_index = int(part.z)
 		joint.add_child(shape)
 		shapes[part.id] = shape
+		if fills.has(part.id):
+			var cap := Polygon2D.new()
+			var points := PackedVector2Array()
+			for i in 32:
+				points.append(Vector2.from_angle(TAU * i / 32) * float(fills[part.id].radius))
+			cap.polygon = points
+			cap.color = Color(fills[part.id].color)
+			shape.add_child(cap)
+			joint_fill[part.id] = cap
+		var art := Sprite2D.new()
+		art.texture = load("res://rig/art_parts/%s.png" % part.id)
+		art.centered = false
+		art.position = -pivot
+		art.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		shape.add_child(art)
+		sprites[part.id] = art
 	bow_string = Line2D.new()
 	bow_string.z_as_relative = false
 	bow_string.z_index = int(definition.bow_string.z)
@@ -52,6 +84,7 @@ func _ready() -> void:
 	for key in clips:
 		library.add_animation(key, _make_animation(clips[key]))
 	player.add_animation_library("", library)
+	_apply_art_visibility()
 	set_weapon("dao")
 	play_clip("idle")
 
@@ -92,6 +125,25 @@ func _make_animation(clip: Dictionary) -> Animation:
 	anim.track_insert_key(flip_track, duration, deg_to_rad(float(clip.end_root_angle)))
 	return anim
 
+func set_art_enabled(value: bool) -> void:
+	if player != null and art_enabled != value:
+		var old_weapon := weapon
+		var old_clip := current_clip
+		_build(value)
+		set_weapon(old_weapon)
+		if clips.has(old_clip):
+			play_clip(old_clip)
+	art_enabled = value
+	_apply_art_visibility()
+
+func _apply_art_visibility() -> void:
+	var value := art_enabled
+	for id in shapes:
+		shapes[id].self_modulate.a = 0.0 if value else 1.0
+		sprites[id].visible = value
+		if joint_fill.has(id):
+			joint_fill[id].visible = value
+
 func set_weapon(value: String) -> void:
 	weapon = value
 	if not shapes.is_empty():
@@ -119,6 +171,19 @@ func geometry() -> Array:
 	for id in shapes:
 		var shape: Polygon2D = shapes[id]
 		if not shape.visible:
+			continue
+		if art_enabled:
+			if joint_fill.has(id):
+				var cap: Polygon2D = joint_fill[id]
+				var points: Array = []
+				for vertex in cap.polygon:
+					var point := cap.to_global(vertex)-global_position
+					points.append([point.x,point.y])
+				result.append({"id": id+"_joint_fill", "owner": id, "kind": "fill", "z": shape.z_index, "color": cap.color.to_html(), "points": points})
+			var sprite: Sprite2D = sprites[id]
+			var transform := sprite.global_transform
+			var origin := transform.origin - global_position
+			result.append({"id": id, "kind": "sprite", "z": shape.z_index, "source": sprite.texture.resource_path, "transform": [transform.x.x, transform.x.y, transform.y.x, transform.y.y, origin.x, origin.y]})
 			continue
 		var points: Array = []
 		for vertex in shape.polygon:

@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "status": "Đề xuất — greybox, chưa duyệt",
+  "height": 96,
+  "canvas": [
+    128,
+    128
+  ],
+  "baseline": 120,
+  "parts": [
+    {
+      "id": "body",
+      "parent": "",
+      "size": [
+        20,
+        26
+      ],
+      "pivot": [
+        10,
+        24
+      ],
+      "attach": [
+        0,
+        -48
+      ],
+      "z": 0,
+      "color": "#A88F59",
+      "angle_limit": [
+        -30,
+        30
+      ],
+      "occluded_fill": "Cổ/vai/hông kín thêm 2 px"
+    },
+    {
+      "id": "head",
+      "parent": "body",
+      "size": [
+        18,
+        24
+      ],
+      "pivot": [
+        9,
+        24
+      ],
+      "attach": [
+        0,
+        -24
+      ],
+      "z": 1,
+      "color": "#C9AD83",
+      "angle_limit": [
+        -30,
+        30
+      ],
+      "occluded_fill": "Chân cổ 2 px; tóc sau đầu kín"
+    },
+    {
+      "id": "upper_arm_far",
+      "parent": "body",
+      "size": [
+        8,
+        19
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        -21
+      ],
+      "z": -6,
+      "color": "#506D80",
+      "angle_limit": [
+        -160,
+        160
+      ],
+      "occluded_fill": "Vai và khuỷu: chồng kín 2 px"
+    },
+    {
+      "id": "forearm_far",
+      "parent": "upper_arm_far",
+      "size": [
+        7,
+        17
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "attach": [
+        0,
+        15
+      ],
+      "z": -5,
+      "color": "#6C8C9A",
+      "angle_limit": [
+        -150,
+        150
+      ],
+      "occluded_fill": "Khuỷu/cổ tay: chồng kín 2 px"
+    },
+    {
+      "id": "hand_far",
+      "parent": "forearm_far",
+      "size": [
+        7,
+        8
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "attach": [
+        0,
+        13
+      ],
+      "z": -4,
+      "color": "#8C969E",
+      "angle_limit": [
+        -90,
+        90
+      ],
+      "occluded_fill": "Cổ tay 2 px và lòng bàn tay sau cán"
+    },
+    {
+      "id": "thigh_far",
+      "parent": "body",
+      "size": [
+        10,
+        24
+      ],
+      "pivot": [
+        5,
+        2
+      ],
+      "attach": [
+        -2,
+        0
+      ],
+      "z": -6,
+      "color": "#596E54",
+      "angle_limit": [
+        -100,
+        100
+      ],
+      "occluded_fill": "Hông/gối: chồng kín 2 px"
+    },
+    {
+      "id": "shin_far",
+      "parent": "thigh_far",
+      "size": [
+        8,
+        24
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        22
+      ],
+      "z": -5,
+      "color": "#6F845B",
+      "angle_limit": [
+        -140,
+        140
+      ],
+      "occluded_fill": "Gối/cổ chân: chồng kín 2 px"
+    },
+    {
+      "id": "foot_far",
+      "parent": "shin_far",
+      "size": [
+        14,
+        6
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        22
+      ],
+      "z": -4,
+      "color": "#87996F",
+      "angle_limit": [
+        -60,
+        60
+      ],
+      "occluded_fill": "Cổ chân 2 px, vẽ đầy gót/bàn chân"
+    },
+    {
+      "id": "upper_arm_near",
+      "parent": "body",
+      "size": [
+        8,
+        19
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        -21
+      ],
+      "z": 3,
+      "color": "#507DB7",
+      "angle_limit": [
+        -160,
+        160
+      ],
+      "occluded_fill": "Vai và khuỷu: chồng kín 2 px"
+    },
+    {
+      "id": "forearm_near",
+      "parent": "upper_arm_near",
+      "size": [
+        7,
+        17
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "attach": [
+        0,
+        15
+      ],
+      "z": 4,
+      "color": "#78A5C8",
+      "angle_limit": [
+        -150,
+        150
+      ],
+      "occluded_fill": "Khuỷu/cổ tay: chồng kín 2 px"
+    },
+    {
+      "id": "hand_near",
+      "parent": "forearm_near",
+      "size": [
+        7,
+        8
+      ],
+      "pivot": [
+        3,
+        2
+      ],
+      "attach": [
+        0,
+        13
+      ],
+      "z": 5,
+      "color": "#A1CCE2",
+      "angle_limit": [
+        -90,
+        90
+      ],
+      "occluded_fill": "Cổ tay 2 px và lòng bàn tay sau cán"
+    },
+    {
+      "id": "thigh_near",
+      "parent": "body",
+      "size": [
+        10,
+        24
+      ],
+      "pivot": [
+        5,
+        2
+      ],
+      "attach": [
+        2,
+        0
+      ],
+      "z": 3,
+      "color": "#6A9B51",
+      "angle_limit": [
+        -100,
+        100
+      ],
+      "occluded_fill": "Hông/gối: chồng kín 2 px"
+    },
+    {
+      "id": "shin_near",
+      "parent": "thigh_near",
+      "size": [
+        8,
+        24
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        22
+      ],
+      "z": 4,
+      "color": "#8CBD68",
+      "angle_limit": [
+        -140,
+        140
+      ],
+      "occluded_fill": "Gối/cổ chân: chồng kín 2 px"
+    },
+    {
+      "id": "foot_near",
+      "parent": "shin_near",
+      "size": [
+        14,
+        6
+      ],
+      "pivot": [
+        4,
+        2
+      ],
+      "attach": [
+        0,
+        22
+      ],
+      "z": 5,
+      "color": "#B4D996",
+      "angle_limit": [
+        -60,
+        60
+      ],
+      "occluded_fill": "Cổ chân 2 px, vẽ đầy gót/bàn chân"
+    },
+    {
+      "id": "dao",
+      "parent": "hand_near",
+      "size": [
+        5,
+        34
+      ],
+      "pivot": [
+        2,
+        28
+      ],
+      "attach": [
+        0,
+        4
+      ],
+      "z": 7,
+      "color": "#D9B95B",
+      "angle_limit": [
+        -180,
+        180
+      ],
+      "occluded_fill": "Cán kín dưới bàn tay 4 px"
+    },
+    {
+      "id": "bow",
+      "parent": "hand_far",
+      "size": [
+        6,
+        38
+      ],
+      "pivot": [
+        3,
+        19
+      ],
+      "attach": [
+        0,
+        0
+      ],
+      "z": -2,
+      "color": "#BD734C",
+      "angle_limit": [
+        -180,
+        180
+      ],
+      "occluded_fill": "Tay cầm giữa cung kín 4 px"
+    }
+  ],
+  "rotation_center": [
+    0,
+    -48
+  ],
+  "bow_string": {
+    "color": "#E0DBBC",
+    "width": 1.0,
+    "top": [
+      0,
+      -19
+    ],
+    "bottom": [
+      0,
+      19
+    ],
+    "hand_anchor": [
+      0,
+      1
+    ],
+    "z": -1
+  }
+}

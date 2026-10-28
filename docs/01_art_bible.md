@@ -71,6 +71,16 @@ sprite ghép chuẩn bằng check_sprite; không đổi kích thước từng m�
 chỉ để ép qua kiểm tra. Việc cập nhật tài liệu lần này không sửa công cụ hay tạo
 asset, không tuyên bố bộ phận đã qua kiểm tra.
 
+### Pipeline bộ phận bậc 0 đang làm
+
+`tools/cut_parts.py` co mọi mảnh theo **một s=96/846** cho x/y, dùng trung vị
+ô nguồn, giữ aspect và đo lại khớp theo hình. Không ép vào ô greybox: cấu hình
+art ở parts.json, greybox ở parts_greybox.json. Viền chỉ ở đường bao dáng đứng,
+không bôi vào mặt cắt/vùng bù khớp. Đầu hiện áp nguyên ma trận người dùng gửi: **đầu do Claude vẽ tay từng pixel**.
+Tay trên/cẳng tay có ngoại lệ rút trục dài còn 60%; da dùng skin, áo dùng fabric,
+ngoài quần không dùng pants trừ ánh tóc #59443E của ma trận đầu. Báo cáo và script nguyên văn tại
+`reports/g1_parts_art_report.md`; vẫn đang làm, chưa duyệt.
+
 ## Kích thước
 
 **Đã duyệt (A0, 28/10/2026):** khung thiết kế **960×540**, nhân vật người **96 px trong khung 128×128**. Dùng `canvas_items`, aspect `expand`, scale `fractional`, lọc nearest; viewport thực rộng 960–1200 px logic theo tỉ lệ màn hình (1600×720 → 1200×540, hệ số 4/3). Android fullscreen + immersive. Kết quả trên Realme RMX3760, Godot 4.7.2, commit `7973729`; không ép mọi thiết bị phóng nguyên ×2. Các kích thước boss, thú, tile, icon và nền bên dưới vẫn **Tạm thời**; A0 không duyệt sprite mỹ thuật thành phẩm.

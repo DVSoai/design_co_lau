@@ -1,0 +1,93 @@
+{
+  "body": {
+    "forbidden_group_pixels": 0,
+    "shirt_counts": {
+      "#554638": 33,
+      "#89745E": 45,
+      "#C3A98A": 164,
+      "#EAD8B8": 30
+    },
+    "shirt_percent": {
+      "#554638": 12.132,
+      "#89745E": 16.544,
+      "#C3A98A": 60.294,
+      "#EAD8B8": 11.029
+    }
+  },
+  "head": {
+    "forbidden_group_pixels": 0
+  },
+  "upper_arm_far": {
+    "forbidden_group_pixels": 0,
+    "shirt_counts": {
+      "#554638": 11,
+      "#89745E": 14,
+      "#C3A98A": 38,
+      "#EAD8B8": 7
+    },
+    "shirt_percent": {
+      "#554638": 15.714,
+      "#89745E": 20.0,
+      "#C3A98A": 54.286,
+      "#EAD8B8": 10.0
+    }
+  },
+  "forearm_far": {
+    "forbidden_group_pixels": 0
+  },
+  "hand_far": {
+    "forbidden_group_pixels": 0
+  },
+  "thigh_far": {
+    "forbidden_group_pixels": 0
+  },
+  "shin_far": {
+    "forbidden_group_pixels": 0
+  },
+  "foot_far": {
+    "forbidden_group_pixels": 0
+  },
+  "upper_arm_near": {
+    "forbidden_group_pixels": 0,
+    "shirt_counts": {
+      "#554638": 11,
+      "#89745E": 15,
+      "#C3A98A": 40,
+      "#EAD8B8": 7
+    },
+    "shirt_percent": {
+      "#554638": 15.068,
+      "#89745E": 20.548,
+      "#C3A98A": 54.795,
+      "#EAD8B8": 9.589
+    }
+  },
+  "forearm_near": {
+    "forbidden_group_pixels": 0
+  },
+  "hand_near": {
+    "forbidden_group_pixels": 0
+  },
+  "thigh_near": {
+    "forbidden_group_pixels": 0
+  },
+  "shin_near": {
+    "forbidden_group_pixels": 0
+  },
+  "foot_near": {
+    "forbidden_group_pixels": 0
+  },
+  "dao": {
+    "forbidden_group_pixels": 0
+  },
+  "bow": {
+    "forbidden_group_pixels": 0
+  },
+  "fingertips": {
+    "idle_hand_far": -32,
+    "idle_hand_near": -32,
+    "standing_neutral_hand_far": -33,
+    "standing_neutral_hand_near": -33
+  },
+  "failures": 0
+}
