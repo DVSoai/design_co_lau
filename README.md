@@ -76,4 +76,3 @@ Bản sửa ngày 28/10/2026 (vẫn là v2.4): đồng bộ `14_online_migration
 - Thêm đặc tả màn hình và trạng thái, luồng tương tác, bố cục bản đồ, đặc tả hoạt ảnh, storyboard.
 - Thêm khuôn P13b (trạng thái màn hình) và P17 (tranh cutscene), script dựng bố cục.
 - Giữ nguyên phong cách pixel art chibi, bảng màu, khối STYLE và AVOID, và mô tả nhân vật của v1.
-"# design_co_lau" 
