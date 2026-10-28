@@ -82,6 +82,7 @@ func _process(delta: float) -> void:
 		player.debug_enabled = debug_enabled
 		dummy.debug_enabled = debug_enabled
 		dummy.queue_redraw()
+	touch_controls.set_debug_enabled(debug_enabled)
 	# Vùng chết quanh anchor; look-ahead tiến mượt, không giật khi đổi hướng.
 	var difference: Vector2 = player.position - camera_anchor
 	camera_anchor.x += signf(difference.x) * maxf(0, absf(difference.x) - tuning.value("CAMERA_DEAD_ZONE.x"))

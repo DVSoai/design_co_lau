@@ -30,8 +30,9 @@ func _ready() -> void:
 	buttons.left.caption = "←"
 	buttons.right.caption = "→"
 	buttons.jump.caption = "↑"
-	buttons.diag_left.caption = "↖"
-	buttons.diag_right.caption = "↗"
+	for key in ["diag_left", "diag_right"]:
+		buttons[key].hit_only = true
+		buttons[key].visible = false
 	buttons.slash.caption = "CHÉM"
 	buttons.target.caption = "ĐỔI"
 	buttons.menu.caption = "≡"
@@ -65,13 +66,13 @@ func layout() -> void:
 	var bottom: float = rect.end.y - margin
 	var x: float = rect.position.x + margin
 	var lower_y := bottom - d
-	var upper_y := lower_y - gap - d
+	var upper_y := lower_y - T.DPAD_UP_OFFSET_RATIO * d
 	_place("left", Vector2(x, lower_y), Vector2.ONE * d)
-	_place("right", Vector2(x + 2 * (d + gap), lower_y), Vector2.ONE * d)
-	_place("jump", Vector2(x + d + gap, upper_y), Vector2.ONE * d)
+	_place("right", Vector2(x + T.DPAD_RIGHT_OFFSET_RATIO * d, lower_y), Vector2.ONE * d)
+	_place("jump", Vector2(x + T.DPAD_RIGHT_OFFSET_RATIO * d / 2, upper_y), Vector2.ONE * d)
 	var diagonal := Vector2(d * T.DIAGONAL_WIDTH_RATIO, d)
-	_place("diag_left", buttons.jump.position - Vector2(gap + diagonal.x, 0), diagonal)
-	_place("diag_right", buttons.jump.position + Vector2(d + gap, 0), diagonal)
+	_place("diag_left", buttons.jump.position - Vector2(diagonal.x, 0), diagonal)
+	_place("diag_right", buttons.jump.position + Vector2(d, 0), diagonal)
 	var slash_size := Vector2.ONE * d * T.SLASH_BUTTON_RATIO
 	var slash_pos := Vector2(rect.end.x - margin - slash_size.x, bottom - slash_size.y)
 	_place("slash", slash_pos, slash_size)
@@ -94,9 +95,20 @@ func layout() -> void:
 	buttons.menu.visible = tuning.flag("HUD_VISIBLE")
 	queue_redraw()
 
+func set_debug_enabled(enabled: bool) -> void:
+	for key in ["diag_left", "diag_right"]:
+		if buttons[key].visible != enabled:
+			buttons[key].visible = enabled
+			buttons[key].queue_redraw()
+
 func _hit(point: Vector2) -> String:
+	# Thứ tự tường minh; vùng vô hình vẫn bắt chạm dù CanvasItem đang ẩn.
+	var priority := ["jump", "diag_left", "diag_right", "left", "right"]
+	for key in priority:
+		if (buttons[key].hit_only or buttons[key].visible) and buttons[key].contains(point):
+			return key
 	for key in buttons:
-		if buttons[key].visible and buttons[key].contains(point):
+		if key not in priority and buttons[key].visible and buttons[key].contains(point):
 			return key
 	return ""
 
@@ -124,8 +136,9 @@ func _sync_actions() -> void:
 		if not active_actions.has(action):
 			Input.action_press(action)
 	active_actions = desired
+	var feedback := {"left": "touch_left", "right": "touch_right", "jump": "touch_jump", "slash": "touch_slash"}
 	for key in buttons:
-		buttons[key].set_held(key in fingers.values())
+		buttons[key].set_held(desired.has(feedback[key]) if feedback.has(key) else key in fingers.values())
 
 func _activate_placeholder(key: String) -> void:
 	if key == "health":
