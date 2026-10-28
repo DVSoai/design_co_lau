@@ -154,3 +154,9 @@ sang `co_lau_game`; việc qua A0 chưa mở khóa code game thật trước M�
 ## Quyết định đã duyệt
 
 Các quyết định ngày 28/10/2026 ghi ở đầu `11_design_freeze.md` là Đã duyệt: phong cách mặc định, bỏ hồi sinh tại chỗ, bản đồ vùng có đi nhanh, căn cứ 4 công trình 3 cấp không chờ xây, offline toàn bộ, đăng nhập tùy chọn, hai nguồn ngân phiếu, cách xử lý hoàn tiền, và chuyển xác định tuổi cùng giá gói nạp sang mốc B. Engine Godot 4 với GDScript cũng là Đã duyệt.
+
+## Ngoại hình
+
+| Thông số | Giá trị | Trạng thái |
+|---|---|---|
+| Giới hạn chỉ số thời trang | ≤10–15% bộ cùng bậc | Đề xuất — chốt Mốc A/cân bằng kinh tế |

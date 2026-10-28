@@ -180,3 +180,7 @@ Boss cưỡi thú (Nguyễn Thủ Tiệp cưỡi ngựa, Kiều Công Hãn cư�
 - Mọi đòn của quái và boss có ít nhất 2 khung báo trước trước khung `hit`.
 - Chiêu bấm liên tục không vượt số khung tối đa theo hồi chiêu (mục Quy ước); chiêu hồi dài không kéo quá 0,8 giây.
 - Các bộ trang bị khớp khung với bảng động tác bậc 1.
+
+## Hoạt ảnh thời trang
+
+Vòng riêng 6–10 khung (Đề xuất) chạy song song rig: cape bay theo đứng/chạy/nhảy, vũ khí phản sáng kim loại. Không đổi hit/spawn/cancel hoặc kéo dài động tác. Mỗi món một dạng cố định; không biến thành bộ nhiều cấp. Khung, tốc độ và giao lớp cần duyệt Mốc A; không dùng năng lượng phép thuật.

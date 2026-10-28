@@ -241,3 +241,34 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - **Tay:** chỉ rút trục dài upper_arm/forearm còn 60%; giữ ngang, cập nhật pivot và attach ở cả khớp khuỷu/cổ tay. Bảng cũ→mới ở 16; retarget pose theo xương mới, giữ nhịp/event và A0 physics. Scene đo đầu ngón y=−33 ở đứng duỗi, −32 ở idle cho cả gần/xa.
 - **Kiểm:** 16 PNG đúng khung hiện tại, 0 ngoài palette, 0 alpha bán trong, 0 pixel sai nhóm; 672 cặp khớp qua 48 frame/13 động tác, khe tối đa 0,50 px. Viền O nội bộ: 17 pixel, đều thuộc đầu Claude nguyên mẫu, liệt kê tọa độ; H là màu tô tóc được báo riêng, không coi là lỗi viền. Ngoài đầu không có viền nội bộ. Không tự xóa nét đầu được người dùng cung cấp để ép số thành 0.
 - **Kết quả:** xuất lại 15 tờ art và idle ×4 từ file 1× bằng NEAREST. Godot 4.7.2, ba lệnh README và rig tests đạt; nguyên đầu ra trong commit message. Báo cáo tại reports/g1_parts_art_report.md; các bộ phận còn cần duyệt mỹ thuật, chưa thử Android mới.
+
+## 28/10/2026 — Ngoại hình và rà nguồn/pháp lý
+
+- Chốt: thời trang theo ô, một dạng cố định, gồm cả vũ khí, có chỉ số; hai nguồn IAP/ingame. Giới hạn 10–15%, hiệu ứng cường hóa và frame vẫn đề xuất.
+- Thêm 17/18, đồng bộ part_set, asset list, giao dịch, thông số, animation và checklist. Không sửa art/tools/prototype.
+- Pháp lý: cần luật sư xác nhận trước Mốc B; chưa kiểm văn bản online, không trình bày giả định G4/thủ tục/giờ chơi là kết luận pháp lý áp dụng.
+- C6: 433 tracked paths; Java/JAR/CLASS: []; image names matching conservative reference-resource patterns: []. Filename scan only, no reference asset corpus/hash comparison available; cannot establish provenance from names alone.
+
+### Từng thay đổi GDD (cũ → mới)
+
+- chuyển thể từ source server Ninja School Online → tham khảo thể loại.
+- dựa trên source server bạn gửi (Java, bộ `nso-core` và database `nja.sql`) → dựa trên tham khảo thể loại.
+- con số lấy thẳng từ code → con số tham khảo cần tự thiết kế lại.
+- Số liệu lấy từ `GameScr.java`. → Số liệu tham khảo thể loại — Phải tự đặt lại số trước Mốc A..
+- Chỉ đổi ngoại hình, không cộng chỉ số → Có chỉ số cộng thêm, theo ô và giới hạn tại 17_ngoai_hinh.md.
+- Game mình giữ y nguyên → Game mình tham khảo thể loại.
+- Bảng tại dòng gốc 549: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 566: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 628: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 790: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 804: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 845: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng tại dòng gốc 1019: cột Gốc Ninja School → Bỏ cột đối chiếu, giữ nguyên số.
+- Bảng số tham khảo Phần 2 (chiêu/cường hóa/giá/tỉ lệ/kinh nghiệm/phí luyện) → Đánh dấu Phải tự đặt lại số trước Mốc A, chưa thay số.
+- Thiếu part_set/thời trang theo ô, có chỗ ghi chỉ đổi hình → Thêm mục Hệ thống ngoại hình và quy tắc 17, có chỉ số/hai nguồn/trần đề xuất.
+
+### Chờ người dùng quyết
+
+- Trần chính xác 10 hay 15%, cách chuẩn hóa từng chỉ số, mẫu IAP/ingame từng ô, biến thể nón và mặt nạ lịch sử (tuồng/chèo cần duyệt cách điệu, không khẳng định tồn tại nguyên dạng thế kỷ 10).
+- Số liệu riêng thay bảng tham khảo, thiết kế HUD cuối, mốc hiệu ứng/frame.
+- Phương án phát hành Việt Nam và kết luận luật sư; tác quyền cần rà nội dung/hash khi có bộ nguồn đối chiếu.

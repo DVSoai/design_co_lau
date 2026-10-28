@@ -330,3 +330,12 @@ Màu áo: #C3A98A chủ đạo, bóng #89745E/#554638, #EAD8B8 ≤15% số pixel
 Các nhóm chất liệu kiểm riêng cho từng PNG, ngoài quần không dùng pants trừ L
 trên tóc Claude. Tỉ lệ từng màu và ma trận nguyên văn ở
 `reports/g1_parts_art_report.md`. Các mục 7–8 là lịch sử trước lần chỉnh này.
+
+## Lớp ngoại hình bổ sung — đề xuất, chưa sửa prototype
+
+| Mảnh | Khung đề xuất | Pivot | Cha/attach | Lớp |
+|---|---|---|---|---|
+| cape | 32×56 px | (16,4) | body, khớp vai đo theo part_set | Sau thân, trên nền; tránh che tay xa |
+| face_overlay | 18×18 px | (7,8) | head, neo tâm mặt theo mẫu đầu | Trên đầu/tóc, dưới số sát thương |
+
+Kích thước và điểm gắn cuối phải thử với đầu/tay mới, chưa duyệt. Không thay parts.json trong lượt docs. Theo 17_ngoai_hinh.md.
