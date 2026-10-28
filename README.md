@@ -5,7 +5,7 @@ Bộ này dùng để hoàn thiện toàn bộ thiết kế game bằng Codex tr
 ## Tổ chức repo
 
 - **`design_co_lau`:** lưu tài liệu thiết kế, art nguồn, script và thư mục `prototype/` cho nguyên mẫu A0. Mã A0 là mã bỏ đi, chỉ dùng kiểm chứng thiết kế; không phát triển thành game thật.
-- **`co_lau_game`:** repo riêng cho game thật, chỉ tạo sau khi Mốc A được duyệt. Nguyên mẫu A0 không thay thế việc duyệt Mốc A.
+- **`co_lau_game`:** repo riêng cho game thật, đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A được duyệt. Nguyên mẫu A0 không thay thế việc duyệt Mốc A.
 - **Chuyển art:** ảnh đã duyệt trong `art/approved/` được chép sang `co_lau_game/assets/` bằng script; mỗi lần chép phải ghi commit nguồn của `design_co_lau` để truy xuất nguồn gốc.
 - **Chốt phiên bản:** khi qua Mốc A, gắn tag `design-vX.Y` cho bản thiết kế đã duyệt. Repo game ghi rõ tag thiết kế đang theo và giữ bản sao `docs/GDD.md` lấy từ đúng tag đó.
 

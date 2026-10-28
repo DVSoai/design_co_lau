@@ -88,7 +88,9 @@ Wide, poster-style concept board comparing three visual directions for a realist
 
 - **Mã:** `repo_split`.
 - **Thay đổi:** thêm mục “Tổ chức repo” vào `README.md` và `AGENTS.md`: `design_co_lau` giữ tài liệu thiết kế, art nguồn, script và `prototype/` cho A0; mã A0 là mã bỏ đi, chỉ kiểm chứng thiết kế.
-- **Mốc A:** chỉ tạo repo game thật `co_lau_game` sau khi Mốc A được duyệt; nguyên mẫu A0 là ngoại lệ giới hạn trong repo thiết kế, không thay thế việc duyệt mốc.
+- **Mốc A:** repo game thật `co_lau_game` đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A được duyệt; nguyên mẫu A0 là ngoại lệ giới hạn trong repo thiết kế, không thay thế việc duyệt mốc.
 - **Nguồn art:** chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script và ghi commit nguồn của `design_co_lau` mỗi lần chép.
 - **Phiên bản thiết kế:** khi qua Mốc A, gắn tag `design-vX.Y`; repo game ghi tag đang theo và giữ bản sao `docs/GDD.md` từ đúng tag đó.
-- **Phạm vi:** chỉ cập nhật tài liệu theo yêu cầu người dùng; chưa tạo repo game, tag, prototype hay script chuyển art, không viết mã và không đánh dấu Mốc A đã duyệt.
+- **Phạm vi:** chỉ cập nhật tài liệu theo yêu cầu người dùng; không tạo thêm repo game, tag, prototype hay script chuyển art, không viết mã và không đánh dấu Mốc A đã duyệt.
+
+- **Cập nhật hiện trạng theo người dùng:** `co_lau_game` đã tồn tại và đã được thêm; điều kiện Mốc A áp dụng cho việc bắt đầu triển khai game thật.

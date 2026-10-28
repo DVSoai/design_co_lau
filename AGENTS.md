@@ -5,7 +5,7 @@ Thư mục này dùng để hoàn thiện **toàn bộ thiết kế** của game
 ## Tổ chức repo
 
 - **`design_co_lau`:** lưu tài liệu thiết kế, art nguồn, script và `prototype/` cho nguyên mẫu A0. Mã trong `prototype/` là mã bỏ đi, chỉ dùng kiểm chứng thiết kế; không phát triển thành game thật.
-- **`co_lau_game`:** repo riêng cho game thật, chỉ tạo sau khi Mốc A được duyệt. Quy tắc chưa qua Mốc A thì chưa code áp dụng cho game thật; nguyên mẫu A0 trong `prototype/` là ngoại lệ giới hạn, không thay thế việc duyệt Mốc A.
+- **`co_lau_game`:** repo riêng cho game thật, đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A được duyệt. Quy tắc chưa qua Mốc A thì chưa code áp dụng cho game thật; nguyên mẫu A0 trong `prototype/` là ngoại lệ giới hạn, không thay thế việc duyệt Mốc A.
 - **Chuyển art:** chỉ chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script. Mỗi lần chép phải ghi commit nguồn của `design_co_lau`; không đưa concept hay placeholder chưa duyệt vào luồng chuyển art này.
 - **Chốt phiên bản:** khi qua Mốc A, gắn tag `design-vX.Y` cho bản thiết kế đã duyệt. Repo game phải ghi rõ tag thiết kế đang theo và giữ bản sao `docs/GDD.md` lấy từ đúng tag đó.
 
