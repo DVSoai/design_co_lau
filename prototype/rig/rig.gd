@@ -10,6 +10,7 @@ var pivot_root: Node2D
 var weapon := "dao"
 var current_clip := ""
 var debug_joints := false
+var bow_string: Line2D
 
 func _ready() -> void:
 	definition = JSON.parse_string(FileAccess.get_file_as_string("res://rig/data/parts.json"))
@@ -38,6 +39,12 @@ func _ready() -> void:
 		shape.z_index = int(part.z)
 		joint.add_child(shape)
 		shapes[part.id] = shape
+	bow_string = Line2D.new()
+	bow_string.z_as_relative = false
+	bow_string.z_index = int(definition.bow_string.z)
+	bow_string.width = float(definition.bow_string.width)
+	bow_string.default_color = Color(definition.bow_string.color)
+	add_child(bow_string)
 	player = AnimationPlayer.new()
 	player.name = "AnimationPlayer"
 	add_child(player)
@@ -55,6 +62,10 @@ func _make_animation(clip: Dictionary) -> Animation:
 		duration += float(frame.duration)
 	anim.length = duration
 	anim.loop_mode = Animation.LOOP_LINEAR if clip.loop else Animation.LOOP_NONE
+	for part in definition.parts:
+		var layer_track := anim.add_track(Animation.TYPE_VALUE)
+		anim.track_set_path(layer_track, NodePath(str(get_path_to(shapes[part.id])) + ":z_index"))
+		anim.track_insert_key(layer_track, 0, int(clip.get("layer_overrides", {}).get(part.id, part.z)))
 	for id in joints:
 		var track := anim.add_track(Animation.TYPE_VALUE)
 		anim.track_set_path(track, NodePath(paths[id] + ":rotation"))
@@ -86,6 +97,7 @@ func set_weapon(value: String) -> void:
 	if not shapes.is_empty():
 		shapes.dao.visible = value == "dao"
 		shapes.bow.visible = value == "bow"
+		_update_string()
 
 func play_clip(value: String, restart := false) -> void:
 	if current_clip != value or restart:
@@ -97,10 +109,12 @@ func sample(value: String, time: float) -> void:
 	play_clip(value, true)
 	player.pause()
 	player.seek(time, true)
+	_update_string()
 	queue_redraw()
 
 func geometry() -> Array:
 	# Used by the contact-sheet exporter: actual evaluated scene polygons/transforms.
+	_update_string()
 	var result: Array = []
 	for id in shapes:
 		var shape: Polygon2D = shapes[id]
@@ -108,10 +122,32 @@ func geometry() -> Array:
 			continue
 		var points: Array = []
 		for vertex in shape.polygon:
-			var point := to_local(shape.to_global(vertex))
+			var point := shape.to_global(vertex) - global_position
 			points.append([point.x, point.y])
 		result.append({"id": id, "z": shape.z_index, "color": shape.color.to_html(), "points": points})
+	if bow_string.visible:
+		var points: Array = []
+		for vertex in bow_string.points:
+			var point := bow_string.to_global(vertex) - global_position
+			points.append([point.x, point.y])
+		result.append({"id": "bow_string", "kind": "line", "width": bow_string.width, "z": bow_string.z_index, "color": bow_string.default_color.to_html(), "points": points})
 	return result
+
+func _process(_delta: float) -> void:
+	_update_string()
+
+func _update_string() -> void:
+	if bow_string == null:
+		return
+	bow_string.visible = weapon == "bow"
+	if not bow_string.visible:
+		return
+	var data: Dictionary = definition.bow_string
+	var top := Vector2(data.top[0], data.top[1])
+	var bottom := Vector2(data.bottom[0], data.bottom[1])
+	var anchor := Vector2(data.hand_anchor[0], data.hand_anchor[1])
+	var hand: Vector2 = joints.hand_near.to_global(anchor)
+	bow_string.points = PackedVector2Array([to_local(joints.bow.to_global(top)), to_local(hand), to_local(joints.bow.to_global(bottom))])
 
 func _draw() -> void:
 	if debug_joints:

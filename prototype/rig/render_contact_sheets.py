@@ -13,7 +13,10 @@ for name, clip in source.items():
         draw.line((index * width, origin[1], (index+1)*width-1, origin[1]), fill='#62707D')
         for part in sorted(frame['geometry'], key=lambda part: part['z']):
             points = [(x+origin[0], y+origin[1]) for x,y in part['points']]
-            draw.polygon(points, fill='#'+part['color'][:6])
+            if part.get('kind') == 'line':
+                draw.line(points, fill='#'+part['color'][:6], width=max(1, round(part['width'])))
+            else:
+                draw.polygon(points, fill='#'+part['color'][:6])
         draw.text((index*width+4, 4), f"{name} #{index+1}", fill='white')
         draw.text((index*width+4, 145), f"t={frame['time']:.3f}s", fill='white')
     target = ROOT / 'contact_sheets' / f'chr_dbl_anim_{name}.png'

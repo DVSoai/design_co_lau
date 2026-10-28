@@ -85,12 +85,12 @@ Thứ tự z tuyệt đối: số nhỏ ở xa, số lớn ở gần; polygon kh
 | `shin_near` | 8×24 | (4, 2) | `thigh_near` | (0, 22) | 4 | -140…140 | Gối/cổ chân: chồng kín 2 px |
 | `foot_near` | 14×6 | (4, 2) | `shin_near` | (0, 22) | 5 | -60…60 | Cổ chân 2 px, vẽ đầy gót/bàn chân |
 | `dao` | 5×34 | (2, 28) | `hand_near` | (0, 4) | 7 | -180…180 | Cán kín dưới bàn tay 4 px |
-| `bow` | 10×38 | (5, 19) | `hand_far` | (0, 4) | -2 | -180…180 | Tay cầm giữa cung kín 4 px |
+| `bow` | 6×38 | (3, 19) | `hand_far` | (0, 0) | -2 | -180…180 | Tay cầm giữa cung kín 4 px |
 
 `head` gồm tóc; `upper_arm/forearm/hand` là tay trên/tay dưới/bàn tay;
 `thigh/shin/foot` là đùi/cẳng/bàn chân, mỗi loại có near (gần) và far (xa).
 `dao` gắn bàn tay gần, `bow` gắn bàn tay xa; chỉ hiện một vũ khí. Khối cung là hình
-chữ nhật màu riêng để kiểm tay cầm, chưa vẽ dây/cánh cung hay tạo đạn thật.
+chữ nhật màu riêng để kiểm tay cầm, có dây mảnh Line2D nối hai đầu cung qua tay kéo; chưa vẽ cánh cung hay tạo đạn thật.
 Mọi mảnh hiện là chữ nhật, phần chồng khớp nằm trong khung, không cộng thêm vào chiều cao 96.
 
 ## 3. Tên file và thay trang bị
@@ -109,7 +109,7 @@ Mọi mảnh hiện là chữ nhật, phần chồng khớp nằm trong khung, k
 
 Schema v1 trong `prototype/rig/data/animations.json`: mỗi clip có `frames[]`,
 mỗi frame có duration (s), góc từng mảnh (độ), body_position (px), root_position (px), root_angle (độ).
-Clip có loop, weapon, events[] (frame đếm từ 1), end_root_angle và trạng thái.
+Clip có layer_overrides (z cục bộ theo động tác), loop, weapon, events[] (frame đếm từ 1), end_root_angle và trạng thái.
 AnimationPlayer dùng pose rời cho các mảnh; góc PoseRoot nội suy không quấn ngược
 để vòng lộn đủ 360°. Khóa cuối 360° không tính là khung nghệ thuật thứ bảy.
 Events là marker kiểm tra/xem, **không** điều khiển hitbox, gây sát thương, âm thanh hay
@@ -176,7 +176,7 @@ python prototype/rig/render_contact_sheets.py
 sau transform thật của scene vào `rig/reports/evaluated_frames.json`. Python/PIL chỉ
 tô các polygon đó theo z, không tính lại pose hay dùng imagegen. Đường ngang là y=0,
 mỗi ô 160×160, đặt gốc chân (80,126). PNG tại `prototype/rig/contact_sheets/`, mỗi clip
-một tờ, đúng số khung dữ liệu. Đây là raster phần rig từ scene, không phải screenshot
+một tờ, đúng số khung dữ liệu; thêm hai tờ `run_left` và `shoot_left` từ scale.x=−1 của scene (15 tờ cho 13 clip). Đây là raster phần rig từ scene, không phải screenshot
 GPU của toàn cảnh gameplay. Cần người dùng xem trực tiếp trong Godot 4.7.2/Android.
 
 Điều kiện tự kiểm: đủ số khung; mọi pivot con trùng attach của cha ở từng pose;
@@ -184,3 +184,34 @@ góc trong giới hạn đề xuất; chân đứng/chạm đất ở y=0; vòng
 hoàn tất trước khi đáp cùng cao độ, kể cả khinh công; tắt rig khôi phục sprite;
 nhịp/transform body, slash và các thông số A0 không đổi. Đáp bậc/va trần vẫn theo
 va chạm A0; không trì hoãn đáp đất để hoàn tất vòng lộn. Chưa duyệt rig/mỹ thuật.
+
+## 6. Sửa pose thân và cung sau xem contact sheet (chưa duyệt)
+
+- **Shoot:** cung 6×38 px, pivot (3,19), attach (0,0) tại bàn tay xa. Tay xa duỗi ngang vai về trước, góc tay trên −90°, khuỷu 0°. Cung bù +90° để trục dài luôn dọc. Tay gần kéo từ phía tâm cung về vai/má ở khung 1–3, thả khung 4 (marker spawn giữ nguyên), thu tay khung 5. Dây 1 px nối đỉnh/đáy cung tới điểm tay gần; màu/đầu dây/điểm tay lấy từ `parts.json`. Line2D chạy trong scene và được xuất cùng polygon, không chỉ vẽ thêm lên contact sheet.
+- **Tay xa khi bắn:** layer_overrides nâng tay trên/tay dưới xa lên z=1, bàn tay xa z=2 để không chìm trong thân/vũ khí; tay gần vẫn z=3/4/5. Khi sang clip khác trả về z mặc định. Không đổi nhãn gần/xa khi lật hướng: mảnh gần luôn phía người xem, thứ tự lớp không phụ thuộc dấu scale.x.
+- **Run:** thân nghiêng 6–8° về hướng chạy, đầu bù −1/2 góc thân; hông nhún −2/0/+2 px quanh y=−42 theo bước. Góc chân được ghi trong từng frame để chân trụ ở y=0, chân vung nhấc khỏi đất. Không dùng việc dời toàn rig để giả nhún làm chân xuyên đất.
+- **Slash 1/2/3:** thân đánh qua hai phía 8–12°, hông dịch 2–3 px theo nhịp; góc chân bù giữ hai điểm đặt chân trên đường đất. Nhịp/frame/hit/cancel không đổi.
+- **Jump_up:** khung đầu gập cả hai gối, thân chúi 8°, đầu bù −4°; không đổi quỹ đạo A0. **Land:** một khung gập gối, thân chúi, rồi đứng lên; hai bàn chân tiếp đất ở cả hai khung.
+- **Idle:** hông thở ±1 px quanh y=−46, chân gập/duỗi bù để điểm đặt chân cố định. Chiều cao mảnh/khớp không đổi; 96 px là chiều cao duỗi, không ép mọi pose gập gối cao đủ 96 px.
+- Tất cả góc, dịch hông và vị trí bù ở JSON; không thêm chuyển động vật lý hay thay mã A0. Các góc chân được giải khi tác giả pose theo hai đoạn dài 22 px, lưu kết quả vào dữ liệu; runtime không chạy IK. Khớp cha vẫn nối đúng attach.
+
+### Kiểm tra bổ sung hai hướng
+
+```sh
+godot --headless --path prototype --script res://rig/tests/visual_checks.gd
+python prototype/rig/tests/check_contact_sheets.py
+```
+
+`visual_checks.gd` kiểm mọi pose ở scale.x=±1: lớp gần luôn trên xa, khớp không tách,
+chân idle/land/slash tiếp đất, chân chạy trụ/vung không xuyên đất; mọi khung bắn có
+cung dọc tại tay xa, tay xa ngang vai, dây nối tới tay kéo. Script PIL raster scene
+geometry theo z để đếm pixel tay xa còn lộ ở cả năm khung/cả hai hướng (mỗi mảnh
+tay trên/tay dưới/bàn tay ít nhất 5 pixel); so tọa độ tờ trái với scene lật thật và
+kiểm kích thước PNG. Không chỉ đổi dấu tọa độ trong Python để tạo bản trái.
+
+Đã xuất lại shoot/run/slash_1–3/jump_up/land/idle và thêm run_left/shoot_left;
+các tờ còn lại cũng được tạo lại từ cùng scene. Chạy lại ba lệnh headless README,
+rig smoke và các kiểm tra bổ sung bằng **Godot 4.7.2.stable.official.ed1daf0bf**;
+đầu ra nguyên văn nằm trong commit sửa này. Chỉ sửa `prototype/rig/` và tài liệu
+này; nhật ký lần chỉnh được ghi tại đây theo phạm vi người dùng, không sửa 05_log.
+Rig/pose vẫn **Đề xuất — chưa duyệt**, chưa thử Android mới.

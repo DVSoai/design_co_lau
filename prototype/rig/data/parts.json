@@ -357,16 +357,16 @@
       "id": "bow",
       "parent": "hand_far",
       "size": [
-        10,
+        6,
         38
       ],
       "pivot": [
-        5,
+        3,
         19
       ],
       "attach": [
         0,
-        4
+        0
       ],
       "z": -2,
       "color": "#BD734C",
@@ -380,5 +380,22 @@
   "rotation_center": [
     0,
     -48
-  ]
+  ],
+  "bow_string": {
+    "color": "#E0DBBC",
+    "width": 1.0,
+    "top": [
+      0,
+      -19
+    ],
+    "bottom": [
+      0,
+      19
+    ],
+    "hand_anchor": [
+      0,
+      1
+    ],
+    "z": -1
+  }
 }

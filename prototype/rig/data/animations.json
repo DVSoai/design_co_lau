@@ -10,7 +10,7 @@
         {
           "body_position": [
             0,
-            -48
+            -47
           ],
           "root_angle": 0,
           "angles": {
@@ -19,15 +19,15 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 15.570086410388237,
+            "shin_far": -23.15834662391692,
+            "foot_far": 7.588260213528684,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 7.588260213528679,
+            "shin_near": -23.15834662391692,
+            "foot_near": 15.570086410388244,
             "dao": 0,
             "bow": 0
           },
@@ -40,7 +40,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46
           ],
           "root_angle": 0,
           "angles": {
@@ -49,15 +49,15 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 20.953295341101278,
+            "shin_far": -33.73535712225281,
+            "foot_far": 12.78206178115153,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.782061781151524,
+            "shin_near": -33.73535712225281,
+            "foot_near": 20.95329534110128,
             "dao": 0,
             "bow": 0
           },
@@ -70,7 +70,7 @@
         {
           "body_position": [
             0,
-            -48
+            -45
           ],
           "root_angle": 0,
           "angles": {
@@ -79,15 +79,15 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 25.068072167436227,
+            "shin_far": -41.766312084635615,
+            "foot_far": 16.69823991719939,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 16.6982399171994,
+            "shin_near": -41.766312084635615,
+            "foot_near": 25.06807216743622,
             "dao": 0,
             "bow": 0
           },
@@ -100,7 +100,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46
           ],
           "root_angle": 0,
           "angles": {
@@ -109,15 +109,15 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 20.953295341101278,
+            "shin_far": -33.73535712225281,
+            "foot_far": 12.78206178115153,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.782061781151524,
+            "shin_near": -33.73535712225281,
+            "foot_near": 20.95329534110128,
             "dao": 0,
             "bow": 0
           },
@@ -140,24 +140,24 @@
         {
           "body_position": [
             0,
-            -48
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 6,
+            "head": -3.0,
             "upper_arm_far": 0,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0.0,
-            "foot_far": 0,
+            "thigh_far": 39.41769031253242,
+            "shin_far": -71.45890231399063,
+            "foot_far": 26.041212001458213,
             "upper_arm_near": 0,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0.0,
-            "foot_near": 0,
+            "thigh_near": 5.324906348367504,
+            "shin_near": -45.41575785233702,
+            "foot_near": 34.090851503969525,
             "dao": 0,
             "bow": 0
           },
@@ -170,24 +170,24 @@
         {
           "body_position": [
             0,
-            -48
+            -42
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4.0,
             "upper_arm_far": 28,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": -28,
-            "shin_far": 33.6,
-            "foot_far": 0,
+            "thigh_far": 36.29896905791356,
+            "shin_far": -96.3377025719195,
+            "foot_far": 52.038733514005926,
             "upper_arm_near": -28,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 28,
-            "shin_near": 0.0,
-            "foot_near": 0,
+            "thigh_near": 22.95451020494144,
+            "shin_near": -61.968148097244494,
+            "foot_near": 31.01363789230306,
             "dao": 0,
             "bow": 0
           },
@@ -200,24 +200,24 @@
         {
           "body_position": [
             0,
-            -48
+            -40
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 7,
+            "head": -3.5,
             "upper_arm_far": 15,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": -15,
-            "shin_far": 18.0,
-            "foot_far": 0,
+            "thigh_far": 9.743562136624146,
+            "shin_far": -73.13780121809708,
+            "foot_far": 56.39423908147294,
             "upper_arm_near": -15,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 15,
-            "shin_near": 0.0,
-            "foot_near": 0,
+            "thigh_near": 41.852450719454005,
+            "shin_near": -63.5487344115482,
+            "foot_near": 14.696283692094193,
             "dao": 0,
             "bow": 0
           },
@@ -230,24 +230,24 @@
         {
           "body_position": [
             0,
-            -48
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 6,
+            "head": -3.0,
             "upper_arm_far": 0,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0.0,
-            "foot_far": 0,
+            "thigh_far": -5.080515556998392,
+            "shin_far": -35.044735507768564,
+            "foot_far": 34.12525106476696,
             "upper_arm_near": 0,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0.0,
-            "foot_near": 0,
+            "thigh_near": 44.66877427795703,
+            "shin_near": -69.2982873354859,
+            "foot_near": 18.629513057528868,
             "dao": 0,
             "bow": 0
           },
@@ -260,24 +260,24 @@
         {
           "body_position": [
             0,
-            -48
+            -42
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4.0,
             "upper_arm_far": -28,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 28,
-            "shin_far": 0.0,
-            "foot_far": 0,
+            "thigh_far": 15.059194061823053,
+            "shin_far": -57.992000531745184,
+            "foot_far": 34.93280646992213,
             "upper_arm_near": 28,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": -28,
-            "shin_near": 33.6,
-            "foot_near": 0,
+            "thigh_near": 45.076928514175556,
+            "shin_near": -98.26454705965665,
+            "foot_near": 45.1876185454811,
             "dao": 0,
             "bow": 0
           },
@@ -290,24 +290,24 @@
         {
           "body_position": [
             0,
-            -48
+            -40
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 7,
+            "head": -3.5,
             "upper_arm_far": -15,
             "forearm_far": -15,
             "hand_far": 0,
-            "thigh_far": 15,
-            "shin_far": 0.0,
-            "foot_far": 0,
+            "thigh_far": 36.91851803900878,
+            "shin_far": -65.92893964666581,
+            "foot_far": 22.01042160765703,
             "upper_arm_near": 15,
             "forearm_near": -15,
             "hand_near": 0,
-            "thigh_near": -15,
-            "shin_near": 18.0,
-            "foot_near": 0,
+            "thigh_near": 22.144993666704924,
+            "shin_near": -87.50220464672701,
+            "foot_near": 58.35721098002208,
             "dao": 0,
             "bow": 0
           },
@@ -339,24 +339,24 @@
         {
           "body_position": [
             0,
-            -48
+            -40
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 38.26997447871123,
+            "shin_far": -85.37996992443742,
+            "foot_far": 39.109995445726184,
             "upper_arm_near": -30,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": -25,
-            "shin_near": 45,
-            "foot_near": 0,
+            "thigh_near": 35.49944677379951,
+            "shin_near": -94.77296895290152,
+            "foot_near": 51.27352217910202,
             "dao": 0,
             "bow": 0
           },
@@ -669,24 +669,24 @@
         {
           "body_position": [
             0,
-            -45.34647531457997
+            -39
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": -20,
-            "shin_far": 40,
-            "foot_far": -20,
+            "thigh_far": 36.01596528893216,
+            "shin_far": -71.83635062480764,
+            "foot_far": 27.820385335875475,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 20,
-            "shin_near": -40,
-            "foot_near": 20,
+            "thigh_near": 20.898098573367836,
+            "shin_near": -74.24791490454146,
+            "foot_near": 45.34981633117363,
             "dao": 0,
             "bow": 0
           },
@@ -699,7 +699,7 @@
         {
           "body_position": [
             0,
-            -48
+            -46
           ],
           "root_angle": 0,
           "angles": {
@@ -708,15 +708,15 @@
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 20.953295341101278,
+            "shin_far": -33.73535712225281,
+            "foot_far": 12.78206178115153,
             "upper_arm_near": 0,
             "forearm_near": 0,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.782061781151524,
+            "shin_near": -33.73535712225281,
+            "foot_near": 20.95329534110128,
             "dao": 0,
             "bow": 0
           },
@@ -813,25 +813,25 @@
       "frames": [
         {
           "body_position": [
-            0,
-            -48
+            -2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": -10,
+            "head": 5.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 39.704642868863345,
+            "shin_far": -50.66882769168493,
+            "foot_far": 20.96418482282158,
             "upper_arm_near": -110,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 21.55567417776743,
+            "shin_near": -42.88007534464164,
+            "foot_near": 31.32440116687421,
             "dao": 10,
             "bow": 0
           },
@@ -843,25 +843,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            3,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 10,
+            "head": -5.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 22.033251102593034,
+            "shin_far": -41.55336617983807,
+            "foot_far": 9.520115077245034,
             "upper_arm_near": -40,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.596289654497735,
+            "shin_near": -51.055027100066745,
+            "foot_near": 28.458737445569014,
             "dao": 10,
             "bow": 0
           },
@@ -873,25 +873,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 23.573217172559378,
+            "shin_far": -43.3746874714456,
+            "foot_far": 11.801470298886217,
             "upper_arm_near": 55,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.779914123690723,
+            "shin_near": -50.253850060407636,
+            "foot_near": 29.473935936716913,
             "dao": 10,
             "bow": 0
           },
@@ -904,24 +904,24 @@
         {
           "body_position": [
             0,
-            -48
+            -44
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
-            "head": 0,
+            "head": 0.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 30.753204974846923,
+            "shin_far": -47.25637725189025,
+            "foot_far": 16.503172277043326,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 16.503172277043326,
+            "shin_near": -47.25637725189025,
+            "foot_near": 30.753204974846923,
             "dao": 10,
             "bow": 0
           },
@@ -952,25 +952,25 @@
       "frames": [
         {
           "body_position": [
-            0,
-            -48
+            2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 10,
+            "head": -5.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 21.32440116687421,
+            "shin_far": -42.88007534464164,
+            "foot_far": 11.555674177767429,
             "upper_arm_near": -100,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 10.96418482282159,
+            "shin_near": -50.66882769168493,
+            "foot_near": 29.704642868863335,
             "dao": 10,
             "bow": 0
           },
@@ -982,25 +982,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            -3,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": -10,
+            "head": 5.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 38.45873744556902,
+            "shin_far": -51.055027100066745,
+            "foot_far": 22.596289654497728,
             "upper_arm_near": -30,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 19.52011507724503,
+            "shin_near": -41.55336617983807,
+            "foot_near": 32.033251102593034,
             "dao": 10,
             "bow": 0
           },
@@ -1012,25 +1012,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            -2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": -8,
+            "head": 4.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 37.47393593671692,
+            "shin_far": -50.253850060407636,
+            "foot_far": 20.779914123690716,
             "upper_arm_near": 65,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 19.80147029888621,
+            "shin_near": -43.3746874714456,
+            "foot_near": 31.573217172559385,
             "dao": 10,
             "bow": 0
           },
@@ -1043,24 +1043,24 @@
         {
           "body_position": [
             0,
-            -48
+            -44
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
-            "head": 0,
+            "head": 0.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 30.753204974846923,
+            "shin_far": -47.25637725189025,
+            "foot_far": 16.503172277043326,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 16.503172277043326,
+            "shin_near": -47.25637725189025,
+            "foot_near": 30.753204974846923,
             "dao": 10,
             "bow": 0
           },
@@ -1091,25 +1091,25 @@
       "frames": [
         {
           "body_position": [
-            0,
-            -48
+            -3,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": -12,
+            "head": 6.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 40.686999566764854,
+            "shin_far": -51.462961306780855,
+            "foot_far": 22.775961740016005,
             "upper_arm_near": -140,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 21.26275643294014,
+            "shin_near": -41.0377796113587,
+            "foot_near": 31.77502317841856,
             "dao": 10,
             "bow": 0
           },
@@ -1121,25 +1121,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            -2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": -8,
+            "head": 4.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 37.47393593671692,
+            "shin_far": -50.253850060407636,
+            "foot_far": 20.779914123690716,
             "upper_arm_near": -115,
             "forearm_near": -30,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 19.80147029888621,
+            "shin_near": -43.3746874714456,
+            "foot_near": 31.573217172559385,
             "dao": 10,
             "bow": 0
           },
@@ -1151,25 +1151,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            3,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 12,
+            "head": -6.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 19.775023178418568,
+            "shin_far": -41.0377796113587,
+            "foot_far": 9.262756432940135,
             "upper_arm_near": 20,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 10.775961740016001,
+            "shin_near": -51.462961306780855,
+            "foot_near": 28.686999566764857,
             "dao": 10,
             "bow": 0
           },
@@ -1181,25 +1181,25 @@
         },
         {
           "body_position": [
-            0,
-            -48
+            2,
+            -44
           ],
           "root_angle": 0,
           "angles": {
-            "body": 0,
-            "head": 0,
+            "body": 8,
+            "head": -4.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 23.573217172559378,
+            "shin_far": -43.3746874714456,
+            "foot_far": 11.801470298886217,
             "upper_arm_near": 65,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 12.779914123690723,
+            "shin_near": -50.253850060407636,
+            "foot_near": 29.473935936716913,
             "dao": 10,
             "bow": 0
           },
@@ -1212,24 +1212,24 @@
         {
           "body_position": [
             0,
-            -48
+            -44
           ],
           "root_angle": 0,
           "angles": {
             "body": 0,
-            "head": 0,
+            "head": 0.0,
             "upper_arm_far": 0,
             "forearm_far": 0,
             "hand_far": 0,
-            "thigh_far": 0,
-            "shin_far": 0,
-            "foot_far": 0,
+            "thigh_far": 30.753204974846923,
+            "shin_far": -47.25637725189025,
+            "foot_far": 16.503172277043326,
             "upper_arm_near": 0,
             "forearm_near": -10,
             "hand_near": 0,
-            "thigh_near": 0,
-            "shin_near": 0,
-            "foot_near": 0,
+            "thigh_near": 16.503172277043326,
+            "shin_near": -47.25637725189025,
+            "foot_near": 30.753204974846923,
             "dao": 10,
             "bow": 0
           },
@@ -1273,14 +1273,14 @@
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -50,
-            "forearm_near": -80,
-            "hand_near": 0,
+            "upper_arm_near": -65.23041317340905,
+            "forearm_near": -53.67905936885164,
+            "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
             "dao": 0,
-            "bow": 0
+            "bow": 90
           },
           "duration": 0.06666666666666667,
           "root_position": [
@@ -1303,14 +1303,14 @@
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -70,
-            "forearm_near": -80,
-            "hand_near": 0,
+            "upper_arm_near": -63.325878656991065,
+            "forearm_near": -91.1753804797346,
+            "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
             "dao": 0,
-            "bow": 0
+            "bow": 90
           },
           "duration": 0.06666666666666667,
           "root_position": [
@@ -1333,14 +1333,14 @@
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -90,
-            "forearm_near": -80,
-            "hand_near": 0,
+            "upper_arm_near": -76.23470166956538,
+            "forearm_near": -139.37386288291833,
+            "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
             "dao": 0,
-            "bow": 0
+            "bow": 90
           },
           "duration": 0.06666666666666667,
           "root_position": [
@@ -1363,14 +1363,14 @@
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -35,
-            "forearm_near": -80,
-            "hand_near": 0,
+            "upper_arm_near": -65.23041317340905,
+            "forearm_near": -53.67905936885164,
+            "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
             "dao": 0,
-            "bow": 0
+            "bow": 90
           },
           "duration": 0.06666666666666667,
           "root_position": [
@@ -1393,14 +1393,14 @@
             "thigh_far": 0,
             "shin_far": 0,
             "foot_far": 0,
-            "upper_arm_near": -10,
-            "forearm_near": -80,
-            "hand_near": 0,
+            "upper_arm_near": -52.36742553368736,
+            "forearm_near": -76.50660117844832,
+            "hand_near": 90,
             "thigh_near": 0,
             "shin_near": 0,
             "foot_near": 0,
             "dao": 0,
-            "bow": 0
+            "bow": 90
           },
           "duration": 0.06666666666666667,
           "root_position": [
@@ -1419,7 +1419,13 @@
           "name": "cancel"
         }
       ],
-      "end_root_angle": 0
+      "end_root_angle": 0,
+      "notes": "Far arm horizontal/forward; vertical bow, string follows near hand. Pull frames 1-3, release frame 4.",
+      "layer_overrides": {
+        "upper_arm_far": 1,
+        "forearm_far": 1,
+        "hand_far": 2
+      }
     },
     "hurt": {
       "status": "Tạm thời — số khung theo 09_animation_spec.md",
