@@ -18,6 +18,8 @@ func take_hit(damage: int) -> void:
 	hit_count += 1
 	var label := Label.new()
 	label.text = str(damage)
+	label.z_as_relative = false
+	label.z_index = T.DAMAGE_TEXT_Z
 	label.position = Vector2(-12, -T.DUMMY_BOX.y - 22)
 	add_child(label)
 	var tween := create_tween().set_parallel(true)

@@ -82,9 +82,10 @@ Các con số mới là giá trị thử A0, không tự chốt thông số chí
 7. Trên điện thoại bật Developer options → USB debugging; kết nối USB, chấp nhận
    máy tính. Chạy `adb devices`, rồi `adb install -r /đường/dẫn/a0.apk`;
    hoặc chép APK và cho phép cài từ nguồn tương ứng.
-8. Mở app ở hướng ngang. Bốn nút tạm **trái, phải, nhảy, chém** chỉ hiện trên
-   màn hình cảm ứng; thử giữ trái/phải đồng thời bấm nhảy/chém bằng ngón thứ hai.
-   Nút dùng TouchScreenButton để giữ action theo từng ngón.
+8. Mở app ở hướng ngang. D-pad bên trái có ←/→ ở dưới, ↑ ở trên giữa,
+   hai vùng ↖/↗ ở hai bên ↑. Cụm chém/bình/đổi mục tiêu ở bên phải, năm ô kỹ năng
+   ở giữa đáy; xem phần bố cục cảm ứng phía dưới. Thử nhiều ngón đồng thời.
+   Các nút cũng được vẽ trên PC để xem bố cục và thử bằng chuột.
 9. Kiểm tra chạy/nhảy, coyote/jump buffer, hitbox, camera, nhịp chém, mép màn hình
    và độ đọc của nhân vật 96 px. Dòng Screen / Window / Viewport / Scale xuất hiện
    trong bảng ⚙; F1 cũng hiện dòng này. Screen là độ phân giải màn hình vật lý,
@@ -113,7 +114,7 @@ hiện số sát thương, bật debug và hồi vị trí sau rơi. Kiểm tra 
 chơi thử đa chạm, đồ họa hoặc xuất APK.
 
 Kết quả trong môi trường đám mây: import editor và chạy 120 frame thoát 0,
-không có lỗi Godot; smoke test hiện tại 59 kiểm tra PASS, `A0 smoke failures: 0`.
+không có lỗi Godot; smoke test hiện tại 85 kiểm tra PASS, `A0 smoke failures: 0`.
 Binary Linux 4.7.2 đã được đối chiếu SHA-512 với manifest chính thức.
 
 ## Bảng chỉnh khi chạy
@@ -182,3 +183,42 @@ kiểm tra cuộn dọc không đổi số và kéo ngang từ núm vẫn chỉn
 bật mô phỏng touchscreen chỉ ở test để ScrollContainer nhận gesture như thiết bị touch.
 Đây là kiểm tra bố cục/phép biến đổi và input, không phải ảnh chụp màn hình Android.
 Chưa xuất lại APK hoặc xác minh thanh hệ thống immersive trên điện thoại trong môi trường này.
+
+## Bố cục cảm ứng d-pad A0
+
+Mọi nút/HUD được vẽ bằng mã (khối, đường tròn, chữ/mũi tên), không dùng ảnh,
+biểu tượng hay mã của game khác. Nút di chuyển 84 px logic, cách mép ít nhất
+24 px; nền alpha 0,45 và viền sáng. Khi chạm, viền sáng hơn và hình nút thu 0,95
+nhưng vùng bắt chạm không co. Chữ/mũi tên tối thiểu 22 px logic.
+Tất cả kích thước, tỉ lệ, khoảng cách và alpha nằm trong config/tuning.gd.
+
+- Trái: ← và → ở hàng dưới; ↑ ở hàng trên giữa. Hai vùng ↖/↗ rộng 0,9 lần
+  nút giữ hướng tương ứng và nhảy. Trượt ra khỏi vùng thì nhả action; nhả một
+  ngón không hủy action mà ngón khác đang giữ. Bàn phím và touch dùng action
+  riêng, không nhả nhầm phím PC đang giữ. Không còn nút nhảy ở bên phải.
+- Phải: CHÉM tròn đường kính 1,4 lần nút di chuyển. Trên là ĐỔI (đổi mục tiêu,
+  chỉ log); phía trên-trái là HP, phía trái là MP. HP/MP có số đếm thử, mỗi lần
+  bấm giảm một và log, không hồi máu/nội lực, không có inventory.
+- Giữa đáy: năm ô vuông 1–5, cạnh 0,7 lần nút di chuyển, cách nhau 6 px.
+  Bấm chỉ log số ô; chưa có hệ thống kỹ năng.
+- HUD giữ chỗ phía trên: vòng cấp độ, thanh đỏ/xanh ở trái; nút menu (≡, chỉ log)
+  và khối bản đồ 120×80 ở phải. Không có giá trị gameplay hay chức năng bản đồ.
+  Nút ⚙ tối thiểu 56×56; công tắc **Hiện HUD giữ chỗ** giúp so diện tích cảnh.
+
+Các công tắc trong ⚙ chỉ đổi trong RAM và có trong văn bản Sao chép:
+
+- **Giữ để nhảy lại**: mặc định bật. Giữ ↑, vùng chéo hoặc phím nhảy sẽ tự
+  nhảy lần nữa khi chạm đất. Tắt để chỉ nhảy một lần mỗi lần bấm.
+- **Giữ lâu nhảy cao**: mặc định tắt. Khi bật, nhả toàn bộ nút/phím nhảy sớm
+  giảm vận tốc đi lên còn 50%; giữ đến đỉnh cho đủ độ cao.
+- **Xoay khi nhảy chéo**: mặc định bật. Nhảy bắt đầu từ ↖/↗ thì sprite xoay
+  một vòng theo hướng nhảy; thời gian danh nghĩa bằng 2 × TIME_TO_APEX,
+  phủ pha lên và rơi cùng cao độ. Khi chạm đất thì kết thúc, kể cả đáp lên bậc
+  sớm; rơi lâu hơn thời gian danh nghĩa thì giữ góc đã đủ một vòng cho tới khi
+  đáp đất. Không xoay body/hitbox. Công tắc Chuyển động giả vẫn là công tắc tổng.
+
+Vệt chém và số sát thương nằm trên lớp z cao hơn hình nộm; hitbox không thay đổi.
+Bảng ⚙ chặn các vùng cảm ứng phía dưới bảng khi đang mở. Đóng bảng để thử nút.
+Khi xuất APK nhớ bật **Screen → Immersive Mode**, theo phần Android ở trên.
+Headless kiểm tra vùng chéo, giữ nhảy, nhảy cao/thấp và bố cục ở 1600×720,
+2400×1080, 1920×1080. Cần thử lại thao tác ngón cái và độ đọc trên điện thoại thật.

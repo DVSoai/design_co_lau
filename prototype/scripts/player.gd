@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const SlashEffect = preload("res://scripts/slash_effect.gd")
 const T = preload("res://config/tuning.gd")
 var tuning: RefCounted
 var facing := 1.0
@@ -10,6 +11,12 @@ var cooldown_elapsed := INF
 var hits: Array[Node] = []
 var slash: Area2D
 var sprite: Sprite2D
+var slash_effect: Node2D
+var was_jump_held := false
+var spin_direction := 0.0
+var spin_elapsed := 0.0
+var spin_duration := 1.0
+var jump_count := 0
 var debug_enabled := false
 var idle_phase := 0.0
 var run_phase := 0.0
@@ -44,24 +51,38 @@ func _ready() -> void:
 	hit_shape.shape = hit_rect
 	slash.add_child(hit_shape)
 	add_child(slash)
+	slash_effect = SlashEffect.new()
+	slash_effect.player = self
+	slash_effect.z_as_relative = false
+	slash_effect.z_index = T.COMBAT_EFFECT_Z
+	add_child(slash_effect)
 
 func _physics_process(delta: float) -> void:
 	var was_grounded := is_on_floor()
 	var jumped := false
-	var axis := Input.get_axis("left", "right")
+	var axis := clampf(Input.get_axis("left", "right") + Input.get_axis("touch_left", "touch_right"), -1.0, 1.0)
 	if axis != 0:
 		facing = signf(axis)
 	sprite.flip_h = facing < 0
 	velocity.x = move_toward(velocity.x, axis * tuning.value("RUN_SPEED"), tuning.value("ACCELERATION") * delta)
 	coyote = tuning.value("COYOTE_TIME") if is_on_floor() else maxf(0, coyote - delta)
 	buffered_jump = maxf(0, buffered_jump - delta)
-	if Input.is_action_just_pressed("jump"):
+	var jump_held := Input.is_action_pressed("jump") or Input.is_action_pressed("touch_jump")
+	var jump_pressed := Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("touch_jump")
+	if jump_pressed:
 		buffered_jump = tuning.value("JUMP_BUFFER")
-	if (Input.is_action_just_pressed("jump") or buffered_jump > 0) and (is_on_floor() or coyote > 0):
+	if (jump_pressed or buffered_jump > 0 or (tuning.flag("HOLD_AUTO_JUMP") and jump_held and is_on_floor())) and (is_on_floor() or coyote > 0):
 		velocity.y = tuning.jump_speed()
 		jumped = true
+		jump_count += 1
+		spin_direction = (-1.0 if Input.is_action_pressed("touch_diagonal_left") else 1.0) if (Input.is_action_pressed("touch_diagonal_left") or Input.is_action_pressed("touch_diagonal_right")) else 0.0
+		spin_elapsed = 0.0
+		spin_duration = 2.0 * tuning.value("TIME_TO_APEX")
 		buffered_jump = 0
 		coyote = 0
+	if tuning.flag("VARIABLE_JUMP") and was_jump_held and not jump_held and velocity.y < 0:
+		velocity.y *= T.JUMP_RELEASE_MULTIPLIER
+	was_jump_held = jump_held
 	velocity.y += tuning.gravity() * delta
 	move_and_slide()
 	position.x = clampf(position.x, T.PLAYER_BOX.x / 2, T.WORLD_SIZE.x - T.PLAYER_BOX.x / 2)
@@ -71,8 +92,13 @@ func _physics_process(delta: float) -> void:
 		buffered_jump = 0
 		coyote = 0
 		pulse_elapsed = T.SPRITE_SCALE_RECOVERY
+		spin_direction = 0.0
+	if is_on_floor():
+		spin_direction = 0.0
+	elif not jumped:
+		spin_elapsed += delta
 	cooldown_elapsed += delta
-	if Input.is_action_just_pressed("slash") and attack_time < 0 and cooldown_elapsed >= tuning.value("ATTACK_COOLDOWN"):
+	if (Input.is_action_just_pressed("slash") or Input.is_action_just_pressed("touch_slash")) and attack_time < 0 and cooldown_elapsed >= tuning.value("ATTACK_COOLDOWN"):
 		attack_time = 0
 		hits.clear()
 	if attack_time >= 0:
@@ -87,6 +113,7 @@ func _physics_process(delta: float) -> void:
 				hits.append(body)
 				body.take_hit(T.DAMAGE)
 	_update_sprite_motion(delta, jumped, not was_grounded and is_on_floor())
+	slash_effect.queue_redraw()
 	queue_redraw()
 
 func _update_sprite_motion(delta: float, jumped: bool, landed: bool) -> void:
@@ -121,13 +148,14 @@ func _update_sprite_motion(delta: float, jumped: bool, landed: bool) -> void:
 	sprite.position = (T.SPRITE_OFFSET * sprite.scale).rotated(sprite.rotation) + Vector2(0, bob)
 	if is_hit_active():
 		sprite.position.x += facing * T.SLASH_SPRITE_SHIFT
+	if tuning.flag("DIAGONAL_SPIN_ENABLED") and spin_direction != 0 and not is_on_floor():
+		# Xoay quanh tâm ảnh, không xoay quanh chân hay bất kỳ hitbox nào.
+		sprite.rotation += spin_direction * TAU * T.DIAGONAL_SPIN_TURNS * clampf(spin_elapsed / spin_duration, 0.0, 1.0)
 
 func is_hit_active() -> bool:
 	return attack_time >= T.HIT_START and attack_time < T.HIT_END
 
 func _draw() -> void:
-	if attack_time >= 0:
-		draw_arc(Vector2(0, T.SLASH_OFFSET.y), T.SLASH_ARC_RADIUS, -1.2 if facing > 0 else 1.9, 1.2 if facing > 0 else 4.3, 12, Color(0.95, 0.85, 0.62), 3)
 	if debug_enabled:
 		draw_rect(Rect2(Vector2(-T.PLAYER_BOX.x / 2, -T.PLAYER_BOX.y), T.PLAYER_BOX), Color.CYAN, false, 1)
 		draw_rect(Rect2(slash.position - T.SLASH_BOX / 2, T.SLASH_BOX), Color.RED if is_hit_active() else Color(0.6, 0.4, 0.2), false, 1)

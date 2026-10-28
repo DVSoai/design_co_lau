@@ -21,6 +21,8 @@ func _init() -> void:
 	var source: Script = Defaults
 	var defaults := source.get_script_constant_map()
 	values["FAKE_MOTION_ENABLED"] = Defaults.FAKE_MOTION_ENABLED
+	for key in ["HOLD_AUTO_JUMP", "VARIABLE_JUMP", "DIAGONAL_SPIN_ENABLED", "HUD_VISIBLE"]:
+		values[key] = defaults[key]
 	for row in SLIDERS:
 		values[row[0]] = Defaults.CAMERA_DEAD_ZONE.x if row[0] == "CAMERA_DEAD_ZONE.x" else defaults[row[0]]
 
@@ -61,3 +63,9 @@ func as_text() -> String:
 	for key in defaults:
 		lines.append("%s = %s" % [key, str(current_value(key, defaults[key]))])
 	return "\n".join(lines)
+
+func flag(key: String) -> bool:
+	return bool(values[key])
+
+func set_flag(key: String, enabled: bool) -> void:
+	values[key] = enabled

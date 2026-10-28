@@ -42,8 +42,8 @@ const SPAWN := Vector2(100, 460) # px
 const FALL_RESET_Y := 720.0 # px; rơi khỏi bản đồ thì về điểm đầu
 const DUMMY_POSITION := Vector2(490, 460) # px
 const DUMMY_BOX := Vector2(32, 88) # px
-const TOUCH_BUTTON_SIZE := Vector2(100, 90) # px trên viewport 960×540
-const TOUCH_MARGIN := 18.0 # px
+const TOUCH_BUTTON_SIZE := Vector2(84, 84) # px trên viewport 960×540
+const TOUCH_MARGIN := 24.0 # px
 const TOUCH_GAP := 12.0 # px
 # Hình học bản đồ: x, y, rộng, cao (px).
 const TERRAIN := [
@@ -53,3 +53,35 @@ const TERRAIN := [
 	Rect2(1550, 396, 150, 16), Rect2(1810, 364, 150, 16),
 	Rect2(2070, 396, 150, 16),
 ]
+
+# Bố cục điều khiển/HUD placeholder: đơn vị px logic nếu không ghi khác.
+const HOLD_AUTO_JUMP := true # giữ nút để nhảy lại khi chạm đất
+const VARIABLE_JUMP := false # nhả sớm giảm vận tốc đi lên
+const JUMP_RELEASE_MULTIPLIER := 0.5 # tỉ lệ vận tốc khi nhả sớm
+const DIAGONAL_SPIN_ENABLED := true # chỉ xoay Sprite2D
+const DIAGONAL_SPIN_TURNS := 1.0 # vòng/nhảy; thời gian = 2 × TIME_TO_APEX
+const HUD_VISIBLE := true # HUD giữ chỗ, không có hệ thống game
+const DIAGONAL_WIDTH_RATIO := 0.9 # lần nút di chuyển
+const SLASH_BUTTON_RATIO := 1.4 # lần nút di chuyển
+const SMALL_BUTTON_RATIO := 0.65 # lần nút di chuyển
+const SKILL_BUTTON_RATIO := 0.7 # lần nút di chuyển
+const SKILL_COUNT := 5 # ô giữ chỗ
+const SKILL_GAP := 6.0 # px
+const TOUCH_FILL_ALPHA := 0.45 # độ trong mờ nền nút/HUD
+const TOUCH_PRESSED_SCALE := 0.95 # tỉ lệ nút đang giữ
+const TOUCH_FONT_SIZE := 22 # px logic
+const TOUCH_BORDER_WIDTH := 2.0 # px
+const TOUCH_BORDER := Color(0.72, 0.8, 0.9, 0.85) # màu/alpha viền bình thường
+const TOUCH_PRESSED_BORDER := Color(1, 1, 1, 1) # màu/alpha viền đang chạm
+const POTION_INITIAL_COUNT := 5 # số giữ chỗ, không tác động máu/nội lực
+const GEAR_SIZE := Vector2(56, 56) # px
+const HUD_MENU_SIZE := Vector2(56, 56) # px
+const HUD_MAP_SIZE := Vector2(120, 80) # px
+const HUD_LEVEL_SIZE := Vector2(56, 56) # px
+const HUD_BAR_SIZE := Vector2(180, 18) # px
+const HUD_BAR_GAP := 6.0 # px
+const TUNING_PANEL_WIDTH := 438.0 # px
+const TUNING_PANEL_MAX_HEIGHT := 366.0 # px
+const TUNING_PANEL_MIN_HEIGHT := 120.0 # px
+const COMBAT_EFFECT_Z := 20 # lớp vẽ trên thân nhân vật/hình nộm
+const DAMAGE_TEXT_Z := 30 # lớp vẽ số sát thương
