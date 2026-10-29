@@ -300,22 +300,29 @@ Godot **4.7.2 Standard**. Từ A0 chính (F5), bấm **Đào Úc greybox** bên 
 Mở rig greybox; hoặc mở `dao_uc/dao_uc.tscn` rồi F6. Nút **Về A0** ở trên.
 Góc trên in map, tọa độ ô(c,r) ngay dưới chân và px để báo lỗi trên Realme.
 
-Đọc trực tiếp khối `layout` trong bản sao Markdown; không nhập lại ô bằng mã.
-Trước import/chạy hoặc export APK, từ gốc repo chạy:
+Nguồn chuẩn là hai khối `layout` và `layout-meta` trong `design/maps/`. Runtime
+đọc JSON sinh tự động, không nhập lại lưới và không đóng gói Markdown. Trước khi
+chạy/build, sau **mọi thay đổi** hai file layout (kể cả ghi chú/bảng kiểm), hoặc
+kích thước HUD boss trong `06_screens.md`, từ gốc repo chạy:
 
 ```sh
-python3 prototype/dao_uc/sync_layouts.py
+python3 tools/export_layout_json.py
+python3 tools/export_layout_json.py --check
 ```
 
-Script chỉ chép hai file gốc `design/maps/lay_dao_uc_v1.md` và
-`lay_dao_uc_boss_v1.md` vào `prototype/dao_uc/layouts/`; in kiểm giống byte,
-SHA256 và số ô, lưu `manifest.json`. File sao được commit để F5 dùng ngay.
-Sau mỗi thay đổi layout phải chạy lại script. Godot headless kiểm byte với nguồn
-ngoài `res://` và hash manifest; trên Android không có repo ngoài APK, nên bước
-build phải kiểm trước và giữ hai `.md` cùng manifest. Trong Export → Resources,
-thêm `dao_uc/layouts/*.md,dao_uc/layouts/*.json` vào **Filters to export non-resource
-files/folders** (giữ các JSON rig cần có). Nhớ **Screen → Immersive Mode** như mục
-Android. Không chỉ chép riêng `.tscn` hoặc export nhầm dự án gốc repo.
+Hai JSON trong `prototype/dao_uc/layouts/` giữ nguyên ký tự từng hàng, meta và
+SHA256 của toàn bộ Markdown nguồn. Phần HUD đi kèm lấy từ A0 và khối hud-metrics
+của06; không phải bộ số A0 mới. `--check` so bản sinh trong bộ nhớ với file đang
+có, không ghi file, thoát khác0 nếu lệch. Test PC so SHA và **từng ô** với nguồn
+`../design/maps`; trên APK không có file nguồn nên việc đối chiếu phải chạy trước
+export. Đã bỏ sync_layouts.py, bản sao Markdown và manifest cũ.
+
+**Không cần include_filter** cho các JSON này khi xuất với Resources → Export
+all resources; không thêm bộ lọc Markdown. Kiểm bằng export-pack với preset tạm
+không có include_filter và đọc danh sách/JSON từ gói. Godot4.7.2 ghi chẩn đoán
+thiếu khóa khi preset bỏ hẳn khóa này; export vẫn exit0 và được kiểm bằng dữ liệu
+trong PCK. Với preset do editor tạo, để trường lọc rỗng, không cần thêm mẫu lọc. Android vẫn bật
+**Screen → Immersive Mode**. Không export nhầm dự án gốc repo.
 
 - `#` là đất va chạm; `=` là bục một chiều, nhảy từ dưới rồi đứng trên.
 - Chông `^` hoặc rơi dưới map đưa về **R gần nhất bên trái điểm gặp nạn**
@@ -343,7 +350,7 @@ Android. Không chỉ chép riêng `.tscn` hoặc export nhầm dự án gốc r
 Kiểm tra (thay `godot` bằng đường dẫn executable4.7.2 nếu cần):
 
 ```sh
-python3 prototype/dao_uc/sync_layouts.py
+python3 tools/export_layout_json.py --check
 godot --headless --path prototype --editor --import --quit
 godot --headless --path prototype --script res://tests/smoke.gd
 godot --headless --path prototype --script res://tests/classic_headless.gd
@@ -363,3 +370,17 @@ chỉ đặt vị trí khi bắt đầu các fixture thử hố/chông/nước/t
 Sau chơi thử quyết thêm tầng bục2–3 và khe không đáy hay đáy nông. Lượt tileset
 sau cần mặt cắt lũy/rễ/đá cho phần đất gần nửa dưới màn hình. Prototype này là mã
 bỏ đi, không đưa sang `co_lau_game`, không duyệt Mốc A1 hoặc đánh dấu[x].
+
+
+### Follow-up HUD trên sau chơi thử (29/10/2026)
+
+Người dùng chấp nhận bản thử khối màu, **chưa duyệt chính thức**, UI thật làm sau.
+SCR-05 giữ minimap120×80. SCR-06 chọn **A: ẩn minimap**, giữ neo menu/⚙ A0;
+hiện khung thanh boss360×32 ởy24, căn giữa (gồm cả tên, Tạm thời, chưa có HP/AI).
+HUD thật trong scene được so hình chữ nhật với checker ở960/1200.
+
+Ẩn minimap riêng chưa đủ vì menu/⚙ còn che lính trên lũy; người dùng cho phép
+hạ mặt lũy từ160→224 px. Còn hai bậc32 px, đúng4 lính và sân phẳng640 px.
+Lính cung map thường c106 chuyển r4→r6, đứng trên bục dưới, các bục/thang còn lại
+giữ nguyên. Checker xét hình96px (boss132), khác với hitbox88px, bỏ qua nhãn gỡ lỗi.
+Ảnh phủ nút/HUD và JSON đều dựng lại từ cùng bố cục/cấu hình mới.

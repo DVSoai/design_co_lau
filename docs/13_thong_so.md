@@ -46,6 +46,7 @@ Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log
 | Thông số | Giá trị | Trạng thái | Chốt khi | Ảnh hưởng tới | Nguồn |
 |---|---|---|---|---|---|
 | Lề cụm điều khiển trong trận | Ít nhất 24 px logic tới mép viewport | Đã duyệt (A0, 28/10/2026) | — | HUD trong trận; safe area tai thỏ vẫn phải soát khi dựng mockup | A0 Android, Realme RMX3760, Godot 4.7.2; commit `7973729` |
+| Thanh máu boss SCR-06 | 360×32 px logic (gồm tên/vạch pha), căn giữa ngang, y=24 | Tạm thời — chốt sau chơi thử | Duyệt HUD A1 | SCR-06, kiểm che hình96/132 | `06_screens.md`, khối hud-metrics |
 | Cỡ chạm nhỏ nhất | 20×20 | Tạm thời | Thử trên máy thật | Mọi nút | `06_screens.md` |
 | Nút trong trận | Di chuyển d=84; CHÉM 1,4d=117,6; kỹ năng 0,7d=58,8; bình/đổi mục tiêu 0,65d=54,6 px logic | Đã duyệt (A0, 28/10/2026) | — | SCR-05, SCR-06, SCR-07 | A0 Android, Realme RMX3760, Godot 4.7.2; commit `7973729` |
 | Cỡ chữ tối thiểu | 8 (phụ), 10 (chính) | Tạm thời | Khi chọn font | Mọi màn | `06_screens.md` |

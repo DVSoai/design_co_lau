@@ -30,25 +30,45 @@ func settle_at(point: Vector2) -> void:
 	world.player.facing = 1
 	await tick(8)
 
-func copy_checks() -> void:
-	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://dao_uc/layouts/manifest.json"))
+func json_checks() -> void:
 	for key in Loader.FILES:
 		var map: Dictionary = world.maps[key]
-		var file: String = Loader.FILES[key]
-		var source: String = ProjectSettings.globalize_path("res://").path_join("../design/maps/"+file).simplify_path()
-		var source_bytes := FileAccess.get_file_as_bytes(source)
-		var copied := FileAccess.get_file_as_bytes(map.path)
-		check(not source_bytes.is_empty() and source_bytes == copied,"%s copied Markdown byte-identical to canonical design/maps file" % key)
-		check(FileAccess.get_sha256(map.path) == manifest[key].sha256,"%s copy matches build manifest SHA256" % key)
-		for symbol in ["#","=","^","~","L"]:
-			# Count the ORIGINAL block separately, not the loader's copied grid.
+		var source: String = ProjectSettings.globalize_path("res://").path_join("../"+str(map.source.file)).simplify_path()
+		var originals := PackedStringArray()
+		if FileAccess.file_exists(source):
+			var source_bytes := FileAccess.get_file_as_bytes(source)
+			check(FileAccess.get_sha256(source) == str(map.source.sha256),"%s JSON source SHA256 matches canonical Markdown" % key)
 			var regex := RegEx.new()
 			regex.compile("(?m)^```layout[ \\t]*\\r?\\n([\\s\\S]*?)^```")
-			var match_grid := regex.search(source_bytes.get_string_from_utf8())
-			var original_count := match_grid.get_string(1).count(symbol)
+			var found := regex.search(source_bytes.get_string_from_utf8())
+			check(found != null,"%s original Markdown layout block found" % key)
+			if found == null:
+				continue
+			var lines := found.get_string(1).split("\n")
+			if lines[-1].is_empty():
+				lines.remove_at(lines.size()-1)
+			for line in lines:
+				originals.append(line.trim_suffix("\r"))
+			var same: bool = originals.size() == map.rows.size()
+			var tested := 0
+			for y in originals.size():
+				if y >= map.rows.size() or originals[y].length()!=map.rows[y].length():
+					same = false
+					continue
+				for x in originals[y].length():
+					tested += 1
+					same = same and originals[y].substr(x,1)==map.rows[y].substr(x,1)
+			check(same,"%s JSON matches every original cell (%d compared)" % [key,tested])
+		else:
+			print("INFO: %s original design/maps not available (exported runtime); source comparison skipped, export_layout_json.py --check must run before build" % key)
+			originals = map.rows
+		for symbol in ["#","=","^","~","L"]:
+			var original_count := 0
+			for line in originals:
+				original_count += line.count(symbol)
 			var count := int(map.counts.get(symbol,0))
 			print("GRID %s '%s': original=%d loaded=%d" % [key,symbol,original_count,count])
-			check(count == original_count and count == int(manifest[key].counts[symbol]),"%s '%s' counts match original grid" % [key,symbol])
+			check(count == original_count,"%s '%s' counts match original grid" % [key,symbol])
 
 func walk_to(exit_x: float, stop_on_map := "") -> bool:
 	var original_map: String = world.map_key
@@ -105,7 +125,8 @@ func run() -> void:
 	world.respawned.connect(func(reason: String, _destination: Vector2) -> void:
 		check(not world.player.is_physics_processing() and world.input_lock_frames>0 and world.camera.position.distance_to(world.camera_target())<0.001,"%s respawn camera snapped before input unlock" % reason))
 	await tick(5)
-	copy_checks()
+	await hud_checks()
+	json_checks()
 	var spawn: Vector2 = Loader.feet(world.data.points.S[0])
 	check(world.player.position.distance_to(spawn)<0.1,"field appears at canonical S")
 	await tick(60)
@@ -116,8 +137,9 @@ func run() -> void:
 	await tick(65)
 	var boss_spawn: Vector2 = Loader.feet(world.data.points.S[0])
 	check(world.map_key=="boss" and world.player.is_on_floor() and world.player.position.distance_to(boss_spawn)<0.2,"boss appears at S and stays grounded after 1 second")
-	check(await walk_to(58.2*Loader.TILE),"walk to rampart foot and climb all four 32px steps")
-	check(world.player.position.y<=160.2,"player reaches top rampart at y160")
+	check(await walk_to(58.2*Loader.TILE),"walk to rampart foot and climb the 32px steps from the grid")
+	var rampart_y: float = Loader.feet(world.data.points.m[0]).y
+	check(world.player.is_on_floor() and absf(world.player.position.y-rampart_y)<0.2,"player reaches top rampart at canonical y%.0f" % rampart_y)
 	check(world.player.extra_jump_count==extra_before,"required route never uses khinh cong")
 	# Return through actual boss-left portal; positioning here starts a separate
 	# test, it does not contribute to the forward traversal assertion above.
@@ -197,3 +219,36 @@ func run() -> void:
 	await tick(3)
 	print("Dao Uc checks failures: %d; physics frames=%d" % [failures,tick_count])
 	quit(1 if failures else 0)
+
+func hud_checks() -> void:
+	var original := root.size
+	for key in ["field","boss"]:
+		world.load_map(key)
+		for width in [960,1200]:
+			root.size = Vector2i(width,540)
+			await tick(5)
+			var expected: Dictionary = world.data.hud.expected_top_rects[str(width)]
+			for name in expected:
+				var box: Array = expected[name]
+				var wanted := Rect2(box[0],box[1],box[2]-box[0],box[3]-box[1])
+				var actual := Rect2()
+				if name == "gear":
+					actual = world.tuning_panel.toggle.get_global_rect()
+				elif name == "menu":
+					actual = world.touch_controls.buttons.menu.get_global_rect()
+				elif name == "boss_hp":
+					actual = world.boss_bar.get_global_rect()
+				else:
+					actual = world.touch_controls.hud_rects["map" if name=="minimap" else name]
+				check(actual.is_equal_approx(wanted),"%s %d top HUD %s actual rectangle matches Python checker" % [key,width,name])
+			check(world.boss_bar.visible == (key=="boss"),"%s boss bar visibility" % key)
+			if key=="boss":
+				check(not world.touch_controls.hud_rects.map.has_area(),"SCR-06 minimap hidden (A)")
+				world.tuning.set_flag("HUD_VISIBLE",false)
+				await tick(2)
+				world.tuning.set_flag("HUD_VISIBLE",true)
+				await tick(1)
+				check(not world.touch_controls.hud_rects.map.has_area(),"SCR-06 minimap stays hidden immediately after HUD toggle")
+	root.size = original
+	world.load_map("field")
+	await tick(5)

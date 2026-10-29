@@ -99,9 +99,19 @@ font, không chèn chữ vào ảnh asset. Mockup thành phẩm vẫn phải duy
 
 ### SCR-06 Màn chơi khi đánh boss
 
-- **Khác SCR-05:** thanh máu boss rộng ở giữa cạnh trên (tên, 2 hoặc 3 vạch chia pha); ẩn theo dõi nhiệm vụ; Tự đánh vô hiệu.
-- **Trạng thái:** boss báo đòn đặc biệt (vòng đỏ trên mặt đất, biểu tượng chấm than trên đầu boss, 0,8 đến 1,2 giây); chuyển pha (màn khựng 0,3 giây, tên pha hiện ngắn); đấu danh dự (thanh máu boss có vạch 30% đánh dấu điểm kết thúc, áp dụng cho Phạm Bạch Hổ).
+- **Khác SCR-05:** thanh máu boss rộng ở giữa cạnh trên (tên, 2 hoặc 3 vạch chia pha); ẩn theo dõi nhiệm vụ và **ẩn bản đồ nhỏ trong đấu trường kín** (phương án A, 29/10/2026); Tự đánh vô hiệu.
+- **Trạng thái:** boss báo đòn đặc biệt (vòng đỏ trên mặt đất, biểu tượng chấm than trên đầu boss; Tướng tiên phong Hậu Ngô báo trước 1,5 giây, các boss sau rút dần, không dưới 0,8 giây (Tạm thời — chốt sau chơi thử)); chuyển pha (màn khựng 0,3 giây, tên pha hiện ngắn); đấu danh dự (thanh máu boss có vạch 30% đánh dấu điểm kết thúc, áp dụng cho Phạm Bạch Hổ).
 - **Ra tới:** SCR-15 (thua) hoặc SCR-16 (thắng).
+
+Kích thước **Tạm thời** cho thanh máu boss: 360×32 px logic, căn giữa ngang,
+cạnh trên y=24 trên viewport960/1200. Khung này gồm cả tên và các vạch pha;
+không đặt chữ ra ngoài khung để phép kiểm bỏ sót. Đây là đề xuất cho lượt kiểm,
+chưa phải UI thành phẩm hay số A0. Nguồn số dùng chung cho checker/JSON/bản thử:
+
+```hud-metrics
+{"scr06":{"boss_bar_size":[360,32],"boss_bar_top":24,"show_minimap":false}}
+```
+
 
 ### SCR-07 Màn chơi chế độ Giữ ải
 

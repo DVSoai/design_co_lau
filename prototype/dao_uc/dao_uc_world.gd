@@ -21,6 +21,7 @@ var mannequins: Array[StaticBody2D] = []
 var marker_label: Label
 var notice: Label
 var down_button: Button
+var boss_bar: ColorRect
 var leave_button: Button
 var transition_pending := false
 var reset_count := 0
@@ -50,6 +51,14 @@ func _ready() -> void:
 	_register_input("ladder_jump",[KEY_SPACE])
 	var hud := CanvasLayer.new()
 	add_child(hud)
+	boss_bar = ColorRect.new()
+	boss_bar.color = Color(0.65,0.12,0.12,0.9)
+	boss_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hud.add_child(boss_bar)
+	var boss_name := Label.new()
+	boss_name.text = "Tướng tiên phong Hậu Ngô — hình nộm"
+	boss_name.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	boss_bar.add_child(boss_name)
 	marker_label = Label.new()
 	marker_label.position = Vector2(250,82)
 	hud.add_child(marker_label)
@@ -93,6 +102,8 @@ func load_map(key: String, returning := false) -> void:
 	map_key = key
 	data = maps[key]
 	map_size = data.size
+	touch_controls.show_minimap = bool(data.hud.show_minimap)
+	touch_controls.layout() # applies policy on resize and HUD toggles too
 	# Merge runs only for collider efficiency; counts and drawing still use every
 	# canonical grid cell. Collision top always equals row*32.
 	for y in data.rows.size():
@@ -243,6 +254,7 @@ func _physics_process(_delta: float) -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
+	_apply_scr_hud()
 	var cell := Vector2i(floori(player.position.x/TILE),floori((player.position.y-0.1)/TILE))
 	marker_label.text = "%s — chân (c%d,r%d), px(%.1f,%.1f) — F1 hitbox" % [map_key,cell.x,cell.y,player.position.x,player.position.y]
 	var near := ladder_at(player.position).has_area()
@@ -272,3 +284,13 @@ func _release_ladder_input() -> void:
 	for action in ["climb_up","climb_down","ladder_jump"]:
 		if InputMap.has_action(action):
 			Input.action_release(action)
+
+func _apply_scr_hud() -> void:
+	if data.is_empty():
+		return
+	var spec: Dictionary = data.hud
+	boss_bar.visible = map_key == "boss" and tuning.flag("HUD_VISIBLE")
+	if map_key == "boss":
+		var rect := get_viewport().get_visible_rect()
+		boss_bar.size = Vector2(spec.boss_bar_size[0],spec.boss_bar_size[1])
+		boss_bar.position = Vector2(rect.get_center().x-boss_bar.size.x/2,rect.position.y+float(spec.boss_bar_top))

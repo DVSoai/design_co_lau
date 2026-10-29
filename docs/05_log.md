@@ -396,3 +396,35 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
   và nguyên đầu ra lệnh được ghi trong commit message. Chưa chơi thử Realme trong cloud.
 - Không tạo/sửa art, không chạm co_lau_game, không đánh dấu[x] hay nghiệm thu mốc.
   Không có prompt/imagegen mới; prototype vẫn là mã bỏ đi để tôi chơi thử bố cục.
+
+
+## 29/10/2026 — dao_uc_greybox_followup — v1, chưa duyệt chính thức
+
+- Người dùng đã xem/chấp nhận bản thử khối màu29/10/2026, UI thật làm sau.
+  Nhánh `fix/g1-dao-uc-greybox-followup` từ main `501b621` (đã có PR21).
+- Đồng bộ đúng câu báo đòn trong GDD và SCR-06: Tướng tiên phong Hậu Ngô1,5s,
+  boss sau rút dần, không dưới0,8s; Tạm thời — chốt sau chơi thử. Không đổi số khác.
+- Thay pipeline sao Markdown bằng `tools/export_layout_json.py`: lấy nguyên từng
+  hàng layout, layout-meta và SHA256 toàn bộ nguồn; --check chỉ so trong bộ nhớ,
+  báo lệch/mã khác0. Runtime đọc hai JSON; xóa sync_layouts.py, hai bản sao Markdown
+  và manifest cũ. PC đối chiếu SHA/từng ô với nguồn, không nhập tay lưới.
+- Checker bổ sung HUD trên SCR-05/SCR-06 ở960/1200 từ A0 +06: cấp, HP/MP,
+  menu, ⚙, minimap120×80; riêng SCR-06 có thanh boss360×32 căn giữa,y24,
+  gồm tên/vạch pha (Tạm thời ghi13). Không tính nhãn tọa độ/Về A0 là HUD.
+  Hình người/quái cao96,boss132, dùng rộng khung128/192; không dùng collider88 thay ảnh.
+- Người dùng chọn A: ẩn minimap SCR-06. Kiểm cho thấy menu/⚙ vẫn che lính khi
+  camera bị chặn; sau khi được báo, người dùng cho phép hạ lũy. Hạ đỉnh từy160→224,
+  giữ bậc32 px, đúng4 lính c54/55/57/58 (r4→r6), E phải r4→r6, sân phẳng640 px.
+  Map thường m(c106,r4) bị che, chuyển riêng xuốngr6 trên bục dưới; không đổi địa hình.
+- Kiểm mọi cột/mặt đứng được của sân/lũy và mỗi m/B trong khung hình, cả hai hướng;
+  map thường từng m/M/N/B trong0–6 ô hai phía; hình96px S/R không chạm HUD trên/nút dưới.
+  Bản thử áp đúng HUD đã chọn; test đối chiếu Rect thật của các Control với mô hình Python.
+- Dựng lại ảnh/lớp phủ từ script và sinh JSON. Nguyên đầu ra Godot4.7.2 (import,
+  smoke/classic/rig/Đào Úc), check_layout hai map, export JSON --check, phản chứng
+  JSON sai/pose cũ bị che, export-pack preset tạm không include_filter và đọc nội dung
+  PCK được chép vào commit message. Không commit preset tạm/gói xuất thử.
+- Giữ nguyên prototype/config, art, tools/agent-skills, co_lau_game và checklist11;
+  nhật ký cũ không đổi. Đây chưa phải duyệt chính thức/UI thành phẩm hoặc thử lại Realme.
+- Ghi nhận export: Godot4.7.2 báo thiếu khóa include_filter khi preset cố ý bỏ hẳn
+  khóa theo lệnh; export exit0 và script đọc PCK xác minh JSON/loader đúng nguồn cuối.
+  Giữ nguyên chẩn đoán trong đầu ra commit, không che bằng bộ lọc hay đổi preset yêu cầu.
