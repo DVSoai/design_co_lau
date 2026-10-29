@@ -31,5 +31,45 @@
       "source_px": 261,
       "at_96_px": 48.185
     }
+  },
+  "width_measurements": {
+    "manual_collar_y": 174,
+    "manual_hem_y": 360,
+    "bands": {
+      "shoulder": {
+        "source_y": 198,
+        "three_row_spans": [
+          76,
+          76,
+          77
+        ],
+        "width_px": 76.0,
+        "ratio": 0.14615384615384616,
+        "target_at_96_px": 14.03076923076923
+      },
+      "chest": {
+        "source_y": 240,
+        "three_row_spans": [
+          93,
+          93,
+          93
+        ],
+        "width_px": 93.0,
+        "ratio": 0.17884615384615385,
+        "target_at_96_px": 17.16923076923077
+      },
+      "hip": {
+        "source_y": 330,
+        "three_row_spans": [
+          99,
+          99,
+          99
+        ],
+        "width_px": 99.0,
+        "ratio": 0.19038461538461537,
+        "target_at_96_px": 18.276923076923076
+      }
+    },
+    "method": "median visible side-silhouette span across y-1,y,y+1; source arms/cloth overlap disclosed"
   }
 }

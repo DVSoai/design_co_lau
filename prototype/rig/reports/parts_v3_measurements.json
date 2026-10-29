@@ -1,0 +1,331 @@
+{
+  "reference": {
+    "image": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "62507c983bebc6fbeef3b8673356cb2c825052dac7a900fef36649c2b4be0cd3",
+    "image_size": [
+      1735,
+      576
+    ],
+    "side_roi": [
+      610,
+      20,
+      780,
+      570
+    ],
+    "silhouette_y": [
+      40,
+      560
+    ],
+    "manual_neck_y": 174,
+    "manual_hip_y": 299,
+    "height_source_px": 520,
+    "segments": {
+      "head_hair": {
+        "source_px": 134,
+        "at_96_px": 24.738
+      },
+      "torso": {
+        "source_px": 125,
+        "at_96_px": 23.077
+      },
+      "legs_feet": {
+        "source_px": 261,
+        "at_96_px": 48.185
+      }
+    },
+    "width_measurements": {
+      "manual_collar_y": 174,
+      "manual_hem_y": 360,
+      "bands": {
+        "shoulder": {
+          "source_y": 198,
+          "three_row_spans": [
+            76,
+            76,
+            77
+          ],
+          "width_px": 76.0,
+          "ratio": 0.14615384615384616,
+          "target_at_96_px": 14.03076923076923
+        },
+        "chest": {
+          "source_y": 240,
+          "three_row_spans": [
+            93,
+            93,
+            93
+          ],
+          "width_px": 93.0,
+          "ratio": 0.17884615384615385,
+          "target_at_96_px": 17.16923076923077
+        },
+        "hip": {
+          "source_y": 330,
+          "three_row_spans": [
+            99,
+            99,
+            99
+          ],
+          "width_px": 99.0,
+          "ratio": 0.19038461538461537,
+          "target_at_96_px": 18.276923076923076
+        }
+      },
+      "method": "median visible side-silhouette span across y-1,y,y+1; source arms/cloth overlap disclosed"
+    }
+  },
+  "body_ratios": {
+    "before": {
+      "shoulder": {
+        "rendered_image": "docs/reports/g1_parts_v3_before_idle_1x.png",
+        "image_row": 53,
+        "width": 12,
+        "height": 95,
+        "ratio": 0.12631578947368421,
+        "relative_error": -0.1357340720221607,
+        "within_10_percent": false
+      },
+      "chest": {
+        "rendered_image": "docs/reports/g1_parts_v3_before_idle_1x.png",
+        "image_row": 59,
+        "width": 14,
+        "height": 95,
+        "ratio": 0.14736842105263157,
+        "relative_error": -0.1760045274476515,
+        "within_10_percent": false
+      },
+      "hip": {
+        "rendered_image": "docs/reports/g1_parts_v3_before_idle_1x.png",
+        "image_row": 72,
+        "width": 17,
+        "height": 95,
+        "ratio": 0.17894736842105263,
+        "relative_error": -0.06007442849548106,
+        "within_10_percent": true
+      }
+    },
+    "after": {
+      "shoulder": {
+        "rendered_image": "prototype/rig/contact_sheets/art/chr_dbl_idle_art_1x.png",
+        "image_row": 52,
+        "width": 14,
+        "height": 96,
+        "ratio": 0.14583333333333334,
+        "relative_error": -0.002192982456140302,
+        "within_10_percent": true
+      },
+      "chest": {
+        "rendered_image": "prototype/rig/contact_sheets/art/chr_dbl_idle_art_1x.png",
+        "image_row": 58,
+        "width": 17,
+        "height": 96,
+        "ratio": 0.17708333333333334,
+        "relative_error": -0.009856630824372714,
+        "within_10_percent": true
+      },
+      "hip": {
+        "rendered_image": "prototype/rig/contact_sheets/art/chr_dbl_idle_art_1x.png",
+        "image_row": 71,
+        "width": 19,
+        "height": 96,
+        "ratio": 0.19791666666666666,
+        "relative_error": 0.039562289562289576,
+        "within_10_percent": true
+      }
+    }
+  },
+  "pose_rows": [
+    {
+      "state": "before",
+      "clip": "idle",
+      "frame": 1,
+      "knee_near": 25.5545896303591,
+      "knee_far": 25.55458948281283,
+      "torso_degrees": 0.0,
+      "hip_y": -45.9787216186523,
+      "torso_y": -45.9787216186523,
+      "sole_near_y": 2.473592726204288e-06,
+      "sole_far_y": -1.7881393787888555e-07
+    },
+    {
+      "state": "before",
+      "clip": "idle",
+      "frame": 2,
+      "knee_near": 36.990801127895836,
+      "knee_far": 36.99079919431162,
+      "torso_degrees": 0.0,
+      "hip_y": -44.9787216186523,
+      "torso_y": -44.9787216186523,
+      "sole_near_y": 3.81469729937578e-06,
+      "sole_far_y": 2.4437904038165925e-06
+    },
+    {
+      "state": "before",
+      "clip": "idle",
+      "frame": 3,
+      "knee_near": 45.717839820814355,
+      "knee_far": 45.71783952179289,
+      "torso_degrees": 0.0,
+      "hip_y": -43.9787216186523,
+      "torso_y": -43.9787216186523,
+      "sole_near_y": 2.0861625511514603e-06,
+      "sole_far_y": 1.9073486008380769e-06
+    },
+    {
+      "state": "before",
+      "clip": "idle",
+      "frame": 4,
+      "knee_near": 36.990801127895836,
+      "knee_far": 36.99079919431162,
+      "torso_degrees": 0.0,
+      "hip_y": -44.9787216186523,
+      "torso_y": -44.9787216186523,
+      "sole_near_y": 3.81469729937578e-06,
+      "sole_far_y": 2.4437904038165925e-06
+    },
+    {
+      "state": "before",
+      "clip": "turn",
+      "frame": 1,
+      "knee_near": 0.05139982296423607,
+      "knee_far": 0.05139982296423607,
+      "torso_degrees": 0.0,
+      "hip_y": -46.9787216186523,
+      "torso_y": -46.9787216186523,
+      "sole_near_y": 0.08510780334469992,
+      "sole_far_y": 0.08510780334469992
+    },
+    {
+      "state": "before",
+      "clip": "turn",
+      "frame": 2,
+      "knee_near": 0.05139982296423607,
+      "knee_far": 0.05139982296423607,
+      "torso_degrees": 0.0,
+      "hip_y": -46.9787216186523,
+      "torso_y": -46.9787216186523,
+      "sole_near_y": 0.08510780334469992,
+      "sole_far_y": 0.08510780334469992
+    },
+    {
+      "state": "before",
+      "clip": "land",
+      "frame": 1,
+      "knee_near": 80.48610381448773,
+      "knee_far": 78.49894044619148,
+      "torso_degrees": 8.000000386085587,
+      "hip_y": -37.9787216186523,
+      "torso_y": -37.9787216186523,
+      "sole_near_y": 2.8610228994807585e-06,
+      "sole_far_y": 2.8610228994807585e-06
+    },
+    {
+      "state": "before",
+      "clip": "land",
+      "frame": 2,
+      "knee_near": 36.990801127895836,
+      "knee_far": 36.99079919431162,
+      "torso_degrees": 0.0,
+      "hip_y": -44.9787216186523,
+      "torso_y": -44.9787216186523,
+      "sole_near_y": 3.81469729937578e-06,
+      "sole_far_y": 2.4437904038165925e-06
+    },
+    {
+      "state": "after",
+      "clip": "idle",
+      "frame": 1,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -47.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    },
+    {
+      "state": "after",
+      "clip": "idle",
+      "frame": 2,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -48.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    },
+    {
+      "state": "after",
+      "clip": "idle",
+      "frame": 3,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -49.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    },
+    {
+      "state": "after",
+      "clip": "idle",
+      "frame": 4,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -48.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    },
+    {
+      "state": "after",
+      "clip": "turn",
+      "frame": 1,
+      "knee_near": 0.05139982296423607,
+      "knee_far": 0.05139982296423607,
+      "torso_degrees": 0.0,
+      "hip_y": -46.9787216186523,
+      "torso_y": -46.9787216186523,
+      "sole_near_y": 0.08510780334469992,
+      "sole_far_y": 0.08510780334469992
+    },
+    {
+      "state": "after",
+      "clip": "turn",
+      "frame": 2,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -47.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    },
+    {
+      "state": "after",
+      "clip": "land",
+      "frame": 1,
+      "knee_near": 80.48610381448773,
+      "knee_far": 78.49894044619148,
+      "torso_degrees": 8.000000386085587,
+      "hip_y": -37.9787216186523,
+      "torso_y": -37.9787216186523,
+      "sole_near_y": 2.8610228994807585e-06,
+      "sole_far_y": 2.8610228994807585e-06
+    },
+    {
+      "state": "after",
+      "clip": "land",
+      "frame": 2,
+      "knee_near": 0.0,
+      "knee_far": 0.0,
+      "torso_degrees": 0.0,
+      "hip_y": -47.064525604248,
+      "torso_y": -47.064525604248,
+      "sole_near_y": -1.6689300412764396e-06,
+      "sole_far_y": -1.6689300412764396e-06
+    }
+  ]
+}

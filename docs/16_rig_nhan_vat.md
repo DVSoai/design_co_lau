@@ -363,3 +363,61 @@ attach và hitbox; không dùng góc 0 cũ khiến lưỡi nằm dọc cẳng ta
 Cung gắn nắm tay xa; trục hai đầu cánh cung lúc bắn lệch vuông góc 0,490°.
 59 pose đã kiểm (13 động tác và run/shoot trái), không mũi đao nào nằm giữa khuỷu
 và cổ tay. [Báo cáo, ảnh và script](reports/g1_weapon_direction_report.md).
+
+## Chỉnh dáng và thân v3 — chưa duyệt
+
+29/10/2026, từ main `8bd5876`, nhánh `fix/g1-parts-v3`. Đầu do Claude vẽ tay
+được giữ nguyên từng pixel RGBA và toàn bộ metadata, gồm pivot/attach; không sửa tóc.
+Chỉ nới thân và sửa idle/khung đứng cuối turn, land. Chưa duyệt mỹ thuật.
+
+Đo ảnh nghiêng gốc tại ROI (610,20)–(780,570), tách nền xanh: cao520 px;
+vai y198, giữa ngực y240, hông dưới đai y330. Bề ngang là trung vị ba hàng
+liền nhau của đường bao nhìn thấy (có tay/áo che), không suy đoán cơ thể bị che.
+Trên rig lấy đúng các mức tương ứng giữa cổ và gấu áo từ transform scene thật;
+chia chiều cao alpha thực của PNG idle. Script: `prototype/rig/measure_reference.py --v3`.
+
+| Vị trí | Ảnh nghiêng w/H | Idle trước w/H | Idle sau w/H | Sai lệch sau |
+|---|---:|---:|---:|---:|
+| shoulder | 76/520 = 0.146154 | 12/95 = 0.126316 | 14/96 = 0.145833 | -0.219% |
+| chest | 93/520 = 0.178846 | 14/95 = 0.147368 | 17/96 = 0.177083 | -0.986% |
+| hip | 99/520 = 0.190385 | 17/95 = 0.178947 | 19/96 = 0.197917 | +3.956% |
+
+Body: size17×29 →23×29; pivot(7,3758865;26,0992908) →(11,3758865;26,0992908);
+attach giữ (0;−46,9787234). Các size/pivot/attach khác giữ nguyên. Áo dùng nhóm
+fabric/belt, gấu qua đai giữ chiều dài cũ; viền thân chỉ theo đường bao ngoài,
+không tô viền mặt cắt cổ/khớp. Không đổi upper_arm.
+
+Thêm Node2D phụ `hip` (không phải bộ phận thứ17). Parent của thigh_near/far:
+body → hip, attach không đổi; `art_parent: body` giữ phép kiểm khe ảnh với thân.
+Mặc định helper theo đúng transform body cũ, nên động tác khác không đổi tọa độ khớp.
+Trong idle, hông y−47,0645254 cố định; chỉ thân/đầu/tay đi y0,−1,−2,−1 px.
+Hai chân thẳng, thân0°, hai đế y0 (sai số float <0,00001 px). Giữ số khung/thời lượng.
+Toàn bộ dữ liệu các clip khác giữ nguyên, chỉ thay khung cuối turn/land thành đứng thẳng.
+
+| Trạng thái | Clip/khung | Gối gần/xa (°) | Thân (°) | Hông y (px) | Thân y (px) | Đế gần/xa y (px) |
+|---|---|---:|---:|---:|---:|---:|
+| before | idle/1 | 25.555/25.555 | 0.000 | -45.978722 | -45.978722 | 0.000002/-0.000000 |
+| before | idle/2 | 36.991/36.991 | 0.000 | -44.978722 | -44.978722 | 0.000004/0.000002 |
+| before | idle/3 | 45.718/45.718 | 0.000 | -43.978722 | -43.978722 | 0.000002/0.000002 |
+| before | idle/4 | 36.991/36.991 | 0.000 | -44.978722 | -44.978722 | 0.000004/0.000002 |
+| before | turn/1 | 0.051/0.051 | 0.000 | -46.978722 | -46.978722 | 0.085108/0.085108 |
+| before | turn/2 | 0.051/0.051 | 0.000 | -46.978722 | -46.978722 | 0.085108/0.085108 |
+| before | land/1 | 80.486/78.499 | 8.000 | -37.978722 | -37.978722 | 0.000003/0.000003 |
+| before | land/2 | 36.991/36.991 | 0.000 | -44.978722 | -44.978722 | 0.000004/0.000002 |
+| after | idle/1 | 0.000/0.000 | 0.000 | -47.064526 | -47.064526 | -0.000002/-0.000002 |
+| after | idle/2 | 0.000/0.000 | 0.000 | -47.064526 | -48.064526 | -0.000002/-0.000002 |
+| after | idle/3 | 0.000/0.000 | 0.000 | -47.064526 | -49.064526 | -0.000002/-0.000002 |
+| after | idle/4 | 0.000/0.000 | 0.000 | -47.064526 | -48.064526 | -0.000002/-0.000002 |
+| after | turn/1 | 0.051/0.051 | 0.000 | -46.978722 | -46.978722 | 0.085108/0.085108 |
+| after | turn/2 | 0.000/0.000 | 0.000 | -47.064526 | -47.064526 | -0.000002/-0.000002 |
+| after | land/1 | 80.486/78.499 | 8.000 | -37.978722 | -37.978722 | 0.000003/0.000003 |
+| after | land/2 | 0.000/0.000 | 0.000 | -47.064526 | -47.064526 | -0.000002/-0.000002 |
+
+Khung vẫn128×128, chân ở y120 (cách đáy8), idle đầu cao96 px. PNG idle cũ thực
+cao95 px; không co giả bản trước. Khi thở nhấc thân lên1–2 px, alpha toàn dáng
+cao97–98 px; đó là dịch thân theo yêu cầu, không đổi tỉ lệ/khung/hitbox A0.
+Neutral measurement nay lấy đúng idle frame0, không đặt mọi góc0 như cách cũ.
+
+[Báo cáo/script/đầu ra](reports/g1_parts_v3_report.md),
+[ảnh so sánh](reports/g1_parts_v3_compare.png), contact sheet toàn bộ art trong
+`prototype/rig/contact_sheets/art/`. Đây là bản chờ người dùng duyệt, không đánh dấu[x].

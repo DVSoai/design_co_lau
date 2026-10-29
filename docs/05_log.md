@@ -428,3 +428,20 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Ghi nhận export: Godot4.7.2 báo thiếu khóa include_filter khi preset cố ý bỏ hẳn
   khóa theo lệnh; export exit0 và script đọc PCK xác minh JSON/loader đúng nguồn cuối.
   Giữ nguyên chẩn đoán trong đầu ra commit, không che bằng bộ lọc hay đổi preset yêu cầu.
+
+## 29/10/2026 — g1_parts_v3 — v3, chưa duyệt
+
+- Theo người dùng: sửa thân gầy và đứng khom; không sửa tóc/đầu do Claude vẽ tay.
+  Từ main8bd5876, nhánhfix/g1-parts-v3. Không tạo concept mới, không dùng imagegen.
+- Idle và khung đứng cuối turn/land: gối0°, thân0°, hai đế y0. Thêm helper hông
+  cố định, thở chỉ thân/đầu/tay dịch0,−1,−2,−1 px; giữ khung/thời lượng và dữ liệu
+  mọi động tác khác. Hitbox, số A0, prototype/config và Đào Úc giữ nguyên.
+- Đo lại ảnh nghiêng và scene: vai/ngực/hông trước12/14/17 px (cao95), sau14/17/19 px
+  (cao96); sai lệch so ảnh gốc −0,219%/−0,986%/+3,956%, trong±10%.
+  Body17×29→23×29, pivotx+4, attach và mọi metadata đầu giữ nguyên; gấu áo qua đai,
+  palette theo vùng, viền chỉ ngoài đường bao; không sửa upper_arm.
+- Xuất lại15 contact sheet art, idle×4 và ảnh so sánh từ file thật; báo cáo số đo
+  trước/sau và script tại reports/g1_parts_v3_report.md. chr_dbl_parts: v3 chờ người dùng duyệt.
+- Kiểm Godot4.7.2, palette/alpha/nhóm màu/viền/khớp và trục vũ khí; nguyên đầu ra
+  trong commit message và reports/g1_parts_v3_checks.txt. Đầu so main giống từng
+  pixel RGBA, pivot/attach; không tự đánh dấu[x], không sửa byte nhật ký cũ.

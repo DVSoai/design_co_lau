@@ -14,6 +14,7 @@ var bow_string: Line2D
 var sprites: Dictionary = {}
 var art_enabled := true
 var joint_fill: Dictionary = {}
+var hip_joint: Node2D
 
 func _ready() -> void:
 	_build(true)
@@ -35,6 +36,11 @@ func _build(use_art: bool) -> void:
 	# Rotation centre at torso centre, not at the feet.
 	pivot_root.position = Vector2(definition.rotation_center[0], definition.rotation_center[1])
 	add_child(pivot_root)
+	hip_joint = Node2D.new()
+	hip_joint.name = "HipAnchor"
+	pivot_root.add_child(hip_joint)
+	joints["hip"] = hip_joint
+	paths["hip"] = str(get_path_to(hip_joint))
 	var fills: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://rig/art_parts/joint_fill.json"))
 	for part in definition.parts:
 		var joint := Node2D.new()
@@ -100,6 +106,8 @@ func _make_animation(clip: Dictionary) -> Animation:
 		anim.track_set_path(layer_track, NodePath(str(get_path_to(shapes[part.id])) + ":z_index"))
 		anim.track_insert_key(layer_track, 0, int(clip.get("layer_overrides", {}).get(part.id, part.z)))
 	for id in joints:
+		if id == "hip":
+			continue
 		var track := anim.add_track(Animation.TYPE_VALUE)
 		anim.track_set_path(track, NodePath(paths[id] + ":rotation"))
 		anim.value_track_set_update_mode(track, Animation.UPDATE_DISCRETE)
@@ -107,6 +115,20 @@ func _make_animation(clip: Dictionary) -> Animation:
 		for frame in clip.frames:
 			anim.track_insert_key(track, time, deg_to_rad(float(frame.angles[id])))
 			time += float(frame.duration)
+	# Hip helper follows the original torso transform by default. Only standing
+	# breath frames override position, keeping thighs planted while torso rises.
+	var hip_track := anim.add_track(Animation.TYPE_VALUE)
+	anim.track_set_path(hip_track, NodePath(paths.hip + ":position"))
+	anim.value_track_set_update_mode(hip_track, Animation.UPDATE_DISCRETE)
+	var hip_angle := anim.add_track(Animation.TYPE_VALUE)
+	anim.track_set_path(hip_angle, NodePath(paths.hip + ":rotation"))
+	anim.value_track_set_update_mode(hip_angle, Animation.UPDATE_DISCRETE)
+	var hip_time := 0.0
+	for frame in clip.frames:
+		var position: Array = frame.get("hip_position",frame.body_position)
+		anim.track_insert_key(hip_track,hip_time,Vector2(position[0],position[1])-pivot_root.position)
+		anim.track_insert_key(hip_angle,hip_time,deg_to_rad(float(frame.angles.body)))
+		hip_time += float(frame.duration)
 	var body_track := anim.add_track(Animation.TYPE_VALUE)
 	anim.track_set_path(body_track, NodePath(paths.body + ":position"))
 	anim.value_track_set_update_mode(body_track, Animation.UPDATE_DISCRETE)

@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "status": "Đề xuất — common-scale art measurements, chưa duyệt",
+  "version": 3,
+  "status": "v3 — chưa duyệt, head immutable; separate hip helper for standing breath",
   "height": 96,
   "canvas": [
     128,
@@ -12,11 +12,11 @@
       "id": "body",
       "parent": "",
       "size": [
-        17,
+        23,
         29
       ],
       "pivot": [
-        7.375886524822695,
+        11.375886524822695,
         26.099290780141843
       ],
       "attach": [
@@ -125,7 +125,7 @@
     },
     {
       "id": "thigh_far",
-      "parent": "body",
+      "parent": "hip",
       "size": [
         15,
         24
@@ -144,7 +144,8 @@
         -100,
         100
       ],
-      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting",
+      "art_parent": "body"
     },
     {
       "id": "shin_far",
@@ -263,7 +264,7 @@
     },
     {
       "id": "thigh_near",
-      "parent": "body",
+      "parent": "hip",
       "size": [
         15,
         24
@@ -282,7 +283,8 @@
         -100,
         100
       ],
-      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting",
+      "art_parent": "body"
     },
     {
       "id": "shin_near",
@@ -406,5 +408,6 @@
     176,
     152,
     86
-  ]
+  ],
+  "neutral_clip": "idle"
 }

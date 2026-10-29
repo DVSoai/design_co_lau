@@ -2,16 +2,16 @@
   "body": {
     "forbidden_group_pixels": 0,
     "shirt_counts": {
-      "#554638": 32,
-      "#89745E": 45,
-      "#C3A98A": 164,
-      "#EAD8B8": 30
+      "#554638": 33,
+      "#89745E": 54,
+      "#C3A98A": 190,
+      "#EAD8B8": 18
     },
     "shirt_percent": {
-      "#554638": 11.808,
-      "#89745E": 16.605,
-      "#C3A98A": 60.517,
-      "#EAD8B8": 11.07
+      "#554638": 11.186,
+      "#89745E": 18.305,
+      "#C3A98A": 64.407,
+      "#EAD8B8": 6.102
     }
   },
   "head": {
@@ -90,8 +90,8 @@
     "forbidden_group_pixels": 0
   },
   "fingertips": {
-    "idle_hand_far": -32,
-    "idle_hand_near": -32,
+    "idle_hand_far": -33,
+    "idle_hand_near": -33,
     "standing_neutral_hand_far": -33,
     "standing_neutral_hand_near": -33
   },

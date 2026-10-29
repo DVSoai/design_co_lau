@@ -1,0 +1,1632 @@
+{
+  "version": 1,
+  "clips": {
+    "idle": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": true,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -45.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 17.03353223581929,
+            "shin_far": -25.605990534672657,
+            "foot_far": 8.572458298853366,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 5.9687484280916845,
+            "shin_near": -25.605990534672657,
+            "foot_near": 19.63724210658097,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.16666666666666666,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -44.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 2,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.16666666666666666,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -43.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 26.62097142844774,
+            "shin_far": -45.76924124693656,
+            "foot_far": 19.148269818488817,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 14.912266960308935,
+            "shin_near": -45.76924124693651,
+            "foot_near": 30.85697428662757,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.16666666666666666,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -44.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": -2,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.16666666666666666,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 0
+    },
+    "run": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": true,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0.0,
+            -44.85006563277481
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 6,
+            "head": -3.0,
+            "upper_arm_far": 0,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": 29.13634900883691,
+            "shin_far": -50.57840016901409,
+            "foot_far": 15.442051160177174,
+            "upper_arm_near": 0,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": -5.700697856809069,
+            "shin_near": -31.067170171423005,
+            "foot_near": 30.76786802823208,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.0,
+            -44.565547309319214
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4.0,
+            "upper_arm_far": 28,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": 20.09923116242397,
+            "shin_far": -69.2354956210809,
+            "foot_far": 41.13626445865692,
+            "upper_arm_near": -28,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": 11.159901505329746,
+            "shin_near": -44.12342894805506,
+            "foot_near": 24.963527442725308,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.0,
+            -42.84826220389231
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 7,
+            "head": -3.5,
+            "upper_arm_far": 15,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": -4.419843685467065,
+            "shin_far": -51.58024578180082,
+            "foot_far": 49.00008946726788,
+            "upper_arm_near": -15,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": 30.961617080698723,
+            "shin_near": -44.615506003436344,
+            "foot_near": 6.653888922737624,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.0,
+            -44.194374888702725
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 6,
+            "head": -3.0,
+            "upper_arm_far": 0,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": -13.356034792390622,
+            "shin_far": -24.656951387741653,
+            "foot_far": 32.01298618013228,
+            "upper_arm_near": 0,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": 34.20896538160053,
+            "shin_near": -48.9050709512814,
+            "foot_near": 8.69610556968087,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.0,
+            -44.24167332568788
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4.0,
+            "upper_arm_far": -28,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": 5.237329954394074,
+            "shin_far": -41.88300315354275,
+            "foot_far": 28.645673199148682,
+            "upper_arm_near": 28,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": 27.21903480900376,
+            "shin_near": -70.28164897407663,
+            "foot_near": 35.06261416507286,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.0,
+            -43.05150612530254
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 7,
+            "head": -3.5,
+            "upper_arm_far": -15,
+            "forearm_far": -15,
+            "hand_far": 0,
+            "thigh_far": 26.766038772709912,
+            "shin_far": -46.473472479174916,
+            "foot_far": 12.707433706465004,
+            "upper_arm_near": 15,
+            "forearm_near": -15,
+            "hand_near": 0,
+            "thigh_near": 3.911647864816832,
+            "shin_near": -61.270437617461276,
+            "foot_near": 50.358789752644434,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 2,
+          "name": "step"
+        },
+        {
+          "frame": 5,
+          "name": "step"
+        }
+      ],
+      "end_root_angle": 0
+    },
+    "jump_up": {
+      "status": "Đề xuất — 2 khung; tổng 0,38 s theo A0",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -38.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 39.84442831249996,
+            "shin_far": -94.02770772884132,
+            "foot_far": 46.183279416341364,
+            "upper_arm_near": -30,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 31.988324530963894,
+            "shin_near": -103.86209369364204,
+            "foot_near": 63.873769162678144,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.19,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -60,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -45,
+            "shin_near": 65,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.19,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 0
+    },
+    "apex_flip": {
+      "status": "Đề xuất — 6 khung + khóa kết thúc 360°; tổng 0,20 s đã duyệt A0",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 60,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 120,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 180,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 240,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 300,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": -55,
+            "shin_far": 100,
+            "foot_far": 0,
+            "upper_arm_near": -90,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -65,
+            "shin_near": 100,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.03333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 360
+    },
+    "fall": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": true,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -40,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -15,
+            "shin_near": 35,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -30,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -10,
+            "shin_near": 25,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 0
+    },
+    "land": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -37.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 38.5129652348877,
+            "shin_far": -78.55034136336297,
+            "foot_far": 32.03737612847526,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 17.203351248042566,
+            "shin_near": -80.53750680131799,
+            "foot_near": 55.334155553275416,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -44.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 22.45665342389742,
+            "shin_far": -37.04220189112782,
+            "foot_far": 14.585548467230398,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 11.078982783759615,
+            "shin_near": -37.04220189112792,
+            "foot_near": 25.9632191073683,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 1,
+          "name": "land_dust"
+        }
+      ],
+      "end_root_angle": 0
+    },
+    "turn": {
+      "status": "Đề xuất — 2 khung; tổng 0,05 s theo A0, hướng mặt do A0 quyết định",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": -10,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.025,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 143.86700917743468,
+            "bow": 0
+          },
+          "duration": 0.025,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 0
+    },
+    "slash_1": {
+      "status": "Đề xuất — combo; nhát 1 tổng 0,30 s, hit 0,10–0,20 theo A0",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0.03499372648890775,
+            -45.10987272023973
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -10,
+            "head": 5.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 35.17198732757126,
+            "shin_far": -35.69872338981775,
+            "foot_far": 10.52673606224649,
+            "upper_arm_near": -110,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": 14.833280517446795,
+            "shin_near": -30.188362250830778,
+            "foot_near": 25.355081733383987,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.41722927320555314,
+            -45.13868456642186
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 10,
+            "head": -5.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 12.537750456267247,
+            "shin_far": -28.970770846586657,
+            "foot_far": 6.433020390319406,
+            "upper_arm_near": -40,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": -1.9578666020247457,
+            "shin_near": -36.09694207555538,
+            "foot_near": 28.05480867758013,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.15229152941160584,
+            -45.110735389177016
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 14.812797995357567,
+            "shin_far": -30.45442000137418,
+            "foot_far": 7.641622006016611,
+            "upper_arm_near": 55,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": -0.647684422090423,
+            "shin_near": -35.47709463335951,
+            "foot_near": 28.124779055449935,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.05,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            2.1387602994416853e-15,
+            -45.08813675165621
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 23.92972222980076,
+            "shin_far": -33.327699720454696,
+            "foot_far": 9.39797749065394,
+            "upper_arm_near": 0,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": 6.190306861999618,
+            "shin_near": -33.327699720454596,
+            "foot_near": 27.13739285845498,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.05,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 2,
+          "name": "hit"
+        },
+        {
+          "frame": 3,
+          "name": "cancel"
+        }
+      ],
+      "end_root_angle": 0
+    },
+    "slash_2": {
+      "status": "Đề xuất — combo chỉ xem, không đổi chiến đấu A0",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            -0.03499372648890975,
+            -45.109872720239736
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 10,
+            "head": -5.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 12.39554573119645,
+            "shin_far": -30.188362250830778,
+            "foot_far": 7.792816519634334,
+            "upper_arm_near": -100,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": -2.8710155080543265,
+            "shin_near": -35.69872338981767,
+            "foot_near": 28.569738897872003,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            -0.4172292732055165,
+            -45.13868456642186
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -10,
+            "head": 5.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 34.624890133211785,
+            "shin_far": -36.09694207555538,
+            "foot_far": 11.472051942343601,
+            "upper_arm_near": -30,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": 13.568726324409948,
+            "shin_near": -28.970770846586657,
+            "foot_near": 25.402044522176705,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            -0.15229152941164337,
+            -45.11073538917703
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -8,
+            "head": 4.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 32.74489904446655,
+            "shin_far": -35.47709463335951,
+            "foot_far": 10.732195588892962,
+            "upper_arm_near": 65,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": 12.66120311179898,
+            "shin_near": -30.454420001374107,
+            "foot_near": 25.793216889575124,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            2.1387602994416853e-15,
+            -45.08813675165621
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 23.92972222980076,
+            "shin_far": -33.327699720454696,
+            "foot_far": 9.39797749065394,
+            "upper_arm_near": 0,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": 6.190306861999618,
+            "shin_near": -33.327699720454596,
+            "foot_near": 27.13739285845498,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 2,
+          "name": "hit"
+        },
+        {
+          "frame": 3,
+          "name": "cancel"
+        }
+      ],
+      "end_root_angle": 0
+    },
+    "slash_3": {
+      "status": "Đề xuất — combo chỉ xem, không đổi chiến đấu A0",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            -0.23146363808071113,
+            -45.13891271428331
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -12,
+            "head": 6.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 37.05062383552324,
+            "shin_far": -36.314777043443,
+            "foot_far": 11.264153207919756,
+            "upper_arm_near": -140,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": 15.728921148871468,
+            "shin_near": -28.691583526117512,
+            "foot_near": 24.962662377246044,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            -0.15229152941164337,
+            -45.11073538917703
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -8,
+            "head": 4.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 32.74489904446655,
+            "shin_far": -35.47709463335951,
+            "foot_far": 10.732195588892962,
+            "upper_arm_near": -115,
+            "forearm_near": -30,
+            "hand_near": 0,
+            "thigh_near": 12.66120311179898,
+            "shin_near": -30.454420001374107,
+            "foot_near": 25.793216889575124,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.23146363808071468,
+            -45.13891271428331
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 12,
+            "head": -6.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 10.120132922668006,
+            "shin_far": -28.691583526117512,
+            "foot_far": 6.571450603449506,
+            "upper_arm_near": 20,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": -4.18339199200722,
+            "shin_near": -36.314777043443,
+            "foot_near": 28.498169035450214,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0.15229152941160584,
+            -45.110735389177016
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 8,
+            "head": -4.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 14.812797995357567,
+            "shin_far": -30.45442000137418,
+            "foot_far": 7.641622006016611,
+            "upper_arm_near": 65,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": -0.647684422090423,
+            "shin_near": -35.47709463335951,
+            "foot_near": 28.124779055449935,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            2.1387602994416853e-15,
+            -45.08813675165621
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0.0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 23.92972222980076,
+            "shin_far": -33.327699720454696,
+            "foot_far": 9.39797749065394,
+            "upper_arm_near": 0,
+            "forearm_near": -10,
+            "hand_near": 0,
+            "thigh_near": 6.190306861999618,
+            "shin_near": -33.327699720454596,
+            "foot_near": 27.13739285845498,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 3,
+          "name": "hit"
+        },
+        {
+          "frame": 5,
+          "name": "cancel"
+        }
+      ],
+      "end_root_angle": 0
+    },
+    "shoot": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "bow",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": -89.05461089553556,
+            "forearm_far": -0.2633287112917877,
+            "hand_far": -0.682060393172652,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -71.9363967735597,
+            "forearm_near": -41.27039713214882,
+            "hand_near": 23.20679390570851,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 156.79320609429146,
+            "bow": 90
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": -89.05461089553556,
+            "forearm_far": -0.2633287112917877,
+            "hand_far": -0.682060393172652,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -69.61813592202995,
+            "forearm_near": -96.28951742147733,
+            "hand_near": 75.90765334350726,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 104.09234665649274,
+            "bow": 90
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": -89.05461089553556,
+            "forearm_far": -0.2633287112917877,
+            "hand_far": -0.682060393172652,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -105.85140409720256,
+            "forearm_near": -126.06595387823799,
+            "hand_near": 90,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 90,
+            "bow": 90
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": -89.05461089553556,
+            "forearm_far": -0.2633287112917877,
+            "hand_far": -0.682060393172652,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -71.9363967735597,
+            "forearm_near": -41.27039713214882,
+            "hand_near": 23.20679390570851,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 156.79320609429146,
+            "bow": 90
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": -89.05461089553556,
+            "forearm_far": -0.2633287112917877,
+            "hand_far": -0.682060393172652,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": -55.586845661879046,
+            "forearm_near": -75.56075354839247,
+            "hand_near": 41.14759921027152,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": 138.85240078972845,
+            "bow": 90
+          },
+          "duration": 0.06666666666666667,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [
+        {
+          "frame": 4,
+          "name": "spawn"
+        },
+        {
+          "frame": 5,
+          "name": "cancel"
+        }
+      ],
+      "end_root_angle": 0,
+      "notes": "Far arm horizontal/forward; vertical bow, string follows near hand. Pull frames 1-3, release frame 4.",
+      "layer_overrides": {
+        "upper_arm_far": 1,
+        "forearm_far": 1,
+        "hand_far": 2
+      }
+    },
+    "hurt": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": -15,
+            "head": 15,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": 0,
+            "shin_near": 0,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.08333333333333333,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": 0
+    },
+    "knockdown": {
+      "status": "Tạm thời — số khung theo 09_animation_spec.md",
+      "source": "docs/09_animation_spec.md",
+      "loop": false,
+      "weapon": "dao",
+      "frames": [
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": 0,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -25,
+            "shin_near": 60,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -46.97872340425532
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": -30,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -25,
+            "shin_near": 60,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -43.54794299348872
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": -65,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -25,
+            "shin_near": 60,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -24.70224368318602
+          ]
+        },
+        {
+          "body_position": [
+            0,
+            -46.97872340425532
+          ],
+          "root_angle": -90,
+          "angles": {
+            "body": 0,
+            "head": 0,
+            "upper_arm_far": 0,
+            "forearm_far": 0,
+            "hand_far": 0,
+            "thigh_far": 0,
+            "shin_far": 0,
+            "foot_far": 0,
+            "upper_arm_near": 0,
+            "forearm_near": 0,
+            "hand_near": 0,
+            "thigh_near": -25,
+            "shin_near": 60,
+            "foot_near": 0,
+            "dao": -180,
+            "bow": 0
+          },
+          "duration": 0.1,
+          "root_position": [
+            0,
+            -8.97872340425532
+          ]
+        }
+      ],
+      "events": [],
+      "end_root_angle": -90
+    }
+  },
+  "status": "Đề xuất — retarget geometry only; original frame counts/timings retained"
+}

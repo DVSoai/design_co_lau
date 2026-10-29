@@ -24,11 +24,14 @@ func run() -> void:
 		rig.scale.x = 1.0
 		rig.set_weapon("dao")
 		rig.sample("idle", 0)
-		for id in rig.joints:
-			rig.joints[id].rotation = 0.0
-		rig.joints.body.position = Vector2.ZERO
-		rig.pivot_root.position = Vector2(rig.definition.rotation_center[0],rig.definition.rotation_center[1])
-		rig.pivot_root.rotation = 0.0
+		if rig.definition.get("neutral_clip", "") != "":
+			rig.sample(rig.definition.neutral_clip,0)
+		else:
+			for id in rig.joints:
+				rig.joints[id].rotation = 0.0
+			rig.joints.body.position = Vector2.ZERO
+			rig.pivot_root.position = Vector2(rig.definition.rotation_center[0],rig.definition.rotation_center[1])
+			rig.pivot_root.rotation = 0.0
 		output["standing_neutral"] = {"frames": [{"time":0,"duration":0,"geometry":rig.geometry(),"joints":_joints(rig)}],"status":"measurement pose only"}
 	var file := FileAccess.open("res://rig/reports/evaluated_art_frames.json" if art else "res://rig/reports/evaluated_frames.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(output) + "\n")

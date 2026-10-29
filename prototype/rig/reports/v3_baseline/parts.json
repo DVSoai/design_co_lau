@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "status": "Đề xuất — common-scale art measurements, chưa duyệt",
+  "height": 96,
+  "canvas": [
+    128,
+    128
+  ],
+  "baseline": 120,
+  "parts": [
+    {
+      "id": "body",
+      "parent": "",
+      "size": [
+        17,
+        29
+      ],
+      "pivot": [
+        7.375886524822695,
+        26.099290780141843
+      ],
+      "attach": [
+        0.0,
+        -46.97872340425532
+      ],
+      "z": 0,
+      "color": "#A88F59",
+      "angle_limit": [
+        -30,
+        30
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "head",
+      "parent": "body",
+      "size": [
+        23,
+        25
+      ],
+      "pivot": [
+        9.418439716312056,
+        24.73758865248227
+      ],
+      "attach": [
+        0.0,
+        -24.28368794326241
+      ],
+      "z": 1,
+      "color": "#C9AD83",
+      "angle_limit": [
+        -30,
+        30
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "upper_arm_far",
+      "parent": "body",
+      "size": [
+        10,
+        16
+      ],
+      "pivot": [
+        4.652482269503546,
+        0.8170212765957446
+      ],
+      "attach": [
+        0.3404255319148936,
+        -20.99290780141844
+      ],
+      "z": -6,
+      "color": "#506D80",
+      "angle_limit": [
+        -160,
+        160
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "forearm_far",
+      "parent": "upper_arm_far",
+      "size": [
+        7,
+        12
+      ],
+      "pivot": [
+        3.2907801418439715,
+        0.6808510638297871
+      ],
+      "attach": [
+        0.22695035460992907,
+        13.753191489361702
+      ],
+      "z": -5,
+      "color": "#6C8C9A",
+      "angle_limit": [
+        -150,
+        150
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "hand_far",
+      "parent": "forearm_far",
+      "size": [
+        10,
+        14
+      ],
+      "pivot": [
+        2.8368794326241136,
+        1.0212765957446808
+      ],
+      "attach": [
+        0.11347517730496454,
+        9.53191489361702
+      ],
+      "z": -4,
+      "color": "#8C969E",
+      "angle_limit": [
+        -90,
+        90
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "thigh_far",
+      "parent": "body",
+      "size": [
+        15,
+        24
+      ],
+      "pivot": [
+        7.26241134751773,
+        1.3617021276595744
+      ],
+      "attach": [
+        -1.5,
+        0.0
+      ],
+      "z": -6,
+      "color": "#596E54",
+      "angle_limit": [
+        -100,
+        100
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "shin_far",
+      "parent": "thigh_far",
+      "size": [
+        9,
+        21
+      ],
+      "pivot": [
+        3.971631205673759,
+        1.3617021276595744
+      ],
+      "attach": [
+        -0.11347517730496454,
+        19.97163120567376
+      ],
+      "z": -5,
+      "color": "#6F845B",
+      "angle_limit": [
+        -140,
+        140
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "foot_far",
+      "parent": "shin_far",
+      "size": [
+        18,
+        12
+      ],
+      "pivot": [
+        4.879432624113475,
+        2.1560283687943262
+      ],
+      "attach": [
+        -0.11347517730496454,
+        17.24822695035461
+      ],
+      "z": -4,
+      "color": "#87996F",
+      "angle_limit": [
+        -75,
+        75
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "upper_arm_near",
+      "parent": "body",
+      "size": [
+        10,
+        16
+      ],
+      "pivot": [
+        4.76595744680851,
+        0.8170212765957446
+      ],
+      "attach": [
+        0.3404255319148936,
+        -20.99290780141844
+      ],
+      "z": 3,
+      "color": "#507DB7",
+      "angle_limit": [
+        -160,
+        160
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "forearm_near",
+      "parent": "upper_arm_near",
+      "size": [
+        8,
+        12
+      ],
+      "pivot": [
+        3.404255319148936,
+        0.6808510638297871
+      ],
+      "attach": [
+        0.3404255319148936,
+        13.753191489361702
+      ],
+      "z": 4,
+      "color": "#78A5C8",
+      "angle_limit": [
+        -150,
+        150
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "hand_near",
+      "parent": "forearm_near",
+      "size": [
+        10,
+        13
+      ],
+      "pivot": [
+        2.950354609929078,
+        1.0212765957446808
+      ],
+      "attach": [
+        0.11347517730496454,
+        9.736170212765957
+      ],
+      "z": 5,
+      "color": "#A1CCE2",
+      "angle_limit": [
+        -90,
+        90
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "thigh_near",
+      "parent": "body",
+      "size": [
+        15,
+        24
+      ],
+      "pivot": [
+        7.375886524822695,
+        1.3617021276595744
+      ],
+      "attach": [
+        1.5,
+        0.0
+      ],
+      "z": 3,
+      "color": "#6A9B51",
+      "angle_limit": [
+        -100,
+        100
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "shin_near",
+      "parent": "thigh_near",
+      "size": [
+        9,
+        22
+      ],
+      "pivot": [
+        4.085106382978723,
+        1.3617021276595744
+      ],
+      "attach": [
+        -0.11347517730496454,
+        19.97163120567376
+      ],
+      "z": 4,
+      "color": "#8CBD68",
+      "angle_limit": [
+        -140,
+        140
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "foot_near",
+      "parent": "shin_near",
+      "size": [
+        19,
+        12
+      ],
+      "pivot": [
+        4.99290780141844,
+        2.1560283687943262
+      ],
+      "attach": [
+        -0.11347517730496454,
+        17.24822695035461
+      ],
+      "z": 5,
+      "color": "#B4D996",
+      "angle_limit": [
+        -75,
+        75
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "dao",
+      "parent": "hand_near",
+      "size": [
+        8,
+        41
+      ],
+      "pivot": [
+        3.5177304964539005,
+        32.90780141843972
+      ],
+      "attach": [
+        1.8156028368794326,
+        6.3546099290780145
+      ],
+      "z": 7,
+      "color": "#D9B95B",
+      "angle_limit": [
+        -180,
+        180
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    },
+    {
+      "id": "bow",
+      "parent": "hand_far",
+      "size": [
+        10,
+        41
+      ],
+      "pivot": [
+        1.5886524822695036,
+        20.879432624113473
+      ],
+      "attach": [
+        1.8156028368794326,
+        6.3546099290780145
+      ],
+      "z": -2,
+      "color": "#BD734C",
+      "angle_limit": [
+        -180,
+        180
+      ],
+      "occluded_fill": "Unoutlined automatic material at true joint; no greybox frame fitting"
+    }
+  ],
+  "rotation_center": [
+    0,
+    -46.97872340425532
+  ],
+  "bow_string": {
+    "color": "#D9DDD0",
+    "width": 1.0,
+    "top": [
+      6.921985815602837,
+      -20.53900709219858
+    ],
+    "bottom": [
+      7.26241134751773,
+      19.29078014184397
+    ],
+    "hand_anchor": [
+      1.8156028368794326,
+      6.3546099290780145
+    ],
+    "z": -1
+  },
+  "common_scale": 0.11347517730496454,
+  "source_height": 846,
+  "source_spans": [
+    218,
+    214,
+    176,
+    152,
+    86
+  ]
+}

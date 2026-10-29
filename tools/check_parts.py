@@ -30,7 +30,7 @@ def main():
                     draw.polygon([(x*scale+origin[0],y*scale+origin[1]) for x,y in item['points']],fill=1)
                     masks[item['owner']] |= np.asarray(fill,dtype=bool)
             for id,p in parts.items():
-                parent=p['parent']
+                parent=p.get('art_parent',p['parent'])
                 if not parent or id not in masks or parent not in masks:continue
                 checks+=1;union=masks[id]|masks[parent];jx,jy=frame['joints'][id];cx=jx*scale+origin[0];cy=jy*scale+origin[1]
                 radius=min(3,p['size'][0]/2)*scale;maxgap=0.0;holes=set()
