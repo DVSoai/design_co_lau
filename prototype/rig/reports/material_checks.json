@@ -78,7 +78,13 @@
     "forbidden_group_pixels": 0
   },
   "dao": {
-    "forbidden_group_pixels": 0
+    "forbidden_group_pixels": 0,
+    "blade_counts": {
+      "#485F60": 0,
+      "#718B87": 29,
+      "#A5B8B0": 85,
+      "#D9DDD0": 12
+    }
   },
   "bow": {
     "forbidden_group_pixels": 0

@@ -81,6 +81,14 @@ Tay trên/cẳng tay có ngoại lệ rút trục dài còn 60%; da dùng skin, 
 ngoài quần không dùng pants trừ ánh tóc #59443E của ma trận đầu. Báo cáo và script nguyên văn tại
 `reports/g1_parts_art_report.md`; vẫn đang làm, chưa duyệt.
 
+### Bổ sung vật liệu bộ phận 29/10/2026 (chưa duyệt mỹ thuật)
+
+Riêng vũ khí `dao`/`bow` được dùng thêm limestone của palette_v3. Lưỡi đao lấy
+#A5B8B0 làm chính, #718B87 bóng, #D9DDD0 sáng, viền #17151A; cán/vỏ vẫn belt.
+Cung gỗ belt và dây sáng #D9DDD0. Đùi của quần ngang gối chỉ pants (và nét
+outline); skin từ gối xuống. Kiểm nhóm màu theo từng mảnh, không mở limestone
+cho da/áo/quần. Xem [báo cáo](reports/g1_parts_polish_report.md).
+
 ## Kích thước
 
 **Đã duyệt (A0, 28/10/2026):** khung thiết kế **960×540**, nhân vật người **96 px trong khung 128×128**. Dùng `canvas_items`, aspect `expand`, scale `fractional`, lọc nearest; viewport thực rộng 960–1200 px logic theo tỉ lệ màn hình (1600×720 → 1200×540, hệ số 4/3). Android fullscreen + immersive. Kết quả trên Realme RMX3760, Godot 4.7.2, commit `7973729`; không ép mọi thiết bị phóng nguyên ×2. Các kích thước boss, thú, tile, icon và nền bên dưới vẫn **Tạm thời**; A0 không duyệt sprite mỹ thuật thành phẩm.

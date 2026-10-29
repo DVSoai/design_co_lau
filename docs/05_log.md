@@ -280,3 +280,22 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Giữ quyết định, cơ chế, bảng số Cờ Lau và dấu “Phải tự đặt lại số trước Mốc A”. Đơn vị giá tham khảo chưa quy đổi được ghi rõ, không coi là giá tiền đồng đã chốt.
 - Thay từ mô tả trang phục bị cấm trong prompt bằng cách diễn đạt tương đương; không bỏ ràng buộc lịch sử. Nhật ký các lượt cũ giữ nguyên byte, kể cả prompt lịch sử.
 - Chạy phép rà theo yêu cầu; toàn bộ kết quả còn lại chỉ thuộc các mục nhật ký cũ, không có dòng ngoài nhật ký. Nguyên đầu ra trong commit message và báo cáo trả người dùng.
+
+
+## 29/10/2026 — g1_parts_polish — v1, đang làm/chưa duyệt
+
+- Nhánh `fix/g1-parts-polish` từ main `8997b8c`. Không sinh ảnh mới; concept và ảnh
+  tham chiếu `art/reference/ref_dinh_bo_linh.png` giữ nguyên. Không có prompt mới.
+- Cho phép limestone riêng vũ khí: đao #A5B8B0 chủ đạo, bóng #718B87, sáng
+  #D9DDD0, nét #17151A; cán/vỏ belt. Cung gỗ belt, dây sáng #D9DDD0.
+- Hai đùi bỏ skin, chỉ pants và outline. Giữ nguyên đầu do Claude vẽ tay từng pixel,
+  kích thước, pivot, attach và số đo/điều khiển A0.
+- Run/slash_1–3 giảm 35% góc gập hai gối; giải lại hông nâng, giữ chân trụ/chân
+  chém trên đất; chân vung vẫn trên đất. Không đổi số khung/thời lượng/event.
+- Godot 4.7.2: ba lệnh headless README, rig/art/visual tests và các kiểm PIL đều
+  đạt. 16 PNG không sai palette/nhóm màu/bán trong suốt; 672 kiểm khớp trên
+  48 pose/13 động tác, khe lớn nhất 0,50 px; cổ 0,00 px.
+- Xuất lại 15 contact sheet art và idle 1×/×4 từ scene, ×4 NEAREST; không imagegen
+  cho ảnh kết quả. [Báo cáo, script và ảnh](reports/g1_parts_polish_report.md),
+  [nguyên đầu ra](reports/g1_parts_polish_output.txt); nguyên đầu ra cũng trong
+  commit message. Bộ phận vẫn đang làm, chưa được duyệt mỹ thuật.
