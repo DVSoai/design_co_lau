@@ -1,8 +1,8 @@
 # Kế hoạch kiến trúc co_lau_game
 
-**Trạng thái: đề xuất, chờ duyệt ở Mốc A.** Đây là kế hoạch cấu trúc, chưa tạo mã
+**Trạng thái: đề xuất, chờ duyệt ở Mốc A1.** Đây là kế hoạch cấu trúc, chưa tạo mã
 hoặc dự án game. Repo `co_lau_game` đã được người dùng tạo; chỉ bắt đầu triển khai
-sau Mốc A. Không chép mã `prototype/` sang game thật. Môi trường đích: **Godot
+sau Mốc A1. Không chép mã `prototype/` sang game thật. Môi trường đích: **Godot
 4.7.2 Standard, GDScript, Android offline**.
 
 ## 1. Cấu trúc repo dự kiến
@@ -48,7 +48,7 @@ co_lau_game/
 │   └── agent-skills/          # bản tham khảo đã rà, chép từ repo thiết kế
 ├── docs/
 │   └── GDD.md                 # bản sao từ tag thiết kế đang theo
-├── project.godot              # chỉ tạo/cấu hình khi triển khai sau Mốc A
+├── project.godot              # chỉ tạo/cấu hình khi triển khai sau Mốc A1
 ├── AGENTS.md
 ├── DESIGN_VERSION.md
 └── THIRD_PARTY.md
@@ -59,7 +59,7 @@ script ghi commit nguồn, đường dẫn/version asset và kết quả kiểm 
 Không đưa concept, placeholder hay ảnh chưa duyệt vào đó. Chưa viết script chuyển
 art ở bước lập kế hoạch này. Cấu hình số liệu nằm trong `data/`, không lẫn với ảnh.
 
-Khi qua Mốc A, gắn tag `design-vX.Y` bên thiết kế. `DESIGN_VERSION.md` ghi tag và
+Khi qua mỗi mốc A1…A5, gắn tag `design-vX.Y` bên thiết kế. `DESIGN_VERSION.md` cập nhật tag mới nhất đã duyệt và
 commit chính xác, ngày đồng bộ cùng phiên bản dữ liệu; `docs/GDD.md` của game lấy
 nguyên từ tag đó. Không tự theo nhánh main đang thay đổi cho một bản game đã chốt.
 
@@ -100,7 +100,7 @@ Control/Theme tương ứng trong `scenes/ui/`.
 
 **Điểm cần đồng bộ khi duyệt:** GDD Phần 6 và `14_online_migration.md` hiện còn
 nói 12 nhóm JSON, layout thư mục cũ và một số autoload cũ. Kế hoạch này **đề xuất**
-Resource .tres và src theo tính năng theo yêu cầu mới; trước khi qua Mốc A phải
+Resource .tres và src theo tính năng theo yêu cầu mới; trước khi qua Mốc A1 phải
 đồng bộ tài liệu nguồn/định dạng dữ liệu, không coi việc thêm file này là duyệt
 kiến trúc hoặc âm thầm chuyển định dạng. **Nhánh kế hoạch dựa trên main `5577fa5`**,
 đã merge ký duyệt A0 và quy trình ghép bộ phận từ `docs/a0-signoff`. Bộ prototype
@@ -157,7 +157,7 @@ thêm ràng buộc dự án. Đối chiếu `tools/agent-skills/AUDIT.md`, `AUDI
 `CONFLICTS.md`; không coi bản đã điều chỉnh là bản upstream nguyên vẹn. Khi tạo
 repo game phải chép hai dòng nguồn/commit/license trên vào THIRD_PARTY.md thực.
 
-## 5. Thứ tự dựng sau Mốc A
+## 5. Thứ tự dựng sau Mốc A1
 
 1. **core + save**: GameState/Config/EventBus/SaveService, phiên bản/ID và migration; test dữ liệu/lưu trước.
 2. **player**: dựng mới theo số A0/Kiểu cổ điển đã chốt, rig tách va chạm; không chép code prototype.
@@ -169,11 +169,11 @@ repo game phải chép hai dòng nguồn/commit/license trên vào THIRD_PARTY.m
 
 ## 6. Chép skill và bàn giao repo game
 
-Khi bắt đầu triển khai `co_lau_game` sau Mốc A, chép **tools/agent-skills/** từ bản
+Khi bắt đầu triển khai `co_lau_game` sau Mốc A1, chép **tools/agent-skills/** từ bản
 thiết kế đã duyệt, gồm giấy phép, README, CONFLICTS và hồ sơ rà soát. Giữ nguyên
 mục **“Skill tham khảo”** của AGENTS.md trong repo game, gồm thứ tự ưu tiên và
 điều kiện không chạy script khi chưa có yêu cầu. Không chép hooks/commands/agents,
 plugin.json hoặc cấu hình tự chạy từ upstream vào repo game.
 
 Ghi tag/commit thiết kế vào DESIGN_VERSION.md, giữ GDD.md đúng tag và THIRD_PARTY.md
-đúng nguồn nhập. Không tự tạo file/mã game để minh họa kế hoạch này trước Mốc A.
+đúng nguồn nhập. Không tự tạo file/mã game để minh họa kế hoạch này trước Mốc A1.

@@ -314,3 +314,14 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
   từ scene; không imagegen, không có prompt mới. Nguồn art/ảnh tham chiếu cũ giữ nguyên.
 - [Báo cáo và script](reports/g1_weapon_direction_report.md), [nguyên đầu ra](reports/g1_weapon_direction_output.txt);
   đầu ra cũng trong commit message. Chờ người dùng duyệt mỹ thuật.
+
+
+## 29/10/2026 — milestone_a_by_act — v1, đặc tả chia mốc
+
+- Ngày: 29/10/2026.
+- Mã: milestone_a_by_act.
+- Thay đổi: chia checklist trước khi code thành A1–A5 theo hồi; A1 gồm mở đầu/Hồi 1 và toàn bộ hệ thống lõi, sau A1 được bắt đầu code game thật. Nội dung Hồi n chỉ đưa vào game sau An; thiết kế Hồi 2–5 làm song song với code. Hệ thống mới và bậc trang bị phân theo quyết định, mọi bảng số hệ thống lõi duyệt đủ ở A1.
+- Đồng bộ tên mốc trong README, AGENTS và tài liệu; giữ thứ tự giai đoạn sản xuất. Thêm bảng đối chiếu từng checkbox, căn cứ nhiệm vụ và các điểm (Cần người dùng xác nhận). Mỗi mốc có tag thiết kế riêng khi được duyệt, repo game cập nhật GDD/DESIGN_VERSION theo tag mới nhất.
+- Lý do: quyết định người dùng ngày 29/10/2026.
+- Giữ nguyên mục A0, Mốc C, toàn bộ quyết định lịch sử, dòng ký A0 và trạng thái các điều kiện đã có. Không đổi số liệu, không tạo ảnh, không sửa prototype/art/tools/co_lau_game. Không có prompt hoặc ảnh tham chiếu mới.
+- Tác vụ này chỉ sửa cách chốt thiết kế, không có nghĩa A1–A5 đã được duyệt; không gắn tag nghiệm thu. Báo cáo: `docs/reports/milestone_a_by_act_mapping.md`.

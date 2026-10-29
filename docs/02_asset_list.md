@@ -2,7 +2,9 @@
 
 Mỗi dòng là một hạng mục: mã (dùng làm tên file), mô tả ngắn, và khuôn prompt (P..) hoặc tài liệu đặc tả cần theo. Đánh dấu `[x]` khi người dùng đã duyệt. Giai đoạn sau chỉ mở khi giai đoạn trước đã duyệt đủ.
 
-**Các giai đoạn là thứ tự sản xuất thiết kế, không phải thứ tự lập trình.** Giai đoạn 1 dựng một bộ mẫu chuẩn gồm nhân vật chính, một vùng và màn chơi, để mọi thứ làm sau so theo đó cho đồng bộ. Code game thật chỉ bắt đầu khi qua Mốc A của `11_design_freeze.md`. A0 và lát cắt mẫu cuối Giai đoạn 1 là ngoại lệ prototype riêng, không mở khóa code game thật.
+**Các giai đoạn là thứ tự sản xuất thiết kế, không phải thứ tự lập trình.** Giai đoạn 1 dựng một bộ mẫu chuẩn gồm nhân vật chính, một vùng và màn chơi, để mọi thứ làm sau so theo đó cho đồng bộ. Code game thật chỉ bắt đầu khi qua Mốc A1 của `11_design_freeze.md`. A0 và lát cắt mẫu cuối Giai đoạn 1 là ngoại lệ prototype riêng, không mở khóa code game thật.
+
+Giai đoạn 1–2 và phần Giai đoạn 3 dùng cho Hồi 1/hệ thống lõi → A1. Giai đoạn 4 → A2/A3. Giai đoạn 5 → A4/A5. Giữ nguyên thứ tự giai đoạn sản xuất; A1–A5 là điều kiện đưa nội dung vào game, xem `11_design_freeze.md`.
 
 Có bốn loại hạng mục:
 
@@ -54,13 +56,22 @@ Có bốn loại hạng mục:
 
 ## Giai đoạn 3 — Toàn bộ màn hình và luồng
 
-- [ ] Đặc tả `scr_01` đến `scr_22` theo `06_screens.md`
-- [ ] Mockup cho mọi màn (P13, mã `ui_<tên>`), gồm cả `ui_world_map` (SCR-14) và `ui_base` (SCR-22)
-- [ ] Mockup riêng cho trạng thái khác bố cục (P13b): thợ rèn đang rèn, thành công, thất bại; SCR-13 thẻ Gói khi mất mạng, đang chờ Google Play, đã sở hữu; chọn ô khi xóa; giữ ải giữa hai đợt
+- [ ] Đặc tả `scr_01`–`scr_06`, `scr_08`–`scr_16`, `scr_18`, `scr_20` và khung `scr_21` (Cần người dùng xác nhận), theo phần lõi/mở đầu/Hồi 1 của `06_screens.md`; `scr_12` Chuyển hóa chưa rõ lần đầu dùng, tạm A1 (Cần người dùng xác nhận). Pháp lý SCR-21 vẫn ở B.
+- [ ] Đặc tả và mockup `scr_09f` ngựa, HUD ngựa/thuyền và các biến thể màn Hồi 2 (A2)
+- [ ] Đặc tả và mockup `scr_07`, `scr_17`, `scr_22`, `scr_12` Dịch chuyển/Tinh luyện, biến thể màn Hồi 3 (A3)
+- [ ] Đặc tả và mockup `scr_09f` voi, HUD voi và biến thể màn Hồi 4 (A4)
+- [ ] Đặc tả và mockup màn Hồi 5, lễ lên ngôi/epilogue, dùng lại `scr_18` (A5)
+- [ ] Mockup màn lõi (P13, mã `ui_<tên>`), gồm `ui_world_map` (SCR-14) Hoa Lư; vùng sau theo A2/A3/A4/A5 trong `11_design_freeze.md`
+- [ ] Mockup `ui_base` (SCR-22) và `ui_world_map` phần Hồi 3 (A3)
+- [ ] Mockup riêng trạng thái lõi (P13b): thợ rèn đang rèn, thành công, thất bại; SCR-13 thẻ Gói khi mất mạng, đang chờ Google Play, đã sở hữu; chọn ô khi xóa
+- [ ] Mockup giữ ải giữa hai đợt (A3)
 - Mockup các trạng thái ngân phiếu nạp (thẻ Nạp, offline có ngân phiếu nạp, giao dịch đang chờ, số dư âm, SCR-19) **không làm ở bản đầu**; để tới mốc C
-- [ ] Sơ đồ luồng `flw_f1` đến `flw_f8` dựng thành PNG từ `07_ui_flow.md`
-- [ ] Hoạt ảnh giao diện theo `09_animation_spec.md` (búa rèn, số sát thương, sao giữ ải): concept dạng bảng khung
-- [ ] `ico_set_02` trở đi cho đủ vật phẩm, tiền tệ và biểu tượng hệ thống
+- [ ] Sơ đồ luồng `flw_f1`–`flw_f3`, `flw_f5`, `flw_f7`, `flw_f8`, nhánh ngân phiếu thưởng `flw_f9`, `flw_f11`, `flw_f13` theo bản đầu dựng thành PNG từ `07_ui_flow.md`; biến thể theo hồi soát tại An
+- [ ] Sơ đồ `flw_f6` giữ ải dựng thành PNG (A3)
+- Luồng `flw_f4` và các nhánh ngân phiếu nạp giữ tới C, không thiết kế cho bản đầu
+- [ ] Hoạt ảnh giao diện theo `09_animation_spec.md` (búa rèn, số sát thương): concept dạng bảng khung
+- [ ] Hoạt ảnh giao diện sao giữ ải và dựng công trình căn cứ: concept dạng bảng khung (A3)
+- [ ] `ico_set_02` trở đi: vật phẩm, tiền tệ và biểu tượng hệ thống lõi; phần nội dung hồi sau chốt theo bảng A2/A3/A4/A5 trong `11_design_freeze.md`
 
 ## Giai đoạn 4 — Hồi 2 và Hồi 3
 
@@ -86,7 +97,7 @@ Có bốn loại hạng mục:
 
 - [ ] Bộ mẫu chuẩn đúng kích thước: Đinh Bộ Lĩnh ghép bộ phận bậc 1 đủ dữ liệu động tác, từng mảnh được Claude/người dùng duyệt bằng script và bằng mắt; một quái, một boss, một tileset theo `04_review.md`
 - [ ] File palette cuối cùng
-- [ ] Rà mốc A của `11_design_freeze.md` cùng người dùng
+- [ ] Rà mốc A1; các mốc A2–A5 rà khi xong từng hồi (`11_design_freeze.md`) cùng người dùng
 
 ## Giai đoạn 7 — Quảng bá
 

@@ -158,7 +158,7 @@ Màu cờ là mở rộng cho game, đặt sao cho hai sứ quân đánh liền 
 
 ## Giao diện
 
-Chất liệu khung giao diện là gỗ sơn mài tối màu, đan tre và viền đồng, có họa tiết bông lau kín đáo. Không có chữ trong ảnh. Bố cục HUD trong trận theo chuẩn A0 ở `06_screens.md`: vòng cấp, máu/nội lực trên trái; menu và bản đồ nhỏ trên phải; d-pad 3 nút với hai vùng chéo vô hình dưới trái; cụm CHÉM/đổi mục tiêu/bình dưới phải; 5 ô kỹ năng giữa đáy. Hình nút thành phẩm sẽ vẽ riêng theo phong cách Việt (có thể tham khảo hoa văn trống đồng), không dùng ảnh hay biểu tượng game khác. Các màn còn lại tra Phần 5 `GDD.md` và đặc tả `06_screens.md`, tiếp tục duyệt ở Mốc A.
+Chất liệu khung giao diện là gỗ sơn mài tối màu, đan tre và viền đồng, có họa tiết bông lau kín đáo. Không có chữ trong ảnh. Bố cục HUD trong trận theo chuẩn A0 ở `06_screens.md`: vòng cấp, máu/nội lực trên trái; menu và bản đồ nhỏ trên phải; d-pad 3 nút với hai vùng chéo vô hình dưới trái; cụm CHÉM/đổi mục tiêu/bình dưới phải; 5 ô kỹ năng giữa đáy. Hình nút thành phẩm sẽ vẽ riêng theo phong cách Việt (có thể tham khảo hoa văn trống đồng), không dùng ảnh hay biểu tượng game khác. Các màn còn lại tra Phần 5 `GDD.md` và đặc tả `06_screens.md`, tiếp tục duyệt ở A1 hoặc An theo lần đầu dùng màn, như `11_design_freeze.md`.
 
 Ba loại tiền có biểu tượng riêng: tiền đồng (đồng xu đồng có lỗ vuông), ngân lượng (thỏi bạc), ngân phiếu (tờ giấy đổi bạc có dấu son).
 

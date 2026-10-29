@@ -468,7 +468,7 @@ Hình ảnh 2D ưu tiên dễ đọc trên điện thoại và chạy tốt trê
 
 ## 1. Tổng quan
 
-Phần này mô tả hệ thống riêng của Cờ Lau, có tham khảo cơ chế phổ biến của thể loại nhập vai mobile. Số liệu tham khảo cần tự thiết kế lại trước Mốc A.
+Phần này mô tả hệ thống riêng của Cờ Lau, có tham khảo cơ chế phổ biến của thể loại nhập vai mobile. Số liệu tham khảo cần tự thiết kế lại trước Mốc A1.
 
 Có ba nguyên tắc thiết kế. Thứ nhất, **dùng các cấu trúc quen thuộc của thể loại**: 4 điểm tiềm năng, cường hóa +1 đến +16, luyện đá ghép 3 viên, bảo hiểm chống rớt cấp, thú cưỡi có cấp và sao. Thứ hai, **co lại theo game offline một người chơi**: cấp tối đa 60, không có hoạt động online; dùng tiền đồng, ngân lượng, ngân phiếu theo phạm vi mua hàng đã chốt (mục 10). Thứ ba, **không dùng vòng hệ tương khắc**: phái Đao gây choáng, phái Cung gây ghim chân, kháng chỉ còn một chỉ số "kháng tất cả".
 
@@ -480,7 +480,7 @@ Số liệu trong phần này là đề xuất cần cân bằng riêng. Mọi t
 
 Nhân vật có bốn chỉ số gốc, khởi đầu ở 5 / 5 / 5 / 10, và cộng thêm **25 điểm tiềm năng mỗi cấp** (từ cấp 70 trở lên nhiều hơn, game mình không cần). Người chơi tự phân điểm và có thể tẩy để cộng lại bằng giấy tẩy tiềm năng. Chỉ số thứ tư là Khí lực.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Chỉ số | Tác dụng (đề xuất) |
 |---|---|
@@ -514,7 +514,7 @@ Công thức sát thương quái theo cấp bình phương là điểm rất đ�
 - Kinh nghiệm cần để lên cấp n+1: E(n) × (8 + n), làm tròn đến hàng chục.
 - Quái chênh lệch cấp: cứ mỗi cấp quái cao hơn người chơi thì +5% kinh nghiệm, thấp hơn thì −5%; chênh quá 10 cấp thì không nhận kinh nghiệm.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp | KN mỗi quái | KN cần lên cấp | Số quái tương đương |
 |---|---|---|---|
@@ -536,11 +536,11 @@ Mỗi phái có một chiêu mới cứ mỗi 5 cấp, từ cấp 10 đến cấ
 
 Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặc rơi từ boss. Game mình tham khảo thể loại: chiêu học bằng **sách binh pháp**, điểm kỹ năng tẩy được bằng giấy tẩy kỹ năng.
 
-"Tấn công cơ bản" trong các bảng là % cộng vào tấn công vũ khí. Các con số mô tả mức tối đa đề xuất của chiêu, phải tự đặt lại số trước Mốc A.
+"Tấn công cơ bản" trong các bảng là % cộng vào tấn công vũ khí. Các con số mô tả mức tối đa đề xuất của chiêu, phải tự đặt lại số trước Mốc A1.
 
 ### Phái Đao — cận chiến, gây choáng
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp mở | Tên đề xuất | Loại | Tác dụng khi tối đa | Hồi chiêu | MP |
 |---|---|---|---|---|---|
@@ -559,7 +559,7 @@ Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặ
 
 Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (44–60). Hiệu ứng phụ của Cung là **ghim chân**: kẻ địch trúng tên không di chuyển được; thời gian và tỉ lệ theo bảng.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp mở | Tên đề xuất | Loại | Tác dụng khi tối đa | Hồi chiêu | MP |
 |---|---|---|---|---|---|
@@ -596,9 +596,9 @@ Khi cường hóa, người chơi bỏ bất kỳ số đá nào vào (tối đa
 
 ### Bảng cường hóa
 
-Số liệu tham khảo thể loại — Phải tự đặt lại số trước Mốc A. Cột tiền là giá tham khảo chưa quy đổi cho vũ khí; áo quần rẻ khoảng 4,5 lần, trang sức rẻ khoảng 3 lần. Game mình cần quy đổi lại sang tiền đồng theo nền kinh tế riêng.
+Số liệu tham khảo thể loại — Phải tự đặt lại số trước Mốc A1. Cột tiền là giá tham khảo chưa quy đổi cho vũ khí; áo quần rẻ khoảng 4,5 lần, trang sức rẻ khoảng 3 lần. Game mình cần quy đổi lại sang tiền đồng theo nền kinh tế riêng.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Lần đập | Điểm đá vũ khí | Điểm đá áo quần | Điểm đá trang sức | Tiền vũ khí (đơn vị tham khảo chưa quy đổi) | Tỉ lệ tối đa | Thất bại thì còn |
 |---|---|---|---|---|---|---|
@@ -625,7 +625,7 @@ Cột cuối cho thấy luật rớt cấp: thất bại không mất đồ, ch�
 
 Có bốn loại bùa bảo hộ xin ở chùa, dùng kèm đá để tránh rớt cấp khi thất bại:
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Bùa bảo hộ | Dùng được khi món đồ đang |
 |---|---|
@@ -666,7 +666,7 @@ Món đồ từ +12 trở lên có thể dịch chuyển bằng 20 viên Hồn t
 
 Tinh luyện có 9 cấp, chỉ làm được với đồ đã dịch chuyển và với trang bị thú cưỡi. Mỗi lần thành công, mọi dòng chỉ số của món đồ tăng thêm theo bậc, bậc sau tăng nhiều hơn bậc trước (ví dụ dòng "tăng tấn công cho chủ" của trang bị thú tăng lần lượt 50, 60, 70, 90, 130, 180, 250, 350, 550). Thất bại thì mất nguyên liệu và tiền nhưng không rớt cấp.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A3** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp | Nguyên liệu | Phí tham khảo (chưa quy đổi) | Tỉ lệ đề xuất | Tỉ lệ thực tế |
 |---|---|---|---|---|
@@ -711,7 +711,7 @@ Với 50 cấp × 1.000 kinh nghiệm, một vòng nuôi thú tốn khoảng 50.
 
 Cửa hàng được chia thành bảy nhóm, mỗi nhóm do một NPC trong bối cảnh đảm nhiệm:
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Nhóm cửa hàng | NPC trong game mình | Bán gì |
 |---|---|---|
@@ -731,9 +731,9 @@ Game không bán đồ đã cường hóa sẵn hay đồ có chỉ số vượt
 
 ### Máu quái theo cấp
 
-Máu quái thường tham khảo theo cấp như bảng dưới đây; phải tự cân bằng trước Mốc A:
+Máu quái thường tham khảo theo cấp như bảng dưới đây; phải tự cân bằng trước Mốc A1:
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp quái | Máu |
 |---|---|
@@ -769,13 +769,13 @@ Không đưa vào bản offline: gia tộc/lãnh địa, đấu giải giữa ng
 
 ### Kiểm tra tính nhất quán
 
-Tỉ lệ hiển thị và kết quả mô phỏng phải khớp nhau; kiểm bằng test trước khi chốt cân bằng. Không triển khai số tham khảo khi chưa qua Mốc A.
+Tỉ lệ hiển thị và kết quả mô phỏng phải khớp nhau; kiểm bằng test trước khi chốt cân bằng. Không triển khai số tham khảo khi chưa qua A1 hoặc An tương ứng với hệ thống/nội dung.
 
 ### Rà soát bản quyền
 
 Chỉ tham khảo cơ chế phổ biến của thể loại, tự viết mã và tạo nội dung riêng. Tôn trọng quyền tác giả, nhãn hiệu và giấy phép tài nguyên; cần luật sư rà trước phát hành.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước A1 hoặc An theo hệ thống** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Hạng mục | Cách xử lý | Trạng thái |
 |---|---|---|
@@ -831,7 +831,7 @@ Giao diện hiện một số tổng; khi offline ghi rõ số dùng được ng
 
 Mỗi gói cho người chơi chọn nhận ngân phiếu hoặc ngân lượng. Gói càng lớn thưởng thêm càng nhiều. Giá dưới đây là đề xuất ban đầu, chỉnh lại khi đã quy đổi xong kinh tế tiền đồng.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc C** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Giá | Ngân phiếu | Hoặc ngân lượng | Thưởng thêm |
 |---|---|---|---|
@@ -845,9 +845,9 @@ Lần nạp đầu tiên của mỗi ô nhân vật được gấp đôi. Tiền
 
 ### Cửa hàng ngân phiếu
 
-Bảng hàng cửa hàng ngân phiếu dưới đây là đề xuất; phải tự đặt giá trước Mốc A, không có món gắn với hoạt động online.
+Bảng hàng cửa hàng ngân phiếu dưới đây là đề xuất; phải tự đặt giá trước Mốc A1, không có món gắn với hoạt động online.
 
-**Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
+**Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Món | Giá (ngân phiếu) | Ghi chú |
 |---|---|---|
@@ -1216,20 +1216,20 @@ Do dịch chuyển cần 20 viên và mỗi lần nâng sao thú cưỡi cần 1
 
 ## 1. Màn hình chơi và điều khiển
 
-Giao diện cảm ứng nằm ngang giữ cụm điều khiển theo kết quả A0 đã chốt. HUD A0 chỉ là các khối giữ chỗ để thử cụm điều khiển, không thay cho HUD đầy đủ; các thành phần bổ sung dưới đây có vị trí chốt ở Mốc A. Hàng kỹ năng có 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Chế độ Tự đánh giữ theo mô tả bên dưới.
+Giao diện cảm ứng nằm ngang giữ cụm điều khiển theo kết quả A0 đã chốt. HUD A0 chỉ là các khối giữ chỗ để thử cụm điều khiển, không thay cho HUD đầy đủ; các thành phần bổ sung dưới đây có vị trí chốt ở Mốc A1. Hàng kỹ năng có 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô. Chế độ Tự đánh giữ theo mô tả bên dưới.
 
 | Vị trí | Thành phần |
 |---|---|
-| Góc trên trái | Vòng cấp độ, thanh máu và thanh nội lực; thêm dải biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) dưới hai thanh — vị trí chốt ở Mốc A |
-| Góc trên phải | Nút menu, bản đồ nhỏ; thêm tên bản đồ dưới bản đồ nhỏ, nút túi đồ và nút cửa hàng (bản đầu: chỉ cửa hàng món vĩnh viễn, không có ngân phiếu nạp) — vị trí chốt ở Mốc A |
+| Góc trên trái | Vòng cấp độ, thanh máu và thanh nội lực; thêm dải biểu tượng hiệu ứng đang có (thức ăn, chiêu hỗ trợ, choáng) dưới hai thanh — vị trí chốt ở Mốc A1 |
+| Góc trên phải | Nút menu, bản đồ nhỏ; thêm tên bản đồ dưới bản đồ nhỏ, nút túi đồ và nút cửa hàng (bản đầu: chỉ cửa hàng món vĩnh viễn, không có ngân phiếu nạp) — vị trí chốt ở Mốc A1 |
 | Cạnh phải, giữa | Theo dõi nhiệm vụ: tên nhiệm vụ chính và tiến độ (ví dụ "Đánh lợn rừng 12/20"); chạm vào để tự tìm đường |
 | Góc dưới trái | D-pad 3 nút nhìn thấy (←, →, ↑ nhảy), hai vùng chéo vô hình sát hai bên ↑ để nhảy chéo; không dùng cần analog ảo hay phím nhảy tách riêng |
 | Góc dưới phải | Nút CHÉM lớn ở góc; đổi mục tiêu phía trên; bình máu phía trên bên trái và bình nội lực bên trái CHÉM |
-| Cụm phải, bổ sung ngoài A0 | Nút Tự đánh và nút lên/xuống thú cưỡi; chức năng giữ nguyên, vị trí chốt ở Mốc A, không được che cụm CHÉM hay hàng 5 ô kỹ năng ở viewport 960 px |
+| Cụm phải, bổ sung ngoài A0 | Nút Tự đánh và nút lên/xuống thú cưỡi; chức năng giữ nguyên, vị trí chốt ở A1 (khung lõi/trâu), A2 (ngựa/thuyền), A4 (voi), không được che cụm CHÉM hay hàng 5 ô kỹ năng ở viewport 960 px |
 | Giữa đáy | Hàng 5 ô kỹ năng vuông |
 | Sát đáy | Thanh kinh nghiệm chạy ngang màn hình |
 
-Kích thước và neo cụm nút xem [HUD trong trận](06_screens.md#hud-trong-trận-chuẩn-từ-a0) và [bảng thông số](13_thong_so.md). Nút Tự đánh và thao tác lên/xuống thú cưỡi chưa có vị trí chốt trong HUD A0; cần duyệt bố cục ở Mốc A.
+Kích thước và neo cụm nút xem [HUD trong trận](06_screens.md#hud-trong-trận-chuẩn-từ-a0) và [bảng thông số](13_thong_so.md). Nút Tự đánh và thao tác lên/xuống thú cưỡi chưa có vị trí chốt trong HUD A0; cần duyệt bố cục ở Mốc A1.
 
 **Di chuyển và nhảy:** kiểu cổ điển đạt tốc độ chạy ngay khi bấm, buông thì hãm ngắn; quay đầu có nhịp dừng và khung đầu chỉ đổi mặt. Trên không đổi hướng tức thì. Nhảy dùng cùng trọng lực khi lên và xuống, không treo ở đỉnh; giữ ↑ hoặc vùng chéo thì nhảy lại khi chạm đất. Nhảy chéo bằng vùng chạm vô hình, đồng thời giữ hướng tương ứng. Khinh công cần nhả rồi bấm lại gần đỉnh khi còn đi lên để bật thêm, tối đa một lần mỗi cú nhảy; giữ liên tục không tính là bấm mới. Mỗi cú nhảy và cú khinh công đều có lộn người ở đỉnh, chỉ xoay hình nhân vật, không xoay hitbox. Các tốc độ, thời gian và cửa sổ kích hoạt lấy từ [13_thong_so.md](13_thong_so.md); kiểu cũ chỉ giữ trong prototype để so sánh.
 
@@ -1474,7 +1474,7 @@ Phần này chỉ để tham khảo, cần luật sư xác nhận. Theo Nghị �
 
 ### Thứ tự làm
 
-Lộ trình code này chỉ bắt đầu sau khi qua mốc A trong danh sách chốt thiết kế của Design Kit (`docs/11_design_freeze.md`). Mỗi giai đoạn kết thúc bằng một bản chơi được, để kiểm tra sớm cảm giác chiến đấu trước khi làm nội dung hàng loạt.
+Lộ trình code này chỉ bắt đầu sau khi qua mốc A1; nội dung Hồi n chỉ đưa vào game sau An trong danh sách chốt thiết kế của Design Kit (`docs/11_design_freeze.md`). Mỗi giai đoạn kết thúc bằng một bản chơi được, để kiểm tra sớm cảm giác chiến đấu trước khi làm nội dung hàng loạt.
 
 1. **Mẫu chiến đấu:** một bản đồ, Đinh Bộ Lĩnh với hai phái, mỗi phái 5 chiêu đầu, 3 loại quái, một boss. Chốt cảm giác đánh, công thức sát thương, điều khiển cảm ứng.
 2. **Hệ thống đồ đạc:** túi đồ, trang bị hiển thị theo lớp, cửa hàng, thợ rèn với cường hóa, luyện đá và tách, lưu game ba ô. Viết unit test cho các tỉ lệ.
@@ -1739,6 +1739,6 @@ Hình đạt cả bốn điều thì đưa sang bước chỉnh tay và tách l�
 
 Trang bị thường có part_set theo bậc: áo/thân và tay trên, quần/đùi và cẳng chân, vũ khí/đao hoặc cung, nón nếu có/đầu. Bảy bậc và khối lượng theo [17_ngoai_hinh.md](17_ngoai_hinh.md).
 
-Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
+Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A1, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
 
 Xem 18_khac_biet_va_phap_ly.md cho bản sắc/luật nguồn và việc cần luật sư xác nhận. Quyết định mới này thay các mô tả thời trang chỉ đổi hình ở các mục cũ.

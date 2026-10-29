@@ -7,7 +7,7 @@ Mỗi con số quan trọng trong bộ thiết kế được ghi ở đây cùng
 - **Đề xuất:** mới chỉ là ý, chưa dùng để sản xuất.
 - **Chưa có:** chưa đặt con số; mockup dùng ô số giữ chỗ.
 
-Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log.md`, và liệt kê các hạng mục đã duyệt bị ảnh hưởng (cột "Ảnh hưởng tới"). Qua mốc A, mọi dòng phải là Đã duyệt, hoặc người dùng đồng ý giữ Tạm thời kèm điều kiện chốt.
+Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log.md`, và liệt kê các hạng mục đã duyệt bị ảnh hưởng (cột "Ảnh hưởng tới"). Qua A1 hoặc An tương ứng trong `11_design_freeze.md` (toàn bộ bảng hệ thống lõi ở A1), mọi dòng thuộc mốc đó phải là Đã duyệt, hoặc người dùng đồng ý giữ Tạm thời kèm điều kiện chốt.
 
 ## Hiển thị và hình ảnh
 
@@ -113,7 +113,7 @@ chuyển phía trên ghi riêng độ phân giải, nhân vật, RUN_SPEED, JUMP
 **Kiểu cũ:** có ACCELERATION=900 px/s², nhảy 80 px và xoay chậm khi nhảy chéo,
 chỉ giữ trong `prototype/` để so sánh, **không dùng cho game thật**. Đây không phải
 bộ thông số A0 đã duyệt cho sản phẩm. `prototype/` giữ làm tham khảo, không chép mã
-sang `co_lau_game`; việc qua A0 chưa mở khóa code game thật trước Mốc A.
+sang `co_lau_game`; việc qua A0 chưa mở khóa code game thật trước Mốc A1.
 
 ## Hoạt ảnh
 
@@ -159,4 +159,4 @@ Các quyết định ngày 28/10/2026 ghi ở đầu `11_design_freeze.md` là �
 
 | Thông số | Giá trị | Trạng thái |
 |---|---|---|
-| Giới hạn chỉ số thời trang | ≤10–15% bộ cùng bậc | Đề xuất — chốt Mốc A/cân bằng kinh tế |
+| Giới hạn chỉ số thời trang | ≤10–15% bộ cùng bậc | Đề xuất — chốt Mốc A1/cân bằng kinh tế |
