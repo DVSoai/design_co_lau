@@ -191,17 +191,31 @@ python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md --write-tables
 python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md
 ```
 
-## 6. Câu hỏi còn mở
+## 6. Câu hỏi còn mở và quyết định 29/10/2026
 
-- `08_map_layout.md` cho map quái120–180 ô, `13_thong_so.md` ghi80–120 ô;
-  chọn150 theo lệnh và mục08, không sửa13. Đây chưa phải kích thước đã duyệt.
-- GDD NV13 chỉ nói ba hào trưởng quanh Hoa Lư; chưa nói bản đồ cụ thể.
-  Chưa gắn ba hào trưởng lên lưới này. NV11 có chuột lớn/lợn rừng/hổ con,
-  trong khi bảng quái Đào Úc chỉ có thổ phỉ/quân Hậu Ngô: cần chốt nơi làm NV11.
-  NV12 ở thợ rèn Hoa Lư, không tự đặt thợ rèn mới ở đây.
-- Phân bổ quân của ba đợt NV14 cho ba G, cơ chế bảo vệ/khóa ba D và điều kiện thua
-  chưa đủ trong GDD. Số quân, hồi sinh quái, phần thưởng rương, thời lượng từng đoạn chờ duyệt.
-- E trái về Tràng An hay bản đồ khác trong vùng Hoa Lư? Chờ chốt liên kết hai chiều.
-- Cao độ đất y288 chủ động chừa đáy cho nút; kiểm máy thật và art nền sau này,
-  gồm thanh trạng thái HUD đầy đủ chưa duyệt A1, không suy từ hộp nút A0 thành HUD cuối.
-- Rơi khỏi khe phải theo luật hồi sinh của sản phẩm; không lấy số HP giả trong layout.
+### Đã quyết định cho lượt chơi thử
+
+- Giữ Đào Úc150 ô, khoảng chung map quái120–180 ô theo08; đã đồng bộ13.
+  Trạng thái vẫn **Tạm thời — chốt sau chơi thử**, không phải duyệt bố cục.
+- NV11 không ở Đào Úc: chuột đồng lớn tại Cánh đồng chiêm; lợn rừng tại Bến đò
+  Hoàng Long; hổ con tại Núi đá Tràng An, theo bảng quái GDD. Không sửa GDD.
+- NV13: mỗi hào trưởng ở một trong ba bản đồ trên; chốt tọa độ khi dựng các
+  bố cục đó. Không thêm ba hào trưởng vào lưới Đào Úc.
+- E trái ↔ Núi đá Tràng An. E phải ↔ E trái của đấu trường boss như mục1.
+- c0…31 là **vùng an toàn**, ngoại lệ quy tắc mỗi màn có quái của08. M(c27,r8)
+  là Đinh Điền đấu tập theo NV9, không sinh quái tự do; bản greybox cho chém hình nộm,
+  không triển khai nhiệm vụ/AI. Không sửa lưới hiện có.
+- Giữ nguyên tầng bục và khe c44–45 cho chơi thử. Trong greybox, D mở sẵn;
+  chông/rơi hồi sinh ở R gần nhất đã ở phía trước trên đường đi (checkpoint đã qua),
+  không trừ HP; đây không phải quyết định thay luật mất máu của sản phẩm.
+- Ghi cho lệnh tileset sau: đất chiếm gần nửa dưới màn hình; cần chi tiết mặt cắt
+  lũy, rễ và đá, không để toàn bộ đất là một mảng phẳng.
+
+### Còn chờ chơi thử/quyết định
+
+- Sau chơi thử quyết (a) thêm tầng bục thứ2–3 theo khuyến nghị08 hay không;
+  (b) khe c44–45 giữ không đáy hay làm đáy nông. Hiện giữ nguyên lưới.
+- Phân bổ ba đợt NV14 cho ba G, luật bảo vệ/khóa D, số quân, hồi sinh quái,
+  phần thưởng rương và thời lượng từng đoạn vẫn chờ duyệt; greybox không làm nhiệm vụ.
+- Cao độ y288, camera, HUD đầy đủ và điểm đáp phải được tôi thử trên Realme;
+  không suy từ test headless thành duyệt bố cục hay mỹ thuật.

@@ -130,7 +130,7 @@ Mỗi boss có các động tác của quái người, cộng:
 | Động tác | Khung | Ghi chú |
 |---|---|---|
 | Ra mắt | 6 đến 8 | Chạy khi trận bắt đầu, có thể kèm cutscene ngắn |
-| Báo đòn đặc biệt | 4 | Lặp trong 0,8 đến 1,2 giây, đồng bộ với vòng đỏ trên mặt đất |
+| Báo đòn đặc biệt | 4 | Tướng tiên phong Hậu Ngô: lặp 1,5 giây; boss sau rút dần về 1,2–0,8 giây, không dưới 0,8 giây (Tạm thời — chốt sau chơi thử); đồng bộ vòng đỏ |
 | Đòn đặc biệt | 8 đến 10 | Theo cơ chế từng boss (Phần 4 GDD, mục 3) |
 | Chuyển pha | 6 | Gầm, rút lui hoặc đổi vị trí; boss không nhận sát thương |
 | Quy phục (Phạm Bạch Hổ) | 6 | Hạ vũ khí, chắp tay; thay cho động tác chết |

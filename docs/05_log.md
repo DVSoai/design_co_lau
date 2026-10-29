@@ -364,3 +364,35 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
   bảng tạm ở13. Ghi rõ tại mục6 của từng bố cục, chờ người dùng duyệt.
 - Nguyên đầu ra hai check, sáu lệnh render, test phản chứng và kiểm phạm vi/nhật ký
   được chép vào commit message. Chỉ sửa đúng phạm vi, chưa duyệt mục nào.
+
+
+## 29/10/2026 — dao_uc_greybox — v1, đang chơi thử khối màu/chưa duyệt (A1)
+
+- Quyết định người dùng: giữ Đào Úc150 ô (map quái chung120–180), đấu trường60 ô
+  (chung45–60); đồng bộ13, vẫn Tạm thời — chốt sau chơi thử. Boss đầu báo1,5s,
+  boss sau rút dần về1,2–0,8s, không dưới0,8; đồng bộ09/13, không sửa GDD.
+- NV11: chuột lớn ở Cánh đồng chiêm, lợn rừng ở Bến đò Hoàng Long, hổ con ở Núi đá
+  Tràng An. NV13: mỗi hào trưởng ở một trong ba map đó, vị trí chốt khi dựng bố cục.
+  E trái Đào Úc ↔ Tràng An; E phải boss sau thắng/CS06 → Đầm lầy Đại Hoàng(NV16).
+- c0…31 là vùng an toàn, ngoại lệ quy tắc sinh quái08; M Đinh Điền chỉ đấu tập.
+  Tướng tiên phong Hậu Ngô đúng2 pha, chỉ chuyển60%, không ngưỡng30%.
+  Giữ nguyên lưới; sau thử quyết thêm tầng bục2–3 và khe c44–45 không đáy/đáy nông.
+  Lượt tileset sau cần mặt cắt lũy/rễ/đá vì đất chiếm gần nửa dưới màn hình.
+- Nhánh `feat/g1-dao-uc-greybox` từ main `5a2d60b`. Dựng `prototype/dao_uc/`:
+  nạp nguyên khối layout trong hai Markdown sao chép giống byte, có manifestSHA256,
+  script `sync_layouts.py` và kiểm đối chiếu bản gốc. Không gõ lại lưới; chỉ sửa mục6
+  của hai file layout gốc, ảnh/lưới/phần1–5 giữ nguyên.
+- Đất va chạm, bục một chiều, chông/rơi → R gần nhất bên trái (trước R đầu dùng S),
+  chưa trừ HP; nước nông chậm30%; thang giữ↑/↓, rời bằng←/→ hoặc Space/nút Nhảy.
+  Tốc độ leo mới chỉ cho greybox làRUN_SPEED/2, không thay số A0. D mở sẵn;
+  N/m/M/B dùng dummy.gd đứng yên, chém được, không đánh trả; không có nhiệm vụ/AI boss.
+- Thêm nút Đào Úc greybox từ A0 và Về A0, tọa độ ô dưới chân. Hai E nội bộ chuyển
+  hai chiều, camera reset/chặn trước khi mở điều khiển; Tràng An/Đại Hoàng chỉ nhãn đích.
+  Tái dùng player/camera/touch/tuning A0 qua hook có mặc định cũ; không đổi tuning.gd.
+- Test Godot4.7.2: smoke, classic gốc qua wrapper, rig smoke, art/visual và Đào Úc;
+  đường bắt buộc dùng Input thật từ S đến E rồi lên lũy, không teleport qua chướng ngại,
+  không dùng khinh công; fixture riêng kiểm hố/chông, nước, bục một chiều và leo thang.
+  Hai check_layout.py, kiểm byte bản sao, nhật ký append-only, không đổi A0/checklist
+  và nguyên đầu ra lệnh được ghi trong commit message. Chưa chơi thử Realme trong cloud.
+- Không tạo/sửa art, không chạm co_lau_game, không đánh dấu[x] hay nghiệm thu mốc.
+  Không có prompt/imagegen mới; prototype vẫn là mã bỏ đi để tôi chơi thử bố cục.

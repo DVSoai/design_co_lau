@@ -292,3 +292,74 @@ Contact sheet tại `rig/contact_sheets/`, raster từ polygon đã được ch�
 Godot tính transform, không phải screenshot GPU toàn cảnh. Đo lại ảnh nguồn bằng
 `python prototype/rig/measure_reference.py`; ngưỡng tách silhouette và mốc cổ/hông
 chọn bằng mắt được ghi rõ trong script và tài liệu. Khối màu chưa duyệt mỹ thuật.
+
+
+## Đào Úc greybox — bố cục Giai đoạn 1/A1 (29/10/2026)
+
+Godot **4.7.2 Standard**. Từ A0 chính (F5), bấm **Đào Úc greybox** bên dưới nút
+Mở rig greybox; hoặc mở `dao_uc/dao_uc.tscn` rồi F6. Nút **Về A0** ở trên.
+Góc trên in map, tọa độ ô(c,r) ngay dưới chân và px để báo lỗi trên Realme.
+
+Đọc trực tiếp khối `layout` trong bản sao Markdown; không nhập lại ô bằng mã.
+Trước import/chạy hoặc export APK, từ gốc repo chạy:
+
+```sh
+python3 prototype/dao_uc/sync_layouts.py
+```
+
+Script chỉ chép hai file gốc `design/maps/lay_dao_uc_v1.md` và
+`lay_dao_uc_boss_v1.md` vào `prototype/dao_uc/layouts/`; in kiểm giống byte,
+SHA256 và số ô, lưu `manifest.json`. File sao được commit để F5 dùng ngay.
+Sau mỗi thay đổi layout phải chạy lại script. Godot headless kiểm byte với nguồn
+ngoài `res://` và hash manifest; trên Android không có repo ngoài APK, nên bước
+build phải kiểm trước và giữ hai `.md` cùng manifest. Trong Export → Resources,
+thêm `dao_uc/layouts/*.md,dao_uc/layouts/*.json` vào **Filters to export non-resource
+files/folders** (giữ các JSON rig cần có). Nhớ **Screen → Immersive Mode** như mục
+Android. Không chỉ chép riêng `.tscn` hoặc export nhầm dự án gốc repo.
+
+- `#` là đất va chạm; `=` là bục một chiều, nhảy từ dưới rồi đứng trên.
+- Chông `^` hoặc rơi dưới map đưa về **R gần nhất bên trái điểm gặp nạn**
+  (checkpoint phía trước chướng ngại theo tuyến trái→phải); trước R đầu thì về S.
+  Không đưa về R chưa tới ở cuối map, không trừ HP, không có lưu game/checkpoint bền vững.
+- `~` là nước nông: tốc độ ngang nhân0,7 khi chân ở trong nước; RUN_SPEED trong
+  tuning vẫn200. Không đổi trọng lực/nhảy đã duyệt. Ra khỏi nước trở lại tốc độ A0.
+- `L`: giữ ↑/W hoặc nút ↑ cảm ứng để leo, ↓/S để xuống. Khi gần/đang ở thang có
+  nút ngữ cảnh **↓** và **Nhảy** bên trái phía trên d-pad. Trên thang có thể dừng
+  giữ y, rời bằng ←/→ hoặc Space/nút Nhảy. Tốc độ leo chỉ cho greybox bằng
+  RUN_SPEED/2=100 px/s; không phải số A0 được sửa hoặc nghiệm thu mới.
+- N/m/M/B là `dummy.gd` A0, chém được, không đánh trả. c0…31 là trại an toàn,
+  M Đinh Điền là hình nộm đấu tập; không sinh quái tự do. Không có AI/nhiệm vụ,
+  boss2 pha thật hay mưa tên. Các marker còn lại là khối có nhãn. D mở sẵn.
+- E phải Đào Úc ↔ E trái đấu trường chuyển hai chiều. Đi vào boss tại S; quay
+  về Đào Úc tại R bên phải. Camera được reset/chặn tại điểm đến rồi mới bật
+  lại xử lí player sau2 khung; giữ nguyên dead-zone/look-ahead/response A0.
+- E trái Đào Úc ghi Tràng An; E phải boss ghi Đại Hoàng sau thắng/CS06: chỉ là
+  nhãn đích vì hai map ngoài chưa được dựng, không tạo scene giả cho chúng.
+- Bảng ⚙, F1, bàn phím và cụm cảm ứng dùng nguyên A0. Không sửa tuning.gd.
+  Player/world có hook bounds/reset/speed với mặc định A0 cũ; lớp con greybox
+  chỉ cung cấp kích thước lưới, hồi sinh R, nước và leo thang. Không sao chép
+  controller thành một bộ thông số khác. Art hiện có giữ nguyên; terrain khối màu.
+
+Kiểm tra (thay `godot` bằng đường dẫn executable4.7.2 nếu cần):
+
+```sh
+python3 prototype/dao_uc/sync_layouts.py
+godot --headless --path prototype --editor --import --quit
+godot --headless --path prototype --script res://tests/smoke.gd
+godot --headless --path prototype --script res://tests/classic_headless.gd
+godot --headless --path prototype --script res://tests/rig_smoke.gd
+godot --headless --path prototype --script res://tests/dao_uc_checks.gd
+python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md
+python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md
+```
+
+`classic_checks.gd` hiện là RefCounted được gọi trong smoke; `classic_headless.gd`
+chỉ bọc để chạy riêng nguyên bộ kiểm đó qua CLI. Có thể thêm `--fixed-fps 60`
+để chạy headless nhanh với cùng bước mô phỏng60Hz; không dùng cho đo FPS thiết bị.
+Test Đào Úc đi tuyến S→E→lũy bằng Input thật, lệnh nhảy tìm chướng ngại từ lưới;
+chỉ đặt vị trí khi bắt đầu các fixture thử hố/chông/nước/thang/bục, không teleport
+để vượt tuyến bắt buộc. Việc headless PASS không phải tôi đã thử Realme.
+
+Sau chơi thử quyết thêm tầng bục2–3 và khe không đáy hay đáy nông. Lượt tileset
+sau cần mặt cắt lũy/rễ/đá cho phần đất gần nửa dưới màn hình. Prototype này là mã
+bỏ đi, không đưa sang `co_lau_game`, không duyệt Mốc A1 hoặc đánh dấu[x].
