@@ -11,6 +11,7 @@ var hud_rects: Dictionary = {}
 var health_count := T.POTION_INITIAL_COUNT
 var mana_count := T.POTION_INITIAL_COUNT
 var previous_hud := true
+var show_minimap := true # view policy; original A0 default preserved
 const ACTIONS := {
 	"left": ["touch_left"], "right": ["touch_right"], "jump": ["touch_jump"],
 	"diag_left": ["touch_left", "touch_jump", "touch_diagonal_left"],
@@ -93,6 +94,8 @@ func layout() -> void:
 	}
 	_place("menu", Vector2(hud_rects.map.position.x - gap - T.HUD_MENU_SIZE.x, top.y), T.HUD_MENU_SIZE)
 	buttons.menu.visible = tuning.flag("HUD_VISIBLE")
+	if not show_minimap:
+		hud_rects.map = Rect2()
 	queue_redraw()
 
 func set_debug_enabled(enabled: bool) -> void:
@@ -212,6 +215,8 @@ func _draw() -> void:
 	draw_circle(level.get_center(), level.size.x / 2, fill)
 	draw_arc(level.get_center(), level.size.x / 2, 0, TAU, 64, T.TOUCH_BORDER, T.TOUCH_BORDER_WIDTH, true)
 	for key in ["hp", "mp", "map"]:
+		if key == "map" and not show_minimap:
+			continue
 		var rect: Rect2 = hud_rects.get(key, Rect2())
 		draw_rect(rect, Color(0.7, 0.1, 0.1) if key == "hp" else (Color(0.1, 0.25, 0.8) if key == "mp" else fill))
 		draw_rect(rect, T.TOUCH_BORDER, false, T.TOUCH_BORDER_WIDTH)

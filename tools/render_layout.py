@@ -9,7 +9,7 @@ import math
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from check_layout import (TILE, HEIGHT, a0, load_layout, markers, challenges, controls,
-                          camera_at, camera_envelope, trajectory, evaluate)
+                          camera_at, camera_envelope, trajectory, evaluate, upper_controls, figure_box, profile)
 
 CELL = 12
 SCALE = CELL/TILE
@@ -66,10 +66,10 @@ def base_grid(rows, metrics, arcs):
     return image
 
 
-def overlay_panel(rows, metrics, width, marker):
+def overlay_panel(rows, metrics, width, marker, kind, facing=1):
     col,row,symbol=marker;foot=((col+.5)*TILE,(row+1)*TILE)
     world=(len(rows[0])*TILE,len(rows)*TILE)
-    camera=camera_at(foot,world,width,metrics)
+    camera=camera_at(foot,world,width,metrics,facing)
     # Draw at native logical resolution first; downsample only for this diagram.
     panel=Image.new('RGBA',(width,HEIGHT),(225,232,240,255));draw=ImageDraw.Draw(panel)
     def screen(x,y):return (x-camera[0]+width/2,y-camera[1]+HEIGHT/2)
@@ -81,13 +81,19 @@ def overlay_panel(rows, metrics, width, marker):
             if c not in '.#=~': draw.text((px+8,py+4),c,fill='black',font=font(16))
     for mode,points in sample_arcs(rows,metrics):
         if len(points)>1:draw.line([screen(x,y) for x,y in points],fill=ARC_COLORS[mode],width=2)
+    # These are the same standing-image envelopes checked against upper HUD,
+    # distinct from the tiny marker cell and the physical 24x88 collider.
+    for x,y,symbol in markers(rows,'NmMB'):
+        box=figure_box((x,y),symbol,metrics)
+        draw.rectangle((*screen(box[0],box[1]),*screen(box[2],box[3])),outline=(235,155,0,255),width=2)
     overlay=Image.new('RGBA',panel.size);od=ImageDraw.Draw(overlay)
-    for name,rect in controls(width,metrics).items():
+    for name,rect in {**controls(width,metrics),**upper_controls(width,metrics,kind)}.items():
         od.rectangle(rect,fill=(15,25,45,115),outline=(240,245,255,230),width=2)
         od.text((rect[0]+2,rect[1]+4),name,fill='white',font=font(12))
     panel.alpha_composite(overlay);draw=ImageDraw.Draw(panel)
     sx,sy=screen(*foot);half,high=metrics['PLAYER_BOX'][0]/2,metrics['PLAYER_BOX'][1]
-    draw.rectangle((sx-half,sy-high,sx+half,sy),outline=(0,255,255,255),width=3)
+    draw.rectangle((sx-half,sy-high,sx+half,sy),outline=(0,140,160,255),width=1)
+    draw.rectangle((sx-64,sy-96,sx+64,sy),outline=(0,255,255,255),width=2)
     # Dead zone around current reset anchor, and look-ahead vector to camera.
     dx,dy=metrics['CAMERA_DEAD_ZONE'];draw.rectangle((sx-dx,sy-dy,sx+dx,sy+dy),outline=(20,120,30,255),width=2)
     draw.line((sx,sy,sx+metrics['CAMERA_LOOK_AHEAD'],sy),fill=(20,120,30,255),width=2)
@@ -107,15 +113,22 @@ def main():
         # Refuse an unsafe overlay rather than producing a misleading green diagram.
         checked=evaluate(args.source)
         if checked['failures']:raise SystemExit('FAIL: '+str(checked['failures']))
-        for marker in markers(rows,'SR'):
-            panel,camera,envelope=overlay_panel(rows,m,args.overlay,marker)
+        samples=[(marker,1) for marker in markers(rows,'SR')]
+        # Add a witness near the old occluded actor, with camera facing away in
+        # the field. This is a diagram probe, not another spawn in the grid.
+        col=54 if config.get('kind')=='boss' else 100
+        if col<len(rows[0]):
+            row=profile(rows,m)[col]
+            if row is not None:samples.append(((col,row-1,'HUD-probe (not spawn)'),-1))
+        for marker,facing in samples:
+            panel,camera,envelope=overlay_panel(rows,m,args.overlay,marker,config.get('kind','field'),facing)
             panels.append((panel,marker,camera,envelope))
     output_width=max(grid.width+gutter*2,(args.overlay or 0)+gutter*2)
     output_height=header+grid.height+gutter+len(panels)*(HEIGHT+50)
     image=Image.new('RGB',(output_width,output_height),(248,248,248));draw=ImageDraw.Draw(image)
     draw.text((gutter,5),Path(args.source).name+' — Tạm thời, chưa duyệt',fill='black',font=font(16))
     draw.text((gutter,28),'Vạch trắng: 30 ô / 960px; xanh đứt: 37,5 ô / 1200px. Ô=32px; sơ đồ=12px/ô.',fill='black',font=font(13))
-    draw.text((gutter,45),'Quỹ đạo: xanh=thường; đỏ=chéo; tím=khinh công mẫu (không bắt buộc). Cyan=hitbox.',fill='black',font=font(12))
+    draw.text((gutter,45),'Quỹ đạo: xanh=thường; đỏ=chéo; tím=khinh công mẫu (không bắt buộc). Cyan=hình96; vàng=quái96/boss132; khung trên=HUD SCR-05/06.',fill='black',font=font(12))
     image.paste(grid,(gutter,header));y=header+grid.height+gutter
     for panel,marker,camera,envelope in panels:
         col,row,sym=marker

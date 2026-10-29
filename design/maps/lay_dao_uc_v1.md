@@ -32,9 +32,9 @@ Không phải ảnh cảnh nền, không phải bản đồ đã chơi thử; kh
 ......................................................................................................................................................
 ......................................................................................................................................................
 ......................................................................................................................................................
-........................................................................................................c.m..L........................................
+........................................................................................................c....L........................................
 .......................................................................................................======L........................................
-....................................c........................................................................L........................................
+....................................c.....................................................................m..L........................................
 ..................................======.................m....########..............................=========L........................................
 E...........SR...N......N..M....m.....................########################m.~~~...^^..G...D.....m.......GL..D.....m.......G...D.....M....m....R..E
 ############################################..########################################################################################################
@@ -56,7 +56,7 @@ E...........SR...N......N..M....m.....................########################m.
   không phải quái thường, không tự đặt máu/số lần sinh. Sân tập c20…31.
 - m(c32,r8), m(c57,r7), m(c78,r8): thổ phỉ, các bãi tập chiến đấu theo bảng quái Đào Úc.
 - m(c100,r8), m(c118,r8), m(c141,r8): lính giáo Hậu Ngô theo tiến độ NV14–15.
-  m(c106,r4): lính cung Hậu Ngô trên bục trại. M(c136,r8): đội trưởng Hậu Ngô.
+  m(c106,r6): lính cung Hậu Ngô trên bục trại. M(c136,r8): đội trưởng Hậu Ngô.
   Số lượng/hồi sinh chưa được GDD chốt; không tự thêm số cân bằng.
 - D(c94,r8), D(c112,r8), D(c130,r8): Cổng1/2/3 NV14, không phải giữ ải A3.
   G(c90,r8), G(c108,r8), G(c126,r8): điểm vào của quân Hậu Ngô cho ba mặt trận;
@@ -191,6 +191,39 @@ python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md --write-tables
 python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md
 ```
 
+<!-- BEGIN top-hud -->
+| HUD / actor / player column | Viewport | Standing-camera cases (clamped) | Result |
+|---|---|---|---|
+| SCR-05 m c106,r6, h96 | 960 | 0–6 ô hai phía; hai hướng; 56 visible cases | PASS |
+| SCR-05 m c106,r6, h96 | 1200 | 0–6 ô hai phía; hai hướng; 56 visible cases | PASS |
+| SCR-05 m c57,r7, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c57,r7, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 N c17,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 N c17,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 N c24,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 N c24,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 M c27,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 M c27,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c32,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 36 visible cases | PASS |
+| SCR-05 m c32,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 36 visible cases | PASS |
+| SCR-05 m c78,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c78,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c100,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 48 visible cases | PASS |
+| SCR-05 m c100,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 48 visible cases | PASS |
+| SCR-05 m c118,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c118,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 M c136,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 M c136,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c141,r8, h96 | 960 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| SCR-05 m c141,r8, h96 | 1200 | 0–6 ô hai phía; hai hướng; 26 visible cases | PASS |
+| S c12,r8, image128×96 | 960 | top+bottom; [176.0, 188.0, 464.0, 288.0] | PASS |
+| S c12,r8, image128×96 | 1200 | top+bottom; [296.0, 188.0, 464.0, 288.0] | PASS |
+| R c13,r8, image128×96 | 960 | top+bottom; [176.0, 188.0, 496.0, 288.0] | PASS |
+| R c13,r8, image128×96 | 1200 | top+bottom; [296.0, 188.0, 496.0, 288.0] | PASS |
+| R c146,r8, image128×96 | 960 | top+bottom; [784.0, 188.0, 912.0, 288.0] | PASS |
+| R c146,r8, image128×96 | 1200 | top+bottom; [1024.0, 188.0, 1152.0, 288.0] | PASS |
+<!-- END top-hud -->
+
 ## 6. Câu hỏi còn mở và quyết định 29/10/2026
 
 ### Đã quyết định cho lượt chơi thử
@@ -219,3 +252,8 @@ python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md
   phần thưởng rương và thời lượng từng đoạn vẫn chờ duyệt; greybox không làm nhiệm vụ.
 - Cao độ y288, camera, HUD đầy đủ và điểm đáp phải được tôi thử trên Realme;
   không suy từ test headless thành duyệt bố cục hay mỹ thuật.
+
+- Follow-up29/10/2026: người dùng chấp nhận bản thử khối màu; chưa duyệt chính thức.
+  Phép kiểm HUD trên phát hiện m(c106,r4) bị menu/⚙/minimap che khi đứng gần.
+  Chuyển riêng m sang(c106,r6), chân y224 trên bục dưới; không đổi địa hình,
+  khe/bẫy/thang hay rương ở bục trên. SCR-05 vẫn có minimap120×80.

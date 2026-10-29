@@ -10,7 +10,7 @@ Không phải ảnh cảnh nền, không phải bản đồ đã chơi thử; kh
   theo giới hạn45–60 ô của mục08. Dùng nền/tile Đào Úc, chưa vẽ art mới.
 - E(c0,r8) nối **E(c149,r8) của `lay_dao_uc_v1.md`**. Trước trận đi hai chiều;
   D đóng khi bắt đầu, không đưa người chơi vào lại qua một cổng đã khóa.
-- E(c59,r4) mở sau thắng/CS06 sang tuyến Hồi2; bản đồ đích cụ thể chờ xác nhận.
+- E(c59,r6) mở sau thắng/CS06 sang tuyến Hồi2; bản đồ đích cụ thể chờ xác nhận.
 - GDD Phần4 mục3: boss **2 pha**, ngưỡng chuyển pha đầu **60% HP** theo quy tắc
   chung (30% dành bước chuyển tiếp của boss3 pha). Pha2 gọi **4 lính cung trên lũy**;
   đòn đặc biệt báo **1,5 giây**, vòng đỏ, ưu tiên xử lí lính phụ.
@@ -30,9 +30,9 @@ Không phải ảnh cảnh nền, không phải bản đồ đã chơi thử; kh
 ............................................................
 ............................................................
 ............................................................
+............................................................
+............................................................
 ......................................................mm.mmE
-....................................................########
-................................................############
 ............................................################
 E...........S...R..D.........B..........####################
 ############################################################
@@ -55,12 +55,12 @@ E...........S...R..D.........B..........####################
 - B(c29,r8): Tướng tiên phong Hậu Ngô. Sân c20…39, x640…1280: **640 px đất bằng**,
   không hố/chông/nước. Boss đứng x944, có304/336 px trống hai phía tới biên sân;
   sprite người~132 px, khung192×192 đặt chân y288, đầu khung y96, không bị trần che.
-- Lũy đất: c40…43 cao32 px; c44…47 cao64 px; c48…51 cao96 px;
-  c52…59 cao128 px so với sân. **Mỗi lần lên32 px**, mặt bậc rộng128 px;
-  không bắt nhảy thẳng128 px, không cần khinh công. Người chơi lên được đánh lính.
-- m(c54,r4), m(c55,r4), m(c57,r4), m(c58,r4): đúng4 vị trí lính cung pha2 trên mặt
-  lũy y160, rộng256 px. Chưa sinh pha1; không thêm địch thứ5.
-- E(c59,r4): ra sau trận; khóa trong trận, mở sau chiến thắng và CS06.
+- Lũy đất sau kiểm HUD: c40…43 cao32 px; c44…59 cao64 px so với sân.
+  **Mỗi lần lên32 px**; bậc đầu rộng128 px, mặt lũy trên rộng512 px;
+  không bắt nhảy thẳng64 px, không cần khinh công. Người chơi lên được đánh lính.
+- m(c54,r6), m(c55,r6), m(c57,r6), m(c58,r6): đúng4 vị trí lính cung pha2 trên mặt
+  lũy y224, vùng dành cho lính c52…59 rộng256 px. Chưa sinh pha1; không thêm địch thứ5.
+- E(c59,r6): ra sau trận; khóa trong trận, mở sau chiến thắng và CS06.
 
 ## 4. Nhịp chơi
 
@@ -119,8 +119,6 @@ Sơ đồ từ lưới thật: [lay_dao_uc_boss_v1.png](lay_dao_uc_boss_v1.png),
 |---|---|---|---|---|---|
 | step | c40..40, r9→r8 | 0/32 | nhảy chéo, không khinh công | 81.07/64.00 | PASS (quỹ đạo +24×88 hai hướng) |
 | step | c44..44, r8→r7 | 0/32 | nhảy chéo, không khinh công | 81.07/64.00 | PASS (quỹ đạo +24×88 hai hướng) |
-| step | c48..48, r7→r6 | 0/32 | nhảy chéo, không khinh công | 81.07/64.00 | PASS (quỹ đạo +24×88 hai hướng) |
-| step | c52..52, r6→r5 | 0/32 | nhảy chéo, không khinh công | 81.07/64.00 | PASS (quỹ đạo +24×88 hai hướng) |
 <!-- END metrics -->
 
 <!-- BEGIN hud -->
@@ -132,8 +130,8 @@ Sơ đồ từ lưới thật: [lay_dao_uc_boss_v1.png](lay_dao_uc_boss_v1.png),
 | R c16,r8 hitbox24×88 | 1200 | hai hướng + mép chặn | [348.0, 196.0, 540.0, 288.0] | cx=600.0..768.0, cy=270.0..274.0 | PASS |
 | biên 0px | 960 | chặn camera | [0.0, 283.0, 0.0, 289.0] | cx=480.0..480.0, cy=270.0..274.0 | PASS |
 | biên 0px | 1200 | chặn camera | [0.0, 283.0, 0.0, 289.0] | cx=600.0..600.0, cy=270.0..274.0 | PASS |
-| biên 1920px | 960 | chặn camera | [960.0, 155.0, 960.0, 161.0] | cx=1440.0..1440.0, cy=270.0..274.0 | PASS |
-| biên 1920px | 1200 | chặn camera | [1200.0, 155.0, 1200.0, 161.0] | cx=1320.0..1320.0, cy=270.0..274.0 | PASS |
+| biên 1920px | 960 | chặn camera | [960.0, 219.0, 960.0, 225.0] | cx=1440.0..1440.0, cy=270.0..274.0 | PASS |
+| biên 1920px | 1200 | chặn camera | [1200.0, 219.0, 1200.0, 225.0] | cx=1320.0..1320.0, cy=270.0..274.0 | PASS |
 <!-- END hud -->
 
 Chạy để tái tạo hai bảng (nguyên script ở `tools/check_layout.py`):
@@ -142,6 +140,255 @@ Chạy để tái tạo hai bảng (nguyên script ở `tools/check_layout.py`):
 python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md --write-tables
 python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md
 ```
+
+<!-- BEGIN top-hud -->
+| HUD / actor / player column | Viewport | Standing-camera cases (clamped) | Result |
+|---|---|---|---|
+| SCR-06 c0, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c0, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c0, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c0, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c1, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c1, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c1, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c1, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c2, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c2, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c2, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c2, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c3, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c3, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c3, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c3, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c4, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c4, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c4, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c4, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c5, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c5, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c5, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c5, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c6, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c6, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c6, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c6, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c7, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c7, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c7, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c7, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c8, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c8, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c8, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c8, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c9, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c9, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c9, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c9, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c10, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c10, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c10, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c10, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c11, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c11, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c11, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c11, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c12, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c12, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c12, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c12, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c13, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c13, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c13, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c13, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c14, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c14, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c14, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c14, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c15, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c15, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c15, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c15, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c16, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c16, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c16, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c16, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c17, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c17, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c17, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c17, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c18, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c18, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c18, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c18, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c19, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c19, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c19, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c19, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c20, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c20, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c20, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c20, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c21, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c21, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c21, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c21, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c22, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c22, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c22, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c22, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c23, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c23, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c23, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c23, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c24, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c24, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c24, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c24, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c25, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c25, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c25, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c25, chân r9 | 1200 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c26, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c26, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c26, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c26, chân r9 | 1200 | face +1; visible=mc54,Bc29; player96 | PASS |
+| SCR-06 c27, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c27, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c27, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c27, chân r9 | 1200 | face +1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c28, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c28, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c28, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c28, chân r9 | 1200 | face +1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c29, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c29, chân r9 | 960 | face +1; visible=Bc29; player96 | PASS |
+| SCR-06 c29, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c29, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,Bc29; player96 | PASS |
+| SCR-06 c30, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c30, chân r9 | 960 | face +1; visible=mc54,Bc29; player96 | PASS |
+| SCR-06 c30, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c30, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c31, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c31, chân r9 | 960 | face +1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c31, chân r9 | 1200 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c31, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c32, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c32, chân r9 | 960 | face +1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c32, chân r9 | 1200 | face -1; visible=mc54,Bc29; player96 | PASS |
+| SCR-06 c32, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c33, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c33, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,Bc29; player96 | PASS |
+| SCR-06 c33, chân r9 | 1200 | face -1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c33, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c34, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c34, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c34, chân r9 | 1200 | face -1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c34, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c35, chân r9 | 960 | face -1; visible=Bc29; player96 | PASS |
+| SCR-06 c35, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c35, chân r9 | 1200 | face -1; visible=mc54,mc55,mc57,Bc29; player96 | PASS |
+| SCR-06 c35, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c36, chân r9 | 960 | face -1; visible=mc54,Bc29; player96 | PASS |
+| SCR-06 c36, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c36, chân r9 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c36, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c37, chân r9 | 960 | face -1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c37, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c37, chân r9 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c37, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c38, chân r9 | 960 | face -1; visible=mc54,mc55,Bc29; player96 | PASS |
+| SCR-06 c38, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c38, chân r9 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c38, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c39, chân r9 | 960 | face -1; visible=mc54,mc55,mc57,Bc29; player96 | PASS |
+| SCR-06 c39, chân r9 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c39, chân r9 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c39, chân r9 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c40, chân r8 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c40, chân r8 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c40, chân r8 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c40, chân r8 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c41, chân r8 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c41, chân r8 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c41, chân r8 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c41, chân r8 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c42, chân r8 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c42, chân r8 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c42, chân r8 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c42, chân r8 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c43, chân r8 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c43, chân r8 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c43, chân r8 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c43, chân r8 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c44, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c44, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c44, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c44, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c45, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c45, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c45, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c45, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c46, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c46, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c46, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c46, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c47, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c47, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c47, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c47, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c48, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c48, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c48, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c48, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c49, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c49, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c49, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c49, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c50, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c50, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c50, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c50, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c51, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c51, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c51, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c51, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c52, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c52, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c52, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c52, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c53, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c53, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c53, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c53, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c54, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c54, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c54, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c54, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c55, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c55, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c55, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c55, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c56, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c56, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c56, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c56, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c57, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c57, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c57, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c57, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c58, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c58, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c58, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c58, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c59, chân r7 | 960 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c59, chân r7 | 960 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c59, chân r7 | 1200 | face -1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| SCR-06 c59, chân r7 | 1200 | face +1; visible=mc54,mc55,mc57,mc58,Bc29; player96 | PASS |
+| S c12,r8, image128×96 | 960 | top+bottom; [176.0, 188.0, 464.0, 288.0] | PASS |
+| S c12,r8, image128×96 | 1200 | top+bottom; [296.0, 188.0, 464.0, 288.0] | PASS |
+| R c16,r8, image128×96 | 960 | top+bottom; [176.0, 188.0, 592.0, 288.0] | PASS |
+| R c16,r8, image128×96 | 1200 | top+bottom; [296.0, 188.0, 592.0, 288.0] | PASS |
+<!-- END top-hud -->
 
 ## 6. Câu hỏi còn mở và quyết định 29/10/2026
 
@@ -157,16 +404,23 @@ python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md
 - E phải sau thắng/CS06 → Đầm lầy Đại Hoàng (NV16). E trái ↔ Đào Úc.
   Hai bản đồ ngoài phạm vi (Tràng An/Đại Hoàng) chỉ có nhãn đích trong bản thử,
   không tạo map giả thay cho thiết kế của chúng. Hai E nội bộ chuyển được hai chiều.
-- Giữ lũy/bậc hiện có để chơi thử. D mở sẵn; nút hồi sinh/quay lại không làm
+- Người dùng chấp nhận bản thử29/10/2026; lượt sửa HUD này chọn ẩn minimap
+  và cho phép hạ lũy y160→224, giữ từng bậc32 px,4 lính và sân640 px. D mở sẵn; nút hồi sinh/quay lại không làm
   cơ chế revive tại chỗ. R trước cửa vẫn dùng như lưới.
 - Lệnh tileset sau cần mặt cắt lũy/đất có rễ và đá vì đất chiếm gần nửa dưới màn.
 
 ### Còn chờ chơi thử/quyết định
 
 - Cùng bản đồ quái: sau chơi thử quyết thêm tầng bục thứ2–3 theo08 hay không,
-  và khe c44–45 ở map quái giữ không đáy hay đáy nông. Hiện không sửa lưới.
+  và khe c44–45 ở map quái giữ không đáy hay đáy nông. Lưới chỉ hạ lũy để tránh HUD theo xác nhận bổ sung; chưa duyệt chính thức.
 - Bán kính vòng đỏ, hitbox boss, tầm cung và va chạm khi áp sát chưa chốt;
   sân640 px vẫn cần chơi thử trước khi duyệt khả năng né.
 - Cửa thật phải đủ cao để không nhảy qua; quy tắc khóa/mở và reset trận chờ
   lượt triển khai riêng. Greybox không giả làm trận boss hoàn chỉnh.
 - Bốn lính cung là hình nộm đứng yên, không bắn; kiểm camera/HUD trên Realme còn chờ.
+
+- Follow-up29/10/2026: SCR-06 ẩn minimap, thêm thanh boss360×32 ởy24 (Tạm thời).
+  Ẩn minimap riêng chưa đủ do menu/⚙; người dùng đã cho phép hạ lũy thêm64 px.
+  Bốn m giữ c54/55/57/58, chuyển r4→r6; E phải r4→r6. Sân c20…39 vẫn640 px.
+  Hộp hình người96px và boss132px kiểm ở mọi cột đứng được, cả hai viewport/hướng;
+  các hình vẽ/JSON/bản thử phải theo cấu hình này. Không phải UI thành phẩm.

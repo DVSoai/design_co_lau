@@ -35,7 +35,8 @@ def a0():
              'DPAD_RIGHT_OFFSET_RATIO', 'DPAD_UP_OFFSET_RATIO', 'DIAGONAL_WIDTH_RATIO',
              'SLASH_BUTTON_RATIO', 'SMALL_BUTTON_RATIO', 'SKILL_BUTTON_RATIO',
              'SKILL_COUNT', 'SKILL_GAP', 'CLASSIC_DIAGONAL_SPEED_RATIO',
-             'AIR_JUMP_WINDOW_RATIO', 'AIR_JUMP_SPEED_RATIO']
+             'AIR_JUMP_WINDOW_RATIO', 'AIR_JUMP_SPEED_RATIO',
+             'HUD_LEVEL_SIZE','HUD_BAR_SIZE','HUD_BAR_GAP','HUD_MAP_SIZE','HUD_MENU_SIZE','GEAR_SIZE']
     result = {name: value(name) for name in names}
     result['g'] = 2 * result['JUMP_HEIGHT'] / result['TIME_TO_APEX'] ** 2
     result['v'] = 2 * result['JUMP_HEIGHT'] / result['TIME_TO_APEX']
@@ -146,6 +147,94 @@ def controls(width, m):
     for i in range(count):
         boxes[f'skill_{i+1}'] = (width/2-row_width/2+i*(side+m['SKILL_GAP']), bottom-side, side, side)
     return {k: (x, y, x+w, y+h) for k, (x, y, w, h) in boxes.items()}
+
+
+def hud_spec():
+    """Temporary SCR-06 numeric proposal is authored once in 06_screens.md."""
+    text = (ROOT/'docs/06_screens.md').read_text()
+    match = re.search(r'^```hud-metrics\s*\n(.*?)^```',text,re.M|re.S)
+    if not match: raise ValueError('Missing SCR-06 hud-metrics in docs/06_screens.md')
+    return json.loads(match[1])['scr06']
+
+
+def upper_controls(width, m, kind='field'):
+    """A0 touch_controls.layout + tuning_panel._layout; boss bar from SCR-06."""
+    margin=m['TOUCH_MARGIN'];gap=m['TOUCH_GAP'];lx,ly=m['HUD_LEVEL_SIZE'];bw,bh=m['HUD_BAR_SIZE']
+    mw,mh=m['HUD_MAP_SIZE'];menuw,menuh=m['HUD_MENU_SIZE'];gw,gh=m['GEAR_SIZE']
+    boxes={'level':(margin,margin,margin+lx,margin+ly),
+           'hp':(margin+lx+gap,margin,margin+lx+gap+bw,margin+bh),
+           'mp':(margin+lx+gap,margin+bh+m['HUD_BAR_GAP'],margin+lx+gap+bw,margin+2*bh+m['HUD_BAR_GAP']),
+           'menu':(width-margin-mw-gap-menuw,margin,width-margin-mw-gap,margin+menuh),
+           'gear':(width-margin-mw-menuw-2*gap-gw,margin,width-margin-mw-menuw-2*gap,margin+gh)}
+    if kind!='boss' or hud_spec()['show_minimap']:
+        boxes['minimap']=(width-margin-mw,margin,width-margin,margin+mh)
+    if kind=='boss':
+        spec=hud_spec();w,h=spec['boss_bar_size'];top=spec['boss_bar_top']
+        boxes['boss_hp']=((width-w)/2,top,(width+w)/2,top+h)
+    return boxes
+
+
+def figure_box(cell, symbol, m):
+    # Use the whole 128px / 192px authored frame width, with requested actual
+    # standing height 96 / 132 (not the 88px physical collider or debug labels).
+    width,height=(192,132) if symbol=='B' else (128,96)
+    x,y=cell;foot=((x+.5)*TILE,(y+1)*TILE)
+    return (foot[0]-width/2,foot[1]-height,foot[0]+width/2,foot[1])
+
+
+def top_hud_checks(rows, config, m):
+    kind=config.get('kind','field');size=(len(rows[0])*TILE,len(rows)*TILE)
+    targets=markers(rows,'mB' if kind=='boss' else 'mMNB')
+    errors=[];lines=[];tests=0
+    def probe(actor, player_cell, width, facing):
+        nonlocal tests
+        x,y,symbol=actor;px,py=player_cell
+        camera=camera_envelope(((px+.5)*TILE,py*TILE),size,width,m,facing)
+        image=screen_sweep(figure_box((x,y),symbol,m),camera,width)
+        if not intersects(image,(0,0,width,HEIGHT)):
+            return [],False
+        tests+=1
+        hits=[name for name,box in upper_controls(width,m,kind).items() if intersects(image,box)]
+        return [f'{symbol}@{x},{y}/{name}' for name in hits],True
+    if kind=='boss':
+        # ALL head-clear standing surfaces, including optional shelves if added.
+        for col in range(len(rows[0])):
+            for row in support_rows(rows,col,m):
+                for width in VIEWPORTS:
+                    for facing in [-1,1]:
+                        hits=[];seen=[]
+                        for actor in targets:
+                            found,visible=probe(actor,(col,row),width,facing)
+                            if visible:seen.append(f'{actor[2]}c{actor[0]}')
+                            hits+=found
+                        # Also protect the standing player, not just m/B targets.
+                        player=(col,row-1,'S')
+                        found,_=probe(player,(col,row),width,facing);hits+=found
+                        if hits:errors.append(f'boss col{col}/row{row}/{width}/{facing}: '+','.join(hits))
+                        lines.append(f'| SCR-06 c{col}, chân r{row} | {width} | face {facing:+d}; visible={",".join(seen) or "none"}; player96 | {"FAIL "+",".join(hits) if hits else "PASS"} |')
+    else:
+        for actor in targets:
+            ax,ay,symbol=actor
+            for width in VIEWPORTS:
+                bad=[];cases=0
+                # Distances 0..6 to either side, BOTH facings at each position.
+                for col in range(max(0,ax-6),min(len(rows[0]),ax+7)):
+                    for row in support_rows(rows,col,m):
+                        for facing in [-1,1]:
+                            found,visible=probe(actor,(col,row),width,facing)
+                            cases+=visible
+                            if found:bad.append(f'player c{col},foot r{row},face{facing}: '+','.join(found))
+                if bad:errors.append(f'field {symbol}c{ax},r{ay}/{width}: '+bad[0])
+                lines.append(f'| SCR-05 {symbol} c{ax},r{ay}, h96 | {width} | 0–6 ô hai phía; hai hướng; {cases} visible cases | {"FAIL "+bad[0] if bad else "PASS"} |')
+    for x,y,symbol in markers(rows,'SR'):
+        for width in VIEWPORTS:
+            cam=camera_envelope(((x+.5)*TILE,(y+1)*TILE),size,width,m)
+            image=screen_sweep(figure_box((x,y),symbol,m),cam,width)
+            boxes={**upper_controls(width,m,kind),**controls(width,m)}
+            hits=[name for name,box in boxes.items() if intersects(image,box)]
+            if hits:errors.append(f'{symbol}c{x},r{y}/{width} image96: '+','.join(hits))
+            lines.append(f'| {symbol} c{x},r{y}, image128×96 | {width} | top+bottom; {_rect(image)} | {"FAIL "+",".join(hits) if hits else "PASS"} |')
+    return errors,'\n'.join(['| HUD / actor / player column | Viewport | Standing-camera cases (clamped) | Result |','|---|---|---|---|']+lines),tests
 
 
 def clamp_center(value, extent, view):
@@ -334,10 +423,12 @@ def evaluate(path):
                 for xx in range(math.floor(left/TILE),math.ceil(right/TILE)):
                     if not 0<=xx<len(rows[0]) or rows[yy][xx] in '#=^': failures.append('boss 192px frame obstructed')
         if not markers(rows,'R') or not markers(rows,'D'): failures.append('boss needs respawn and closing entrance')
+    top_errors,top_table,top_cases=top_hud_checks(rows,config,m)
+    failures.extend(top_errors)
     metric_table = '\n'.join(['| Loại | Vị trí (c/r từ 0) | ngang/cao px | Cách qua bắt buộc | tầm/1,5; cao/1,5 px | Kết quả |','|---|---|---|---|---|---|']+metric_lines)
     hud_table = '\n'.join(['| Điểm/hố/bẫy | Viewport | Hướng/khoảng cách | Hộp màn hình quét [x1,y1,x2,y2] | Camera đã chặn | Kết quả |','|---|---|---|---|---|---|']+hud_lines)
     return dict(rows=rows, config=config, metrics=m, size=size, profile=route, challenges=items,
-                bounds=bounds, metric_table=metric_table, hud_table=hud_table, failures=failures, normal=normal, diagonal=diagonal)
+                bounds=bounds, metric_table=metric_table, hud_table=hud_table, failures=failures, normal=normal, diagonal=diagonal, top_table=top_table, top_cases=top_cases)
 
 
 def _rect(values): return '['+', '.join(f'{v:.1f}' for v in values)+']'
@@ -355,15 +446,23 @@ def main():
     print(f'A0 read-only tuning.gd: speed={m["RUN_SPEED"]:g}; H={m["JUMP_HEIGHT"]:g}; apex={m["TIME_TO_APEX"]:g}; g={m["g"]:.6f}; v={-m["v"]:.6f}')
     print(f'Range normal={report["normal"]:.2f}px; diagonal={report["diagonal"]:.2f}px; safety gap={report["diagonal"]/1.5:.2f}px; step={m["JUMP_HEIGHT"]/1.5:.2f}px')
     for w, name, rect in report['bounds']: print(f'HUD {w} {name}: {_rect(rect)}; source=touch_controls.gd::layout + tuning.gd')
+    for width in VIEWPORTS:
+        for name,rect in upper_controls(width,m,report['config'].get('kind','field')).items():
+            source='06_screens.md::hud-metrics (Tạm thời)' if name=='boss_hp' else 'touch_controls.gd::layout + tuning.gd; gear=tuning_panel.gd::_layout'
+            print(f'TOP HUD {width} {name}: {_rect(rect)}; source={source}')
+    print('TOP HUD TABLE\n'+report['top_table'])
+    print(f'TOP HUD: {report["top_cases"]} visible actor/camera cases; human frame width128/height96, boss192/132 (docs/13 + user); debug coordinate/back labels excluded; camera model=world.gd')
     print('METRIC TABLE\n'+report['metric_table']); print('HUD TABLE\n'+report['hud_table'])
     print('MODEL: lowest head-clear exposed support per column; optional shelves excluded; doors traversable; 240Hz continuous arcs/24x88 AABB; one-way shelves traversable on ascent; no coyote or khinh-cong credit.')
     print('CAMERA: deadzone(100,60), lookahead100, response5; horizontal envelope includes v/response lag; vertical ALL legal clamped centres; both map-edge clamps tested. Not an engine/Android playtest.')
     print(f'CHECKS: {len(report["challenges"])} required obstacles; failures={len(report["failures"])} '+str(report['failures']))
     if args.write_tables:
         text = Path(args.layout).read_text()
-        for key, value in [('metrics', report['metric_table']), ('hud', report['hud_table'])]:
+        for key, value in [('metrics', report['metric_table']), ('hud', report['hud_table']),('top-hud',report['top_table'])]:
             text, count = re.subn(rf'<!-- BEGIN {key} -->.*?<!-- END {key} -->', f'<!-- BEGIN {key} -->\n{value}\n<!-- END {key} -->', text, flags=re.S)
-            if count != 1: raise ValueError(f'Need exactly one {key} table marker')
+            if count==0 and key=='top-hud':
+                text=text.replace('## 6. Câu hỏi còn mở',f'<!-- BEGIN {key} -->\n{value}\n<!-- END {key} -->\n\n## 6. Câu hỏi còn mở',1)
+            elif count != 1: raise ValueError(f'Need exactly one {key} table marker')
         Path(args.layout).write_text(text)
     return 1 if report['failures'] else 0
 

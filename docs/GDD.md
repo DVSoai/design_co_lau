@@ -1156,7 +1156,7 @@ Tất cả quái đều là thú vật có thật ở Bắc Bộ hoặc con ngư
 
 ## 3. Boss
 
-Game có 11 trận boss cốt truyện. Máu tính bằng 30 lần quái thường cùng cấp, sát thương đòn thường bằng 5 lần. Mỗi boss có 2 hoặc 3 pha, chuyển pha ở 60% và 30% máu, và có một đòn đặc biệt luôn báo trước 1,5 giây (vòng đỏ dưới đất hoặc tiếng trống) để người chơi né. Hai sứ quân Ngô Xương Xí và Ngô Nhật Khánh quy phục bằng nghị hòa nên không có trận boss.
+Game có 11 trận boss cốt truyện. Máu tính bằng 30 lần quái thường cùng cấp, sát thương đòn thường bằng 5 lần. Mỗi boss có 2 hoặc 3 pha, chuyển pha ở 60% và 30% máu, và có một đòn đặc biệt báo trước để người chơi né: Tướng tiên phong Hậu Ngô báo trước 1,5 giây; các boss sau rút dần, không dưới 0,8 giây (Tạm thời — chốt sau chơi thử), bằng vòng đỏ dưới đất hoặc tiếng trống. Hai sứ quân Ngô Xương Xí và Ngô Nhật Khánh quy phục bằng nghị hòa nên không có trận boss.
 
 | Boss | Cấp | Máu | Sát thương | Nhiệm vụ |
 |---|---|---|---|---|

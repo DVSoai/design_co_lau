@@ -51,6 +51,23 @@ cũ mà bỏ qua camera bị chặn. Mọi hố/chông/nước sâu phải kiể
 không thay hộp che thật của d-pad cao hơn. Công cụ in nguồn số và miền camera,
 không coi camera đã đứng yên là trường hợp duy nhất.
 
+### HUD phía trên — quy tắc follow-up29/10/2026
+
+`check_layout.py` đọc kích thước A0 từ tuning.gd, neo từ touch_controls.gd/
+tuning_panel.gd, camera từ world.gd, thanh boss từ06_screens.md::hud-metrics.
+SCR-05 có vòng cấp, HP/MP, menu, ⚙, minimap120×80; SCR-06 chọn A ẩn minimap,
+nhưng vẫn kiểm menu/⚙ và thanh boss360×32 ởy24 (Tạm thời, ghi13). Không tính nhãn
+tọa độ/Về A0 là HUD. Hộp hình đặt chân cao96px (boss B132), rộng128/192px theo
+khung hình13; không dùng hitbox24×88 thay hộp hình.
+
+Boss: xét **mọi cột/mặt đứng được** của sân/lũy, cả hướng nhìn và viewport960/1200,
+mỗi m/B đang nhìn thấy không chạm HUD SCR-06 (kiểm thêm hình người chơi đứng).
+Map thường: mỗi m/M/N/B khi người chơi đứng cách0–6 ô hai phía, cả hướng nhìn,
+không bị HUD SCR-05 che. S/R: hình96px không chạm cả HUD trên lẫn nút dưới.
+Miền camera xét dead-zone/look-ahead, độ trễ theo phản hồi A0, chặn biên; dùng toàn
+miền camera dọc hợp lệ để kiểm bảo thủ. Test in từng mục PASS/FAIL, không phải
+chứng minh mọi hoạt ảnh/nhảy hay UI sản phẩm cuối đã an toàn.
+
 ## 2. Kích thước và quy ước chung
 
 - **Làng:** rộng 2 đến 3 màn (60 đến 90 ô), cao 12 ô, không có quái. NPC đứng cách nhau ít nhất 4 ô để chạm không nhầm.
@@ -191,6 +208,7 @@ Mỗi dòng: mã, kích thước đề xuất, điểm đặc biệt của bố 
 
 - Chạy `python3 tools/check_layout.py FILE`: tự tìm khe/bậc đường bắt buộc, kiểm ≤64 px và biên1,5×, quỹ đạo chéo có AABB24×88 ở cả hai hướng. Không dùng khinh công cứu đường chính; vượt mức phải thiết kế bục/L. Script thoát khác0 khi FAIL, nguyên nguồn ở `tools/check_layout.py`.
 - Soát bảng vùng nút ở viewport960/1200: S/R không chạm hộp che, mép hố/bẫy thấy được khi tiến từ hai phía ở0–3 ô trước mép; xét dead-zone/look-ahead, miền làm mượt và chặn camera ở hai mép map. Đất chính trên hàng nút, không chỉ chừa140 px trên ảnh tĩnh.
+- Chạy bảng TOP HUD: mọi cột sân/lũy ở boss, từng m/M/N/B trong cự ly0–6 ô ở map thường, hình96px tại S/R; kiểm đúng SCR-05/SCR-06, hai viewport và camera bị chặn. Không thay bằng hitbox88px hoặc tính nhãn debug là HUD.
 - Mỗi màn hình có ít nhất một vùng sinh quái (trừ làng và vùng an toàn được chỉ định). Đào Úc c0…31 là vùng an toàn (quyết định29/10/2026): không sinh quái tự do; Đinh Điền ởM chỉ là đấu tập NV9.
 - Mọi vật phẩm nhiệm vụ và NPC trong nhiệm vụ của bản đồ đều có vị trí trên lưới.
 - Đấu trường boss đủ chỗ cho mọi cơ chế của boss đó (Phần 4 GDD, mục 3).
