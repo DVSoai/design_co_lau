@@ -139,7 +139,7 @@ sang `co_lau_game`; việc qua A0 chưa mở khóa code game thật trước M�
 
 | Thông số | Giá trị | Trạng thái | Chốt khi | Ảnh hưởng tới | Nguồn |
 |---|---|---|---|---|---|
-| Giá NPC bằng tiền đồng | Quy đổi từ giá yên Ninja School | Chưa có | Sau lát cắt dọc | Dữ liệu cửa hàng | GDD Phần 6 |
+| Giá NPC bằng tiền đồng | Tự thiết kế theo nền kinh tế tiền đồng | Chưa có | Sau lát cắt dọc | Dữ liệu cửa hàng | GDD Phần 6 |
 | Tỉ giá | 1 ngân phiếu = 1.000 ngân lượng, một chiều | Đề xuất | Cân bằng kinh tế | Cửa hàng ngân phiếu | GDD Phần 2 |
 | Ngân phiếu thưởng | 50 mỗi hồi, 20 lần đầu hạ mỗi boss | Đề xuất | Cân bằng kinh tế | Nhiệm vụ | GDD Phần 3 |
 | Giá cửa hàng ngân phiếu | Theo bảng GDD Phần 2 mục 10 | Đề xuất | Cân bằng kinh tế | SCR-13 | GDD Phần 2 |

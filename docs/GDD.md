@@ -33,7 +33,7 @@ Tài liệu thiết kế của Cờ Lau Khởi Nghĩa, game nhập vai hành đ�
     - 6\. Thú cưỡi
     - 7\. Cửa hàng NPC và dịch vụ
     - 8\. Quái và boss
-    - 9\. Những gì bỏ đi, lỗi trong source và lưu ý bản quyền
+    - 9\. Phạm vi loại trừ, kiểm tra và bản quyền
     - 10\. Tiền tệ và nạp tiền
 - **Phần 3. Nhiệm vụ**
     - 1\. Tổng quan
@@ -292,18 +292,18 @@ Lính các sứ quân (giáo, khiên, cung nỏ, kỵ binh), thủy quân trên 
 
 ## 8. Gameplay gắn với bối cảnh
 
-Phần này kết hợp hai nguồn: chất liệu lịch sử thời Đinh, và các hệ thống đã được kiểm chứng ở những game nhập vai mobile Việt như **Ninja School Online** — vốn rất quen với người chơi Việt. Nguyên tắc là **mượn cấu trúc hệ thống, thay toàn bộ vỏ bọc**: tên gọi, hình ảnh, con số và nội dung đều làm mới theo thế kỷ 10.
+Phần này kết hợp chất liệu lịch sử thời Đinh với cơ chế phổ biến của thể loại nhập vai mobile. Hình ảnh, tên gọi, nội dung và số liệu phải được thiết kế riêng theo bối cảnh thế kỷ 10.
 
 ### Phát triển nhân vật
 
-Người chơi luôn là Đinh Bộ Lĩnh. Giống Ninja School cho chọn phái khi đủ cấp, cuối Hồi 1 người chơi chọn một trong **hai phái:** **Đao** **hoặc Cung**. Màn cờ lau thời thơ ấu gợi ý cả hai lối đánh (cầm gậy xông lên đầu hàng hay đứng sau bắn ná), nên lựa chọn có lý do trong truyện. Hai phái tham khảo trực tiếp phái Đao và phái Cung của Ninja School: Đao thủ chắc, máu tốt, gây choáng và khống chế nhưng đánh chậm; Cung đánh xa, chuyển mục tiêu nhanh, công cao nhưng thủ yếu. Hai phái bù trừ nhau rõ: một bên giữ tuyến, một bên dứt điểm từ xa.
+Người chơi luôn là Đinh Bộ Lĩnh. Theo tiến trình cốt truyện, cuối Hồi 1 người chơi chọn một trong **hai phái:** **Đao** **hoặc Cung**. Màn cờ lau thời thơ ấu gợi ý cả hai lối đánh (cầm gậy xông lên đầu hàng hay đứng sau bắn ná), nên lựa chọn có lý do trong truyện. Hai phái có vai trò riêng: Đao thủ chắc, máu tốt, gây choáng và khống chế nhưng đánh chậm; Cung đánh xa, chuyển mục tiêu nhanh, công cao nhưng thủ yếu. Hai phái bù trừ nhau rõ: một bên giữ tuyến, một bên dứt điểm từ xa.
 
 | Phái | Lối đánh | Điểm mạnh | Điểm yếu | Chỉ số ưu tiên |
 |---|---|---|---|---|
 | Đao | Cận chiến, chém nặng, quét rộng, gây choáng, chém trên lưng ngựa | Thủ chắc, máu cao, khống chế đám đông, giữ tuyến đầu | Tốc đánh chậm, phải áp sát, kém với địch ở xa | Sức mạnh → Thể lực → Thân pháp |
 | Cung | Tầm xa, bắn xuyên, bắn tỏa, đặt bẫy, kỵ xạ | Công cao, an toàn khi giữ khoảng cách, săn boss tốt | Thủ yếu, dễ thua khi bị áp sát | Khí lực → Thể lực → Thân pháp |
 
-Mỗi phái gợi ý có một đòn thường, 5–6 kỹ năng chủ động, 3 kỹ năng nội tại mở dần theo cấp và một tuyệt kỹ cuối game. Phái đã chọn là cố định, không đổi được. Giống Ninja School, game có 3 ô nhân vật: mỗi ô là một lần chơi riêng của Đinh Bộ Lĩnh với một phái; muốn chơi phái khác thì tạo nhân vật ở ô mới và học lại từ đầu. Khác Ninja School, người chơi không chọn giới tính, tên hay ngoại hình: nhân vật luôn là Đinh Bộ Lĩnh, và vẻ ngoài chỉ thay đổi theo vũ khí và quần áo đang mặc (mũ, áo, quần, giày hiện trực tiếp trên nhân vật). Ba ô nhân vật tách biệt hoàn toàn: trang bị, tiền, tiến độ và thành tựu của ô nào thuộc riêng ô đó.
+Mỗi phái gợi ý có một đòn thường, 5–6 kỹ năng chủ động, 3 kỹ năng nội tại mở dần theo cấp và một tuyệt kỹ cuối game. Phái đã chọn là cố định, không đổi được. Game có 3 ô nhân vật: mỗi ô là một lần chơi riêng của Đinh Bộ Lĩnh với một phái; muốn chơi phái khác thì tạo nhân vật ở ô mới và học lại từ đầu. Người chơi không chọn giới tính, tên hay ngoại hình: nhân vật luôn là Đinh Bộ Lĩnh, và vẻ ngoài chỉ thay đổi theo vũ khí và quần áo đang mặc (mũ, áo, quần, giày hiện trực tiếp trên nhân vật). Ba ô nhân vật tách biệt hoàn toàn: trang bị, tiền, tiến độ và thành tựu của ô nào thuộc riêng ô đó.
 
 Mỗi lần lên cấp, người chơi nhận **điểm tiềm năng** để cộng vào bốn chỉ số (gợi ý: Sức mạnh, Thân pháp, Thể lực, Khí lực) và **điểm kỹ năng** để học hoặc nâng cấp chiêu trong cây kỹ năng của phái. Mỗi phái có chiêu chủ động, chiêu bị động và một chiêu tuyệt kỹ. Sách binh pháp cấp cao rơi từ boss sứ quân hoặc nhận từ công thần — gắn tiến trình sức mạnh với cốt truyện.
 
@@ -311,7 +311,7 @@ Kỹ năng gợi ý có màu lịch sử: **Cờ lau phất trận** (tăng côn
 
 ### Thú cưỡi
 
-Thú cưỡi vừa là phương tiện vừa là một tuyến phát triển riêng, như hệ thống thú cưỡi của Ninja School nhưng gắn với câu chuyện:
+Thú cưỡi vừa là phương tiện vừa là một tuyến phát triển riêng, gắn với câu chuyện:
 
 - **Trâu** — mở đầu, gắn với tuổi thơ chăn trâu. Chậm nhưng khỏe, húc ngã kẻ địch. Giữ lại suốt game như thú cưỡi kỷ niệm, có thể nâng cấp.
 - **Ngựa chiến** — từ hồi 1–2, nhanh, cho phép chém hoặc bắn cung ngay trên lưng ngựa. Nhiều giống ngựa mua ở người buôn ngựa hoặc thu từ sứ quân bị đánh bại.
@@ -322,7 +322,7 @@ Thú cưỡi có cấp, chỉ số riêng và ô trang bị riêng (yên, cươn
 
 ### Quân đội và căn cứ Hoa Lư
 
-Điểm khác biệt quan trọng so với Ninja School: đây là game về **người thống nhất đất nước**, nên ngoài sức mạnh cá nhân còn có **sức mạnh quân đội**. Đề xuất:
+Đặc trưng của Cờ Lau: đây là game về **người thống nhất đất nước**, nên ngoài sức mạnh cá nhân còn có **sức mạnh quân đội**. Đề xuất:
 
 - **Căn cứ Hoa Lư** nâng cấp dần (trại lính, lò rèn, chuồng ngựa, kho lương, chùa) — mỗi công trình mở khóa NPC hoặc cửa hàng mới. Lưu Cơ là NPC phụ trách.
 - **Quân số và danh vọng:** mỗi vùng được giải phóng hoặc thu phục góp thêm lính và lương thảo. Trong trận lớn, người chơi gọi một số lính đồng minh theo quân số hiện có.
@@ -343,79 +343,79 @@ Hết máu: Bộ Lĩnh bị thương, được đưa về trại gần nhất ho
 
 ## 9. Vật phẩm, trang bị, nâng cấp và cửa hàng
 
-Phần này chuyển thể trực tiếp các hệ thống của Ninja School Online — nơi người chơi Việt đã quen với việc "đập đồ" ở thợ rèn, luyện đá, tách đồ và kích ẩn. Cấu trúc giữ gần như nguyên, nhưng toàn bộ tên gọi, hình ảnh và con số làm mới; các con số dưới đây là gợi ý ban đầu để cân bằng lại.
+Các cơ chế thợ rèn gồm cường hóa, luyện đá, tách đồ và kích ẩn. Thiết kế, hình ảnh và số liệu phải được xây dựng riêng; số đang ghi là gợi ý cân bằng.
 
 Bảng số liệu chi tiết, công thức và kỹ năng từng phái nằm ở phần Hệ thống và số liệu.
 
 ### Ô trang bị
 
-Ninja School dùng 10 ô (vũ khí, nón, áo, găng, quần, giày, dây chuyền, nhẫn, ngọc bội, bùa). Đề xuất giữ 10 ô, đổi sang đồ thế kỷ 10:
+Trang bị có 10 ô, dùng đồ phù hợp bối cảnh thế kỷ 10:
 
-| Ô | Ninja School | Cờ Lau Khởi Nghĩa |
-|---|---|---|
-| Vũ khí | Kiếm, tiêu, kunai, cung, đao, quạt | Đao (phái Đao) hoặc cung (phái Cung) |
-| Đầu | Nón | Mũ trụ, khăn chít đầu |
-| Thân | Áo | Giáp da, giáp vảy, áo chiến |
-| Tay | Găng tay | Bao tay da, xà cạp tay |
-| Chân | Quần | Khố chiến, quần vải lãnh |
-| Bàn chân | Giày | Dép cỏ, giày da |
-| Cổ | Dây chuyền | Chuỗi hạt, vòng cổ đồng |
-| Ngón | Nhẫn | Nhẫn đồng, nhẫn ngọc |
-| Hông | Ngọc bội | Ngọc bội, ấn tín |
-| Bùa | Bùa | Bùa chùa, lá bùa hộ mệnh |
+| Ô | Cờ Lau Khởi Nghĩa |
+|---|---|
+| Vũ khí | Đao (phái Đao) hoặc cung (phái Cung) |
+| Đầu | Mũ trụ, khăn chít đầu |
+| Thân | Giáp da, giáp vảy, áo chiến |
+| Tay | Bao tay da, xà cạp tay |
+| Chân | Khố chiến, quần vải lãnh |
+| Bàn chân | Dép cỏ, giày da |
+| Cổ | Chuỗi hạt, vòng cổ đồng |
+| Ngón | Nhẫn đồng, nhẫn ngọc |
+| Hông | Ngọc bội, ấn tín |
+| Bùa | Bùa chùa, lá bùa hộ mệnh |
 
 ### Cường hóa +1 đến +16 ("đập đồ")
 
-NPC phụ trách là **thợ rèn Hoa Lư** (tương đương Kenshinto). Mỗi lần cường hóa tốn **đá mài** và tiền; cấp càng cao tỷ lệ thành công càng giảm, thất bại ở mốc cao có thể bị rớt cấp.
+NPC phụ trách là **thợ rèn Hoa Lư**. Mỗi lần cường hóa tốn **đá mài** và tiền; cấp càng cao tỷ lệ thành công càng giảm, thất bại ở mốc cao có thể bị rớt cấp.
 
 - **Đá mài cấp 1–12:** rơi từ quái, giữ ải, boss. Dùng đá cấp càng cao, tỷ lệ thành công càng lớn.
 - **Luyện đá:** ghép 3 viên cùng cấp thành 1 viên cấp cao hơn, có tỷ lệ thất bại.
-- **Hai chế độ:** *Thường* (tốn tiền đồng, có rủi ro rớt cấp) và *Rèn kỹ* (tốn thêm ngân phiếu như Ninja School tốn lượng, hoặc một Lệnh bài rèn kỹ rơi từ boss cho người không nạp; tỉ lệ cao hơn).
-- **Bảo hộ:** bùa xin ở chùa giúp không rớt cấp khi thất bại — chuyển thể từ "bảo hiểm" của Ninja School.
+- **Hai chế độ:** *Thường* (tốn tiền đồng, có rủi ro rớt cấp) và *Rèn kỹ* (tốn thêm ngân phiếu theo phí Rèn kỹ, hoặc một Lệnh bài rèn kỹ rơi từ boss cho người không nạp; tỉ lệ cao hơn).
+- **Bảo hộ:** bùa xin ở chùa giúp không rớt cấp khi thất bại.
 - **Tách đồ:** phá món đã cường hóa, thu lại khoảng một nửa số đá để dồn cho món mới.
-- **Mốc hiệu ứng:** đồ phát sáng ở +4, +8, +12, +16; vũ khí mở thêm dòng chỉ số ẩn ở +8 và +12, giống cách Ninja School mở dòng ẩn vũ khí.
+- **Mốc hiệu ứng:** đồ phát sáng ở +4, +8, +12, +16; vũ khí mở thêm dòng chỉ số ẩn ở +8 và +12.
 
 ### Tinh luyện và kích ẩn
 
-- **Tinh luyện** (cấp 1–9): chỉ làm được với đồ từ +12 trở lên, dùng **quặng tinh** sơ, trung, cao. Ở Ninja School cần "dịch chuyển" trang bị trước khi tinh luyện; game này có thể gộp bước đó vào một nhiệm vụ của thợ rèn Phong Châu.
-- **Kích ẩn theo phái:** Ninja School gắn trang bị với ba hệ tương khắc. Với hai phái, đề xuất bỏ vòng tương khắc, thay bằng hai bộ trang bị riêng: **bộ** **Đao** (kích ẩn ra phòng thủ, phản đòn cận chiến, hút máu) và **bộ Cung** (kích ẩn ra chính xác, chí mạng, tầm bắn). Mặc đủ bộ của phái mình thì mở dòng chỉ số ẩn.
+- **Tinh luyện** (cấp 1–9): chỉ làm được với đồ từ +12 trở lên, dùng **quặng tinh** sơ, trung, cao. Bước chuẩn bị trước tinh luyện có thể gộp bước đó vào một nhiệm vụ của thợ rèn Phong Châu.
+- **Kích ẩn theo phái:** Với hai phái, không dùng vòng tương khắc; dùng hai bộ trang bị riêng: **bộ** **Đao** (kích ẩn ra phòng thủ, phản đòn cận chiến, hút máu) và **bộ Cung** (kích ẩn ra chính xác, chí mạng, tầm bắn). Mặc đủ bộ của phái mình thì mở dòng chỉ số ẩn.
 
 ### Thú cưỡi
 
-Ninja School từng có thú cưỡi trâu nuôi bằng cỏ thuốc để lên kinh nghiệm — rất hợp với Đinh Bộ Lĩnh. Đề xuất: trâu, ngựa, voi (mục 8) đều có cấp, nuôi bằng **cỏ non, lúa, cỏ thuốc**; thú có 4 ô trang bị riêng (yên, cương, giáp thú, chuông/lục lạc) cũng cường hóa được bằng đá riêng.
+Thú cưỡi phù hợp cốt truyện Đinh Bộ Lĩnh: trâu, ngựa, voi (mục 8) đều có cấp, nuôi bằng **cỏ non, lúa, cỏ thuốc**; thú có 4 ô trang bị riêng (yên, cương, giáp thú, chuông/lục lạc) cũng cường hóa được bằng đá riêng.
 
 ### Cửa hàng NPC
 
-| NPC | Tương đương Ninja School | Bán / dịch vụ |
-|---|---|---|
-| Thợ rèn Hoa Lư | Kenshinto | Cường hóa, luyện đá, tách đồ, tinh luyện |
-| Bà hàng cơm chợ làng | Tabemono | Thức ăn hồi máu và khí lực lâu dài: cơm nắm, cá kho, bánh chưng |
-| Ông lang thuốc nam | Cửa hàng thuốc | Thuốc hồi máu tức thời, giải độc |
-| Lái buôn ngựa | — | Thú cưỡi, thức ăn và đồ cho thú |
-| Thợ may làng | Cửa hàng trang phục | Giáp da, áo chiến, đồ thời trang (hóa trang) |
-| Sư trụ trì chùa | — | Bùa bảo hộ, bùa hộ mệnh, học kỹ năng thiền |
-| Lái buôn đường sông | — | Cửa hàng di động, đồ hiếm đổi bằng chiến lợi phẩm |
-| Quan thu lương | Okanechan (đổi tiền) | Đổi chiến lợi phẩm, danh vọng lấy tiền và vật phẩm |
+| NPC | Bán / dịch vụ |
+|---|---|
+| Thợ rèn Hoa Lư | Cường hóa, luyện đá, tách đồ, tinh luyện |
+| Bà hàng cơm chợ làng | Thức ăn hồi máu và khí lực lâu dài: cơm nắm, cá kho, bánh chưng |
+| Ông lang thuốc nam | Thuốc hồi máu tức thời, giải độc |
+| Lái buôn ngựa | Thú cưỡi, thức ăn và đồ cho thú |
+| Thợ may làng | Giáp da, áo chiến, đồ thời trang (hóa trang) |
+| Sư trụ trì chùa | Bùa bảo hộ, bùa hộ mệnh, học kỹ năng thiền |
+| Lái buôn đường sông | Cửa hàng di động, đồ hiếm đổi bằng chiến lợi phẩm |
+| Quan thu lương | Đổi chiến lợi phẩm, danh vọng lấy tiền và vật phẩm |
 
 ### Tiền tệ
 
-Game miễn phí và có nạp tiền như Ninja School. Ninja School có ba loại tiền (yên, xu, lượng); game mình giữ ba tầng đó nhưng dùng tên Việt cổ (chi tiết ở Phần 2, mục 10):
+Game miễn phí; phạm vi mua món vĩnh viễn và ba loại tiền được quy định ở Phần 2, mục 10:
 
 - **Tiền đồng** — tiền chính. Trước năm 970 là đồng tiền cũ lưu hành từ thời thuộc Đường; sau khi lên ngôi, có thể đổi hình thành **Thái Bình Hưng Bảo** — theo nhiều nhà nghiên cứu là đồng tiền đầu tiên do nhà nước Việt Nam đúc, thời Đinh Tiên Hoàng.
-- **Ngân lượng** (thay xu) — bạc nén. Có từ thưởng nhiệm vụ, boss, hoặc nạp; trả thay tiền đồng ở mọi NPC khi thiếu.
-- **Ngân phiếu** (thay lượng) — có hai nguồn: ngân phiếu nạp và ngân phiếu thưởng từ nhiệm vụ (tiêu được cả khi offline); mua ở cửa hàng ngân phiếu, trả phí Rèn kỹ, đổi ra ngân lượng. Ngân phiếu xuất hiện muộn hơn thế kỷ 10 rất nhiều; game dùng tên này cho dễ hiểu.
+- **Ngân lượng** — bạc nén. Có từ thưởng nhiệm vụ, boss, hoặc nạp; trả thay tiền đồng ở mọi NPC khi thiếu.
+- **Ngân phiếu** — có hai nguồn: ngân phiếu nạp và ngân phiếu thưởng từ nhiệm vụ (tiêu được cả khi offline); mua ở cửa hàng ngân phiếu, trả phí Rèn kỹ, đổi ra ngân lượng. Ngân phiếu xuất hiện muộn hơn thế kỷ 10 rất nhiều; game dùng tên này cho dễ hiểu.
 - **Lương thảo** — dùng nuôi quân, nâng cấp căn cứ.
 - **Danh vọng** theo vùng — đổi đồ đặc biệt ở từng vùng đã giải phóng.
 
 ### Vật phẩm rơi ngẫu nhiên
 
-Tương tự "phúc nang" của Ninja School: đánh quái có cơ hội rơi **túi chiến lợi phẩm**, mở ra kinh nghiệm, tiền đồng hoặc đá mài. Sách binh pháp cấp cao, cỏ thuốc thú cưỡi và quặng tinh rơi chủ yếu từ boss sứ quân và chế độ giữ ải.
+Chiến lợi phẩm ngẫu nhiên: đánh quái có cơ hội rơi **túi chiến lợi phẩm**, mở ra kinh nghiệm, tiền đồng hoặc đá mài. Sách binh pháp cấp cao, cỏ thuốc thú cưỡi và quặng tinh rơi chủ yếu từ boss sứ quân và chế độ giữ ải.
 
 ## 10. Mỹ thuật và âm thanh
 
 ### Phong cách hình ảnh
 
-Ninja School thành công với đồ họa 2D nhỏ gọn, màu tươi, nhân vật dễ thương — chạy tốt trên máy yếu. Cờ Lau Khởi Nghĩa có thể giữ tỷ lệ nhân vật và độ đọc rõ đó, nhưng đổi chất liệu sang **cảnh sắc Bắc Bộ thế kỷ 10**:
+Hình ảnh 2D ưu tiên dễ đọc trên điện thoại và chạy tốt trên máy yếu, với chất liệu **cảnh sắc Bắc Bộ thế kỷ 10**:
 
 - **Địa hình đặc trưng:** núi đá vôi Hoa Lư soi bóng xuống đầm nước, đồng chiêm trũng, lũy tre làng, bến sông, đồi trung du. Hoa Lư phải là vùng đẹp và dễ nhận nhất game.
 - **Kiến trúc:** nhà gỗ mái tranh và mái ngói mũi hài sơ khai, thành đất đắp lũy, cổng gỗ, chòi canh, chùa gỗ nhỏ. Kinh đô Hoa Lư dựng bằng thành đất nối các dãy núi — đúng cách người xưa tận dụng núi làm tường thành.
@@ -427,7 +427,7 @@ Ninja School thành công với đồ họa 2D nhỏ gọn, màu tươi, nhân v
 
 - **Nhạc cụ:** trống, chiêng, tù và cho chiến trận; sáo trúc, đàn bầu, đàn nguyệt cho làng quê; mõ và chuông chùa cho không gian Phật giáo.
 - **Chủ đề nhạc:** giai điệu chính bắt đầu bằng sáo trúc mộc mạc ở màn cờ lau, rồi được dàn trống hóa dần qua từng hồi, thành bản hùng tráng ở lễ lên ngôi.
-- **Âm thanh hệ thống:** tiếng búa rèn khi cường hóa (thành công ngân dài, thất bại gãy cụt — người chơi Ninja School rất nhạy với cảm giác "đập đồ" này), tiếng trâu rống, ngựa hí, tiếng hò reo khi cắm cờ chiếm điểm.
+- **Âm thanh hệ thống:** tiếng búa rèn khi cường hóa (thành công ngân dài, thất bại gãy cụt), tiếng trâu rống, ngựa hí, tiếng hò reo khi cắm cờ chiếm điểm.
 - **Đồng dao:** bọn trẻ chăn trâu hát đồng dao tự sáng tác ở màn mở đầu; cuối game một thế hệ trẻ mới lại hát về "ông vua cờ lau".
 
 ## 11. Thuật ngữ, lưu ý và tư liệu tham khảo
@@ -451,7 +451,6 @@ Ninja School thành công với đồ họa 2D nhỏ gọn, màu tươi, nhân v
 - **Người có thật, đang được thờ.** Đinh Tiên Hoàng có đền ở cố đô Hoa Lư; nhiều sứ quân được thờ ở quê. Không bôi nhọ, không bịa chuyện xấu đời tư. Mỗi sứ quân bị đánh bại nên có cảnh kết đàng hoàng.
 - **Tách bạch sử và sáng tạo** trong codex và mô tả phát hành, nhất là nếu game hướng tới học sinh.
 - **Vị trí căn cứ và năm sinh** còn tranh luận ở một số trường hợp (Bình Kiều, năm sinh 924); khi làm bản đồ nên ghi "theo cách xác định phổ biến".
-- **Mượn hệ thống từ Ninja School:** cơ chế (cường hóa, luyện đá, tách đồ, phái, thú cưỡi, cửa hàng NPC) không bị bảo hộ, nhưng code, hình ảnh, âm thanh, tên NPC và bảng số liệu gốc thuộc về TeaMobi. Dù bạn có source code, nên dùng nó để **tham khảo cách hệ thống vận hành** rồi viết lại, không đưa nguyên vào bản phát hành.
 - Mình chưa tra cứu nguồn trực tuyến cho phần lịch sử khi viết; các chi tiết lịch sử nên đối chiếu lại với sử liệu bên dưới.
 
 ### Tư liệu lịch sử nên đọc
@@ -462,15 +461,6 @@ Ninja School thành công với đồ họa 2D nhỏ gọn, màu tươi, nhân v
 - Thần tích, ngọc phả ở các đền thờ sứ quân và đền vua Đinh ở Hoa Lư — kho chi tiết cho nhân vật và boss.
 - Hồ sơ Quần thể danh thắng Tràng An (UNESCO, 2014) — tư liệu cảnh quan Hoa Lư.
 
-### Tư liệu về hệ thống Ninja School Online đã tham khảo
-
-- [Hướng dẫn cường hóa, tách đồ và phân phái](https://chiase123.com/f57/huong-dan-choi-ninja-school-online-t12224.html)
-- [Bảng giá nâng cấp +1 đến +16, nâng thường và cẩn thận](https://hieumobile.com/game/tin-tuc-game/bang-gia-nang-cap-vu-khi-ninja)
-- [Hướng dẫn tinh luyện vật phẩm](https://hieumobile.com/game/tin-tuc-game/huong-dan-tinh-luyen-vat-pham-trong-ninja-school-online)
-- [Hướng dẫn kích ẩn trang bị theo hệ](https://nubagame.com/bai-viet/kich-an-trang-bi-nso/)
-- [Đặc điểm sáu phái](http://taigameninjaschool35.blogspot.com/2014/12/cac-phai-trong-ninja-school-online.html)
-- [Hướng dẫn cơ bản: NPC Kenshinto, Tabemono, phúc nang](https://haiphongfc.forumvi.com/t70-topic)
-- [Danh sách vật phẩm sự kiện, thức ăn cho trâu](https://ninjaschool.fandom.com/vi/wiki/Danh_s%C3%A1ch_v%E1%BA%ADt_ph%E1%BA%A9m_s%E1%BB%B1_ki%E1%BB%87n)
 
 # Phần 2. Hệ thống và số liệu
 
@@ -478,28 +468,28 @@ Ninja School thành công với đồ họa 2D nhỏ gọn, màu tươi, nhân v
 
 ## 1. Tổng quan
 
-Phần này chuyển thể các hệ thống lõi của Ninja School Online sang Cờ Lau Khởi Nghĩa, dựa trên tham khảo thể loại. Mỗi phần đi theo cùng một nhịp: trước hết kể lại Ninja School làm thế nào, với con số tham khảo cần tự thiết kế lại; sau đó là đề xuất cho game của mình.
+Phần này mô tả hệ thống riêng của Cờ Lau, có tham khảo cơ chế phổ biến của thể loại nhập vai mobile. Số liệu tham khảo cần tự thiết kế lại trước Mốc A.
 
-Có ba nguyên tắc khi chuyển thể. Thứ nhất, **giữ nguyên cấu trúc hệ thống** vì người chơi Việt đã quen: 4 điểm tiềm năng, cường hóa +1 đến +16, luyện đá ghép 3 viên, bảo hiểm chống rớt cấp, thú cưỡi có cấp và sao. Thứ hai, **co lại theo game offline một người chơi**: cấp tối đa 60 thay vì 130, không có hoạt động online; vẫn miễn phí và có nạp tiền như Ninja School, nhưng ba loại tiền yên, xu, lượng đổi thành tiền đồng, ngân lượng, ngân phiếu (mục 10). Thứ ba, **bỏ** **ba hệ** **Hỏa – Thủy – Phong**: phái Đao gây choáng, phái Cung gây ghim chân, kháng chỉ còn một chỉ số "kháng tất cả".
+Có ba nguyên tắc thiết kế. Thứ nhất, **dùng các cấu trúc quen thuộc của thể loại**: 4 điểm tiềm năng, cường hóa +1 đến +16, luyện đá ghép 3 viên, bảo hiểm chống rớt cấp, thú cưỡi có cấp và sao. Thứ hai, **co lại theo game offline một người chơi**: cấp tối đa 60, không có hoạt động online; dùng tiền đồng, ngân lượng, ngân phiếu theo phạm vi mua hàng đã chốt (mục 10). Thứ ba, **không dùng vòng hệ tương khắc**: phái Đao gây choáng, phái Cung gây ghim chân, kháng chỉ còn một chỉ số "kháng tất cả".
 
-Các con số Ninja School trong phần này là tư liệu tham khảo để cân bằng. Code, hình ảnh, tên NPC và tên vật phẩm gốc không được đưa vào bản phát hành (mục 9 của phần này).
+Số liệu trong phần này là đề xuất cần cân bằng riêng. Mọi tài nguyên phát hành phải do dự án tự làm hoặc có quyền sử dụng hợp lệ (mục 9 của phần này).
 
 ## 2. Chỉ số nhân vật và công thức
 
 ### Bốn điểm tiềm năng
 
-Ninja School cho nhân vật bốn chỉ số gốc, khởi đầu ở 5 / 5 / 5 / 10, và cộng thêm **25 điểm tiềm năng mỗi cấp** (từ cấp 70 trở lên nhiều hơn, game mình không cần). Người chơi tự phân điểm và có thể tẩy để cộng lại bằng giấy tẩy tiềm năng. Game mình giữ nguyên cách này, chỉ đổi tên chỉ số thứ tư từ Chakra sang Khí lực.
+Nhân vật có bốn chỉ số gốc, khởi đầu ở 5 / 5 / 5 / 10, và cộng thêm **25 điểm tiềm năng mỗi cấp** (từ cấp 70 trở lên nhiều hơn, game mình không cần). Người chơi tự phân điểm và có thể tẩy để cộng lại bằng giấy tẩy tiềm năng. Chỉ số thứ tư là Khí lực.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
-| Chỉ số | Ninja School | Tác dụng (theo code) |
-|---|---|---|
-| Sức mạnh | Sức mạnh | Lực đánh gốc của phái Đao |
-| Thân pháp | Thân pháp | 1 điểm = 1 chính xác và 1,5 né đòn |
-| Thể lực | Thể lực | 1 điểm = 10 HP tối đa |
-| Khí lực | Chakra | 1 điểm = 10 MP tối đa, và là lực đánh gốc của phái Cung |
+| Chỉ số | Tác dụng (đề xuất) |
+|---|---|
+| Sức mạnh | Lực đánh gốc của phái Đao |
+| Thân pháp | 1 điểm = 1 chính xác và 1,5 né đòn |
+| Thể lực | 1 điểm = 10 HP tối đa |
+| Khí lực | 1 điểm = 10 MP tối đa, và là lực đánh gốc của phái Cung |
 
-Ở Ninja School, phái Đao là "ngoại công" nên tấn công tính từ Sức mạnh, còn phái Cung là "nội công" nên tính từ Chakra. Vì vậy người chơi Đao dồn Sức mạnh → Thể lực → Thân pháp, còn người chơi Cung dồn Khí lực → Thể lực → Thân pháp. Game mình giữ đúng sự phân chia này, nên hai phái thật sự khác nhau ngay từ cách cộng điểm.
+Phái Đao tính tấn công từ Sức mạnh; phái Cung tính từ Khí lực. Vì vậy người chơi Đao dồn Sức mạnh → Thể lực → Thân pháp, còn người chơi Cung dồn Khí lực → Thể lực → Thân pháp. Game mình giữ đúng sự phân chia này, nên hai phái thật sự khác nhau ngay từ cách cộng điểm.
 
 ### Công thức chiến đấu
 
@@ -516,13 +506,13 @@ Công thức sát thương quái theo cấp bình phương là điểm rất đ�
 
 ### Đường cấp độ
 
-Ninja School có 130 cấp và lượng kinh nghiệm nhảy vọt ở cấp 30, 40 và 60 (ví dụ cấp 40 cần 47,7 triệu, cấp 41 cần 152,6 triệu) để giữ người chơi online lâu dài. Kinh nghiệm cũng tính theo từng đòn đánh chứ không theo quái chết. Cả hai đều không hợp game offline cốt truyện.
+Đường kinh nghiệm của Cờ Lau phục vụ tiến trình offline; tính kinh nghiệm theo quái bị hạ, không theo từng đòn đánh.
 
 Đề xuất cho game mình: **cấp tối đa 60**, kinh nghiệm tính khi quái chết, và đường cấp mượt:
 
 - Kinh nghiệm một quái thường cùng cấp: E(n) = 10 × n^1,2 + 15.
 - Kinh nghiệm cần để lên cấp n+1: E(n) × (8 + n), làm tròn đến hàng chục.
-- Quái chênh lệch cấp: cứ mỗi cấp quái cao hơn người chơi thì +5% kinh nghiệm, thấp hơn thì −5%; chênh quá 10 cấp thì không nhận kinh nghiệm (Ninja School dùng ngưỡng 10 cấp như vậy).
+- Quái chênh lệch cấp: cứ mỗi cấp quái cao hơn người chơi thì +5% kinh nghiệm, thấp hơn thì −5%; chênh quá 10 cấp thì không nhận kinh nghiệm.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
@@ -540,13 +530,13 @@ Tổng cộng khoảng 2.200 quái để lên cấp 60 nếu chỉ đánh quái.
 
 ## 3. Kỹ năng phái Đao và phái Cung
 
-### Cách Ninja School tổ chức kỹ năng
+### Tổ chức kỹ năng
 
 Mỗi phái có một chiêu mới cứ mỗi 5 cấp, từ cấp 10 đến cấp 50, rồi thêm chiêu ở 60, 70, 80, 100. Chiêu chia thành ba loại: **chủ động** (tối đa 12 điểm), **nội tại** luôn có hiệu lực (tối đa 6 điểm), và **hỗ trợ** bật lên trong một thời gian (tối đa 6 điểm). Từ cấp 10, mỗi cấp cho 1 điểm kỹ năng, nên tới cấp 60 người chơi có 51 điểm — không đủ nâng tối đa mọi chiêu, buộc phải chọn. Mỗi điểm còn có yêu cầu cấp: chiêu mở ở cấp 10 chỉ nâng lên 12 điểm được khi nhân vật cấp 21.
 
 Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặc rơi từ boss. Game mình tham khảo thể loại: chiêu học bằng **sách binh pháp**, điểm kỹ năng tẩy được bằng giấy tẩy kỹ năng.
 
-"Tấn công cơ bản" trong các bảng dưới đây là % cộng vào chỉ số tấn công của vũ khí. Các con số là mức tối đa của chiêu, lấy từ bảng `skill` trong database (phái Cung là class 4, phái Đao là class 5).
+"Tấn công cơ bản" trong các bảng là % cộng vào tấn công vũ khí. Các con số mô tả mức tối đa đề xuất của chiêu, phải tự đặt lại số trước Mốc A.
 
 ### Phái Đao — cận chiến, gây choáng
 
@@ -567,7 +557,7 @@ Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặ
 
 ### Phái Cung — tầm xa, ghim chân
 
-Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (44–60). Ở Ninja School, hiệu ứng phụ của Cung là đóng băng; game mình đổi thành **ghim chân** (kẻ địch trúng tên không di chuyển được), giữ nguyên thời gian và tỉ lệ.
+Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (44–60). Hiệu ứng phụ của Cung là **ghim chân**: kẻ địch trúng tên không di chuyển được; thời gian và tỉ lệ theo bảng.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
@@ -586,17 +576,17 @@ Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (4
 
 ### Nhận xét cân bằng
 
-Nhìn vào số liệu, Ninja School cân bằng hai phái theo cùng một khuôn: chiêu cùng cấp gần như cùng % tấn công, khác nhau ở tầm đánh, lượng MP và loại chiêu hỗ trợ. Đao tốn ít MP hơn hẳn (Khai Sơn Trảm 270 MP so với Thần Tiễn 600 MP) và có nội tại +35% HP để đứng tuyến đầu; Cung được tầm xa, chí mạng và chính xác cao hơn, bù lại bằng phòng thủ dựa vào MP. Game mình nên giữ khuôn này và chỉ đổi tên, hiệu ứng hình ảnh. Hai chiêu cấp 60 mượn số liệu chiêu cấp 70 của Ninja School vì game dừng ở cấp 60; nên thử lại độ mạnh khi chơi thử.
+Nhìn vào số liệu, Hai phái được cân bằng theo cùng một khuôn: chiêu cùng cấp gần như cùng % tấn công, khác nhau ở tầm đánh, lượng MP và loại chiêu hỗ trợ. Đao tốn ít MP hơn hẳn (Khai Sơn Trảm 270 MP so với Thần Tiễn 600 MP) và có nội tại +35% HP để đứng tuyến đầu; Cung được tầm xa, chí mạng và chính xác cao hơn, bù lại bằng phòng thủ dựa vào MP. Game mình nên giữ khuôn này và chỉ đổi tên, hiệu ứng hình ảnh. Hai chiêu cấp 60 cần thử lại độ mạnh khi chơi thử.
 
-Phân thân (Kage Bunshin) cấp 90 và các chiêu cấp 80, 100 không dùng vì vượt cấp tối đa.
+Phân thân cấp 90 và các chiêu cấp 80, 100 không dùng vì vượt cấp tối đa.
 
 ## 4. Trang bị và cường hóa
 
 ### Cấp trang bị và giới hạn cường hóa
 
-Ninja School không cho mọi món đập lên +16. Giới hạn phụ thuộc cấp của món đồ: đồ dưới cấp 20 tối đa +4, cấp 20–39 tối đa +8, cấp 40–49 tối đa +12, cấp 50–59 tối đa +14, cấp 60 trở lên tối đa +16. Vì game mình dừng ở cấp 60, quy tắc này khớp vừa vặn: mỗi bậc trang bị (cấp 1, 10, 20, 30, 40, 50, 60) là một lần người chơi đổi đồ, và chỉ đồ cấp 60 cuối game mới đập được +16.
+Không phải mọi món đều nâng được lên +16. Giới hạn phụ thuộc cấp của món đồ: đồ dưới cấp 20 tối đa +4, cấp 20–39 tối đa +8, cấp 40–49 tối đa +12, cấp 50–59 tối đa +14, cấp 60 trở lên tối đa +16. Vì game mình dừng ở cấp 60, quy tắc này khớp vừa vặn: mỗi bậc trang bị (cấp 1, 10, 20, 30, 40, 50, 60) là một lần người chơi đổi đồ, và chỉ đồ cấp 60 cuối game mới đập được +16.
 
-Mỗi lần lên +1, các dòng chỉ số trên món đồ tăng theo mức cố định trong code: HP tối đa và MP tối đa +15; % vật công +10; chính xác, né, chí mạng, kháng, phản đòn +5; tấn công cộng thẳng +150; tốc chạy +3%. Ngoài ra mỗi món có **dòng ẩn** chỉ hiện khi đạt mốc: ví dụ vũ khí Đao cấp 20 mở dòng hồi HP ở +4 và dòng chí mạng +20 ở +8; vũ khí cấp 60 trở lên còn mở dòng tấn công cơ bản ở +12. Đây chính là "kích ẩn" quen thuộc và là lý do người chơi cố đập tới đúng các mốc +4, +8, +12.
+Mỗi lần lên +1, các dòng chỉ số trên món đồ tăng theo mức cố định đề xuất: HP tối đa và MP tối đa +15; % vật công +10; chính xác, né, chí mạng, kháng, phản đòn +5; tấn công cộng thẳng +150; tốc chạy +3%. Ngoài ra mỗi món có **dòng ẩn** chỉ hiện khi đạt mốc: ví dụ vũ khí Đao cấp 20 mở dòng hồi HP ở +4 và dòng chí mạng +20 ở +8; vũ khí cấp 60 trở lên còn mở dòng tấn công cơ bản ở +12. Đây chính là "kích ẩn" quen thuộc và là lý do người chơi cố đập tới đúng các mốc +4, +8, +12.
 
 ### Đá mài và điểm đá
 
@@ -606,11 +596,11 @@ Khi cường hóa, người chơi bỏ bất kỳ số đá nào vào (tối đa
 
 ### Bảng cường hóa
 
-Số liệu tham khảo thể loại — Phải tự đặt lại số trước Mốc A. Cột tiền là giá yên của Ninja School cho vũ khí; áo quần rẻ khoảng 4,5 lần, trang sức rẻ khoảng 3 lần. Game mình cần quy đổi lại sang tiền đồng theo nền kinh tế riêng.
+Số liệu tham khảo thể loại — Phải tự đặt lại số trước Mốc A. Cột tiền là giá tham khảo chưa quy đổi cho vũ khí; áo quần rẻ khoảng 4,5 lần, trang sức rẻ khoảng 3 lần. Game mình cần quy đổi lại sang tiền đồng theo nền kinh tế riêng.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
-| Lần đập | Điểm đá vũ khí | Điểm đá áo quần | Điểm đá trang sức | Tiền vũ khí (yên) | Tỉ lệ tối đa | Thất bại thì còn |
+| Lần đập | Điểm đá vũ khí | Điểm đá áo quần | Điểm đá trang sức | Tiền vũ khí (đơn vị tham khảo chưa quy đổi) | Tỉ lệ tối đa | Thất bại thì còn |
 |---|---|---|---|---|---|---|
 | +0 → +1 | 18 | 4 | 6 | 540 | 80% | +0 |
 | +1 → +2 | 42 | 9 | 14 | 1.260 | 76% | +1 |
@@ -633,7 +623,7 @@ Cột cuối cho thấy luật rớt cấp: thất bại không mất đồ, ch�
 
 ### Bảo hộ và chế độ Rèn kỹ
 
-Ninja School có bốn loại bảo hiểm, bỏ kèm đá để thất bại không bị rớt cấp. Game mình đổi thành bùa bảo hộ xin ở chùa:
+Có bốn loại bùa bảo hộ xin ở chùa, dùng kèm đá để tránh rớt cấp khi thất bại:
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
@@ -644,7 +634,7 @@ Ninja School có bốn loại bảo hiểm, bỏ kèm đá để thất bại kh
 | Bùa bảo hộ cao | Dưới +14 |
 | Bùa như ý | Mọi cấp |
 
-Chế độ **Cẩn thận** của Ninja School tốn thêm lượng (1 lượng ở +1, 600 lượng ở +16) và theo thiết kế là nhân tỉ lệ lên 1,5 lần. Game mình giữ cách này dưới tên Rèn kỹ và trả bằng **ngân phiếu** theo cùng bảng giá, từ 1 ngân phiếu ở +1 đến 600 ở +16 (mục 10). Người chơi không nạp vẫn dùng được Rèn kỹ bằng **Lệnh bài rèn kỹ** rơi từ boss sứ quân; mỗi lệnh bài thay phí ngân phiếu của một lần đập. Cả hai cách đều nhân tỉ lệ ×1,5 nhưng không vượt tỉ lệ tối đa (xem lỗi ghi ở mục 9 của phần này).
+Rèn kỹ nhân tỉ lệ lên 1,5 lần và trả bằng **ngân phiếu** theo bảng phí, từ 1 ngân phiếu ở +1 đến 600 ở +16 (mục 10). Người chơi không nạp vẫn dùng được Rèn kỹ bằng **Lệnh bài rèn kỹ** rơi từ boss sứ quân; mỗi lệnh bài thay phí ngân phiếu của một lần đập. Cả hai cách đều nhân tỉ lệ ×1,5 nhưng không vượt tỉ lệ tối đa (xem yêu cầu kiểm tra ở mục 9 của phần này).
 
 ### Hệ quả cho thiết kế
 
@@ -652,25 +642,25 @@ Với bảng này, đập vũ khí lên +8 chỉ cần vài viên đá cấp 6�
 
 ## 5. Luyện đá, tách đồ, dịch chuyển và tinh luyện
 
-Bốn dịch vụ này đều nằm ở NPC thợ rèn (Kenshinto trong Ninja School, thợ rèn Hoa Lư trong game mình). Chúng tạo thành một vòng khép kín: đá nhỏ ghép thành đá lớn, đồ cũ tách ra lấy lại đá, và đồ đã +12 mở tiếp một tầng sức mạnh nữa.
+Bốn dịch vụ này đều nằm ở NPC thợ rèn (thợ rèn Hoa Lư). Chúng tạo thành một vòng khép kín: đá nhỏ ghép thành đá lớn, đồ cũ tách ra lấy lại đá, và đồ đã +12 mở tiếp một tầng sức mạnh nữa.
 
 ### Luyện đá
 
 Người chơi bỏ nhiều viên đá (dưới cấp 12) vào, game cộng tổng điểm đá rồi chọn viên đá đích là cấp thấp nhất có điểm bằng hoặc lớn hơn tổng. Tỉ lệ = tổng điểm ÷ điểm viên đích. Nếu tỉ lệ dưới 45% thì không cho luyện. Thành công nhận viên đích; thất bại vẫn nhận một viên thấp hơn một cấp, nên không bao giờ trắng tay.
 
-Ví dụ: 3 viên đá cấp 1 (3 điểm) luyện ra đá cấp 2 (4 điểm) với tỉ lệ 75%; 4 viên thì 100%. Đây là cách "3 viên ra 1" người chơi Ninja School quen thuộc.
+Ví dụ: 3 viên đá cấp 1 (3 điểm) luyện ra đá cấp 2 (4 điểm) với tỉ lệ 75%; 4 viên thì 100%. Đây là cơ chế ghép nhiều viên để nâng cấp đá.
 
-Phí luyện tham khảo từ Ninja School theo cấp viên đích (yên của nguồn; chưa quy đổi sang tiền đồng): cấp 2 = 40, cấp 3 = 160, cấp 4 = 640, cấp 5 = 2.560, cấp 6 = 10.240, cấp 7 = 40.960, cấp 8 = 163.840, cấp 9 = 655.360, cấp 10 = 1.310.720, cấp 11 = 3.932.160, cấp 12 = 11.796.480.
+Phí luyện tham khảo theo cấp viên đích (chưa quy đổi sang tiền đồng): cấp 2 = 40, cấp 3 = 160, cấp 4 = 640, cấp 5 = 2.560, cấp 6 = 10.240, cấp 7 = 40.960, cấp 8 = 163.840, cấp 9 = 655.360, cấp 10 = 1.310.720, cấp 11 = 3.932.160, cấp 12 = 11.796.480.
 
 ### Tách đồ
 
 Tách một món đã cường hóa trả lại **một nửa tổng điểm đá yêu cầu** của các cấp đã đập, quy ra đá từ cấp cao xuống thấp. Lưu ý: căn cứ là điểm yêu cầu trong bảng, không phải số đá người chơi đã thực sự bỏ vào. Món đồ trở về +0. Trong game mình, tách đồ là cách chính để chuyển sức mạnh sang bậc trang bị mới mỗi khi người chơi lên 10 cấp.
 
-Ninja School còn có **chuyển hóa**: dùng một vật phẩm đặc biệt để chuyển nguyên cấp cường hóa từ món cũ sang món mới cùng loại, cùng cấp trở lên (loại thường tới +10, loại cao tới +13, loại tốt nhất không giới hạn). Đề xuất giữ lại dưới tên **Ấn truyền công**, làm phần thưởng nhiệm vụ hiếm, để người chơi không phải đập lại từ đầu mỗi lần đổi đồ.
+**Chuyển hóa** dùng một vật phẩm đặc biệt để chuyển nguyên cấp cường hóa từ món cũ sang món mới cùng loại, cùng cấp trở lên (loại thường tới +10, loại cao tới +13, loại tốt nhất không giới hạn). Đề xuất giữ lại dưới tên **Ấn truyền công**, làm phần thưởng nhiệm vụ hiếm, để người chơi không phải đập lại từ đầu mỗi lần đổi đồ.
 
 ### Dịch chuyển
 
-Món đồ từ +12 trở lên có thể dịch chuyển bằng 20 viên Hồn thạch (Ninja School gọi là Chuyển tinh thạch). Dịch chuyển thêm hai dòng chỉ số mới tùy ô trang bị và mở khóa tinh luyện. Theo code: vũ khí thêm khoảng 450–500 tấn công; áo thêm 50 giảm trừ sát thương và 10 phản đòn; quần thêm khoảng 450–500 HP và MP; giày thêm HP và 90–100 né; găng thêm 120 chính xác; trang sức thêm chí mạng, kháng hoặc kháng sát thương chí mạng. Game mình giữ đúng và gộp chung vào dịch vụ của thợ rèn Phong Châu.
+Món đồ từ +12 trở lên có thể dịch chuyển bằng 20 viên Hồn thạch. Dịch chuyển thêm hai dòng chỉ số mới tùy ô trang bị và mở khóa tinh luyện. Theo đề xuất: vũ khí thêm khoảng 450–500 tấn công; áo thêm 50 giảm trừ sát thương và 10 phản đòn; quần thêm khoảng 450–500 HP và MP; giày thêm HP và 90–100 né; găng thêm 120 chính xác; trang sức thêm chí mạng, kháng hoặc kháng sát thương chí mạng. Game mình giữ đúng và gộp chung vào dịch vụ của thợ rèn Phong Châu.
 
 ### Tinh luyện
 
@@ -678,23 +668,23 @@ Tinh luyện có 9 cấp, chỉ làm được với đồ đã dịch chuyển v
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
-| Cấp | Nguyên liệu | Tiền tham khảo (yên Ninja School; chưa quy đổi) | Tỉ lệ ghi trong code | Tỉ lệ thực tế |
+| Cấp | Nguyên liệu | Phí tham khảo (chưa quy đổi) | Tỉ lệ đề xuất | Tỉ lệ thực tế |
 |---|---|---|---|---|
-| 1 | 3 Tử tinh thạch sơ | 150.000 | 50% | 64% |
-| 2 | 5 Tử tinh thạch sơ | 247.500 | 45% | 58% |
-| 3 | 9 Tử tinh thạch sơ | 408.375 | 40% | 51% |
-| 4 | 4 Tử tinh thạch trung | 673.819 | 35% | 45% |
-| 5 | 7 Tử tinh thạch trung | 1.111.801 | 30% | 39% |
-| 6 | 10 Tử tinh thạch trung | 2.056.832 | 25% | 33% |
-| 7 | 5 Tử tinh thạch cao | 4.010.922 | 20% | 26% |
-| 8 | 7 Tử tinh thạch cao | 7.420.021 | 15% | 20% |
-| 9 | 9 Tử tinh thạch cao | 12.243.035 | 10% | 14% |
+| 1 | 3 Quặng tinh sơ | 150.000 | 50% | 64% |
+| 2 | 5 Quặng tinh sơ | 247.500 | 45% | 58% |
+| 3 | 9 Quặng tinh sơ | 408.375 | 40% | 51% |
+| 4 | 4 Quặng tinh trung | 673.819 | 35% | 45% |
+| 5 | 7 Quặng tinh trung | 1.111.801 | 30% | 39% |
+| 6 | 10 Quặng tinh trung | 2.056.832 | 25% | 33% |
+| 7 | 5 Quặng tinh cao | 4.010.922 | 20% | 26% |
+| 8 | 7 Quặng tinh cao | 7.420.021 | 15% | 20% |
+| 9 | 9 Quặng tinh cao | 12.243.035 | 10% | 14% |
 
-Cột tỉ lệ thực tế khác vì code so tỉ lệ với một số ngẫu nhiên từ 0 đến 79 thay vì 0 đến 99 (mục 9 của phần này). Game mình nên chọn một trong hai cột rồi hiển thị đúng con số đó cho người chơi; đề xuất dùng cột thực tế vì game offline không cần kéo dài quá mức. Ba loại Tử tinh thạch đổi tên thành quặng tinh sơ, trung, cao như đã ghi ở phần Bối cảnh.
+Hai cột tỉ lệ là các phương án tham khảo; chọn một phương án cân bằng rồi hiển thị đúng tỉ lệ thực tế cho người chơi. Nguyên liệu là quặng tinh sơ, trung, cao theo bối cảnh.
 
 ## 6. Thú cưỡi
 
-### Cách Ninja School làm
+### Cơ chế tham khảo của thể loại
 
 Nhân vật có 5 ô thú cưỡi: 1 ô cho con thú và 4 ô trang bị thú. Con thú có cấp từ 0 đến 99, mỗi cấp cần đúng 1.000 kinh nghiệm, chỉ lên bằng cách cho ăn. Cứ mỗi 10 cấp, thú tăng một lượt chỉ số cố định cho chủ: +50 HP, +50 MP, +10 chính xác, +10 né, +10 chí mạng, +5% sát thương chí mạng, +5 mỗi loại kháng, +100 tấn công, và +50 "chịu sát thương cho chủ".
 
@@ -710,104 +700,97 @@ Giữ cấu trúc nhưng co lại cho vừa một game offline cấp 60:
 
 - **Cấp thú từ 0 đến 50**, mỗi cấp 1.000 kinh nghiệm, mốc chỉ số mỗi 10 cấp (5 mốc).
 - **Tối đa 3 sao**, tỉ lệ 30% / 20% / 10%, dùng Hồn thạch rơi từ boss sứ quân.
-- **Chỉ số mỗi mốc** giữ như Ninja School, gộp ba loại kháng thành +15 kháng tất cả.
+- **Chỉ số mỗi mốc** theo bảng đề xuất, gộp ba loại kháng thành +15 kháng tất cả.
 - **Thức ăn theo ruộng đồng**: cỏ non (5), rơm (7), lúa (14), cỏ thuốc (20), lú nếp (25) rơi từ quái và mua ở chợ; cỏ linh chi (200), sâm núi (400), linh thảo (600) là phần thưởng nhiệm vụ và boss.
-- **Ba con thú chính**: Trâu (có từ màn mở đầu, mạnh về HP và chịu sát thương cho chủ), Ngựa chiến (hồi 1–2, mạnh về tốc chạy và chính xác), Voi chiến (hồi 4, mạnh về tấn công). Ninja School chỉ khác nhau ở hình dáng; game mình cho mỗi con một điểm mạnh để việc chọn thú có ý nghĩa.
+- **Ba con thú chính**: Trâu (có từ màn mở đầu, mạnh về HP và chịu sát thương cho chủ), Ngựa chiến (hồi 1–2, mạnh về tốc chạy và chính xác), Voi chiến (hồi 4, mạnh về tấn công). Mỗi thú có mỗi con một điểm mạnh để việc chọn thú có ý nghĩa.
 - **Bốn trang bị thú** đổi tên thành yên, cương, giáp thú và chuông (lục lạc), giữ nguyên chỉ số và cách tinh luyện.
 
 Với 50 cấp × 1.000 kinh nghiệm, một vòng nuôi thú tốn khoảng 50.000 kinh nghiệm, tức vài trăm lần cho ăn thường hoặc khoảng 100 lần cho ăn loại hiếm. Con số này cần thử khi chơi thật.
 
 ## 7. Cửa hàng NPC và dịch vụ
 
-Database Ninja School có 23 danh mục cửa hàng (bảng `itemsell`). Chúng gom lại thành bảy nhóm, và mỗi nhóm khớp với một NPC đã đề xuất ở phần Bối cảnh:
+Cửa hàng được chia thành bảy nhóm, mỗi nhóm do một NPC trong bối cảnh đảm nhiệm:
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
-| Nhóm cửa hàng | Ninja School bán gì | NPC trong game mình | Bán gì |
-|---|---|---|---|
-| Thuốc | Bình HP và MP, mỗi loại 6 bậc theo cấp 1, 10, 30, 50, 70, 90 | Ông lang thuốc nam | Thuốc hồi HP, MP tức thời, 6 bậc theo cấp 1, 10, 20, 30, 45, 60 |
-| Thức ăn | 7 món (cơm nắm đến đùi heo sữa), hồi HP, MP liên tục trong thời gian dài | Bà hàng cơm chợ làng | Cơm nắm, cá nướng, cá kho, gà luộc, bánh chưng, thịt lợn quay |
-| Vũ khí | 48 món cho 6 phái | Thợ rèn Hoa Lư | Đao và cung theo 7 bậc cấp |
-| Trang phục | Áo, quần, găng, giày, nón; mỗi loại 8 bậc, tách nam nữ | Thợ may làng | Giáp, áo, quần, bao tay, giày, mũ theo 7 bậc; không cần tách nam nữ |
-| Trang sức | Dây chuyền, nhẫn, ngọc bội, bùa; mỗi loại 8 bậc | Lái buôn đường sông | Chuỗi hạt, nhẫn đồng, ngọc bội, ấn tín |
-| Sách kỹ năng | 78 sách võ công cho mọi phái | Quân sư Nguyễn Bặc | Sách binh pháp cho Đao và Cung đến chiêu cấp 30; chiêu cao hơn lấy từ boss |
-| Tạp hóa | Bảo hiểm, giấy tẩy tiềm năng, giấy tẩy kỹ năng, hoàn cốt chi chú, lệnh dịch chuyển | Sư trụ trì chùa | Bùa bảo hộ, giấy tẩy điểm, bùa hộ mệnh |
+| Nhóm cửa hàng | NPC trong game mình | Bán gì |
+|---|---|---|
+| Thuốc | Ông lang thuốc nam | Thuốc hồi HP, MP tức thời, 6 bậc theo cấp 1, 10, 20, 30, 45, 60 |
+| Thức ăn | Bà hàng cơm chợ làng | Cơm nắm, cá nướng, cá kho, gà luộc, bánh chưng, thịt lợn quay |
+| Vũ khí | Thợ rèn Hoa Lư | Đao và cung theo 7 bậc cấp |
+| Trang phục | Thợ may làng | Giáp, áo, quần, bao tay, giày, mũ theo 7 bậc; không cần tách nam nữ |
+| Trang sức | Lái buôn đường sông | Chuỗi hạt, nhẫn đồng, ngọc bội, ấn tín |
+| Sách kỹ năng | Quân sư Nguyễn Bặc | Sách binh pháp cho Đao và Cung đến chiêu cấp 30; chiêu cao hơn lấy từ boss |
+| Tạp hóa | Sư trụ trì chùa | Bùa bảo hộ, giấy tẩy điểm, bùa hộ mệnh |
 
 Dịch vụ không bán hàng: thợ rèn làm cường hóa, luyện đá, tách, dịch chuyển và tinh luyện; lái buôn ngựa bán thú cưỡi, thức ăn và trang bị thú; quan thu lương đổi chiến lợi phẩm lấy tiền.
 
-Khác với Ninja School, game mình không bán đồ đã cường hóa sẵn hay đồ có chỉ số khủng (Ninja School bán mặt nạ +16 qua nạp tiền), kể cả ở cửa hàng ngân phiếu (mục 10). Mỗi bậc trang bị ở cửa hàng chỉ mở bán khi người chơi đã qua hồi tương ứng, để cửa hàng đi theo nhịp cốt truyện.
+Game không bán đồ đã cường hóa sẵn hay đồ có chỉ số vượt cân bằng, kể cả ở cửa hàng ngân phiếu (mục 10). Mỗi bậc trang bị ở cửa hàng chỉ mở bán khi người chơi đã qua hồi tương ứng, để cửa hàng đi theo nhịp cốt truyện.
 
 ## 8. Quái và boss
 
 ### Máu quái theo cấp
 
-Trong Ninja School, máu nằm ở mẫu quái (bảng `mob`), còn cấp được gán theo bản đồ. Đối chiếu hai bảng cho một đường máu khá đều ở quái thường, dùng làm mốc tham khảo cho game mình:
+Máu quái thường tham khảo theo cấp như bảng dưới đây; phải tự cân bằng trước Mốc A:
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
-| Cấp quái | Ví dụ trong Ninja School | Máu |
-|---|---|---|
-| 1 | Bù nhìn | 150 |
-| 5 | Cóc xanh | 450 |
-| 10 | Ong vàng | 1.100 |
-| 15 | Ốc đá | 3.250 |
-| 20 | Sâu xanh | 5.600 |
-| 30 | Quỷ băng | 9.900 |
-| 40 | Dơi xám | 15.350 |
-| 50 | Cua đá | 49.695 |
-| 60 | Ma đêm | 73.330 |
+| Cấp quái | Máu |
+|---|---|
+| 1 | 150 |
+| 5 | 450 |
+| 10 | 1.100 |
+| 15 | 3.250 |
+| 20 | 5.600 |
+| 30 | 9.900 |
+| 40 | 15.350 |
+| 50 | 49.695 |
+| 60 | 73.330 |
 
 Quái tinh anh cùng cấp có máu gấp khoảng 4 đến 6 lần (cấp 35: quái thường 15.200, tinh anh khoảng 90.000). Boss sự kiện có máu từ 100 triệu trở lên vì dành cho nhiều người cùng đánh; game mình một người chơi nên boss sứ quân chỉ nên bằng khoảng 20 đến 40 lần quái thường cùng cấp, kèm nhiều pha đánh.
 
 ### Sát thương và hệ số boss
 
-Như ở mục 2, quái gây sát thương bằng cấp² ÷ 10. Ninja School nhân thêm theo loại quái: tinh anh bậc 1 ×2, bậc 2 ×5, bậc 3 ×3, và boss ×10. Boss còn có 30% phòng thủ, làm giảm cơ hội chí mạng của người chơi và cơ hội né đòn của người chơi khi bị boss đánh. Game mình giữ nguyên các hệ số này cho quái thường và tinh anh; với boss sứ quân, nên thiết kế đòn đánh riêng theo pha (mục 7 phần Bối cảnh) thay vì chỉ nhân sát thương.
+Như ở mục 2, quái gây sát thương bằng cấp² ÷ 10. Hệ số tham khảo theo loại quái: tinh anh bậc 1 ×2, bậc 2 ×5, bậc 3 ×3, và boss ×10. Boss còn có 30% phòng thủ, làm giảm cơ hội chí mạng của người chơi và cơ hội né đòn của người chơi khi bị boss đánh. Game mình giữ nguyên các hệ số này cho quái thường và tinh anh; với boss sứ quân, nên thiết kế đòn đánh riêng theo pha (mục 7 phần Bối cảnh) thay vì chỉ nhân sát thương.
 
 ### Luật chênh lệch cấp
 
-Ninja School có hai luật đáng giữ. Thứ nhất, quái chênh quá 10 cấp so với người chơi thì không cho kinh nghiệm, tránh người chơi cày quái yếu. Thứ hai, người chơi cao hơn boss quá 15 cấp thì đánh boss không mất máu, tránh việc quay lại hạ boss dễ để lấy đồ. Game offline không cần luật thứ hai vì boss sứ quân chỉ đánh một lần theo cốt truyện; có thể áp dụng cho boss lặp lại trong chế độ giữ ải.
+Có hai quy tắc chênh cấp được xem xét. Thứ nhất, quái chênh quá 10 cấp so với người chơi thì không cho kinh nghiệm, tránh người chơi cày quái yếu. Thứ hai, người chơi cao hơn boss quá 15 cấp thì đánh boss không mất máu, tránh việc quay lại hạ boss dễ để lấy đồ. Game offline không cần luật thứ hai vì boss sứ quân chỉ đánh một lần theo cốt truyện; có thể áp dụng cho boss lặp lại trong chế độ giữ ải.
 
 ### Rơi đồ
 
-Boss Ninja School có danh sách rơi đồ riêng theo cấp 45, 55, 60, 65, 75… Game mình nên làm tương tự: mỗi boss sứ quân có một bảng rơi gồm đá mài cấp cao, sách binh pháp, Hồn thạch, quặng tinh và một món trang bị mang dấu ấn sứ quân đó. Bảng rơi chi tiết sẽ làm ở bước thiết kế từng con quái và boss.
+Bảng rơi được thiết kế riêng cho từng boss: mỗi boss sứ quân có một bảng rơi gồm đá mài cấp cao, sách binh pháp, Hồn thạch, quặng tinh và một món trang bị mang dấu ấn sứ quân đó. Bảng rơi chi tiết sẽ làm ở bước thiết kế từng con quái và boss.
 
-## 9. Những gì bỏ đi, lỗi trong source và lưu ý bản quyền
+## 9. Phạm vi loại trừ, kiểm tra và bản quyền
 
 ### Không đưa vào game
 
-Source có nhiều hệ thống chỉ có nghĩa khi chơi online, nên bỏ hẳn: gia tộc và lãnh địa gia tộc, chiến trường và lôi đài giữa người chơi, đấu giải Genin và Kage, giao dịch và bạn bè, giftcode, vòng quay may mắn, sự kiện theo mùa, xếp hạng, phân thân cấp 90, và điểm hiếu chiến (PK). Ngọc khảm (Huyền tinh ngọc, Huyết ngọc…) và mắt thần (Sharingan…) cũng nên bỏ hoặc để sau, vì với cấp tối đa 60 chúng làm hệ thống nặng thêm mà không cần thiết.
+Không đưa vào bản offline: gia tộc/lãnh địa, đấu giải giữa người chơi, giao dịch/bạn bè, giftcode, vòng quay may mắn, sự kiện mùa, xếp hạng, phân thân cấp cao và điểm PK. Ngọc khảm là phạm vi sau.
 
-### Lỗi tìm thấy trong source
+### Kiểm tra tính nhất quán
 
-Khi đọc code, mình thấy vài chỗ lệch giữa ý định và cách chạy thật. Đội lập trình nên biết để không chép nguyên:
-
-- **Cẩn thận không tăng tỉ lệ.** Dòng `percent *= (int) 1.5` ép 1,5 thành 1 trước khi nhân, nên chế độ Cẩn thận tốn lượng mà tỉ lệ không đổi. Game mình giữ cơ chế này dưới tên Rèn kỹ (trả bằng ngân phiếu hoặc Lệnh bài rèn kỹ), nên phải nhân đúng 1,5 rồi chặn theo tỉ lệ tối đa.
-- **Tinh luyện dễ hơn con số hiển thị.** Code so với số ngẫu nhiên 0–79 thay vì 0–99, nên "50%" thực ra là 64% (mục 5).
-- **Thông báo sai ở tinh luyện cấp 6.** Code đòi 10 Tử tinh thạch trung nhưng thông báo cho người chơi lại ghi 7.
-- **Kinh nghiệm tính theo từng đòn,** dựa vào sát thương gây ra, nên nhân vật đánh mạnh lên cấp nhanh hơn hẳn dù giết cùng số quái. Game mình đổi sang tính khi quái chết (mục 2).
-- **Tách đồ trả đá theo bảng,** không theo số đá đã dùng thật. Người chơi đập thất bại nhiều lần vẫn chỉ nhận lại một nửa điểm yêu cầu. Đây có thể là cố ý, nhưng nên ghi rõ cho người chơi.
+Tỉ lệ hiển thị và kết quả mô phỏng phải khớp nhau; kiểm bằng test trước khi chốt cân bằng. Không triển khai số tham khảo khi chưa qua Mốc A.
 
 ### Rà soát bản quyền
 
-Ninja School Online là game thương mại của TeaMobi; bản source này là một server riêng do cộng đồng dựng lại, không phải bản chính thức. Luật bản quyền bảo vệ cách thể hiện cụ thể: code, hình ảnh, âm thanh, câu chữ, tên riêng và nhân vật. Ý tưởng và cơ chế chơi phổ biến (cường hóa có tỉ lệ, cộng điểm tiềm năng, thú cưỡi có cấp) thường không được bảo hộ. Game mình chỉ học cơ chế và không lấy bất cứ thứ gì từ source hay client. Phần này không thay cho tư vấn pháp lý; trước khi phát hành thương mại nên nhờ luật sư sở hữu trí tuệ rà lại.
+Chỉ tham khảo cơ chế phổ biến của thể loại, tự viết mã và tạo nội dung riêng. Tôn trọng quyền tác giả, nhãn hiệu và giấy phép tài nguyên; cần luật sư rà trước phát hành.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Hạng mục | Cách xử lý | Trạng thái |
 |---|---|---|
-| Code server và client | Không dùng dòng nào; viết mới hoàn toàn bằng GDScript trên Godot 4 | Đã chốt |
-| Hình ảnh, sprite, icon, bản đồ, âm thanh, nhạc | Tự vẽ, tự làm hoặc mua giấy phép thương mại; không lấy từ file client | Đã chốt |
+| Mã triển khai | Không dùng dòng nào; viết mới hoàn toàn bằng GDScript trên Godot 4 | Đã chốt |
+| Hình ảnh, sprite, icon, bản đồ, âm thanh, nhạc | Tự vẽ, tự làm hoặc mua giấy phép thương mại; chỉ dùng tài nguyên có quyền sử dụng | Đã chốt |
 | Tên NPC, quái, vật phẩm, kỹ năng, bản đồ | Đặt tên mới theo bối cảnh Việt thế kỷ 10 | Đã đổi |
-| Tên riêng trước đây còn trùng | Chuyển tinh thạch → Hồn thạch; chế độ Cẩn thận → Rèn kỹ; Lệnh bài cẩn thận → Lệnh bài rèn kỹ; Bảo hiểm → Bùa bảo hộ; yên, xu, lượng → tiền đồng, ngân lượng, ngân phiếu; danh hiệu Học giả…Nhẫn giả → Mục đồng…Đinh Tiên Hoàng | Đã đổi |
 | Hang động (chuỗi tầng có giới hạn giờ) | Thay bằng chế độ Giữ ải (Phần 3, mục 7) | Đã đổi |
 | Tên dịch vụ thợ rèn (cường hóa, luyện đá, tách, dịch chuyển, tinh luyện) | Là từ tiếng Việt phổ thông nhiều game dùng, giữ được; nếu muốn khác biệt hơn có thể đổi thành Hợp đá, Rã đồ, Khai ấn, Tôi luyện | Tùy chọn |
 | Bảng số liệu (tỉ lệ, giá, chỉ số) | Chỉ là điểm xuất phát; cân bằng lại theo chơi thử và nhập thành dữ liệu riêng, không sao chép nguyên file hay bảng dữ liệu gốc | Làm khi cân bằng |
 | Lời thoại, nội dung nhiệm vụ | Viết mới hoàn toàn; khuôn nhiệm vụ như giao thư, nhặt đồ, hộ tống là kiểu phổ biến, nhưng không chép câu chữ | Làm khi viết kịch bản |
-| Giao diện | Tự thiết kế cho cảm ứng; không bắt chước hình dáng, màu sắc, icon của client | Làm khi làm UI |
-| Quảng bá | Không dùng tên, hình ảnh hay so sánh với Ninja School trong game, trang Cửa hàng Play và quảng cáo | Khi phát hành |
-| Tên game và logo | Tra cứu nhãn hiệu "Cờ Lau Khởi Nghĩa" tại Cục Sở hữu trí tuệ rồi đăng ký | Trước khi phát hành |
-| Tư liệu lịch sử | Dữ kiện lịch sử không ai sở hữu, nhưng không chép nguyên văn sách hay bài viết hiện đại; ảnh di tích phải tự chụp hoặc có giấy phép | Khi làm nội dung |
-| Tài liệu này | Lưu ý |
+| Giao diện | Tự thiết kế cho cảm ứng; không bắt chước hình dáng, màu sắc, biểu tượng của sản phẩm khác | Làm khi làm UI |
+| Quảng bá | Khi phát hành |
+| Tên game và logo | Trước khi phát hành |
+| Tư liệu lịch sử | Khi làm nội dung |
+| Tài liệu này |
 
 ## 10. Tiền tệ và nạp tiền
 
@@ -817,7 +800,7 @@ Ninja School Online là game thương mại của TeaMobi; bản source này là
 
 Toàn bộ phần về ngân phiếu nạp và gói nạp trong mục này là thiết kế giữ sẵn cho bản sau, dự kiến ra cùng bản online. Quy tắc chi tiết của cả hai phạm vi nằm trong Design Kit, file `docs/12_ngan_phieu.md`, mục 0 và 12.
 
-Game phát hành miễn phí, doanh thu đến từ nạp tiền như Ninja School. Ninja School có ba loại tiền: yên kiếm trong game, xu vừa kiếm vừa nạp, lượng chủ yếu từ nạp. Game mình giữ đúng ba tầng đó nhưng đổi tên cho hợp bối cảnh. Ngân lượng là bạc nén, ngân phiếu là giấy đổi bạc; ngân phiếu xuất hiện muộn hơn thế kỷ 10 nhiều, đây là tên gọi cho dễ hiểu chứ không phải chi tiết lịch sử.
+Game phát hành miễn phí; phạm vi bán món vĩnh viễn ở bản đầu và các thiết kế cho bản sau được phân biệt ở mục này. Tiền trong game gồm tiền đồng, ngân lượng và ngân phiếu. Ngân lượng là bạc nén; ngân phiếu là tên gọi quy ước cho dễ hiểu, không phải khẳng định về lịch sử thế kỷ 10.
 
 ### Ba loại tiền
 
@@ -827,7 +810,7 @@ Game phát hành miễn phí, doanh thu đến từ nạp tiền như Ninja Scho
 | Ngân lượng | Thưởng nhiệm vụ chính tuyến, boss sứ quân, đổi từ ngân phiếu; nạp ở phạm vi sau | Trả thay tiền đồng ở mọi nơi; vài món chỉ bán bằng ngân lượng (thú cưỡi hiếm, sách binh pháp đặc biệt) |
 | Ngân phiếu | Bản đầu: ngân phiếu thưởng (khi xong mỗi hồi, lần đầu hạ mỗi boss sứ quân, gói khởi đầu). Phạm vi sau: thêm ngân phiếu nạp | Cửa hàng ngân phiếu, chế độ Rèn kỹ, đổi ra ngân lượng |
 
-Khi trả tiền ở NPC, game trừ tiền đồng trước, thiếu bao nhiêu trừ tiếp ngân lượng theo tỉ lệ 1:1, giống Ninja School trừ yên trước rồi mới trừ xu. Nhờ vậy mọi bảng giá trong tài liệu chỉ cần ghi bằng tiền đồng, và ngân lượng đóng vai "tiền đồng mua bằng tiền thật" để người chơi bớt cày.
+Khi trả tiền ở NPC, game trừ tiền đồng trước, thiếu bao nhiêu trừ tiếp ngân lượng theo tỉ lệ 1:1. Nhờ vậy mọi bảng giá trong tài liệu chỉ cần ghi bằng tiền đồng, và ngân lượng đóng vai "tiền đồng mua bằng tiền thật" để người chơi bớt cày.
 
 1 ngân phiếu đổi được 1.000 ngân lượng, chỉ đổi một chiều. Tiền đồng và ngân lượng không đổi ngược lại thành ngân phiếu.
 
@@ -858,11 +841,11 @@ Mỗi gói cho người chơi chọn nhận ngân phiếu hoặc ngân lượng.
 | 200.000đ | 1.150 | 1.150.000 | 15% |
 | 500.000đ | 3.000 | 3.000.000 | 20% |
 
-Lần nạp đầu tiên của mỗi ô nhân vật được gấp đôi. Tiền nạp vào **ô nhân vật đang chơi**, như Ninja School nạp vào nhân vật đang đăng nhập. Ba ô tách biệt hoàn toàn nên không chuyển ngân phiếu giữa các ô; hộp xác nhận xóa ô nhân vật phải ghi rõ số ngân phiếu và ngân lượng sẽ mất.
+Lần nạp đầu tiên của mỗi ô nhân vật được gấp đôi. Tiền nạp vào **ô nhân vật đang chơi**, theo định danh ô đang chọn. Ba ô tách biệt hoàn toàn nên không chuyển ngân phiếu giữa các ô; hộp xác nhận xóa ô nhân vật phải ghi rõ số ngân phiếu và ngân lượng sẽ mất.
 
 ### Cửa hàng ngân phiếu
 
-Bảng hàng dựa trên cửa hàng lượng của Ninja School (danh mục 1 và 3 trong bảng `itemsell`), giữ giá gốc và bỏ những món gắn với hoạt động online.
+Bảng hàng cửa hàng ngân phiếu dưới đây là đề xuất; phải tự đặt giá trước Mốc A, không có món gắn với hoạt động online.
 
 **Phải tự đặt lại số trước Mốc A** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
@@ -892,9 +875,9 @@ Phần kỹ thuật (thanh toán Google Play, xác minh giao dịch, sao lưu) v
 
 ## 1. Tổng quan
 
-Game có 59 nhiệm vụ chính tuyến, đưa người chơi từ cấp 1 đến cấp 60 qua màn mở đầu và năm hồi. Danh sách được dựng theo khuôn 43 nhiệm vụ chính tuyến của Ninja School (file `TaskList.java`), nhưng nội dung bám cốt truyện Đinh Bộ Lĩnh ở phần Bối cảnh.
+Game có 59 nhiệm vụ chính tuyến, từ cấp 1 đến cấp 60 qua màn mở đầu và năm hồi, bám cốt truyện Đinh Bộ Lĩnh.
 
-### Ninja School dạy gì về nhiệm vụ
+### Nhịp hướng dẫn và kiểu nhiệm vụ
 
 Đọc hết 43 nhiệm vụ, có thể thấy một nhịp lặp rất rõ, và nhịp này đáng giữ:
 
@@ -902,11 +885,11 @@ Game có 59 nhiệm vụ chính tuyến, đưa người chơi từ cấp 1 đế
 - **Mỗi hệ thống mới được mở bằng một nhiệm vụ.** Nhiệm vụ cấp 12 bắt nâng cấp vũ khí, trang sức và y phục mỗi thứ một lần; nhiệm vụ cấp 44 bắt làm nhiệm vụ hằng ngày; nhiệm vụ cấp 63 bắt vào hang động.
 - **Các loại mục tiêu xoay vòng:** nói chuyện, đi tới nơi, đánh N con quái, nhặt N vật phẩm rơi từ quái, giao thư, hộ tống, đánh quái tinh anh, đánh thách đấu NPC.
 - **Mỗi nhiệm vụ đều có điều kiện cấp tối thiểu,** và mỗi khu vực có một NPC giao nhiệm vụ chính riêng (Tajima, rồi Rei, Matsurugi, Kirin, Soba, Guriin).
-- **Điểm yếu cần tránh:** từ cấp 22 trở đi, Ninja School dùng nhiều nhiệm vụ đánh 250 đến 500 con quái để kéo dài thời gian chơi online. Game offline cốt truyện không cần vậy.
+- **Điểm yếu cần tránh:** từ cấp 22 trở đi, một số game cùng thể loại dùng nhiều nhiệm vụ đánh 250 đến 500 con quái để kéo dài thời gian chơi online. Game offline cốt truyện không cần vậy.
 
 ### Nguyên tắc cho Cờ Lau Khởi Nghĩa
 
-- Mỗi nhiệm vụ chính tuyến có điều kiện cấp, giống Ninja School. Cấp khuyến nghị ghi trong bảng là cấp tối thiểu để nhận nhiệm vụ.
+- Mỗi nhiệm vụ chính tuyến có điều kiện cấp. Cấp khuyến nghị ghi trong bảng là cấp tối thiểu để nhận nhiệm vụ.
 - Số quái mỗi nhiệm vụ tối đa khoảng 30 đến 60 con. Thời lượng bù bằng câu chuyện, cutscene và trận boss.
 - Mỗi hồi có một NPC giao nhiệm vụ chính: Mẹ Đàm thị (mở đầu), Nguyễn Bặc (Hồi 1), Trần Lãm (Hồi 2), Lưu Cơ (Hồi 3), Nguyễn Bặc và Lê Hoàn (Hồi 4), Lưu Cơ (Hồi 5).
 - Hệ thống nào được mở cũng gắn với một nhiệm vụ: thú cưỡi, chọn phái, cộng điểm, cường hóa, luyện đá, giữ ải, căn cứ Hoa Lư, dịch chuyển và tinh luyện.
@@ -918,7 +901,7 @@ Cột **Mục tiêu** ghi số quái hoặc vật phẩm cần. Cột **Mở kh�
 
 ## 2. Mở đầu và Hồi 1 — Đào Úc dựng cờ (cấp 1–15)
 
-Màn mở đầu dạy điều khiển qua tuổi thơ chăn trâu. Hồi 1 là phần hướng dẫn chính, theo đúng nhịp mười nhiệm vụ đầu của Ninja School, và kết thúc bằng trận boss đầu tiên khi quân Hậu Ngô đánh Hoa Lư.
+Màn mở đầu dạy điều khiển qua tuổi thơ chăn trâu. Hồi 1 là phần hướng dẫn chính, theo nhịp hướng dẫn mười nhiệm vụ đầu, và kết thúc bằng trận boss đầu tiên khi quân Hậu Ngô đánh Hoa Lư.
 
 | # | Cấp | Tên | Mục tiêu | Giao / trả | Mở khóa |
 |---|---|---|---|---|---|
@@ -938,7 +921,7 @@ Màn mở đầu dạy điều khiển qua tuổi thơ chăn trâu. Hồi 1 là 
 | 14 | 14 | Ngọn sào Đinh Liễn* | Giữ 3 cổng Đào Úc trước 3 đợt quân Hậu Ngô; cutscene Đinh Liễn bị treo trên ngọn sào | Nguyễn Bặc | — |
 | 15 | 15 | Quân Ngô rút lui* | Đánh bại Tướng tiên phong Hậu Ngô (boss) | Nguyễn Bặc | Hồi 2, bản đồ ven biển |
 
-Nhiệm vụ 9 lấy ý từ nhiệm vụ trắc nghiệm kiến thức của Ninja School: ba câu hỏi của Nguyễn Bặc kiểm tra người chơi đã nhớ NPC nào bán gì. Nhiệm vụ 13 lấy ý từ nhiệm vụ thách đấu ba thầy hiệu trưởng.
+Nhiệm vụ 9: ba câu hỏi của Nguyễn Bặc kiểm tra người chơi nhớ NPC nào bán gì. Nhiệm vụ 13 là thử thách chiến đấu với ba người hướng dẫn.
 
 ## 3. Hồi 2 — Nương nhờ Trần Lãm (cấp 15–28)
 
@@ -959,7 +942,7 @@ Bộ Lĩnh đưa quân xuống vùng ven biển theo Trần Lãm. Hồi này m�
 | 26 | 27 | Ngựa chiến Bố Hải | Mua hoặc nhận ngựa chiến; cho ngựa ăn tới cấp 1 | Lái buôn ngựa | Ngựa chiến, nuôi thú |
 | 27 | 28 | Thừa kế binh quyền* | Cutscene Trần Lãm mất; hộ tống đoàn quân về Hoa Lư qua 3 đợt phục kích | Trần Lãm | Hồi 3 |
 
-Nhiệm vụ 17 và 21 lấy khuôn nhiệm vụ giao thư và "đưa Jaian trở về" của Ninja School. Nhiệm vụ 18 lấy khuôn nhiệm vụ thu thập khoáng thạch và vỏ ốc đá, nhưng giảm từ 40 và 60 xuống còn 30 mỗi loại.
+Nhiệm vụ 17 và 21 dùng cơ chế giao thư/hộ tống. Nhiệm vụ 18 yêu cầu thu thập khoáng thạch và vỏ ốc đá, 30 mỗi loại.
 
 ## 4. Hồi 3 — Hội tụ anh hùng (cấp 28–38)
 
@@ -1036,9 +1019,9 @@ Nhiệm vụ 58 là mở rộng cho game và được trình bày như một gi�
 
 ### Việc làng (thay cho nhiệm vụ hằng ngày)
 
-Ninja School có nhiệm vụ hằng ngày giới hạn 20 lần mỗi ngày, với năm kiểu: tiêu diệt quái, bắt tà thú, tiêu diệt tinh anh, tiêu diệt thủ lĩnh và hộ tống trẻ lạc. Ngoài ra có nhiệm vụ danh vọng giới hạn 30 lần mỗi ngày, cho điểm danh vọng riêng theo từng ô trang bị.
+Các nhiệm vụ lặp lại ở Cờ Lau được thiết kế cho chơi offline, không bắt đăng nhập mỗi ngày.
 
-Game offline không nên bắt người chơi đăng nhập mỗi ngày. Đề xuất đổi thành **bảng việc làng** ở mỗi vùng đã giải phóng: luôn có 3 việc để chọn, làm xong việc nào thì việc mới thay vào, không giới hạn số lần. Năm kiểu việc giữ đúng khuôn Ninja School:
+Game offline không nên bắt người chơi đăng nhập mỗi ngày. Đề xuất đổi thành **bảng việc làng** ở mỗi vùng đã giải phóng: luôn có 3 việc để chọn, làm xong việc nào thì việc mới thay vào, không giới hạn số lần. Năm kiểu việc của bảng việc làng:
 
 | Kiểu việc | Mục tiêu |
 |---|---|
@@ -1048,11 +1031,11 @@ Game offline không nên bắt người chơi đăng nhập mỗi ngày. Đề x
 | Diệt thủ lĩnh | Đánh 1 thủ lĩnh nhóm quái |
 | Hộ tống trẻ lạc | Đưa một đứa trẻ lạc về làng an toàn |
 
-Mỗi việc cho kinh nghiệm bằng khoảng 5 đến 10 con quái cùng cấp, tiền đồng, và **danh vọng vùng** để đổi đồ đặc biệt của vùng đó. Danh vọng theo từng ô trang bị của Ninja School gộp lại thành một loại danh vọng theo vùng cho đơn giản.
+Mỗi việc cho kinh nghiệm bằng khoảng 5 đến 10 con quái cùng cấp, tiền đồng, và **danh vọng vùng** để đổi đồ đặc biệt của vùng đó. Danh vọng dùng một loại theo vùng để đơn giản hóa tiến trình.
 
 ### Giữ ải
 
-Ninja School có hang động: chuỗi bản đồ kín có giới hạn thời gian, đánh hết quái tầng này mới mở tầng sau. Game mình không dùng cơ chế đó mà thay bằng **Giữ ải**: phòng thủ một cứ điểm trước nhiều đợt địch. Chế độ này gắn với chuyện Đinh Bộ Lĩnh tập trận cờ lau thuở nhỏ và với phần quân đội, căn cứ, lương thảo của game, đồng thời vận hành khác hẳn hang động.
+Cờ Lau dùng **Giữ ải**: phòng thủ một cứ điểm trước nhiều đợt địch, gắn với cờ lau, quân đội, căn cứ và lương thảo.
 
 - **Năm ải theo cấp** *(mở rộng cho game)*: Tam Điệp (30), cửa Thần Phù (36), lũy tre Đằng Châu (42), thành đất Đỗ Động (48), ngã ba Bạch Hạc (54). Mỗi ải mở khi vùng đó đã được giải phóng trong cốt truyện.
 - **Lá cờ lau** cắm giữa ải, có thanh máu riêng. Địch đến từ 2–3 cổng qua 8 đợt và ưu tiên đánh cờ; tên nào bị người chơi đánh thì quay sang người chơi. Cờ đổ là thua.
@@ -1083,23 +1066,23 @@ Các tỉ lệ trên là điểm khởi đầu. Sau bản chơi thử đầu ti�
 
 ## 1. Chỉ số quái
 
-Mọi con quái đều tính chỉ số từ cấp và loại, không nhập tay từng con. Cách này lấy từ Ninja School: máu của quái thường tăng đều theo cấp, sát thương của quái bằng cấp² ÷ 10. Để đường máu mượt hơn bảng của Ninja School (vốn nhảy cóc từ 15.350 ở cấp 40 lên 49.695 ở cấp 50), game mình dùng công thức:
+Mọi quái tính chỉ số từ cấp và loại, không nhập tay từng con. Máu tăng theo cấp, sát thương cơ sở bằng cấp² ÷ 10; công thức đề xuất như sau:
 
 - **Máu quái thường** = 15 × cấp² + 100
 - **Sát thương mỗi đòn** = cấp² ÷ 10 (ít nhất 1), trừ kháng và giảm trừ sát thương của người chơi
 - **Kinh nghiệm** = 10 × cấp^1,2 + 15 (theo phần Hệ thống và số liệu)
 
-| Cấp | Máu | Sát thương | Kinh nghiệm | Ninja School cùng cấp (máu) |
-|---|---|---|---|---|
-| 1 | 115 | 1 | 25 | 150 |
-| 10 | 1.600 | 10 | 173 | 1.100 |
-| 20 | 6.100 | 40 | 379 | 5.600 |
-| 30 | 13.600 | 90 | 607 | 9.900 |
-| 40 | 24.100 | 160 | 852 | 15.350 |
-| 50 | 37.600 | 250 | 1.108 | 49.695 |
-| 60 | 54.100 | 360 | 1.376 | 73.330 |
+| Cấp | Máu | Sát thương | Kinh nghiệm |
+|---|---|---|---|
+| 1 | 115 | 1 | 25 |
+| 10 | 1.600 | 10 | 173 |
+| 20 | 6.100 | 40 | 379 |
+| 30 | 13.600 | 90 | 607 |
+| 40 | 24.100 | 160 | 852 |
+| 50 | 37.600 | 250 | 1.108 |
+| 60 | 54.100 | 360 | 1.376 |
 
-Loại quái nhân thêm hệ số, theo đúng cách Ninja School chia quái tinh anh và boss:
+Loại quái nhân thêm hệ số, theo phân loại quái tinh anh và boss:
 
 | Loại | Máu | Sát thương | Kinh nghiệm | Phòng thủ | Ghi chú |
 |---|---|---|---|---|---|
@@ -1108,11 +1091,11 @@ Loại quái nhân thêm hệ số, theo đúng cách Ninja School chia quái ti
 | Thủ lĩnh | ×10 | ×3 | ×5 | 20% | Có 1 kỹ năng riêng, đi kèm 3–4 quái thường |
 | Boss sứ quân | ×30 | ×5 | ×20 | 30% | Nhiều pha, xem mục 3 |
 
-Phòng thủ làm giảm cơ hội chí mạng của người chơi và cơ hội người chơi né đòn của quái đó, như Ninja School áp dụng cho boss. Ninja School dùng hệ số sát thương ×10 cho boss; game mình hạ xuống ×5 vì người chơi đánh boss một mình, bù lại bằng các đòn đặc biệt có báo trước.
+Phòng thủ làm giảm cơ hội chí mạng của người chơi và cơ hội người chơi né đòn của quái đó, theo thiết kế chiến đấu. Boss sứ quân dùng hệ số sát thương ×5 vì người chơi đánh một mình, bù lại bằng các đòn đặc biệt có báo trước.
 
 ## 2. Bản đồ và quái theo vùng
 
-Game có 29 bản đồ: 4 làng hoặc căn cứ không có quái, 20 bản đồ đánh quái (kể cả ảo cảnh cuối game) và 5 ải (chế độ giữ ải). Ninja School có hơn 160 bản đồ vì là game online nhiều năm; 29 bản đồ đủ cho một game offline cấp 60 và vừa sức một đội nhỏ. Mỗi bản đồ đánh quái có 2–3 loại quái thường và 1 loại tinh anh hoặc thủ lĩnh. Khoảng cấp của bản đồ nối tiếp nhau để người chơi luôn có nơi đánh quái không lệch quá 10 cấp.
+Game có 29 bản đồ: 4 làng hoặc căn cứ không có quái, 20 bản đồ đánh quái (kể cả ảo cảnh cuối game) và 5 ải (chế độ giữ ải). 29 bản đồ đủ cho một game offline cấp 60 và vừa sức một đội nhỏ. Mỗi bản đồ đánh quái có 2–3 loại quái thường và 1 loại tinh anh hoặc thủ lĩnh. Khoảng cấp của bản đồ nối tiếp nhau để người chơi luôn có nơi đánh quái không lệch quá 10 cấp.
 
 ### Vùng Hoa Lư (Mở đầu, Hồi 1)
 
@@ -1223,7 +1206,7 @@ Rơi đồ chia theo loại quái. Tiền đồng luôn rơi; các món khác r�
 
 ### Trang bị mang dấu ấn sứ quân
 
-Mỗi boss sứ quân rơi một món cố định, mạnh hơn trang bị cùng bậc mua ở cửa hàng một dòng chỉ số, và có tên gắn với người đó (ví dụ "Giáp lũy Đỗ Động" của Đỗ Cảnh Thạc có thêm giảm trừ sát thương). Tám boss cho tám ô trang bị khác nhau, nên người chơi đánh hết Hồi 4 có gần đủ một bộ. Đây là cách thay cho đồ sự kiện của Ninja School.
+Mỗi boss sứ quân rơi một món cố định, mạnh hơn trang bị cùng bậc mua ở cửa hàng một dòng chỉ số, và có tên gắn với người đó (ví dụ "Giáp lũy Đỗ Động" của Đỗ Cảnh Thạc có thêm giảm trừ sát thương). Tám boss cho tám ô trang bị khác nhau, nên người chơi đánh hết Hồi 4 có gần đủ một bộ. Đây là tuyến phần thưởng gắn với cốt truyện.
 
 ### Hồn thạch
 
@@ -1250,7 +1233,7 @@ Kích thước và neo cụm nút xem [HUD trong trận](06_screens.md#hud-trong
 
 **Di chuyển và nhảy:** kiểu cổ điển đạt tốc độ chạy ngay khi bấm, buông thì hãm ngắn; quay đầu có nhịp dừng và khung đầu chỉ đổi mặt. Trên không đổi hướng tức thì. Nhảy dùng cùng trọng lực khi lên và xuống, không treo ở đỉnh; giữ ↑ hoặc vùng chéo thì nhảy lại khi chạm đất. Nhảy chéo bằng vùng chạm vô hình, đồng thời giữ hướng tương ứng. Khinh công cần nhả rồi bấm lại gần đỉnh khi còn đi lên để bật thêm, tối đa một lần mỗi cú nhảy; giữ liên tục không tính là bấm mới. Mỗi cú nhảy và cú khinh công đều có lộn người ở đỉnh, chỉ xoay hình nhân vật, không xoay hitbox. Các tốc độ, thời gian và cửa sổ kích hoạt lấy từ [13_thong_so.md](13_thong_so.md); kiểu cũ chỉ giữ trong prototype để so sánh.
 
-Mỗi ô kỹ năng hiện vòng hồi chiêu và chuyển xám khi không đủ MP, giống thông báo "Không đủ MP để sử dụng" của Ninja School. Chạm vào quái để khóa mục tiêu; thanh máu của mục tiêu hiện ở giữa cạnh trên, kèm tên và loại (thường, tinh anh, thủ lĩnh, boss).
+Mỗi ô kỹ năng hiện vòng hồi chiêu và chuyển xám khi không đủ MP, giống trạng thái thiếu MP. Chạm vào quái để khóa mục tiêu; thanh máu của mục tiêu hiện ở giữa cạnh trên, kèm tên và loại (thường, tinh anh, thủ lĩnh, boss).
 
 **Chế độ Tự đánh** tự tìm quái gần nhất trong bản đồ, dùng đòn thường và các chiêu người chơi đã bật, tự uống thuốc khi HP dưới mức đặt sẵn. Tự đánh tắt khi vào trận boss sứ quân để giữ cảm giác đánh tay.
 
@@ -1258,7 +1241,7 @@ Mỗi ô kỹ năng hiện vòng hồi chiêu và chuyển xám khi không đủ
 
 ## 2. Menu nhân vật
 
-Client Ninja School có bảy thẻ chính: Hành trang, Kỹ năng, Tiềm năng, Thông tin, Trang bị, Thú cưỡi và Vĩ thú. Game mình giữ sáu thẻ đầu, bỏ Vĩ thú và thêm thẻ Nhiệm vụ.
+Menu nhân vật có bảy thẻ: Hành trang, Kỹ năng, Tiềm năng, Thông tin, Trang bị, Thú cưỡi và Nhiệm vụ.
 
 | Thẻ | Nội dung | Thao tác |
 |---|---|---|
@@ -1270,9 +1253,9 @@ Client Ninja School có bảy thẻ chính: Hành trang, Kỹ năng, Tiềm năn
 | Thú cưỡi | Thú đang dùng, cấp, sao, thanh kinh nghiệm x/1.000, 4 ô trang bị thú | Cho ăn, nâng sao, đổi thú |
 | Nhiệm vụ | Nhiệm vụ chính tuyến, việc làng đang nhận, nhật ký cốt truyện đã qua | Tìm đường tới NPC hoặc bản đồ |
 
-**Thẻ Thông tin** liệt kê các dòng như client Ninja School, bỏ ba dòng Hỏa chống, Băng chống, Phong chống và thay bằng một dòng Kháng: tên, cấp, phái, danh hiệu, HP, MP, tốc độ, tấn công, kháng, giảm sát thương, chính xác, né đòn, chí mạng, phản đòn cận chiến, và danh vọng từng vùng.
+**Thẻ Thông tin** liệt kê các chỉ số với một dòng Kháng chung: tên, cấp, phái, danh hiệu, HP, MP, tốc độ, tấn công, kháng, giảm sát thương, chính xác, né đòn, chí mạng, phản đòn cận chiến, và danh vọng từng vùng.
 
-**Hành trang** bắt đầu với 30 ô và mở rộng ba lần thêm 6, 6 và 12 ô bằng túi da từ phần thưởng nhiệm vụ. Ba mức mở rộng này lấy đúng từ Ninja School (6, 6, 12). Đá, thuốc và thức ăn xếp chồng trong một ô.
+**Hành trang** bắt đầu với 30 ô và mở rộng ba lần thêm 6, 6 và 12 ô bằng túi da từ phần thưởng nhiệm vụ.  Đá, thuốc và thức ăn xếp chồng trong một ô.
 
 ## 3. Màn NPC
 
@@ -1282,7 +1265,7 @@ Chạm vào NPC mở khung hội thoại ở nửa dưới màn hình: chân dun
 
 ### Cửa hàng
 
-Màn cửa hàng chia hai nửa: bên trái là hàng của NPC theo thẻ (ví dụ thợ may có các thẻ Giáp, Quần, Bao tay, Giày, Mũ), bên phải là hành trang của người chơi. Chạm vào món hàng hiện chỉ số, giá và cấp yêu cầu; nút "Mua" và "Mua nhiều" như client Ninja School. Bán đồ bằng cách kéo món từ hành trang sang, có nút "Bán nhiều" để chọn nhiều món một lúc. Món mà cấp người chơi chưa đủ hiện mờ với dòng "Yêu cầu cấp n".
+Màn cửa hàng chia hai nửa: bên trái là hàng của NPC theo thẻ (ví dụ thợ may có các thẻ Giáp, Quần, Bao tay, Giày, Mũ), bên phải là hành trang của người chơi. Chạm vào món hàng hiện chỉ số, giá và cấp yêu cầu; nút "Mua" và "Mua nhiều". Bán đồ bằng cách kéo món từ hành trang sang, có nút "Bán nhiều" để chọn nhiều món một lúc. Món mà cấp người chơi chưa đủ hiện mờ với dòng "Yêu cầu cấp n".
 
 Giá hiện bằng tiền đồng. Khi tiền đồng không đủ, nút Mua đổi thành "Mua (trừ n ngân lượng)" để người chơi thấy phần bù.
 
@@ -1292,14 +1275,14 @@ Giá hiện bằng tiền đồng. Khi tiền đồng không đủ, nút Mua đ�
 
 ### Thợ rèn
 
-Thợ rèn là màn phức tạp nhất. Client Ninja School tách thành nhiều màn riêng (Nâng cấp, Luyện đá, Tách, Chuyển hóa, Dịch chuyển, Tinh luyện); game mình gộp vào một màn sáu thẻ cùng bố cục:
+Thợ rèn là màn phức tạp nhất. Dịch vụ thợ rèn gộp vào một màn sáu thẻ cùng bố cục:
 
 1. Bên trái: ô đặt món đồ chính và các ô nguyên liệu (đá, bùa bảo hộ, quặng tinh).
 2. Giữa: kết quả dự kiến (cấp hiện tại → cấp kế, chỉ số trước và sau), **tỉ lệ thành công** cập nhật ngay khi thêm đá, và phí tiền đồng.
 3. Bên phải: hành trang, chỉ hiện những món dùng được cho thẻ đang mở.
 4. Dưới cùng: nút thực hiện và cảnh báo rớt cấp nếu thất bại ("Thất bại sẽ về +8") khi chưa bỏ bùa bảo hộ.
 
-Ninja School hiển thị tỉ lệ và các dòng hướng dẫn ngắn ngay trên màn ("Chọn 2 viên đá trở lên", "Số lượng đá từ 2 đến 24"). Game mình giữ cách đó, và thêm nút **"Tự chọn đá"** tự bỏ lượng đá ít nhất đủ đạt tỉ lệ tối đa. Hiệu ứng: búa rèn gõ ba nhịp, thành công lóe sáng vàng và tiếng ngân dài, thất bại tóe lửa đỏ và tiếng gãy cụt.
+Giao diện hiển thị tỉ lệ và các dòng hướng dẫn ngắn ngay trên màn ("Chọn 2 viên đá trở lên", "Số lượng đá từ 2 đến 24"). Game mình giữ cách đó, và thêm nút **"Tự chọn đá"** tự bỏ lượng đá ít nhất đủ đạt tỉ lệ tối đa. Hiệu ứng: búa rèn gõ ba nhịp, thành công lóe sáng vàng và tiếng ngân dài, thất bại tóe lửa đỏ và tiếng gãy cụt.
 
 ### Bản đồ vùng
 
@@ -1317,7 +1300,7 @@ Không có hồi sinh tại chỗ. Thua thì về điểm hồi sinh gần nhấ
 
 ### Màn bắt đầu
 
-Màn đầu có ba ô nhân vật xếp ngang, giống màn chọn nhân vật của Ninja School. Mỗi ô đã có dữ liệu hiện hình Đinh Bộ Lĩnh với vũ khí và quần áo đang mặc, phái (hoặc "Chưa chọn phái" nếu chưa tới cấp 10), cấp, hồi đang chơi, tổng thời gian chơi và lần chơi cuối. Ô trống hiện nút "Chơi mới". Mỗi ô có nút xóa, phải xác nhận hai lần vì không khôi phục được; nếu ô còn ngân phiếu hoặc ngân lượng, hộp xác nhận ghi rõ số tiền sẽ mất. Ba ô tách biệt hoàn toàn, như đã chốt.
+Màn đầu có ba ô nhân vật xếp ngang. Mỗi ô đã có dữ liệu hiện hình Đinh Bộ Lĩnh với vũ khí và quần áo đang mặc, phái (hoặc "Chưa chọn phái" nếu chưa tới cấp 10), cấp, hồi đang chơi, tổng thời gian chơi và lần chơi cuối. Ô trống hiện nút "Chơi mới". Mỗi ô có nút xóa, phải xác nhận hai lần vì không khôi phục được; nếu ô còn ngân phiếu hoặc ngân lượng, hộp xác nhận ghi rõ số tiền sẽ mất. Ba ô tách biệt hoàn toàn, như đã chốt.
 
 ### Lưu game
 
@@ -1325,7 +1308,7 @@ Game tự lưu, không có nút lưu tay để người chơi điện thoại kh
 
 ### Danh hiệu
 
-Ninja School có năm bậc danh hiệu theo cấp: Học giả, Hạ nhẫn, Trung nhẫn, Thượng nhẫn, Nhẫn giả. Game mình đổi thành năm bậc gắn với cốt truyện, hiện dưới tên nhân vật và trên thẻ Thông tin:
+Năm bậc danh hiệu gắn với cốt truyện, hiện dưới tên nhân vật và trên thẻ Thông tin:
 
 | Danh hiệu | Nhận khi |
 |---|---|
@@ -1342,21 +1325,21 @@ Ninja School có năm bậc danh hiệu theo cấp: Học giả, Hạ nhẫn, Tr
 Game làm bằng **Godot 4** (dùng bản ổn định mới nhất lúc bắt đầu code; khi viết tài liệu này là 4.7), ngôn ngữ **GDScript**, phát hành Android trước. Game chơi offline hoàn chỉnh; ở bản đầu, mạng chỉ dùng để mua và khôi phục món vĩnh viễn qua Google Play, và game không có máy chủ riêng (mục 5). Code chia ba lớp, để luật chơi không phụ thuộc vào cách vẽ:
 
 1. **Lớp dữ liệu:** các file JSON trong `res://data/` (mục 2) và các cảnh bản đồ `res://maps/*.tscn` dựng bằng TileMapLayer. Đội thiết kế sửa số liệu chỉ cần sửa JSON, không sửa code. Bản đồ dựng từ file bố cục dạng lưới đã duyệt trong Design Kit (`docs/08_map_layout.md`); có thể viết một script chuyển lưới chữ thành TileMapLayer để không phải đặt từng ô bằng tay.
-2. **Lớp hệ thống:** GDScript thuần, viết thành các lớp không phụ thuộc cảnh (kế thừa RefCounted) cho Chiến đấu (công thức ở Phần 2), Trang bị và cường hóa, Kỹ năng, Nhiệm vụ, Túi đồ, Thú cưỡi, Kinh tế, Ngân phiếu, Lưu game. Trạng thái chung của ô đang chơi giữ trong vài autoload (ví dụ `GameState`, `SaveService`, `BillingService`). Vì tách khỏi cảnh, lớp này viết được unit test chạy bằng Godot không giao diện (`--headless`), ví dụ chạy 10.000 lần cường hóa để kiểm tra tỉ lệ thật khớp bảng — đúng loại lỗi đã gặp trong source Ninja School. Khung test chọn một trong GUT hoặc gdUnit4 khi bắt đầu code.
+2. **Lớp hệ thống:** GDScript thuần, viết thành các lớp không phụ thuộc cảnh (kế thừa RefCounted) cho Chiến đấu (công thức ở Phần 2), Trang bị và cường hóa, Kỹ năng, Nhiệm vụ, Túi đồ, Thú cưỡi, Kinh tế, Ngân phiếu, Lưu game. Trạng thái chung của ô đang chơi giữ trong vài autoload (ví dụ `GameState`, `SaveService`, `BillingService`). Vì tách khỏi cảnh, lớp này viết được unit test chạy bằng Godot không giao diện (`--headless`), ví dụ chạy 10.000 lần cường hóa để kiểm tra tỉ lệ thật khớp bảng. Khung test chọn một trong GUT hoặc gdUnit4 khi bắt đầu code.
 3. **Lớp hiển thị:** cảnh Node2D lo thế giới game: nhân vật và quái là CharacterBody2D, vùng đánh và vùng nhận đòn là Area2D, hoạt ảnh bằng AnimationPlayer, camera là Camera2D. Giao diện là các node Control trên CanvasLayer, dùng chung một Theme dựng từ bộ khung giao diện đã duyệt. Mỗi màn SCR-xx trong Design Kit là một cảnh riêng trong `res://scenes/ui/`.
 
 Một số quyết định kỹ thuật nên chốt sớm:
 
 - **Hiển thị đã duyệt A0:** độ phân giải gốc **960×540**; stretch **canvas_items**, aspect **expand**, scale **fractional**, lọc texture **nearest**. Viewport logic rộng **960–1200 px** theo tỉ lệ máy. Nhân vật người cao **96 px**, khung **128×128**. Android chạy **fullscreen + immersive**, ẩn thanh trạng thái và thanh điều hướng. Chi tiết và trạng thái duyệt xem `13_thong_so.md`.
-- **Nhân vật vẽ theo bộ phận,** giống Ninja School (bảng NPC trong database lưu riêng head, body, leg). Đầu, thân, chân và vũ khí là bốn lớp Sprite2D chồng lên nhau, cùng chạy theo một AnimationPlayer, nên mặc đồ nào thì đổi đúng lớp đó — khớp với quyết định ngoại hình chỉ đổi theo vũ khí và quần áo.
+- **Nhân vật vẽ theo bộ phận,** với dữ liệu lớp riêng của dự án. Đầu, thân, chân và vũ khí là bốn lớp Sprite2D chồng lên nhau, cùng chạy theo một AnimationPlayer, nên mặc đồ nào thì đổi đúng lớp đó — khớp với quyết định ngoại hình chỉ đổi theo vũ khí và quần áo.
 - **Số ngẫu nhiên có hạt giống lưu trong file lưu** (RandomNumberGenerator, lưu cả seed và state). Việc này giúp kết quả tái lập được khi kiểm thử, và cùng với việc lưu ngay sau mỗi lần rèn, chặn kiểu tắt game giữa chừng để rèn lại. Nó **không** chống được việc chép file lưu ra trước khi rèn rồi chép đè lại. Bản offline chấp nhận giới hạn này vì người chơi chỉ ảnh hưởng game của chính mình; chỉ bản online, khi máy chủ tung số ngẫu nhiên, mới chặn được (mục 7).
-- **Va chạm đơn giản:** hộp chữ nhật cho nhân vật và quái, vùng tấn công là hộp theo tầm của chiêu (Ninja School dùng đúng cách này: mỗi chiêu có dx, dy là tầm ngang và dọc).
+- **Va chạm đơn giản:** hộp chữ nhật cho nhân vật và quái, vùng tấn công là hộp theo tầm của chiêu.
 - **Khung hình:** vật lý chạy 60 nhịp mỗi giây, nhưng luật chiến đấu tính theo mili giây (hồi chiêu, thời gian choáng) để không phụ thuộc tốc độ máy.
 - **Cấu trúc thư mục:** `res://data/` (JSON), `res://maps/` (cảnh bản đồ), `res://scenes/world/` và `res://scenes/ui/` (cảnh), `res://scripts/systems/` (lớp hệ thống), `res://scripts/services/` (lưu game, thanh toán, đồng bộ), `res://assets/` (sprite, tile, âm thanh đã chỉnh tay từ Design Kit), `res://tests/`.
 
 ## 2. Dữ liệu game
 
-Mọi nội dung nằm trong 12 nhóm dữ liệu. Cách chia này theo sát các bảng của database Ninja School (`item`, `skill`, `level`, `mob`, `map`, `npc`, `itemsell`, `tasks`), vì đó là cách chia đã chạy được nhiều năm. Nội dung là của game mình, nhập mới từ các phần của tài liệu này. Game đọc toàn bộ JSON một lần lúc khởi động; một script kiểm tra dữ liệu chạy bằng `--headless` trước mỗi lần build để bắt lỗi như id trùng, tham chiếu tới vật phẩm không tồn tại.
+Nội dung chia thành 12 nhóm dữ liệu riêng của Cờ Lau. Game đọc JSON khi khởi động; kiểm bằng --headless trước mỗi build để phát hiện id trùng hoặc tham chiếu không tồn tại.
 
 | File | Nội dung | Trường chính |
 |---|---|---|
@@ -1382,7 +1365,7 @@ Mỗi ô nhân vật là một file riêng trong thư mục dữ liệu người
 - **Phiên bản dữ liệu,** để cập nhật game sau này vẫn đọc được file cũ và chuyển đổi.
 - **Định danh ô** và trạng thái liên kết với máy chủ (chưa liên kết, đã liên kết với tài khoản nào).
 - **Nhân vật:** cấp, kinh nghiệm, phái, bốn điểm tiềm năng, điểm kỹ năng từng chiêu, HP và MP hiện tại, danh hiệu; lưu lựa chọn và thứ tự 5 ô chiêu; người chơi chọn 5 trong 8 chiêu chủ động/hỗ trợ của phái (kể cả tuyệt kỹ) để xếp vào ô; chiêu nội tại tự có hiệu lực, không cần ô.
-- **Đồ đạc:** 10 ô trang bị, hành trang, số ô đã mở rộng. Mỗi món lưu id mẫu, cấp cường hóa, các dòng chỉ số hiện tại, đã dịch chuyển chưa, cấp tinh luyện, số lượng, khóa hay không. Cách lưu món đồ kèm danh sách dòng chỉ số giống hệt cách Ninja School lưu (id, upgrade, option).
+- **Đồ đạc:** 10 ô trang bị, hành trang, số ô đã mở rộng. Mỗi món lưu id mẫu, cấp cường hóa, các dòng chỉ số hiện tại, đã dịch chuyển chưa, cấp tinh luyện, số lượng, khóa hay không. Mỗi món lưu id, cấp cường hóa và danh sách dòng chỉ số.
 - **Thú cưỡi:** các con thú đã có, con đang dùng, cấp, kinh nghiệm, sao, 4 ô trang bị thú.
 - **Tiến độ:** nhiệm vụ đang làm và số đếm từng bước, danh sách nhiệm vụ đã xong, cờ cốt truyện, việc làng đang hiện ở từng vùng, danh vọng vùng, số sao từng ải, công trình căn cứ Hoa Lư, điểm dịch chuyển đã mở.
 - **Vị trí:** bản đồ và tọa độ cuối, điểm hồi sinh gần nhất.
@@ -1395,7 +1378,7 @@ Ghi file theo kiểu an toàn: ghi ra file tạm trước rồi đổi tên đè
 
 ## 4. Tài sản cần sản xuất
 
-Số lượng dưới đây đếm từ các phần khác của tài liệu này, dùng để ước lượng công việc hình ảnh và âm thanh. Không dùng bất kỳ hình ảnh, âm thanh hay bản đồ nào từ source Ninja School.
+Số lượng dưới đây đếm từ các phần khác của tài liệu này, dùng để ước lượng công việc hình ảnh và âm thanh. Chỉ dùng tài nguyên do dự án tự làm hoặc có quyền sử dụng.
 
 | Nhóm | Số lượng | Ghi chú |
 |---|---|---|
@@ -1503,7 +1486,7 @@ Lộ trình code này chỉ bắt đầu sau khi qua mốc A trong danh sách ch
 ### Việc còn phải chốt
 
 - **Bảng giá nạp và hồ sơ pháp lý:** mô hình đã chốt là miễn phí và có nạp ngân lượng, ngân phiếu. Còn phải chốt giá các gói sau khi cân bằng kinh tế, và hỏi luật sư về giấy phép phát hành ở Việt Nam (mục 5).
-- **Nền kinh tế tiền đồng và tỉ giá ngân phiếu:** quy đổi giá yên của Ninja School sang tiền đồng, sau bản chơi thử lát cắt dọc.
+- **Nền kinh tế tiền đồng và tỉ giá ngân phiếu:** tự thiết kế giá tiền đồng, sau bản chơi thử lát cắt dọc.
 - **Tên và chỉ số từng món trang bị** theo 7 bậc, và tám món mang dấu ấn sứ quân.
 - **Đối chiếu sử liệu:** vị trí Bình Kiều, năm sinh Đinh Bộ Lĩnh, thần tích các sứ quân.
 - **Phong cách đã chốt (không còn là quyết định mở):** phương án B, pixel bán hiện đại, dáng khoảng 4 đầu, **palette_v3 32 màu**. Theo `01_art_bible.md`; không dùng khối STYLE-B vẽ tay lịch sử.
@@ -1511,7 +1494,7 @@ Lộ trình code này chỉ bắt đầu sau khi qua mốc A trong danh sách ch
 
 ## 7. Chuẩn bị cho bản online sau này
 
-Game phát hành trước dưới dạng offline. Định hướng lâu dài là có thể chuyển thành game online giống Ninja School khi có nguồn lực. Bây giờ **không** làm phần online và chưa chọn công nghệ máy chủ game; chỉ cần bản offline giữ được năm điều sau để sau này không phải viết lại game. Chi tiết nằm trong Design Kit, file `docs/14_online_migration.md`.
+Game phát hành trước dưới dạng offline. Định hướng lâu dài là có thể chuyển thành game online của thể loại nhập vai mobile khi có nguồn lực. Bây giờ **không** làm phần online và chưa chọn công nghệ máy chủ game; chỉ cần bản offline giữ được năm điều sau để sau này không phải viết lại game. Chi tiết nằm trong Design Kit, file `docs/14_online_migration.md`.
 
 1. **ID ổn định:** mọi vật phẩm, kỹ năng, nhiệm vụ, bản đồ, quái, NPC, sản phẩm Google Play và quyền lợi có id dạng chữ không bao giờ đổi (ví dụ `itm_dao_t1`, `qst_014`, `map_dao_uc`, `sku_goi_khoi_dau`, `ent_tui_da_3`); mỗi ô nhân vật và mỗi món trang bị có id riêng.
 2. **Luật đi qua lệnh:** giao diện và cảnh không sửa thẳng dữ liệu, mà gửi lệnh cho lớp hệ thống (cường hóa, mua, trả nhiệm vụ…). Luật chỉ đọc dữ liệu được truyền vào, không dựa vào đồng hồ máy. Khi online, chính các lệnh này được gửi lên máy chủ.
@@ -1543,7 +1526,7 @@ Khó nhất khi dùng AI vẽ là giữ cho hàng trăm hình trông như cùng 
 
 **Bước 5 — Chuyển thành sprite.** Công cụ tạo ảnh không vẽ đúng lưới điểm ảnh và không giữ đúng kích thước khung. Ảnh duyệt xong được đưa vào Aseprite (hoặc LibreSprite miễn phí): thu nhỏ theo kiểu nearest neighbor, giảm về bảng màu chung, sửa tay từng khung, rồi tách thành các lớp đầu, thân, chân, vũ khí. Nếu có họa sĩ, ảnh AI chỉ là bản phác để họa sĩ vẽ lại.
 
-**Về bản quyền.** Không đưa vào prompt tên game khác, tên studio, tên họa sĩ hay nhân vật có bản quyền, kể cả Ninja School. Lưu lại prompt và các bản chỉnh tay theo ngày, làm bằng chứng về quá trình sáng tạo. Ở Mỹ, ảnh do AI tạo hoàn toàn hiện chưa được bảo hộ bản quyền, nên nhân vật chính, các boss và logo phải được vẽ lại hoặc chỉnh tay đáng kể trước khi phát hành. Kiểm tra cả điều khoản thương mại của công cụ tạo ảnh đang dùng.
+**Về bản quyền.** Không đưa vào prompt tên game khác, tên studio, tên họa sĩ hay nhân vật có bản quyền. Lưu lại prompt và các bản chỉnh tay theo ngày, làm bằng chứng về quá trình sáng tạo. Ở Mỹ, ảnh do AI tạo hoàn toàn hiện chưa được bảo hộ bản quyền, nên nhân vật chính, các boss và logo phải được vẽ lại hoặc chỉnh tay đáng kể trước khi phát hành. Kiểm tra cả điều khoản thương mại của công cụ tạo ảnh đang dùng.
 
 ## 2. Khối phong cách
 
@@ -1556,7 +1539,7 @@ Dùng nguyên văn khối STYLE trong `01_art_bible.md`, mục Phong cách. Phư
 **AVOID — dán sau mọi prompt:**
 
 ```
-Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, fantasy monsters, magic glow effects, modern objects, any text, letters, logos or watermarks.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, fantasy monsters, magic glow effects, modern objects, any text, letters, logos or watermarks.
 ```
 
 Khối AVOID chặn những lỗi hay gặp khi AI vẽ "cổ trang Á Đông": nó thường trộn đồ samurai, long bào Trung Hoa hay áo dài thời Nguyễn. Trang phục đã chốt ở Phần 1 (mục 10) là áo cánh, khố, quần vải, khăn chít đầu cho dân thường và lính; giáp da, giáp vảy, mũ trụ cho tướng.

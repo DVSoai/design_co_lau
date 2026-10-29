@@ -1,6 +1,6 @@
 # Kế hoạch chuẩn bị chuyển sang online
 
-Cờ Lau Khởi Nghĩa phát hành trước dưới dạng game offline. Định hướng lâu dài là có thể chuyển thành game online giống Ninja School khi có nguồn lực. Tài liệu này **không** yêu cầu làm phần online bây giờ: không viết máy chủ game, không chọn ngôn ngữ hay dịch vụ máy chủ (Golang, Supabase hay thứ khác). Nó chỉ quy định những gì bản offline phải làm ngay từ đầu để sau này chuyển được mà không phải viết lại game.
+Cờ Lau Khởi Nghĩa phát hành trước dưới dạng game offline. Định hướng lâu dài là có thể chuyển thành game online thuộc thể loại nhập vai mobile khi có nguồn lực. Tài liệu này **không** yêu cầu làm phần online bây giờ: không viết máy chủ game, không chọn ngôn ngữ hay dịch vụ máy chủ (Golang, Supabase hay thứ khác). Nó chỉ quy định những gì bản offline phải làm ngay từ đầu để sau này chuyển được mà không phải viết lại game.
 
 Thiết kế hình ảnh, màn hình và bản đồ trong Design Kit không cần đổi vì tài liệu này. Phần ảnh hưởng chủ yếu nằm ở dữ liệu và code, nên các quy tắc dưới đây được kiểm ở mốc A (cho dữ liệu và kiến trúc) và áp dụng khi code.
 

@@ -4,7 +4,7 @@
 
 Codex soát từng ảnh theo năm điều. Ảnh trượt điều nào thì loại, ghi lý do vào `05_log.md`, và tạo lại.
 
-1. **Lịch sử:** không có đồ samurai, ninja, kiếm katana, long bào, áo dài, nón quai thao, mái cong cung đình. Trang phục đúng mục "Trang phục thế kỷ 10" của art bible.
+1. **Lịch sử:** không có đồ võ sĩ Nhật Bản, chiến binh bí mật Nhật Bản, kiếm katana, long bào, áo dài, nón quai thao, mái cong cung đình. Trang phục đúng mục "Trang phục thế kỷ 10" của art bible.
 2. **Đồng bộ:** đặt cạnh `art/reference/ref_dinh_bo_linh.png`, tỉ lệ đầu thân, độ dày nét viền, hướng sáng và cách tô bóng phải giống nhau.
 3. **Dễ đọc:** thu ảnh về kích thước trong game (nhân vật người cao 96 điểm ảnh theo chuẩn A0) mà vẫn phân biệt được nhân vật, phái và loại quái.
 4. **Màu cờ:** lính và boss đúng màu thế lực trong art bible.
