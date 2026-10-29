@@ -34,6 +34,23 @@ an toàn** vẫn phải thử theo từng bục/khe, không coi trần vật lý
 - Mặt đất chính nên cao hơn hàng nút, để thấy đường chân, mép vực và điểm đáp. Khi bố trí thế giới phải kiểm tra qua camera ở cả hai hướng chạy; không chỉ chừa vùng trên ảnh nền tĩnh.
 - Rà quỹ đạo một nhảy và khinh công, cửa sổ thao tác, độ rộng bục và khả năng nhìn điểm đáp. Không tăng khe hoặc bậc hàng loạt chỉ từ công thức tối đa.
 
+### Đường bắt buộc — bố cục Đào Úc 29/10/2026
+
+Từ A0: nhảy chéo121,6 px, hướng riêng152 px, cao96 px. Với biên1,5 lần,
+ngang an toàn ≤81,07 px (chéo) hoặc101,33 px (hướng riêng), bậc lên ≤64 px.
+**Đường bắt buộc tới lối ra/đấu trường chỉ dùng khe ≤2 ô và bậc ≤2 ô (64 px)**,
+qua bằng nhảy chéo, không cần khinh công. Vượt mức phải có bục phụ/dây leo L.
+Không chỉ so hai trần riêng: phải kiểm quỹ đạo kết hợp ngang/cao, hitbox và điểm đáp.
+Khinh công134,4–143,04 px chỉ cho lựa chọn/lối phụ/rương, không khóa tiến trình.
+
+S/R lấy chân ở cạnh dưới ô, hitbox24×88. Tính vùng che theo A0 cho cả viewport960
+và1200: cụm trái gồm hai vùng chéo vô hình, cụm phải và hàng5 kỹ năng. Chặn camera
+ở cả biên trái/phải trước khi đổi ra tọa độ màn hình; không tái dùng spawn x100
+cũ mà bỏ qua camera bị chặn. Mọi hố/chông/nước sâu phải kiểm mép khi đứng cách0–3
+ô từ cả hai hướng. Mặt đất chính cao hơn hàng nút; chừa đáy140 px chỉ là mốc đầu,
+không thay hộp che thật của d-pad cao hơn. Công cụ in nguồn số và miền camera,
+không coi camera đã đứng yên là trường hợp duy nhất.
+
 ## 2. Kích thước và quy ước chung
 
 - **Làng:** rộng 2 đến 3 màn (60 đến 90 ô), cao 12 ô, không có quái. NPC đứng cách nhau ít nhất 4 ô để chạm không nhầm.
@@ -55,6 +72,7 @@ Ký hiệu lưới:
 | `^` | Bẫy, chông, vùng gây sát thương |
 | `L` | Dây leo hoặc thang |
 | `S` | Điểm xuất hiện của người chơi |
+| `R` | Điểm hồi sinh; chân ở giữa cạnh dưới ô, như S |
 | `E` | Lối ra sang bản đồ khác |
 | `N` | NPC |
 | `m` / `M` | Vùng sinh quái thường / tinh anh hoặc thủ lĩnh |
@@ -73,31 +91,40 @@ Mỗi file `lay_<tên>_v<số>.md` gồm:
 2. **Lưới bố cục** trong khối mã có nhãn `layout` (để script đọc được).
 3. **Chú thích từng điểm:** mỗi `N`, `m`, `M`, `B`, `c`, `D`, `E` là gì, ví dụ "m tại cột 14: 3 thổ phỉ, hồi sinh sau 20 giây".
 4. **Nhịp chơi:** người chơi đi từ đâu tới đâu, gặp gì trước, chỗ nào nghỉ, chỗ nào khó.
-5. **Kiểm tra số đo:** ghi độ cao/rộng bằng px, quỹ đạo thường/chéo/khinh công và biên an toàn theo mục 1. Bậc 2 ô/khe 3 ô cũ chỉ là mốc rà soát tạm; vượt mốc phải thử hoặc có bục phụ/dây leo.
+5. **Kiểm tra số đo:** hai bảng chép nguyên từ `tools/check_layout.py`: khe/bậc đường bắt buộc và vùng nút ở960/1200. Khe/bậc bắt buộc ≤64 px, có biên1,5× và quỹ đạo chéo kết hợp; không cần khinh công. Quỹ đạo thường/chéo/khinh công do công thức A0 tính, không vẽ tay; khinh công không là điều kiện tiến trình.
 6. **Câu hỏi còn mở.**
 
-## 4. Ví dụ: Đào Úc (giai đoạn 1)
+## 4. Ví dụ: Đào Úc (giai đoạn 1, A1)
 
-Cấp 10 đến 15. Nơi diễn ra nhiệm vụ 9 (tụ nghĩa, đấu với Đinh Điền), 14 (giữ ba cổng trước ba đợt quân Hậu Ngô) và 15 (đánh tướng tiên phong Hậu Ngô). Rộng 100 ô (khoảng 2,67–3,33 viewport mới), cao 14 ô. Mẫu chưa được duyệt lại sau A0; các nhãn Màn 1–5 trong nhịp cũ dưới đây là đoạn kịch bản 20 ô, không còn là số màn nhìn thấy thực.
+Bản cũ100 ô đã thay bằng hai file **đang làm, chưa duyệt**:
 
-```layout
-....................................................................................................
-....................................................................................................
-....................................................................................................
-....................................................................................................
-....................................................................................................
-.................................................................c..................................
-................................................................====................................
-....................====............=====..................................................m..B..m..
-.............c............................................................................==========
-............=====.....................m.................======..........................############
-.................................#########..................D.........D.........D...===.############
-ES.N..........m...m.....m...m.###############.m.........m.m.D.....m...D...m..M..D.......############
-##############################################^^##~~~###############################################
-####################################################################################################
+- [Đào Úc cấp10–15, 150×17 ô](../design/maps/lay_dao_uc_v1.md): NV9/CS04 tụ nghĩa,
+  sân Đinh Điền/Nguyễn Bặc, bãi thổ phỉ, khe/chông64 px, nước nông, ba cổng D và ba
+  điểm quân G cho NV14/CS05; E phải nối E trái đấu trường. NV13 chưa rõ địa điểm,
+  ghi câu hỏi, không tự đặt ba hào trưởng ở đây.
+- [Đấu trường Tướng tiên phong Hậu Ngô, 60×17 ô](../design/maps/lay_dao_uc_boss_v1.md):
+  NV15, hai pha theo GDD, bốn vị trí lính cung trên lũy, đường bậc32 px tiếp cận,
+  sân phẳng640 px, R trước cửa đóng khi vào trận, E sau thắng/CS06.
+
+Mặt đất chính y288 px để không bị cụm nút che khi camera chạm biên. Hai file có
+đủ lưới, chú thích, nhịp chơi, bảng kiểm bằng script và câu hỏi còn mở. Kích thước
+map quái/boss ở mục2 khác bảng tạm `13_thong_so.md`: dùng mục2 theo yêu cầu,
+không sửa13 và không coi kích thước mới đã được duyệt.
+
+Chạy kiểm và dựng sơ đồ/lớp phủ, áp tương tự cho file boss:
+
+```bash
+python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md --write-tables
+python3 tools/check_layout.py design/maps/lay_dao_uc_v1.md
+python3 tools/render_layout.py design/maps/lay_dao_uc_v1.md design/maps/lay_dao_uc_v1.png --trajectories
+python3 tools/render_layout.py design/maps/lay_dao_uc_v1.md design/maps/lay_dao_uc_v1_overlay_960.png --overlay 960 --trajectories
+python3 tools/render_layout.py design/maps/lay_dao_uc_v1.md design/maps/lay_dao_uc_v1_overlay_1200.png --overlay 1200 --trajectories
 ```
 
-Nhịp chơi: người chơi vào từ trái (`E`, `S`), gặp Nguyễn Bặc (`N`) ngay đầu bản đồ. Màn 1 và 2 là đất trống với thổ phỉ, có bục cao giữ rương. Màn 3 có gò đất và một hố chông nhỏ (`^`) dạy người chơi nhảy qua chướng ngại, rồi bãi nước nông. Màn 4 là trại có ba cổng gỗ (`D`), nơi diễn ra trận giữ ba cổng ở nhiệm vụ 14; đội trưởng Hậu Ngô (`M`) đứng trước cổng thứ ba. Màn 5 là lũy đất cao của tướng tiên phong (`B`) với lính cung đứng trên lũy, đúng cơ chế mưa tên ở pha 2 (Phần 4 GDD). Bậc thang `===` ở cột 84 vẫn cần giữ làm hỗ trợ: lũy 3 ô bằng trần 96 px của một nhảy theo A0; không suy ra điểm đáp ở trần này đã an toàn. Phải soát lại quỹ đạo và vùng nút trước khi duyệt.
+`--write-tables` chỉ thay hai vùng đánh dấu metrics/hud trong file được chỉ định;
+không sửa nhật ký hay dữ liệu A0. Vạch màn đổi thành30 ô/960 và37,5 ô/1200.
+Lớp phủ gồm snapshot viewport thật tại mỗi S/R, hitbox, vùng chết và hộp nút;
+quỹ đạo mẫu màu tím không phải yêu cầu dùng khinh công. Test tĩnh không thay chơi thử.
 
 ## 5. Ví dụ: ải Tam Điệp (giai đoạn 3)
 
@@ -162,8 +189,8 @@ Mỗi dòng: mã, kích thước đề xuất, điểm đặc biệt của bố 
 
 ## 7. Tự soát bố cục
 
-- Chạy script và soát quỹ đạo theo mục 1: trần một nhảy 96 px, khinh công gần 143,04 px; khe an toàn/bậc dùng thực tế chưa chốt chỉ bằng công thức. Mọi chỗ vượt mốc tạm bậc 2 ô/khe 3 ô cần thử hoặc có bục phụ/dây leo.
-- Soát ở viewport 960 và 1200 px logic, mặt đất/điểm đáp nhìn rõ; vùng đáy khoảng 140 px dưới cụm trái/phải không che hố/bẫy trong lúc điều khiển.
+- Chạy `python3 tools/check_layout.py FILE`: tự tìm khe/bậc đường bắt buộc, kiểm ≤64 px và biên1,5×, quỹ đạo chéo có AABB24×88 ở cả hai hướng. Không dùng khinh công cứu đường chính; vượt mức phải thiết kế bục/L. Script thoát khác0 khi FAIL, nguyên nguồn ở `tools/check_layout.py`.
+- Soát bảng vùng nút ở viewport960/1200: S/R không chạm hộp che, mép hố/bẫy thấy được khi tiến từ hai phía ở0–3 ô trước mép; xét dead-zone/look-ahead, miền làm mượt và chặn camera ở hai mép map. Đất chính trên hàng nút, không chỉ chừa140 px trên ảnh tĩnh.
 - Mỗi màn hình có ít nhất một vùng sinh quái (trừ làng).
 - Mọi vật phẩm nhiệm vụ và NPC trong nhiệm vụ của bản đồ đều có vị trí trên lưới.
 - Đấu trường boss đủ chỗ cho mọi cơ chế của boss đó (Phần 4 GDD, mục 3).

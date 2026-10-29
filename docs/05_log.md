@@ -336,3 +336,31 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Hiệu ứng: số liệu/đặc tả đủ 20 chiêu vẫn A1; concept hiệu ứng chủ động/hỗ trợ chia theo cấp mở 10 → A1, 20/25 → A2, 30/35 → A3, 40/50 → A4, 60 → A5; bốn nội tại không cần concept hiệu ứng. Cập nhật bảng đối chiếu và phục hồi ba dòng lịch sử README nguyên văn từ 7cc3b1e.
 - Giữ nguyên trạng thái duyệt, A0, C, các quyết định lịch sử, chữ ký A0 và anchor còn lại; không đổi số liệu game, không tạo ảnh, không sửa prototype/art/tools/co_lau_game. Chốt phân mốc không có nghĩa nghiệm thu A1–A5.
 - Báo cáo: `docs/reports/milestone_a_by_act_mapping.md`, mục “Xác nhận 29/10/2026”. Không có prompt hoặc ảnh tham chiếu mới.
+
+
+## 29/10/2026 — lay_dao_uc_v1 — v1, đang làm/chưa duyệt (A1)
+
+- Theo yêu cầu người dùng: dựng `design/maps/lay_dao_uc_v1.md` (150×17 ô) và
+  `lay_dao_uc_boss_v1.md` (60×17 ô), ô32 px Tạm thời. Map quái E phải nối E trái
+  đấu trường; chưa làm mã game/lát cắt hay art. Main nền `ca1c6d7`.
+- NV9/CS04 đặt Nguyễn Bặc, Đinh Điền và sân đấu tại trại; NV14/CS05 có3 D/cổng
+  và3 G/điểm gọi quân. NV15 có boss hai pha,4 lính cung pha2 trên lũy, bậc32 px
+  lên được, sân phẳng640 px, R trước cổng khóa; Đánh lại trở về R, không revive tại chỗ.
+- Đường bắt buộc: khe64 px, chông64×32, các bậc32 px; nhảy chéo có biên1,5×,
+  không cần khinh công. Mặt đất chính y288 và map cao544 chừa vùng nút bên dưới.
+- `tools/check_layout.py` tự đọc lưới và số A0 (chỉ đọc prototype), tìm khe/bậc,
+  kiểm quỹ đạo/AABB24×88 hai hướng, hộp nút960/1200 tại S/R và trước hố/bẫy0–3 ô,
+  gồm dead-zone/look-ahead, miền theo camera và chặn hai mép. Hai bảng ở mỗi file
+  chép từ script, không viết tay. Test tĩnh chưa thay chơi thử Godot/Android.
+- `render_layout.py` dùng vạch30/37,5 ô, quỹ đạo thường/chéo/khinh công từ công thức,
+  PNG và lớp phủ960/1200 tại từng S/R. Sơ đồ dựng bằng PIL, không imagegen;
+  không có prompt mới, không tạo/sửa ảnh tham chiếu hay art.
+- `08_map_layout.md` thay ví dụ cũ bằng liên kết hai bố cục, bổ sung R và quy tắc
+  đường bắt buộc/cách kiểm. `02_asset_list.md` giữ chưa duyệt; Thần Phù A3,
+  Đằng Châu/Đỗ Động/Bạch Hạc A4. Không đổi `13_thong_so.md` hoặc checklist nghiệm thu.
+- Câu hỏi: địa điểm NV11/NV13 chưa rõ, không tự thêm quái/hào trưởng vào Đào Úc;
+  phân bổ3 đợt quân và luật cổng NV14; liên kết map ngoài hai file; bán kính vòng đỏ;
+  ngưỡng60% của boss2 pha và báo đòn1,5s theo GDD; kích thước map/báo đòn khác
+  bảng tạm ở13. Ghi rõ tại mục6 của từng bố cục, chờ người dùng duyệt.
+- Nguyên đầu ra hai check, sáu lệnh render, test phản chứng và kiểm phạm vi/nhật ký
+  được chép vào commit message. Chỉ sửa đúng phạm vi, chưa duyệt mục nào.
