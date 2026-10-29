@@ -50,7 +50,7 @@ Bản sửa ngày 28/10/2026 (vẫn là v2.4): đồng bộ `14_online_migration
 - Chốt phạm vi bán ở bản đầu: chỉ bán món vĩnh viễn qua Google Play, không có ngân phiếu nạp, không có máy chủ riêng, không có màn đăng nhập. Món đã mua dùng được ở cả ba ô.
 - `12_ngan_phieu.md` thêm mục 0 (phạm vi theo phiên bản) và mục 12 (bán món vĩnh viễn); phần ngân phiếu nạp giữ lại, đánh dấu là cho bản sau.
 - SCR-13 tách bản đầu (thẻ Cửa hàng ngân phiếu và thẻ Gói) với bản có ngân phiếu nạp; SCR-08 thêm nút Khôi phục món đã mua; thêm luồng F13.
-- Danh sách chốt thêm mốc C (trước khi bật ngân phiếu nạp); A1–A5 và B chỉ còn phạm vi bản đầu.
+- Danh sách chốt thêm mốc C (trước khi bật ngân phiếu nạp); mốc A và B chỉ còn phạm vi bản đầu.
 
 ## Thay đổi ở v2.3
 
@@ -65,7 +65,7 @@ Bản sửa ngày 28/10/2026 (vẫn là v2.4): đồng bộ `14_online_migration
 - `12_ngan_phieu.md`: thêm mục 6 phục hồi giao dịch khi file lưu mất, hỏng hoặc quay về bản cũ; viết lại mục 9 xóa ô có liên kết máy chủ (trạng thái chờ đồng bộ xóa, giữ định danh ô trên máy chủ); mục 10 phân biệt kiểm tra toàn vẹn với chống chỉnh sửa.
 - SCR-02 thêm trạng thái xóa ô có liên kết máy chủ; F7 vẽ lại; thêm F12 đồng bộ và đối chiếu giao dịch.
 - Thêm `13_thong_so.md`: mọi thông số có trạng thái Đề xuất, Tạm thời hoặc Đã duyệt.
-- Danh sách chốt mốc A1 thêm mục thông số và tài liệu nguồn.
+- Danh sách chốt mốc A thêm mục thông số và tài liệu nguồn.
 
 ## Thay đổi ở v2.1
 
@@ -73,7 +73,7 @@ Bản sửa ngày 28/10/2026 (vẫn là v2.4): đồng bộ `14_online_migration
 - Thêm `docs/12_ngan_phieu.md`: ngân phiếu thưởng tiêu offline, ngân phiếu nạp do máy chủ giữ, cách hiển thị khi offline, giao dịch kết hợp do máy chủ xác nhận với mã chống trừ hai lần, hoàn tiền có sổ chống áp dụng hai lần.
 - Bỏ hồi sinh tại chỗ; SCR-14 Bản đồ vùng có đi nhanh; SCR-22 Căn cứ Hoa Lư 4 công trình 3 cấp, không chờ xây; SCR-19 chỉ hiện khi người chơi chủ động.
 - Thêm luồng F9 (mua bằng ngân phiếu), F10 (hoàn tiền), F11 (đi nhanh); sửa F3, F4, F8.
-- Danh sách chốt tách thành mốc A1 (trước khi code) và mốc B (trước khi phát hành), ghi lại các quyết định đã chốt ngày 28/10/2026.
+- Danh sách chốt tách thành mốc A (trước khi code) và mốc B (trước khi phát hành), ghi lại các quyết định đã chốt ngày 28/10/2026.
 
 ## Thay đổi ở v2 so với v1
 

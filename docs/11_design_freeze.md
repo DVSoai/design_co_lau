@@ -13,7 +13,9 @@ Thiết kế Hồi 2–5 làm song song với code sau A1; nội dung Hồi n ch
 
 Sau khi qua A1, thay đổi một hệ thống lõi đã chốt phải ghi `docs/05_log.md` kèm lý do, nêu phần code bị ảnh hưởng và được duyệt lại. Chuyển phần pháp lý sang B không có nghĩa bỏ qua: nếu yêu cầu pháp lý buộc đổi thiết kế đã chốt ở A1 hoặc An thì sửa thiết kế, ghi nhật ký và duyệt lại phần bị ảnh hưởng.
 
-Mục A0 và phần quyết định lịch sử bên dưới giữ nguyên văn; các câu nói về mốc trước khi chia trong A0 không cấp quyền vượt quy tắc A1–A5 mới. Các mục **(Cần người dùng xác nhận)** được đưa tạm vào A1 khi tài liệu chưa xác định được lần dùng đầu; đây không phải tự chốt hồi hay tự duyệt. Bảng đối chiếu từng điều kiện: [milestone_a_by_act_mapping.md](reports/milestone_a_by_act_mapping.md).
+Mục A0 và phần quyết định lịch sử bên dưới giữ nguyên văn; các câu nói về mốc trước khi chia trong A0 không cấp quyền vượt quy tắc A1–A5 mới. Các điểm phân mốc đã được người dùng chốt ngày 29/10/2026; việc chốt phân mốc không duyệt thay các điều kiện thiết kế còn để trống. NPC có tên chưa có nhiệm vụ dùng tới không được tự đưa vào mốc; thêm vào mốc của hồi khi có nhiệm vụ dùng tới. Bảng đối chiếu từng điều kiện: [milestone_a_by_act_mapping.md](reports/milestone_a_by_act_mapping.md).
+
+[Phạm vi sau] Cảnh Cổ Loa là ý mở rộng, chưa thuộc A nào và không nằm trong 29 bản đồ.
 
 ## Quyết định đã chốt (28/10/2026)
 
@@ -102,7 +104,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a1-08"></a>
 
-- [ ] Concept nhân vật đồng minh/NPC: Đinh Bộ Lĩnh lúc nhỏ và trưởng thành, Đàm thị, người chú, Đinh Điền, Nguyễn Bặc, Đinh Liễn, trẻ chăn trâu, thợ rèn Hoa Lư, thợ may, bà hàng cơm, ông lang, sư trụ trì, bô lão làng.
+- [ ] Concept nhân vật đồng minh/NPC: Đinh Bộ Lĩnh lúc nhỏ và trưởng thành, Đàm thị, người chú, Đinh Điền, Nguyễn Bặc, Đinh Liễn, trẻ chăn trâu, thợ rèn Hoa Lư, thợ may, bà hàng cơm, ông lang, sư trụ trì, bô lão làng; Đinh Công Trứ (hồi tưởng/di vật ở mở đầu), lái buôn đường sông (cửa hàng trang sức, cần cho cường hóa trang sức ở nhiệm vụ 12), quan thu lương (đổi chiến lợi phẩm, kinh tế lõi).
 
 <a id="a1-09"></a>
 
@@ -115,26 +117,6 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 <a id="a1-11"></a>
 
 - [ ] Cảnh nền và tileset: Làng Hoa Lư (`lang_hoa_lu`), Cánh đồng chiêm (`dong_chiem`), Bến đò Hoàng Long (`ben_do`), Núi đá Tràng An (`trang_an`), Đào Úc (`dao_uc`).
-
-<a id="a1-12"></a>
-
-- [ ] Concept Đinh Công Trứ (hồi tưởng/di vật), Trịnh Tú, lái buôn đường sông, quan thu lương và các NPC có tên trong bối cảnh nhưng chưa có nhiệm vụ xuất hiện đầu tiên — (Cần người dùng xác nhận).
-
-<a id="a1-13"></a>
-
-- [ ] Cảnh nền và tileset: ải Thần Phù (`ai_than_phu`), ải Đằng Châu (`ai_dang_chau`), ải Đỗ Động (`ai_do_dong`), ải Bạch Hạc (`ai_bach_hac`) — (Cần người dùng xác nhận); soát theo `08_map_layout.md` trước khi duyệt.
-
-<a id="a1-14"></a>
-
-- [ ] Concept quái giữ ải Thần Phù, Đằng Châu, Đỗ Động, Bạch Hạc: giặc núi, hải tặc, lính giáo, lính nỏ, kỵ binh, thủ lĩnh và tướng giặc của từng ải — (Cần người dùng xác nhận).
-
-<a id="a1-15"></a>
-
-- [ ] Chốt danh tính và concept năm bóng boss dùng lại ở Ảo cảnh Vạn Thắng — (Cần người dùng xác nhận); phần bố cục/tái sử dụng ở A5.
-
-<a id="a1-16"></a>
-
-- [ ] Xác định phạm vi cảnh Cổ Loa — (Cần người dùng xác nhận); chưa tự thêm vào danh sách bản đồ.
 
 <a id="a1-17"></a>
 
@@ -149,10 +131,6 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 <a id="a1-19"></a>
 
 - [ ] Đấu trường boss Tướng tiên phong Hậu Ngô có bố cục khớp cơ chế từng boss.
-
-<a id="a1-20"></a>
-
-- [ ] File bố cục và ảnh dựng bằng script: ải Thần Phù (`ai_than_phu`), ải Đằng Châu (`ai_dang_chau`), ải Đỗ Động (`ai_do_dong`), ải Bạch Hạc (`ai_bach_hac`) — (Cần người dùng xác nhận); soát theo `08_map_layout.md` trước khi duyệt.
 
 <a id="a1-21"></a>
 
@@ -174,15 +152,11 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a1-25"></a>
 
-- [ ] Mockup và đặc tả màn: SCR-01 Khởi động, SCR-02 Chọn ô (lưu game ba ô), SCR-03 Tải bản đồ, SCR-04 Chọn phái, SCR-05 HUD, SCR-06 Boss Hậu Ngô, SCR-08 Cài đặt, SCR-09a Hành trang/09b Trang bị/09c Kỹ năng/09d Tiềm năng/09e Thông tin/09f Trâu/09g Nhiệm vụ, SCR-10 Hội thoại, SCR-11 Cửa hàng NPC, SCR-12 Cường hóa/Luyện đá/Tách, SCR-13 thẻ ngân phiếu thưởng và Gói vĩnh viễn bản đầu, SCR-14 Hoa Lư, SCR-15 Thua trận, SCR-16 Phần thưởng, SCR-18 CS01–CS06, SCR-20 Xác nhận/thông báo.
-
-<a id="a1-26"></a>
-
-- [ ] SCR-21 Nhắc giờ chơi: thiết kế khung — (Cần người dùng xác nhận); cách xác định tuổi/giới hạn pháp lý vẫn chốt tại B. SCR-19 Đăng nhập Google chỉ thuộc C, không mockup ở bản đầu.
+- [ ] Mockup và đặc tả màn: SCR-01 Khởi động, SCR-02 Chọn ô (lưu game ba ô), SCR-03 Tải bản đồ, SCR-04 Chọn phái, SCR-05 HUD, SCR-06 Boss Hậu Ngô, SCR-08 Cài đặt, SCR-09a Hành trang/09b Trang bị/09c Kỹ năng/09d Tiềm năng/09e Thông tin/09f Trâu/09g Nhiệm vụ, SCR-10 Hội thoại, SCR-11 Cửa hàng NPC, SCR-12 Cường hóa/Luyện đá/Tách, SCR-13 thẻ ngân phiếu thưởng và Gói vĩnh viễn bản đầu, SCR-14 Hoa Lư, SCR-15 Thua trận, SCR-16 Phần thưởng, SCR-18 CS01–CS06, SCR-20 Xác nhận/thông báo. SCR-19 Đăng nhập Google chỉ thuộc C, không mockup ở bản đầu.
 
 <a id="a1-27"></a>
 
-- [ ] SCR-12 thẻ Chuyển hóa/Ấn truyền công — (Cần người dùng xác nhận); chưa có nhiệm vụ đầu tiên trong tài liệu.
+- [ ] SCR-12 thẻ Chuyển hóa/Ấn truyền công thuộc A1 vì chung màn SCR-12 và chung bảng cấp với cường hóa (hệ thống lõi).
 
 <a id="a1-28"></a>
 
@@ -214,7 +188,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a1-34"></a>
 
-- [ ] Concept hiệu ứng cơ bản và toàn bộ hai mươi chiêu hai phái: Trảm Đao, Đao Tâm, Song Trảm, Chấn Uy, Quét Ngang, Thiết Kỵ Xung Phong, Khai Sơn Trảm, Kiên Cường, Vạn Quân Trảm, Vạn Thắng; Xạ Tiễn, Tâm Nhãn, Phá Giáp Tiễn, Hộ Thân Khí, Song Tiễn, Liều Mạng Giương Cung, Thần Tiễn Xuyên Giáp, Ẩn Mình, Tam Tiễn Liên Châu, Vạn Tiễn; kể cả các chiêu chỉ dùng ở cấp/hồi sau.
+- [ ] Số liệu và đặc tả đủ 20 chiêu hai phái đã duyệt (hệ thống lõi); concept hiệu ứng cơ bản và chiêu chủ động/hỗ trợ mở ở cấp 10: Trảm Đao (Đao), Xạ Tiễn (Cung). Bốn chiêu nội tại Đao Tâm, Kiên Cường, Tâm Nhãn, Ẩn Mình không cần concept hiệu ứng.
 
 <a id="a1-35"></a>
 
@@ -348,6 +322,10 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 - [ ] Đặc tả hoạt ảnh cho nhân vật/quái/boss đã nêu đích danh trong nhóm Thế giới của A2, gồm Ngựa chiến và thuyền chiến; dữ liệu nhân vật chính dùng chung theo hai phái, khớp `09_animation_spec.md`.
 
+<a id="a2-22"></a>
+
+- [ ] Concept hiệu ứng chiêu mở ở cấp 20, 25: Song Trảm, Chấn Uy (Đao); Phá Giáp Tiễn, Hộ Thân Khí (Cung).
+
 ### 7. Câu chuyện
 
 <a id="a2-16"></a>
@@ -390,11 +368,11 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a3-02"></a>
 
-- [ ] Concept nhân vật đồng minh/NPC: Lưu Cơ, Lê Hoàn, Phạm Bạch Hổ, Ngô Xương Xí và thân nhân nhà Ngô; Nguyễn Bặc, Đinh Điền, sư trụ trì dùng lại concept A1.
+- [ ] Concept nhân vật đồng minh/NPC: Lưu Cơ, Trịnh Tú (hậu cần cùng căn cứ Hoa Lư), Lê Hoàn, Phạm Bạch Hổ, Ngô Xương Xí và thân nhân nhà Ngô; Nguyễn Bặc, Đinh Điền, sư trụ trì dùng lại concept A1.
 
 <a id="a3-03"></a>
 
-- [ ] Concept quái: thủy binh, rắn nước lớn, cá trê khổng lồ, thủy binh tinh anh; lính hào trưởng, lính nỏ, chó săn, hào trưởng Bình Kiều; giặc núi, hải tặc, lính giáo, lính nỏ, kỵ binh, thủ lĩnh đợt giữa và tướng giặc giữ ải Tam Điệp.
+- [ ] Concept quái: thủy binh, rắn nước lớn, cá trê khổng lồ, thủy binh tinh anh; lính hào trưởng, lính nỏ, chó săn, hào trưởng Bình Kiều; giặc núi, hải tặc, lính giáo, lính nỏ, kỵ binh, thủ lĩnh đợt giữa và tướng giặc giữ ải Tam Điệp và Thần Phù.
 
 <a id="a3-04"></a>
 
@@ -402,13 +380,13 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a3-05"></a>
 
-- [ ] Cảnh nền và tileset: Sông Đằng Châu (`song_dang_chau`), Đất Bình Kiều (`binh_kieu`), ải Tam Điệp (`ai_tam_diep`).
+- [ ] Cảnh nền và tileset: Sông Đằng Châu (`song_dang_chau`), Đất Bình Kiều (`binh_kieu`), ải Tam Điệp (`ai_tam_diep`), ải Thần Phù (`ai_than_phu`).
 
 ### 3. Bản đồ chơi được
 
 <a id="a3-06"></a>
 
-- [ ] File bố cục và ảnh dựng bằng script: Sông Đằng Châu (`song_dang_chau`), Đất Bình Kiều (`binh_kieu`), ải Tam Điệp (`ai_tam_diep`); đã qua mục tự soát trong `08_map_layout.md`.
+- [ ] File bố cục và ảnh dựng bằng script: Sông Đằng Châu (`song_dang_chau`), Đất Bình Kiều (`binh_kieu`), ải Tam Điệp (`ai_tam_diep`), ải Thần Phù (`ai_than_phu`); đã qua mục tự soát trong `08_map_layout.md`.
 
 <a id="a3-07"></a>
 
@@ -451,6 +429,10 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 <a id="a3-15"></a>
 
 - [ ] Hoạt ảnh giao diện sao kết quả Giữ ải và dựng công trình căn cứ đã duyệt.
+
+<a id="a3-23"></a>
+
+- [ ] Concept hiệu ứng chiêu mở ở cấp 30, 35: Quét Ngang, Thiết Kỵ Xung Phong (Đao); Song Tiễn, Liều Mạng Giương Cung (Cung).
 
 ### 7. Câu chuyện
 
@@ -502,7 +484,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a4-03"></a>
 
-- [ ] Concept quái: lính giáo, lính khiên, lính nỏ Đỗ Động, tướng giữ lũy; lính cung và thủy binh Tây Phù Liệt; lính bộ Tế Giang, lính khiên mây, chó chiến, đội trưởng Tế Giang; lính Siêu Loại, lính nỏ, kẻ cướp làng, võ sư Siêu Loại; kỵ binh, lính giáo dài, ngựa hoang, kỵ binh tinh anh; lính Tam Đái, đỉa trâu, cá sấu, cá sấu chúa; lính mai phục, lính nỏ rừng, gấu ngựa, voi rừng; thủy binh Hồi Hồ, lính giáo, lính cung, thủy tướng Hồi Hồ.
+- [ ] Concept quái: lính giáo, lính khiên, lính nỏ Đỗ Động, tướng giữ lũy; lính cung và thủy binh Tây Phù Liệt; lính bộ Tế Giang, lính khiên mây, chó chiến, đội trưởng Tế Giang; lính Siêu Loại, lính nỏ, kẻ cướp làng, võ sư Siêu Loại; kỵ binh, lính giáo dài, ngựa hoang, kỵ binh tinh anh; lính Tam Đái, đỉa trâu, cá sấu, cá sấu chúa; lính mai phục, lính nỏ rừng, gấu ngựa, voi rừng; thủy binh Hồi Hồ, lính giáo, lính cung, thủy tướng Hồi Hồ; quái giữ ải Đằng Châu, Đỗ Động, Bạch Hạc: giặc núi, hải tặc, lính giáo, lính nỏ, kỵ binh, thủ lĩnh và tướng giặc của từng ải.
 
 <a id="a4-04"></a>
 
@@ -510,7 +492,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a4-05"></a>
 
-- [ ] Cảnh nền và tileset: Đỗ Động Giang (`do_dong`), Tây Phù Liệt (`tay_phu_liet`), Tế Giang (`te_giang`), Siêu Loại (`sieu_loai`), Đồi Tiên Du (`tien_du`), Đường Lâm (`duong_lam`), Đầm lầy Tam Đái (`tam_dai`), Rừng đồi Phong Châu (`phong_chau`), Ngã ba Hồi Hồ (`hoi_ho`).
+- [ ] Cảnh nền và tileset: Đỗ Động Giang (`do_dong`), Tây Phù Liệt (`tay_phu_liet`), Tế Giang (`te_giang`), Siêu Loại (`sieu_loai`), Đồi Tiên Du (`tien_du`), Đường Lâm (`duong_lam`), Đầm lầy Tam Đái (`tam_dai`), Rừng đồi Phong Châu (`phong_chau`), Ngã ba Hồi Hồ (`hoi_ho`), ải Đằng Châu (`ai_dang_chau`), ải Đỗ Động (`ai_do_dong`), ải Bạch Hạc (`ai_bach_hac`).
 
 <a id="a4-06"></a>
 
@@ -520,7 +502,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a4-07"></a>
 
-- [ ] File bố cục và ảnh dựng bằng script: Đỗ Động Giang (`do_dong`), Tây Phù Liệt (`tay_phu_liet`), Tế Giang (`te_giang`), Siêu Loại (`sieu_loai`), Đồi Tiên Du (`tien_du`), Đường Lâm (`duong_lam`), Đầm lầy Tam Đái (`tam_dai`), Rừng đồi Phong Châu (`phong_chau`), Ngã ba Hồi Hồ (`hoi_ho`); đã qua mục tự soát trong `08_map_layout.md`.
+- [ ] File bố cục và ảnh dựng bằng script: Đỗ Động Giang (`do_dong`), Tây Phù Liệt (`tay_phu_liet`), Tế Giang (`te_giang`), Siêu Loại (`sieu_loai`), Đồi Tiên Du (`tien_du`), Đường Lâm (`duong_lam`), Đầm lầy Tam Đái (`tam_dai`), Rừng đồi Phong Châu (`phong_chau`), Ngã ba Hồi Hồ (`hoi_ho`), ải Đằng Châu (`ai_dang_chau`), ải Đỗ Động (`ai_do_dong`), ải Bạch Hạc (`ai_bach_hac`); đã qua mục tự soát trong `08_map_layout.md`.
 
 <a id="a4-08"></a>
 
@@ -559,6 +541,10 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 <a id="a4-15"></a>
 
 - [ ] Đặc tả hoạt ảnh cho nhân vật/quái/boss đã nêu đích danh trong nhóm Thế giới của A4, gồm Voi chiến; dữ liệu nhân vật chính dùng chung theo hai phái, khớp `09_animation_spec.md`.
+
+<a id="a4-22"></a>
+
+- [ ] Concept hiệu ứng chiêu mở ở cấp 40, 50: Khai Sơn Trảm, Vạn Quân Trảm (Đao); Thần Tiễn Xuyên Giáp, Tam Tiễn Liên Châu (Cung).
 
 ### 7. Câu chuyện
 
@@ -606,7 +592,11 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a5-03"></a>
 
-- [ ] Concept quái: tàn quân giáo, tàn quân nỏ, tàn quân tinh anh; bóng của năm boss trong Ảo cảnh Vạn Thắng (danh tính chưa nêu rõ trong GDD, được đưa về A1 để xác nhận).
+- [ ] Concept quái: tàn quân giáo, tàn quân nỏ, tàn quân tinh anh; bóng của năm boss trong Ảo cảnh Vạn Thắng, chọn 5 trong số các boss đã có concept ở A1–A4.
+
+<a id="a5-18"></a>
+
+- [ ] Chốt danh tính và concept năm bóng boss dùng lại ở Ảo cảnh Vạn Thắng: chọn 5 trong số các boss đã có concept ở A1–A4, không thêm boss cốt truyện mới.
 
 <a id="a5-04"></a>
 
@@ -652,6 +642,10 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 - [ ] Đặc tả hoạt ảnh cho nhân vật/quái/boss đã nêu đích danh trong nhóm Thế giới của A5, gồm nhân vật lễ lên ngôi và epilogue; dữ liệu nhân vật chính dùng chung theo hai phái, khớp `09_animation_spec.md`.
 
+<a id="a5-19"></a>
+
+- [ ] Concept hiệu ứng chiêu mở ở cấp 60 (tuyệt kỹ): Vạn Thắng (Đao), Vạn Tiễn (Cung).
+
 ### 7. Câu chuyện
 
 <a id="a5-13"></a>
@@ -685,7 +679,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 - [ ] Chọn phương án phát hành tại Việt Nam (doanh nghiệp / nhà phát hành / chưa mở bán) và có xác nhận của luật sư.
 
 - [ ] Hồ sơ cung cấp dịch vụ trò chơi điện tử theo quy định hiện hành, có ý kiến luật sư (xếp loại bản đầu: game tải về có thanh toán qua Google Play, không có máy chủ riêng).
-- [ ] Cách xác định tuổi và giới hạn giờ chơi cho người dưới 18 tuổi (SCR-21); nếu luật sư yêu cầu khác thiết kế hiện tại thì quay lại sửa và duyệt lại.
+- [ ] Thiết kế SCR-21 Nhắc giờ chơi, cách xác định tuổi và giới hạn giờ chơi cho người dưới 18 tuổi; nếu luật sư yêu cầu khác thiết kế hiện tại thì quay lại sửa và duyệt lại.
 - [ ] Giá các món vĩnh viễn bán bằng tiền thật.
 - [ ] Thanh toán Google Play cho món vĩnh viễn chạy thật: mua, xác nhận đơn, khôi phục, thanh toán đang chờ, hoàn tiền.
 - [ ] Nhân vật chính: bộ phận và dữ liệu ghép được kiểm, sửa pixel bằng script và Claude/người dùng duyệt từng phần bằng mắt; hồ sơ nguồn/sửa/duyệt đầy đủ. 11 boss và logo được vẽ lại hoặc chỉnh tay đáng kể theo quy trình thành phẩm riêng.

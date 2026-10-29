@@ -325,3 +325,14 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Lý do: quyết định người dùng ngày 29/10/2026.
 - Giữ nguyên mục A0, Mốc C, toàn bộ quyết định lịch sử, dòng ký A0 và trạng thái các điều kiện đã có. Không đổi số liệu, không tạo ảnh, không sửa prototype/art/tools/co_lau_game. Không có prompt hoặc ảnh tham chiếu mới.
 - Tác vụ này chỉ sửa cách chốt thiết kế, không có nghĩa A1–A5 đã được duyệt; không gắn tag nghiệm thu. Báo cáo: `docs/reports/milestone_a_by_act_mapping.md`.
+
+
+## 29/10/2026 — a_confirmations — v1, xác nhận phân mốc
+
+- Mã: a_confirmations.
+- Lý do: quyết định người dùng ngày 29/10/2026 về các điểm phân mốc sau khi chia A1–A5.
+- Thay đổi: chuyển ải Thần Phù sang A3; Đằng Châu/Đỗ Động/Bạch Hạc sang A4; năm bóng boss Ảo cảnh Vạn Thắng sang A5 để chọn từ concept A1–A4; Cổ Loa thuộc [Phạm vi sau], chưa vào A nào và không nằm trong 29 bản đồ. Gộp SCR-21 vào B, giữ SCR-19 chỉ thuộc C; Chuyển hóa/Ấn truyền công ở A1 vì chung màn/bảng cấp với cường hóa.
+- NPC: gộp Đinh Công Trứ, lái buôn đường sông và quan thu lương vào A1 theo phạm vi mở đầu/kinh tế lõi; Trịnh Tú vào A3 cùng căn cứ. Không tự phân NPC có tên chưa có nhiệm vụ; thêm vào mốc của hồi khi có nhiệm vụ dùng tới.
+- Hiệu ứng: số liệu/đặc tả đủ 20 chiêu vẫn A1; concept hiệu ứng chủ động/hỗ trợ chia theo cấp mở 10 → A1, 20/25 → A2, 30/35 → A3, 40/50 → A4, 60 → A5; bốn nội tại không cần concept hiệu ứng. Cập nhật bảng đối chiếu và phục hồi ba dòng lịch sử README nguyên văn từ 7cc3b1e.
+- Giữ nguyên trạng thái duyệt, A0, C, các quyết định lịch sử, chữ ký A0 và anchor còn lại; không đổi số liệu game, không tạo ảnh, không sửa prototype/art/tools/co_lau_game. Chốt phân mốc không có nghĩa nghiệm thu A1–A5.
+- Báo cáo: `docs/reports/milestone_a_by_act_mapping.md`, mục “Xác nhận 29/10/2026”. Không có prompt hoặc ảnh tham chiếu mới.
