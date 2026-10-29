@@ -1,0 +1,548 @@
+$ python tools/cut_parts.py
+SOURCE neutral assembly: head=218, torso=214, legs=414; H=846px; guide=24/24/48; s=96/846=0.113475177305 on BOTH axes
+Scaled anatomical spans: [24.7376, 24.2837, 46.9787] ; no independent per-part scale
+head: source=200x219 -> [23, 25]; pivot=[9.418, 24.738]; attach=[0.0, -24.284]; shared s, arm-longitudinal=0.60 if applicable
+body: source=144x255 -> [17, 29]; pivot=[7.376, 26.099]; attach=[0.0, -46.979]; shared s, arm-longitudinal=0.60 if applicable
+upper_arm_near: source=84x227 -> [10, 16]; pivot=[4.766, 0.817]; attach=[0.34, -20.993]; shared s, arm-longitudinal=0.60 if applicable
+upper_arm_far: source=83x228 -> [10, 16]; pivot=[4.652, 0.817]; attach=[0.34, -20.993]; shared s, arm-longitudinal=0.60 if applicable
+forearm_near: source=62x166 -> [8, 12]; pivot=[3.404, 0.681]; attach=[0.34, 13.753]; shared s, arm-longitudinal=0.60 if applicable
+forearm_far: source=60x162 -> [7, 12]; pivot=[3.291, 0.681]; attach=[0.227, 13.753]; shared s, arm-longitudinal=0.60 if applicable
+hand_near: source=84x114 -> [10, 13]; pivot=[2.95, 1.021]; attach=[0.113, 9.736]; shared s, arm-longitudinal=0.60 if applicable
+hand_far: source=83x115 -> [10, 14]; pivot=[2.837, 1.021]; attach=[0.113, 9.532]; shared s, arm-longitudinal=0.60 if applicable
+thigh_near: source=132x204 -> [15, 24]; pivot=[7.376, 1.362]; attach=[1.5, 0.0]; shared s, arm-longitudinal=0.60 if applicable
+thigh_far: source=130x204 -> [15, 24]; pivot=[7.262, 1.362]; attach=[-1.5, 0.0]; shared s, arm-longitudinal=0.60 if applicable
+shin_near: source=72x186 -> [9, 22]; pivot=[4.085, 1.362]; attach=[-0.113, 19.972]; shared s, arm-longitudinal=0.60 if applicable
+shin_far: source=72x183 -> [9, 21]; pivot=[3.972, 1.362]; attach=[-0.113, 19.972]; shared s, arm-longitudinal=0.60 if applicable
+foot_near: source=161x105 -> [19, 12]; pivot=[4.993, 2.156]; attach=[-0.113, 17.248]; shared s, arm-longitudinal=0.60 if applicable
+foot_far: source=156x105 -> [18, 12]; pivot=[4.879, 2.156]; attach=[-0.113, 17.248]; shared s, arm-longitudinal=0.60 if applicable
+dao: source=64x353 -> [8, 41]; pivot=[3.518, 32.908]; attach=[1.816, 6.355]; shared s, arm-longitudinal=0.60 if applicable
+bow: source=85x356 -> [10, 41]; pivot=[1.589, 20.879]; attach=[1.816, 6.355]; shared s, arm-longitudinal=0.60 if applicable
+HEAD: đầu do Claude vẽ tay từng pixel; exact supplied matrix, no cleanup or feature edits:
+........000............
+.......01E10...........
+.......01110...........
+........010............
+....0.0011000.0........
+...0101111111010.......
+..011111E11111110.0....
+.01111111111E1111010...
+.0111E111111111111110..
+011111111111111111110..
+.011111111111111111110.
+011111111111111104110..
+.01111111111111044540..
+0111111111111134000440.
+.011111111111343054440.
+.0111111111123343344440
+..011111111124344444440
+..011111111132444444430
+...0111111103344444220.
+....011111103444444440.
+.....0111000334444440..
+......00033333444400...
+........0334400000.....
+........033440.........
+........033440.........
+Palette: {'0': '#17151A', '1': '#342923', '2': '#78432E', '3': '#B66C49', '4': '#E99A69', '5': '#FFD0A0', '6': '#554638', '7': '#89745E', '8': '#C3A98A', '9': '#EAD8B8', 'A': '#3D2D24', 'B': '#6B4A35', 'C': '#98765A', 'D': '#322B2B', 'E': '#59443E', 'F': '#80614D', 'G': '#A38269', 'H': '#485F60', 'I': '#718B87', 'J': '#A5B8B0', 'K': '#D9DDD0'}
+Head neck below chin: 3.000px; source face span / frame width=0.592
+Exit code: 0
+
+$ python tools/retarget_parts.py
+Leg polish: 35% less anatomical knee flexion in run/slash_1-3; shared hip raised; stance soles fixed, swing clears ground
+Retargeted art poses: 13 clips/48 frames; unchanged duration/events; foot targets retained; geometry from common-scale parts
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --editor --import --quit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (16 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | body.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | bow.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | dao.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | foot_far.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | foot_near.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | forearm_far.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | forearm_near.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | hand_far.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | hand_near.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | head.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | shin_far.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | shin_near.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | thigh_far.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | thigh_near.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | upper_arm_far.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | upper_arm_near.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://rig/export_frames.gd -- --art
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Exported actual rig scene: 16 clips; art=true
+Exit code: 0
+
+$ python tools/outline_parts.py
+Removed generated internal-outline samples: 30
+Standing silhouette outline pixels painted per source piece: {'body': 41, 'upper_arm_far': 0, 'forearm_far': 0, 'hand_far': 0, 'thigh_far': 19, 'shin_far': 21, 'foot_far': 24, 'upper_arm_near': 0, 'forearm_near': 0, 'hand_near': 5, 'thigh_near': 10, 'shin_near': 23, 'foot_near': 34, 'dao': 7}
+Cut planes and joint overdraw remain unoutlined; facial feature edit lists not read.
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --editor --import --quit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (15 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | body.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | dao.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | foot_far.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | foot_near.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | forearm_far.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | forearm_near.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | hand_far.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | hand_near.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | head.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | shin_far.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | shin_near.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | thigh_far.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | thigh_near.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | upper_arm_far.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | upper_arm_near.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (9 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | body.png[39m[0m
+[  10% ] [90m[1mreimport[22m | dao.png[39m[0m
+[  20% ] [90m[1mreimport[22m | foot_far.png[39m[0m
+[  30% ] [90m[1mreimport[22m | foot_near.png[39m[0m
+[  40% ] [90m[1mreimport[22m | hand_near.png[39m[0m
+[  50% ] [90m[1mreimport[22m | shin_far.png[39m[0m
+[  60% ] [90m[1mreimport[22m | shin_near.png[39m[0m
+[  70% ] [90m[1mreimport[22m | thigh_far.png[39m[0m
+[  80% ] [90m[1mreimport[22m | thigh_near.png[39m[0m
+[  90% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (9 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --quit-after 120
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://tests/smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Jump range: 152.0 px; gap: 96.0 px; required: 144.0 px
+PASS: default horizontal jump range has 1.5x gap margin
+PASS: classic controls and air jump default on with 96 px jump
+PASS: player lands on ground
+PASS: keyboard action moves player
+PASS: jump rises toward configured apex
+PASS: player falls and lands
+PASS: Area2D slash hits dummy exactly once
+PASS: damage label is spawned
+PASS: F1 action enables hitboxes and values
+PASS: fall resets player
+PASS: coyote jump works just after leaving ledge
+PASS: buffered jump fires on landing
+PASS: F1 action disables debug
+PASS: gear opens tuning panel
+PASS: slider updates live run speed
+PASS: player consumes live speed instead of default
+PASS: jump gravity and velocity recalculate immediately
+PASS: runtime edits leave tuning defaults unchanged
+PASS: clipboard text contains current and derived values
+PASS: gear closes tuning panel
+PASS: idle bob reaches +1 px at quarter period
+PASS: idle bob reaches -1 px at three-quarter period
+PASS: running leans 4 degrees right
+PASS: step frequency scales with speed and lean follows left movement
+PASS: takeoff stretches sprite to 0.9 x 1.1
+PASS: takeoff scale recovers in 0.1 seconds
+PASS: landing squashes sprite to 1.15 x 0.85
+PASS: landing scale recovers in 0.1 seconds
+PASS: slash shifts sprite 4 px toward facing inside hit window
+PASS: slash shift stops outside hit window
+PASS: sprite motion leaves body and hitbox transforms and dimensions unchanged
+PASS: gear switch disables all fake motion and restores neutral transform
+PASS: clipboard text includes live motion switch
+PASS: gear switch re-enables fake motion
+PASS: repeated arrow keys leave all tuning values unchanged while panel is open
+PASS: wheel events over every slider leave all tuning values unchanged
+PASS: gear, checkbox and copy button cannot take keyboard focus
+PASS: mouse drag still updates slider with focus disabled
+Android layout: (1920, 1080) viewport=(960.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (1920, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (1920, 1080)
+PASS: buttons remain anchored to live viewport corners at (1920, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1920, 1080)
+PASS: camera limits use live viewport at (1920, 1080)
+Android layout: (2400, 1080) viewport=(1200.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (2400, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (2400, 1080)
+PASS: buttons remain anchored to live viewport corners at (2400, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (2400, 1080)
+PASS: camera limits use live viewport at (2400, 1080)
+Android layout: (1600, 720) viewport=(1200.0, 540.0) stretch=(1.333333, 1.333333)
+PASS: fractional expand fills (1600, 720) without letterbox
+PASS: touch controls, gear and panel stay inside (1600, 720)
+PASS: buttons remain anchored to live viewport corners at (1600, 720)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1600, 720)
+PASS: camera limits use live viewport at (1600, 720)
+PASS: gear switches live stretch to integer
+PASS: gear switches live stretch back to fractional
+PASS: gear shows physical screen, viewport and current scale
+PASS: F1 debug includes the same live display diagnostics
+PASS: horizontal touch starting on track cannot change slider value
+PASS: vertical touch swipe across slider track never changes tuning
+PASS: vertical touch swipe scrolls the tuning panel
+PASS: vertical gesture starting on thumb does not drift its value
+PASS: horizontal touch drag starting on thumb adjusts value
+PASS: slider touch area is at least 44 px high
+PASS: only three movement buttons are drawn; diagonal zones have no normal drawing
+PASS: d-pad follows 2.2d spacing and 1.35d jump height with centered up button
+PASS: invisible zones are adjacent to both sides of up on the same row
+PASS: up button wins hit priority when a diagonal region overlaps
+PASS: diagonal wins hit priority over lower direction left
+PASS: diagonal wins hit priority over lower direction right
+PASS: F1 enables outline-only diagonal diagnostics
+PASS: diagonal zones remain touchable with debug drawing hidden
+PASS: diagonal jump regions are on matching sides and 0.9x wide
+PASS: diagonal region jumps and holds direction -1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: diagonal region jumps and holds direction 1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: sliding from diagonal to up keeps jump and releases direction feedback
+PASS: sliding to opposite diagonal updates direction and both visible highlights
+PASS: sliding down to right retains direction without jump
+PASS: sliding outside all regions releases actions and feedback
+PASS: multitouch release preserves another finger's direction
+PASS: holding up repeats jump after landing
+PASS: auto-jump switch off permits only one jump per hold
+Variable jump: held height=76.5905456542969 early-release height=28.2679748535156
+PASS: early release gives lower jump when variable jump is enabled
+PASS: variable jump off retains full-height early-release jump
+PASS: jump toggle defaults are auto-repeat on and variable height off
+A0 placeholder: health bottle count=4
+PASS: health placeholder decrements count on press
+A0 placeholder: target
+A0 placeholder: skill_1
+PASS: HUD switch hides menu and frees top-right space
+PASS: HUD can be restored and gear is at least 56x56
+PASS: slash trail and damage text render above dummy
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+A0 smoke failures: 0
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://tests/rig_smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: idle has 4 frames
+PASS: idle frame at 0.000: foot_near touches baseline
+PASS: idle frame at 0.000: foot_far touches baseline
+PASS: idle frame at 0.167: foot_near touches baseline
+PASS: idle frame at 0.167: foot_far touches baseline
+PASS: idle frame at 0.333: foot_near touches baseline
+PASS: idle frame at 0.333: foot_far touches baseline
+PASS: idle frame at 0.500: foot_near touches baseline
+PASS: idle frame at 0.500: foot_far touches baseline
+PASS: run has 6 frames
+PASS: jump_up has 2 frames
+PASS: apex_flip has 6 frames
+PASS: fall has 2 frames
+PASS: land has 2 frames
+PASS: land frame at 0.000: foot_near touches baseline
+PASS: land frame at 0.000: foot_far touches baseline
+PASS: land frame at 0.083: foot_near touches baseline
+PASS: land frame at 0.083: foot_far touches baseline
+PASS: turn has 2 frames
+PASS: slash_1 has 4 frames
+PASS: slash_2 has 4 frames
+PASS: slash_3 has 5 frames
+PASS: shoot has 5 frames
+PASS: hurt has 2 frames
+PASS: knockdown has 4 frames
+PASS: all joints stay at authored parent anchors in every frame
+PASS: all local angles stay within proposed joint limits
+PASS: apex clip completes exactly 360 degrees at 0.20 s
+PASS: turn stays within A0 0.05 s
+PASS: basic slash keeps A0 0.30 s
+PASS: real A0 player starts grounded
+PASS: toggle off restores original A0 sprite
+PASS: toggle on replaces only the sprite
+PASS: bow toggle swaps weapon
+PASS: real idle state selects idle
+PASS: real movement selects run
+PASS: real reversal selects turn
+PASS: real slash selects basic dao clip
+PASS: real slash input with bow selects shoot preview
+PASS: real jump selects ascent
+PASS: real flight selects apex flip then fall
+PASS: real 360 flip completes before same-height landing
+PASS: real khinh cong activates unchanged
+PASS: both khinh-cong flips finish before landing
+PASS: visual rig never rotates/scales body or slash hitbox
+Rig smoke failures: 0
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://rig/tests/art_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: 16 Sprite2D; exact dimensions/pivots; nearest; art/greybox toggle
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://rig/tests/visual_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: direction +1: near layers remain above far in every clip
+PASS: direction +1: all parent anchors stay connected
+PASS: direction +1: idle/land/slashes feet touch ground
+PASS: direction +1: run contact feet stay on ground, swing clears it
+PASS: direction +1: bow vertical, centred on far hand; far arm horizontal
+PASS: direction +1: bow string follows near pulling hand
+PASS: direction -1: near layers remain above far in every clip
+PASS: direction -1: all parent anchors stay connected
+PASS: direction -1: idle/land/slashes feet touch ground
+PASS: direction -1: run contact feet stay on ground, swing clears it
+PASS: direction -1: bow vertical, centred on far hand; far arm horizontal
+PASS: direction -1: bow string follows near pulling hand
+Rig visual failures: 0
+Exit code: 0
+
+$ /tmp/godot-a0-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --script res://rig/export_frames.gd -- --art
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Exported actual rig scene: 16 clips; art=true
+Exit code: 0
+
+$ python tools/render_parts_scene.py
+prototype/rig/contact_sheets/art/chr_dbl_anim_apex_flip_art.png 960x160 frames=6
+prototype/rig/contact_sheets/art/chr_dbl_anim_fall_art.png 320x160 frames=2
+prototype/rig/contact_sheets/art/chr_dbl_anim_hurt_art.png 320x160 frames=2
+prototype/rig/contact_sheets/art/chr_dbl_anim_idle_art.png 640x160 frames=4
+prototype/rig/contact_sheets/art/chr_dbl_anim_jump_up_art.png 320x160 frames=2
+prototype/rig/contact_sheets/art/chr_dbl_anim_knockdown_art.png 640x160 frames=4
+prototype/rig/contact_sheets/art/chr_dbl_anim_land_art.png 320x160 frames=2
+prototype/rig/contact_sheets/art/chr_dbl_anim_run_art.png 960x160 frames=6
+prototype/rig/contact_sheets/art/chr_dbl_anim_run_left_art.png 960x160 frames=6
+prototype/rig/contact_sheets/art/chr_dbl_anim_shoot_art.png 800x160 frames=5
+prototype/rig/contact_sheets/art/chr_dbl_anim_shoot_left_art.png 800x160 frames=5
+prototype/rig/contact_sheets/art/chr_dbl_anim_slash_1_art.png 640x160 frames=4
+prototype/rig/contact_sheets/art/chr_dbl_anim_slash_2_art.png 640x160 frames=4
+prototype/rig/contact_sheets/art/chr_dbl_anim_slash_3_art.png 800x160 frames=5
+prototype/rig/contact_sheets/art/chr_dbl_anim_turn_art.png 320x160 frames=2
+idle: 128x128 -> 512x512 using Image.resize(..., Image.Resampling.NEAREST) from saved 1x
+Exit code: 0
+
+$ python tools/check_parts_roles.py
+body: forbidden group pixels=0
+body shirt counts/percent: {'#554638': 33, '#89745E': 45, '#C3A98A': 164, '#EAD8B8': 30} {'#554638': 12.132, '#89745E': 16.544, '#C3A98A': 60.294, '#EAD8B8': 11.029}
+Head exact Claude matrix: True
+head: forbidden group pixels=0
+upper_arm_far: forbidden group pixels=0
+upper_arm_far shirt counts/percent: {'#554638': 11, '#89745E': 14, '#C3A98A': 38, '#EAD8B8': 7} {'#554638': 15.714, '#89745E': 20.0, '#C3A98A': 54.286, '#EAD8B8': 10.0}
+forearm_far: forbidden group pixels=0
+hand_far: forbidden group pixels=0
+thigh_far: forbidden group pixels=0
+shin_far: forbidden group pixels=0
+foot_far: forbidden group pixels=0
+upper_arm_near: forbidden group pixels=0
+upper_arm_near shirt counts/percent: {'#554638': 11, '#89745E': 15, '#C3A98A': 40, '#EAD8B8': 7} {'#554638': 15.068, '#89745E': 20.548, '#C3A98A': 54.795, '#EAD8B8': 9.589}
+forearm_near: forbidden group pixels=0
+hand_near: forbidden group pixels=0
+thigh_near: forbidden group pixels=0
+shin_near: forbidden group pixels=0
+foot_near: forbidden group pixels=0
+dao: forbidden group pixels=0
+dao blade limestone counts: {'#485F60': 0, '#718B87': 29, '#A5B8B0': 85, '#D9DDD0': 12}
+bow: forbidden group pixels=0
+idle hand_far: fingertip bottom y=-32 px from feet
+idle hand_near: fingertip bottom y=-32 px from feet
+standing_neutral hand_far: fingertip bottom y=-33 px from feet
+standing_neutral hand_near: fingertip bottom y=-33 px from feet
+Material/Claude/arm failures: 0
+Exit code: 0
+
+$ python tools/check_parts_uniform.py
+idle H hair-fill pixels inside silhouette: 197
+idle: height=95px; internal outline pixels=17; positions=[{'x': 65, 'y': 29, 'part': 'head', 'texture_x': 10, 'texture_y': 4}, {'x': 71, 'y': 36, 'part': 'head', 'texture_x': 16, 'texture_y': 11}, {'x': 70, 'y': 37, 'part': 'head', 'texture_x': 15, 'texture_y': 12}, {'x': 71, 'y': 38, 'part': 'head', 'texture_x': 16, 'texture_y': 13}, {'x': 72, 'y': 38, 'part': 'head', 'texture_x': 17, 'texture_y': 13}, {'x': 73, 'y': 38, 'part': 'head', 'texture_x': 18, 'texture_y': 13}, {'x': 71, 'y': 39, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 66, 'y': 43, 'part': 'head', 'texture_x': 11, 'texture_y': 18}, {'x': 66, 'y': 44, 'part': 'head', 'texture_x': 11, 'texture_y': 19}, {'x': 64, 'y': 45, 'part': 'head', 'texture_x': 9, 'texture_y': 20}, {'x': 65, 'y': 45, 'part': 'head', 'texture_x': 10, 'texture_y': 20}, {'x': 66, 'y': 45, 'part': 'head', 'texture_x': 11, 'texture_y': 20}, {'x': 62, 'y': 46, 'part': 'head', 'texture_x': 7, 'texture_y': 21}, {'x': 63, 'y': 46, 'part': 'head', 'texture_x': 8, 'texture_y': 21}, {'x': 63, 'y': 47, 'part': 'head', 'texture_x': 8, 'texture_y': 22}, {'x': 68, 'y': 47, 'part': 'head', 'texture_x': 13, 'texture_y': 22}, {'x': 63, 'y': 48, 'part': 'head', 'texture_x': 8, 'texture_y': 23}]
+standing_neutral H hair-fill pixels inside silhouette: 197
+standing_neutral: height=96px; internal outline pixels=17; positions=[{'x': 65, 'y': 28, 'part': 'head', 'texture_x': 10, 'texture_y': 4}, {'x': 71, 'y': 35, 'part': 'head', 'texture_x': 16, 'texture_y': 11}, {'x': 70, 'y': 36, 'part': 'head', 'texture_x': 15, 'texture_y': 12}, {'x': 71, 'y': 37, 'part': 'head', 'texture_x': 16, 'texture_y': 13}, {'x': 72, 'y': 37, 'part': 'head', 'texture_x': 17, 'texture_y': 13}, {'x': 73, 'y': 37, 'part': 'head', 'texture_x': 18, 'texture_y': 13}, {'x': 71, 'y': 38, 'part': 'head', 'texture_x': 16, 'texture_y': 14}, {'x': 66, 'y': 42, 'part': 'head', 'texture_x': 11, 'texture_y': 18}, {'x': 66, 'y': 43, 'part': 'head', 'texture_x': 11, 'texture_y': 19}, {'x': 64, 'y': 44, 'part': 'head', 'texture_x': 9, 'texture_y': 20}, {'x': 65, 'y': 44, 'part': 'head', 'texture_x': 10, 'texture_y': 20}, {'x': 66, 'y': 44, 'part': 'head', 'texture_x': 11, 'texture_y': 20}, {'x': 62, 'y': 45, 'part': 'head', 'texture_x': 7, 'texture_y': 21}, {'x': 63, 'y': 45, 'part': 'head', 'texture_x': 8, 'texture_y': 21}, {'x': 63, 'y': 46, 'part': 'head', 'texture_x': 8, 'texture_y': 22}, {'x': 68, 'y': 46, 'part': 'head', 'texture_x': 13, 'texture_y': 22}, {'x': 63, 'y': 47, 'part': 'head', 'texture_x': 8, 'texture_y': 23}]
+Head face skin span=13/23=0.5652; neck below chin=3.0000px; Claude pixel matrix applied unchanged
+hand_near: skin counts {'dark': 28, 'mid': 29, 'light': 29}
+hand_far: skin counts {'dark': 29, 'mid': 29, 'light': 28}
+foot_near: skin counts {'dark': 22, 'mid': 37, 'light': 43}
+foot_far: skin counts {'dark': 22, 'mid': 38, 'light': 41}
+Uniform-art checks failures: 0
+Exit code: 0
+
+$ python tools/check_parts.py
+PASS: body size=(17, 29) expected=[17, 29] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: head size=(23, 25) expected=[23, 25] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: upper_arm_far size=(10, 16) expected=[10, 16] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: forearm_far size=(7, 12) expected=[7, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: hand_far size=(10, 14) expected=[10, 14] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: thigh_far size=(15, 24) expected=[15, 24] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: shin_far size=(9, 21) expected=[9, 21] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: foot_far size=(18, 12) expected=[18, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: upper_arm_near size=(10, 16) expected=[10, 16] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: forearm_near size=(8, 12) expected=[8, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: hand_near size=(10, 13) expected=[10, 13] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: thigh_near size=(15, 24) expected=[15, 24] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: shin_near size=(9, 22) expected=[9, 22] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: foot_near size=(19, 12) expected=[19, 12] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: dao size=(8, 41) expected=[8, 41] off_palette=0 semi_alpha=0 scene_copy_identical=True
+PASS: bow size=(10, 41) expected=[10, 41] off_palette=0 semi_alpha=0 scene_copy_identical=True
+Joint checks: 672; max seam=0.50px; background samples=53; failures=0
+Scope: all 48 authored frames / 13 actions, visible child-parent pairs; not a claim about every interpolated time or Android GPU output.
+Exit code: 0
+
+$ python tools/check_parts_polish.py
+run frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=1.871px; sole y near/far=[0.0, -2.23991]
+run frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=3.587px; sole y near/far=[-0.0, -4.30104]
+run frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=3.870px; sole y near/far=[-0.0, -1.83934]
+run frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=1.216px; sole y near/far=[-1.94753, 0.0]
+run frame=5: knee reduction near/far=[35.0, 35.0]%; hip rise=3.263px; sole y near/far=[-3.7552, 0.0]
+run frame=6: knee reduction near/far=[35.0, 35.0]%; hip rise=4.073px; sole y near/far=[-2.34429, -0.0]
+slash_1 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.131px; sole y near/far=[0.0, 0.0]
+slash_1 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, -0.0]
+slash_1 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[-0.0, -0.0]
+slash_1 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+slash_2 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.131px; sole y near/far=[0.0, 1e-05]
+slash_2 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, -0.0]
+slash_2 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[0.0, -0.0]
+slash_2 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+slash_3 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, 0.0]
+slash_3 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[0.0, -0.0]
+slash_3 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[1e-05, 1e-05]
+slash_3 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[-0.0, -0.0]
+slash_3 frame=5: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+13 clip frame counts, durations and events retained
+dao material pixel counts: {'outline': 7, 'belt': 36, 'limestone': 126}
+bow material pixel counts: {'belt': 115}
+thigh_near material pixel counts: {'outline': 10, 'pants': 268}
+thigh_far material pixel counts: {'outline': 16, 'pants': 263}
+Polish failures: 0 []
+Exit code: 0
+
+$ python prototype/rig/tests/check_contact_sheets.py
+PASS: shoot frame 1: visible far-arm pixels {'upper_arm_far': 38, 'forearm_far': 27, 'hand_far': 41}
+PASS: shoot frame 2: visible far-arm pixels {'upper_arm_far': 37, 'forearm_far': 29, 'hand_far': 72}
+PASS: shoot frame 3: visible far-arm pixels {'upper_arm_far': 11, 'forearm_far': 75, 'hand_far': 72}
+PASS: shoot frame 4: visible far-arm pixels {'upper_arm_far': 38, 'forearm_far': 27, 'hand_far': 41}
+PASS: shoot frame 5: visible far-arm pixels {'upper_arm_far': 56, 'forearm_far': 34, 'hand_far': 64}
+PASS: shoot_left frame 1: visible far-arm pixels {'upper_arm_far': 33, 'forearm_far': 32, 'hand_far': 33}
+PASS: shoot_left frame 2: visible far-arm pixels {'upper_arm_far': 35, 'forearm_far': 24, 'hand_far': 71}
+PASS: shoot_left frame 3: visible far-arm pixels {'upper_arm_far': 10, 'forearm_far': 67, 'hand_far': 72}
+PASS: shoot_left frame 4: visible far-arm pixels {'upper_arm_far': 33, 'forearm_far': 32, 'hand_far': 33}
+PASS: shoot_left frame 5: visible far-arm pixels {'upper_arm_far': 49, 'forearm_far': 38, 'hand_far': 59}
+PASS: run_left is evaluated scene mirror; identical layer order
+PASS: shoot_left is evaluated scene mirror; identical layer order
+Contact-sheet checks: 0 failures
+Exit code: 0
+$ python tools/check_parts_polish.py
+run frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=1.871px; sole y near/far=[0.0, -2.23991]
+run frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=3.587px; sole y near/far=[-0.0, -4.30104]
+run frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=3.870px; sole y near/far=[-0.0, -1.83934]
+run frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=1.216px; sole y near/far=[-1.94753, 0.0]
+run frame=5: knee reduction near/far=[35.0, 35.0]%; hip rise=3.263px; sole y near/far=[-3.7552, 0.0]
+run frame=6: knee reduction near/far=[35.0, 35.0]%; hip rise=4.073px; sole y near/far=[-2.34429, -0.0]
+slash_1 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.131px; sole y near/far=[0.0, 0.0]
+slash_1 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, -0.0]
+slash_1 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[-0.0, -0.0]
+slash_1 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+slash_2 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.131px; sole y near/far=[0.0, 1e-05]
+slash_2 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, -0.0]
+slash_2 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[0.0, -0.0]
+slash_2 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+slash_3 frame=1: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[0.0, 0.0]
+slash_3 frame=2: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[0.0, -0.0]
+slash_3 frame=3: knee reduction near/far=[35.0, 35.0]%; hip rise=2.160px; sole y near/far=[1e-05, 1e-05]
+slash_3 frame=4: knee reduction near/far=[35.0, 35.0]%; hip rise=2.132px; sole y near/far=[-0.0, -0.0]
+slash_3 frame=5: knee reduction near/far=[35.0, 35.0]%; hip rise=2.109px; sole y near/far=[0.0, -0.0]
+13 clip frame counts, durations and events retained
+dao material pixel counts: {'outline': 7, 'belt': 36, 'limestone': 126}
+bow material pixel counts: {'belt': 115}
+thigh_near material pixel counts: {'outline': 10, 'pants': 268}
+thigh_far material pixel counts: {'outline': 16, 'pants': 263}
+15 art contact sheets: frame dimensions correct; idle x4 equals saved 1x resized NEAREST
+Art run/shoot: both directions reflect actual sprite transforms, near/far layers unchanged
+Polish failures: 0 []
+Exit code: 0

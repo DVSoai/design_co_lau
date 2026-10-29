@@ -123,8 +123,8 @@
         "texture_y": 23
       }
     ],
-    "opaque_pixels": 1500,
-    "interior_outline_percent": 1.1333
+    "opaque_pixels": 1610,
+    "interior_outline_percent": 1.0559
   },
   "standing_neutral": {
     "height_px": 96,
@@ -260,7 +260,7 @@
     "neck_below_chin": 3
   },
   "hand_near": {
-    "dark": 28,
+    "dark": 27,
     "mid": 29,
     "light": 29
   },

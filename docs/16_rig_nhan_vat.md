@@ -339,3 +339,27 @@ trên tóc Claude. Tỉ lệ từng màu và ma trận nguyên văn ở
 | face_overlay | 18×18 px | (7,8) | head, neo tâm mặt theo mẫu đầu | Trên đầu/tóc, dưới số sát thương |
 
 Kích thước và điểm gắn cuối phải thử với đầu/tay mới, chưa duyệt. Không thay parts.json trong lượt docs. Theo 17_ngoai_hinh.md.
+
+
+## Chỉnh bộ phận 29/10/2026 — chưa duyệt
+
+Vũ khí art cho phép limestone: lưỡi đao #A5B8B0, bóng #718B87, sáng #D9DDD0,
+viền #17151A; cán/vỏ belt. Cung gỗ belt, dây sáng #D9DDD0. Hai đùi chỉ pants
+và nét outline; da bắt đầu từ gối/cẳng chân. Kích thước/pivot/attach giữ nguyên.
+
+Run/slash_1–3 giảm 35% góc gập gối ở cả hai chân. Giải lại hông và góc chân từ
+độ dài xương: hông nâng tương ứng, chân trụ khi chạy và cả hai chân khi chém
+không đổi điểm đặt. Chân vung chỉnh theo độ duỗi mới, không xuyên đất.
+Giữ dữ liệu greybox để so sánh; chỉ thay `animations.json` của bản art.
+Kết quả scene thật và nguyên văn script ở [báo cáo polish](reports/g1_parts_polish_report.md).
+
+
+### Sửa hướng đao 29/10/2026 — chưa duyệt
+
+Trục lưỡi PNG hướng −Y, nên phải xoay 180° quanh pivot cầm, có bù góc bàn tay.
+Ở mọi pose thường, chuôi→mũi cùng hướng khuỷu→cổ tay, góc đo khoảng 6,801°.
+Idle/turn chúc mũi xuống và ra trước (trục 60° ở hệ rig nhìn phải). Giữ pivot,
+attach và hitbox; không dùng góc 0 cũ khiến lưỡi nằm dọc cẳng tay về phía khuỷu.
+Cung gắn nắm tay xa; trục hai đầu cánh cung lúc bắn lệch vuông góc 0,490°.
+59 pose đã kiểm (13 động tác và run/shoot trái), không mũi đao nào nằm giữa khuỷu
+và cổ tay. [Báo cáo, ảnh và script](reports/g1_weapon_direction_report.md).

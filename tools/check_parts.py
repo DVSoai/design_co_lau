@@ -8,7 +8,7 @@ from snap_pixel import load_groups
 from render_parts_scene import sprite_layer
 ROOT=Path(__file__).resolve().parents[1]
 def main():
-    groups=load_groups(ROOT/'art/reference/palette.gpl');pal={c for g in ['outline','skin','fabric','belt','pants'] for c in groups[g]}
+    groups=load_groups(ROOT/'art/reference/palette.gpl');pal={c for g in ['outline','skin','fabric','belt','pants','limestone'] for c in groups[g]}
     definition=json.loads((ROOT/'prototype/rig/data/parts.json').read_text());parts={p['id']:p for p in definition['parts']};failed=0
     for id,p in parts.items():
         path=ROOT/f'art/sprites/characters/chr_dbl_parts/{id}.png';im=Image.open(path).convert('RGBA');a=np.asarray(im)

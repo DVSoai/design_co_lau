@@ -1,5 +1,7 @@
 # G1 — Đầu Claude, sửa chất liệu và chiều dài tay
 
+> Cập nhật tiếp: [polish vật liệu và tư thế 29/10/2026](g1_parts_polish_report.md). Các số liệu dưới đây là báo cáo của lượt trước.
+
 **Đang làm — chưa duyệt toàn bộ art.** Theo ma trận người dùng gửi:
 **đầu do Claude vẽ tay từng pixel**. Không imagegen trong lượt này.
 

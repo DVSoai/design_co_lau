@@ -2,16 +2,16 @@
   "body": {
     "forbidden_group_pixels": 0,
     "shirt_counts": {
-      "#554638": 33,
+      "#554638": 32,
       "#89745E": 45,
       "#C3A98A": 164,
       "#EAD8B8": 30
     },
     "shirt_percent": {
-      "#554638": 12.132,
-      "#89745E": 16.544,
-      "#C3A98A": 60.294,
-      "#EAD8B8": 11.029
+      "#554638": 11.808,
+      "#89745E": 16.605,
+      "#C3A98A": 60.517,
+      "#EAD8B8": 11.07
     }
   },
   "head": {
@@ -78,7 +78,13 @@
     "forbidden_group_pixels": 0
   },
   "dao": {
-    "forbidden_group_pixels": 0
+    "forbidden_group_pixels": 0,
+    "blade_counts": {
+      "#485F60": 0,
+      "#718B87": 34,
+      "#A5B8B0": 86,
+      "#D9DDD0": 13
+    }
   },
   "bow": {
     "forbidden_group_pixels": 0

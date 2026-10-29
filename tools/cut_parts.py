@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 from snap_pixel import green_mask,nearest,load_groups
 ROOT=Path(__file__).resolve().parents[1]
-GROUPS=['outline','skin','fabric','belt','pants']
+GROUPS=['outline','skin','fabric','belt','pants','limestone']
 # Anatomical/overlap landmarks in each source crop, selected visually, never inferred as ground truth.
 LANDMARKS={
  'head':{'pivot':[83,218],'crop_bottom':219,'chin_y':197,'face_box':[80,105,200,198]},
@@ -34,7 +34,7 @@ def components(mask):
     return result
 
 def matrix(a,pal):
-    chars='0123456789ABCDEFG';lookup={tuple(c):chars[i] for i,c in enumerate(pal)}
+    chars='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';lookup={tuple(c):chars[i] for i,c in enumerate(pal)}
     return '\n'.join(''.join(lookup[tuple(px[:3])] if px[3] else '.' for px in row) for row in a)
 
 def sample_uniform(rgb,mask,s):
@@ -59,11 +59,26 @@ def claude_head():
 def colour_part(id,a,groups):
     mask=a[:,:,3]>0
     if id=='head':return claude_head()
+    if id in ['dao','bow']:
+        yy,xx=np.indices(mask.shape)
+        if id=='dao':
+            # Blade above the guard (source y=264), grip/scabbard below.
+            blade=mask&(yy<round(264*96/846))
+            ys,xs=np.where(blade)
+            lum=a[ys,xs,:3].astype(float)@np.array([.2126,.7152,.0722])
+            order=np.argsort(lum,kind='stable')
+            for rank,k in enumerate(order):
+                q=rank/max(1,len(order));a[ys[k],xs[k],:3]=groups['limestone'][1 if q<.25 else 2 if q<.90 else 3]
+            wood=mask&~blade
+        else:
+            wood=mask
+        for y,x in zip(*np.where(wood)):a[y,x,:3]=nearest(a[y,x,:3],groups['belt'])
+        return a
     garment=mask.copy() if id=='body' else mask&(np.indices(mask.shape)[0]<a.shape[0]*.48) if id.startswith('upper_arm_') else np.zeros(mask.shape,bool)
     belt=mask&(np.indices(mask.shape)[0]>=a.shape[0]*.56)&(np.indices(mask.shape)[0]<=a.shape[0]*.68) if id=='body' else np.zeros(mask.shape,bool)
     garment &= ~belt
     for y,x in zip(*np.where(mask&~garment)):
-        palette=groups['belt'] if belt[y,x] else groups['pants']+groups['skin'] if id.startswith('thigh_') else groups['skin'] if id.startswith(('upper_arm_','forearm_','hand_','shin_','foot_')) else groups['fabric']+groups['belt']
+        palette=groups['belt'] if belt[y,x] else groups['pants'] if id.startswith('thigh_') else groups['skin'] if id.startswith(('upper_arm_','forearm_','hand_','shin_','foot_')) else groups['fabric']+groups['belt']
         a[y,x,:3]=nearest(a[y,x,:3],palette)
     ys,xs=np.where(garment)
     if len(xs):
@@ -128,12 +143,12 @@ def main():
             fills[id]={'radius':radius,'color':'#'+''.join(f'{v:02X}' for v in colour),'method':'automatic unoutlined joint material, not a drawn body outline'}
         print(f'{id}: source={crop.shape[1]}x{crop.shape[0]} -> {p["size"]}; pivot={np.round(p["pivot"],3).tolist()}; attach={np.round(p["attach"],3).tolist()}; shared s, arm-longitudinal=0.60 if applicable')
     definition['status']='Đề xuất — common-scale art measurements, chưa duyệt';definition['common_scale']=s;definition['source_height']=height;definition['source_spans']=measures;definition['parts']=list(parts.values());definition['rotation_center']=[0,-sum(measures[2:])*s]
-    bow=LANDMARKS['bow'];definition['bow_string']['top']=((np.array(bow['top'])-bow['pivot'])*s).tolist();definition['bow_string']['bottom']=((np.array(bow['bottom'])-bow['pivot'])*s).tolist();definition['bow_string']['hand_anchor']=((np.array(LANDMARKS['hand_near']['grip'])-LANDMARKS['hand_near']['pivot'])*s).tolist()
+    bow=LANDMARKS['bow'];definition['bow_string']['top']=((np.array(bow['top'])-bow['pivot'])*s).tolist();definition['bow_string']['bottom']=((np.array(bow['bottom'])-bow['pivot'])*s).tolist();definition['bow_string']['color']='#D9DDD0';definition['bow_string']['hand_anchor']=((np.array(LANDMARKS['hand_near']['grip'])-LANDMARKS['hand_near']['pivot'])*s).tolist()
     (ROOT/'prototype/rig/data/parts.json').write_text(json.dumps(definition,ensure_ascii=False,indent=2)+'\n');(dest/'joint_fill.json').write_text(json.dumps(fills,indent=2)+'\n')
     measurements={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'scale':s,'height_source':height,'source_spans':measures,'guide':[24,24,48],'scaled_spans':[measures[0]*s,measures[1]*s,sum(measures[2:])*s],'landmarks_manual':LANDMARKS,'parts':rows,'arm_length_scale':.60,'head_source':'đầu do Claude vẽ tay từng pixel','neck_below_chin_px':3,'face_width_px':(200-80)*s,'head_width_px':parts['head']['size'][0]}
     (work/'uniform_measurements.json').write_text(json.dumps(measurements,ensure_ascii=False,indent=2)+'\n')
     head=np.array(Image.open(raw/'head.png'));text=matrix(head,pal);(work/'head_claude.txt').write_text(text+'\n');Image.fromarray(head).save(work/'head_claude.png')
     print('HEAD: đầu do Claude vẽ tay từng pixel; exact supplied matrix, no cleanup or feature edits:');print(text)
-    print('Palette:',{c:'#'+''.join(f'{v:02X}' for v in col) for c,col in zip('0123456789ABCDEFG',pal)})
+    print('Palette:',{c:'#'+''.join(f'{v:02X}' for v in col) for c,col in zip('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',pal)})
     print(f'Head neck below chin: {measurements["neck_below_chin_px"]:.3f}px; source face span / frame width={measurements["face_width_px"]/parts["head"]["size"][0]:.3f}')
 if __name__=='__main__':main()
