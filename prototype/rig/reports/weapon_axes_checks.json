@@ -1,0 +1,558 @@
+{
+  "method": "Godot evaluated node/Sprite2D transforms; actual PNG tip centre (7,.5), existing hilt pivot; projection t in [0,1] is between elbow/wrist",
+  "frames": 59,
+  "failures": 0,
+  "details": [
+    {
+      "clip": "apex_flip",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "apex_flip",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "apex_flip",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "apex_flip",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "apex_flip",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "apex_flip",
+      "frame": 6,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "fall",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "fall",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "hurt",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "hurt",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "idle",
+      "frame": 1,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    },
+    {
+      "clip": "idle",
+      "frame": 2,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    },
+    {
+      "clip": "idle",
+      "frame": 3,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    },
+    {
+      "clip": "idle",
+      "frame": 4,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    },
+    {
+      "clip": "jump_up",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "jump_up",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "knockdown",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "knockdown",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "knockdown",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "knockdown",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "land",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "land",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run",
+      "frame": 6,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "run_left",
+      "frame": 6,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "shoot",
+      "frame": 1,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.9962,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.6569,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot",
+      "frame": 3,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.5028,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot",
+      "frame": 4,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.9962,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9347,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot_left",
+      "frame": 1,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.9962,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot_left",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.6569,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot_left",
+      "frame": 3,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.5028,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot_left",
+      "frame": 4,
+      "dao_angle_deg": 6.8008,
+      "tip_projection_elbow_to_wrist": 4.9962,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "shoot_left",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9347,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true,
+      "bow_angle_deg": 89.5103,
+      "bow_grip_error_px": 0.0
+    },
+    {
+      "clip": "slash_1",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_1",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_1",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_1",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_2",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_2",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_2",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_2",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_3",
+      "frame": 1,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_3",
+      "frame": 2,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_3",
+      "frame": 3,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_3",
+      "frame": 4,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "slash_3",
+      "frame": 5,
+      "dao_angle_deg": 6.8007,
+      "tip_projection_elbow_to_wrist": 4.9787,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": false,
+      "ok": true
+    },
+    {
+      "clip": "turn",
+      "frame": 1,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    },
+    {
+      "clip": "turn",
+      "frame": 2,
+      "dao_angle_deg": 29.3323,
+      "tip_projection_elbow_to_wrist": 4.5731,
+      "tip_between_elbow_wrist": false,
+      "rest_down_forward": true,
+      "ok": true
+    }
+  ]
+}

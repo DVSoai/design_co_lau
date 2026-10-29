@@ -299,3 +299,18 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
   cho ảnh kết quả. [Báo cáo, script và ảnh](reports/g1_parts_polish_report.md),
   [nguyên đầu ra](reports/g1_parts_polish_output.txt); nguyên đầu ra cũng trong
   commit message. Bộ phận vẫn đang làm, chưa được duyệt mỹ thuật.
+
+
+## 29/10/2026 — g1_weapon_direction — v1, đang làm/chưa duyệt
+
+- Tiếp trên `fix/g1-parts-polish`: sửa lỗi đao chĩa từ nắm tay về khuỷu/ngực.
+  Xoay 180° quanh điểm cầm, bù góc bàn tay; idle/turn chúc xuống, chếch ra trước.
+  Giữ pivot/attach, hình dáng bộ phận, màu, góc chân và điều khiển/hitbox A0.
+- Test scene thật in góc từng frame: 48 pose/13 động tác và 11 pose run/shoot
+  trái, tổng 59. Góc đao thường ≈6,801° (≤30°); không mũi nào nằm giữa khuỷu
+  và cổ tay. Cung ở nắm tay xa, góc với cẳng tay 89,510°, sai lệch điểm cầm 0 px.
+- Godot 4.7.2: ba lệnh headless README và toàn bộ rig/art/visual/PIL checks đạt;
+  672 kiểm khớp, khe tối đa 0,50 px. Xuất lại contact sheet và idle ×4 NEAREST
+  từ scene; không imagegen, không có prompt mới. Nguồn art/ảnh tham chiếu cũ giữ nguyên.
+- [Báo cáo và script](reports/g1_weapon_direction_report.md), [nguyên đầu ra](reports/g1_weapon_direction_output.txt);
+  đầu ra cũng trong commit message. Chờ người dùng duyệt mỹ thuật.

@@ -352,3 +352,14 @@ Run/slash_1–3 giảm 35% góc gập gối ở cả hai chân. Giải lại hô
 không đổi điểm đặt. Chân vung chỉnh theo độ duỗi mới, không xuyên đất.
 Giữ dữ liệu greybox để so sánh; chỉ thay `animations.json` của bản art.
 Kết quả scene thật và nguyên văn script ở [báo cáo polish](reports/g1_parts_polish_report.md).
+
+
+### Sửa hướng đao 29/10/2026 — chưa duyệt
+
+Trục lưỡi PNG hướng −Y, nên phải xoay 180° quanh pivot cầm, có bù góc bàn tay.
+Ở mọi pose thường, chuôi→mũi cùng hướng khuỷu→cổ tay, góc đo khoảng 6,801°.
+Idle/turn chúc mũi xuống và ra trước (trục 60° ở hệ rig nhìn phải). Giữ pivot,
+attach và hitbox; không dùng góc 0 cũ khiến lưỡi nằm dọc cẳng tay về phía khuỷu.
+Cung gắn nắm tay xa; trục hai đầu cánh cung lúc bắn lệch vuông góc 0,490°.
+59 pose đã kiểm (13 động tác và run/shoot trái), không mũi đao nào nằm giữa khuỷu
+và cổ tay. [Báo cáo, ảnh và script](reports/g1_weapon_direction_report.md).

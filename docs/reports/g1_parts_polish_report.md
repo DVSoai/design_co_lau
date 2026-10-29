@@ -1,5 +1,7 @@
 # G1 — Chỉnh vật liệu và tư thế bộ phận (29/10/2026)
 
+> Lượt sửa tiếp: [hướng đao quanh điểm cầm](g1_weapon_direction_report.md). Các số liệu vật liệu dưới đây ghi tại lượt trước khi dựng lại viền.
+
 **Đang làm, chưa duyệt mỹ thuật.** Nhánh `fix/g1-parts-polish`, nền main `8997b8c`.
 Không sinh concept mới. Sửa pixel bằng script từ concept hiện có; đầu do Claude
 vẽ tay từng pixel giữ nguyên tuyệt đối. Không đổi kích thước, pivot hay attach.

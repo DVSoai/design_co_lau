@@ -56,6 +56,17 @@ def main():
     f['angles'].update(upper_arm_far=-90-math.degrees(a1),forearm_far=math.degrees(a1-a2),hand_far=math.degrees(a2),bow=90)
     dx=[.94,.65,.23,.94,.8][i]*(l1+l2);dy=[0,-5,-10,0,1][i];k=-math.acos(max(-1,min(1,(dx*dx+dy*dy-l1*l1-l2*l2)/(2*l1*l2))));q=math.atan2(-dx,dy)-math.atan2(l2*math.sin(k),l1+l2*math.cos(k))
     f['angles'].update(upper_arm_near=math.degrees(q-n1),forearm_near=math.degrees(k+n1-n2),hand_near=max(-90,min(90,-90-math.degrees(q+k-n2))))
+ # Source blade points toward local -Y; turn it outward around its existing grip.
+ # Compensate hand rotation so the blade follows elbow->wrist, including hidden dao in shoot.
+ for name,clip in data['clips'].items():
+  for f in clip['frames']:
+   a=f['angles'];angle=180-a['hand_near']
+   if name in ['idle','turn']:
+    # Resting blade tips down and forward (60 degrees in right-facing rig space).
+    tip=np.array([7.0,.5])-np.array(p['dao']['pivot'])
+    angle=60-math.degrees(math.atan2(tip[1],tip[0]))-sum(a[k] for k in ['body','upper_arm_near','forearm_near','hand_near'])
+   a['dao']=(angle+180)%360-180
+ print('Dao orientation: outward about existing grip; hand angle compensated; idle/turn tip down-forward')
  polish_legs(data,p)
  data['status']='Đề xuất — retarget geometry only; original frame counts/timings retained'
  (ROOT/'prototype/rig/data/animations.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
