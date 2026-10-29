@@ -62,8 +62,8 @@ func camera_target() -> Vector2:
 	var half := get_viewport().get_visible_rect().size / 2
 	var target := camera_anchor + Vector2(player.facing * tuning.value("CAMERA_LOOK_AHEAD"), 0)
 	# Nếu viewport rộng/cao hơn bản đồ, căn giữa thay vì clamp với min > max.
-	target.x = clampf(target.x, half.x, T.WORLD_SIZE.x - half.x) if half.x * 2 < T.WORLD_SIZE.x else T.WORLD_SIZE.x / 2
-	target.y = clampf(camera_anchor.y, half.y, T.WORLD_SIZE.y - half.y) if half.y * 2 < T.WORLD_SIZE.y else T.WORLD_SIZE.y / 2
+	target.x = clampf(target.x, half.x, _camera_world_size().x - half.x) if half.x * 2 < _camera_world_size().x else _camera_world_size().x / 2
+	target.y = clampf(camera_anchor.y, half.y, _camera_world_size().y - half.y) if half.y * 2 < _camera_world_size().y else _camera_world_size().y / 2
 	return target
 
 func _register_input(action: String, keys: Array) -> void:
@@ -91,8 +91,8 @@ func _process(delta: float) -> void:
 	camera.position = camera.position.lerp(target, 1 - exp(-T.CAMERA_RESPONSE * delta))
 	# Sau đổi tỉ lệ/viewport, clamp cả vị trí camera hiện tại ngay lập tức.
 	var half := get_viewport().get_visible_rect().size / 2
-	camera.position.x = clampf(camera.position.x, half.x, T.WORLD_SIZE.x - half.x) if half.x * 2 < T.WORLD_SIZE.x else T.WORLD_SIZE.x / 2
-	camera.position.y = clampf(camera.position.y, half.y, T.WORLD_SIZE.y - half.y) if half.y * 2 < T.WORLD_SIZE.y else T.WORLD_SIZE.y / 2
+	camera.position.x = clampf(camera.position.x, half.x, _camera_world_size().x - half.x) if half.x * 2 < _camera_world_size().x else _camera_world_size().x / 2
+	camera.position.y = clampf(camera.position.y, half.y, _camera_world_size().y - half.y) if half.y * 2 < _camera_world_size().y else _camera_world_size().y / 2
 	if debug_enabled:
 		var lines := PackedStringArray([tuning_panel.display_info(), "F1: debug | Cyan: player | Red: active slash | Yellow: dummy"])
 		# Hiển thị tất cả hằng số cấu hình, kể cả thông số suy ra.
@@ -110,3 +110,7 @@ func _draw() -> void:
 		draw_rect(rect, Color(0.36, 0.46, 0.30) if rect.size.y >= 32 else Color(0.62, 0.55, 0.34))
 	if debug_enabled:
 		draw_rect(Rect2(camera_anchor - Vector2(tuning.value("CAMERA_DEAD_ZONE.x"), T.CAMERA_DEAD_ZONE.y), Vector2(tuning.value("CAMERA_DEAD_ZONE.x"), T.CAMERA_DEAD_ZONE.y) * 2), Color(0.8, 0.8, 1, 0.7), false, 1)
+
+# Layout scenes override bounds without replacing A0 camera/dead-zone behaviour.
+func _camera_world_size() -> Vector2:
+	return T.WORLD_SIZE

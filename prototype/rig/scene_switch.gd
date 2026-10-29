@@ -11,3 +11,14 @@ func _ready() -> void:
 	get_viewport().size_changed.connect(layout)
 	layout.call()
 	button.pressed.connect(func() -> void: get_tree().change_scene_to_file("res://rig/rig_greybox.tscn"))
+
+	var map_button := Button.new()
+	map_button.text = "Đào Úc greybox"
+	map_button.focus_mode = Control.FOCUS_NONE
+	map_button.custom_minimum_size = Vector2(190,44)
+	add_child(map_button)
+	var map_layout := func() -> void:
+		map_button.position = Vector2(get_viewport().get_visible_rect().size.x/2-95,80)
+	get_viewport().size_changed.connect(map_layout)
+	map_layout.call()
+	map_button.pressed.connect(func() -> void: get_tree().change_scene_to_file("res://dao_uc/dao_uc.tscn"))

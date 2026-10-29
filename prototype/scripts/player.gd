@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if axis != 0:
 			facing = signf(axis)
-		velocity.x = move_toward(velocity.x, axis * tuning.value("RUN_SPEED"), tuning.value("ACCELERATION") * delta)
+		velocity.x = move_toward(velocity.x, axis * _run_speed(), tuning.value("ACCELERATION") * delta)
 	sprite.flip_h = facing < 0
 	coyote = tuning.value("COYOTE_TIME") if is_on_floor() else maxf(0, coyote - delta)
 	buffered_jump = maxf(0, buffered_jump - delta)
@@ -115,7 +115,7 @@ func _physics_process(delta: float) -> void:
 			turn_remaining = 0.0
 			if axis != 0:
 				facing = signf(axis)
-				velocity.x = axis * tuning.value("RUN_SPEED") * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
+				velocity.x = axis * _run_speed() * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
 		spin_direction = (-1.0 if Input.is_action_pressed("touch_diagonal_left") else 1.0) if (Input.is_action_pressed("touch_diagonal_left") or Input.is_action_pressed("touch_diagonal_right")) else 0.0
 		spin_elapsed = 0.0
 		spin_duration = 2.0 * tuning.value("TIME_TO_APEX")
@@ -145,15 +145,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y += tuning.gravity() * delta
 		move_and_slide()
-	position.x = clampf(position.x, T.PLAYER_BOX.x / 2, T.WORLD_SIZE.x - T.PLAYER_BOX.x / 2)
-	if position.y > T.FALL_RESET_Y:
-		position = T.SPAWN
-		velocity = Vector2.ZERO
-		buffered_jump = 0
-		coyote = 0
-		pulse_elapsed = T.SPRITE_SCALE_RECOVERY
-		spin_direction = 0.0
-		_clear_classic_air()
+	position.x = clampf(position.x, T.PLAYER_BOX.x / 2, _level_width() - T.PLAYER_BOX.x / 2)
+	if position.y > _fall_limit():
+		_reset_after_fall()
 	if is_on_floor():
 		spin_direction = 0.0
 		_clear_classic_air()
@@ -237,7 +231,7 @@ func _classic_horizontal(axis: float, delta: float) -> void:
 		if not is_on_floor():
 			facing = signf(axis)
 			turn_remaining = 0.0
-			velocity.x = axis * tuning.value("RUN_SPEED") * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
+			velocity.x = axis * _run_speed() * (T.CLASSIC_DIAGONAL_SPEED_RATIO if _diagonal_held() else 1.0)
 			return
 		if signf(axis) != facing:
 			facing = signf(axis)
@@ -249,7 +243,7 @@ func _classic_horizontal(axis: float, delta: float) -> void:
 			if turn_remaining > 0.000001:
 				velocity.x = 0.0
 				return
-		velocity.x = axis * tuning.value("RUN_SPEED")
+		velocity.x = axis * _run_speed()
 	else:
 		if turn_remaining > 0:
 			turn_remaining = 0.0
@@ -287,3 +281,25 @@ func _advance_apex_flip(delta: float) -> void:
 	if flip_elapsed >= duration:
 		flip_running = false
 		flip_completion_count += 1
+
+# Narrow extension points for layout-only scenes; defaults preserve original A0.
+func _speed_multiplier() -> float:
+	return 1.0
+
+func _run_speed() -> float:
+	return tuning.value("RUN_SPEED") * _speed_multiplier()
+
+func _level_width() -> float:
+	return T.WORLD_SIZE.x
+
+func _fall_limit() -> float:
+	return T.FALL_RESET_Y
+
+func _reset_after_fall() -> void:
+	position = T.SPAWN
+	velocity = Vector2.ZERO
+	buffered_jump = 0
+	coyote = 0
+	pulse_elapsed = T.SPRITE_SCALE_RECOVERY
+	spin_direction = 0.0
+	_clear_classic_air()

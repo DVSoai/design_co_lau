@@ -59,7 +59,7 @@ Khi đổi một thông số, cập nhật dòng tương ứng, ghi vào `05_log
 | Độ cao nhảy (`JUMP_HEIGHT`) | 96 px (= chiều cao nhân vật); 3 ô theo tile 32 px tạm thời | Đã duyệt (A0, 28/10/2026) | — | Mọi bố cục bản đồ | A0 Android, Realme RMX3760, Godot 4.7.2; commit `7973729` |
 | Khe rộng nhất | Chưa chốt; mốc 3 ô (96 px) cũ chỉ là đề xuất. Tầm ngang một nhảy: 152 px khi đi hướng riêng, 121,6 px khi giữ vùng chéo | Tạm thời | Thử khe/bục với biên an toàn, cả nhảy chéo và khinh công; tầm lý thuyết không phải bề rộng khe an toàn | Mọi bố cục bản đồ | `08_map_layout.md`, mục 1 |
 | Tốc độ thú cưỡi | Ngựa ×1,6; trâu ×1,2, nhảy 1,5 ô; voi không nhảy | Tạm thời | Chơi thử | Bản đồ có thú cưỡi, boss Tiên Du | `08_map_layout.md` |
-| Kích thước bản đồ | Làng 40–60 ô, đánh quái 80–120 ô, đấu trường 30–40 ô, ải 40 ô | Tạm thời | Khi duyệt từng bố cục | Bố cục | `08_map_layout.md` |
+| Kích thước bản đồ | Làng 40–60 ô, đánh quái 120–180 ô (Đào Úc 150), đấu trường 45–60 ô (Đào Úc 60), ải 40 ô | Tạm thời — chốt sau chơi thử | Khi duyệt từng bố cục | Bố cục | `08_map_layout.md` |
 
 ## Bộ thông số đã duyệt tại A0 trên Android
 
@@ -122,7 +122,7 @@ sang `co_lau_game`; việc qua A0 chưa mở khóa code game thật trước M�
 | Tốc độ chuẩn | 12 khung/giây; đòn thường và chiêu hồi dài 15 | Tạm thời | Bảng động tác bậc 1 được duyệt | Mọi sprite động | `09_animation_spec.md` |
 | Chiêu bấm liên tục | 18 khung/giây, tối đa hồi chiêu × 18 khung | Tạm thời | Chơi thử | 10 chiêu bấm liên tục | `09_animation_spec.md` |
 | Số khung từng động tác | Theo bảng trong `09_animation_spec.md` | Tạm thời | Từng bảng động tác được duyệt | Sprite | `09_animation_spec.md` |
-| Thời gian báo đòn boss | 0,8–1,2 giây | Tạm thời | Chơi thử từng boss | Sprite boss, hiệu ứng | `09_animation_spec.md` |
+| Thời gian báo đòn boss | Tướng tiên phong Hậu Ngô: 1,5 giây; boss sau rút dần về khoảng 1,2–0,8 giây, không dưới 0,8 giây | Tạm thời — chốt sau chơi thử | Chơi thử từng boss | Sprite boss, hiệu ứng | `09_animation_spec.md` |
 
 ## Chiến đấu và tiến trình
 

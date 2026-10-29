@@ -143,17 +143,30 @@ python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md --write-tables
 python3 tools/check_layout.py design/maps/lay_dao_uc_boss_v1.md
 ```
 
-## 6. Câu hỏi còn mở
+## 6. Câu hỏi còn mở và quyết định 29/10/2026
 
-- Mục08 đấu trường45–60 ô và mục13 đấu trường30–40 ô đang lệch. Dùng60 theo lệnh,
-  không sửa13; cần duyệt sau chơi thử. Lối vào là vùng nghỉ trước cửa trong map này.
-- GDD nêu ngưỡng60%/30% chung, boss này có2 pha: áp ngưỡng đầu60%; cần xác nhận
-  diễn giải này khi duyệt boss. Không thêm pha3 hay đổi HP/sát thương trong GDD.
-- GDD báo đòn1,5 giây nhưng13 ghi0,8–1,2 giây tạm thời: layout theo1,5 giây được
-  yêu cầu, không sửa13. Bán kính vòng đỏ, hitbox boss và độ rộng đòn chưa chốt:
-  phải đo trên mẫu thật trước khi xác nhận sân640 px đủ né.
-- Cửa thật phải đủ cao để không nhảy qua; collider cửa, sự kiện khóa/mở và
-  điểm reset trận cần đặc tả khi dựng mẫu. Lưới này không triển khai logic đó.
-- E phải nối bản đồ Hồi2 nào? GDD mở vùng ven biển nhưng cần chốt điểm đến cụ thể.
-- Bốn vị trí lính trên mặt lũy đã có; tầm cung, chồng lấn khi người chơi áp sát,
-  camera/art/HUD đầy đủ trên máy thật còn chờ duyệt. Không coi test tĩnh là thử game.
+### Đã quyết định cho lượt chơi thử
+
+- Giữ đấu trường60 ô; khoảng chung45–60 ô theo08 đã đồng bộ13;
+  **Tạm thời — chốt sau chơi thử**.
+- Tướng tiên phong Hậu Ngô có **đúng2 pha, chỉ chuyển ở60% HP**.
+  Không dùng ngưỡng30%, không thêm pha3. Không đổi HP/sát thương trong GDD.
+- Boss đầu báo đòn đặc biệt1,5 giây; boss sau rút dần về1,2–0,8 giây,
+  không dưới0,8 giây. Đã ghi13 và09, vẫn Tạm thời. Greybox chỉ hình nộm,
+  chưa có đòn, vòng đỏ hoặc AI boss.
+- E phải sau thắng/CS06 → Đầm lầy Đại Hoàng (NV16). E trái ↔ Đào Úc.
+  Hai bản đồ ngoài phạm vi (Tràng An/Đại Hoàng) chỉ có nhãn đích trong bản thử,
+  không tạo map giả thay cho thiết kế của chúng. Hai E nội bộ chuyển được hai chiều.
+- Giữ lũy/bậc hiện có để chơi thử. D mở sẵn; nút hồi sinh/quay lại không làm
+  cơ chế revive tại chỗ. R trước cửa vẫn dùng như lưới.
+- Lệnh tileset sau cần mặt cắt lũy/đất có rễ và đá vì đất chiếm gần nửa dưới màn.
+
+### Còn chờ chơi thử/quyết định
+
+- Cùng bản đồ quái: sau chơi thử quyết thêm tầng bục thứ2–3 theo08 hay không,
+  và khe c44–45 ở map quái giữ không đáy hay đáy nông. Hiện không sửa lưới.
+- Bán kính vòng đỏ, hitbox boss, tầm cung và va chạm khi áp sát chưa chốt;
+  sân640 px vẫn cần chơi thử trước khi duyệt khả năng né.
+- Cửa thật phải đủ cao để không nhảy qua; quy tắc khóa/mở và reset trận chờ
+  lượt triển khai riêng. Greybox không giả làm trận boss hoàn chỉnh.
+- Bốn lính cung là hình nộm đứng yên, không bắn; kiểm camera/HUD trên Realme còn chờ.

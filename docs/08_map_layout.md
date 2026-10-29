@@ -54,7 +54,7 @@ không coi camera đã đứng yên là trường hợp duy nhất.
 ## 2. Kích thước và quy ước chung
 
 - **Làng:** rộng 2 đến 3 màn (60 đến 90 ô), cao 12 ô, không có quái. NPC đứng cách nhau ít nhất 4 ô để chạm không nhầm.
-- **Bản đồ đánh quái:** rộng 4 đến 6 màn (120 đến 180 ô), cao 12 đến 22 ô, có hai đến ba tầng bục. Mỗi màn hình (30 ô ngang) có ít nhất một vùng sinh quái, để người chơi không phải chạy xa mới thấy quái.
+- **Bản đồ đánh quái:** rộng 4 đến 6 màn (120 đến 180 ô), cao 12 đến 22 ô, có hai đến ba tầng bục. Mỗi màn hình (30 ô ngang) có ít nhất một vùng sinh quái, trừ vùng an toàn được chỉ định; Đào Úc c0…31 là vùng an toàn, không sinh quái tự do (29/10/2026).
 - **Đấu trường boss:** khu kín ở cuối bản đồ, rộng 1,5 đến 2 màn (45 đến 60 ô). Lối vào đóng lại khi trận bắt đầu.
 - **Ải (giữ ải):** rộng 2 màn (60 ô), cờ lau ở giữa, 2 đến 3 cổng địch, 4 đến 6 ô dựng công trình.
 - **Lối ra:** đặt ở mép trái hoặc phải, cao bằng mặt đất, có biển chỉ đường; đi vào là chuyển bản đồ, không cần bấm.
@@ -100,16 +100,16 @@ Bản cũ100 ô đã thay bằng hai file **đang làm, chưa duyệt**:
 
 - [Đào Úc cấp10–15, 150×17 ô](../design/maps/lay_dao_uc_v1.md): NV9/CS04 tụ nghĩa,
   sân Đinh Điền/Nguyễn Bặc, bãi thổ phỉ, khe/chông64 px, nước nông, ba cổng D và ba
-  điểm quân G cho NV14/CS05; E phải nối E trái đấu trường. NV13 chưa rõ địa điểm,
-  ghi câu hỏi, không tự đặt ba hào trưởng ở đây.
+  điểm quân G cho NV14/CS05; E phải nối E trái đấu trường. NV13 mỗi hào trưởng ở một trong ba map Chiêm/Hoàng Long/Tràng An,
+  chốt vị trí khi làm bố cục các map đó; không đặt trong Đào Úc.
 - [Đấu trường Tướng tiên phong Hậu Ngô, 60×17 ô](../design/maps/lay_dao_uc_boss_v1.md):
   NV15, hai pha theo GDD, bốn vị trí lính cung trên lũy, đường bậc32 px tiếp cận,
   sân phẳng640 px, R trước cửa đóng khi vào trận, E sau thắng/CS06.
 
 Mặt đất chính y288 px để không bị cụm nút che khi camera chạm biên. Hai file có
 đủ lưới, chú thích, nhịp chơi, bảng kiểm bằng script và câu hỏi còn mở. Kích thước
-map quái/boss ở mục2 khác bảng tạm `13_thong_so.md`: dùng mục2 theo yêu cầu,
-không sửa13 và không coi kích thước mới đã được duyệt.
+map quái/boss ở mục2 đã đồng bộ `13_thong_so.md` ngày29/10/2026: khoảng120–180
+và45–60 ô, riêng Đào Úc150/60; vẫn Tạm thời — chốt sau chơi thử.
 
 Chạy kiểm và dựng sơ đồ/lớp phủ, áp tương tự cho file boss:
 
@@ -191,7 +191,24 @@ Mỗi dòng: mã, kích thước đề xuất, điểm đặc biệt của bố 
 
 - Chạy `python3 tools/check_layout.py FILE`: tự tìm khe/bậc đường bắt buộc, kiểm ≤64 px và biên1,5×, quỹ đạo chéo có AABB24×88 ở cả hai hướng. Không dùng khinh công cứu đường chính; vượt mức phải thiết kế bục/L. Script thoát khác0 khi FAIL, nguyên nguồn ở `tools/check_layout.py`.
 - Soát bảng vùng nút ở viewport960/1200: S/R không chạm hộp che, mép hố/bẫy thấy được khi tiến từ hai phía ở0–3 ô trước mép; xét dead-zone/look-ahead, miền làm mượt và chặn camera ở hai mép map. Đất chính trên hàng nút, không chỉ chừa140 px trên ảnh tĩnh.
-- Mỗi màn hình có ít nhất một vùng sinh quái (trừ làng).
+- Mỗi màn hình có ít nhất một vùng sinh quái (trừ làng và vùng an toàn được chỉ định). Đào Úc c0…31 là vùng an toàn (quyết định29/10/2026): không sinh quái tự do; Đinh Điền ởM chỉ là đấu tập NV9.
 - Mọi vật phẩm nhiệm vụ và NPC trong nhiệm vụ của bản đồ đều có vị trí trên lưới.
 - Đấu trường boss đủ chỗ cho mọi cơ chế của boss đó (Phần 4 GDD, mục 3).
 - Lối ra khớp với bản đồ kế bên trong cùng vùng.
+
+
+### Ghi cho lượt tileset Đào Úc sau (29/10/2026)
+
+Giữ map150 ô/đấu trường60 ô để chơi thử; khoảng chung120–180 và45–60,
+Tạm thời — chốt sau chơi thử. Sau thử quyết thêm tầng bục thứ2–3 và khe c44–45
+không đáy hay đáy nông. Đất chiếm gần nửa dưới viewport: tileset phải có chi tiết
+mặt cắt lũy, rễ, đá. Không vẽ tileset hoặc thay lưới trong lượt greybox này.
+
+
+Ghi chú nhiệm vụ/chuyển map đã quyết29/10/2026: NV11 có chuột đồng lớn ở Cánh đồng
+chiêm, lợn rừng ở Bến đò Hoàng Long, hổ con ở Núi đá Tràng An; không ở Đào Úc.
+NV13 mỗi hào trưởng ở một trong ba bản đồ đó, chốt tọa độ khi làm bố cục tương ứng.
+E trái Đào Úc ↔ Núi đá Tràng An; E phải đấu trường sau thắng/CS06 → Đầm lầy Đại Hoàng
+(NV16). Boss đầu đúng2 pha, chỉ chuyển60% HP và báo đòn1,5 giây; boss sau rút dần
+về1,2–0,8 giây, không dưới0,8 (Tạm thời). Greybox không dựng nhiệm vụ/AI hoặc hai
+map ngoài; chỉ chuyển được giữa hai map Đào Úc và đấu trường.

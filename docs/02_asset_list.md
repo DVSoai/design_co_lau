@@ -31,7 +31,7 @@ Có bốn loại hạng mục:
 - [ ] `chr_dbl_t1` — bộ phận thay thế trang bị bậc 1 (áo, quần, vũ khí Đao/Cung), chung điểm khớp và dữ liệu hoạt ảnh; không vẽ lại cả động tác (P3)
 - [ ] `chr_dbl_anim_dao_t1`, `chr_dbl_anim_cung_t1` — dữ liệu ghép bộ phận theo từng frame (vị trí, góc, thứ tự lớp, thời lượng, hit/spawn), đủ số khung trong `09_animation_spec.md`; số khung đang chưa chốt phải dựng/duyệt trước khi đóng hạng mục. Lộn đỉnh/chiêu lớn có thể thêm khung vẽ riêng khi cần (P4)
 - [ ] `map_dao_uc_bg`, `map_dao_uc_tiles` — cảnh nền và tileset Đào Úc (P9, P10). Khi duyệt cảnh nền, sao chép thành `art/reference/ref_map_hoa_lu.png` cho tới khi có cảnh làng Hoa Lư
-- [ ] `lay_dao_uc` — **đang làm, chưa duyệt (A1)**: [bố cục Đào Úc](../design/maps/lay_dao_uc_v1.md) + [đấu trường boss Hậu Ngô](../design/maps/lay_dao_uc_boss_v1.md), bảng kiểm và ảnh phủ nút960/1200; theo `08_map_layout.md`.
+- [ ] `lay_dao_uc` — **đang chơi thử khối màu (A1), chưa duyệt**: [bố cục Đào Úc](../design/maps/lay_dao_uc_v1.md) + [đấu trường boss Hậu Ngô](../design/maps/lay_dao_uc_boss_v1.md), bảng kiểm và ảnh phủ nút960/1200; theo `08_map_layout.md`.
 - [ ] `enm_tho_phi`, `enm_hau_ngo_giao`, `enm_hau_ngo_cung`, `enm_doi_truong_hau_ngo` — quái Đào Úc (P6)
 - [ ] `bos_hau_ngo_tien_phong` — tướng tiên phong Hậu Ngô (P7)
 - [ ] `ui_kit` — bộ khung giao diện (P12). Khi duyệt, sao chép thành `art/reference/ref_ui_kit.png`
