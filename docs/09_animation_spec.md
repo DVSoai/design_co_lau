@@ -46,7 +46,7 @@ khi lên/xuống và không chèn khung treo đỉnh. Khinh công cần lần b�
 - Mọi cú nhảy và cú khinh công cần **khung lộn người ở đỉnh**, một vòng 360° theo hướng mặt trong APEX_FLIP_TIME=0,20 s. Dựng pose ghép bộ phận theo từng khung, thay xoay nguyên sprite tạm của A0; lộn đỉnh/chiêu lớn được vẽ thêm khung riêng nếu cần để đọc rõ. Giữ đúng tỉ lệ và điểm khớp của mọi mảnh. Không xoay body hoặc hitbox theo hình.
 - Bắt đầu lộn khi vận tốc lên vào cửa sổ 30%; vòng của khinh công vẫn phải đủ một vòng. Nếu hai vòng tới sát nhau, xếp vòng sau sau vòng trước như mẫu A0. Kiểm tra kết thúc trước khi đáp đất trên quỹ đạo cùng cao độ; kiểm tra đáp lên bậc/va trần riêng, không chèn thời gian giữ nhân vật trên không để đủ khung.
 - Quay đầu bám TURN_TIME=0,05 s: khung logic đầu chỉ đổi hướng mặt, giữ vị trí rồi mới chạy; chạm nhẹ chỉ quay mặt. Không kéo dài nhịp quay theo số khung ở tốc độ 12 fps. Chạy đạt 200 px/s ngay khi bấm, buông hãm trong STOP_TIME=0,08 s.
-- Số khung nghệ thuật, chia thời lượng từng khung và bộ sprite thành phẩm còn phải dựng/duyệt ở Mốc A. Tổng thời gian A0 đã chốt thắng tốc độ 12/15 fps đề xuất nếu hai thứ không khớp.
+- Số khung nghệ thuật, chia thời lượng từng khung và bộ sprite thành phẩm còn phải dựng/duyệt ở Mốc A1. Tổng thời gian A0 đã chốt thắng tốc độ 12/15 fps đề xuất nếu hai thứ không khớp.
 - Chém cơ bản: 0,30 s, cửa sổ trúng 0,10–0,20 s, hồi thêm 0,15 s sau động tác. Bảng combo bên dưới là đề xuất ngoài phạm vi nghiệm thu A0; khi dựng nhát cơ bản phải chia timeline để khớp nhịp này, không dùng số khung cũ để đổi thời điểm hit.
 - Vệt chém/hiệu ứng trúng đòn và số sát thương luôn ở lớp vẽ trên nhân vật, hình nộm và quái; lộn người không thay đổi thứ tự lớp hoặc hộp đánh.
 
@@ -183,4 +183,4 @@ Boss cưỡi thú (Nguyễn Thủ Tiệp cưỡi ngựa, Kiều Công Hãn cư�
 
 ## Hoạt ảnh thời trang
 
-Vòng riêng 6–10 khung (Đề xuất) chạy song song rig: cape bay theo đứng/chạy/nhảy, vũ khí phản sáng kim loại. Không đổi hit/spawn/cancel hoặc kéo dài động tác. Mỗi món một dạng cố định; không biến thành bộ nhiều cấp. Khung, tốc độ và giao lớp cần duyệt Mốc A; không dùng năng lượng phép thuật.
+Vòng riêng 6–10 khung (Đề xuất) chạy song song rig: cape bay theo đứng/chạy/nhảy, vũ khí phản sáng kim loại. Không đổi hit/spawn/cancel hoặc kéo dài động tác. Mỗi món một dạng cố định; không biến thành bộ nhiều cấp. Khung, tốc độ và giao lớp cần duyệt Mốc A1; không dùng năng lượng phép thuật.

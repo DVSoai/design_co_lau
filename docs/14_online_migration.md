@@ -2,7 +2,7 @@
 
 Cờ Lau Khởi Nghĩa phát hành trước dưới dạng game offline. Định hướng lâu dài là có thể chuyển thành game online thuộc thể loại nhập vai mobile khi có nguồn lực. Tài liệu này **không** yêu cầu làm phần online bây giờ: không viết máy chủ game, không chọn ngôn ngữ hay dịch vụ máy chủ (Golang, Supabase hay thứ khác). Nó chỉ quy định những gì bản offline phải làm ngay từ đầu để sau này chuyển được mà không phải viết lại game.
 
-Thiết kế hình ảnh, màn hình và bản đồ trong Design Kit không cần đổi vì tài liệu này. Phần ảnh hưởng chủ yếu nằm ở dữ liệu và code, nên các quy tắc dưới đây được kiểm ở mốc A (cho dữ liệu và kiến trúc) và áp dụng khi code.
+Thiết kế hình ảnh, màn hình và bản đồ trong Design Kit không cần đổi vì tài liệu này. Phần ảnh hưởng chủ yếu nằm ở dữ liệu và code, nên các quy tắc dưới đây được kiểm ở mốc A1 (cho dữ liệu và kiến trúc) và áp dụng khi code.
 
 ## 1. ID ổn định
 
@@ -75,7 +75,7 @@ Bản đầu không có máy chủ riêng, nên không có gì để chuyển t�
 
 Chuyển sang online nhiều người chơi thường đổi cách xếp loại dịch vụ trò chơi điện tử và đổi yêu cầu giấy phép, nên phải hỏi lại luật sư trước khi làm. Nếu bản online có giao dịch vật phẩm giữa người chơi, cần kiểm tra quy định hiện hành về mua bán vật phẩm ảo giữa người chơi (Nghị định 147/2024 có điều khoản về việc này). Đây là việc của giai đoạn online, không ảnh hưởng thiết kế bản offline.
 
-## 7. Kiểm ở mốc A
+## 7. Kiểm ở mốc A1
 
 - Mọi file dữ liệu và mọi hạng mục trong `02_asset_list.md` có id theo mục 1.
 - Đặc tả lớp hệ thống (khi viết ở đầu giai đoạn code) liệt kê đủ các lệnh theo mục 2.

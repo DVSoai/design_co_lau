@@ -1,7 +1,7 @@
 # Rig nhân vật Đinh Bộ Lĩnh — greybox Giai đoạn 1, bước 1
 
 **Đề xuất — chưa duyệt bộ phận, khớp, pose hay mỹ thuật.** Chỉ là thử nghiệm trong
-`prototype/`, không phải mã game thật, không chép sang `co_lau_game`. Không mở Mốc A
+`prototype/`, không phải mã game thật, không chép sang `co_lau_game`. Không mở Mốc A1
 hay Giai đoạn 2. Nguồn: `01_art_bible.md`, `09_animation_spec.md`, `13_thong_so.md`.
 Giữ chuẩn A0: người 96 px, khung 128×128, chân tại (64,120), hitbox 24×88;
 Godot **4.7.2 Standard/GDScript**. Khối màu phân biệt mảnh, không phải art/palette mới.

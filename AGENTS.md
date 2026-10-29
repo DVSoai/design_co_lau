@@ -1,13 +1,13 @@
 # Hướng dẫn cho Codex — thiết kế Cờ Lau Khởi Nghĩa (Design Kit v2)
 
-Thư mục này dùng để hoàn thiện **toàn bộ thiết kế** của game Cờ Lau Khởi Nghĩa trước khi viết code: hình ảnh nhân vật và bản đồ, mockup từng màn hình và các trạng thái giao diện, luồng tương tác, bố cục bản đồ chơi được, đặc tả hoạt ảnh, storyboard nhiệm vụ và cutscene. Thiết kế chỉ được coi là xong khi qua mốc A ở `docs/11_design_freeze.md`. Chưa qua mốc A thì chưa code.
+Thư mục này dùng để hoàn thiện **toàn bộ thiết kế** của game Cờ Lau Khởi Nghĩa theo từng hồi trước khi đưa nội dung vào code: hình ảnh nhân vật và bản đồ, mockup từng màn hình và các trạng thái giao diện, luồng tương tác, bố cục bản đồ chơi được, đặc tả hoạt ảnh, storyboard nhiệm vụ và cutscene. Thiết kế toàn game chỉ được coi là xong khi qua A1–A5 ở `docs/11_design_freeze.md`. Chưa qua mốc A1 thì chưa code game thật. Sau A1, thiết kế Hồi 2–5 làm song song với code; nội dung Hồi n chỉ đưa vào game sau khi qua An.
 
 ## Tổ chức repo
 
 - **`design_co_lau`:** lưu tài liệu thiết kế, art nguồn, script và `prototype/` cho nguyên mẫu A0. Mã trong `prototype/` là mã bỏ đi, chỉ dùng kiểm chứng thiết kế; không phát triển thành game thật.
-- **`co_lau_game`:** repo riêng cho game thật, đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A được duyệt. Quy tắc chưa qua Mốc A thì chưa code áp dụng cho game thật; nguyên mẫu A0 trong `prototype/` là ngoại lệ giới hạn, không thay thế việc duyệt Mốc A.
+- **`co_lau_game`:** repo riêng cho game thật, đã được người dùng tạo và thêm; chỉ bắt đầu triển khai game thật sau khi Mốc A1 được duyệt. Quy tắc chưa qua Mốc A1 thì chưa code áp dụng cho game thật; nguyên mẫu A0 trong `prototype/` là ngoại lệ giới hạn, không thay thế việc duyệt Mốc A1.
 - **Chuyển art:** chỉ chép ảnh đã duyệt từ `art/approved/` sang `co_lau_game/assets/` bằng script. Mỗi lần chép phải ghi commit nguồn của `design_co_lau`; không đưa concept hay placeholder chưa duyệt vào luồng chuyển art này.
-- **Chốt phiên bản:** khi qua Mốc A, gắn tag `design-vX.Y` cho bản thiết kế đã duyệt. Repo game phải ghi rõ tag thiết kế đang theo và giữ bản sao `docs/GDD.md` lấy từ đúng tag đó.
+- **Chốt phiên bản:** khi qua mỗi mốc A1…A5, gắn tag `design-vX.Y` cho bản thiết kế đã duyệt. Repo game phải ghi rõ tag thiết kế đang theo và cập nhật bản sao `docs/GDD.md` và `DESIGN_VERSION.md` theo tag mới nhất đã duyệt.
 
 ## Nguyên tắc offline
 
@@ -32,7 +32,7 @@ Bạn (Codex) làm hai loại việc:
 ## Tài liệu nguồn và engine
 
 - **GDD chính thức là `docs/GDD.md` trong bộ kit này.** Phiên bản ghi ở dòng đầu file. File Word và PDF gửi kèm được dựng tự động từ đúng file này, nên nội dung giống hệt; tài liệu trên claude.ai là bản làm việc. Khi duyệt, người dùng và Codex cùng nói theo số phiên bản. Nếu thấy GDD mâu thuẫn với `docs/06` đến `docs/14`, báo người dùng; trong lúc chờ thì theo `docs/06` đến `docs/14`.
-- **Engine đã chốt là Godot 4, ngôn ngữ GDScript** (kiến trúc ở GDD Phần 6). Thiết kế phải làm được bằng các thành phần sẵn có của Godot: bản đồ bằng TileMapLayer, giao diện bằng Control và Theme, hoạt ảnh bằng AnimationPlayer. Việc code vẫn chỉ bắt đầu sau mốc A.
+- **Engine đã chốt là Godot 4, ngôn ngữ GDScript** (kiến trúc ở GDD Phần 6). Thiết kế phải làm được bằng các thành phần sẵn có của Godot: bản đồ bằng TileMapLayer, giao diện bằng Control và Theme, hoạt ảnh bằng AnimationPlayer. Việc code vẫn chỉ bắt đầu sau mốc A1.
 
 ## Thông số tạm thời
 
@@ -40,7 +40,7 @@ Nhiều con số (độ phân giải, kích thước sprite, số đo nhảy, s�
 
 ## Giai đoạn là thứ tự sản xuất thiết kế, không phải thứ tự lập trình
 
-Các giai đoạn trong `02_asset_list.md` sắp theo thứ tự nên làm để thiết kế nhất quán: chốt phong cách, dựng một bộ mẫu chuẩn (nhân vật chính, một vùng, màn chơi), rồi mở rộng ra toàn game. Giai đoạn 1 có nhiều thứ của trận đánh đầu tiên chỉ vì đó là bộ mẫu dễ so sánh nhất, không có nghĩa là bắt đầu code combat. Code chỉ bắt đầu sau khi qua mốc A của `11_design_freeze.md`.
+Các giai đoạn trong `02_asset_list.md` sắp theo thứ tự nên làm để thiết kế nhất quán: chốt phong cách, dựng một bộ mẫu chuẩn (nhân vật chính, một vùng, màn chơi), rồi mở rộng ra toàn game. Giai đoạn 1 có nhiều thứ của trận đánh đầu tiên chỉ vì đó là bộ mẫu dễ so sánh nhất, không có nghĩa là bắt đầu code combat. Code chỉ bắt đầu sau khi qua mốc A1 của `11_design_freeze.md`.
 
 ## Quy tắc bắt buộc
 
@@ -94,4 +94,4 @@ Tạo ảnh tốn hạn mức gói ChatGPT nhanh hơn nhiều so với tạo ch�
 - Thứ tự ưu tiên khi mâu thuẫn: **docs/ của dự án > AGENTS.md > skill tham khảo**. Quyết định dự án thắng các ví dụ mặc định; không tự thay thông số đã chốt.
 - Skill chỉ là hướng dẫn. **Không chạy script nào trong skill nếu người dùng chưa yêu cầu.** Không tự tải/cài addon, cấu hình hook hay tự động hóa từ skill; bên thứ ba mới cần người dùng duyệt theo `docs/15_kien_truc_game.md`.
 - Router có thể nhắc skill của engine/phạm vi chưa chép; không tự tải bổ sung. Dự án dùng Godot 4.7.2 Standard/GDScript.
-- Khi bàn giao `co_lau_game` sau Mốc A, chép `tools/agent-skills/` và giữ nguyên mục “Skill tham khảo” này trong AGENTS.md của repo game.
+- Khi bàn giao `co_lau_game` sau Mốc A1, chép `tools/agent-skills/` và giữ nguyên mục “Skill tham khảo” này trong AGENTS.md của repo game.

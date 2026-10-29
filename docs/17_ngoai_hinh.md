@@ -1,6 +1,6 @@
 # Hệ thống ngoại hình
 
-Ô thời trang, một dạng cố định, gồm vũ khí và có chỉ số: người dùng chốt **28/10/2026**. Giới hạn số, hiệu ứng và thiết kế chi tiết còn đề xuất Mốc A. Theo 01_art_bible và rig 16; không sửa prototype ở lượt này.
+Ô thời trang, một dạng cố định, gồm vũ khí và có chỉ số: người dùng chốt **28/10/2026**. Giới hạn số, hiệu ứng và thiết kế chi tiết còn đề xuất Mốc A1. Theo 01_art_bible và rig 16; không sửa prototype ở lượt này.
 
 ## Trang bị thường và part_set
 
@@ -20,7 +20,7 @@ Mọi bậc có áo/quần/đao/cung riêng; bám STYLE/AVOID, không áo dài/g
 
 ## Hiệu ứng cường hóa — đề xuất, chưa chốt số
 
-+8 ánh kim nhẹ trên áo/vũ khí; +12 vệt phản sáng theo đường vung; +16 hạt bụi/tia lửa quanh vũ khí khi chuyển động/va chạm. Chỉ phản xạ kim loại, bụi và tia lửa vật lý; không hào quang năng lượng, không hạt phép tự phát. Cần thử độ dễ đọc và chốt mốc ở Mốc A.
++8 ánh kim nhẹ trên áo/vũ khí; +12 vệt phản sáng theo đường vung; +16 hạt bụi/tia lửa quanh vũ khí khi chuyển động/va chạm. Chỉ phản xạ kim loại, bụi và tia lửa vật lý; không hào quang năng lượng, không hạt phép tự phát. Cần thử độ dễ đọc và chốt mốc ở Mốc A1.
 
 ## Các ô thời trang bản đầu
 
@@ -33,7 +33,7 @@ Mọi bậc có áo/quần/đao/cung riêng; bám STYLE/AVOID, không áo dài/g
 - `mount`: thú cưỡi ngoại hình.
 - `title`: danh hiệu: hình trên đầu.
 
-Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
+Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A1, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
 
 ## Dữ liệu và khối lượng
 
