@@ -184,3 +184,20 @@ Boss cưỡi thú (Nguyễn Thủ Tiệp cưỡi ngựa, Kiều Công Hãn cư�
 ## Hoạt ảnh thời trang
 
 Vòng riêng 6–10 khung (Đề xuất) chạy song song rig: cape bay theo đứng/chạy/nhảy, vũ khí phản sáng kim loại. Không đổi hit/spawn/cancel hoặc kéo dài động tác. Mỗi món một dạng cố định; không biến thành bộ nhiều cấp. Khung, tốc độ và giao lớp cần duyệt Mốc A1; không dùng năng lượng phép thuật.
+
+## Pilot bộ tư thế vẽ trọn — chưa duyệt (29/10/2026)
+
+Bản thử riêng `prototype/pose_rig`, không thay số hay nhân vật A0. Ảnh2×,
+linear,4 lớp chỉ dời/lật; hình vung vẽ sẵn, không xoay vũ khí. Rig16 mảnh dừng.
+
+| Clip | Khung dữ liệu | Hình lớp dùng | Thời lượng |
+|---|---:|---|---|
+| idle | 4 | body1,2,1,2; legs1; head1; dao1 sau lưng | 1/6s mỗi khung, lặp |
+| run | 6 | body3–8; legs2–7; head1; dao1 sau lưng | 1/12s mỗi khung, lặp |
+| jump | 2 | body9; legs8; head1; dao1 | 0,19s mỗi khung; lên đỉnh0,38s |
+| fall | 2 | body10; legs9; head1; dao1 | 1/12s mỗi khung, lặp |
+| slash | 4 | body11,12,12,12; legs10; head2; dao2,3,4,5 | 0,075s mỗi khung, tổng0,30s |
+
+Hai frame jump/fall hiện dùng cùng hình, không tuyên bố đã vẽ đủ biến thể.
+Slash4 là ngoại lệ pilot theo lệnh, chưa thay bảng8 khung combo thành phẩm.
+Hurt/head3 và dao6 có nguồn để soát, chưa đưa thành động tác hoàn chỉnh.

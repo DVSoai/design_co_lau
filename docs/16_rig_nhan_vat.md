@@ -363,3 +363,31 @@ attach và hitbox; không dùng góc 0 cũ khiến lưỡi nằm dọc cẳng ta
 Cung gắn nắm tay xa; trục hai đầu cánh cung lúc bắn lệch vuông góc 0,490°.
 59 pose đã kiểm (13 động tác và run/shoot trái), không mũi đao nào nằm giữa khuỷu
 và cổ tay. [Báo cáo, ảnh và script](reports/g1_weapon_direction_report.md).
+
+## Hướng mới: bộ tư thế vẽ trọn theo lớp — bản thử, chưa duyệt
+
+Quyết định29/10/2026, dựng30/10/2026: rig16 mảnh **đã dừng** vì khớp lộ,
+tay như que, dáng cứng, vũ khí sai hướng và vỡ đường nét khi xoay/co pixel.
+Không xóa hoặc sửa dữ liệu rig cũ, không dùng nhánhv3/frame-rig-idle/3d-pilot.
+Nhánh `feat/g1-pose-sheets-pilot` từ main8bd5876.
+
+Thay bằng đầu / thân kèm hai tay / chân / vũ khí, mỗi lớp có tư thế vẽ trọn.
+4 Sprite2D scale0,5 cố định và filterlinear; chỉ gốc lật ngang±1, mọi rotation0.
+Căn đế tại y0, hông thân vào hông chân, cổ đầu vào cổ thân; đao theo nắm tay
+khi đánh và mốc lưng khi không đánh. Mọi mốc trong
+`art/sprites/characters/chr_dbl_poses/anchors.json`; dữ liệu clip trong
+`prototype/pose_rig/data/frames.json`, không đặt góc vung trong mã.
+
+Idle4 khung dùng2 hình thân; run6 khung; jump2/fall2 dùng lại một pose từng lớp;
+slash4 khung giơ/vung/chém/kết thúc, tổng0,30s. Chưa có cả combo/khinh công,
+không thay A0 hay Đào Úc. Jump/fall mới kiểm hướng dựng, chưa được duyệt mỹ thuật.
+
+Tờ nguồn đầu/vũ khí có scale khác tờ thân/chân: script đăng ký đồng dạng
+TOÀN TỜ rồi dùng một hệ số xuất chung. Đây là giới hạn AI nguồn cần ghi rõ;
+không phải tất cả PNG nguồn nguyên bản đã đồng tỉ lệ. Không ép32 màu haypixel.
+Bản đóng khung idle2× cao192px, chân cách đáy16px, tương ứng96/8logic.
+[Báo cáo, ảnh thật, script và hạn chế](reports/g1_pose_sheets_report.md).
+
+Blender4.3.2 đã có sẵn: file `pose_authoring_2d.blend` là bàn dựng4 mặt phẳng
+tranh2D có texture đóng gói và camera trực giao. Render thật được lưu để soát,
+**không phải mô hình3D hoặc nhân vật mới được điêu khắc/vẽ tay trong Blender**.

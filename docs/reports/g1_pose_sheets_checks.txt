@@ -1,0 +1,621 @@
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --editor --import --quit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (3 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | idle_2x.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | scene_left.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | scene_right.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (2 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | scene_left.png[39m[0m
+[  33% ] [90m[1mreimport[22m | scene_right.png[39m[0m
+[  66% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (2 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Jump range: 152.0 px; gap: 96.0 px; required: 144.0 px
+PASS: default horizontal jump range has 1.5x gap margin
+PASS: classic controls and air jump default on with 96 px jump
+PASS: player lands on ground
+PASS: keyboard action moves player
+PASS: jump rises toward configured apex
+PASS: player falls and lands
+PASS: Area2D slash hits dummy exactly once
+PASS: damage label is spawned
+PASS: F1 action enables hitboxes and values
+PASS: fall resets player
+PASS: coyote jump works just after leaving ledge
+PASS: buffered jump fires on landing
+PASS: F1 action disables debug
+PASS: gear opens tuning panel
+PASS: slider updates live run speed
+PASS: player consumes live speed instead of default
+PASS: jump gravity and velocity recalculate immediately
+PASS: runtime edits leave tuning defaults unchanged
+PASS: clipboard text contains current and derived values
+PASS: gear closes tuning panel
+PASS: idle bob reaches +1 px at quarter period
+PASS: idle bob reaches -1 px at three-quarter period
+PASS: running leans 4 degrees right
+PASS: step frequency scales with speed and lean follows left movement
+PASS: takeoff stretches sprite to 0.9 x 1.1
+PASS: takeoff scale recovers in 0.1 seconds
+PASS: landing squashes sprite to 1.15 x 0.85
+PASS: landing scale recovers in 0.1 seconds
+PASS: slash shifts sprite 4 px toward facing inside hit window
+PASS: slash shift stops outside hit window
+PASS: sprite motion leaves body and hitbox transforms and dimensions unchanged
+PASS: gear switch disables all fake motion and restores neutral transform
+PASS: clipboard text includes live motion switch
+PASS: gear switch re-enables fake motion
+PASS: repeated arrow keys leave all tuning values unchanged while panel is open
+PASS: wheel events over every slider leave all tuning values unchanged
+PASS: gear, checkbox and copy button cannot take keyboard focus
+PASS: mouse drag still updates slider with focus disabled
+Android layout: (1920, 1080) viewport=(960.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (1920, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (1920, 1080)
+PASS: buttons remain anchored to live viewport corners at (1920, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1920, 1080)
+PASS: camera limits use live viewport at (1920, 1080)
+Android layout: (2400, 1080) viewport=(1200.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (2400, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (2400, 1080)
+PASS: buttons remain anchored to live viewport corners at (2400, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (2400, 1080)
+PASS: camera limits use live viewport at (2400, 1080)
+Android layout: (1600, 720) viewport=(1200.0, 540.0) stretch=(1.333333, 1.333333)
+PASS: fractional expand fills (1600, 720) without letterbox
+PASS: touch controls, gear and panel stay inside (1600, 720)
+PASS: buttons remain anchored to live viewport corners at (1600, 720)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1600, 720)
+PASS: camera limits use live viewport at (1600, 720)
+PASS: gear switches live stretch to integer
+PASS: gear switches live stretch back to fractional
+PASS: gear shows physical screen, viewport and current scale
+PASS: F1 debug includes the same live display diagnostics
+PASS: horizontal touch starting on track cannot change slider value
+PASS: vertical touch swipe across slider track never changes tuning
+PASS: vertical touch swipe scrolls the tuning panel
+PASS: vertical gesture starting on thumb does not drift its value
+PASS: horizontal touch drag starting on thumb adjusts value
+PASS: slider touch area is at least 44 px high
+PASS: only three movement buttons are drawn; diagonal zones have no normal drawing
+PASS: d-pad follows 2.2d spacing and 1.35d jump height with centered up button
+PASS: invisible zones are adjacent to both sides of up on the same row
+PASS: up button wins hit priority when a diagonal region overlaps
+PASS: diagonal wins hit priority over lower direction left
+PASS: diagonal wins hit priority over lower direction right
+PASS: F1 enables outline-only diagonal diagnostics
+PASS: diagonal zones remain touchable with debug drawing hidden
+PASS: diagonal jump regions are on matching sides and 0.9x wide
+PASS: diagonal region jumps and holds direction -1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: diagonal region jumps and holds direction 1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: sliding from diagonal to up keeps jump and releases direction feedback
+PASS: sliding to opposite diagonal updates direction and both visible highlights
+PASS: sliding down to right retains direction without jump
+PASS: sliding outside all regions releases actions and feedback
+PASS: multitouch release preserves another finger's direction
+PASS: holding up repeats jump after landing
+PASS: auto-jump switch off permits only one jump per hold
+Variable jump: held height=76.5905456542969 early-release height=28.2679748535156
+PASS: early release gives lower jump when variable jump is enabled
+PASS: variable jump off retains full-height early-release jump
+PASS: jump toggle defaults are auto-repeat on and variable height off
+A0 placeholder: health bottle count=4
+PASS: health placeholder decrements count on press
+A0 placeholder: target
+A0 placeholder: skill_1
+PASS: HUD switch hides menu and frees top-right space
+PASS: HUD can be restored and gear is at least 56x56
+PASS: slash trail and damage text render above dummy
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+A0 smoke failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/classic_headless.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+Classic checks failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/rig_smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: idle has 4 frames
+PASS: idle frame at 0.000: foot_near touches baseline
+PASS: idle frame at 0.000: foot_far touches baseline
+PASS: idle frame at 0.167: foot_near touches baseline
+PASS: idle frame at 0.167: foot_far touches baseline
+PASS: idle frame at 0.333: foot_near touches baseline
+PASS: idle frame at 0.333: foot_far touches baseline
+PASS: idle frame at 0.500: foot_near touches baseline
+PASS: idle frame at 0.500: foot_far touches baseline
+PASS: run has 6 frames
+PASS: jump_up has 2 frames
+PASS: apex_flip has 6 frames
+PASS: fall has 2 frames
+PASS: land has 2 frames
+PASS: land frame at 0.000: foot_near touches baseline
+PASS: land frame at 0.000: foot_far touches baseline
+PASS: land frame at 0.083: foot_near touches baseline
+PASS: land frame at 0.083: foot_far touches baseline
+PASS: turn has 2 frames
+PASS: slash_1 has 4 frames
+PASS: slash_2 has 4 frames
+PASS: slash_3 has 5 frames
+PASS: shoot has 5 frames
+PASS: hurt has 2 frames
+PASS: knockdown has 4 frames
+PASS: all joints stay at authored parent anchors in every frame
+PASS: all local angles stay within proposed joint limits
+PASS: apex clip completes exactly 360 degrees at 0.20 s
+PASS: turn stays within A0 0.05 s
+PASS: basic slash keeps A0 0.30 s
+PASS: real A0 player starts grounded
+PASS: toggle off restores original A0 sprite
+PASS: toggle on replaces only the sprite
+PASS: bow toggle swaps weapon
+PASS: real idle state selects idle
+PASS: real movement selects run
+PASS: real reversal selects turn
+PASS: real slash selects basic dao clip
+PASS: real slash input with bow selects shoot preview
+PASS: real jump selects ascent
+PASS: real flight selects apex flip then fall
+PASS: real 360 flip completes before same-height landing
+PASS: real khinh cong activates unchanged
+PASS: both khinh-cong flips finish before landing
+PASS: visual rig never rotates/scales body or slash hitbox
+Rig smoke failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/dao_uc_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: field map switch camera snapped while player input locked
+PASS: field 960 top HUD level actual rectangle matches Python checker
+PASS: field 960 top HUD hp actual rectangle matches Python checker
+PASS: field 960 top HUD mp actual rectangle matches Python checker
+PASS: field 960 top HUD menu actual rectangle matches Python checker
+PASS: field 960 top HUD gear actual rectangle matches Python checker
+PASS: field 960 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: field 1200 top HUD level actual rectangle matches Python checker
+PASS: field 1200 top HUD hp actual rectangle matches Python checker
+PASS: field 1200 top HUD mp actual rectangle matches Python checker
+PASS: field 1200 top HUD menu actual rectangle matches Python checker
+PASS: field 1200 top HUD gear actual rectangle matches Python checker
+PASS: field 1200 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: boss map switch camera snapped while player input locked
+PASS: boss 960 top HUD level actual rectangle matches Python checker
+PASS: boss 960 top HUD hp actual rectangle matches Python checker
+PASS: boss 960 top HUD mp actual rectangle matches Python checker
+PASS: boss 960 top HUD menu actual rectangle matches Python checker
+PASS: boss 960 top HUD gear actual rectangle matches Python checker
+PASS: boss 960 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: boss 1200 top HUD level actual rectangle matches Python checker
+PASS: boss 1200 top HUD hp actual rectangle matches Python checker
+PASS: boss 1200 top HUD mp actual rectangle matches Python checker
+PASS: boss 1200 top HUD menu actual rectangle matches Python checker
+PASS: boss 1200 top HUD gear actual rectangle matches Python checker
+PASS: boss 1200 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: field map switch camera snapped while player input locked
+PASS: field JSON source SHA256 matches canonical Markdown
+PASS: field original Markdown layout block found
+PASS: field JSON matches every original cell (2550 compared)
+GRID field '#': original=1216 loaded=1216
+PASS: field '#' counts match original grid
+GRID field '=': original=21 loaded=21
+PASS: field '=' counts match original grid
+GRID field '^': original=2 loaded=2
+PASS: field '^' counts match original grid
+GRID field '~': original=3 loaded=3
+PASS: field '~' counts match original grid
+GRID field 'L': original=5 loaded=5
+PASS: field 'L' counts match original grid
+PASS: boss JSON source SHA256 matches canonical Markdown
+PASS: boss original Markdown layout block found
+PASS: boss JSON matches every original cell (1020 compared)
+GRID boss '#': original=516 loaded=516
+PASS: boss '#' counts match original grid
+GRID boss '=': original=0 loaded=0
+PASS: boss '=' counts match original grid
+GRID boss '^': original=0 loaded=0
+PASS: boss '^' counts match original grid
+GRID boss '~': original=0 loaded=0
+PASS: boss '~' counts match original grid
+GRID boss 'L': original=0 loaded=0
+PASS: boss 'L' counts match original grid
+PASS: field appears at canonical S
+PASS: field S stays grounded and still after 1 second
+PASS: spawn camera reset before player input
+PASS: boss map switch camera snapped while player input locked
+WALK field: x400.00 -> map=boss x400.00; frames=1312 jumps=6 resets=0
+PASS: S -> field E right -> boss using real right/jump input, no falls
+PASS: boss appears at S and stays grounded after 1 second
+WALK boss: x400.00 -> map=boss x1863.33; frames=439 jumps=2 resets=0
+PASS: walk to rampart foot and climb the 32px steps from the grid
+PASS: player reaches top rampart at canonical y224
+PASS: required route never uses khinh cong
+PASS: field map switch camera snapped while player input locked
+PASS: boss left E returns to field right-side R
+PASS: return portal resets camera at right map clamp
+PASS: fall respawn camera snapped before input unlock
+PASS: fall into c44-45 -> preceding R c13, not A0 SPAWN
+PASS: spikes respawn camera snapped before input unlock
+PASS: spikes reset to preceding R without HP system
+PASS: water speed 140=0.7*200 while A0 RUN_SPEED stays 200
+PASS: one-way shelf passed from below and landed on top
+PASS: hold touch ↑ climbs ladder c109 above r4 shelf height
+PASS: hold down descends ladder
+PASS: leave ladder left and stand at r4 feet on upper shelf y160
+PASS: Space/context jump leaves ladder using original A0 jump resolver
+PASS: canonical N dummy accepts A0 slash damage
+Dao Uc checks failures: 0; physics frames=2343
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/pose_rig_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: idle exact frame count 4
+PASS: idle/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/1 dir1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/1 dir1 support sole_y=0.000000
+PASS: idle/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/1 dir-1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/1 dir-1 support sole_y=0.000000
+PASS: idle/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/2 dir1 support sole_y=0.000000
+PASS: idle/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/2 dir-1 support sole_y=0.000000
+PASS: idle/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/3 dir1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/3 dir1 support sole_y=0.000000
+PASS: idle/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/3 dir-1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/3 dir-1 support sole_y=0.000000
+PASS: idle/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/4 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/4 dir1 support sole_y=0.000000
+PASS: idle/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/4 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/4 dir-1 support sole_y=0.000000
+PASS: run exact frame count 6
+PASS: run/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/1 dir1 support sole_y=0.000000
+PASS: run/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/1 dir-1 support sole_y=0.000000
+PASS: run/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/2 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: run/2 dir1 support sole_y=0.000000
+PASS: run/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/2 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: run/2 dir-1 support sole_y=0.000000
+PASS: run/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/3 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/3 dir1 support sole_y=0.000000
+PASS: run/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/3 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/3 dir-1 support sole_y=0.000000
+PASS: run/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/4 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/4 dir1 support sole_y=0.000000
+PASS: run/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/4 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/4 dir-1 support sole_y=0.000000
+PASS: run/5 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/5 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/5 dir1 support sole_y=0.000000
+PASS: run/5 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/5 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/5 dir-1 support sole_y=0.000000
+PASS: run/6 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/6 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/6 dir1 support sole_y=0.000000
+PASS: run/6 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/6 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/6 dir-1 support sole_y=0.000000
+PASS: jump exact frame count 2
+PASS: jump/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall exact frame count 2
+PASS: fall/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash exact frame count 4
+PASS: slash/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/2 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/2 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/3 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir1 sword tip relative centre=(42.955,-68.539), face_front=-2.691; forward=true
+PASS: slash/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/3 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir-1 sword tip relative centre=(-42.955,-68.539), face_front=2.691; forward=true
+PASS: slash/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/4 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/4 dir1 sword tip relative centre=(30.106,-46.312), face_front=-2.691; forward=true
+PASS: slash/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/4 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/4 dir-1 sword tip relative centre=(-30.106,-46.312), face_front=2.691; forward=true
+PASS: idle silhouette height=96.012527px (~96, source-anchor tolerance .1); sole0; frame128 bottom margin8
+PASS: slash total .30s
+PASS: idle6fps run12fps fall12fps/loop per09
+PASS: jump two frames total .38s per09/A0
+PASS: left/right actual layer corners mirror exactly; grip anchor follows same root
+Pose rig: 36 action/frame/direction checks; failures=0
+exit=0
+
+$ python3 tools/check_pose_sheets.py
+Common registered-source export scale: 0.3434704830053667
+Whole-sheet registration: {'body': 1.0, 'legs': 1.0, 'head': 0.30952380952380953, 'dao': 0.43}
+Source sheets NOT natively same anatomical scale. Uniform whole-sheet head/weapon registration disclosed; one common export factor after registration. No per-pose or nonuniform resize.
+body_01: size=(46, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=2502; soft_alpha=794; scene_copy=True
+body_02: size=(45, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=2495; soft_alpha=787; scene_copy=True
+body_03: size=(101, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3300; soft_alpha=1314; scene_copy=True
+body_04: size=(99, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3382; soft_alpha=1354; scene_copy=True
+body_05: size=(117, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3435; soft_alpha=1358; scene_copy=True
+body_06: size=(96, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3250; soft_alpha=1307; scene_copy=True
+body_07: size=(104, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3428; soft_alpha=1377; scene_copy=True
+body_08: size=(113, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3273; soft_alpha=1335; scene_copy=True
+body_09: size=(100, 93); effective_scale=0.343470483005; green_visible=0; RGB_colors=3675; soft_alpha=1183; scene_copy=True
+body_10: size=(82, 94); effective_scale=0.343470483005; green_visible=0; RGB_colors=3057; soft_alpha=1185; scene_copy=True
+body_11: size=(79, 120); effective_scale=0.343470483005; green_visible=0; RGB_colors=3475; soft_alpha=1389; scene_copy=True
+body_12: size=(121, 95); effective_scale=0.343470483005; green_visible=0; RGB_colors=3617; soft_alpha=1454; scene_copy=True
+legs_01: size=(48, 83); effective_scale=0.343470483005; green_visible=0; RGB_colors=1963; soft_alpha=723; scene_copy=True
+legs_02: size=(147, 82); effective_scale=0.343470483005; green_visible=0; RGB_colors=2826; soft_alpha=1338; scene_copy=True
+legs_03: size=(84, 82); effective_scale=0.343470483005; green_visible=0; RGB_colors=2291; soft_alpha=1004; scene_copy=True
+legs_04: size=(140, 82); effective_scale=0.343470483005; green_visible=0; RGB_colors=2777; soft_alpha=1303; scene_copy=True
+legs_05: size=(95, 83); effective_scale=0.343470483005; green_visible=0; RGB_colors=2320; soft_alpha=1006; scene_copy=True
+legs_06: size=(89, 83); effective_scale=0.343470483005; green_visible=0; RGB_colors=2224; soft_alpha=1010; scene_copy=True
+legs_07: size=(145, 82); effective_scale=0.343470483005; green_visible=0; RGB_colors=2587; soft_alpha=1323; scene_copy=True
+legs_08: size=(77, 63); effective_scale=0.343470483005; green_visible=0; RGB_colors=1991; soft_alpha=757; scene_copy=True
+legs_09: size=(107, 76); effective_scale=0.343470483005; green_visible=0; RGB_colors=2339; soft_alpha=992; scene_copy=True
+legs_10: size=(146, 76); effective_scale=0.343470483005; green_visible=0; RGB_colors=2936; soft_alpha=1340; scene_copy=True
+head_1: size=(46, 51); effective_scale=0.106312292359; green_visible=0; RGB_colors=964; soft_alpha=535; scene_copy=True
+head_2: size=(46, 51); effective_scale=0.106312292359; green_visible=0; RGB_colors=975; soft_alpha=534; scene_copy=True
+head_3: size=(46, 51); effective_scale=0.106312292359; green_visible=0; RGB_colors=973; soft_alpha=545; scene_copy=True
+dao_1: size=(53, 55); effective_scale=0.147692307692; green_visible=0; RGB_colors=523; soft_alpha=462; scene_copy=True
+dao_2: size=(59, 56); effective_scale=0.147692307692; green_visible=0; RGB_colors=535; soft_alpha=475; scene_copy=True
+dao_3: size=(76, 76); effective_scale=0.147692307692; green_visible=0; RGB_colors=552; soft_alpha=660; scene_copy=True
+dao_4: size=(85, 76); effective_scale=0.147692307692; green_visible=0; RGB_colors=608; soft_alpha=709; scene_copy=True
+dao_5: size=(56, 50); effective_scale=0.147692307692; green_visible=0; RGB_colors=505; soft_alpha=436; scene_copy=True
+dao_6: size=(53, 48); effective_scale=0.147692307692; green_visible=0; RGB_colors=460; soft_alpha=424; scene_copy=True
+Idle 2x actual alpha>127 height=192px, bottom_margin=16px; logic=96px, margin=8px
+Source sheets: 4; generation attempts=1 each; rejected generations=0; legs extra tunic strip trimmed at recorded hip anchors
+Pose sheet image checks failures: 0
+exit=0
+
+$ blender --background --factory-startup --python tools/blender_pose_preview.py
+Blender 4.3.2
+Fra:1 Mem:10.60M (Peak 10.60M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | dao_1
+Fra:1 Mem:10.61M (Peak 10.61M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | body_01
+Fra:1 Mem:10.61M (Peak 10.61M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:10.59M (Peak 10.61M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Images | Loading head_1.png
+Fra:1 Mem:10.59M (Peak 10.61M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Images | Loading body_01.png
+Fra:1 Mem:10.31M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:10.32M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:10.32M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:10.32M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.00 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:10.40M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:10.41M (Peak 10.61M) | Time:00:00.01 | Mem:0.06M, Peak:0.14M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:10.41M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:10.41M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:10.41M (Peak 10.61M) | Time:00:00.01 | Mem:0.14M, Peak:0.14M | Scene, ViewLayer | Sample 0/8
+Fra:1 Mem:19.43M (Peak 19.43M) | Time:00:00.04 | Remaining:00:00.22 | Mem:9.16M, Peak:9.16M | Scene, ViewLayer | Sample 1/8
+Fra:1 Mem:23.44M (Peak 31.44M) | Time:00:00.23 | Mem:9.16M, Peak:9.16M | Scene, ViewLayer | Sample 8/8
+Fra:1 Mem:23.44M (Peak 31.44M) | Time:00:00.23 | Mem:9.16M, Peak:9.16M | Scene, ViewLayer | Finished
+Saved: '/workspace/design_co_lau/docs/reports/g1_pose_blender_idle.png'
+Time: 00:00.26 (Saving: 00:00.03)
+
+Info: Packed 4 file(s)
+Info: Saved "pose_authoring_2d.blend"
+BLENDER PREVIEW OK: 4 painted 2D planes, packed source images, orthographic camera; NOT a 3D model/sculpt or new hand drawing
+
+Blender quit
+exit=0
+
+$ Xvfb :98 -screen 0 1600x720x24 -nolisten tcp -ac; DISPLAY=:98 LIBGL_ALWAYS_SOFTWARE=1 /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-poses
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+Actual Godot viewport capture: res://pose_rig/reports/scene_right.png 1600x720 error=0
+exit=0
+
+$ DISPLAY=:98 LIBGL_ALWAYS_SOFTWARE=1 /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-poses --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+Actual Godot viewport capture: res://pose_rig/reports/scene_left.png 1600x720 error=0
+exit=0
+
+$ python3 tools/compare_pose_captures.py
+Actual Godot screenshots: right1600x720 + left1600x720 -> g1_pose_sheets_compare.png1600x1440; no overpainting/imagegen
+
+$ python3 tools/cut_pose_sheets.py
+Whole-sheet registration: {'body': 1.0, 'legs': 1.0, 'head': 0.30952380952380953, 'dao': 0.43} ; common export scale= 0.3434704830053667
+body_01 [46, 93] effective scale= 0.3434704830053667 anchors= {'neck': [20.264758, 7.21288], 'hip': [21.982111, 75.563506], 'grip': [22.325581, 84.837209], 'back': [14.42576, 16.830054]}
+body_02 [45, 93] effective scale= 0.3434704830053667 anchors= {'neck': [20.951699, 7.21288], 'hip': [20.608229, 75.906977], 'grip': [22.669052, 84.493739], 'back': [15.112701, 16.830054]}
+body_03 [101, 93] effective scale= 0.3434704830053667 anchors= {'neck': [47.742397, 6.86941], 'hip': [48.429338, 76.250447], 'grip': [91.706619, 33.660107], 'back': [41.903399, 16.486583]}
+body_04 [99, 93] effective scale= 0.3434704830053667 anchors= {'neck': [43.277281, 7.21288], 'hip': [45.681574, 76.593918], 'grip': [88.271914, 40.872987], 'back': [37.438283, 16.830054]}
+body_05 [117, 93] effective scale= 0.3434704830053667 anchors= {'neck': [62.855098, 5.838998], 'hip': [63.542039, 75.906977], 'grip': [106.132379, 34.003578], 'back': [57.0161, 15.456172]}
+body_06 [96, 93] effective scale= 0.3434704830053667 anchors= {'neck': [40.186047, 5.838998], 'hip': [40.529517, 75.906977], 'grip': [86.898032, 33.316637], 'back': [34.347048, 15.456172]}
+body_07 [104, 93] effective scale= 0.3434704830053667 anchors= {'neck': [45.681574, 6.525939], 'hip': [45.681574, 75.906977], 'grip': [90.676208, 36.751342], 'back': [39.842576, 16.143113]}
+body_08 [113, 93] effective scale= 0.3434704830053667 anchors= {'neck': [55.298748, 6.525939], 'hip': [54.955277, 75.906977], 'grip': [98.232558, 36.751342], 'back': [49.45975, 16.143113]}
+body_09 [100, 93] effective scale= 0.3434704830053667 anchors= {'neck': [61.137746, 6.525939], 'hip': [62.511628, 77.9678], 'grip': [6.86941, 46.711986], 'back': [55.298748, 16.143113]}
+body_10 [82, 94] effective scale= 0.3434704830053667 anchors= {'neck': [26.447227, 6.182469], 'hip': [27.134168, 77.9678], 'grip': [73.846154, 40.529517], 'back': [20.608229, 15.799642]}
+body_11 [79, 120] effective scale= 0.3434704830053667 anchors= {'neck': [46.368515, 31.942755], 'hip': [46.711986, 102.010733], 'grip': [59.076923, 10.991055], 'back': [40.529517, 41.559928]}
+body_12 [121, 95] effective scale= 0.3434704830053667 anchors= {'neck': [61.137746, 7.556351], 'hip': [61.137746, 77.624329], 'grip': [112.314848, 18.203936], 'back': [55.298748, 17.173524]}
+legs_01 [48, 83] effective scale= 0.3434704830053667 anchors= {'hip': [24.729875, 0.0], 'sole': [36.0, 82]}
+legs_02 [147, 82] effective scale= 0.3434704830053667 anchors= {'hip': [81.402504, 0.0], 'sole': [115.5, 81]}
+legs_03 [84, 82] effective scale= 0.3434704830053667 anchors= {'hip': [54.955277, 0.0], 'sole': [74.0, 81]}
+legs_04 [140, 82] effective scale= 0.3434704830053667 anchors= {'hip': [78.654741, 0.0], 'sole': [109.5, 81]}
+legs_05 [95, 83] effective scale= 0.3434704830053667 anchors= {'hip': [62.168157, 0.0], 'sole': [83.0, 82]}
+legs_06 [89, 83] effective scale= 0.3434704830053667 anchors= {'hip': [58.389982, 0.0], 'sole': [77.0, 82]}
+legs_07 [145, 82] effective scale= 0.3434704830053667 anchors= {'hip': [76.593918, 0.0], 'sole': [115.5, 81]}
+legs_08 [77, 63] effective scale= 0.3434704830053667 anchors= {'hip': [46.711986, 0.0], 'sole': [27.5, 62]}
+legs_09 [107, 76] effective scale= 0.3434704830053667 anchors= {'hip': [44.307692, 0.0], 'sole': [79.5, 75]}
+legs_10 [146, 76] effective scale= 0.3434704830053667 anchors= {'hip': [97.545617, 0.0], 'sole': [134.0, 75]}
+head_1 [46, 51] effective scale= 0.10631229235880398 anchors= {'neck': [18.179402, 41.674419]}
+head_2 [46, 51] effective scale= 0.10631229235880398 anchors= {'neck': [13.92691, 41.674419]}
+head_3 [46, 51] effective scale= 0.10631229235880398 anchors= {'neck': [9.993355, 41.674419]}
+dao_1 [53, 55] effective scale= 0.14769230769230768 anchors= {'grip': [45.489231, 7.089231], 'tip': [1.476923, 53.907692]}
+dao_2 [59, 56] effective scale= 0.14769230769230768 anchors= {'grip': [51.987692, 48.738462], 'tip': [0.886154, 1.624615]}
+dao_3 [76, 76] effective scale= 0.14769230769230768 anchors= {'grip': [12.701538, 23.630769], 'tip': [67.347692, 59.815385]}
+dao_4 [85, 76] effective scale= 0.14769230769230768 anchors= {'grip': [12.701538, 29.686154], 'tip': [83.889231, 27.027692]}
+dao_5 [56, 50] effective scale= 0.14769230769230768 anchors= {'grip': [8.270769, 6.793846], 'tip': [53.76, 48.590769]}
+dao_6 [53, 48] effective scale= 0.14769230769230768 anchors= {'grip': [8.861538, 7.827692], 'tip': [51.692308, 46.08]}
+
+$ scope/prefix verification
+OK: docs/05_log.md old bytes unchanged; exactly ONE new entry
+Scope check: PASS []
+Branches fix/g1-parts-v3 and feat/g1-frame-rig-idle retained; no merge
