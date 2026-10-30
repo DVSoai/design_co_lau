@@ -1,0 +1,34 @@
+{
+  "poses_legs": {
+    "attempts": 1,
+    "rejected": 0,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "poses_legs.prompt.txt",
+    "image_file": "poses_legs.png",
+    "sha256": "81572b1ace1d39071bc2d1172486b6dc3cceb144f92580830356087bc57fc4ba"
+  },
+  "weapon_dao": {
+    "attempts": 1,
+    "rejected": 0,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "weapon_dao.prompt.txt",
+    "image_file": "weapon_dao.png",
+    "sha256": "3e931a44f76eb2225614422f00dfb4a755d6824c98e3507f47cab763acaeb47d"
+  },
+  "poses_head": {
+    "attempts": 1,
+    "rejected": 0,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "poses_head.prompt.txt",
+    "image_file": "poses_head.png",
+    "sha256": "170738e4608a9d368ea5cc55e97106c1f0b10ac45cd455d728be3ccd713a4ad0"
+  },
+  "poses_body": {
+    "attempts": 1,
+    "rejected": 0,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "poses_body.prompt.txt",
+    "image_file": "poses_body.png",
+    "sha256": "608aba8c6e09f9ce77ba9f7b5415ef483676406acbed472e870f0364be5159b2"
+  }
+}

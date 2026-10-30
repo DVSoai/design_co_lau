@@ -95,3 +95,10 @@ Tạo ảnh tốn hạn mức gói ChatGPT nhanh hơn nhiều so với tạo ch�
 - Skill chỉ là hướng dẫn. **Không chạy script nào trong skill nếu người dùng chưa yêu cầu.** Không tự tải/cài addon, cấu hình hook hay tự động hóa từ skill; bên thứ ba mới cần người dùng duyệt theo `docs/15_kien_truc_game.md`.
 - Router có thể nhắc skill của engine/phạm vi chưa chép; không tự tải bổ sung. Dự án dùng Godot 4.7.2 Standard/GDScript.
 - Khi bàn giao `co_lau_game` sau Mốc A1, chép `tools/agent-skills/` và giữ nguyên mục “Skill tham khảo” này trong AGENTS.md của repo game.
+
+## Nhân vật người — quyết định mới 29/10/2026
+
+- Nhân vật/NPC/quái người dùng bộ tư thế vẽ trọn theo4 lớp; không xoay khớp.
+- Không xoay vũ khí theo tay; đòn đánh dùng hình vung vẽ sẵn, lưỡi theo chiều chém.
+- Ngoài đánh, hình vũ khí sau lưng đi theo thân; thay áo/quần cần đủ bộ tư thế.
+- Ảnh người2× hiển thịlinear, không ép32 màu; giữ kích thước logicA0. Theo mục mới01_art_bible.

@@ -428,3 +428,25 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Ghi nhận export: Godot4.7.2 báo thiếu khóa include_filter khi preset cố ý bỏ hẳn
   khóa theo lệnh; export exit0 và script đọc PCK xác minh JSON/loader đúng nguồn cuối.
   Giữ nguyên chẩn đoán trong đầu ra commit, không che bằng bộ lọc hay đổi preset yêu cầu.
+
+## 30/10/2026 — g1_pose_sheets_pilot — v1, bản thử chưa duyệt
+
+- Theo quyết định người dùng29/10: dừng rig16 mảnh; thử4 lớp tư thế vẽ trọn,
+  không xoay khớp/vũ khí; hình vung vẽ sẵn, ngoài đánh đeo đao sau lưng.
+  Nhánhfeat/g1-pose-sheets-pilot từ main8bd5876; giữ nguyên các nhánh thử trước.
+- Dùng imagegen với ảnh gốc Đinh Bộ Lĩnh, STYLE-B vẽ tay + AVOID, bốn tờ:
+  12thân/10chân/3đầu/6đao. Mỗi tờ1lần, không sinh lại. Prompt nguyên văn cạnh
+  ảnh và docs/03_prompts; không dùng imagegen cho bảng/ảnh so sánh/kết quả.
+- Script cắt nền alpha mềm, khử xanh, cắt vùng liền khối và mốc ghi số.
+  Tờ chân thừa dải áo được cắt tại mốc hông; đầu/vũ khí cần đăng ký đồng dạng
+  toàn tờ trước hệ số xuất chung, có ghi hệ số thực. Không ép32 màu/pixel.
+- Prototype riêng với4 Sprite2D linear scale0,5 và gốc lật±1; idle/run/jump/fall/
+  slash0,30s, nút xem từng động tác/đổi hướng/đao/VềA0. Không đổi A0 hay Đào Úc.
+- Theo yêu cầu bổ sung, đọc hai repo tham khảo người dùng cung cấp để đối chiếu
+  nguyên tắc bộ hình theo tư thế/offset và thay bộ khi đổi trang bị; không chép
+  tài nguyên, bảng dữ liệu hay mã vào Cờ Lau. Bản thử tự viết, hình tạo riêng.
+- Blender4.3.2 đã có sẵn; dựng thử file4 mặt phẳng tranh2D, texture đóng gói,
+  camera trực giao và render thật. Chưa có mô hình3D mới; không gọi render2D là3D.
+- Xvfb/Godot4.7.2 chụp1600×720 cả hai hướng; báo cáo và nguyên đầu ra tại
+  reports/g1_pose_sheets_report.md; nguyên đầu ra cũng trong commit message.
+  Asset bản thử chưa duyệt; không tự đánh dấu[x]. Nhật ký cũ giữ nguyên từng byte.

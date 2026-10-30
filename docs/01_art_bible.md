@@ -168,3 +168,27 @@ Hiệu ứng đòn đánh (vệt chém, tia lửa trúng đòn) và số sát th
 lên nhân vật, hình nộm và quái**. Khi dựng scene hoặc sprite sheet phải giữ lớp
 hiệu ứng/số cao hơn lớp thân, không để thứ tự node khiến quái che mất phản hồi
 trúng đòn. Lộn người chỉ đổi hình hoạt ảnh, không xoay hitbox hoặc đổi lớp vẽ.
+
+## Nhân vật: bộ tư thế vẽ trọn theo lớp, hiển thị mượt (người dùng chốt 29/10/2026)
+
+Quyết định mới thay quy trình rig16 mảnh cho nhân vật/NPC/quái người: đầu,
+thân kèm hai tay, chân (quần/cẳng/bàn chân), vũ khí. Mỗi lớp có trọn bộ hình
+tư thế; runtime chỉ dời/lật, không xoay khớp hoặc xoay vũ khí theo tay.
+Đòn đánh dùng hình vung vũ khí vẽ sẵn kèm vệt vật lý, lưỡi sắc theo chiều chém;
+ngoài đòn đánh dùng hình đao sau lưng, đi theo thân. Thay áo/quần phải có đủ
+bộ tư thế tương ứng; chỉ làm bậc0 trong bản thử này.
+
+Nhân vật người giữ ảnh độ phân giải2× và hiển thị linear, không ép palette32 màu.
+Đây là ngoại lệ mới cho người, không đổi phong cách/palette/lọcnearest của bản đồ,
+vật thể hoặc thông số A0: người96px logic, khung128×128, chân cách đáy8px.
+Dùng STYLE-B vẽ tay từ03_prompts, AVOID nguyên văn, luôn đính kèm ảnh gốc
+`art/reference/ref_dinh_bo_linh.png`. Prompt nguyên văn và nguồn được giữ cạnh
+bốn tờ ở `art/concept/characters/chr_dbl_poses/`; mọi hình còn chưa duyệt.
+
+Cắt nền xanh alpha mềm, khử màu xanh ở viền; cắt theo thành phần liền khối,
+chọn mốc cổ/hông/nắm tay/đế/chuôi bằng mắt và ghi số vào anchors.json.
+Các tờ AI nguồn không đồng tỉ lệ: đăng ký đồng dạng TOÀN TỜ đầu/vũ khí trước,
+sau đó xuất cùng hệ số; không co x/y khác nhau hoặc sửa tư thế lẻ. Báo cáo ghi
+cả hệ số đăng ký và hệ số thực từ từng nguồn, không gọi tờ gốc đồng tỉ lệ.
+Bản thử chỉ idle/run/jump/fall/slash; chưa thay nhân vật A0/Đào Úc.
+Rig16 mảnh đã dừng, giữ nguyên để đối chiếu; xem16_rig và báo cáo pilot.

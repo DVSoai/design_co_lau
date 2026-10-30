@@ -1,0 +1,957 @@
+{
+  "version": 1,
+  "status": "pilot, not approved",
+  "common_scale": 0.3434704830053667,
+  "registration": {
+    "body": 1.0,
+    "legs": 1.0,
+    "head": 0.30952380952380953,
+    "dao": 0.43
+  },
+  "registration_note": "Source sheets NOT natively same anatomical scale. Uniform whole-sheet head/weapon registration disclosed; one common export factor after registration. No per-pose or nonuniform resize.",
+  "assets": {
+    "body_01": {
+      "file": "body_01.png",
+      "source": "poses_body.png",
+      "source_box": [
+        166,
+        52,
+        299,
+        323
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        46,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          20.264758,
+          7.21288
+        ],
+        "hip": [
+          21.982111,
+          75.563506
+        ],
+        "grip": [
+          22.325581,
+          84.837209
+        ],
+        "back": [
+          14.42576,
+          16.830054
+        ]
+      }
+    },
+    "body_02": {
+      "file": "body_02.png",
+      "source": "poses_body.png",
+      "source_box": [
+        512,
+        52,
+        642,
+        323
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        45,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          20.951699,
+          7.21288
+        ],
+        "hip": [
+          20.608229,
+          75.906977
+        ],
+        "grip": [
+          22.669052,
+          84.493739
+        ],
+        "back": [
+          15.112701,
+          16.830054
+        ]
+      }
+    },
+    "body_03": {
+      "file": "body_03.png",
+      "source": "poses_body.png",
+      "source_box": [
+        795,
+        52,
+        1090,
+        324
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        101,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          47.742397,
+          6.86941
+        ],
+        "hip": [
+          48.429338,
+          76.250447
+        ],
+        "grip": [
+          91.706619,
+          33.660107
+        ],
+        "back": [
+          41.903399,
+          16.486583
+        ]
+      }
+    },
+    "body_04": {
+      "file": "body_04.png",
+      "source": "poses_body.png",
+      "source_box": [
+        1192,
+        52,
+        1479,
+        324
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        99,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          43.277281,
+          7.21288
+        ],
+        "hip": [
+          45.681574,
+          76.593918
+        ],
+        "grip": [
+          88.271914,
+          40.872987
+        ],
+        "back": [
+          37.438283,
+          16.830054
+        ]
+      }
+    },
+    "body_05": {
+      "file": "body_05.png",
+      "source": "poses_body.png",
+      "source_box": [
+        44,
+        383,
+        386,
+        653
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        117,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          62.855098,
+          5.838998
+        ],
+        "hip": [
+          63.542039,
+          75.906977
+        ],
+        "grip": [
+          106.132379,
+          34.003578
+        ],
+        "back": [
+          57.0161,
+          15.456172
+        ]
+      }
+    },
+    "body_06": {
+      "file": "body_06.png",
+      "source": "poses_body.png",
+      "source_box": [
+        456,
+        383,
+        736,
+        653
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        96,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          40.186047,
+          5.838998
+        ],
+        "hip": [
+          40.529517,
+          75.906977
+        ],
+        "grip": [
+          86.898032,
+          33.316637
+        ],
+        "back": [
+          34.347048,
+          15.456172
+        ]
+      }
+    },
+    "body_07": {
+      "file": "body_07.png",
+      "source": "poses_body.png",
+      "source_box": [
+        804,
+        383,
+        1108,
+        653
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        104,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          45.681574,
+          6.525939
+        ],
+        "hip": [
+          45.681574,
+          75.906977
+        ],
+        "grip": [
+          90.676208,
+          36.751342
+        ],
+        "back": [
+          39.842576,
+          16.143113
+        ]
+      }
+    },
+    "body_08": {
+      "file": "body_08.png",
+      "source": "poses_body.png",
+      "source_box": [
+        1166,
+        383,
+        1494,
+        653
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        113,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          55.298748,
+          6.525939
+        ],
+        "hip": [
+          54.955277,
+          75.906977
+        ],
+        "grip": [
+          98.232558,
+          36.751342
+        ],
+        "back": [
+          49.45975,
+          16.143113
+        ]
+      }
+    },
+    "body_09": {
+      "file": "body_09.png",
+      "source": "poses_body.png",
+      "source_box": [
+        48,
+        729,
+        340,
+        1000
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        100,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          61.137746,
+          6.525939
+        ],
+        "hip": [
+          62.511628,
+          77.9678
+        ],
+        "grip": [
+          6.86941,
+          46.711986
+        ],
+        "back": [
+          55.298748,
+          16.143113
+        ]
+      }
+    },
+    "body_10": {
+      "file": "body_10.png",
+      "source": "poses_body.png",
+      "source_box": [
+        497,
+        729,
+        736,
+        1002
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        82,
+        94
+      ],
+      "anchors": {
+        "neck": [
+          26.447227,
+          6.182469
+        ],
+        "hip": [
+          27.134168,
+          77.9678
+        ],
+        "grip": [
+          73.846154,
+          40.529517
+        ],
+        "back": [
+          20.608229,
+          15.799642
+        ]
+      }
+    },
+    "body_11": {
+      "file": "body_11.png",
+      "source": "poses_body.png",
+      "source_box": [
+        803,
+        659,
+        1033,
+        1009
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        79,
+        120
+      ],
+      "anchors": {
+        "neck": [
+          46.368515,
+          31.942755
+        ],
+        "hip": [
+          46.711986,
+          102.010733
+        ],
+        "grip": [
+          59.076923,
+          10.991055
+        ],
+        "back": [
+          40.529517,
+          41.559928
+        ]
+      }
+    },
+    "body_12": {
+      "file": "body_12.png",
+      "source": "poses_body.png",
+      "source_box": [
+        1150,
+        730,
+        1503,
+        1006
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        121,
+        95
+      ],
+      "anchors": {
+        "neck": [
+          61.137746,
+          7.556351
+        ],
+        "hip": [
+          61.137746,
+          77.624329
+        ],
+        "grip": [
+          112.314848,
+          18.203936
+        ],
+        "back": [
+          55.298748,
+          17.173524
+        ]
+      }
+    },
+    "legs_01": {
+      "file": "legs_01.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        112,
+        125,
+        253,
+        366
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        48,
+        83
+      ],
+      "anchors": {
+        "hip": [
+          24.729875,
+          0.0
+        ],
+        "sole": [
+          36.0,
+          82
+        ]
+      }
+    },
+    "legs_02": {
+      "file": "legs_02.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        383,
+        125,
+        812,
+        364
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        147,
+        82
+      ],
+      "anchors": {
+        "hip": [
+          81.402504,
+          0.0
+        ],
+        "sole": [
+          115.5,
+          81
+        ]
+      }
+    },
+    "legs_03": {
+      "file": "legs_03.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        860,
+        125,
+        1105,
+        365
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        84,
+        82
+      ],
+      "anchors": {
+        "hip": [
+          54.955277,
+          0.0
+        ],
+        "sole": [
+          74.0,
+          81
+        ]
+      }
+    },
+    "legs_04": {
+      "file": "legs_04.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        1191,
+        125,
+        1598,
+        364
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        140,
+        82
+      ],
+      "anchors": {
+        "hip": [
+          78.654741,
+          0.0
+        ],
+        "sole": [
+          109.5,
+          81
+        ]
+      }
+    },
+    "legs_05": {
+      "file": "legs_05.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        1639,
+        125,
+        1916,
+        366
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        95,
+        83
+      ],
+      "anchors": {
+        "hip": [
+          62.168157,
+          0.0
+        ],
+        "sole": [
+          83.0,
+          82
+        ]
+      }
+    },
+    "legs_06": {
+      "file": "legs_06.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        53,
+        486,
+        313,
+        727
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        89,
+        83
+      ],
+      "anchors": {
+        "hip": [
+          58.389982,
+          0.0
+        ],
+        "sole": [
+          77.0,
+          82
+        ]
+      }
+    },
+    "legs_07": {
+      "file": "legs_07.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        397,
+        486,
+        819,
+        725
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        145,
+        82
+      ],
+      "anchors": {
+        "hip": [
+          76.593918,
+          0.0
+        ],
+        "sole": [
+          115.5,
+          81
+        ]
+      }
+    },
+    "legs_08": {
+      "file": "legs_08.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        874,
+        486,
+        1097,
+        669
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        77,
+        63
+      ],
+      "anchors": {
+        "hip": [
+          46.711986,
+          0.0
+        ],
+        "sole": [
+          27.5,
+          62
+        ]
+      }
+    },
+    "legs_09": {
+      "file": "legs_09.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        1196,
+        486,
+        1508,
+        706
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        107,
+        76
+      ],
+      "anchors": {
+        "hip": [
+          44.307692,
+          0.0
+        ],
+        "sole": [
+          79.5,
+          75
+        ]
+      }
+    },
+    "legs_10": {
+      "file": "legs_10.png",
+      "source": "poses_legs.png",
+      "source_box": [
+        1526,
+        505,
+        1950,
+        725
+      ],
+      "registration_scale": 1.0,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.3434704830053667,
+      "size": [
+        146,
+        76
+      ],
+      "anchors": {
+        "hip": [
+          97.545617,
+          0.0
+        ],
+        "sole": [
+          134.0,
+          75
+        ]
+      }
+    },
+    "head_1": {
+      "file": "head_1.png",
+      "source": "poses_head.png",
+      "source_box": [
+        248,
+        121,
+        681,
+        601
+      ],
+      "registration_scale": 0.30952380952380953,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.10631229235880398,
+      "size": [
+        46,
+        51
+      ],
+      "anchors": {
+        "neck": [
+          18.179402,
+          41.674419
+        ]
+      }
+    },
+    "head_2": {
+      "file": "head_2.png",
+      "source": "poses_head.png",
+      "source_box": [
+        880,
+        121,
+        1313,
+        602
+      ],
+      "registration_scale": 0.30952380952380953,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.10631229235880398,
+      "size": [
+        46,
+        51
+      ],
+      "anchors": {
+        "neck": [
+          13.92691,
+          41.674419
+        ]
+      }
+    },
+    "head_3": {
+      "file": "head_3.png",
+      "source": "poses_head.png",
+      "source_box": [
+        1521,
+        121,
+        1955,
+        601
+      ],
+      "registration_scale": 0.30952380952380953,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.10631229235880398,
+      "size": [
+        46,
+        51
+      ],
+      "anchors": {
+        "neck": [
+          9.993355,
+          41.674419
+        ]
+      }
+    },
+    "dao_1": {
+      "file": "dao_1.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        77,
+        87,
+        436,
+        461
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        53,
+        55
+      ],
+      "anchors": {
+        "grip": [
+          45.489231,
+          7.089231
+        ],
+        "tip": [
+          1.476923,
+          53.907692
+        ]
+      }
+    },
+    "dao_2": {
+      "file": "dao_2.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        552,
+        38,
+        950,
+        415
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        59,
+        56
+      ],
+      "anchors": {
+        "grip": [
+          51.987692,
+          48.738462
+        ],
+        "tip": [
+          0.886154,
+          1.624615
+        ]
+      }
+    },
+    "dao_3": {
+      "file": "dao_3.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        76,
+        76
+      ],
+      "anchors": {
+        "grip": [
+          12.701538,
+          23.630769
+        ],
+        "tip": [
+          67.347692,
+          59.815385
+        ]
+      }
+    },
+    "dao_4": {
+      "file": "dao_4.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        0,
+        512,
+        577,
+        1024
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        85,
+        76
+      ],
+      "anchors": {
+        "grip": [
+          12.701538,
+          29.686154
+        ],
+        "tip": [
+          83.889231,
+          27.027692
+        ]
+      }
+    },
+    "dao_5": {
+      "file": "dao_5.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        618,
+        581,
+        998,
+        917
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        56,
+        50
+      ],
+      "anchors": {
+        "grip": [
+          8.270769,
+          6.793846
+        ],
+        "tip": [
+          53.76,
+          48.590769
+        ]
+      }
+    },
+    "dao_6": {
+      "file": "dao_6.png",
+      "source": "weapon_dao.png",
+      "source_box": [
+        1110,
+        597,
+        1467,
+        922
+      ],
+      "registration_scale": 0.43,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.14769230769230768,
+      "size": [
+        53,
+        48
+      ],
+      "anchors": {
+        "grip": [
+          8.861538,
+          7.827692
+        ],
+        "tip": [
+          51.692308,
+          46.08
+        ]
+      }
+    }
+  },
+  "sources": {
+    "body": {
+      "source_sha256": "608aba8c6e09f9ce77ba9f7b5415ef483676406acbed472e870f0364be5159b2",
+      "components": 12,
+      "count": 12
+    },
+    "legs": {
+      "source_sha256": "81572b1ace1d39071bc2d1172486b6dc3cceb144f92580830356087bc57fc4ba",
+      "components": 10,
+      "count": 10
+    },
+    "head": {
+      "source_sha256": "170738e4608a9d368ea5cc55e97106c1f0b10ac45cd455d728be3ccd713a4ad0",
+      "components": 3,
+      "count": 3
+    },
+    "dao": {
+      "source_sha256": "3e931a44f76eb2225614422f00dfb4a755d6824c98e3507f47cab763acaeb47d",
+      "components": 8,
+      "count": 6
+    }
+  }
+}
