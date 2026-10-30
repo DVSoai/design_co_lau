@@ -1,5 +1,424 @@
 {
-  "status": "pilot; idle/run/jump/fall frame counts/rates follow09; duplicate jump/fall painted pose until new drawings; slash4 frames explicitly requested .30s, not final combo spec",
+  "status": "pilot; Ki\u1ebfm/Cung; five15fps shoot slots compressed to3 painted phases; six12fps run-shoot slots compressed to2 phases; thrust2frames .10s proposed, no standalone thrust timing in09; slash .30s unchanged",
+  "arrow_speed": 240,
+  "arrow_asset": "arrow_1",
+  "schools": {
+    "kiem": {
+      "idle": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_01",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_02",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_01",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_02",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "run": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_03",
+            "legs": "legs_02",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_04",
+            "legs": "legs_03",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_05",
+            "legs": "legs_04",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_06",
+            "legs": "legs_05",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_07",
+            "legs": "legs_06",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_08",
+            "legs": "legs_07",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "jump": {
+        "loop": false,
+        "frames": [
+          {
+            "body": "body_09",
+            "legs": "legs_08",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.19,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_09",
+            "legs": "legs_08",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.19,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "fall": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_10",
+            "legs": "legs_09",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_10",
+            "legs": "legs_09",
+            "head": "head_1",
+            "weapon": "kiem_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "slash": {
+        "loop": false,
+        "frames": [
+          {
+            "body": "body_11",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_2",
+            "duration": 0.075,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_3",
+            "duration": 0.075,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_4",
+            "duration": 0.075,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_5",
+            "duration": 0.075,
+            "attack": true,
+            "spawn": false
+          }
+        ]
+      },
+      "thrust": {
+        "loop": false,
+        "frames": [
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_6",
+            "duration": 0.05,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_6",
+            "duration": 0.05,
+            "attack": true,
+            "spawn": false
+          }
+        ]
+      }
+    },
+    "cung": {
+      "idle": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_01",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_02",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_01",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_02",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.16666666666666666,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "run": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_03",
+            "legs": "legs_02",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_04",
+            "legs": "legs_03",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_05",
+            "legs": "legs_04",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_06",
+            "legs": "legs_05",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_07",
+            "legs": "legs_06",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_08",
+            "legs": "legs_07",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "jump": {
+        "loop": false,
+        "frames": [
+          {
+            "body": "body_09",
+            "legs": "legs_08",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.19,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_09",
+            "legs": "legs_08",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.19,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "fall": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_10",
+            "legs": "legs_09",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          },
+          {
+            "body": "body_10",
+            "legs": "legs_09",
+            "head": "head_1",
+            "weapon": "cung_1",
+            "duration": 0.08333333333333333,
+            "attack": false,
+            "spawn": false
+          }
+        ]
+      },
+      "shoot": {
+        "loop": false,
+        "frames": [
+          {
+            "body": "body_cung_1",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_2",
+            "duration": 0.13333333333333333,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_cung_2",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_3",
+            "duration": 0.06666666666666667,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_cung_3",
+            "legs": "legs_01",
+            "head": "head_1",
+            "weapon": "cung_4",
+            "duration": 0.13333333333333333,
+            "attack": true,
+            "spawn": true
+          }
+        ]
+      },
+      "run_shoot": {
+        "loop": true,
+        "frames": [
+          {
+            "body": "body_cung_4",
+            "legs": "legs_03",
+            "head": "head_1",
+            "weapon": "cung_3",
+            "duration": 0.16666666666666666,
+            "attack": true,
+            "spawn": false
+          },
+          {
+            "body": "body_cung_3",
+            "legs": "legs_04",
+            "head": "head_1",
+            "weapon": "cung_4",
+            "duration": 0.3333333333333333,
+            "attack": true,
+            "spawn": true
+          }
+        ]
+      }
+    }
+  },
   "clips": {
     "idle": {
       "loop": true,
@@ -8,33 +427,37 @@
           "body": "body_01",
           "legs": "legs_01",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.16666666666666666,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_02",
           "legs": "legs_01",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.16666666666666666,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_01",
           "legs": "legs_01",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.16666666666666666,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_02",
           "legs": "legs_01",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.16666666666666666,
-          "attack": false
+          "attack": false,
+          "spawn": false
         }
       ]
     },
@@ -45,49 +468,55 @@
           "body": "body_03",
           "legs": "legs_02",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_04",
           "legs": "legs_03",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_05",
           "legs": "legs_04",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_06",
           "legs": "legs_05",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_07",
           "legs": "legs_06",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_08",
           "legs": "legs_07",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         }
       ]
     },
@@ -98,17 +527,19 @@
           "body": "body_09",
           "legs": "legs_08",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.19,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_09",
           "legs": "legs_08",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.19,
-          "attack": false
+          "attack": false,
+          "spawn": false
         }
       ]
     },
@@ -119,17 +550,19 @@
           "body": "body_10",
           "legs": "legs_09",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         },
         {
           "body": "body_10",
           "legs": "legs_09",
           "head": "head_1",
-          "weapon": "dao_1",
+          "weapon": "kiem_1",
           "duration": 0.08333333333333333,
-          "attack": false
+          "attack": false,
+          "spawn": false
         }
       ]
     },
@@ -140,33 +573,60 @@
           "body": "body_11",
           "legs": "legs_10",
           "head": "head_2",
-          "weapon": "dao_2",
+          "weapon": "kiem_2",
           "duration": 0.075,
-          "attack": true
+          "attack": true,
+          "spawn": false
         },
         {
           "body": "body_12",
           "legs": "legs_10",
           "head": "head_2",
-          "weapon": "dao_3",
+          "weapon": "kiem_3",
           "duration": 0.075,
-          "attack": true
+          "attack": true,
+          "spawn": false
         },
         {
           "body": "body_12",
           "legs": "legs_10",
           "head": "head_2",
-          "weapon": "dao_4",
+          "weapon": "kiem_4",
           "duration": 0.075,
-          "attack": true
+          "attack": true,
+          "spawn": false
         },
         {
           "body": "body_12",
           "legs": "legs_10",
           "head": "head_2",
-          "weapon": "dao_5",
+          "weapon": "kiem_5",
           "duration": 0.075,
-          "attack": true
+          "attack": true,
+          "spawn": false
+        }
+      ]
+    },
+    "thrust": {
+      "loop": false,
+      "frames": [
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_6",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_6",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false
         }
       ]
     }

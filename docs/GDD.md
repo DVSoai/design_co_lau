@@ -27,7 +27,7 @@ Tài liệu thiết kế của Cờ Lau Khởi Nghĩa, game nhập vai hành đ�
 - **Phần 2. Hệ thống và số liệu**
     - 1\. Tổng quan
     - 2\. Chỉ số nhân vật và công thức
-    - 3\. Kỹ năng phái Đao và phái Cung
+    - 3\. Kỹ năng phái Kiếm và phái Cung
     - 4\. Trang bị và cường hóa
     - 5\. Luyện đá, tách đồ, dịch chuyển và tinh luyện
     - 6\. Thú cưỡi
@@ -296,11 +296,11 @@ Phần này kết hợp chất liệu lịch sử thời Đinh với cơ chế p
 
 ### Phát triển nhân vật
 
-Người chơi luôn là Đinh Bộ Lĩnh. Theo tiến trình cốt truyện, cuối Hồi 1 người chơi chọn một trong **hai phái:** **Đao** **hoặc Cung**. Màn cờ lau thời thơ ấu gợi ý cả hai lối đánh (cầm gậy xông lên đầu hàng hay đứng sau bắn ná), nên lựa chọn có lý do trong truyện. Hai phái có vai trò riêng: Đao thủ chắc, máu tốt, gây choáng và khống chế nhưng đánh chậm; Cung đánh xa, chuyển mục tiêu nhanh, công cao nhưng thủ yếu. Hai phái bù trừ nhau rõ: một bên giữ tuyến, một bên dứt điểm từ xa.
+Người chơi luôn là Đinh Bộ Lĩnh. Theo tiến trình cốt truyện, cuối Hồi 1 người chơi chọn một trong **hai phái:** **Kiếm** **hoặc Cung**. Màn cờ lau thời thơ ấu gợi ý cả hai lối đánh (cầm gậy xông lên đầu hàng hay đứng sau bắn ná), nên lựa chọn có lý do trong truyện. Hai phái có vai trò riêng: Kiếm thủ chắc, máu tốt, gây choáng và khống chế nhưng đánh chậm; Cung đánh xa, chuyển mục tiêu nhanh, công cao nhưng thủ yếu. Hai phái bù trừ nhau rõ: một bên giữ tuyến, một bên dứt điểm từ xa.
 
 | Phái | Lối đánh | Điểm mạnh | Điểm yếu | Chỉ số ưu tiên |
 |---|---|---|---|---|
-| Đao | Cận chiến, chém nặng, quét rộng, gây choáng, chém trên lưng ngựa | Thủ chắc, máu cao, khống chế đám đông, giữ tuyến đầu | Tốc đánh chậm, phải áp sát, kém với địch ở xa | Sức mạnh → Thể lực → Thân pháp |
+| Kiếm | Cận chiến, chém nặng, quét rộng, gây choáng, chém trên lưng ngựa | Thủ chắc, máu cao, khống chế đám đông, giữ tuyến đầu | Tốc đánh chậm, phải áp sát, kém với địch ở xa | Sức mạnh → Thể lực → Thân pháp |
 | Cung | Tầm xa, bắn xuyên, bắn tỏa, đặt bẫy, kỵ xạ | Công cao, an toàn khi giữ khoảng cách, săn boss tốt | Thủ yếu, dễ thua khi bị áp sát | Khí lực → Thể lực → Thân pháp |
 
 Mỗi phái gợi ý có một đòn thường, 5–6 kỹ năng chủ động, 3 kỹ năng nội tại mở dần theo cấp và một tuyệt kỹ cuối game. Phái đã chọn là cố định, không đổi được. Game có 3 ô nhân vật: mỗi ô là một lần chơi riêng của Đinh Bộ Lĩnh với một phái; muốn chơi phái khác thì tạo nhân vật ở ô mới và học lại từ đầu. Người chơi không chọn giới tính, tên hay ngoại hình: nhân vật luôn là Đinh Bộ Lĩnh, và vẻ ngoài chỉ thay đổi theo vũ khí và quần áo đang mặc (mũ, áo, quần, giày hiện trực tiếp trên nhân vật). Ba ô nhân vật tách biệt hoàn toàn: trang bị, tiền, tiến độ và thành tựu của ô nào thuộc riêng ô đó.
@@ -353,7 +353,7 @@ Trang bị có 10 ô, dùng đồ phù hợp bối cảnh thế kỷ 10:
 
 | Ô | Cờ Lau Khởi Nghĩa |
 |---|---|
-| Vũ khí | Đao (phái Đao) hoặc cung (phái Cung) |
+| Vũ khí | Kiếm (phái Kiếm) hoặc cung (phái Cung) |
 | Đầu | Mũ trụ, khăn chít đầu |
 | Thân | Giáp da, giáp vảy, áo chiến |
 | Tay | Bao tay da, xà cạp tay |
@@ -378,7 +378,7 @@ NPC phụ trách là **thợ rèn Hoa Lư**. Mỗi lần cường hóa tốn **�
 ### Tinh luyện và kích ẩn
 
 - **Tinh luyện** (cấp 1–9): chỉ làm được với đồ từ +12 trở lên, dùng **quặng tinh** sơ, trung, cao. Bước chuẩn bị trước tinh luyện có thể gộp bước đó vào một nhiệm vụ của thợ rèn Phong Châu.
-- **Kích ẩn theo phái:** Với hai phái, không dùng vòng tương khắc; dùng hai bộ trang bị riêng: **bộ** **Đao** (kích ẩn ra phòng thủ, phản đòn cận chiến, hút máu) và **bộ Cung** (kích ẩn ra chính xác, chí mạng, tầm bắn). Mặc đủ bộ của phái mình thì mở dòng chỉ số ẩn.
+- **Kích ẩn theo phái:** Với hai phái, không dùng vòng tương khắc; dùng hai bộ trang bị riêng: **bộ** **Kiếm** (kích ẩn ra phòng thủ, phản đòn cận chiến, hút máu) và **bộ Cung** (kích ẩn ra chính xác, chí mạng, tầm bắn). Mặc đủ bộ của phái mình thì mở dòng chỉ số ẩn.
 
 ### Thú cưỡi
 
@@ -470,7 +470,7 @@ Hình ảnh 2D ưu tiên dễ đọc trên điện thoại và chạy tốt trê
 
 Phần này mô tả hệ thống riêng của Cờ Lau, có tham khảo cơ chế phổ biến của thể loại nhập vai mobile. Số liệu tham khảo cần tự thiết kế lại trước Mốc A1.
 
-Có ba nguyên tắc thiết kế. Thứ nhất, **dùng các cấu trúc quen thuộc của thể loại**: 4 điểm tiềm năng, cường hóa +1 đến +16, luyện đá ghép 3 viên, bảo hiểm chống rớt cấp, thú cưỡi có cấp và sao. Thứ hai, **co lại theo game offline một người chơi**: cấp tối đa 60, không có hoạt động online; dùng tiền đồng, ngân lượng, ngân phiếu theo phạm vi mua hàng đã chốt (mục 10). Thứ ba, **không dùng vòng hệ tương khắc**: phái Đao gây choáng, phái Cung gây ghim chân, kháng chỉ còn một chỉ số "kháng tất cả".
+Có ba nguyên tắc thiết kế. Thứ nhất, **dùng các cấu trúc quen thuộc của thể loại**: 4 điểm tiềm năng, cường hóa +1 đến +16, luyện đá ghép 3 viên, bảo hiểm chống rớt cấp, thú cưỡi có cấp và sao. Thứ hai, **co lại theo game offline một người chơi**: cấp tối đa 60, không có hoạt động online; dùng tiền đồng, ngân lượng, ngân phiếu theo phạm vi mua hàng đã chốt (mục 10). Thứ ba, **không dùng vòng hệ tương khắc**: phái Kiếm gây choáng, phái Cung gây ghim chân, kháng chỉ còn một chỉ số "kháng tất cả".
 
 Số liệu trong phần này là đề xuất cần cân bằng riêng. Mọi tài nguyên phát hành phải do dự án tự làm hoặc có quyền sử dụng hợp lệ (mục 9 của phần này).
 
@@ -484,12 +484,12 @@ Nhân vật có bốn chỉ số gốc, khởi đầu ở 5 / 5 / 5 / 10, và c�
 
 | Chỉ số | Tác dụng (đề xuất) |
 |---|---|
-| Sức mạnh | Lực đánh gốc của phái Đao |
+| Sức mạnh | Lực đánh gốc của phái Kiếm |
 | Thân pháp | 1 điểm = 1 chính xác và 1,5 né đòn |
 | Thể lực | 1 điểm = 10 HP tối đa |
 | Khí lực | 1 điểm = 10 MP tối đa, và là lực đánh gốc của phái Cung |
 
-Phái Đao tính tấn công từ Sức mạnh; phái Cung tính từ Khí lực. Vì vậy người chơi Đao dồn Sức mạnh → Thể lực → Thân pháp, còn người chơi Cung dồn Khí lực → Thể lực → Thân pháp. Game mình giữ đúng sự phân chia này, nên hai phái thật sự khác nhau ngay từ cách cộng điểm.
+Phái Kiếm tính tấn công từ Sức mạnh; phái Cung tính từ Khí lực. Vì vậy người chơi Kiếm dồn Sức mạnh → Thể lực → Thân pháp, còn người chơi Cung dồn Khí lực → Thể lực → Thân pháp. Game mình giữ đúng sự phân chia này, nên hai phái thật sự khác nhau ngay từ cách cộng điểm.
 
 ### Công thức chiến đấu
 
@@ -528,7 +528,7 @@ Công thức sát thương quái theo cấp bình phương là điểm rất đ�
 
 Tổng cộng khoảng 2.200 quái để lên cấp 60 nếu chỉ đánh quái. Nhiệm vụ chính tuyến và phụ nên cấp khoảng một nửa số kinh nghiệm, nên người chơi thực tế đánh khoảng 1.100 quái cho cả game. Hai con số này là điểm khởi đầu và cần chỉnh lại sau khi chơi thử.
 
-## 3. Kỹ năng phái Đao và phái Cung
+## 3. Kỹ năng phái Kiếm và phái Cung
 
 ### Tổ chức kỹ năng
 
@@ -538,14 +538,14 @@ Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặ
 
 "Tấn công cơ bản" trong các bảng là % cộng vào tấn công vũ khí. Các con số mô tả mức tối đa đề xuất của chiêu, phải tự đặt lại số trước Mốc A1.
 
-### Phái Đao — cận chiến, gây choáng
+### Phái Kiếm — cận chiến, gây choáng
 
 **Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp mở | Tên đề xuất | Loại | Tác dụng khi tối đa | Hồi chiêu | MP |
 |---|---|---|---|---|---|
-| 10 | Trảm Đao | Chủ động, 1 mục tiêu | +60% tấn công, +150% tấn công cơ bản | 0,4 giây | 15 |
-| 15 | Đao Tâm | Nội tại | +40 chí mạng, +35% HP tối đa, +40 tốc chạy | — | — |
+| 10 | Trảm Kiếm | Chủ động, 1 mục tiêu | +60% tấn công, +150% tấn công cơ bản | 0,4 giây | 15 |
+| 15 | Kiếm Tâm | Nội tại | +40 chí mạng, +35% HP tối đa, +40 tốc chạy | — | — |
 | 20 | Song Trảm | Chủ động, 2 nhát liên tiếp | +120% tấn công, +160% tấn công cơ bản | 0,4 giây | 45 |
 | 25 | Chấn Uy | Hỗ trợ, khống chế | Quái bị trúng không tấn công được trong 15 giây | 27 giây | 80 |
 | 30 | Quét Ngang | Chủ động, tối đa 3 mục tiêu | +110% tấn công, +180% tấn công cơ bản | 0,4 giây | 60 |
@@ -557,7 +557,7 @@ Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặ
 
 ### Phái Cung — tầm xa, ghim chân
 
-Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (44–60). Hiệu ứng phụ của Cung là **ghim chân**: kẻ địch trúng tên không di chuyển được; thời gian và tỉ lệ theo bảng.
+Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Kiếm (44–60). Hiệu ứng phụ của Cung là **ghim chân**: kẻ địch trúng tên không di chuyển được; thời gian và tỉ lệ theo bảng.
 
 **Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
@@ -576,7 +576,7 @@ Toàn bộ chiêu Cung có tầm 140, gấp ba đến bốn lần chiêu Đao (4
 
 ### Nhận xét cân bằng
 
-Nhìn vào số liệu, Hai phái được cân bằng theo cùng một khuôn: chiêu cùng cấp gần như cùng % tấn công, khác nhau ở tầm đánh, lượng MP và loại chiêu hỗ trợ. Đao tốn ít MP hơn hẳn (Khai Sơn Trảm 270 MP so với Thần Tiễn 600 MP) và có nội tại +35% HP để đứng tuyến đầu; Cung được tầm xa, chí mạng và chính xác cao hơn, bù lại bằng phòng thủ dựa vào MP. Game mình nên giữ khuôn này và chỉ đổi tên, hiệu ứng hình ảnh. Hai chiêu cấp 60 cần thử lại độ mạnh khi chơi thử.
+Nhìn vào số liệu, Hai phái được cân bằng theo cùng một khuôn: chiêu cùng cấp gần như cùng % tấn công, khác nhau ở tầm đánh, lượng MP và loại chiêu hỗ trợ. Kiếm tốn ít MP hơn hẳn (Khai Sơn Trảm 270 MP so với Thần Tiễn 600 MP) và có nội tại +35% HP để đứng tuyến đầu; Cung được tầm xa, chí mạng và chính xác cao hơn, bù lại bằng phòng thủ dựa vào MP. Game mình nên giữ khuôn này và chỉ đổi tên, hiệu ứng hình ảnh. Hai chiêu cấp 60 cần thử lại độ mạnh khi chơi thử.
 
 Phân thân cấp 90 và các chiêu cấp 80, 100 không dùng vì vượt cấp tối đa.
 
@@ -586,7 +586,7 @@ Phân thân cấp 90 và các chiêu cấp 80, 100 không dùng vì vượt cấ
 
 Không phải mọi món đều nâng được lên +16. Giới hạn phụ thuộc cấp của món đồ: đồ dưới cấp 20 tối đa +4, cấp 20–39 tối đa +8, cấp 40–49 tối đa +12, cấp 50–59 tối đa +14, cấp 60 trở lên tối đa +16. Vì game mình dừng ở cấp 60, quy tắc này khớp vừa vặn: mỗi bậc trang bị (cấp 1, 10, 20, 30, 40, 50, 60) là một lần người chơi đổi đồ, và chỉ đồ cấp 60 cuối game mới đập được +16.
 
-Mỗi lần lên +1, các dòng chỉ số trên món đồ tăng theo mức cố định đề xuất: HP tối đa và MP tối đa +15; % vật công +10; chính xác, né, chí mạng, kháng, phản đòn +5; tấn công cộng thẳng +150; tốc chạy +3%. Ngoài ra mỗi món có **dòng ẩn** chỉ hiện khi đạt mốc: ví dụ vũ khí Đao cấp 20 mở dòng hồi HP ở +4 và dòng chí mạng +20 ở +8; vũ khí cấp 60 trở lên còn mở dòng tấn công cơ bản ở +12. Đây chính là "kích ẩn" quen thuộc và là lý do người chơi cố đập tới đúng các mốc +4, +8, +12.
+Mỗi lần lên +1, các dòng chỉ số trên món đồ tăng theo mức cố định đề xuất: HP tối đa và MP tối đa +15; % vật công +10; chính xác, né, chí mạng, kháng, phản đòn +5; tấn công cộng thẳng +150; tốc chạy +3%. Ngoài ra mỗi món có **dòng ẩn** chỉ hiện khi đạt mốc: ví dụ vũ khí Kiếm cấp 20 mở dòng hồi HP ở +4 và dòng chí mạng +20 ở +8; vũ khí cấp 60 trở lên còn mở dòng tấn công cơ bản ở +12. Đây chính là "kích ẩn" quen thuộc và là lý do người chơi cố đập tới đúng các mốc +4, +8, +12.
 
 ### Đá mài và điểm đá
 
@@ -717,10 +717,10 @@ Cửa hàng được chia thành bảy nhóm, mỗi nhóm do một NPC trong b�
 |---|---|---|
 | Thuốc | Ông lang thuốc nam | Thuốc hồi HP, MP tức thời, 6 bậc theo cấp 1, 10, 20, 30, 45, 60 |
 | Thức ăn | Bà hàng cơm chợ làng | Cơm nắm, cá nướng, cá kho, gà luộc, bánh chưng, thịt lợn quay |
-| Vũ khí | Thợ rèn Hoa Lư | Đao và cung theo 7 bậc cấp |
+| Vũ khí | Thợ rèn Hoa Lư | Kiếm và cung theo 7 bậc cấp |
 | Trang phục | Thợ may làng | Giáp, áo, quần, bao tay, giày, mũ theo 7 bậc; không cần tách nam nữ |
 | Trang sức | Lái buôn đường sông | Chuỗi hạt, nhẫn đồng, ngọc bội, ấn tín |
-| Sách kỹ năng | Quân sư Nguyễn Bặc | Sách binh pháp cho Đao và Cung đến chiêu cấp 30; chiêu cao hơn lấy từ boss |
+| Sách kỹ năng | Quân sư Nguyễn Bặc | Sách binh pháp cho Kiếm và Cung đến chiêu cấp 30; chiêu cao hơn lấy từ boss |
 | Tạp hóa | Sư trụ trì chùa | Bùa bảo hộ, giấy tẩy điểm, bùa hộ mệnh |
 
 Dịch vụ không bán hàng: thợ rèn làm cường hóa, luyện đá, tách, dịch chuyển và tinh luyện; lái buôn ngựa bán thú cưỡi, thức ăn và trang bị thú; quan thu lương đổi chiến lợi phẩm lấy tiền.
@@ -914,7 +914,7 @@ Màn mở đầu dạy điều khiển qua tuổi thơ chăn trâu. Hồi 1 là 
 | 7 | 7 | Hái thuốc cứu người | Nhặt 15 lá thuốc nam | Ông lang | Thuốc hồi phục |
 | 8 | 8 | Thám thính quanh Hoa Lư | Đi tới bến đò, hang đá Tràng An, cánh đồng chiêm | Nguyễn Bặc | Bản đồ khu vực |
 | 9 | 9 | Tụ nghĩa Đào Úc* | Đấu tay đôi với Đinh Điền; trả lời 3 câu hỏi của Nguyễn Bặc | Nguyễn Bặc | Đồng đội Đinh Điền |
-| 10 | 10 | Chọn binh pháp | Chọn phái Đao hoặc Cung; cộng điểm tiềm năng và điểm kỹ năng | Nguyễn Bặc | Phái, kỹ năng, tiềm năng |
+| 10 | 10 | Chọn binh pháp | Chọn phái Kiếm hoặc Cung; cộng điểm tiềm năng và điểm kỹ năng | Nguyễn Bặc | Phái, kỹ năng, tiềm năng |
 | 11 | 10 | Bài học đầu tiên | Đánh 30 chuột đồng lớn, 20 lợn rừng, 10 hổ con | Nguyễn Bặc | — |
 | 12 | 12 | Rèn lại binh khí | Cường hóa vũ khí, trang sức và y phục, mỗi thứ một lần | Thợ rèn Hoa Lư | Cường hóa, luyện đá |
 | 13 | 13 | Hào trưởng quanh vùng | Thách đấu và thắng 3 hào trưởng nhỏ quanh Hoa Lư | Nguyễn Bặc | Danh hiệu đầu tiên |
@@ -1183,7 +1183,7 @@ Mỗi boss có một đòn đặc trưng gắn với địa hình căn cứ và 
 - **Phạm Bạch Hổ** — đấu danh dự, kết thúc khi ông còn 30% máu. Đòn đặc biệt: cọc nhọn dưới nước trồi lên theo hàng, nhắc trận Bạch Đằng ông từng dự.
 - **Đỗ Cảnh Thạc** — 3 pha, mỗi pha ở sau một lớp lũy. Đòn đặc biệt: mưa tên phủ nửa sân. Đốt kho tên ở nhiệm vụ 38 bớt một đợt mưa tên mỗi pha.
 - **Nguyễn Siêu** — 2 pha, hai bên bờ sông. Khi dưới 60% máu, ông rút sang bờ kia và gọi viện binh bằng thuyền. Chặn viện binh ở nhiệm vụ 40 thì ông chỉ gọi được một đợt thay vì ba.
-- **Lã Đường** — 2 pha, chiến thuật biển người. Boss được 10 lính bộ vây quanh; còn lính đứng cạnh thì boss giảm 50% sát thương nhận vào. Phái Đao mạnh ở trận này nhờ chiêu diện rộng.
+- **Lã Đường** — 2 pha, chiến thuật biển người. Boss được 10 lính bộ vây quanh; còn lính đứng cạnh thì boss giảm 50% sát thương nhận vào. Phái Kiếm mạnh ở trận này nhờ chiêu diện rộng.
 - **Lý Khuê** — 2 pha, đánh trong ngõ làng hẹp. Đòn đặc biệt: lao xuyên ngõ. Người chơi bị trừ điểm danh vọng nếu chiêu diện rộng trúng dân còn sót lại; sơ tán đủ dân ở nhiệm vụ 44 thì trong trận không còn dân.
 - **Nguyễn Thủ Tiệp** — 3 pha, cưỡi ngựa. Boss phi nước đại qua sân. Người chơi cũng cưỡi ngựa; phái Cung có lợi nhờ bắn khi di chuyển.
 - **Nguyễn Khoan** — 2 pha, thành giữa đầm. Sàn đầm lún dần, chỉ có lối tre ngầm là an toàn. Nhiệm vụ 49 đã đánh dấu năm lối đó trên bản đồ.
@@ -1383,7 +1383,7 @@ Số lượng dưới đây đếm từ các phần khác của tài liệu này
 | Nhóm | Số lượng | Ghi chú |
 |---|---|---|
 | Nhân vật chính | 1 bộ thân gốc, khi còn bé và khi trưởng thành | Chuyển động: đứng, đi, chạy, nhảy, bị đánh, kiệt sức, cưỡi thú; 3 nhịp đánh thường mỗi phái |
-| Trang bị hiển thị | 7 bậc × 3 lớp (mũ, áo, quần) = 21 bộ; 7 bậc × 2 vũ khí (đao, cung) = 14 | Giày, bao tay, trang sức chỉ có biểu tượng |
+| Trang bị hiển thị | 7 bậc × 3 lớp (mũ, áo, quần) = 21 bộ; 7 bậc × 2 vũ khí (kiếm, cung) = 14 | Giày, bao tay, trang sức chỉ có biểu tượng |
 | Đồng đội | 4 (Đinh Điền, Nguyễn Bặc, Đinh Liễn, Lê Hoàn) | Đủ chuyển động chiến đấu |
 | NPC | Khoảng 30 | Chỉ cần đứng và nói, có chân dung hội thoại |
 | Quái | Khoảng 40 mẫu gốc | Lính các sứ quân dùng chung 6 mẫu (giáo, khiên, nỏ, cung, kỵ binh, thủy binh), đổi màu theo cờ hiệu |
@@ -1496,7 +1496,7 @@ Lộ trình code này chỉ bắt đầu sau khi qua mốc A1; nội dung Hồi 
 
 Game phát hành trước dưới dạng offline. Định hướng lâu dài là có thể chuyển thành game online của thể loại nhập vai mobile khi có nguồn lực. Bây giờ **không** làm phần online và chưa chọn công nghệ máy chủ game; chỉ cần bản offline giữ được năm điều sau để sau này không phải viết lại game. Chi tiết nằm trong Design Kit, file `docs/14_online_migration.md`.
 
-1. **ID ổn định:** mọi vật phẩm, kỹ năng, nhiệm vụ, bản đồ, quái, NPC, sản phẩm Google Play và quyền lợi có id dạng chữ không bao giờ đổi (ví dụ `itm_dao_t1`, `qst_014`, `map_dao_uc`, `sku_goi_khoi_dau`, `ent_tui_da_3`); mỗi ô nhân vật và mỗi món trang bị có id riêng.
+1. **ID ổn định:** mọi vật phẩm, kỹ năng, nhiệm vụ, bản đồ, quái, NPC, sản phẩm Google Play và quyền lợi có id dạng chữ không bao giờ đổi (ví dụ `itm_kiem_t1`, `qst_014`, `map_dao_uc`, `sku_goi_khoi_dau`, `ent_tui_da_3`); mỗi ô nhân vật và mỗi món trang bị có id riêng.
 2. **Luật đi qua lệnh:** giao diện và cảnh không sửa thẳng dữ liệu, mà gửi lệnh cho lớp hệ thống (cường hóa, mua, trả nhiệm vụ…). Luật chỉ đọc dữ liệu được truyền vào, không dựa vào đồng hồ máy. Khi online, chính các lệnh này được gửi lên máy chủ.
 3. **Phiên bản dữ liệu:** file lưu có `save_version`, dữ liệu game có `data_version`, mỗi lần đổi cấu trúc có hàm chuyển đổi và bộ file lưu mẫu để test.
 4. **Biết trước phần nào lên máy chủ:** rơi đồ, kinh nghiệm, cường hóa và số ngẫu nhiên của nó, tiền tệ, mua bán, tiến độ nhiệm vụ và lưu game sẽ lên máy chủ; hiển thị, âm thanh, điều khiển ở lại máy.
@@ -1588,7 +1588,7 @@ Bông lau trắng chỉ xuất hiện trên bộ cuối, để biểu tượng c
 
 ### 4.4 Bảng động tác
 
-Chạy riêng cho phái Đao và phái Cung, với bậc 1 làm mẫu.
+Chạy riêng cho phái Kiếm và phái Cung, với bậc 1 làm mẫu.
 
 ```
 Use the attached image as the character reference. Animation sprite sheet of this character with a broadsword, side view facing right, transparent background, evenly spaced frames in rows: idle breathing (4 frames), run (6 frames), jump and fall (4 frames), three-hit sword combo (8 frames), heavy overhead slash (6 frames), hit reaction (2 frames), knocked down (4 frames). Same size and baseline in every frame. [STYLE] [AVOID]
@@ -1737,7 +1737,7 @@ Hình đạt cả bốn điều thì đưa sang bước chỉnh tay và tách l�
 
 ## Hệ thống ngoại hình — chốt 28/10/2026
 
-Trang bị thường có part_set theo bậc: áo/thân và tay trên, quần/đùi và cẳng chân, vũ khí/đao hoặc cung, nón nếu có/đầu. Bảy bậc và khối lượng theo [17_ngoai_hinh.md](17_ngoai_hinh.md).
+Trang bị thường có part_set theo bậc: áo/thân và tay trên, quần/đùi và cẳng chân, vũ khí/kiếm hoặc cung, nón nếu có/đầu. Bảy bậc và khối lượng theo [17_ngoai_hinh.md](17_ngoai_hinh.md).
 
 Thời trang theo ô độc lập, mỗi món một dạng hình cố định, không đổi theo cấp. Ô trống hiện trang bị thật; mặc lẻ từng ô. Thời trang **có chỉ số**, cộng vào trang bị thật, không thay thế; ẩn hình vẫn giữ chỉ số. Không cường hóa thời trang. Tổng chỉ số một bộ đề xuất ≤10–15% bộ trang bị cùng bậc, từng loại chỉ số đối chiếu tương ứng; không thêm loại chỉ số trang bị thường không có. Cách cộng/chuẩn hóa và trần chính xác chốt Mốc A1, không cộng thô các đại lượng khác đơn vị. Toàn bộ số chỉ số là thiết kế riêng. Hai nguồn: mua vĩnh viễn Google Play dùng chung cả 3 ô nhân vật; boss/nhiệm vụ/giữ ải cho món có chỉ số tương đương nhưng hình khác, không để người không nạp kém hẳn. Vũ khí thời trang thay hình theo phái, vẫn hiện hiệu ứng mức cường hóa vũ khí thật. [Phạm vi sau]: biến hình thay cả người.
 

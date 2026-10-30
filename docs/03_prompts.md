@@ -15,7 +15,7 @@ Quy trình gốc dự kiến ba bản dưới đây; **P0 thực tế đã đư�
 Cả ba bản đều **giữ nguyên khối AVOID**. Sau giai đoạn 0, mọi prompt bắt buộc có khối STYLE đã chốt.
 
 ```
-Game key art mockup: a young Vietnamese warrior with a short broadsword stands on a dirt path beside a rice field at dawn, limestone karst mountains reflected in still water behind him, a bamboo-fenced village with thatched roofs on the left, a tall white reed-plume flag planted next to him. Side-scrolling camera, the character in the left third of the frame, a simple health bar and six round skill buttons as placeholder UI at the bottom right. [STYLE] [AVOID]
+Game key art mockup: a young Vietnamese warrior with a simple straight double-edged sword with a small crossguard and cord-wrapped grip stands on a dirt path beside a rice field at dawn, limestone karst mountains reflected in still water behind him, a bamboo-fenced village with thatched roofs on the left, a tall white reed-plume flag planted next to him. Side-scrolling camera, the character in the left third of the frame, a simple health bar and six round skill buttons as placeholder UI at the bottom right. [STYLE] [AVOID]
 ```
 
 STYLE-B (vẽ tay):
@@ -39,25 +39,25 @@ Use the attached image as the style and proportion reference. Create a parts she
 ## P3 — Bậc trang bị
 
 ```
-Use the attached image as the style and proportion reference. Same character with exactly the same body shape, side view facing right and front view, now wearing: [TIER]. Show one version holding a broadsword and one version holding a bow. Plain flat green #00FF00 background. [STYLE] [AVOID]
+Use the attached image as the style and proportion reference. Same character with exactly the same body shape, side view facing right and front view, now wearing: [TIER]. Show one version holding a simple straight double-edged sword with a small crossguard and cord-wrapped grip and one version holding a bow. Plain flat green #00FF00 background. [STYLE] [AVOID]
 ```
 
 `[TIER]` theo bậc:
 
-- **t1 (cấp 1):** `coarse brown hemp tunic, rolled-up trousers, straw rope belt, brown cloth head wrap, barefoot; weapon: bamboo-handled machete or a simple bamboo bow`
-- **t2 (cấp 10):** `indigo-dyed cotton tunic, cloth leg wraps, straw sandals, red head wrap; weapon: short iron broadsword or a rattan-bound bamboo bow`
-- **t3 (cấp 20):** `buffalo-leather chest guard over the indigo tunic, leather bracers, indigo head wrap; weapon: thick-backed broadsword or a horn-reinforced bow`
-- **t4 (cấp 30):** `layered leather armor with bronze rivets, leather cap, leather boots; weapon: medium-length polearm broadsword or a recurve bow with bronze tips`
-- **t5 (cấp 40):** `iron scale armor over indigo cloth, simple rounded iron helmet, short dark cape; weapon: heavy broadsword or a large war bow`
-- **t6 (cấp 50):** `iron scale armor with bronze trim and shoulder guards, helmet with a red cloth tassel, yellow sash; weapon: long-handled broadsword or a reinforced war bow`
-- **t7 (cấp 60):** `general's armor in black lacquer and gold, a white reed-plume emblem on the chest plate, helmet with a white reed-plume crest, yellow cape; weapon: ornate broadsword with a reed motif or a gold-trimmed war bow`
+- **t1 (cấp 1):** `coarse brown hemp tunic, rolled-up trousers, straw rope belt, brown cloth head wrap, barefoot; weapon: simple straight double-edged iron sword with a small crossguard and cord-wrapped grip or a simple bamboo bow`
+- **t2 (cấp 10):** `indigo-dyed cotton tunic, cloth leg wraps, straw sandals, red head wrap; weapon: plain straight double-edged iron sword with a small crossguard and cord-wrapped grip or a rattan-bound bamboo bow`
+- **t3 (cấp 20):** `buffalo-leather chest guard over the indigo tunic, leather bracers, indigo head wrap; weapon: straight double-edged steel sword with a small crossguard and cord-wrapped grip or a horn-reinforced bow`
+- **t4 (cấp 30):** `layered leather armor with bronze rivets, leather cap, leather boots; weapon: straight double-edged steel sword with a small bronze crossguard and cord-wrapped grip or a recurve bow with bronze tips`
+- **t5 (cấp 40):** `iron scale armor over indigo cloth, simple rounded iron helmet, short dark cape; weapon: straight double-edged tempered-steel sword with a small crossguard and cord-wrapped grip or a large war bow`
+- **t6 (cấp 50):** `iron scale armor with bronze trim and shoulder guards, helmet with a red cloth tassel, yellow sash; weapon: straight double-edged dark-steel sword with a small crossguard and cord-wrapped grip or a reinforced war bow`
+- **t7 (cấp 60):** `general's armor in black lacquer and gold, a white reed-plume emblem on the chest plate, helmet with a white reed-plume crest, yellow cape; weapon: straight double-edged fine-steel sword with a small plain crossguard, subtle reed motif and cord-wrapped grip or a gold-trimmed war bow`
 
 ## P4 — Bảng động tác
 
-Phái Đao:
+Phái Kiếm:
 
 ```
-Use the attached image as the character reference. Animation sprite sheet of this character with a broadsword, side view facing right, plain flat green #00FF00 background, evenly spaced frames in rows: idle breathing (4 frames), run (6 frames), jump and fall (4 frames), three-hit sword combo (8 frames), heavy overhead slash (6 frames), hit reaction (2 frames), knocked down (4 frames). Same size and same foot baseline in every frame. [STYLE] [AVOID]
+Use the attached image as the character reference. Animation sprite sheet of this character with a simple straight double-edged sword with a small crossguard and cord-wrapped grip, side view facing right, plain flat green #00FF00 background, evenly spaced frames in rows: idle breathing (4 frames), run (6 frames), jump and fall (4 frames), three-hit sword combo (8 frames), heavy overhead slash (6 frames), hit reaction (2 frames), knocked down (4 frames). Same size and same foot baseline in every frame. [STYLE] [AVOID]
 ```
 
 Phái Cung: thay đoạn động tác bằng `idle with bow (4 frames), run (6 frames), jump and fall (4 frames), quick shot (5 frames), charged shot (7 frames), shooting while running (6 frames), hit reaction (2 frames), knocked down (4 frames)`.
@@ -179,7 +179,7 @@ Use the attached UI kit as the style reference. Mobile game screen mockup in lan
 - **ui_shop:** `shop screen split in half: shop items in tabs on the left, player inventory grid on the right, buy and buy-many buttons`
 - **ui_menu_tabs:** `character menu with seven tabs on the left edge, the character standing in the center surrounded by ten equipment slots`
 - **ui_slot_select:** `title screen with three character save slots side by side, each showing the warrior in different gear, one empty slot with a plus button`
-- **ui_blacksmith:** `blacksmith upgrade screen: left a large item slot holding a broadsword and a grid of small slots holding whetstones; center a before and after stat panel and a large success-rate area; right an inventory grid; bottom a big hammer button; background a dim forge with an anvil`
+- **ui_blacksmith:** `blacksmith upgrade screen: left a large item slot holding a simple straight double-edged sword with a small crossguard and cord-wrapped grip and a grid of small slots holding whetstones; center a before and after stat panel and a large success-rate area; right an inventory grid; bottom a big hammer button; background a dim forge with an anvil`
 - **ui_topup:** `premium shop screen with two tabs: a shop grid priced in banknotes with categories for charms, utilities, fashion and mounts, and a bundles tab of permanent items (a starter bundle chest, fashion sets, decorative mounts, a large leather bag) each with a preview button and a buy button; a banknote balance at the top`
 - **ui_world_map:** `region map screen: a hand-drawn map of a river delta region with named map tiles connected by paths, a small reed flag marking the player, quest markers, travel point icons on villages and camps, region tabs along the top`
 - **ui_base:** `base-building screen: a side view of a fortified camp among limestone mountains with four fixed building plots (barracks, granary, stable, forge), one plot selected with a panel showing level pips out of three, material slots and a build button`
@@ -264,10 +264,56 @@ Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
 
-### weapon_dao.prompt.txt
+
+## Kiếm/Cung — prompt đã gửi30/10/2026
+
+Luôn đính kèm `art/reference/ref_dinh_bo_linh.png`, STYLE-B và AVOID nguyên văn.
+Cung lần1 bị loại vì khoảng kéo dây quá ngắn; bốn prompt hiện hành bên dưới.
+
+### rejected/weapon_cung_attempt1.prompt.txt
 
 ```text
-Use the attached approved turnaround as the identity/proportion/costume reference, specifically the exact right-facing side profile (second figure). Production pose sheet, clean smooth high-resolution hand-painted art, NOT pixel art, no pixel palette quantization. Same young Vietnamese man, same small topknot and anatomy proportions. Flat pure #00FF00 green background, no gradients or shadows on background. Orthographic side view facing RIGHT in EVERY cell. Even grid, very wide empty green gutters, no overlap, no frames, absolutely no text/numbers. All body anatomy at the SAME SOURCE SCALE in every cell, as though the complete man would be 520 pixels tall; DO NOT enlarge small pieces to fill their cell. Clear neck/hip registration cut planes. No head or legs on torso sheet; no torso on legs sheet. 3 columns by 2 rows, EXACTLY 6 separate complete broad single-edged Vietnamese dao swords, NO hands or people. Blade limestone grey-green main #A5B8B0, shadow #718B87, highlight #D9DDD0; dark outline #17151A; brown belt-colored grip. Sword max overall length about 220px at source scale. Clear handle on every sword. Reading order: 1 back-carried sword handle at upper RIGHT and point down LEFT (for a right-facing person); 2 raised overhead grip lower RIGHT, point up LEFT; 3 downward-forward diagonal mid-swing, grip upper LEFT, point lower RIGHT, with thin white physical slash trail; 4 horizontal slash grip LEFT and point RIGHT, thick back edge UP and sharp cutting edge DOWN, thin white slash trail BELOW blade; 5 finishing slash grip upper LEFT and point down RIGHT; 6 relaxed carry grip upper LEFT and point down RIGHT. The actual blade must be distinct from its white physical trail; no glowing magic. All sharp edges face direction of cutting, never backwards during strike.
+Use the attached approved reference ONLY for this Vietnamese character identity, costume, proportions and rendering. Clean smooth high-resolution hand-painted side-view game art, NOT pixel art. Every view faces RIGHT. Flat pure green #00FF00 background, no background shadows. Even widely separated grid, no overlapping cells. Absolutely no labels, numbers, text, decorative frames. Objects at consistent source scale within the sheet. EXACTLY5 separate simple Vietnamese wooden bows, 5 columns by1 row. No people/hands or arrows. Brown wood with pale bowstring. Every shooting bow is VERTICAL and has upper/lower limb tips at the LEFT, with belly curved/bulging outward to the RIGHT. The FRONT/ENEMY is RIGHT and archer is LEFT. String is always LEFT of the wooden curved belly. Reading order: 1 diagonal back-carried bow (upper right to lower left); 2 relaxed upright bow with straight taut string on LEFT; 3 DRAWN bow, vertical wooden belly at RIGHT and string making a clear V-shaped line from upper limb tip LEFTWARDS to a drawing point far LEFT at cheek level, then back to lower limb tip; 4 RELEASED bow, vertical belly at RIGHT with a STRAIGHT VERTICAL STRING ON LEFT connecting limb tips; 5 READY bow, same vertical belly RIGHT and string LEFT with a separate nocked arrow pointing RIGHT at middle. Use same bow silhouette/size for2–5, tiny middle grip on rightmost belly at centre. Do NOT reverse curve or put string in front of the wooden belly. Bow height about two thirds of complete man.
+
+Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+### weapon_kiem.prompt.txt
+
+```text
+Use the attached approved reference ONLY for this Vietnamese character identity, costume, proportions and rendering. Clean smooth high-resolution hand-painted side-view game art, NOT pixel art. Every view faces RIGHT. Flat pure green #00FF00 background, no background shadows. Even widely separated grid, no overlapping cells. Absolutely no labels, numbers, text, decorative frames. Objects at consistent source scale within the sheet. EXACTLY 6 separate weapons, 3 columns by2 rows. A simple STRAIGHT DOUBLE-EDGED SWORD, symmetrical straight blade tapering to a sharp point, SMALL plain crossguard, brown cord-wrapped grip. Limestone grey-green steel (#A5B8B0 main, #718B87 shadow, #D9DDD0 highlight), dark clean outline. NO curved blade, NO ornate fittings. Draw no people/hands. Each sword has a CLEAR GRIP and TIP. Reading order: 1 back-carried, handle at upper RIGHT, blade extends down LEFT behind body; 2 raised preparation, GRIP LOW RIGHT and pointed blade UP LEFT behind head; 3 middle swing, GRIP LOW LEFT and pointed blade UP RIGHT, white PHYSICAL slash trail immediately BEYOND/AROUND THE ADVANCING TIP ON THE RIGHT; 4 horizontal strike, GRIP LEFT and TIP RIGHT, long white physical slash trail immediately AHEAD OF the advancing TIP on the RIGHT; 5 finish, GRIP UP LEFT and TIP DOWN RIGHT, faint white physical trail near advancing tip bottom RIGHT; 6 straight thrust, GRIP LEFT and pointed blade RIGHT horizontally, no trail. All blade silhouettes STRAIGHT. Weapon length about half character height. Trails white brush-like physical motion, not glowing magic. Each cell must contain only its one sword plus its optional attached trail.
+
+Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+### weapon_cung.prompt.txt
+
+```text
+Use the attached approved reference ONLY for this Vietnamese character identity, costume, proportions and rendering. Clean smooth high-resolution hand-painted side-view game art, NOT pixel art. Every view faces RIGHT. Flat pure green #00FF00 background, no background shadows. Even widely separated grid, no overlapping cells. Absolutely no labels, numbers, text, decorative frames. Objects at consistent source scale within the sheet. EXACTLY5 separate simple Vietnamese wooden bows, 3 columns by2 rows, last cell empty green. No people/hands or arrows. Brown wood with pale bowstring. Every shooting bow is VERTICAL and has upper/lower limb tips at the LEFT, with belly curved/bulging outward to the RIGHT. The FRONT/ENEMY is RIGHT and archer is LEFT. String is always LEFT of the wooden curved belly. Reading order: 1 diagonal back-carried bow (upper right to lower left); 2 relaxed upright bow with straight taut string on LEFT; 3 DRAWN bow, vertical wooden belly at RIGHT and string making a clear V-shaped line from upper limb tip LEFTWARDS to a drawing point far LEFT at cheek level, the horizontal draw distance from middle grip to pulled string point must be about 70 percent of the bow HEIGHT (deep wide V, long draw; very wide space allowed in the third cell), then back to lower limb tip; 4 RELEASED bow, vertical belly at RIGHT with a STRAIGHT VERTICAL STRING ON LEFT connecting limb tips; 5 READY bow, same vertical belly RIGHT and string LEFT with a separate nocked arrow pointing RIGHT at middle. All bow HEIGHTS must match, and the drawn bow is dramatically WIDER toward LEFT. Use same bow silhouette/size for2–5, tiny middle grip on rightmost belly at centre. Do NOT reverse curve or put string in front of the wooden belly. Bow height about two thirds of complete man.
+
+Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+### arrow.prompt.txt
+
+```text
+Use the attached approved reference ONLY for this Vietnamese character identity, costume, proportions and rendering. Clean smooth high-resolution hand-painted side-view game art, NOT pixel art. Every view faces RIGHT. Flat pure green #00FF00 background, no background shadows. Even widely separated grid, no overlapping cells. Absolutely no labels, numbers, text, decorative frames. Objects at consistent source scale within the sheet. EXACTLY2 arrows,2 columns by1 row, generous green gap. Each is horizontally oriented LEFT to RIGHT. Simple wooden shaft, pale grey stone/steel arrowhead at far RIGHT, brown feather fletching at LEFT. First arrow whole in flight. Second arrow impacted/broken close to tip, with tip STILL RIGHT and feather tail LEFT. No bow, no people, no trails, no background. Full arrow clearly visible in each cell.
+
+Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+### poses_body_cung.prompt.txt
+
+```text
+Use the attached approved reference ONLY for this Vietnamese character identity, costume, proportions and rendering. Clean smooth high-resolution hand-painted side-view game art, NOT pixel art. Every view faces RIGHT. Flat pure green #00FF00 background, no background shadows. Even widely separated grid, no overlapping cells. Absolutely no labels, numbers, text, decorative frames. Objects at consistent source scale within the sheet. EXACTLY4 TORSO-WITH-BOTH-ARMS painted poses,4 columns by1 row, same undyed short sleeve tunic, brown tied belt and belt tails as attached reference. HEADLESS: crop across BASE OF NECK; LEGLESS: crop below tunic hem. No weapons/bows/strings/arrows drawn; these are separate sprites. All fists clearly drawn. Same torso height/width, source scale as a complete man about520px tall. Reading order: 1 bow rest, FAR ARM extended forward RIGHT horizontally at SHOULDER LEVEL with fist grasping imaginary vertical bow, near hand relaxed in front of chest; 2 drawing, FAR ARM straight forward RIGHT at SHOULDER LEVEL, near elbow points LEFT and near fist pulled beside cheek/neck ABOVE SHOULDER, drawing imaginary string LEFT; 3 release, FAR ARM stays extended RIGHT in exactly same position, near fist springs backward LEFT past neck; 4 running shoot, torso leans slightly RIGHT, far arm extended RIGHT shoulder height, near fist pulled to cheek. Important FAR holding hand is the RIGHTMOST hand, shooting arm has proper shoulder/elbow anatomy. Do not add a head just because the near fist is cheek height.
 
 Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
 

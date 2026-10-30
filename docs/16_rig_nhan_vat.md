@@ -151,7 +151,7 @@ spawn đạn. Nhịp chiến đấu thật vẫn do A0 quyết định.
 F5 mở A0 gốc. Bấm **Mở rig greybox** để sang `rig/rig_greybox.tscn` (hoặc mở scene
 đó và F6). Đây là bản kế thừa A0, giữ nguyên player/world/hitbox và điều khiển.
 Trong ⚙: **Rig greybox** thay sprite tạm, tắt để so sánh; **Vũ khí cung** đổi hình
-đao/cung; bộ chọn clip mặc định **Theo trạng thái thật A0**, chọn clip khác để xem
+kiếm/cung; bộ chọn clip mặc định **Theo trạng thái thật A0**, chọn clip khác để xem
 đủ combo/hurt/ngã; **Về A0 gốc** trở lại. Công tắc chỉ ở cảnh mới, không sửa bảng ⚙
 hay mã player của A0 gốc. F1 hiện khớp; thao tác preview không áp root motion lên body.
 
@@ -343,7 +343,7 @@ Kích thước và điểm gắn cuối phải thử với đầu/tay mới, ch�
 
 ## Chỉnh bộ phận 29/10/2026 — chưa duyệt
 
-Vũ khí art cho phép limestone: lưỡi đao #A5B8B0, bóng #718B87, sáng #D9DDD0,
+Vũ khí art cho phép limestone: lưỡi kiếm #A5B8B0, bóng #718B87, sáng #D9DDD0,
 viền #17151A; cán/vỏ belt. Cung gỗ belt, dây sáng #D9DDD0. Hai đùi chỉ pants
 và nét outline; da bắt đầu từ gối/cẳng chân. Kích thước/pivot/attach giữ nguyên.
 
@@ -354,14 +354,14 @@ Giữ dữ liệu greybox để so sánh; chỉ thay `animations.json` của b�
 Kết quả scene thật và nguyên văn script ở [báo cáo polish](reports/g1_parts_polish_report.md).
 
 
-### Sửa hướng đao 29/10/2026 — chưa duyệt
+### Sửa hướng kiếm 29/10/2026 — chưa duyệt
 
 Trục lưỡi PNG hướng −Y, nên phải xoay 180° quanh pivot cầm, có bù góc bàn tay.
 Ở mọi pose thường, chuôi→mũi cùng hướng khuỷu→cổ tay, góc đo khoảng 6,801°.
 Idle/turn chúc mũi xuống và ra trước (trục 60° ở hệ rig nhìn phải). Giữ pivot,
 attach và hitbox; không dùng góc 0 cũ khiến lưỡi nằm dọc cẳng tay về phía khuỷu.
 Cung gắn nắm tay xa; trục hai đầu cánh cung lúc bắn lệch vuông góc 0,490°.
-59 pose đã kiểm (13 động tác và run/shoot trái), không mũi đao nào nằm giữa khuỷu
+59 pose đã kiểm (13 động tác và run/shoot trái), không mũi kiếm nào nằm giữa khuỷu
 và cổ tay. [Báo cáo, ảnh và script](reports/g1_weapon_direction_report.md).
 
 ## Hướng mới: bộ tư thế vẽ trọn theo lớp — bản thử, chưa duyệt
@@ -373,7 +373,7 @@ Nhánh `feat/g1-pose-sheets-pilot` từ main8bd5876.
 
 Thay bằng đầu / thân kèm hai tay / chân / vũ khí, mỗi lớp có tư thế vẽ trọn.
 4 Sprite2D scale0,5 cố định và filterlinear; chỉ gốc lật ngang±1, mọi rotation0.
-Căn đế tại y0, hông thân vào hông chân, cổ đầu vào cổ thân; đao theo nắm tay
+Căn đế tại y0, hông thân vào hông chân, cổ đầu vào cổ thân; kiếm theo nắm tay
 khi đánh và mốc lưng khi không đánh. Mọi mốc trong
 `art/sprites/characters/chr_dbl_poses/anchors.json`; dữ liệu clip trong
 `prototype/pose_rig/data/frames.json`, không đặt góc vung trong mã.
@@ -391,3 +391,22 @@ Bản đóng khung idle2× cao192px, chân cách đáy16px, tương ứng96/8log
 Blender4.3.2 đã có sẵn: file `pose_authoring_2d.blend` là bàn dựng4 mặt phẳng
 tranh2D có texture đóng gói và camera trực giao. Render thật được lưu để soát,
 **không phải mô hình3D hoặc nhân vật mới được điêu khắc/vẽ tay trong Blender**.
+
+## Pilot Kiếm/Cung30/10/2026 — chưa duyệt
+
+Phái hiện hành là Kiếm/Cung. Các ID `dao`/`bow` và phép xoay ở các mục rig16mảnh
+trước đây là dữ liệu lịch sử đã dừng; giữ nguyên file `prototype/rig/`, không dùng
+chúng cho pilot mới. Hình hiện hành: kiếm thẳng hai lưỡi và cung có lưng ở trước,
+dây ở sau, theo mục mới01_art_bible. Không thay bảng sốA0/chiêu.
+
+Dữ liệu `prototype/pose_rig/data/source_regions.json` ghi mốc chọn bằng mắt trên
+PNG nguồn: kiếm chuôi/mũi; cung tay cầm/lưng/dây; tên đuôi/mũi; thân bắn cổ/hông/
+tay gần/tay xa. `anchors.json` là các mốc tương ứng ở ảnh2× sau cắt/đăng ký.
+Giữ hình thân/chân/đầu chung; thay6 hình vũ khí cũ bằng6kiếm, thêm5cung/2tên/
+4thân bắn. Runtime chỉ dời/lật, không xoay; tên là Sprite2D riêng.
+
+Kiếm: idle/run/jump/fall, slash4khung, thrust2khung. Cung: idle/run/jump/fall,
+shoot3khung, run_shoot2khung. Giữ mốc chân y0 và cổ/hông; chọn phái/động tác
+trong scene xem riêng. Thời gian pilot và sự kiện sinh tên ghi ở09_animation_spec.
+Tờ cung đã sinh2lần, loại lần1 vì khoảng kéo không tới tay; các tờ mới khác1lần.
+[Báo cáo, nguồn, ảnh chụp, script và số đo](reports/g1_kiem_cung_report.md).

@@ -102,3 +102,10 @@ Tạo ảnh tốn hạn mức gói ChatGPT nhanh hơn nhiều so với tạo ch�
 - Không xoay vũ khí theo tay; đòn đánh dùng hình vung vẽ sẵn, lưỡi theo chiều chém.
 - Ngoài đánh, hình vũ khí sau lưng đi theo thân; thay áo/quần cần đủ bộ tư thế.
 - Ảnh người2× hiển thịlinear, không ép32 màu; giữ kích thước logicA0. Theo mục mới01_art_bible.
+
+## Kiếm và cung —30/10/2026
+
+- Phái Kiếm: kiếm thẳng hai lưỡi, mũi nhọn, chắn nhỏ, cán quấn dây; không katana/kiếm Trung Hoa cầu kỳ.
+- Ngoài đánh, vũ khí đeo sau lưng theo thân. Đánh dùng hình vung vẽ sẵn: chuôi ở tay gần, lưỡi ra xa theo chiều chém, vệt trắng ở phía mũi; không xoay theo tay.
+- Bắn cung: tay xa cầm cung thẳng đứng, lưng phồng về trước, dây về sau; giương kéo chữV đến tay gần cạnh má, thả dây thẳng.
+- Tên là hình riêng, mũi ở đầu phía trước, bay ra trước; chỉ lật gốc, mọi Sprite2Drotation0. Giữ AVOID và số liệu game.

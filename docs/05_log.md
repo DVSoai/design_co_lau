@@ -450,3 +450,28 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
 - Xvfb/Godot4.7.2 chụp1600×720 cả hai hướng; báo cáo và nguyên đầu ra tại
   reports/g1_pose_sheets_report.md; nguyên đầu ra cũng trong commit message.
   Asset bản thử chưa duyệt; không tự đánh dấu[x]. Nhật ký cũ giữ nguyên từng byte.
+
+## 30/10/2026 — g1_kiem_cung — v1, bản thử chưa duyệt
+
+- Người dùng chốt đổi phái/vũ khí sang Kiếm; tên Trảm Kiếm, Kiếm Tâm. Đồng bộ
+  tài liệu/ID ví dụ dự kiến, không đổi số liệu chiêu hoặc trạng thái checklist.
+  Nhánhfeat/g1-kiem-cung từ main4c2e368 đã có PR23.
+- Kiếm thẳng hai lưỡi, chắn nhỏ/cán quấn dây; vung vẽ sẵn, chuôi ở tay gần,
+  mũi/vệt theo chiều chém. Cung lưng ở trước/dây sau; giương chữV về tay gần,
+  thả dây thẳng; tên là hình riêng bay về trước. Ngoài đánh, vũ khí sau lưng.
+- Tham khảo cơ chế thể loại theo yêu cầu: đối chiếu cách chọn hình/offset/lật
+  theo khung, hình vung và lưng cung/dây; tự viết và tạo hình riêng, không chép
+  mã/hình/số liệu/tên nguồn tham khảo vào repo.
+- Imagegen với ảnh gốc, STYLE-B/AVOID:6kiếm,5cung,2tên,4thân bắn. Kiếm/tên/thân
+  mỗi tờ1lần; cung2lần, loại lần1 do khoảng kéo dây quá ngắn. Lưu prompt nguyên
+  văn cạnh ảnh và03_prompts; lưu nguồn bị loại để đối chiếu.
+- Cut_pose_sheets cắt theo vùng liền khối, đăng ký đồng dạng toàn tờ, alpha mềm
+  khử xanh; mốc chuôi/mũi/lưng/dây/tay ghi bằng số. Xóa6hình vũ khí cũ của pilot,
+  thaykiếm; không chạm rig16mảnh lịch sử, configA0, Đào Úc hay art/reference.
+- Scene đổi phái/động tác/hướng; slash4khung0,30s; thrust2khung0,10s Đề xuất;
+  shoot3pha giữ5/15s và spawn3/15s; run_shoot2pha giữ6/12s và spawn2/12s.
+  Tên240px/s chỉ là Đề xuất xem thử. Không thay số chiêu hoặc gameplayA0.
+- Kiểm mốc/hướng cả2phía, mọi Sprite2Dkhông xoay, tên chỉ sinh ở pha thả và
+  bay xa; chụp scene Godot1600×720 hai hướng. Báo cáo/scripts/nguyên đầu ra tại
+  reports/g1_kiem_cung_report.md; đầu ra cũng trong commit message.
+- Nhật ký cũ và mọi báo cáo cũ giữ nguyên; không tự duyệt mỹ thuật/đánh dấu[x].

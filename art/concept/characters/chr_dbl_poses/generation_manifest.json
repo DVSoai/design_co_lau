@@ -30,5 +30,41 @@
     "prompt_file": "poses_body.prompt.txt",
     "image_file": "poses_body.png",
     "sha256": "608aba8c6e09f9ce77ba9f7b5415ef483676406acbed472e870f0364be5159b2"
+  },
+  "weapon_kiem": {
+    "attempts": 1,
+    "rejected": 0,
+    "rejection_reason": null,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "weapon_kiem.prompt.txt",
+    "image_file": "weapon_kiem.png",
+    "sha256": "cc376416e4d7e0bbf06c93ba1e6aa6406eb896aabef58d432d178202756179ea"
+  },
+  "weapon_cung": {
+    "attempts": 2,
+    "rejected": 1,
+    "rejection_reason": "insufficient string draw distance to reach near hand at character scale",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "weapon_cung.prompt.txt",
+    "image_file": "weapon_cung.png",
+    "sha256": "8cb6fd6efb2ebaaa652e498f9c25aec91e4f5fa6f3589263b9d19832f789e4fa"
+  },
+  "arrow": {
+    "attempts": 1,
+    "rejected": 0,
+    "rejection_reason": null,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "arrow.prompt.txt",
+    "image_file": "arrow.png",
+    "sha256": "adb4a3298035625eeec1882ab6a2bf851727a7a4f90c37353268c570e8aa88bd"
+  },
+  "poses_body_cung": {
+    "attempts": 1,
+    "rejected": 0,
+    "rejection_reason": null,
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "prompt_file": "poses_body_cung.prompt.txt",
+    "image_file": "poses_body_cung.png",
+    "sha256": "adcd6d92268b87131cc7a82fa5cc2a11afddd3f7d9978d347bc0f60827b46564"
   }
 }

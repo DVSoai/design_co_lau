@@ -4,19 +4,19 @@
 
 ## Trang bị thường và part_set
 
-Mỗi item có part_set. Áo thay thân/tay trên gần xa; quần thay đùi/cẳng chân gần xa; vũ khí thay dao/bow; nón/khăn nếu có ô thay phần trên đầu. Các ô đổi độc lập; mảnh còn lại dùng bộ gốc. Cùng bậc dùng chung hình, màu/hoa văn riêng theo món là tùy chọn sau.
+Mỗi item có part_set. Áo thay thân/tay trên gần xa; quần thay đùi/cẳng chân gần xa; vũ khí thay kiem/cung; nón/khăn nếu có ô thay phần trên đầu. Các ô đổi độc lập; mảnh còn lại dùng bộ gốc. Cùng bậc dùng chung hình, màu/hoa văn riêng theo món là tùy chọn sau.
 
 | Bậc | Hướng thiết kế riêng thế kỷ 10 (chưa duyệt art) |
 |---|---|
-| chr_dbl_t1 | Vải mộc bền, quần nâu, đao/cung tre giản dị |
+| chr_dbl_t1 | Vải mộc bền, quần nâu, kiếm/cung tre giản dị |
 | chr_dbl_t2 | Vải dày nhuộm đất, đai chắc, vũ khí hoàn thiện hơn |
 | chr_dbl_t3 | Giáp da nhẹ, quần gia cố, cung gỗ/tre ghép |
 | chr_dbl_t4 | Giáp da đóng lá sắt nhỏ, trang phục quân sĩ |
-| chr_dbl_t5 | Giáp lá sắt, vải chàm tiết chế, đao chắc/cung sừng |
+| chr_dbl_t5 | Giáp lá sắt, vải chàm tiết chế, kiếm chắc/cung sừng |
 | chr_dbl_t6 | Giáp tướng bằng lá sắt, đai đồng giản dị, vũ khí tinh luyện |
 | chr_dbl_t7 | Bộ nghi lễ chiến trận của quân Đinh, dấu bông lau chỉ ở bậc này |
 
-Mọi bậc có áo/quần/đao/cung riêng; bám STYLE/AVOID, không áo dài/giáp samurai/long bào hay năng lượng phép thuật.
+Mọi bậc có áo/quần/kiếm/cung riêng; bám STYLE/AVOID, không áo dài/giáp samurai/long bào hay năng lượng phép thuật.
 
 ## Hiệu ứng cường hóa — đề xuất, chưa chốt số
 
@@ -27,7 +27,7 @@ Mọi bậc có áo/quần/đao/cung riêng; bám STYLE/AVOID, không áo dài/g
 - `head`: khăn/búi tóc: head.
 - `shirt`: áo: body + upper_arm_near/far.
 - `pants`: quần: thigh_near/far + shin_near/far.
-- `weapon`: vũ khí: dao hoặc bow theo phái.
+- `weapon`: vũ khí: kiem hoặc cung theo phái.
 - `cape`: áo choàng: cape sau lưng, khớp vai.
 - `face`: khăn che mặt/mặt nạ tuồng/chèo: face_overlay trên mặt.
 - `mount`: thú cưỡi ngoại hình.
@@ -37,16 +37,16 @@ Thời trang theo ô độc lập, mỗi món một dạng hình cố định, k
 
 ## Dữ liệu và khối lượng
 
-Item thường: id ổn định itm_, part_set. Thời trang: id itm_fsh_, part_set, stats, source=iap/ingame, slot; dùng sku_/ent_ cho sản phẩm/quyền lợi mua, theo 14_online_migration. Quyền sở hữu IAP dùng chung 3 ô, lựa chọn mặc và món kiếm trong game thuộc từng ô; cấp quyền lợi idempotent, không cộng chỉ số 3 lần. part_set là map part_id→asset_id, không cho món đao hiển thị thành cung sai phái.
+Item thường: id ổn định itm_, part_set. Thời trang: id itm_fsh_, part_set, stats, source=iap/ingame, slot; dùng sku_/ent_ cho sản phẩm/quyền lợi mua, theo 14_online_migration. Quyền sở hữu IAP dùng chung 3 ô, lựa chọn mặc và món kiếm trong game thuộc từng ô; cấp quyền lợi idempotent, không cộng chỉ số 3 lần. part_set là map part_id→asset_id, không cho món kiếm hiển thị thành cung sai phái.
 
-7 bậc × (áo 3 mảnh + quần 4 mảnh + đao 1 + cung 1) = **63 mảnh thay thế**, 28 part_set danh mục. Không vẽ lại toàn bộ clip cho từng bậc. Đầu gốc/tay/bàn chân dùng lại. Nếu vẽ nón trang bị riêng, cộng tối thiểu 1 lớp/món; chưa tính vào 63.
+7 bậc × (áo 3 mảnh + quần 4 mảnh + kiếm 1 + cung 1) = **63 mảnh thay thế**, 28 part_set danh mục. Không vẽ lại toàn bộ clip cho từng bậc. Đầu gốc/tay/bàn chân dùng lại. Nếu vẽ nón trang bị riêng, cộng tối thiểu 1 lớp/món; chưa tính vào 63.
 
 | Ô thời trang | Khối lượng mỗi mẫu |
 |---|---|
 | head | 1 mảnh đầu/tóc |
 | shirt | 3 mảnh |
 | pants | 4 mảnh |
-| weapon | 1 mảnh/phái; 2 nếu phát hành cả Đao/Cung |
+| weapon | 1 mảnh/phái; 2 nếu phát hành cả Kiếm/Cung |
 | cape | 1 lớp, vòng 6–10 frame đề xuất |
 | face | 1 lớp |
 | mount | 1 bộ thú, số frame theo 09; không phải 1 PNG |

@@ -1,49 +1,36 @@
-# Bộ tư thế vẽ trọn — pilot chưa duyệt
+# Kiếm/Cung — pilot tư thế vẽ trọn, chưa duyệt
 
-Godot **4.7.2 Standard/GDScript**, bản thử riêng; không thay nhân vật A0/Đào Úc.
-Từ root repo:
+Godot4.7.2, scene riêng; không thay A0 hoặc Đào Úc.
+Từ repo root: `godot --path prototype res://pose_rig/pose_rig.tscn`.
+Hoặc chạy A0, bấm **Nhân vật tư thế (thử)**. Chọn phái Kiếm/Cung, động tác,
+đổi hướng, ẩn/hiện vũ khí, VềA0. Khung ảnh bên dưới là các pha để duyệt.
 
-```sh
-godot --path prototype res://pose_rig/pose_rig.tscn
-```
+Kiếm idle/run/jump/fall đeo sau lưng; slash4hình vung/0,30s; thrust2hình/0,10s
+(Đề xuất pilot). Cung dùng shoot3pha, run_shoot2pha; tên là hình riêng sinh ở
+pha thả. Các pha giữ tổng thời gian/mốc spawn của09, xem báo cáo.
 
-Hoặc mở dự án `prototype/`, chạy A0 rồi bấm **Nhân vật tư thế (thử)**.
-Chọn idle/run/jump/fall/slash, đổi hướng, ẩn/hiện đao, hoặc Về A0.
-
-4 lớp có tranh nguyên tư thế; PNG2×, Sprite2D scale0,5 cố định/filterlinear,
-rotation0; actor root chỉ lật±1. `data/frames.json` chọn hình/thời lượng,
-`data/anchors.json` lưu mốc cổ/hông/đế/chuôi theo pixel texture2×.
-Đổi đồ cần bộ hình đầy đủ theo tư thế; chưa triển khai hệ thống đồ ở đây.
+4 lớp Sprite2Dảnh2×, scale0,5/linear cố định, rotation0; gốc chỉ lật±1.
+Chân y0, cổ/hông ghép theo mốc; kiếm theo tay gần, cung theo tay xa.
+`data/frames.json` là hình/thời lượng; `data/anchors.json` là mốc2× sau cắt;
+`data/source_regions.json` là vùng liền khối/mốc đã chọn bằng mắt ở ảnh nguồn.
+Arrow_speed240logicpx/s là Đề xuất chỉ cho xem thử, không đổi tuningA0.
 
 ```sh
 python3 tools/cut_pose_sheets.py
 python3 tools/check_pose_sheets.py
 godot --headless --path prototype --editor --import --quit
 godot --headless --fixed-fps 60 --path prototype --script res://tests/pose_rig_checks.gd
+godot --headless --fixed-fps 60 --path prototype --script res://tests/weapon_direction_checks.gd
 ```
 
-Các lệnh trên chạy từ root. File sinh runtime nằm trong `pose_rig/art/`;
-script kiểm chúng giống byte với PNG art nguồn. Nguồn AI đầu/vũ khí cần đăng ký
-đồng dạng toàn tờ trước khi co chung; cả hai hệ số được ghi trong anchors.json,
-không tuyên bố các sheet nguyên bản đã đồng tỉ lệ.
-
-Chụp thật trên Linux có Xvfb (`xvfb-run` là tiện ích nếu máy đã cài):
+Chụp Linux có Xvfb (từ root):
 
 ```sh
-xvfb-run -a -s '-screen 0 1600x720x24' godot --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-poses
-xvfb-run -a -s '-screen 0 1600x720x24' godot --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-poses --left
+xvfb-run -a -s '-screen 0 1600x720x24' godot --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-weapons
+xvfb-run -a -s '-screen 0 1600x720x24' godot --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-weapons --left
 python3 tools/compare_pose_captures.py
 ```
 
-Lượt này dùng Xvfb21.1.16 giải nén trong `/tmp/pose-xvfb/`, Mesa llvmpipe,
-Godot4.7.2; ảnh viewport thực1600×720 từng hướng lưu `reports/scene_*.png`.
-Ảnh ghép chỉ nối hai ảnh viewport, không sửa hình trong ảnh.
-
-Bàn dựng Blender2D (4 plane có texture đóng gói, chưa có mô hình3D):
-
-```sh
-blender --background --factory-startup --python tools/blender_pose_preview.py
-```
-
-[Báo cáo](../../docs/reports/g1_pose_sheets_report.md),
-[nguyên đầu ra](../../docs/reports/g1_pose_sheets_checks.txt).
+[Báo cáo](../../docs/reports/g1_kiem_cung_report.md),
+[đầu ra thật](../../docs/reports/g1_kiem_cung_checks.txt).
+Các báo cáo cũ giữ nguyên là lịch sử; hình hiện hành dùngkiem_*/cung_*.
