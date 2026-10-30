@@ -1,0 +1,215 @@
+$ python3 tools/style_board.py
+Original sheets=9; replacement sheets=2; total=11; retained all originals
+Transparent extracted PNGs=67; 5poses+face per sheet, plus reference
+style_v2_board.png 2220x3355; rows=11; human spans160/96px from recorded source landmarks
+style_v2_160.png 1620x260; choices9 at human height160; ids=['v1_a', 'v1_b', 'v1_c_r1', 'v2_a', 'v2_b', 'v2_c_r1', 'v3_a', 'v3_b', 'v3_c']
+v1_a: source=[2170, 725]; idle_h=497; head+bun=148; measured=3.3581 heads; requested=3
+v1_b: source=[2172, 724]; idle_h=523; head+bun=148; measured=3.5338 heads; requested=3
+v1_c: source=[2170, 725]; idle_h=485; head+bun=147; measured=3.2993 heads; requested=3
+v2_a: source=[2172, 724]; idle_h=497; head+bun=160; measured=3.1063 heads; requested=3.5
+v2_b: source=[2172, 724]; idle_h=506; head+bun=145; measured=3.4897 heads; requested=3.5
+v2_c: source=[2170, 725]; idle_h=474; head+bun=146; measured=3.2466 heads; requested=3.5
+v3_a: source=[2170, 725]; idle_h=519; head+bun=153; measured=3.3922 heads; requested=4
+v3_b: source=[2170, 725]; idle_h=529; head+bun=146; measured=3.6233 heads; requested=4
+v3_c: source=[2172, 724]; idle_h=487; head+bun=146; measured=3.3356 heads; requested=4
+v1_c_r1: source=[2172, 724]; idle_h=473; head+bun=138; measured=3.4275 heads; requested=3
+v2_c_r1: source=[2172, 724]; idle_h=517; head+bun=155; measured=3.3355 heads; requested=3.5
+v1_a shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [540, 559, 579], 'runs_px': [5, 4, 4], 'median_px': 4.0, 'fraction_of_idle_height': 0.008048289738430584}
+v1_b shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [550, 571, 592], 'runs_px': [5, 5, 5], 'median_px': 5.0, 'fraction_of_idle_height': 0.009560229445506692}
+v1_c shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [559, 578, 598], 'runs_px': [5, 5, 4], 'median_px': 5.0, 'fraction_of_idle_height': 0.010309278350515464}
+v2_a shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [533, 552, 572], 'runs_px': [7, 5, 6], 'median_px': 6.0, 'fraction_of_idle_height': 0.012072434607645875}
+v2_b shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [547, 567, 587], 'runs_px': [5, 5, 5], 'median_px': 5.0, 'fraction_of_idle_height': 0.009881422924901186}
+v2_c shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [544, 563, 582], 'runs_px': [5, 5, 6], 'median_px': 5.0, 'fraction_of_idle_height': 0.010548523206751054}
+v3_a shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [563, 584, 605], 'runs_px': [5, 5, 5], 'median_px': 5.0, 'fraction_of_idle_height': 0.009633911368015413}
+v3_b shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [560, 581, 603], 'runs_px': [4, 4, 4], 'median_px': 4.0, 'fraction_of_idle_height': 0.007561436672967864}
+v3_c shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [543, 562, 582], 'runs_px': [5, 4, 5], 'median_px': 5.0, 'fraction_of_idle_height': 0.01026694045174538}
+v1_c_r1 shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [556, 575, 594], 'runs_px': [4, 4, 3], 'median_px': 4.0, 'fraction_of_idle_height': 0.008456659619450317}
+v2_c_r1 shin outline probe {'method': 'leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity', 'source_rows': [565, 585, 606], 'runs_px': [5, 4, 5], 'median_px': 5.0, 'fraction_of_idle_height': 0.009671179883945842}
+No imagegen used for board/labels/comparison; only real source PNGs cropped/keyed/scaled/composited by this script. Raster PNG concept, not editable SVG.
+exit=0
+
+$ python3 tools/check_style_board.py
+art/concept/style_v2/cut/reference_v9_side.png: 126x518; green_visible=0
+art/concept/style_v2/cut/v1_a_bow.png: 474x537; green_visible=0
+art/concept/style_v2/cut/v1_a_face.png: 249x298; green_visible=0
+art/concept/style_v2/cut/v1_a_idle.png: 221x501; green_visible=0
+art/concept/style_v2/cut/v1_a_raise.png: 373x557; green_visible=0
+art/concept/style_v2/cut/v1_a_run.png: 352x469; green_visible=0
+art/concept/style_v2/cut/v1_a_slash.png: 537x447; green_visible=0
+art/concept/style_v2/cut/v1_b_bow.png: 449x564; green_visible=0
+art/concept/style_v2/cut/v1_b_face.png: 254x288; green_visible=0
+art/concept/style_v2/cut/v1_b_idle.png: 206x527; green_visible=0
+art/concept/style_v2/cut/v1_b_raise.png: 372x590; green_visible=0
+art/concept/style_v2/cut/v1_b_run.png: 382x467; green_visible=0
+art/concept/style_v2/cut/v1_b_slash.png: 535x480; green_visible=0
+art/concept/style_v2/cut/v1_c_bow.png: 483x570; green_visible=0
+art/concept/style_v2/cut/v1_c_face.png: 245x282; green_visible=0
+art/concept/style_v2/cut/v1_c_idle.png: 219x489; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_bow.png: 413x519; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_face.png: 256x278; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_idle.png: 225x477; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_raise.png: 354x580; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_run.png: 344x443; green_visible=0
+art/concept/style_v2/cut/v1_c_r1_slash.png: 583x454; green_visible=0
+art/concept/style_v2/cut/v1_c_raise.png: 357x592; green_visible=0
+art/concept/style_v2/cut/v1_c_run.png: 384x443; green_visible=0
+art/concept/style_v2/cut/v1_c_slash.png: 528x447; green_visible=0
+art/concept/style_v2/cut/v2_a_bow.png: 460x527; green_visible=0
+art/concept/style_v2/cut/v2_a_face.png: 274x355; green_visible=0
+art/concept/style_v2/cut/v2_a_idle.png: 222x501; green_visible=0
+art/concept/style_v2/cut/v2_a_raise.png: 365x556; green_visible=0
+art/concept/style_v2/cut/v2_a_run.png: 360x466; green_visible=0
+art/concept/style_v2/cut/v2_a_slash.png: 521x455; green_visible=0
+art/concept/style_v2/cut/v2_b_bow.png: 430x538; green_visible=0
+art/concept/style_v2/cut/v2_b_face.png: 263x299; green_visible=0
+art/concept/style_v2/cut/v2_b_idle.png: 215x510; green_visible=0
+art/concept/style_v2/cut/v2_b_raise.png: 339x575; green_visible=0
+art/concept/style_v2/cut/v2_b_run.png: 384x458; green_visible=0
+art/concept/style_v2/cut/v2_b_slash.png: 569x456; green_visible=0
+art/concept/style_v2/cut/v2_c_bow.png: 411x500; green_visible=0
+art/concept/style_v2/cut/v2_c_face.png: 263x308; green_visible=0
+art/concept/style_v2/cut/v2_c_idle.png: 199x478; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_bow.png: 423x547; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_face.png: 223x266; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_idle.png: 216x521; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_raise.png: 332x607; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_run.png: 391x468; green_visible=0
+art/concept/style_v2/cut/v2_c_r1_slash.png: 577x474; green_visible=0
+art/concept/style_v2/cut/v2_c_raise.png: 354x553; green_visible=0
+art/concept/style_v2/cut/v2_c_run.png: 347x444; green_visible=0
+art/concept/style_v2/cut/v2_c_slash.png: 626x420; green_visible=0
+art/concept/style_v2/cut/v3_a_bow.png: 439x562; green_visible=0
+art/concept/style_v2/cut/v3_a_face.png: 255x316; green_visible=0
+art/concept/style_v2/cut/v3_a_idle.png: 193x523; green_visible=0
+art/concept/style_v2/cut/v3_a_raise.png: 325x602; green_visible=0
+art/concept/style_v2/cut/v3_a_run.png: 396x485; green_visible=0
+art/concept/style_v2/cut/v3_a_slash.png: 572x468; green_visible=0
+art/concept/style_v2/cut/v3_b_bow.png: 421x576; green_visible=0
+art/concept/style_v2/cut/v3_b_face.png: 294x363; green_visible=0
+art/concept/style_v2/cut/v3_b_idle.png: 234x533; green_visible=0
+art/concept/style_v2/cut/v3_b_raise.png: 369x604; green_visible=0
+art/concept/style_v2/cut/v3_b_run.png: 380x484; green_visible=0
+art/concept/style_v2/cut/v3_b_slash.png: 556x486; green_visible=0
+art/concept/style_v2/cut/v3_c_bow.png: 461x513; green_visible=0
+art/concept/style_v2/cut/v3_c_face.png: 239x290; green_visible=0
+art/concept/style_v2/cut/v3_c_idle.png: 231x491; green_visible=0
+art/concept/style_v2/cut/v3_c_raise.png: 361x584; green_visible=0
+art/concept/style_v2/cut/v3_c_run.png: 417x429; green_visible=0
+art/concept/style_v2/cut/v3_c_slash.png: 578x431; green_visible=0
+docs/reports/style_v2_board.png: 2220x3355; green_visible=0
+docs/reports/style_v2_160.png: 1620x260; green_visible=0
+OK: all11 original source hashes match; all prompts retained; all5pose landmark spans160/96 from uniform scaling
+Checked extracted PNGs=67, boards=2; total residual visible green pixels=0; failures=0
+Landmark checks verify display scale only; they do not certify anatomy, outfit, weapon direction or vector path editing.
+exit=0
+
+$ scope verification
+OK: scope only art/concept/style_v2/, tools/*.py, docs/reports/style_v2_*
+OK: 05_log.md, 02_asset_list.md, AGENTS.md, README.md identical to main
+OK: prototype/, art/reference/, tools/agent-skills/ diffs empty
+Base: 4c2e368 Merge pull request #23 from DVSoai/feat/g1-pose-sheets-pilot
+
+$ git diff --name-only main
+art/concept/style_v2/cut/reference_v9_side.png
+art/concept/style_v2/cut/v1_a_bow.png
+art/concept/style_v2/cut/v1_a_face.png
+art/concept/style_v2/cut/v1_a_idle.png
+art/concept/style_v2/cut/v1_a_raise.png
+art/concept/style_v2/cut/v1_a_run.png
+art/concept/style_v2/cut/v1_a_slash.png
+art/concept/style_v2/cut/v1_b_bow.png
+art/concept/style_v2/cut/v1_b_face.png
+art/concept/style_v2/cut/v1_b_idle.png
+art/concept/style_v2/cut/v1_b_raise.png
+art/concept/style_v2/cut/v1_b_run.png
+art/concept/style_v2/cut/v1_b_slash.png
+art/concept/style_v2/cut/v1_c_bow.png
+art/concept/style_v2/cut/v1_c_face.png
+art/concept/style_v2/cut/v1_c_idle.png
+art/concept/style_v2/cut/v1_c_r1_bow.png
+art/concept/style_v2/cut/v1_c_r1_face.png
+art/concept/style_v2/cut/v1_c_r1_idle.png
+art/concept/style_v2/cut/v1_c_r1_raise.png
+art/concept/style_v2/cut/v1_c_r1_run.png
+art/concept/style_v2/cut/v1_c_r1_slash.png
+art/concept/style_v2/cut/v1_c_raise.png
+art/concept/style_v2/cut/v1_c_run.png
+art/concept/style_v2/cut/v1_c_slash.png
+art/concept/style_v2/cut/v2_a_bow.png
+art/concept/style_v2/cut/v2_a_face.png
+art/concept/style_v2/cut/v2_a_idle.png
+art/concept/style_v2/cut/v2_a_raise.png
+art/concept/style_v2/cut/v2_a_run.png
+art/concept/style_v2/cut/v2_a_slash.png
+art/concept/style_v2/cut/v2_b_bow.png
+art/concept/style_v2/cut/v2_b_face.png
+art/concept/style_v2/cut/v2_b_idle.png
+art/concept/style_v2/cut/v2_b_raise.png
+art/concept/style_v2/cut/v2_b_run.png
+art/concept/style_v2/cut/v2_b_slash.png
+art/concept/style_v2/cut/v2_c_bow.png
+art/concept/style_v2/cut/v2_c_face.png
+art/concept/style_v2/cut/v2_c_idle.png
+art/concept/style_v2/cut/v2_c_r1_bow.png
+art/concept/style_v2/cut/v2_c_r1_face.png
+art/concept/style_v2/cut/v2_c_r1_idle.png
+art/concept/style_v2/cut/v2_c_r1_raise.png
+art/concept/style_v2/cut/v2_c_r1_run.png
+art/concept/style_v2/cut/v2_c_r1_slash.png
+art/concept/style_v2/cut/v2_c_raise.png
+art/concept/style_v2/cut/v2_c_run.png
+art/concept/style_v2/cut/v2_c_slash.png
+art/concept/style_v2/cut/v3_a_bow.png
+art/concept/style_v2/cut/v3_a_face.png
+art/concept/style_v2/cut/v3_a_idle.png
+art/concept/style_v2/cut/v3_a_raise.png
+art/concept/style_v2/cut/v3_a_run.png
+art/concept/style_v2/cut/v3_a_slash.png
+art/concept/style_v2/cut/v3_b_bow.png
+art/concept/style_v2/cut/v3_b_face.png
+art/concept/style_v2/cut/v3_b_idle.png
+art/concept/style_v2/cut/v3_b_raise.png
+art/concept/style_v2/cut/v3_b_run.png
+art/concept/style_v2/cut/v3_b_slash.png
+art/concept/style_v2/cut/v3_c_bow.png
+art/concept/style_v2/cut/v3_c_face.png
+art/concept/style_v2/cut/v3_c_idle.png
+art/concept/style_v2/cut/v3_c_raise.png
+art/concept/style_v2/cut/v3_c_run.png
+art/concept/style_v2/cut/v3_c_slash.png
+art/concept/style_v2/generation_manifest.json
+art/concept/style_v2/measurements.json
+art/concept/style_v2/regions.json
+art/concept/style_v2/style_definition.json
+art/concept/style_v2/v1_a.png
+art/concept/style_v2/v1_a.prompt.txt
+art/concept/style_v2/v1_b.png
+art/concept/style_v2/v1_b.prompt.txt
+art/concept/style_v2/v1_c.png
+art/concept/style_v2/v1_c.prompt.txt
+art/concept/style_v2/v1_c_r1.png
+art/concept/style_v2/v1_c_r1.prompt.txt
+art/concept/style_v2/v2_a.png
+art/concept/style_v2/v2_a.prompt.txt
+art/concept/style_v2/v2_b.png
+art/concept/style_v2/v2_b.prompt.txt
+art/concept/style_v2/v2_c.png
+art/concept/style_v2/v2_c.prompt.txt
+art/concept/style_v2/v2_c_r1.png
+art/concept/style_v2/v2_c_r1.prompt.txt
+art/concept/style_v2/v3_a.png
+art/concept/style_v2/v3_a.prompt.txt
+art/concept/style_v2/v3_b.png
+art/concept/style_v2/v3_b.prompt.txt
+art/concept/style_v2/v3_c.png
+art/concept/style_v2/v3_c.prompt.txt
+docs/reports/style_v2_160.png
+docs/reports/style_v2_board.png
+docs/reports/style_v2_checks.txt
+docs/reports/style_v2_log.md
+docs/reports/style_v2_report.md
+tools/check_style_board.py
+tools/style_board.py
+
+$ git diff --check main
+exit=0

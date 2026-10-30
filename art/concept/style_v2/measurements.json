@@ -1,0 +1,2640 @@
+{
+  "method": "Manual source landmarks, uniform LANCZOS downsample; blade/arc excess kept; no redraw/rotation/shape edits",
+  "background_sources": {
+    "sky": "prototype/project.godot environment/defaults/default_clear_color",
+    "earth": "prototype/dao_uc/dao_uc_world.gd COLORS #"
+  },
+  "original_count": 9,
+  "replacement_count": 2,
+  "quick_choices": [
+    "v1_a",
+    "v1_b",
+    "v1_c_r1",
+    "v2_a",
+    "v2_b",
+    "v2_c_r1",
+    "v3_a",
+    "v3_b",
+    "v3_c"
+  ],
+  "images": {
+    "v1_a": {
+      "source_size": [
+        2170,
+        725
+      ],
+      "source_sha256": "b209a84addbe2f57b0741290ba530f5db2853ae170023a6774c6b8cfddd78dec",
+      "source_height_idle": 497,
+      "head_including_bun": 148,
+      "measured_heads_tall": 3.358108108108108,
+      "target_heads_tall": 3,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            57,
+            140,
+            278,
+            641
+          ],
+          "human_top_y": 142,
+          "sole_y": 639,
+          "source_human_height": 497,
+          "target_human_height": 160,
+          "scale": 0.32193158953722334,
+          "display_size": [
+            71,
+            161
+          ],
+          "paste": [
+            370,
+            147
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            57,
+            140,
+            278,
+            641
+          ],
+          "human_top_y": 142,
+          "sole_y": 639,
+          "source_human_height": 497,
+          "target_human_height": 96,
+          "scale": 0.193158953722334,
+          "display_size": [
+            43,
+            97
+          ],
+          "paste": [
+            558,
+            212
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            309,
+            167,
+            661,
+            636
+          ],
+          "human_top_y": 169,
+          "sole_y": 634,
+          "source_human_height": 465,
+          "target_human_height": 160,
+          "scale": 0.34408602150537637,
+          "display_size": [
+            121,
+            161
+          ],
+          "paste": [
+            694,
+            147
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            309,
+            167,
+            661,
+            636
+          ],
+          "human_top_y": 169,
+          "sole_y": 634,
+          "source_human_height": 465,
+          "target_human_height": 96,
+          "scale": 0.2064516129032258,
+          "display_size": [
+            73,
+            97
+          ],
+          "paste": [
+            894,
+            212
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            650,
+            84,
+            1023,
+            641
+          ],
+          "human_top_y": 183,
+          "sole_y": 639,
+          "source_human_height": 456,
+          "target_human_height": 160,
+          "scale": 0.3508771929824561,
+          "display_size": [
+            131,
+            195
+          ],
+          "paste": [
+            1040,
+            113
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            650,
+            84,
+            1023,
+            641
+          ],
+          "human_top_y": 183,
+          "sole_y": 639,
+          "source_human_height": 456,
+          "target_human_height": 96,
+          "scale": 0.21052631578947367,
+          "display_size": [
+            79,
+            117
+          ],
+          "paste": [
+            1240,
+            191
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            998,
+            194,
+            1535,
+            641
+          ],
+          "human_top_y": 196,
+          "sole_y": 639,
+          "source_human_height": 443,
+          "target_human_height": 160,
+          "scale": 0.3611738148984199,
+          "display_size": [
+            194,
+            161
+          ],
+          "paste": [
+            1358,
+            147
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            998,
+            194,
+            1535,
+            641
+          ],
+          "human_top_y": 196,
+          "sole_y": 639,
+          "source_human_height": 443,
+          "target_human_height": 96,
+          "scale": 0.21670428893905191,
+          "display_size": [
+            116,
+            97
+          ],
+          "paste": [
+            1572,
+            212
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1459,
+            104,
+            1933,
+            641
+          ],
+          "human_top_y": 169,
+          "sole_y": 639,
+          "source_human_height": 470,
+          "target_human_height": 160,
+          "scale": 0.3404255319148936,
+          "display_size": [
+            161,
+            183
+          ],
+          "paste": [
+            1724,
+            126
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1459,
+            104,
+            1933,
+            641
+          ],
+          "human_top_y": 169,
+          "sole_y": 639,
+          "source_human_height": 470,
+          "target_human_height": 96,
+          "scale": 0.20425531914893616,
+          "display_size": [
+            97,
+            110
+          ],
+          "paste": [
+            1932,
+            199
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          540,
+          559,
+          579
+        ],
+        "runs_px": [
+          5,
+          4,
+          4
+        ],
+        "median_px": 4.0,
+        "fraction_of_idle_height": 0.008048289738430584
+      }
+    },
+    "v1_b": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "fcb452ec69ae86e085f895cd2a462c9a25ab230f9731a630107d4df984b27a2f",
+      "source_height_idle": 523,
+      "head_including_bun": 148,
+      "measured_heads_tall": 3.5337837837837838,
+      "target_heads_tall": 3,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            57,
+            130,
+            263,
+            657
+          ],
+          "human_top_y": 132,
+          "sole_y": 655,
+          "source_human_height": 523,
+          "target_human_height": 160,
+          "scale": 0.30592734225621415,
+          "display_size": [
+            63,
+            161
+          ],
+          "paste": [
+            374,
+            447
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            57,
+            130,
+            263,
+            657
+          ],
+          "human_top_y": 132,
+          "sole_y": 655,
+          "source_human_height": 523,
+          "target_human_height": 96,
+          "scale": 0.1835564053537285,
+          "display_size": [
+            38,
+            97
+          ],
+          "paste": [
+            561,
+            512
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            289,
+            177,
+            671,
+            644
+          ],
+          "human_top_y": 179,
+          "sole_y": 642,
+          "source_human_height": 463,
+          "target_human_height": 160,
+          "scale": 0.34557235421166305,
+          "display_size": [
+            132,
+            161
+          ],
+          "paste": [
+            689,
+            447
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            289,
+            177,
+            671,
+            644
+          ],
+          "human_top_y": 179,
+          "sole_y": 642,
+          "source_human_height": 463,
+          "target_human_height": 96,
+          "scale": 0.20734341252699784,
+          "display_size": [
+            79,
+            97
+          ],
+          "paste": [
+            890,
+            512
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            665,
+            67,
+            1037,
+            657
+          ],
+          "human_top_y": 181,
+          "sole_y": 655,
+          "source_human_height": 474,
+          "target_human_height": 160,
+          "scale": 0.33755274261603374,
+          "display_size": [
+            126,
+            199
+          ],
+          "paste": [
+            1042,
+            410
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            665,
+            67,
+            1037,
+            657
+          ],
+          "human_top_y": 181,
+          "sole_y": 655,
+          "source_human_height": 474,
+          "target_human_height": 96,
+          "scale": 0.20253164556962025,
+          "display_size": [
+            75,
+            119
+          ],
+          "paste": [
+            1242,
+            489
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            998,
+            177,
+            1533,
+            657
+          ],
+          "human_top_y": 179,
+          "sole_y": 655,
+          "source_human_height": 476,
+          "target_human_height": 160,
+          "scale": 0.33613445378151263,
+          "display_size": [
+            180,
+            161
+          ],
+          "paste": [
+            1365,
+            447
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            998,
+            177,
+            1533,
+            657
+          ],
+          "human_top_y": 179,
+          "sole_y": 655,
+          "source_human_height": 476,
+          "target_human_height": 96,
+          "scale": 0.20168067226890757,
+          "display_size": [
+            108,
+            97
+          ],
+          "paste": [
+            1576,
+            512
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1514,
+            93,
+            1963,
+            657
+          ],
+          "human_top_y": 166,
+          "sole_y": 655,
+          "source_human_height": 489,
+          "target_human_height": 160,
+          "scale": 0.32719836400818,
+          "display_size": [
+            147,
+            185
+          ],
+          "paste": [
+            1732,
+            424
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1514,
+            93,
+            1963,
+            657
+          ],
+          "human_top_y": 166,
+          "sole_y": 655,
+          "source_human_height": 489,
+          "target_human_height": 96,
+          "scale": 0.19631901840490798,
+          "display_size": [
+            88,
+            111
+          ],
+          "paste": [
+            1936,
+            498
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          550,
+          571,
+          592
+        ],
+        "runs_px": [
+          5,
+          5,
+          5
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.009560229445506692
+      }
+    },
+    "v1_c": {
+      "source_size": [
+        2170,
+        725
+      ],
+      "source_sha256": "72afe32a23dce44e1b37686cef1a9e22460d32c4654c6c39e4e50d502ac4c72e",
+      "source_height_idle": 485,
+      "head_including_bun": 147,
+      "measured_heads_tall": 3.2993197278911564,
+      "target_heads_tall": 3,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            55,
+            169,
+            274,
+            658
+          ],
+          "human_top_y": 171,
+          "sole_y": 656,
+          "source_human_height": 485,
+          "target_human_height": 160,
+          "scale": 0.32989690721649484,
+          "display_size": [
+            72,
+            161
+          ],
+          "paste": [
+            369,
+            747
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            55,
+            169,
+            274,
+            658
+          ],
+          "human_top_y": 171,
+          "sole_y": 656,
+          "source_human_height": 485,
+          "target_human_height": 96,
+          "scale": 0.1979381443298969,
+          "display_size": [
+            43,
+            97
+          ],
+          "paste": [
+            558,
+            812
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            287,
+            205,
+            671,
+            648
+          ],
+          "human_top_y": 207,
+          "sole_y": 646,
+          "source_human_height": 439,
+          "target_human_height": 160,
+          "scale": 0.36446469248291574,
+          "display_size": [
+            140,
+            161
+          ],
+          "paste": [
+            685,
+            747
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            287,
+            205,
+            671,
+            648
+          ],
+          "human_top_y": 207,
+          "sole_y": 646,
+          "source_human_height": 439,
+          "target_human_height": 96,
+          "scale": 0.21867881548974943,
+          "display_size": [
+            84,
+            97
+          ],
+          "paste": [
+            888,
+            812
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            658,
+            66,
+            1015,
+            658
+          ],
+          "human_top_y": 196,
+          "sole_y": 656,
+          "source_human_height": 460,
+          "target_human_height": 160,
+          "scale": 0.34782608695652173,
+          "display_size": [
+            124,
+            206
+          ],
+          "paste": [
+            1043,
+            703
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            658,
+            66,
+            1015,
+            658
+          ],
+          "human_top_y": 196,
+          "sole_y": 656,
+          "source_human_height": 460,
+          "target_human_height": 96,
+          "scale": 0.20869565217391303,
+          "display_size": [
+            75,
+            124
+          ],
+          "paste": [
+            1242,
+            785
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            1030,
+            209,
+            1558,
+            656
+          ],
+          "human_top_y": 211,
+          "sole_y": 654,
+          "source_human_height": 443,
+          "target_human_height": 160,
+          "scale": 0.3611738148984199,
+          "display_size": [
+            191,
+            161
+          ],
+          "paste": [
+            1360,
+            747
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            1030,
+            209,
+            1558,
+            656
+          ],
+          "human_top_y": 211,
+          "sole_y": 654,
+          "source_human_height": 443,
+          "target_human_height": 96,
+          "scale": 0.21670428893905191,
+          "display_size": [
+            114,
+            97
+          ],
+          "paste": [
+            1573,
+            812
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1519,
+            90,
+            2002,
+            660
+          ],
+          "human_top_y": 187,
+          "sole_y": 658,
+          "source_human_height": 471,
+          "target_human_height": 160,
+          "scale": 0.33970276008492567,
+          "display_size": [
+            164,
+            194
+          ],
+          "paste": [
+            1723,
+            715
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1519,
+            90,
+            2002,
+            660
+          ],
+          "human_top_y": 187,
+          "sole_y": 658,
+          "source_human_height": 471,
+          "target_human_height": 96,
+          "scale": 0.20382165605095542,
+          "display_size": [
+            98,
+            116
+          ],
+          "paste": [
+            1931,
+            792
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          559,
+          578,
+          598
+        ],
+        "runs_px": [
+          5,
+          5,
+          4
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.010309278350515464
+      }
+    },
+    "v2_a": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "ec1917c26a66462d6bc82ff430447bdaa741a612227f2df18ed16bf898679998",
+      "source_height_idle": 497,
+      "head_including_bun": 160,
+      "measured_heads_tall": 3.10625,
+      "target_heads_tall": 3.5,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            33,
+            133,
+            255,
+            634
+          ],
+          "human_top_y": 135,
+          "sole_y": 632,
+          "source_human_height": 497,
+          "target_human_height": 160,
+          "scale": 0.32193158953722334,
+          "display_size": [
+            71,
+            161
+          ],
+          "paste": [
+            370,
+            1047
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            33,
+            133,
+            255,
+            634
+          ],
+          "human_top_y": 135,
+          "sole_y": 632,
+          "source_human_height": 497,
+          "target_human_height": 96,
+          "scale": 0.193158953722334,
+          "display_size": [
+            43,
+            97
+          ],
+          "paste": [
+            558,
+            1112
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            279,
+            163,
+            639,
+            629
+          ],
+          "human_top_y": 165,
+          "sole_y": 627,
+          "source_human_height": 462,
+          "target_human_height": 160,
+          "scale": 0.3463203463203463,
+          "display_size": [
+            125,
+            161
+          ],
+          "paste": [
+            692,
+            1047
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            279,
+            163,
+            639,
+            629
+          ],
+          "human_top_y": 165,
+          "sole_y": 627,
+          "source_human_height": 462,
+          "target_human_height": 96,
+          "scale": 0.2077922077922078,
+          "display_size": [
+            75,
+            97
+          ],
+          "paste": [
+            892,
+            1112
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            658,
+            78,
+            1023,
+            634
+          ],
+          "human_top_y": 181,
+          "sole_y": 632,
+          "source_human_height": 451,
+          "target_human_height": 160,
+          "scale": 0.35476718403547675,
+          "display_size": [
+            129,
+            197
+          ],
+          "paste": [
+            1040,
+            1011
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            658,
+            78,
+            1023,
+            634
+          ],
+          "human_top_y": 181,
+          "sole_y": 632,
+          "source_human_height": 451,
+          "target_human_height": 96,
+          "scale": 0.21286031042128603,
+          "display_size": [
+            78,
+            118
+          ],
+          "paste": [
+            1241,
+            1090
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            1005,
+            179,
+            1526,
+            634
+          ],
+          "human_top_y": 181,
+          "sole_y": 632,
+          "source_human_height": 451,
+          "target_human_height": 160,
+          "scale": 0.35476718403547675,
+          "display_size": [
+            185,
+            161
+          ],
+          "paste": [
+            1362,
+            1047
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            1005,
+            179,
+            1526,
+            634
+          ],
+          "human_top_y": 181,
+          "sole_y": 632,
+          "source_human_height": 451,
+          "target_human_height": 96,
+          "scale": 0.21286031042128603,
+          "display_size": [
+            111,
+            97
+          ],
+          "paste": [
+            1574,
+            1112
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1460,
+            107,
+            1920,
+            634
+          ],
+          "human_top_y": 185,
+          "sole_y": 632,
+          "source_human_height": 447,
+          "target_human_height": 160,
+          "scale": 0.3579418344519016,
+          "display_size": [
+            165,
+            189
+          ],
+          "paste": [
+            1722,
+            1020
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1460,
+            107,
+            1920,
+            634
+          ],
+          "human_top_y": 185,
+          "sole_y": 632,
+          "source_human_height": 447,
+          "target_human_height": 96,
+          "scale": 0.21476510067114093,
+          "display_size": [
+            99,
+            113
+          ],
+          "paste": [
+            1930,
+            1095
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          533,
+          552,
+          572
+        ],
+        "runs_px": [
+          7,
+          5,
+          6
+        ],
+        "median_px": 6.0,
+        "fraction_of_idle_height": 0.012072434607645875
+      }
+    },
+    "v2_b": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "e6bdbb95ecc592e2745ee5dffc42f09b77eb71ad3256ec7625a2b1e45c4f7bc1",
+      "source_height_idle": 506,
+      "head_including_bun": 145,
+      "measured_heads_tall": 3.489655172413793,
+      "target_heads_tall": 3.5,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            54,
+            140,
+            269,
+            650
+          ],
+          "human_top_y": 142,
+          "sole_y": 648,
+          "source_human_height": 506,
+          "target_human_height": 160,
+          "scale": 0.31620553359683795,
+          "display_size": [
+            68,
+            161
+          ],
+          "paste": [
+            371,
+            1347
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            54,
+            140,
+            269,
+            650
+          ],
+          "human_top_y": 142,
+          "sole_y": 648,
+          "source_human_height": 506,
+          "target_human_height": 96,
+          "scale": 0.18972332015810275,
+          "display_size": [
+            41,
+            97
+          ],
+          "paste": [
+            560,
+            1412
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            294,
+            174,
+            678,
+            632
+          ],
+          "human_top_y": 176,
+          "sole_y": 630,
+          "source_human_height": 454,
+          "target_human_height": 160,
+          "scale": 0.3524229074889868,
+          "display_size": [
+            135,
+            161
+          ],
+          "paste": [
+            688,
+            1347
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            294,
+            174,
+            678,
+            632
+          ],
+          "human_top_y": 176,
+          "sole_y": 630,
+          "source_human_height": 454,
+          "target_human_height": 96,
+          "scale": 0.21145374449339208,
+          "display_size": [
+            81,
+            97
+          ],
+          "paste": [
+            890,
+            1412
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            677,
+            75,
+            1016,
+            650
+          ],
+          "human_top_y": 184,
+          "sole_y": 648,
+          "source_human_height": 464,
+          "target_human_height": 160,
+          "scale": 0.3448275862068966,
+          "display_size": [
+            117,
+            198
+          ],
+          "paste": [
+            1046,
+            1310
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            677,
+            75,
+            1016,
+            650
+          ],
+          "human_top_y": 184,
+          "sole_y": 648,
+          "source_human_height": 464,
+          "target_human_height": 96,
+          "scale": 0.20689655172413793,
+          "display_size": [
+            70,
+            119
+          ],
+          "paste": [
+            1245,
+            1389
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            998,
+            194,
+            1567,
+            650
+          ],
+          "human_top_y": 186,
+          "sole_y": 648,
+          "source_human_height": 462,
+          "target_human_height": 160,
+          "scale": 0.3463203463203463,
+          "display_size": [
+            197,
+            158
+          ],
+          "paste": [
+            1356,
+            1351
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            998,
+            194,
+            1567,
+            650
+          ],
+          "human_top_y": 186,
+          "sole_y": 648,
+          "source_human_height": 462,
+          "target_human_height": 96,
+          "scale": 0.2077922077922078,
+          "display_size": [
+            118,
+            95
+          ],
+          "paste": [
+            1571,
+            1414
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1541,
+            112,
+            1971,
+            650
+          ],
+          "human_top_y": 176,
+          "sole_y": 648,
+          "source_human_height": 472,
+          "target_human_height": 160,
+          "scale": 0.3389830508474576,
+          "display_size": [
+            146,
+            182
+          ],
+          "paste": [
+            1732,
+            1326
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1541,
+            112,
+            1971,
+            650
+          ],
+          "human_top_y": 176,
+          "sole_y": 648,
+          "source_human_height": 472,
+          "target_human_height": 96,
+          "scale": 0.2033898305084746,
+          "display_size": [
+            87,
+            109
+          ],
+          "paste": [
+            1936,
+            1399
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          547,
+          567,
+          587
+        ],
+        "runs_px": [
+          5,
+          5,
+          5
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.009881422924901186
+      }
+    },
+    "v2_c": {
+      "source_size": [
+        2170,
+        725
+      ],
+      "source_sha256": "a5d4429f12daf9b6e389a0273e431796982c7f94db44132d346d6010b9f31279",
+      "source_height_idle": 474,
+      "head_including_bun": 146,
+      "measured_heads_tall": 3.2465753424657535,
+      "target_heads_tall": 3.5,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            43,
+            163,
+            242,
+            641
+          ],
+          "human_top_y": 165,
+          "sole_y": 639,
+          "source_human_height": 474,
+          "target_human_height": 160,
+          "scale": 0.33755274261603374,
+          "display_size": [
+            67,
+            161
+          ],
+          "paste": [
+            372,
+            1647
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            43,
+            163,
+            242,
+            641
+          ],
+          "human_top_y": 165,
+          "sole_y": 639,
+          "source_human_height": 474,
+          "target_human_height": 96,
+          "scale": 0.20253164556962025,
+          "display_size": [
+            40,
+            97
+          ],
+          "paste": [
+            560,
+            1712
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            257,
+            192,
+            604,
+            636
+          ],
+          "human_top_y": 194,
+          "sole_y": 634,
+          "source_human_height": 440,
+          "target_human_height": 160,
+          "scale": 0.36363636363636365,
+          "display_size": [
+            126,
+            161
+          ],
+          "paste": [
+            692,
+            1647
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            257,
+            192,
+            604,
+            636
+          ],
+          "human_top_y": 194,
+          "sole_y": 634,
+          "source_human_height": 440,
+          "target_human_height": 96,
+          "scale": 0.21818181818181817,
+          "display_size": [
+            76,
+            97
+          ],
+          "paste": [
+            892,
+            1712
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            584,
+            87,
+            938,
+            640
+          ],
+          "human_top_y": 202,
+          "sole_y": 638,
+          "source_human_height": 436,
+          "target_human_height": 160,
+          "scale": 0.3669724770642202,
+          "display_size": [
+            130,
+            203
+          ],
+          "paste": [
+            1040,
+            1606
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            584,
+            87,
+            938,
+            640
+          ],
+          "human_top_y": 202,
+          "sole_y": 638,
+          "source_human_height": 436,
+          "target_human_height": 96,
+          "scale": 0.22018348623853212,
+          "display_size": [
+            78,
+            122
+          ],
+          "paste": [
+            1241,
+            1687
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            918,
+            219,
+            1544,
+            639
+          ],
+          "human_top_y": 221,
+          "sole_y": 637,
+          "source_human_height": 416,
+          "target_human_height": 160,
+          "scale": 0.38461538461538464,
+          "display_size": [
+            241,
+            162
+          ],
+          "paste": [
+            1334,
+            1647
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            918,
+            219,
+            1544,
+            639
+          ],
+          "human_top_y": 221,
+          "sole_y": 637,
+          "source_human_height": 416,
+          "target_human_height": 96,
+          "scale": 0.23076923076923078,
+          "display_size": [
+            144,
+            97
+          ],
+          "paste": [
+            1558,
+            1712
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1534,
+            142,
+            1945,
+            642
+          ],
+          "human_top_y": 203,
+          "sole_y": 640,
+          "source_human_height": 437,
+          "target_human_height": 160,
+          "scale": 0.36613272311212813,
+          "display_size": [
+            150,
+            183
+          ],
+          "paste": [
+            1730,
+            1626
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1534,
+            142,
+            1945,
+            642
+          ],
+          "human_top_y": 203,
+          "sole_y": 640,
+          "source_human_height": 437,
+          "target_human_height": 96,
+          "scale": 0.21967963386727687,
+          "display_size": [
+            90,
+            110
+          ],
+          "paste": [
+            1935,
+            1699
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          544,
+          563,
+          582
+        ],
+        "runs_px": [
+          5,
+          5,
+          6
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.010548523206751054
+      }
+    },
+    "v3_a": {
+      "source_size": [
+        2170,
+        725
+      ],
+      "source_sha256": "0e11cc2a47960d5ce5b506fd9c6f40c19a7df8fafe0c9f6b83f0b978e4eeefd3",
+      "source_height_idle": 519,
+      "head_including_bun": 153,
+      "measured_heads_tall": 3.392156862745098,
+      "target_heads_tall": 4,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            41,
+            146,
+            234,
+            669
+          ],
+          "human_top_y": 148,
+          "sole_y": 667,
+          "source_human_height": 519,
+          "target_human_height": 160,
+          "scale": 0.30828516377649323,
+          "display_size": [
+            59,
+            161
+          ],
+          "paste": [
+            376,
+            1947
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            41,
+            146,
+            234,
+            669
+          ],
+          "human_top_y": 148,
+          "sole_y": 667,
+          "source_human_height": 519,
+          "target_human_height": 96,
+          "scale": 0.18497109826589594,
+          "display_size": [
+            36,
+            97
+          ],
+          "paste": [
+            562,
+            2012
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            259,
+            174,
+            655,
+            659
+          ],
+          "human_top_y": 176,
+          "sole_y": 657,
+          "source_human_height": 481,
+          "target_human_height": 160,
+          "scale": 0.33264033264033266,
+          "display_size": [
+            132,
+            161
+          ],
+          "paste": [
+            689,
+            1947
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            259,
+            174,
+            655,
+            659
+          ],
+          "human_top_y": 176,
+          "sole_y": 657,
+          "source_human_height": 481,
+          "target_human_height": 96,
+          "scale": 0.1995841995841996,
+          "display_size": [
+            79,
+            97
+          ],
+          "paste": [
+            890,
+            2012
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            642,
+            67,
+            967,
+            669
+          ],
+          "human_top_y": 184,
+          "sole_y": 667,
+          "source_human_height": 483,
+          "target_human_height": 160,
+          "scale": 0.33126293995859213,
+          "display_size": [
+            108,
+            199
+          ],
+          "paste": [
+            1051,
+            1909
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            642,
+            67,
+            967,
+            669
+          ],
+          "human_top_y": 184,
+          "sole_y": 667,
+          "source_human_height": 483,
+          "target_human_height": 96,
+          "scale": 0.19875776397515527,
+          "display_size": [
+            65,
+            120
+          ],
+          "paste": [
+            1248,
+            1989
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            969,
+            196,
+            1541,
+            664
+          ],
+          "human_top_y": 198,
+          "sole_y": 662,
+          "source_human_height": 464,
+          "target_human_height": 160,
+          "scale": 0.3448275862068966,
+          "display_size": [
+            197,
+            161
+          ],
+          "paste": [
+            1356,
+            1947
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            969,
+            196,
+            1541,
+            664
+          ],
+          "human_top_y": 198,
+          "sole_y": 662,
+          "source_human_height": 464,
+          "target_human_height": 96,
+          "scale": 0.20689655172413793,
+          "display_size": [
+            118,
+            97
+          ],
+          "paste": [
+            1571,
+            2012
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1491,
+            107,
+            1930,
+            669
+          ],
+          "human_top_y": 187,
+          "sole_y": 667,
+          "source_human_height": 480,
+          "target_human_height": 160,
+          "scale": 0.3333333333333333,
+          "display_size": [
+            146,
+            187
+          ],
+          "paste": [
+            1732,
+            1921
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1491,
+            107,
+            1930,
+            669
+          ],
+          "human_top_y": 187,
+          "sole_y": 667,
+          "source_human_height": 480,
+          "target_human_height": 96,
+          "scale": 0.2,
+          "display_size": [
+            88,
+            112
+          ],
+          "paste": [
+            1936,
+            1996
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          563,
+          584,
+          605
+        ],
+        "runs_px": [
+          5,
+          5,
+          5
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.009633911368015413
+      }
+    },
+    "v3_b": {
+      "source_size": [
+        2170,
+        725
+      ],
+      "source_sha256": "c542dc3a12d66a52f69f3d2239bf4a124d7b6a0f17bec13d1fc03c8538134872",
+      "source_height_idle": 529,
+      "head_including_bun": 146,
+      "measured_heads_tall": 3.6232876712328768,
+      "target_heads_tall": 4,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            41,
+            135,
+            275,
+            668
+          ],
+          "human_top_y": 137,
+          "sole_y": 666,
+          "source_human_height": 529,
+          "target_human_height": 160,
+          "scale": 0.30245746691871456,
+          "display_size": [
+            71,
+            161
+          ],
+          "paste": [
+            370,
+            2247
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            41,
+            135,
+            275,
+            668
+          ],
+          "human_top_y": 137,
+          "sole_y": 666,
+          "source_human_height": 529,
+          "target_human_height": 96,
+          "scale": 0.18147448015122875,
+          "display_size": [
+            42,
+            97
+          ],
+          "paste": [
+            559,
+            2312
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            290,
+            182,
+            670,
+            666
+          ],
+          "human_top_y": 184,
+          "sole_y": 664,
+          "source_human_height": 480,
+          "target_human_height": 160,
+          "scale": 0.3333333333333333,
+          "display_size": [
+            127,
+            161
+          ],
+          "paste": [
+            692,
+            2247
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            290,
+            182,
+            670,
+            666
+          ],
+          "human_top_y": 184,
+          "sole_y": 664,
+          "source_human_height": 480,
+          "target_human_height": 96,
+          "scale": 0.2,
+          "display_size": [
+            76,
+            97
+          ],
+          "paste": [
+            892,
+            2312
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            662,
+            64,
+            1031,
+            668
+          ],
+          "human_top_y": 176,
+          "sole_y": 666,
+          "source_human_height": 490,
+          "target_human_height": 160,
+          "scale": 0.32653061224489793,
+          "display_size": [
+            120,
+            197
+          ],
+          "paste": [
+            1045,
+            2211
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            662,
+            64,
+            1031,
+            668
+          ],
+          "human_top_y": 176,
+          "sole_y": 666,
+          "source_human_height": 490,
+          "target_human_height": 96,
+          "scale": 0.19591836734693877,
+          "display_size": [
+            72,
+            118
+          ],
+          "paste": [
+            1244,
+            2290
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            964,
+            182,
+            1520,
+            668
+          ],
+          "human_top_y": 184,
+          "sole_y": 666,
+          "source_human_height": 482,
+          "target_human_height": 160,
+          "scale": 0.33195020746887965,
+          "display_size": [
+            185,
+            161
+          ],
+          "paste": [
+            1362,
+            2247
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            964,
+            182,
+            1520,
+            668
+          ],
+          "human_top_y": 184,
+          "sole_y": 666,
+          "source_human_height": 482,
+          "target_human_height": 96,
+          "scale": 0.1991701244813278,
+          "display_size": [
+            111,
+            97
+          ],
+          "paste": [
+            1574,
+            2312
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1490,
+            95,
+            1911,
+            671
+          ],
+          "human_top_y": 169,
+          "sole_y": 669,
+          "source_human_height": 500,
+          "target_human_height": 160,
+          "scale": 0.32,
+          "display_size": [
+            135,
+            184
+          ],
+          "paste": [
+            1738,
+            2224
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1490,
+            95,
+            1911,
+            671
+          ],
+          "human_top_y": 169,
+          "sole_y": 669,
+          "source_human_height": 500,
+          "target_human_height": 96,
+          "scale": 0.192,
+          "display_size": [
+            81,
+            111
+          ],
+          "paste": [
+            1940,
+            2298
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          560,
+          581,
+          603
+        ],
+        "runs_px": [
+          4,
+          4,
+          4
+        ],
+        "median_px": 4.0,
+        "fraction_of_idle_height": 0.007561436672967864
+      }
+    },
+    "v3_c": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "cecf7d76486b9ec944231ae112428608beb3885c0baf3c2093b545eafbce2111",
+      "source_height_idle": 487,
+      "head_including_bun": 146,
+      "measured_heads_tall": 3.335616438356164,
+      "target_heads_tall": 4,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            27,
+            151,
+            258,
+            642
+          ],
+          "human_top_y": 153,
+          "sole_y": 640,
+          "source_human_height": 487,
+          "target_human_height": 160,
+          "scale": 0.32854209445585214,
+          "display_size": [
+            76,
+            161
+          ],
+          "paste": [
+            367,
+            2547
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            27,
+            151,
+            258,
+            642
+          ],
+          "human_top_y": 153,
+          "sole_y": 640,
+          "source_human_height": 487,
+          "target_human_height": 96,
+          "scale": 0.1971252566735113,
+          "display_size": [
+            46,
+            97
+          ],
+          "paste": [
+            557,
+            2612
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            289,
+            193,
+            706,
+            622
+          ],
+          "human_top_y": 195,
+          "sole_y": 620,
+          "source_human_height": 425,
+          "target_human_height": 160,
+          "scale": 0.3764705882352941,
+          "display_size": [
+            157,
+            162
+          ],
+          "paste": [
+            676,
+            2547
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            289,
+            193,
+            706,
+            622
+          ],
+          "human_top_y": 195,
+          "sole_y": 620,
+          "source_human_height": 425,
+          "target_human_height": 96,
+          "scale": 0.22588235294117648,
+          "display_size": [
+            94,
+            97
+          ],
+          "paste": [
+            883,
+            2612
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            665,
+            58,
+            1026,
+            642
+          ],
+          "human_top_y": 184,
+          "sole_y": 640,
+          "source_human_height": 456,
+          "target_human_height": 160,
+          "scale": 0.3508771929824561,
+          "display_size": [
+            127,
+            205
+          ],
+          "paste": [
+            1042,
+            2504
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            665,
+            58,
+            1026,
+            642
+          ],
+          "human_top_y": 184,
+          "sole_y": 640,
+          "source_human_height": 456,
+          "target_human_height": 96,
+          "scale": 0.21052631578947367,
+          "display_size": [
+            76,
+            123
+          ],
+          "paste": [
+            1242,
+            2585
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            1003,
+            212,
+            1581,
+            643
+          ],
+          "human_top_y": 214,
+          "sole_y": 641,
+          "source_human_height": 427,
+          "target_human_height": 160,
+          "scale": 0.3747072599531616,
+          "display_size": [
+            217,
+            161
+          ],
+          "paste": [
+            1346,
+            2547
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            1003,
+            212,
+            1581,
+            643
+          ],
+          "human_top_y": 214,
+          "sole_y": 641,
+          "source_human_height": 427,
+          "target_human_height": 96,
+          "scale": 0.22482435597189696,
+          "display_size": [
+            130,
+            97
+          ],
+          "paste": [
+            1565,
+            2612
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1521,
+            130,
+            1982,
+            643
+          ],
+          "human_top_y": 183,
+          "sole_y": 641,
+          "source_human_height": 458,
+          "target_human_height": 160,
+          "scale": 0.34934497816593885,
+          "display_size": [
+            161,
+            179
+          ],
+          "paste": [
+            1724,
+            2529
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1521,
+            130,
+            1982,
+            643
+          ],
+          "human_top_y": 183,
+          "sole_y": 641,
+          "source_human_height": 458,
+          "target_human_height": 96,
+          "scale": 0.2096069868995633,
+          "display_size": [
+            97,
+            108
+          ],
+          "paste": [
+            1932,
+            2601
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          543,
+          562,
+          582
+        ],
+        "runs_px": [
+          5,
+          4,
+          5
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.01026694045174538
+      }
+    },
+    "v1_c_r1": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "f0b34760cbb8d299c2a238af85875a984f277686dbe5ca9024f24f095a513506",
+      "source_height_idle": 473,
+      "head_including_bun": 138,
+      "measured_heads_tall": 3.427536231884058,
+      "target_heads_tall": 3,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            47,
+            176,
+            272,
+            653
+          ],
+          "human_top_y": 178,
+          "sole_y": 651,
+          "source_human_height": 473,
+          "target_human_height": 160,
+          "scale": 0.3382663847780127,
+          "display_size": [
+            76,
+            161
+          ],
+          "paste": [
+            367,
+            2847
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            47,
+            176,
+            272,
+            653
+          ],
+          "human_top_y": 178,
+          "sole_y": 651,
+          "source_human_height": 473,
+          "target_human_height": 96,
+          "scale": 0.2029598308668076,
+          "display_size": [
+            46,
+            97
+          ],
+          "paste": [
+            557,
+            2912
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            299,
+            198,
+            643,
+            641
+          ],
+          "human_top_y": 200,
+          "sole_y": 639,
+          "source_human_height": 439,
+          "target_human_height": 160,
+          "scale": 0.36446469248291574,
+          "display_size": [
+            125,
+            161
+          ],
+          "paste": [
+            692,
+            2847
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            299,
+            198,
+            643,
+            641
+          ],
+          "human_top_y": 200,
+          "sole_y": 639,
+          "source_human_height": 439,
+          "target_human_height": 96,
+          "scale": 0.21867881548974943,
+          "display_size": [
+            75,
+            97
+          ],
+          "paste": [
+            892,
+            2912
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            634,
+            73,
+            988,
+            653
+          ],
+          "human_top_y": 202,
+          "sole_y": 651,
+          "source_human_height": 449,
+          "target_human_height": 160,
+          "scale": 0.35634743875278396,
+          "display_size": [
+            126,
+            207
+          ],
+          "paste": [
+            1042,
+            2802
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            634,
+            73,
+            988,
+            653
+          ],
+          "human_top_y": 202,
+          "sole_y": 651,
+          "source_human_height": 449,
+          "target_human_height": 96,
+          "scale": 0.21380846325167038,
+          "display_size": [
+            76,
+            124
+          ],
+          "paste": [
+            1242,
+            2884
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            962,
+            199,
+            1545,
+            653
+          ],
+          "human_top_y": 201,
+          "sole_y": 651,
+          "source_human_height": 450,
+          "target_human_height": 160,
+          "scale": 0.35555555555555557,
+          "display_size": [
+            207,
+            161
+          ],
+          "paste": [
+            1352,
+            2847
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            962,
+            199,
+            1545,
+            653
+          ],
+          "human_top_y": 201,
+          "sole_y": 651,
+          "source_human_height": 450,
+          "target_human_height": 96,
+          "scale": 0.21333333333333335,
+          "display_size": [
+            124,
+            97
+          ],
+          "paste": [
+            1568,
+            2912
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1523,
+            135,
+            1936,
+            654
+          ],
+          "human_top_y": 203,
+          "sole_y": 652,
+          "source_human_height": 449,
+          "target_human_height": 160,
+          "scale": 0.35634743875278396,
+          "display_size": [
+            147,
+            185
+          ],
+          "paste": [
+            1732,
+            2824
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1523,
+            135,
+            1936,
+            654
+          ],
+          "human_top_y": 203,
+          "sole_y": 652,
+          "source_human_height": 449,
+          "target_human_height": 96,
+          "scale": 0.21380846325167038,
+          "display_size": [
+            88,
+            111
+          ],
+          "paste": [
+            1936,
+            2897
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          556,
+          575,
+          594
+        ],
+        "runs_px": [
+          4,
+          4,
+          3
+        ],
+        "median_px": 4.0,
+        "fraction_of_idle_height": 0.008456659619450317
+      }
+    },
+    "v2_c_r1": {
+      "source_size": [
+        2172,
+        724
+      ],
+      "source_sha256": "b529f0483dd77954aef3d3b018645f50aee8eab04a6ce855e4391fdbe4bc7e17",
+      "source_height_idle": 517,
+      "head_including_bun": 155,
+      "measured_heads_tall": 3.335483870967742,
+      "target_heads_tall": 3.5,
+      "display": {
+        "idle_160": {
+          "source_box": [
+            36,
+            149,
+            252,
+            670
+          ],
+          "human_top_y": 151,
+          "sole_y": 668,
+          "source_human_height": 517,
+          "target_human_height": 160,
+          "scale": 0.30947775628626695,
+          "display_size": [
+            67,
+            161
+          ],
+          "paste": [
+            372,
+            3147
+          ]
+        },
+        "idle_96": {
+          "source_box": [
+            36,
+            149,
+            252,
+            670
+          ],
+          "human_top_y": 151,
+          "sole_y": 668,
+          "source_human_height": 517,
+          "target_human_height": 96,
+          "scale": 0.18568665377176016,
+          "display_size": [
+            40,
+            97
+          ],
+          "paste": [
+            560,
+            3212
+          ]
+        },
+        "run_160": {
+          "source_box": [
+            281,
+            184,
+            672,
+            652
+          ],
+          "human_top_y": 186,
+          "sole_y": 650,
+          "source_human_height": 464,
+          "target_human_height": 160,
+          "scale": 0.3448275862068966,
+          "display_size": [
+            135,
+            161
+          ],
+          "paste": [
+            688,
+            3147
+          ]
+        },
+        "run_96": {
+          "source_box": [
+            281,
+            184,
+            672,
+            652
+          ],
+          "human_top_y": 186,
+          "sole_y": 650,
+          "source_human_height": 464,
+          "target_human_height": 96,
+          "scale": 0.20689655172413793,
+          "display_size": [
+            81,
+            97
+          ],
+          "paste": [
+            890,
+            3212
+          ]
+        },
+        "raise_160": {
+          "source_box": [
+            645,
+            63,
+            977,
+            670
+          ],
+          "human_top_y": 186,
+          "sole_y": 668,
+          "source_human_height": 482,
+          "target_human_height": 160,
+          "scale": 0.33195020746887965,
+          "display_size": [
+            110,
+            201
+          ],
+          "paste": [
+            1050,
+            3107
+          ]
+        },
+        "raise_96": {
+          "source_box": [
+            645,
+            63,
+            977,
+            670
+          ],
+          "human_top_y": 186,
+          "sole_y": 668,
+          "source_human_height": 482,
+          "target_human_height": 96,
+          "scale": 0.1991701244813278,
+          "display_size": [
+            66,
+            121
+          ],
+          "paste": [
+            1247,
+            3188
+          ]
+        },
+        "slash_160": {
+          "source_box": [
+            982,
+            190,
+            1559,
+            664
+          ],
+          "human_top_y": 192,
+          "sole_y": 662,
+          "source_human_height": 470,
+          "target_human_height": 160,
+          "scale": 0.3404255319148936,
+          "display_size": [
+            196,
+            161
+          ],
+          "paste": [
+            1357,
+            3147
+          ]
+        },
+        "slash_96": {
+          "source_box": [
+            982,
+            190,
+            1559,
+            664
+          ],
+          "human_top_y": 192,
+          "sole_y": 662,
+          "source_human_height": 470,
+          "target_human_height": 96,
+          "scale": 0.20425531914893616,
+          "display_size": [
+            118,
+            97
+          ],
+          "paste": [
+            1571,
+            3212
+          ]
+        },
+        "bow_160": {
+          "source_box": [
+            1541,
+            123,
+            1964,
+            670
+          ],
+          "human_top_y": 187,
+          "sole_y": 668,
+          "source_human_height": 481,
+          "target_human_height": 160,
+          "scale": 0.33264033264033266,
+          "display_size": [
+            141,
+            182
+          ],
+          "paste": [
+            1734,
+            3127
+          ]
+        },
+        "bow_96": {
+          "source_box": [
+            1541,
+            123,
+            1964,
+            670
+          ],
+          "human_top_y": 187,
+          "sole_y": 668,
+          "source_human_height": 481,
+          "target_human_height": 96,
+          "scale": 0.1995841995841996,
+          "display_size": [
+            84,
+            109
+          ],
+          "paste": [
+            1938,
+            3199
+          ]
+        }
+      },
+      "outline_probe": {
+        "method": "leading dark run along3 horizontal shin rows, alpha>127/maxRGB<100; projected width only, not global uniformity",
+        "source_rows": [
+          565,
+          585,
+          606
+        ],
+        "runs_px": [
+          5,
+          4,
+          5
+        ],
+        "median_px": 5.0,
+        "fraction_of_idle_height": 0.009671179883945842
+      }
+    }
+  }
+}
