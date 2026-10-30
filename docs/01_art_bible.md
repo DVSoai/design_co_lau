@@ -22,6 +22,8 @@ Khối AVOID dùng cho mọi prompt (dán nguyên văn):
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
 
+**Cập nhật 30/10/2026:** nhân vật người (Đinh Bộ Lĩnh, NPC, quái người, boss người) chuyển sang **STYLE-V2** — xem mục "Nhân vật chính — chốt 30/10/2026" cuối file. Bản đồ, vật thể, giao diện vẫn theo STYLE pixel ở trên.
+
 **Quyết định P0:** phương án B trong bảng so sánh là *pixel bán hiện đại*, không phải STYLE-B vẽ tay trong khuôn P0 lịch sử của `03_prompts.md`. Xem ngoại lệ và prompt đã dùng trong `05_log.md`. Không tự thay STYLE đã duyệt bằng STYLE-B vẽ tay.
 
 ## Bảng màu chính
@@ -215,3 +217,85 @@ Bản thử dùng tranh2×, Sprite2Dlinear scale0,5 cố định, rotation0; ch�
 Mốc và hình thật được kiểm trong `weapon_direction_checks.gd`; tài nguyên cũ
 của rig16mảnh đã dừng không bị đổi ID hay nội dung. Các đoạn rig lịch sử phía
 trước chỉ là lưu đối chiếu, không quy định hình vũ khí hiện hành.
+
+## Nhân vật chính — chốt 30/10/2026 (người dùng duyệt)
+
+Mục này thay mọi quy định nhân vật trước đó (rig 16 mảnh, bộ tư thế STYLE-B vẽ tay,
+pixel 96 px). Các mục cũ giữ lại để đối chiếu, không còn hiệu lực cho nhân vật người.
+
+**1. Style.** Mẫu chính: hai bảng ở mục 8. Bản **v2_a** trong `art/concept/style_v2/` chỉ còn là chuẩn viền/màu. Viền đậm đều (2–3% chiều cao
+người), màu phẳng, đổ bóng 2–3 tông sắc nét, khối to rõ, đầu to (~1/3 chiều cao).
+Hiển thị ~160 px trên màn 1600×720, ảnh nguồn độ phân giải cao, lọc linear, không ép
+palette 32 màu. Khối STYLE cho mọi prompt nhân vật người (dán nguyên văn), sau đó là
+khối AVOID nguyên văn:
+
+```
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+```
+
+**2. Dựng nhân vật: 4 lớp** — đầu, thân (kèm hai tay), chân, vũ khí. Mỗi khung chọn một
+hình vẽ sẵn của từng lớp rồi dời (dx, dy); quay trái chỉ lật gương ở node gốc. Không xoay
+sprite, không xoay khớp. Bảng 30 khung và định dạng chiêu: `09_animation_spec.md`.
+Số hình mỗi bộ: đầu 8, thân 18, chân 10, vũ khí cầm tay 1–2.
+
+**3. Mỗi nhân vật một phái.** Phái Kiếm: không có cung/ống tên. Phái Cung: không có
+kiếm/bao kiếm, ống tên đeo sau lưng. Đầu/thân/chân dùng chung hai phái.
+
+**4. Bảy cấp trang bị 1/10/20/30/40/50/60.** Thang màu: Lv1 vải mộc nâu xám, nón lá →
+Lv10 bạc/thép → Lv20 xanh lam → Lv30 tím → Lv40 vàng đồng → Lv50 đỏ vàng → Lv60 đỏ
+vàng rực, giáp tướng. Dáng kiếm (thẳng hai lưỡi) và dáng cung giữ nguyên qua mọi cấp;
+cấp cao thêm chi tiết, hoa văn, vật liệu. Mỗi cấp vẽ lại đủ bộ nón/áo/quần đúng số khung
+và điểm neo của Lv1. Ảnh bảng thiết kế người dùng gửi 30/10 là tham khảo thang màu và
+mức chi tiết, không vẽ lại y nguyên.
+
+**5. Vũ khí và hiệu ứng.** Ngoài đòn đánh vẽ vũ khí cầm tay/đeo lưng theo cấp. Trong nhịp
+đánh ẩn vũ khí cầm tay, thay bằng **hình vung + vệt chém dùng chung cho mọi cấp của phái**,
+chỉ đổi màu vệt theo cấp (trắng → xanh → vàng → đỏ); mũi tên đổi màu tương tự.
+**Ngoại lệ phát sáng:** vũ khí Lv50–60, vệt chém/mũi tên Lv40–60, hiệu ứng chiêu và
+hào quang cường hóa Full +8/+12/+14/+16 **được** có lửa/ánh sáng/hào quang. Prompt cho các
+hình này bỏ cụm `magic glow or glowing energy slashes` khỏi khối AVOID; mọi cụm khác giữ.
+
+**6. Trang bị 10 ô theo GDD.** Chỉ nón/áo/quần/vũ khí hiện lên người (găng nằm trong hình
+áo, giày trong hình quần). Dây chuyền, nhẫn, ngọc bội, bùa chỉ có icon. Phi phong là ô
+thời trang. Mỗi ô × mỗi cấp có 1 icon.
+
+**7. Thứ tự vẽ nhân vật chính** (mỗi bước một nhánh, review xong mới sang bước sau):
+(1) hệ thống 30 khung + Lv1 hai phái; (2) Lv10/20/30; (3) Lv40/50/60; (4) hiệu ứng đủ
+8 chiêu mỗi phái; (5) hào quang cường hóa, cưỡi Trâu/Ngựa chiến/Voi chiến, icon 10 ô × 7 cấp.
+Bản đồ làm sau khi nhân vật chính xong.
+
+**8. Bảng thiết kế tham khảo (người dùng gửi 30/10/2026)** — nhân vật lấy từ hai bảng:
+`art/reference/chr_dbl_board_trang_bi.png` (bảng A: trang bị, vũ khí, chiêu, hào quang) và
+`art/reference/chr_dbl_board_animation.png` (bảng B: động tác, cải trang, thú cưỡi). Chỉ học
+thiết kế, không cắt ghép ảnh vào game.
+
+**Hai bảng này là MẪU CHÍNH về hình nhân vật** (người dùng chốt 30/10/2026, thay v2_a làm mẫu): dáng chibi đầu to, mặt, tóc, khăn đỏ, màu bão hòa đỏ/vàng/xanh, viền tối rõ, đổ bóng tương phản như bảng. Mọi prompt nhân vật đính kèm hai bảng + ảnh `ref_dinh_bo_linh.png` và yêu cầu "giống nhân vật trên bảng". Chỉ khác bảng ở độ phân giải: vẽ to, nét sạch để hiển thị ~160 px mà không vỡ (không thu nhỏ thành pixel 30–40 px như ô trên bảng). Khối STYLE-V2 vẫn dùng cho phần viền đậm/màu phẳng; chỗ nào STYLE-V2 khác bảng thì theo bảng. Mọi bản vẽ phải đặt cạnh bảng để so; không giống bảng là không đạt.
+
+*Lấy theo bảng:*
+- Ngoại hình Đinh Bộ Lĩnh: tóc đen búi, khăn/dải đỏ, mặt và dáng chibi đầu to (đầu ≈ 1/2,8–1/3
+  chiều cao) như hàng "Tổng thể" bảng A.
+- Trang phục 7 cấp theo hàng nón/áo/quần/găng/giày bảng A: Lv1 nón lá, áo nâu; Lv10–30 vải
+  xanh/tím; Lv40–60 giáp đỏ vàng, mũ tướng.
+- Kiếm và cung 7 cấp, vệt chém và mũi tên đổi màu theo cấp (bảng A mục 2–3).
+- Hào quang Full +8/+12/+14/+16 (bảng A mục 8, bảng B mục 10).
+- Hiệu ứng chiêu (bảng A mục 5–6, bảng B mục 6–7) gán cho chiêu GDD như dưới.
+- Icon 10 ô × 7 cấp, icon sách chiêu (bảng B mục 11).
+
+*Đổi lại cho khớp tài liệu:*
+- **Tên, cấp mở, số liệu chiêu giữ theo GDD**; chỉ lấy hình hiệu ứng. Gán:
+  Kiếm — Trảm Kiếm ← Trảm Phong; Song Trảm ← Liên Trảm; Quét Ngang ← Hồi Phong Trảm;
+  Thiết Kỵ Xung Phong ← Xung Phong; Khai Sơn Trảm ← Thiên Quân Trảm; Vạn Quân Trảm ← Long Trảm;
+  Vạn Thắng ← Càn Khôn Trảm; Chấn Uy vẽ mới.
+  Cung — Xạ Tiễn ← Xạ Tiễn; Phá Giáp Tiễn ← Xuyên Giáp Tiễn; Song Tiễn ← Liên Tiễn;
+  Thần Tiễn Xuyên Giáp ← Phong Tỏa Tiễn; Tam Tiễn Liên Châu ← Tán Hoa Tiễn; Vạn Tiễn ← Thiên Vũ
+  Tiễn; Hộ Thân Khí, Liều Mạng Giương Cung vẽ mới; Hỏa Vũ Tiễn để dự phòng.
+- **Nội tại theo GDD** (Kiếm Tâm, Kiên Cường, Tâm Nhãn, Ẩn Mình). Các icon bị động trên bảng
+  chỉ dùng làm icon chỉ số/tiềm năng.
+- **Thú cưỡi theo GDD: Trâu, Ngựa chiến, Voi chiến.** Hổ trên bảng thay bằng Voi chiến. Thú
+  cấp 0–99, mốc ngoại hình 1/20/40/60/99 (không có Lv100). Cưỡi thú để Mốc sau.
+- **Cải trang Sơn Tinh / Thủy Tinh / Thánh Gióng** = biến hình thay cả người, [Phạm vi sau]
+  theo 17_ngoai_hinh; chưa làm.
+- **Bỏ hàng "Đi"**: chỉ có chạy (bảng 30 khung).
+- Nhân vật áo đỏ, áo choàng đỏ ở bảng B là dáng đồ cấp cao; **Lv1 theo bảng A** (nón lá, áo nâu).
+  Áo choàng là ô thời trang.
+- Đòn thường "Tấn công 1/2/3" trên bảng B dựng bằng 16 tư thế đánh trong bảng 30 khung.

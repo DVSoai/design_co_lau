@@ -15,6 +15,42 @@ Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và gi
 - **Hướng:** chỉ vẽ hướng phải; hướng trái lật ngang trong game. Vì vậy vũ khí không được có chi tiết chỉ đúng một phía (ví dụ chữ khắc).
 - **Bộ phận và frame:** `chr_dbl_parts` gồm đầu kèm tóc, thân, cánh tay trên/dưới gần/xa, đùi/cẳng chân gần/xa, bàn tay và vũ khí; từng mảnh có khớp và phần vẽ bù. `chr_dbl_anim_*` ghi vị trí/góc/thứ tự lớp, thời lượng và sự kiện theo từng frame. Trang bị `chr_dbl_t1`…`t7` chỉ thay áo/quần/vũ khí cùng khớp, không vẽ lại chuỗi động tác.
 
+## Nhân vật chính — bảng 30 khung và định dạng chiêu (chốt 30/10/2026)
+
+Thay cách ghép mảnh xoay khớp ở các mục cũ bên dưới (giữ để đối chiếu). Nhân vật gồm
+4 lớp đầu/thân/chân/vũ khí (xem `01_art_bible.md`, mục "Nhân vật chính — chốt 30/10/2026").
+
+**Bảng 30 khung.** Mỗi khung ghi cho từng lớp: {chỉ số hình trong bộ, dx, dy}. Vị trí vẽ
+x = gốc + (dx khung + dx hình) × hướng; quay trái lật gương ở node gốc, không xoay.
+
+| Khung | Dùng cho |
+|---|---|
+| 0–1 | Đứng thở |
+| 2–7 | Chạy (6 khung) |
+| 8–11 | Lộn người ở đỉnh nhảy / khinh công (4 khung trong 0,20 s A0) |
+| 12 | Nhảy lên |
+| 13 | Rơi |
+| 14–29 | 16 tư thế đánh, dùng chung cho đòn thường và mọi chiêu |
+
+Bộ hình mỗi cấp trang phục: đầu 8, thân 18, chân 10. Mọi cấp dùng cùng bảng 30 khung
+và cùng điểm neo; đổi cấp chỉ thay bộ hình.
+
+**Định dạng chiêu.** Mỗi chiêu có danh sách nhịp trên mặt đất và danh sách nhịp trên
+không. Mỗi nhịp = 1 khung thân (14–29) + tối đa 3 hiệu ứng {id, dx, dy} + 1 đạn/mũi tên
+{id, dx, dy}. Hiệu ứng là chuỗi hình {ảnh, dx, dy}, vẽ theo **tâm ảnh**, trên lớp nhân vật;
+quay trái lật gương và đảo dấu dx. Trong nhịp đánh, vũ khí cầm tay bị ẩn; hình vung/vệt
+chém thay cho vũ khí. Các chiêu khác nhau chủ yếu ở hiệu ứng, thân dùng lại 16 tư thế.
+Tên, cấp mở và số liệu 8 chiêu mỗi phái giữ theo GDD.
+
+**Đòn chém cơ bản:** 5 nhịp dùng 3 tư thế đánh (giơ → vung → chém, nhịp cuối giữ tư thế
+chém), tổng 0,30 s, cửa sổ trúng 0,10–0,20 s theo A0; chia thời lượng nhịp sao cho giữ đúng
+cửa sổ này. **Bắn cung cơ bản:** giương → giữ → thả; mũi tên đặt sẵn trên dây khi giương,
+mũi tên bay chỉ sinh ở nhịp thả.
+
+**Để Mốc sau (bỏ khỏi bộ hiện tại):** trúng đòn, choáng, ngã xuống, đứng dậy, nói chuyện,
+cưỡi thú ngồi yên/đánh, lên cấp, mừng, quay đầu riêng (quay đầu chỉ lật hướng). Các dòng
+tương ứng trong bảng dưới chưa sản xuất cho tới khi người dùng mở lại.
+
 ## Đinh Bộ Lĩnh — động tác chung
 
 | Động tác | Khung | Tốc độ | Lặp | Sự kiện |

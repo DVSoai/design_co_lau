@@ -48,9 +48,11 @@ Các giai đoạn trong `02_asset_list.md` sắp theo thứ tự nên làm để
 - **Không tự thay đổi những gì đã chốt:** phong cách, bảng màu, khối STYLE và AVOID, thiết kế nhân vật đã duyệt trong `art/approved/`. Muốn đổi thì đề xuất và chờ người dùng đồng ý.
 - **Luôn dùng ảnh tham chiếu** khi đã có trong `art/reference/`: nhân vật đính kèm `ref_dinh_bo_linh.png`; bản đồ đính kèm `ref_map_hoa_lu.png`; giao diện đính kèm `ref_ui_kit.png`.
 - **Mọi prompt kết thúc bằng khối STYLE và khối AVOID** đúng nguyên văn trong art bible.
-  - Chỉ có hai ngoại lệ, và không có ngoại lệ nào khác:
+  - Nhân vật người dùng khối **STYLE-V2** trong art bible thay khối STYLE pixel (chốt 30/10/2026).
+  - Chỉ có ba ngoại lệ, và không có ngoại lệ nào khác:
   - **Khuôn P0** (khám phá phong cách, giai đoạn 0): chạy ba bản, một bản dùng STYLE-A, một bản dùng STYLE-B, và một bản **không có khối STYLE** để xem công cụ tự đề xuất gì. Cả ba bản vẫn phải có khối AVOID. Sau giai đoạn 0, không còn prompt nào được bỏ khối STYLE.
   - **Tranh `cs03_3`** (cảnh giai thoại rồng vàng): giữ khối STYLE, nhưng trong khối AVOID bỏ hai cụm `fantasy monsters` và `magic glow effects`, vì đây là cảnh huyền thoại duy nhất của game theo storyboard. Mọi cụm khác của AVOID giữ nguyên.
+  - **Hình phát sáng của nhân vật** (vũ khí Lv50–60, vệt chém/mũi tên Lv40–60, hiệu ứng chiêu, hào quang cường hóa): bỏ cụm `magic glow or glowing energy slashes` khỏi AVOID; mọi cụm khác giữ nguyên. Xem art bible mục "Nhân vật chính — chốt 30/10/2026".
 - **Không đưa vào prompt** tên game khác, studio, họa sĩ, nhân vật có bản quyền hay thương hiệu. Chỉ mô tả đặc điểm thị giác và bối cảnh riêng của dự án.
 - **Không có chữ trong ảnh.** Chữ giao diện do game vẽ bằng font. Mockup màn hình dùng thanh giữ chỗ thay chữ; phần chữ ghi trong đặc tả `06_screens.md`.
 - **Nền trong suốt:** tạo trên nền phẳng #00FF00 rồi tách bằng script của skill. Nhân vật có màu xanh lá thì dùng nền #FF00FF.

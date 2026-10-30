@@ -510,3 +510,24 @@ Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly
 
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
+## 30/10/2026 — chốt nhân vật chính (tài liệu)
+
+- Người dùng chốt: style nhân vật **v2_a** (khối STYLE-V2); dựng **4 lớp** đầu/thân/chân/vũ khí
+  theo **bảng 30 khung** chỉ dời/lật; trang bị 10 ô theo GDD, chỉ nón/áo/quần/vũ khí hiện lên
+  người; 7 cấp 1/10/20/30/40/50/60 theo thang màu bảng thiết kế người dùng gửi; vệt chém/bắn cung
+  dùng chung mọi cấp, đổi màu theo cấp; **cho phép lửa/hào quang** ở vũ khí Lv50–60, vệt Lv40–60,
+  hiệu ứng chiêu và hào quang cường hóa Full +8/+12/+14/+16.
+- Định dạng chiêu: nhịp = khung thân + tối đa 3 hiệu ứng + 1 đạn, hiệu ứng vẽ theo tâm, lật khi
+  quay trái. Tên/cấp mở/số liệu chiêu và thú cưỡi (Trâu, Ngựa chiến, Voi chiến) giữ theo GDD.
+- Bỏ khỏi bộ hiện tại, để Mốc sau: trúng đòn, choáng, ngã, đứng dậy, nói chuyện, cưỡi thú,
+  lên cấp, mừng.
+- Thứ tự: vẽ trọn nhân vật chính (5 bước) rồi mới tới bản đồ.
+- Sửa: 01_art_bible (mục mới + ghi chú ở Phong cách), AGENTS.md (STYLE-V2, ngoại lệ phát sáng),
+  09_animation_spec (mục 30 khung/định dạng chiêu), 16_rig_nhan_vat (đánh dấu đã thay, tóm tắt
+  cách mới), 17_ngoai_hinh (10 ô, khối lượng 36 hình/cấp, hào quang). Nhật ký cũ giữ nguyên.
+- Bổ sung: nhân vật lấy từ 2 bảng thiết kế người dùng gửi, lưu ở art/reference/
+  (chr_dbl_board_trang_bi.png, chr_dbl_board_animation.png; bảng B cắt bỏ dải tiêu đề).
+  Giữ tên/cấp/số liệu chiêu, nội tại, thú cưỡi theo GDD (Hổ → Voi chiến); cải trang thần
+  thoại để phạm vi sau; bỏ động tác "đi". Bảng gán hiệu ứng → chiêu ghi ở 01_art_bible mục 8.
+- Người dùng chốt: hai bảng thiết kế là mẫu chính về hình nhân vật (thay v2_a làm mẫu); vẽ độ
+  phân giải cao giống bảng, so cạnh bảng khi duyệt.
