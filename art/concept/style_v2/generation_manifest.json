@@ -1,0 +1,90 @@
+{
+  "v1_a": {
+    "image": "v1_a.png",
+    "prompt": "v1_a.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "b209a84addbe2f57b0741290ba530f5db2853ae170023a6774c6b8cfddd78dec",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v1_b": {
+    "image": "v1_b.png",
+    "prompt": "v1_b.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "fcb452ec69ae86e085f895cd2a462c9a25ab230f9731a630107d4df984b27a2f",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v1_c": {
+    "image": "v1_c.png",
+    "prompt": "v1_c.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "72afe32a23dce44e1b37686cef1a9e22460d32c4654c6c39e4e50d502ac4c72e",
+    "status": "loại tư thế giơ, giữ trong bảng so sánh",
+    "replacement_for": null
+  },
+  "v2_a": {
+    "image": "v2_a.png",
+    "prompt": "v2_a.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "ec1917c26a66462d6bc82ff430447bdaa741a612227f2df18ed16bf898679998",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v2_b": {
+    "image": "v2_b.png",
+    "prompt": "v2_b.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "e6bdbb95ecc592e2745ee5dffc42f09b77eb71ad3256ec7625a2b1e45c4f7bc1",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v2_c": {
+    "image": "v2_c.png",
+    "prompt": "v2_c.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "a5d4429f12daf9b6e389a0273e431796982c7f94db44132d346d6010b9f31279",
+    "status": "loại tư thế giơ, giữ trong bảng so sánh",
+    "replacement_for": null
+  },
+  "v3_a": {
+    "image": "v3_a.png",
+    "prompt": "v3_a.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "0e11cc2a47960d5ce5b506fd9c6f40c19a7df8fafe0c9f6b83f0b978e4eeefd3",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v3_b": {
+    "image": "v3_b.png",
+    "prompt": "v3_b.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "c542dc3a12d66a52f69f3d2239bf4a124d7b6a0f17bec13d1fc03c8538134872",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v3_c": {
+    "image": "v3_c.png",
+    "prompt": "v3_c.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "cecf7d76486b9ec944231ae112428608beb3885c0baf3c2093b545eafbce2111",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": null
+  },
+  "v1_c_r1": {
+    "image": "v1_c_r1.png",
+    "prompt": "v1_c_r1.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "f0b34760cbb8d299c2a238af85875a984f277686dbe5ca9024f24f095a513506",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": "v1_c"
+  },
+  "v2_c_r1": {
+    "image": "v2_c_r1.png",
+    "prompt": "v2_c_r1.prompt.txt",
+    "reference": "art/reference/ref_dinh_bo_linh.png",
+    "sha256": "b529f0483dd77954aef3d3b018645f50aee8eab04a6ce855e4391fdbe4bc7e17",
+    "status": "giữ để so phong cách, chưa duyệt, còn hạn chế tỉ lệ/viền",
+    "replacement_for": "v2_c"
+  }
+}

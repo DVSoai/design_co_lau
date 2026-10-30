@@ -1,0 +1,305 @@
+{
+  "v1_a": {
+    "components": [
+      3,
+      4,
+      1,
+      [
+        5,
+        6
+      ],
+      2,
+      7
+    ],
+    "human_top_y": [
+      142,
+      169,
+      183,
+      196,
+      169
+    ],
+    "sole_y": [
+      639,
+      634,
+      639,
+      639,
+      639
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 290
+  },
+  "v1_b": {
+    "components": [
+      3,
+      4,
+      1,
+      1,
+      2,
+      5
+    ],
+    "human_top_y": [
+      132,
+      179,
+      181,
+      179,
+      166
+    ],
+    "sole_y": [
+      655,
+      642,
+      655,
+      655,
+      655
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "touching_split": {
+      "upper_x": 1040,
+      "lower_x": 1000,
+      "y_upper": 400,
+      "y_lower": 620,
+      "note": "raised and strike outlines touch at feet; source unchanged, board separates shared component at recorded seam; treat as source defect"
+    },
+    "idle_chin_y": 280
+  },
+  "v1_c": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      171,
+      207,
+      196,
+      211,
+      187
+    ],
+    "sole_y": [
+      656,
+      646,
+      656,
+      654,
+      658
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 318
+  },
+  "v1_c_r1": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      178,
+      200,
+      202,
+      201,
+      203
+    ],
+    "sole_y": [
+      651,
+      639,
+      651,
+      651,
+      652
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 316
+  },
+  "v2_a": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      135,
+      165,
+      181,
+      181,
+      185
+    ],
+    "sole_y": [
+      632,
+      627,
+      632,
+      632,
+      632
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 295
+  },
+  "v2_b": {
+    "components": [
+      3,
+      4,
+      1,
+      1,
+      2,
+      5
+    ],
+    "human_top_y": [
+      142,
+      176,
+      184,
+      186,
+      176
+    ],
+    "sole_y": [
+      648,
+      630,
+      648,
+      648,
+      648
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "touching_split": {
+      "upper_x": 1035,
+      "lower_x": 1000,
+      "y_upper": 400,
+      "y_lower": 620,
+      "note": "raised and strike outlines touch at feet; source unchanged, board separates shared component at recorded seam; treat as source defect"
+    },
+    "idle_chin_y": 287
+  },
+  "v2_c": {
+    "components": [
+      3,
+      4,
+      1,
+      6,
+      2,
+      7
+    ],
+    "human_top_y": [
+      165,
+      194,
+      202,
+      221,
+      203
+    ],
+    "sole_y": [
+      639,
+      634,
+      638,
+      637,
+      640
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 311
+  },
+  "v2_c_r1": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      151,
+      186,
+      186,
+      192,
+      187
+    ],
+    "sole_y": [
+      668,
+      650,
+      668,
+      662,
+      668
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 306
+  },
+  "v3_a": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      148,
+      176,
+      184,
+      198,
+      187
+    ],
+    "sole_y": [
+      667,
+      657,
+      667,
+      662,
+      667
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 301
+  },
+  "v3_b": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      137,
+      184,
+      176,
+      184,
+      169
+    ],
+    "sole_y": [
+      666,
+      664,
+      666,
+      666,
+      669
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 283
+  },
+  "v3_c": {
+    "components": [
+      3,
+      4,
+      1,
+      5,
+      2,
+      6
+    ],
+    "human_top_y": [
+      153,
+      195,
+      184,
+      214,
+      183
+    ],
+    "sole_y": [
+      640,
+      620,
+      640,
+      641,
+      641
+    ],
+    "landmarks_note": "Bun top, sole boundary and chin boundary manually inspected on original PNG; head includes bun, excludes neck. Chin checked against silhouette front-edge drop; not an automatic anatomical estimate.",
+    "idle_chin_y": 299
+  }
+}
