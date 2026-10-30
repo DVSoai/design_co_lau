@@ -1,0 +1,629 @@
+{
+  "schema": 1,
+  "skills": {
+    "slash": {
+      "school": "kiem",
+      "ground": [
+        {
+          "frame": 14,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_0",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_0",
+              "dx": 60,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 15,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_1",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_1",
+              "dx": 64,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_2",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_2",
+              "dx": 68,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_3",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_3",
+              "dx": 72,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_4",
+              "dx": 76,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        }
+      ],
+      "air": [
+        {
+          "frame": 23,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_0",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_0",
+              "dx": 60,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 24,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_1",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_1",
+              "dx": 64,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_2",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_2",
+              "dx": 68,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_3",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_3",
+              "dx": 72,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_4",
+              "dx": 76,
+              "dy": -51
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        }
+      ],
+      "hit_window": [
+        0.1,
+        0.2
+      ],
+      "status": "visual prototype, gameplay numbers unchanged"
+    },
+    "shoot": {
+      "school": "cung",
+      "ground": [
+        {
+          "frame": 20,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 21,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 22,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "arrow",
+            "dx": 0,
+            "dy": 0
+          },
+          "nocked": false
+        }
+      ],
+      "air": [
+        {
+          "frame": 27,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 28,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 29,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "arrow",
+            "dx": 0,
+            "dy": 0
+          },
+          "nocked": false
+        }
+      ],
+      "hit_window": null,
+      "status": "visual prototype, gameplay numbers unchanged"
+    },
+    "tram_kiem": {
+      "school": "kiem",
+      "ground": [
+        {
+          "frame": 14,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_0",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_0",
+              "dx": 60,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 15,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_1",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_1",
+              "dx": 64,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_2",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_2",
+              "dx": 68,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_3",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_3",
+              "dx": 72,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 16,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_4",
+              "dx": 76,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        }
+      ],
+      "air": [
+        {
+          "frame": 23,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_0",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_0",
+              "dx": 60,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 24,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_1",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_1",
+              "dx": 64,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_2",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_2",
+              "dx": 68,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.075,
+          "effects": [
+            {
+              "id": "swing_3",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_3",
+              "dx": 72,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 25,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "id": "white_4",
+              "dx": 76,
+              "dy": -51
+            },
+            {
+              "id": "tram_kiem",
+              "dx": 72,
+              "dy": -53
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        }
+      ],
+      "hit_window": [
+        0.1,
+        0.2
+      ],
+      "status": "visual prototype, gameplay numbers unchanged"
+    },
+    "xa_tien": {
+      "school": "cung",
+      "ground": [
+        {
+          "frame": 20,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 21,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 22,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "skill_arrow",
+            "dx": 0,
+            "dy": 0
+          },
+          "nocked": false
+        }
+      ],
+      "air": [
+        {
+          "frame": 27,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 28,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 29,
+          "duration": 0.1,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "skill_arrow",
+            "dx": 0,
+            "dy": 0
+          },
+          "nocked": false
+        }
+      ],
+      "hit_window": null,
+      "status": "visual prototype, gameplay numbers unchanged"
+    }
+  }
+}

@@ -1,3 +1,45 @@
+# Lv1 / 30 khung — bước 1/5, chưa duyệt (30/10/2026)
+
+Mở `res://pose_rig/pose_rig.tscn` bằng **Godot 4.7.2 Standard**. Chọn Kiếm/Cung,
+động tác/chiêu, Trên không, Chạy lại, Đổi hướng; các trang 30 khung, Các đòn/chiêu,
+So cạnh bảng. Mỗi nhân vật chỉ mang vũ khí của phái đó. Chỉ Lv1 là bộ mới;
+Lv10–60 chưa làm, các pilot cũ bên dưới không phải bộ đã hoàn thành.
+
+Nguồn chuẩn mới: `data/frames30.json`, `parts.json`, `effects.json`, `skills.json`.
+Đầu8/thân18/chân10 dùng chung; ảnh nguồn2×, lọc linear; dời/lật, mọi Sprite2Drotation0.
+Lộn8–11 là các hình góc đã vẽ/bake trước; hoàn tất .20s rồi trở về hình rơi thẳng.
+Đòn chém5nhịp .30s, hit .10–.20; nhịp đất và trên không tách riêng. Chiêu chỉ xem hình,
+không triển khai luật chiến đấu, không thay số A0. Vệt trắng dùng chung, Trảm Kiếm dùng
+hiệu ứng xanh theo bảng; Xạ Tiễn dùng đạn xanh. Vũ khí cầm tay ẩn trong nhịp đánh.
+
+Nguồn imagegen và prompt nguyên văn: `art/sprites/characters/lv1_30/sources/`;
+6 lần sinh (tờ thân đánh đầu tiên bị dính đầu, giữ `bodies_b_rejected.*`). Mỗi lần đều
+đính kèm hai bảng + ref, lần sửa thân thêm tờ thân đúng. Không cắt ảnh mẫu vào sprite.
+`reports/reference_lv1.png` là ô đối chiếu cắt từ bảng trang bị (100,348,151,421),
+**chỉ viewer so sánh nạp**, không nằm trong dữ liệu nhân vật hay bộ hình game.
+
+Sinh/kiểm tra từ root repo:
+
+```sh
+python3 tools/build_lv1_30.py
+python3 tools/check_lv1_30.py
+godot --headless --path prototype --editor --import --quit
+godot --headless --fixed-fps 60 --path prototype --script res://tests/frames30_checks.gd
+python3 tools/capture_lv1_30.py --godot godot --xvfb Xvfb
+```
+
+Lệnh chụp dùng Xvfb1600×720 và Godot thật, in từng lệnh con; tạo12ảnh trong
+`reports/lv1_{kiem,cung}_{frames,attacks,compare}_{right,left}.png`. Không imagegen cho
+ảnh báo cáo. `reports/lv1_checks.txt` lưu đầu ra thật; commit message lưu cả kiểm tên.
+Giữ bộ thử cũ trong `legacy_pose_actor.gd` / `legacy_frames.tscn`; hai test hồi quy cũ
+chỉ đổi đường dẫn scene sang fixture này, giữ mọi assert. `frames30_checks.gd` kiểm
+hệ mới trực tiếp, không dùng fixture cũ để tuyên bố bộ mới đạt.
+
+Không có tài nguyên bên thứ ba mới. Mã/hình tham khảo chỉ đọc cơ chế chọn lớp,
+neo, hiệu ứng đặt theo tâm và đạn độc lập; dữ liệu và PNG ở đây được tự tạo.
+
+---
+
 # Kiếm/Cung — pilot tư thế vẽ trọn, chưa duyệt
 
 Godot4.7.2, scene riêng; không thay A0 hoặc Đào Úc.

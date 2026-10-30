@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "effects": {
+    "swing_0": {
+      "frames": [
+        {
+          "asset": "blade_0",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "white_0": {
+      "frames": [
+        {
+          "asset": "trail_0",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 7
+    },
+    "swing_1": {
+      "frames": [
+        {
+          "asset": "blade_1",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "white_1": {
+      "frames": [
+        {
+          "asset": "trail_1",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 7
+    },
+    "swing_2": {
+      "frames": [
+        {
+          "asset": "blade_2",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "white_2": {
+      "frames": [
+        {
+          "asset": "trail_2",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 7
+    },
+    "swing_3": {
+      "frames": [
+        {
+          "asset": "blade_3",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "white_3": {
+      "frames": [
+        {
+          "asset": "trail_3",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 7
+    },
+    "swing_4": {
+      "frames": [
+        {
+          "asset": "blade_4",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "white_4": {
+      "frames": [
+        {
+          "asset": "trail_4",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 7
+    },
+    "tram_kiem": {
+      "frames": [
+        {
+          "asset": "skill_slash",
+          "duration": 0.05,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "asset": "skill_slash",
+          "duration": 0.05,
+          "dx": 3,
+          "dy": 0
+        },
+        {
+          "asset": "skill_slash",
+          "duration": 0.05,
+          "dx": 6,
+          "dy": 0
+        },
+        {
+          "asset": "skill_slash",
+          "duration": 0.05,
+          "dx": 9,
+          "dy": 0
+        }
+      ],
+      "placement": "centre",
+      "z": 8
+    },
+    "bow_draw": {
+      "frames": [
+        {
+          "asset": "bow_draw_15",
+          "duration": 0.1
+        }
+      ],
+      "placement": "far_hand",
+      "z": 5
+    },
+    "bow_draw_hold": {
+      "frames": [
+        {
+          "asset": "bow_draw_16",
+          "duration": 0.1
+        }
+      ],
+      "placement": "far_hand",
+      "z": 5
+    },
+    "bow_release": {
+      "frames": [
+        {
+          "asset": "bow_release",
+          "duration": 0.1
+        }
+      ],
+      "placement": "far_hand",
+      "z": 5
+    }
+  }
+}

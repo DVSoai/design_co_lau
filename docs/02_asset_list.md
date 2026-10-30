@@ -125,3 +125,17 @@ Có bốn loại hạng mục:
 - [ ] `chr_dbl_sword_template` — cấp1/30/60×5góc=15PNG2×, canvas/gripcố định;4cấp còn lại chỉ slotdữ liệu, chưa vẽ. Nguồn tạo riêng trong art/sprites/weapons/swing/sources/; checkertrục/chiều dài và runtimekhông xoay.
 - [ ] `vfx_sword_swing_shared` —4vệt trăng khuyết trắng dùng chung mọi cấp, tâm/offset/thời lượng trong swing.json;slash5nhịp tổng0,30s; giữ tranh thân cũ. Chưa duyệt mỹ thuật.
 - [ ] `arrow_ready_shared` —tên trên dây khi kéo và Sprite2Dtên bay khi buông; không đồng thời trang bị kiếm/cung. Chi tiết/chụp thật tại prototype/pose_rig/README.md.
+
+## Bước 1/5 nhân vật 30 khung — Lv1 (30/10/2026, chưa duyệt)
+
+- [ ] `chr_dbl_lv1_30`: 8 đầu, 18 thân kèm tay, 10 chân dùng chung hai phái;
+  nón lá, áo nâu, khăn đỏ theo hai bảng mẫu. Nguồn và prompt:
+  `art/sprites/characters/lv1_30/sources/`; PNG trong suốt cùng thư mục cha.
+- [ ] `chr_dbl_lv1_weapons`: Kiếm **hoặc** Cung; ống tên chỉ phái Cung,
+  hình cung giương/thả và mũi tên riêng; 5 hình vung + 5 pha vệt trắng.
+- [ ] `chr_dbl_lv1_skills`: đòn thường Kiếm/Cung, Trảm Kiếm, Xạ Tiễn;
+  `prototype/pose_rig/data/{frames30,parts,effects,skills}.json`;
+  ảnh chụp thật hai hướng tại `prototype/pose_rig/reports/lv1_*.png`.
+
+Chỉ Lv1 được làm theo mẫu mới trong lượt này. Lv10/20/30/40/50/60 chưa sản xuất
+bộ 30 khung mới; các hình thử cũ không tính hoàn thành. Chờ người dùng duyệt hình.

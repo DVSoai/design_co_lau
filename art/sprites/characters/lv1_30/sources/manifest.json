@@ -1,0 +1,54 @@
+{
+  "date": "30/10/2026",
+  "tool": "imagegen",
+  "status": "unapproved",
+  "references": [
+    "art/reference/chr_dbl_board_trang_bi.png",
+    "art/reference/chr_dbl_board_animation.png",
+    "art/reference/ref_dinh_bo_linh.png"
+  ],
+  "generations": [
+    {
+      "image": "heads.png",
+      "prompt": "heads.prompt.txt",
+      "sha256": "92509c8146dcf00dd455958130d6baaa27c1ee6ccb832265bd6e3ec2d1a3c651",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": null
+    },
+    {
+      "image": "bodies_a.png",
+      "prompt": "bodies_a.prompt.txt",
+      "sha256": "e01ca1dd2af3282d5a10852181898c0cde77971abab41cd18f830569da8da024",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": null
+    },
+    {
+      "image": "bodies_b_rejected.png",
+      "prompt": "bodies_b_rejected.prompt.txt",
+      "sha256": "13170d93d837c46087ba6469b9fdb6f7bd033faea535dda1bbdbba94398b1590",
+      "status": "rejected: head baked into torso",
+      "extra_reference": null
+    },
+    {
+      "image": "bodies_b.png",
+      "prompt": "bodies_b.prompt.txt",
+      "sha256": "82005d19f4d7fdb91713294b970384df3c023bfb577b012a4982019b87feb18f",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": "art/sprites/characters/lv1_30/sources/bodies_a.png"
+    },
+    {
+      "image": "legs.png",
+      "prompt": "legs.prompt.txt",
+      "sha256": "fdc66217914feb318c43d746951b26223c50956a9ccd32ed46531343b41b7e46",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": null
+    },
+    {
+      "image": "weapons.png",
+      "prompt": "weapons.prompt.txt",
+      "sha256": "d29f789245d5ae47a374cbde29d61fcfa828aeaa4b53d4630f0d571c0f6471ec",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": null
+    }
+  ]
+}

@@ -15,7 +15,7 @@ func opaque_bounds(sprite: Sprite2D) -> Rect2:
 				high = high.max(Vector2(x+1,y+1))
 	return Rect2(sprite.position+low*.5,(high-low)*.5)
 func run() -> void:
-	var rig = load("res://pose_rig/rig_frames.tscn").instantiate()
+	var rig = load("res://pose_rig/legacy_frames.tscn").instantiate()
 	root.add_child(rig)
 	rig.autoplay=false
 	var expected := {"idle":4,"run":6,"jump":2,"fall":2,"slash":5}

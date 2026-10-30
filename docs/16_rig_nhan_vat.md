@@ -7,7 +7,7 @@ Giữ chuẩn A0: người 96 px, khung 128×128, chân tại (64,120), hitbox 2
 Godot **4.7.2 Standard/GDScript**. Khối màu phân biệt mảnh, không phải art/palette mới.
 
 > **Đã thay (30/10/2026).** Người dùng chốt dựng nhân vật **4 lớp** (đầu, thân kèm tay,
-> chân, vũ khí) theo **bảng 30 khung** chỉ dời/lật, không xoay; style **v2_a**. Quy định hiện
+> chân, vũ khí) theo **bảng 30 khung** chỉ dời/lật, không xoay; mẫu chính là **hai bảng thiết kế Lv1** trong art bible mục 8. Quy định hiện
 > hành nằm ở `01_art_bible.md` (mục "Nhân vật chính — chốt 30/10/2026") và
 > `09_animation_spec.md` (mục "Nhân vật chính — bảng 30 khung và định dạng chiêu").
 > Toàn bộ nội dung bên dưới (rig 16 mảnh xoay khớp, bộ tư thế STYLE-B) là **lịch sử**, giữ để

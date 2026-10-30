@@ -7,7 +7,7 @@ func check(ok: bool, text: String) -> void:
 func world_point(rig: Node2D, point: Vector2) -> Vector2:
 	return rig.to_global(point)-rig.global_position
 func run() -> void:
-	var rig=load("res://pose_rig/rig_frames.tscn").instantiate()
+	var rig=load("res://pose_rig/legacy_frames.tscn").instantiate()
 	root.add_child(rig)
 	rig.autoplay=false
 	rig.set_process(false)

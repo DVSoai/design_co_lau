@@ -1,0 +1,880 @@
+{
+  "schema": 1,
+  "frames": [
+    {
+      "id": 0,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 1,
+      "layers": {
+        "head": {
+          "image": 1,
+          "dx": 0,
+          "dy": -1
+        },
+        "body": {
+          "image": 1,
+          "dx": 0,
+          "dy": -1
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 2,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 2,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 1,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 3,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 3,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 2,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 4,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 4,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 3,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 5,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 2,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 4,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 6,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 3,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 5,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 7,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 4,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 1,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 8,
+      "layers": {
+        "head": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 5,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 9,
+      "layers": {
+        "head": {
+          "image": 4,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 10,
+      "layers": {
+        "head": {
+          "image": 5,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 8,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 11,
+      "layers": {
+        "head": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 8,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 12,
+      "layers": {
+        "head": {
+          "image": 3,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 5,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 13,
+      "layers": {
+        "head": {
+          "image": 2,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 5,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": false,
+      "nocked": false
+    },
+    {
+      "id": 14,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 15,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 16,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 17,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 18,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 13,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 19,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 14,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 20,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 15,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": true
+    },
+    {
+      "id": 21,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 16,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": true
+    },
+    {
+      "id": 22,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 17,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 23,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 24,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 25,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 26,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 27,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 15,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 28,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 16,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    },
+    {
+      "id": 29,
+      "layers": {
+        "head": {
+          "image": 7,
+          "dx": 0,
+          "dy": 0
+        },
+        "body": {
+          "image": 17,
+          "dx": 0,
+          "dy": 0
+        },
+        "legs": {
+          "image": 6,
+          "dx": 0,
+          "dy": 0
+        },
+        "weapon": {
+          "image": 0,
+          "dx": 0,
+          "dy": 0
+        }
+      },
+      "attack": true,
+      "nocked": false
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": [
+        0,
+        1
+      ],
+      "durations": [
+        0.6,
+        0.6
+      ],
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "durations": [
+        0.08333333333333333,
+        0.08333333333333333,
+        0.08333333333333333,
+        0.08333333333333333,
+        0.08333333333333333,
+        0.08333333333333333
+      ],
+      "loop": true
+    },
+    "apex_flip": {
+      "frames": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "loop": false
+    },
+    "jump": {
+      "frames": [
+        12
+      ],
+      "durations": [
+        0.38
+      ],
+      "loop": false
+    },
+    "fall": {
+      "frames": [
+        13
+      ],
+      "durations": [
+        0.08333333333333333
+      ],
+      "loop": true
+    }
+  }
+}

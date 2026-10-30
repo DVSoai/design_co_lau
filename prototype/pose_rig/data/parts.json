@@ -1,0 +1,2109 @@
+{
+  "schema": 1,
+  "status": "Lv1 unapproved",
+  "scale": 0.5,
+  "levels": {
+    "1": {
+      "head": [
+        "head_0",
+        "head_1",
+        "head_2",
+        "head_3",
+        "head_4",
+        "head_5",
+        "head_6",
+        "head_7"
+      ],
+      "body": [
+        "body_0",
+        "body_1",
+        "body_2",
+        "body_3",
+        "body_4",
+        "body_5",
+        "body_6",
+        "body_7",
+        "body_8",
+        "body_9",
+        "body_10",
+        "body_11",
+        "body_12",
+        "body_13",
+        "body_14",
+        "body_15",
+        "body_16",
+        "body_17"
+      ],
+      "legs": [
+        "legs_0",
+        "legs_1",
+        "legs_2",
+        "legs_3",
+        "legs_4",
+        "legs_5",
+        "legs_6",
+        "legs_7",
+        "legs_8",
+        "legs_9"
+      ],
+      "weapons": {
+        "kiem": "sword",
+        "cung": "bow_idle"
+      }
+    }
+  },
+  "assets": {
+    "head_0": {
+      "file": "head_0.png",
+      "size": [
+        81,
+        72
+      ],
+      "anchors": {
+        "neck": [
+          43.577,
+          68.239
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 0,
+        "crop": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "bounds": [
+          32,
+          135,
+          372,
+          437
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_1": {
+      "file": "head_1.png",
+      "size": [
+        81,
+        73
+      ],
+      "anchors": {
+        "neck": [
+          44.535,
+          68.958
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 1,
+        "crop": [
+          384,
+          0,
+          768,
+          512
+        ],
+        "bounds": [
+          26,
+          133,
+          364,
+          437
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_2": {
+      "file": "head_2.png",
+      "size": [
+        85,
+        75
+      ],
+      "anchors": {
+        "neck": [
+          41.662,
+          71.592
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 2,
+        "crop": [
+          768,
+          0,
+          1152,
+          512
+        ],
+        "bounds": [
+          20,
+          124,
+          376,
+          439
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_3": {
+      "file": "head_3.png",
+      "size": [
+        77,
+        71
+      ],
+      "anchors": {
+        "neck": [
+          42.38,
+          64.169
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 3,
+        "crop": [
+          1152,
+          0,
+          1536,
+          512
+        ],
+        "bounds": [
+          20,
+          142,
+          341,
+          437
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_4": {
+      "file": "head_4.png",
+      "size": [
+        73,
+        79
+      ],
+      "anchors": {
+        "neck": [
+          8.859,
+          45.732
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 4,
+        "crop": [
+          0,
+          512,
+          384,
+          1024
+        ],
+        "bounds": [
+          48,
+          43,
+          352,
+          372
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_5": {
+      "file": "head_5.png",
+      "size": [
+        87,
+        76
+      ],
+      "anchors": {
+        "neck": [
+          42.859,
+          8.62
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 5,
+        "crop": [
+          384,
+          512,
+          768,
+          1024
+        ],
+        "bounds": [
+          7,
+          43,
+          369,
+          362
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_6": {
+      "file": "head_6.png",
+      "size": [
+        72,
+        80
+      ],
+      "anchors": {
+        "neck": [
+          63.93,
+          45.972
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 6,
+        "crop": [
+          768,
+          512,
+          1152,
+          1024
+        ],
+        "bounds": [
+          24,
+          41,
+          323,
+          375
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_7": {
+      "file": "head_7.png",
+      "size": [
+        85,
+        73
+      ],
+      "anchors": {
+        "neck": [
+          45.254,
+          72.07
+        ]
+      },
+      "source": {
+        "sheet": "heads",
+        "cell": 7,
+        "crop": [
+          1152,
+          512,
+          1536,
+          1024
+        ],
+        "bounds": [
+          12,
+          54,
+          366,
+          357
+        ],
+        "scale": 0.23943661971830985
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_0": {
+      "file": "body_0.png",
+      "size": [
+        79,
+        75
+      ],
+      "anchors": {
+        "neck": [
+          39.816,
+          5.205
+        ],
+        "hip": [
+          37.474,
+          61.156
+        ],
+        "grip": [
+          73.647,
+          67.662
+        ],
+        "far_hand": [
+          8.067,
+          67.401
+        ],
+        "near_hand": [
+          73.647,
+          67.662
+        ],
+        "back": [
+          19.258,
+          35.132
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 0,
+        "crop": [
+          0,
+          0,
+          512,
+          341
+        ],
+        "bounds": [
+          122,
+          45,
+          427,
+          333
+        ],
+        "scale": 0.26023720943453776
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_1": {
+      "file": "body_1.png",
+      "size": [
+        82,
+        75
+      ],
+      "anchors": {
+        "neck": [
+          37.507,
+          4.949
+        ],
+        "hip": [
+          37.507,
+          60.949
+        ],
+        "grip": [
+          72.93,
+          67.981
+        ],
+        "far_hand": [
+          8.856,
+          67.721
+        ],
+        "near_hand": [
+          72.93,
+          67.981
+        ],
+        "back": [
+          19.274,
+          34.902
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 1,
+        "crop": [
+          512,
+          0,
+          1024,
+          341
+        ],
+        "bounds": [
+          94,
+          46,
+          409,
+          333
+        ],
+        "scale": 0.26046511627906976
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_2": {
+      "file": "body_2.png",
+      "size": [
+        125,
+        75
+      ],
+      "anchors": {
+        "neck": [
+          71.789,
+          6.798
+        ],
+        "hip": [
+          57.377,
+          60.912
+        ],
+        "grip": [
+          119.376,
+          27.193
+        ],
+        "far_hand": [
+          8.43,
+          51.394
+        ],
+        "near_hand": [
+          119.376,
+          27.193
+        ],
+        "back": [
+          38.342,
+          33.719
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 2,
+        "crop": [
+          1024,
+          0,
+          1536,
+          341
+        ],
+        "bounds": [
+          2,
+          51,
+          463,
+          328
+        ],
+        "scale": 0.2719279763722069
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_3": {
+      "file": "body_3.png",
+      "size": [
+        133,
+        78
+      ],
+      "anchors": {
+        "neck": [
+          71.234,
+          7.064
+        ],
+        "hip": [
+          60.931,
+          62.109
+        ],
+        "grip": [
+          123.334,
+          20.016
+        ],
+        "far_hand": [
+          10.008,
+          60.931
+        ],
+        "near_hand": [
+          123.334,
+          20.016
+        ],
+        "back": [
+          40.326,
+          32.673
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 3,
+        "crop": [
+          0,
+          341,
+          512,
+          683
+        ],
+        "bounds": [
+          33,
+          38,
+          486,
+          304
+        ],
+        "scale": 0.29435386046469686
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_4": {
+      "file": "body_4.png",
+      "size": [
+        140,
+        81
+      ],
+      "anchors": {
+        "neck": [
+          79.135,
+          8.863
+        ],
+        "hip": [
+          67.423,
+          63.625
+        ],
+        "grip": [
+          128.516,
+          43.366
+        ],
+        "far_hand": [
+          14.877,
+          32.604
+        ],
+        "near_hand": [
+          128.516,
+          43.366
+        ],
+        "back": [
+          45.265,
+          31.971
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 4,
+        "crop": [
+          512,
+          341,
+          1024,
+          683
+        ],
+        "bounds": [
+          35,
+          45,
+          476,
+          302
+        ],
+        "scale": 0.3165408278958126
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_5": {
+      "file": "body_5.png",
+      "size": [
+        140,
+        74
+      ],
+      "anchors": {
+        "neck": [
+          73.966,
+          3.255
+        ],
+        "hip": [
+          62.132,
+          57.99
+        ],
+        "grip": [
+          15.681,
+          44.084
+        ],
+        "far_hand": [
+          124.264,
+          22.486
+        ],
+        "near_hand": [
+          15.681,
+          44.084
+        ],
+        "back": [
+          41.421,
+          28.403
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 5,
+        "crop": [
+          1024,
+          341,
+          1536,
+          683
+        ],
+        "bounds": [
+          6,
+          52,
+          480,
+          302
+        ],
+        "scale": 0.2958659095385544
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_6": {
+      "file": "body_6.png",
+      "size": [
+        97,
+        89
+      ],
+      "anchors": {
+        "neck": [
+          90.598,
+          47.618
+        ],
+        "hip": [
+          34.941,
+          41.434
+        ],
+        "grip": [
+          53.184,
+          25.046
+        ],
+        "far_hand": [
+          39.269,
+          59.368
+        ],
+        "near_hand": [
+          53.184,
+          25.046
+        ],
+        "back": [
+          13.296,
+          10.513
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 6,
+        "crop": [
+          0,
+          683,
+          512,
+          1024
+        ],
+        "bounds": [
+          122,
+          0,
+          436,
+          288
+        ],
+        "scale": 0.3092082730095703
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_7": {
+      "file": "body_7.png",
+      "size": [
+        108,
+        83
+      ],
+      "anchors": {
+        "neck": [
+          60.543,
+          72.408
+        ],
+        "hip": [
+          59.022,
+          16.429
+        ],
+        "grip": [
+          13.386,
+          32.857
+        ],
+        "far_hand": [
+          98.268,
+          31.64
+        ],
+        "near_hand": [
+          13.386,
+          32.857
+        ],
+        "back": [
+          37.725,
+          -13.995
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 7,
+        "crop": [
+          512,
+          683,
+          1024,
+          1024
+        ],
+        "bounds": [
+          79,
+          0,
+          434,
+          273
+        ],
+        "scale": 0.30423551978342317
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_8": {
+      "file": "body_8.png",
+      "size": [
+        102,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          87.569,
+          56.196
+        ],
+        "hip": [
+          32.408,
+          46.543
+        ],
+        "grip": [
+          56.886,
+          18.617
+        ],
+        "far_hand": [
+          32.063,
+          49.99
+        ],
+        "near_hand": [
+          56.886,
+          18.617
+        ],
+        "back": [
+          8.274,
+          12.067
+        ]
+      },
+      "source": {
+        "sheet": "bodies_a",
+        "cell": 8,
+        "crop": [
+          1024,
+          683,
+          1536,
+          1024
+        ],
+        "bounds": [
+          72,
+          0,
+          368,
+          270
+        ],
+        "scale": 0.34476066350449647
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_9": {
+      "file": "body_9.png",
+      "size": [
+        116,
+        94
+      ],
+      "anchors": {
+        "neck": [
+          57.02,
+          27.705
+        ],
+        "hip": [
+          51.544,
+          83.436
+        ],
+        "grip": [
+          30.604,
+          11.275
+        ],
+        "far_hand": [
+          105.987,
+          86.013
+        ],
+        "near_hand": [
+          30.604,
+          11.275
+        ],
+        "back": [
+          28.993,
+          51.222
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 0,
+        "crop": [
+          0,
+          0,
+          512,
+          341
+        ],
+        "bounds": [
+          117,
+          50,
+          477,
+          341
+        ],
+        "scale": 0.32214779907315866
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_10": {
+      "file": "body_10.png",
+      "size": [
+        106,
+        109
+      ],
+      "anchors": {
+        "neck": [
+          59.437,
+          42.602
+        ],
+        "hip": [
+          53.253,
+          98.26
+        ],
+        "grip": [
+          34.013,
+          9.963
+        ],
+        "far_hand": [
+          99.634,
+          100.664
+        ],
+        "near_hand": [
+          34.013,
+          9.963
+        ],
+        "back": [
+          29.203,
+          63.903
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 1,
+        "crop": [
+          512,
+          0,
+          1024,
+          341
+        ],
+        "bounds": [
+          118,
+          23,
+          427,
+          341
+        ],
+        "scale": 0.34356474778841145
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_11": {
+      "file": "body_11.png",
+      "size": [
+        145,
+        75
+      ],
+      "anchors": {
+        "neck": [
+          57.989,
+          7.594
+        ],
+        "hip": [
+          51.086,
+          63.167
+        ],
+        "grip": [
+          134.272,
+          26.578
+        ],
+        "far_hand": [
+          37.279,
+          44.872
+        ],
+        "near_hand": [
+          134.272,
+          26.578
+        ],
+        "back": [
+          26.923,
+          28.649
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 2,
+        "crop": [
+          1024,
+          0,
+          1536,
+          341
+        ],
+        "bounds": [
+          68,
+          124,
+          487,
+          341
+        ],
+        "scale": 0.3451730137292564
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_12": {
+      "file": "body_12.png",
+      "size": [
+        94,
+        85
+      ],
+      "anchors": {
+        "neck": [
+          60.281,
+          6.482
+        ],
+        "hip": [
+          48.613,
+          61.253
+        ],
+        "grip": [
+          84.911,
+          70.976
+        ],
+        "far_hand": [
+          27.548,
+          41.483
+        ],
+        "near_hand": [
+          84.911,
+          70.976
+        ],
+        "back": [
+          25.927,
+          28.844
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 3,
+        "crop": [
+          0,
+          341,
+          512,
+          683
+        ],
+        "bounds": [
+          81,
+          67,
+          372,
+          329
+        ],
+        "scale": 0.3240894866822562
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_13": {
+      "file": "body_13.png",
+      "size": [
+        154,
+        88
+      ],
+      "anchors": {
+        "neck": [
+          69.302,
+          6.056
+        ],
+        "hip": [
+          61.901,
+          61.564
+        ],
+        "grip": [
+          146.005,
+          27.923
+        ],
+        "far_hand": [
+          33.642,
+          44.071
+        ],
+        "near_hand": [
+          146.005,
+          27.923
+        ],
+        "back": [
+          38.352,
+          27.923
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 4,
+        "crop": [
+          512,
+          341,
+          1024,
+          683
+        ],
+        "bounds": [
+          53,
+          71,
+          512,
+          332
+        ],
+        "scale": 0.3364167420498639
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_14": {
+      "file": "body_14.png",
+      "size": [
+        103,
+        84
+      ],
+      "anchors": {
+        "neck": [
+          52.238,
+          4.514
+        ],
+        "hip": [
+          44.499,
+          59.977
+        ],
+        "grip": [
+          72.553,
+          64.491
+        ],
+        "far_hand": [
+          92.223,
+          63.524
+        ],
+        "near_hand": [
+          72.553,
+          64.491
+        ],
+        "back": [
+          21.927,
+          27.731
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 5,
+        "crop": [
+          1024,
+          341,
+          1536,
+          683
+        ],
+        "bounds": [
+          83,
+          72,
+          401,
+          332
+        ],
+        "scale": 0.3224574077934151
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_15": {
+      "file": "body_15.png",
+      "size": [
+        142,
+        79
+      ],
+      "anchors": {
+        "neck": [
+          75.017,
+          6.352
+        ],
+        "hip": [
+          72.899,
+          62.312
+        ],
+        "grip": [
+          45.373,
+          13.612
+        ],
+        "far_hand": [
+          134.606,
+          19.359
+        ],
+        "near_hand": [
+          45.373,
+          13.612
+        ],
+        "back": [
+          51.725,
+          32.064
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 6,
+        "crop": [
+          0,
+          683,
+          512,
+          1024
+        ],
+        "bounds": [
+          33,
+          36,
+          504,
+          296
+        ],
+        "scale": 0.3024862450738713
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_16": {
+      "file": "body_16.png",
+      "size": [
+        149,
+        80
+      ],
+      "anchors": {
+        "neck": [
+          82.845,
+          7.475
+        ],
+        "hip": [
+          77.55,
+          63.224
+        ],
+        "grip": [
+          49.52,
+          13.704
+        ],
+        "far_hand": [
+          142.955,
+          18.375
+        ],
+        "near_hand": [
+          49.52,
+          13.704
+        ],
+        "back": [
+          55.749,
+          32.079
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 7,
+        "crop": [
+          512,
+          683,
+          1024,
+          1024
+        ],
+        "bounds": [
+          18,
+          38,
+          495,
+          296
+        ],
+        "scale": 0.31144773347989196
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_17": {
+      "file": "body_17.png",
+      "size": [
+        149,
+        83
+      ],
+      "anchors": {
+        "neck": [
+          83.753,
+          10.124
+        ],
+        "hip": [
+          79.458,
+          65.959
+        ],
+        "grip": [
+          34.36,
+          13.499
+        ],
+        "far_hand": [
+          142.042,
+          24.236
+        ],
+        "near_hand": [
+          34.36,
+          13.499
+        ],
+        "back": [
+          57.983,
+          35.28
+        ]
+      },
+      "source": {
+        "sheet": "bodies_b",
+        "cell": 8,
+        "crop": [
+          1024,
+          683,
+          1536,
+          1024
+        ],
+        "bounds": [
+          3,
+          28,
+          490,
+          298
+        ],
+        "scale": 0.3067859955389482
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_0": {
+      "file": "legs_0.png",
+      "size": [
+        64,
+        75
+      ],
+      "anchors": {
+        "hip": [
+          33.098,
+          6.782
+        ],
+        "sole": [
+          37.982,
+          74.607
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 0,
+        "crop": [
+          0,
+          0,
+          355,
+          444
+        ],
+        "bounds": [
+          40,
+          117,
+          275,
+          393
+        ],
+        "scale": 0.27129770534508063
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_1": {
+      "file": "legs_1.png",
+      "size": [
+        88,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          42.731,
+          6.215
+        ],
+        "sole": [
+          67.851,
+          69.405
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 1,
+        "crop": [
+          355,
+          0,
+          710,
+          444
+        ],
+        "bounds": [
+          0,
+          124,
+          341,
+          392
+        ],
+        "scale": 0.2589748109680418
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_2": {
+      "file": "legs_2.png",
+      "size": [
+        57,
+        73
+      ],
+      "anchors": {
+        "hip": [
+          28.818,
+          6.498
+        ],
+        "sole": [
+          14.126,
+          72.892
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 2,
+        "crop": [
+          710,
+          0,
+          1064,
+          444
+        ],
+        "bounds": [
+          43,
+          132,
+          244,
+          392
+        ],
+        "scale": 0.28252761083906464
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_3": {
+      "file": "legs_3.png",
+      "size": [
+        91,
+        56
+      ],
+      "anchors": {
+        "hip": [
+          39.138,
+          6.18
+        ],
+        "sole": [
+          81.365,
+          59.479
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 3,
+        "crop": [
+          1064,
+          0,
+          1419,
+          444
+        ],
+        "bounds": [
+          0,
+          117,
+          355,
+          334
+        ],
+        "scale": 0.2574852605531192
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_4": {
+      "file": "legs_4.png",
+      "size": [
+        84,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          39.442,
+          5.597
+        ],
+        "sole": [
+          67.159,
+          67.692
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 4,
+        "crop": [
+          1419,
+          0,
+          1774,
+          444
+        ],
+        "bounds": [
+          23,
+          129,
+          340,
+          392
+        ],
+        "scale": 0.26650277840248593
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_5": {
+      "file": "legs_5.png",
+      "size": [
+        85,
+        67
+      ],
+      "anchors": {
+        "hip": [
+          44.338,
+          6.513
+        ],
+        "sole": [
+          74.648,
+          67.384
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 5,
+        "crop": [
+          0,
+          444,
+          355,
+          887
+        ],
+        "bounds": [
+          17,
+          82,
+          355,
+          350
+        ],
+        "scale": 0.250498214380441
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_6": {
+      "file": "legs_6.png",
+      "size": [
+        89,
+        74
+      ],
+      "anchors": {
+        "hip": [
+          41.318,
+          11.149
+        ],
+        "sole": [
+          24.594,
+          77.061
+        ]
+      },
+      "source": {
+        "sheet": "legs",
+        "cell": 6,
+        "crop": [
+          355,
+          444,
+          710,
+          887
+        ],
+        "bounds": [
+          73,
+          59,
+          345,
+          284
+        ],
+        "scale": 0.32791749317633906
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_7": {
+      "file": "legs_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchors": {
+        "hip": [
+          96,
+          96
+        ],
+        "sole": [
+          30.087999999999994,
+          79.27600000000001
+        ]
+      },
+      "source": "offline rotation of own legs painting",
+      "status": "drawn_unapproved"
+    },
+    "legs_8": {
+      "file": "legs_8.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchors": {
+        "hip": [
+          96,
+          96
+        ],
+        "sole": [
+          112.72399999999998,
+          30.087999999999994
+        ]
+      },
+      "source": "offline rotation of own legs painting",
+      "status": "drawn_unapproved"
+    },
+    "legs_9": {
+      "file": "legs_9.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchors": {
+        "hip": [
+          96,
+          96
+        ],
+        "sole": [
+          161.912,
+          112.72399999999998
+        ]
+      },
+      "source": "offline rotation of own legs painting",
+      "status": "drawn_unapproved"
+    },
+    "sword": {
+      "file": "sword.png",
+      "size": [
+        77,
+        84
+      ],
+      "anchors": {
+        "grip": [
+          14.72,
+          58.65
+        ],
+        "tip": [
+          76.36,
+          -0.46
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 0,
+        "crop": [
+          30,
+          70,
+          430,
+          475
+        ],
+        "bounds": [
+          43,
+          27,
+          377,
+          394
+        ],
+        "scale": 0.23
+      },
+      "status": "drawn_unapproved"
+    },
+    "bow_idle": {
+      "file": "bow_idle.png",
+      "size": [
+        31,
+        104
+      ],
+      "anchors": {
+        "grip": [
+          25.5,
+          51.5
+        ],
+        "belly": [
+          30.25,
+          51.5
+        ],
+        "string": [
+          2.25,
+          51.5
+        ],
+        "top": [
+          2.5,
+          7.25
+        ],
+        "bottom": [
+          3.25,
+          97.75
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 1,
+        "crop": [
+          560,
+          0,
+          770,
+          460
+        ],
+        "bounds": [
+          30,
+          26,
+          155,
+          440
+        ],
+        "scale": 0.25
+      },
+      "status": "drawn_unapproved"
+    },
+    "bow_draw": {
+      "file": "bow_draw.png",
+      "size": [
+        31,
+        104
+      ],
+      "anchors": {
+        "grip": [
+          25.5,
+          51.5
+        ],
+        "belly": [
+          30.25,
+          51.5
+        ],
+        "string": [
+          2.25,
+          51.5
+        ],
+        "top": [
+          2.5,
+          7.25
+        ],
+        "bottom": [
+          3.25,
+          97.75
+        ]
+      },
+      "source": "clean own idle bow wood; no baked arrow",
+      "status": "drawn_unapproved"
+    },
+    "bow_release": {
+      "file": "bow_release.png",
+      "size": [
+        31,
+        103
+      ],
+      "anchors": {
+        "grip": [
+          25.0,
+          51.5
+        ],
+        "belly": [
+          29.5,
+          51.5
+        ],
+        "string": [
+          3.75,
+          51.5
+        ],
+        "top": [
+          4.0,
+          7.25
+        ],
+        "bottom": [
+          3.75,
+          97.5
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 3,
+        "crop": [
+          1345,
+          0,
+          1550,
+          460
+        ],
+        "bounds": [
+          35,
+          26,
+          158,
+          438
+        ],
+        "scale": 0.25
+      },
+      "status": "drawn_unapproved"
+    },
+    "quiver": {
+      "file": "quiver.png",
+      "size": [
+        37,
+        70
+      ],
+      "anchors": {
+        "back": [
+          18.4,
+          35.6
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 4,
+        "crop": [
+          1680,
+          40,
+          1920,
+          465
+        ],
+        "bounds": [
+          32,
+          45,
+          216,
+          395
+        ],
+        "scale": 0.2
+      },
+      "status": "drawn_unapproved"
+    },
+    "arrow": {
+      "file": "arrow.png",
+      "size": [
+        158,
+        15
+      ],
+      "anchors": {
+        "tail": [
+          6.731999999999999,
+          7.68
+        ],
+        "tip": [
+          156.024,
+          7.92
+        ]
+      },
+      "source": "own arrow normalized for full draw span",
+      "status": "drawn_unapproved"
+    },
+    "white_a": {
+      "file": "white_a.png",
+      "size": [
+        90,
+        74
+      ],
+      "anchors": {
+        "centre": [
+          44.8,
+          36.0
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 6,
+        "crop": [
+          470,
+          490,
+          750,
+          730
+        ],
+        "bounds": [
+          26,
+          33,
+          252,
+          218
+        ],
+        "scale": 0.4
+      },
+      "status": "drawn_unapproved"
+    },
+    "white_b": {
+      "file": "white_b.png",
+      "size": [
+        145,
+        95
+      ],
+      "anchors": {
+        "centre": [
+          76.0,
+          46.4
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 7,
+        "crop": [
+          785,
+          480,
+          1160,
+          755
+        ],
+        "bounds": [
+          0,
+          19,
+          362,
+          256
+        ],
+        "scale": 0.4
+      },
+      "status": "drawn_unapproved"
+    },
+    "skill_slash": {
+      "file": "skill_slash.png",
+      "size": [
+        150,
+        96
+      ],
+      "anchors": {
+        "centre": [
+          79.6,
+          46.8
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 8,
+        "crop": [
+          1190,
+          480,
+          1580,
+          755
+        ],
+        "bounds": [
+          0,
+          17,
+          376,
+          258
+        ],
+        "scale": 0.4
+      },
+      "status": "drawn_unapproved"
+    },
+    "skill_arrow": {
+      "file": "skill_arrow.png",
+      "size": [
+        110,
+        27
+      ],
+      "anchors": {
+        "tail": [
+          6.72,
+          13.44
+        ],
+        "tip": [
+          106.88,
+          13.44
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "cell": 9,
+        "crop": [
+          1600,
+          560,
+          1975,
+          675
+        ],
+        "bounds": [
+          13,
+          16,
+          357,
+          101
+        ],
+        "scale": 0.32
+      },
+      "status": "drawn_unapproved"
+    },
+    "bow_draw_15": {
+      "file": "bow_draw_15.png",
+      "size": [
+        99,
+        124
+      ],
+      "anchors": {
+        "grip": [
+          93.5,
+          61.5
+        ],
+        "belly": [
+          98.25,
+          61.5
+        ],
+        "string": [
+          4.266999999999996,
+          55.753
+        ],
+        "top": [
+          70.5,
+          17.25
+        ],
+        "bottom": [
+          71.25,
+          107.75
+        ]
+      },
+      "source": "own bow source, V-string to measured near hand",
+      "status": "drawn_unapproved"
+    },
+    "bow_draw_16": {
+      "file": "bow_draw_16.png",
+      "size": [
+        103,
+        124
+      ],
+      "anchors": {
+        "grip": [
+          97.5,
+          61.5
+        ],
+        "belly": [
+          102.25,
+          61.5
+        ],
+        "string": [
+          4.064999999999998,
+          56.829
+        ],
+        "top": [
+          74.5,
+          17.25
+        ],
+        "bottom": [
+          75.25,
+          107.75
+        ]
+      },
+      "source": "own bow source, V-string to measured near hand",
+      "status": "drawn_unapproved"
+    },
+    "blade_0": {
+      "file": "blade_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          96,
+          144
+        ],
+        "tip": [
+          156.38825092681523,
+          83.61174907318477
+        ]
+      },
+      "source": "offline rotation of own sword",
+      "status": "drawn_unapproved"
+    },
+    "blade_1": {
+      "file": "blade_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          96,
+          144
+        ],
+        "tip": [
+          176.25151969674766,
+          114.790835575756
+        ]
+      },
+      "source": "offline rotation of own sword",
+      "status": "drawn_unapproved"
+    },
+    "blade_2": {
+      "file": "blade_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          96,
+          144
+        ],
+        "tip": [
+          181.40188346869172,
+          144.0
+        ]
+      },
+      "source": "offline rotation of own sword",
+      "status": "drawn_unapproved"
+    },
+    "blade_3": {
+      "file": "blade_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          96,
+          144
+        ],
+        "tip": [
+          169.96020061492533,
+          186.70094173434586
+        ]
+      },
+      "source": "offline rotation of own sword",
+      "status": "drawn_unapproved"
+    },
+    "blade_4": {
+      "file": "blade_4.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          96,
+          144
+        ],
+        "tip": [
+          176.25151969674766,
+          173.209164424244
+        ]
+      },
+      "source": "offline rotation of own sword",
+      "status": "drawn_unapproved"
+    },
+    "trail_0": {
+      "file": "trail_0.png",
+      "size": [
+        63,
+        52
+      ],
+      "anchors": {
+        "centre": [
+          31.5,
+          26.0
+        ]
+      },
+      "source": "own white crescent phases",
+      "status": "drawn_unapproved"
+    },
+    "trail_1": {
+      "file": "trail_1.png",
+      "size": [
+        123,
+        81
+      ],
+      "anchors": {
+        "centre": [
+          61.5,
+          40.5
+        ]
+      },
+      "source": "own white crescent phases",
+      "status": "drawn_unapproved"
+    },
+    "trail_2": {
+      "file": "trail_2.png",
+      "size": [
+        145,
+        95
+      ],
+      "anchors": {
+        "centre": [
+          72.5,
+          47.5
+        ]
+      },
+      "source": "own white crescent phases",
+      "status": "drawn_unapproved"
+    },
+    "trail_3": {
+      "file": "trail_3.png",
+      "size": [
+        145,
+        95
+      ],
+      "anchors": {
+        "centre": [
+          72.5,
+          47.5
+        ]
+      },
+      "source": "own white crescent phases",
+      "status": "drawn_unapproved"
+    },
+    "trail_4": {
+      "file": "trail_4.png",
+      "size": [
+        68,
+        56
+      ],
+      "anchors": {
+        "centre": [
+          34.0,
+          28.0
+        ]
+      },
+      "source": "own white crescent phases",
+      "status": "drawn_unapproved"
+    }
+  },
+  "references": [
+    {
+      "path": "art/reference/chr_dbl_board_trang_bi.png",
+      "sha256": "a40a3e784d94e9e6b82fe075795aa22468f2f4015a6315a92ab24efbdc456f34"
+    },
+    {
+      "path": "art/reference/chr_dbl_board_animation.png",
+      "sha256": "7f3cba6688e06c0d4fdddcee6eb2adafdc9482648cebc39245b80ea2cc59c3bd"
+    },
+    {
+      "path": "art/reference/ref_dinh_bo_linh.png",
+      "sha256": "62507c983bebc6fbeef3b8673356cb2c825052dac7a900fef36649c2b4be0cd3"
+    }
+  ]
+}
