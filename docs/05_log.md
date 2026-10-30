@@ -475,3 +475,38 @@ Avoid: Japanese ninja or samurai clothing, katanas, Chinese imperial dragon robe
   bay xa; chụp scene Godot1600×720 hai hướng. Báo cáo/scripts/nguyên đầu ra tại
   reports/g1_kiem_cung_report.md; đầu ra cũng trong commit message.
 - Nhật ký cũ và mọi báo cáo cũ giữ nguyên; không tự duyệt mỹ thuật/đánh dấu[x].
+
+## 30/10/2026 — g1_kiem_vet_chem — v1, bản thử chưa duyệt
+
+- Nhánhfeat/g1-kiem-vet-chem từ main8f70b6f. Tách lưỡi kiếm theo cấp khỏi vệt
+  dùng chung; chỉ3cấp1/30/60được vẽ,4cấp còn lại làslotchưa vẽ. Không đổi tranh
+  thân slash/thrust, tuningA0, Đào Úc hoặc rigcũ.
+- Tham khảo cơ chế thể loại chỉ đọc: khung chọn tranh/offset, vệt đặt theo tâm,
+  lật gương theo gốc, ẩn vũ khí cầm khi đánh; đã đọc cả pha cung/tên. Không chép
+  mã, ảnh, bảng số hay tên nguồn vào repo. Dữ liệu/góc/canvas/thời gian do dự án đặt.
+- Nguồn kiếm/vệt tạo riêng bằngimagegen, đính kèmref_dinh_bo_linh.png; giữSTYLE-B/
+  AVOID. Một lần sinh, chưa duyệt mỹ thuật. Offlinechuẩn hóa và xoay từng góc
+  trước xuấtPNG4×supersamplingrồi downsample, runtimekhông xoay. Chuôi cùngpixel,
+  trục≤3°/chiều lưỡi≤15%, checkerđo cả pixel ảnh. Không thêm tài nguyên bên thứ ba.
+- Slash5nhịp từ4pha thân cũ, giữ nhịp kết thúc thêm1nhịp, tổng0,30s; thrustgiữ
+  pilotcũ.4vệt riêng theo tâm/offsetlogic, đuôi nhạt, dùngchung mọicấp. Trởidle
+  sau0,30s, không để vệt treo mãi. Viewerdropdowncấp và nút chạy thật/dải tĩnh.
+- Cung có tên đặt sẵn ở pha kéo, ẩn khi nghỉ/buông; tên bay riêng chỉ sinh khi
+  buông. Chỉ kéo dài thân gỗOFFLINE, giữ lông/mũi và dùng cùng ảnh cho hai trạng
+  thái. Người dùng nhắc: một nhân vật chỉKiếm HOẶCCung; đổi phái xóa hình/vệt/tên
+  còn lại ngay, viewerkhóa dropdowncấpKiếm khi chọnCung. Các mẫu tĩnh là mẫu riêng.
+- Xóa bytecode đã lỡ theo dõi khỏigit, giữ__pycache__/trong.gitignore. Không đưa
+  zip, presetxuất hoặcfiletạm vào repo. Nhật ký cũ nguyênbyte, không tự đánh dấu[x].
+- KiểmGodot4.7.2, template và chụpXvfb1600×720phải/trái; nguyênđầura trongcommit
+  vàprototype/pose_rig/reports/swing_checks.txt. Grepnguyênvăn chưa0dòng vì tên
+  sẵn có/chuỗi conLicensorvànhịphân; người dùng chọn ghi nguyênđầura và báo chưađạt,
+  không sửa giấyphép/file ngoài phạmvi để làm sạch giả.
+- Prompt nguyên văn:
+
+```text
+Use the attached Vietnamese character only for costume-era/art rendering reference. Create an ORIGINAL weapon and physical slash-effect source sheet, not a result/comparison board. Flat pure green #00FF00 background, no text, no labels, no frames. TWO ROWS of large separated objects. Top row EXACTLY THREE HORIZONTAL straight double-edged swords, all handles on LEFT and tips pointing RIGHT, identical clean broad straight silhouette and size. Plain small crossguard, cord wrapped grip, no gemstones or fantasy shapes. First is a simple tier1 forged iron sword with rough brown wooden grip and small iron guard; second is a tier30 better steel sword, tidy brown cord grip, small bronze guard; third tier60 fine steel, dark-brown tightly wrapped handle, compact bronze fittings with a restrained reed-leaf engraved motif. Same small simple outline family, sharp pointed symmetrical blades; steel limestone-grey main #A5B8B0, shadow #718B87, highlight #D9DDD0. Large EMPTY GREEN GUTTERS. Bottom row EXACTLY FOUR separate VERTICAL WHITE CRESCENT physical slash swooshes, open side LEFT, convex advance side RIGHT. First small beginning sweep; second large broad SOLID WHITE CRESCENT with a tiny pale grey-blue inner edge, smooth pointed tips and strongest opaque bulb at RIGHT, thin tapering tails toward upper/lower LEFT; third angled-down followthrough crescent; fourth same followthrough fading tail, pale white (on green for chroma key). No sparkles, no particles, no glow. All4shapes isolated, do not overlap swords. Draw no hands, people, lettering, arrows, UI or background shadows. These source shapes will be registered to fixed template canvases offline; do not pre-rotate swords.
+
+Style: hand-painted 2D game art for a side-scrolling mobile action RPG, slightly stylized proportions about 4 heads tall, clean ink outline, flat colors with soft gouache shading, light source from top-left. Setting: northern Vietnam in the 10th century, earthy palette of rice-field green, limestone grey, earth brown and straw yellow, with red reserved for battle and fire.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```

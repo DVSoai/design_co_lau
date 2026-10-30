@@ -1,0 +1,679 @@
+{
+  "status": "unapproved pilot",
+  "scale": 0.5,
+  "canvas": [
+    256,
+    256
+  ],
+  "grip": [
+    96.0,
+    144.0
+  ],
+  "angles": {
+    "gio_sau": -135,
+    "vung_len": -45,
+    "ngang": 0,
+    "bo_xuong": 45,
+    "dam": 0
+  },
+  "levels": {
+    "1": {
+      "status": "drawn_unapproved",
+      "blades": {
+        "gio_sau": {
+          "file": "lv1_gio_sau.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            86.40018192396303,
+            134.36752948152753
+          ],
+          "tip": [
+            32.36038969321073,
+            80.36038969321069
+          ],
+          "axis_degrees": -135,
+          "source_registration_scale": 0.15280113800976608,
+          "pixel_sha256": "64390c34ccbbb17834af9b4b344b722aafb8be0dce137ed576c28408c29b6fa7"
+        },
+        "vung_len": {
+          "file": "lv1_vung_len.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            105.63247051847247,
+            134.40018192396303
+          ],
+          "tip": [
+            159.63961030678928,
+            80.36038969321072
+          ],
+          "axis_degrees": -45,
+          "source_registration_scale": 0.15280113800976608,
+          "pixel_sha256": "85a8aeb98453a6db5cffacd0de378e7a119e39d4f191302916d8ca3ca1276cc0"
+        },
+        "ngang": {
+          "file": "lv1_ngang.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            109.59928168291432,
+            144.02308876346845
+          ],
+          "tip": [
+            186.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.15280113800976608,
+          "pixel_sha256": "e26a9f42aec017862ed320768538765cc09d071947fe1c6cafee90c9626f6d4d"
+        },
+        "bo_xuong": {
+          "file": "lv1_bo_xuong.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            105.59981807603697,
+            153.63247051847247
+          ],
+          "tip": [
+            159.63961030678928,
+            207.63961030678928
+          ],
+          "axis_degrees": 45,
+          "source_registration_scale": 0.15280113800976608,
+          "pixel_sha256": "3dfd2da4b9753544dd07fab1d0703cfc1c7c1a14a1b5d4a180842474ea6ebe56"
+        },
+        "dam": {
+          "file": "lv1_dam.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            109.59928168291432,
+            144.02308876346845
+          ],
+          "tip": [
+            186.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.15280113800976608,
+          "pixel_sha256": "e26a9f42aec017862ed320768538765cc09d071947fe1c6cafee90c9626f6d4d"
+        }
+      }
+    },
+    "10": {
+      "status": "not_drawn",
+      "blades": {
+        "gio_sau": {
+          "file": null,
+          "expected_file": "lv10_gio_sau.png"
+        },
+        "vung_len": {
+          "file": null,
+          "expected_file": "lv10_vung_len.png"
+        },
+        "ngang": {
+          "file": null,
+          "expected_file": "lv10_ngang.png"
+        },
+        "bo_xuong": {
+          "file": null,
+          "expected_file": "lv10_bo_xuong.png"
+        },
+        "dam": {
+          "file": null,
+          "expected_file": "lv10_dam.png"
+        }
+      }
+    },
+    "20": {
+      "status": "not_drawn",
+      "blades": {
+        "gio_sau": {
+          "file": null,
+          "expected_file": "lv20_gio_sau.png"
+        },
+        "vung_len": {
+          "file": null,
+          "expected_file": "lv20_vung_len.png"
+        },
+        "ngang": {
+          "file": null,
+          "expected_file": "lv20_ngang.png"
+        },
+        "bo_xuong": {
+          "file": null,
+          "expected_file": "lv20_bo_xuong.png"
+        },
+        "dam": {
+          "file": null,
+          "expected_file": "lv20_dam.png"
+        }
+      }
+    },
+    "30": {
+      "status": "drawn_unapproved",
+      "blades": {
+        "gio_sau": {
+          "file": "lv30_gio_sau.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            85.34278055612162,
+            133.30628322925904
+          ],
+          "tip": [
+            28.117749006091444,
+            76.11774900609142
+          ],
+          "axis_degrees": -135,
+          "source_registration_scale": 0.16410232434479588,
+          "pixel_sha256": "3e03a047f026f2f975e87af46a8925473c843a4864cc67ecccc901d8d1dd4672"
+        },
+        "vung_len": {
+          "file": "lv30_vung_len.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            106.69371677074096,
+            133.34278055612162
+          ],
+          "tip": [
+            163.88225099390857,
+            76.11774900609143
+          ],
+          "axis_degrees": -45,
+          "source_registration_scale": 0.16410232434479588,
+          "pixel_sha256": "3b5d4d250929bda719775758049687583b3f5f8d7aace7221143aa042fea2a84"
+        },
+        "ngang": {
+          "file": "lv30_ngang.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            111.09739178203877,
+            144.0258075073197
+          ],
+          "tip": [
+            192.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.16410232434479588,
+          "pixel_sha256": "45e4963fe5b37cc1af6b0e125fe9413c8c704b95c4f12d0ee8a0dc66b1a72a00"
+        },
+        "bo_xuong": {
+          "file": "lv30_bo_xuong.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            106.65721944387838,
+            154.69371677074096
+          ],
+          "tip": [
+            163.88225099390857,
+            211.88225099390854
+          ],
+          "axis_degrees": 45,
+          "source_registration_scale": 0.16410232434479588,
+          "pixel_sha256": "46d3fddd61d7ce3af38e3e2930e00d30c0f06e355d195c6e37a1914dd6252e09"
+        },
+        "dam": {
+          "file": "lv30_dam.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            111.09739178203877,
+            144.0258075073197
+          ],
+          "tip": [
+            192.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.16410232434479588,
+          "pixel_sha256": "45e4963fe5b37cc1af6b0e125fe9413c8c704b95c4f12d0ee8a0dc66b1a72a00"
+        }
+      }
+    },
+    "40": {
+      "status": "not_drawn",
+      "blades": {
+        "gio_sau": {
+          "file": null,
+          "expected_file": "lv40_gio_sau.png"
+        },
+        "vung_len": {
+          "file": null,
+          "expected_file": "lv40_vung_len.png"
+        },
+        "ngang": {
+          "file": null,
+          "expected_file": "lv40_ngang.png"
+        },
+        "bo_xuong": {
+          "file": null,
+          "expected_file": "lv40_bo_xuong.png"
+        },
+        "dam": {
+          "file": null,
+          "expected_file": "lv40_dam.png"
+        }
+      }
+    },
+    "50": {
+      "status": "not_drawn",
+      "blades": {
+        "gio_sau": {
+          "file": null,
+          "expected_file": "lv50_gio_sau.png"
+        },
+        "vung_len": {
+          "file": null,
+          "expected_file": "lv50_vung_len.png"
+        },
+        "ngang": {
+          "file": null,
+          "expected_file": "lv50_ngang.png"
+        },
+        "bo_xuong": {
+          "file": null,
+          "expected_file": "lv50_bo_xuong.png"
+        },
+        "dam": {
+          "file": null,
+          "expected_file": "lv50_dam.png"
+        }
+      }
+    },
+    "60": {
+      "status": "drawn_unapproved",
+      "blades": {
+        "gio_sau": {
+          "file": "lv60_gio_sau.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            85.6308312477979,
+            133.59406114583973
+          ],
+          "tip": [
+            25.28932188134526,
+            73.28932188134523
+          ],
+          "axis_degrees": -135,
+          "source_registration_scale": 0.17699087322306428,
+          "pixel_sha256": "db0f7ef40e7693d418ac29360eb54c7f5c684705ab22072437f06ddc3c01dfe4"
+        },
+        "vung_len": {
+          "file": "lv60_vung_len.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            106.40593885416027,
+            133.63083124779791
+          ],
+          "tip": [
+            166.71067811865476,
+            73.28932188134524
+          ],
+          "axis_degrees": -45,
+          "source_registration_scale": 0.17699087322306428,
+          "pixel_sha256": "854a44d9a2fb8f7bae0e954907aa789066daca59b96ec02d31bed3193bab683b"
+        },
+        "ngang": {
+          "file": "lv60_ngang.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            110.69021946833905,
+            144.02600038843954
+          ],
+          "tip": [
+            196.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.17699087322306428,
+          "pixel_sha256": "945a30221bd58a18093e0cc7d44743105614031af7ef19cad5c3cd80c0c826e8"
+        },
+        "bo_xuong": {
+          "file": "lv60_bo_xuong.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            106.3691687522021,
+            154.40593885416027
+          ],
+          "tip": [
+            166.71067811865476,
+            214.71067811865476
+          ],
+          "axis_degrees": 45,
+          "source_registration_scale": 0.17699087322306428,
+          "pixel_sha256": "d6418f6677ecc3fd63a5639ee2be5004f8ffca3ab91a3e6c0bc6b174188074e3"
+        },
+        "dam": {
+          "file": "lv60_dam.png",
+          "grip": [
+            96.0,
+            144.0
+          ],
+          "guard": [
+            110.69021946833905,
+            144.02600038843954
+          ],
+          "tip": [
+            196.0,
+            144.0
+          ],
+          "axis_degrees": 0,
+          "source_registration_scale": 0.17699087322306428,
+          "pixel_sha256": "945a30221bd58a18093e0cc7d44743105614031af7ef19cad5c3cd80c0c826e8"
+        }
+      }
+    }
+  },
+  "planned_levels": [
+    1,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+  ],
+  "source_sha256": "e6f26f5d00de881233ce339a0e7078dc55198dd36a85378869ccf73f6ef9ae61",
+  "source_landmarks": {
+    "1": {
+      "component": 2,
+      "grip": [
+        125,
+        144
+      ],
+      "guard": [
+        214,
+        144
+      ],
+      "tip": [
+        714,
+        143
+      ],
+      "length": 90
+    },
+    "30": {
+      "component": 3,
+      "grip": [
+        851,
+        144
+      ],
+      "guard": [
+        943,
+        144
+      ],
+      "tip": [
+        1436,
+        143
+      ],
+      "length": 96
+    },
+    "60": {
+      "component": 1,
+      "grip": [
+        1578,
+        144
+      ],
+      "guard": [
+        1661,
+        144
+      ],
+      "tip": [
+        2143,
+        143
+      ],
+      "length": 100
+    }
+  },
+  "trails": {
+    "1": {
+      "file": "trail_1.png",
+      "canvas": [
+        320,
+        208
+      ],
+      "centre": [
+        160,
+        104
+      ],
+      "opacity_baked": 1,
+      "source_component": 91,
+      "source_box": [
+        104,
+        353,
+        348,
+        618
+      ]
+    },
+    "2": {
+      "file": "trail_2.png",
+      "canvas": [
+        320,
+        208
+      ],
+      "centre": [
+        160,
+        104
+      ],
+      "opacity_baked": 1,
+      "source_component": 4,
+      "source_box": [
+        551,
+        296,
+        1058,
+        666
+      ]
+    },
+    "3": {
+      "file": "trail_3.png",
+      "canvas": [
+        320,
+        208
+      ],
+      "centre": [
+        160,
+        104
+      ],
+      "opacity_baked": 0.85,
+      "source_component": 6,
+      "source_box": [
+        1185,
+        305,
+        1554,
+        674
+      ]
+    },
+    "4": {
+      "file": "trail_4.png",
+      "canvas": [
+        320,
+        208
+      ],
+      "centre": [
+        160,
+        104
+      ],
+      "opacity_baked": 0.35,
+      "source_component": 7,
+      "source_box": [
+        1779,
+        307,
+        2066,
+        621
+      ]
+    }
+  },
+  "arrow": {
+    "file": "arrow_ready.png",
+    "size": [
+      117,
+      9
+    ],
+    "tail": [
+      2.610376,
+      4.465116
+    ],
+    "tip": [
+      117.053309,
+      4.465116
+    ],
+    "shaft_extension_px": 52,
+    "notes": "Own existing arrow art; only shaft lengthened offline, feather and point unchanged; same image used on string and separate flying sprite"
+  },
+  "clips": {
+    "slash": {
+      "loop": false,
+      "frames": [
+        {
+          "body": "body_11",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_2",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "gio_sau",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_3",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "vung_len",
+          "trail": "1",
+          "trail_offset": [
+            90,
+            -78
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_4",
+          "duration": 0.075,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "ngang",
+          "trail": "2",
+          "trail_offset": [
+            100,
+            -48
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_5",
+          "duration": 0.075,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "bo_xuong",
+          "trail": "3",
+          "trail_offset": [
+            85,
+            -38
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_5",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "bo_xuong",
+          "trail": "4",
+          "trail_offset": [
+            87,
+            -36
+          ]
+        }
+      ]
+    },
+    "thrust": {
+      "loop": false,
+      "frames": [
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_6",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "dam",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_6",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "dam",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "notes": "5own beats use existing body poses; last beat holds followthrough; trails centre offsets in actor logic pixels; no runtime rotation;4planned levels not drawn"
+}

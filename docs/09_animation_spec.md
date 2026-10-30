@@ -219,3 +219,29 @@ nhịp thời gian thành ít hình tư thế, vẫn giữ tổng thời gian v�
 Tên là hình riêng bay theo hướng mặt,240px/s **Đề xuất chỉ cho xem thử**, cấu
 hình trong pose_rig/data/frames.json; không ghi vào tuningA0 hoặc bảng số game.
 Bản thử chưa có damage/hit/cancel mới; không thay nhân vật A0/Đào Úc.
+
+## Pilot lưỡi theo cấp + vệt chung — chưa duyệt
+
+Dữ liệu nguồn chuẩn `prototype/pose_rig/data/swing.json`, không dùng bảng/góc
+của nguồn tham khảo. Giữ nguyên tranh và mốc thân hiện có. Năm nhịp dùng4pha
+thân hiện có, nhịp5giữ tư thế kết thúc; tổngslash0,30s nhưA0, không sửa tuning.
+
+| Nhịp slash | Hình thân | Góc lưỡi | Vệt chung | Offset tâm (logicpx) | Thời gian |
+|---|---|---|---|---|---|
+| 1 | body_11 | gio_sau | không | — | 0,050s |
+| 2 | body_12 | vung_len | 1 | (90;−78) | 0,050s |
+| 3 | body_12 | ngang | 2 | (100;−48) | 0,075s |
+| 4 | body_12 | bo_xuong | 3 | (85;−38) | 0,075s |
+| 5 | body_12 | bo_xuong | 4,đuôi mờ | (87;−36) | 0,050s |
+
+Thrustgiữ2khung/thời lượng pilot trước, dùngdamvà khôngvệt. Hình thân/chân/đầu
+không đổi khi thay cấp. Vệt trăng khuyết lớn nhất cao92logicpx trongcanvas,
+cỡchiều cao người96px ở nhịp mạnh; đuôi nhạt về phía sau, pha cuốiopacity0,35.
+Lưỡi gắn bằnggrip, vệt đặt theo tâm chứ không gắn góc xoay xương; tất cảrotation0.
+Hết0,30squay vềidle, ẩn lưỡi/vệt và hiện lại kiếm đeo.
+
+Cung: tên đặt sẵn chỉ hiện ở khung kéo dây (shoot2/run_shoot1), ẩn ở pha nghỉ/
+thả; tên bay riêng chỉ sinh khi thả. Kéo dài thân gỗ của ảnh tênOFFLINEđể mũi
+đi qua lưng cung; giữ kích thước lông/mũi, cùng ảnh dùng cho tên bay, không co
+runtime. Không đổi nhịp/spawn/speed của pilotCung hiện tại hoặc sốA0.
+Một nhân vật chỉKiếm hoặcCung; đổi phái xóa ngay hình/vệt/tên còn lại.

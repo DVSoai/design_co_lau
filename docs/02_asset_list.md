@@ -119,3 +119,9 @@ Có bốn loại hạng mục:
 ## Pilot nhân vật theo tư thế vẽ trọn
 
 - [ ] `chr_dbl_poses_t0` — **kiếm + cung, bản thử chưa duyệt**: hình tư thế chung,6kiếm/5cung/2tên/4thân bắn mới, ảnh2×/linear, chuyển phái/động tác, mốc và test hướng vũ khí; [báo cáo hiện tại](reports/g1_kiem_cung_report.md). Không thay A0/Đào Úc; rig16mảnh giữ lịch sử.
+
+## Khung mẫu kiếm và vệt dùng chung — bản thử chưa duyệt
+
+- [ ] `chr_dbl_sword_template` — cấp1/30/60×5góc=15PNG2×, canvas/gripcố định;4cấp còn lại chỉ slotdữ liệu, chưa vẽ. Nguồn tạo riêng trong art/sprites/weapons/swing/sources/; checkertrục/chiều dài và runtimekhông xoay.
+- [ ] `vfx_sword_swing_shared` —4vệt trăng khuyết trắng dùng chung mọi cấp, tâm/offset/thời lượng trong swing.json;slash5nhịp tổng0,30s; giữ tranh thân cũ. Chưa duyệt mỹ thuật.
+- [ ] `arrow_ready_shared` —tên trên dây khi kéo và Sprite2Dtên bay khi buông; không đồng thời trang bị kiếm/cung. Chi tiết/chụp thật tại prototype/pose_rig/README.md.

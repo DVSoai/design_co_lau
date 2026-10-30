@@ -1,0 +1,971 @@
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --path prototype --editor --import --quit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (20 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | arrow_ready.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | lv1_bo_xuong.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | lv1_dam.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | lv1_gio_sau.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | lv1_ngang.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | lv1_vung_len.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | lv30_bo_xuong.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | lv30_dam.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | lv30_gio_sau.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | lv30_ngang.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | lv30_vung_len.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | lv60_bo_xuong.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | lv60_dam.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | lv60_gio_sau.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | lv60_ngang.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | lv60_vung_len.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | trail_1.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | trail_2.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | trail_3.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | trail_4.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Jump range: 152.0 px; gap: 96.0 px; required: 144.0 px
+PASS: default horizontal jump range has 1.5x gap margin
+PASS: classic controls and air jump default on with 96 px jump
+PASS: player lands on ground
+PASS: keyboard action moves player
+PASS: jump rises toward configured apex
+PASS: player falls and lands
+PASS: Area2D slash hits dummy exactly once
+PASS: damage label is spawned
+PASS: F1 action enables hitboxes and values
+PASS: fall resets player
+PASS: coyote jump works just after leaving ledge
+PASS: buffered jump fires on landing
+PASS: F1 action disables debug
+PASS: gear opens tuning panel
+PASS: slider updates live run speed
+PASS: player consumes live speed instead of default
+PASS: jump gravity and velocity recalculate immediately
+PASS: runtime edits leave tuning defaults unchanged
+PASS: clipboard text contains current and derived values
+PASS: gear closes tuning panel
+PASS: idle bob reaches +1 px at quarter period
+PASS: idle bob reaches -1 px at three-quarter period
+PASS: running leans 4 degrees right
+PASS: step frequency scales with speed and lean follows left movement
+PASS: takeoff stretches sprite to 0.9 x 1.1
+PASS: takeoff scale recovers in 0.1 seconds
+PASS: landing squashes sprite to 1.15 x 0.85
+PASS: landing scale recovers in 0.1 seconds
+PASS: slash shifts sprite 4 px toward facing inside hit window
+PASS: slash shift stops outside hit window
+PASS: sprite motion leaves body and hitbox transforms and dimensions unchanged
+PASS: gear switch disables all fake motion and restores neutral transform
+PASS: clipboard text includes live motion switch
+PASS: gear switch re-enables fake motion
+PASS: repeated arrow keys leave all tuning values unchanged while panel is open
+PASS: wheel events over every slider leave all tuning values unchanged
+PASS: gear, checkbox and copy button cannot take keyboard focus
+PASS: mouse drag still updates slider with focus disabled
+Android layout: (1920, 1080) viewport=(960.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (1920, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (1920, 1080)
+PASS: buttons remain anchored to live viewport corners at (1920, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1920, 1080)
+PASS: camera limits use live viewport at (1920, 1080)
+Android layout: (2400, 1080) viewport=(1200.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (2400, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (2400, 1080)
+PASS: buttons remain anchored to live viewport corners at (2400, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (2400, 1080)
+PASS: camera limits use live viewport at (2400, 1080)
+Android layout: (1600, 720) viewport=(1200.0, 540.0) stretch=(1.333333, 1.333333)
+PASS: fractional expand fills (1600, 720) without letterbox
+PASS: touch controls, gear and panel stay inside (1600, 720)
+PASS: buttons remain anchored to live viewport corners at (1600, 720)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1600, 720)
+PASS: camera limits use live viewport at (1600, 720)
+PASS: gear switches live stretch to integer
+PASS: gear switches live stretch back to fractional
+PASS: gear shows physical screen, viewport and current scale
+PASS: F1 debug includes the same live display diagnostics
+PASS: horizontal touch starting on track cannot change slider value
+PASS: vertical touch swipe across slider track never changes tuning
+PASS: vertical touch swipe scrolls the tuning panel
+PASS: vertical gesture starting on thumb does not drift its value
+PASS: horizontal touch drag starting on thumb adjusts value
+PASS: slider touch area is at least 44 px high
+PASS: only three movement buttons are drawn; diagonal zones have no normal drawing
+PASS: d-pad follows 2.2d spacing and 1.35d jump height with centered up button
+PASS: invisible zones are adjacent to both sides of up on the same row
+PASS: up button wins hit priority when a diagonal region overlaps
+PASS: diagonal wins hit priority over lower direction left
+PASS: diagonal wins hit priority over lower direction right
+PASS: F1 enables outline-only diagonal diagnostics
+PASS: diagonal zones remain touchable with debug drawing hidden
+PASS: diagonal jump regions are on matching sides and 0.9x wide
+PASS: diagonal region jumps and holds direction -1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: diagonal region jumps and holds direction 1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: sliding from diagonal to up keeps jump and releases direction feedback
+PASS: sliding to opposite diagonal updates direction and both visible highlights
+PASS: sliding down to right retains direction without jump
+PASS: sliding outside all regions releases actions and feedback
+PASS: multitouch release preserves another finger's direction
+PASS: holding up repeats jump after landing
+PASS: auto-jump switch off permits only one jump per hold
+Variable jump: held height=76.5905456542969 early-release height=28.2679748535156
+PASS: early release gives lower jump when variable jump is enabled
+PASS: variable jump off retains full-height early-release jump
+PASS: jump toggle defaults are auto-repeat on and variable height off
+A0 placeholder: health bottle count=4
+PASS: health placeholder decrements count on press
+A0 placeholder: target
+A0 placeholder: skill_1
+PASS: HUD switch hides menu and frees top-right space
+PASS: HUD can be restored and gear is at least 56x56
+PASS: slash trail and damage text render above dummy
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+A0 smoke failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/classic_headless.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+Classic checks failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/dao_uc_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: field map switch camera snapped while player input locked
+PASS: field 960 top HUD level actual rectangle matches Python checker
+PASS: field 960 top HUD hp actual rectangle matches Python checker
+PASS: field 960 top HUD mp actual rectangle matches Python checker
+PASS: field 960 top HUD menu actual rectangle matches Python checker
+PASS: field 960 top HUD gear actual rectangle matches Python checker
+PASS: field 960 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: field 1200 top HUD level actual rectangle matches Python checker
+PASS: field 1200 top HUD hp actual rectangle matches Python checker
+PASS: field 1200 top HUD mp actual rectangle matches Python checker
+PASS: field 1200 top HUD menu actual rectangle matches Python checker
+PASS: field 1200 top HUD gear actual rectangle matches Python checker
+PASS: field 1200 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: boss map switch camera snapped while player input locked
+PASS: boss 960 top HUD level actual rectangle matches Python checker
+PASS: boss 960 top HUD hp actual rectangle matches Python checker
+PASS: boss 960 top HUD mp actual rectangle matches Python checker
+PASS: boss 960 top HUD menu actual rectangle matches Python checker
+PASS: boss 960 top HUD gear actual rectangle matches Python checker
+PASS: boss 960 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: boss 1200 top HUD level actual rectangle matches Python checker
+PASS: boss 1200 top HUD hp actual rectangle matches Python checker
+PASS: boss 1200 top HUD mp actual rectangle matches Python checker
+PASS: boss 1200 top HUD menu actual rectangle matches Python checker
+PASS: boss 1200 top HUD gear actual rectangle matches Python checker
+PASS: boss 1200 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: field map switch camera snapped while player input locked
+PASS: field JSON source SHA256 matches canonical Markdown
+PASS: field original Markdown layout block found
+PASS: field JSON matches every original cell (2550 compared)
+GRID field '#': original=1216 loaded=1216
+PASS: field '#' counts match original grid
+GRID field '=': original=21 loaded=21
+PASS: field '=' counts match original grid
+GRID field '^': original=2 loaded=2
+PASS: field '^' counts match original grid
+GRID field '~': original=3 loaded=3
+PASS: field '~' counts match original grid
+GRID field 'L': original=5 loaded=5
+PASS: field 'L' counts match original grid
+PASS: boss JSON source SHA256 matches canonical Markdown
+PASS: boss original Markdown layout block found
+PASS: boss JSON matches every original cell (1020 compared)
+GRID boss '#': original=516 loaded=516
+PASS: boss '#' counts match original grid
+GRID boss '=': original=0 loaded=0
+PASS: boss '=' counts match original grid
+GRID boss '^': original=0 loaded=0
+PASS: boss '^' counts match original grid
+GRID boss '~': original=0 loaded=0
+PASS: boss '~' counts match original grid
+GRID boss 'L': original=0 loaded=0
+PASS: boss 'L' counts match original grid
+PASS: field appears at canonical S
+PASS: field S stays grounded and still after 1 second
+PASS: spawn camera reset before player input
+PASS: boss map switch camera snapped while player input locked
+WALK field: x400.00 -> map=boss x400.00; frames=1312 jumps=6 resets=0
+PASS: S -> field E right -> boss using real right/jump input, no falls
+PASS: boss appears at S and stays grounded after 1 second
+WALK boss: x400.00 -> map=boss x1863.33; frames=439 jumps=2 resets=0
+PASS: walk to rampart foot and climb the 32px steps from the grid
+PASS: player reaches top rampart at canonical y224
+PASS: required route never uses khinh cong
+PASS: field map switch camera snapped while player input locked
+PASS: boss left E returns to field right-side R
+PASS: return portal resets camera at right map clamp
+PASS: fall respawn camera snapped before input unlock
+PASS: fall into c44-45 -> preceding R c13, not A0 SPAWN
+PASS: spikes respawn camera snapped before input unlock
+PASS: spikes reset to preceding R without HP system
+PASS: water speed 140=0.7*200 while A0 RUN_SPEED stays 200
+PASS: one-way shelf passed from below and landed on top
+PASS: hold touch ↑ climbs ladder c109 above r4 shelf height
+PASS: hold down descends ladder
+PASS: leave ladder left and stand at r4 feet on upper shelf y160
+PASS: Space/context jump leaves ladder using original A0 jump resolver
+PASS: canonical N dummy accepts A0 slash damage
+Dao Uc checks failures: 0; physics frames=2343
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/pose_rig_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: idle exact frame count 4
+PASS: idle/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/1 dir1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/1 dir1 support sole_y=0.000000
+PASS: idle/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/1 dir-1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/1 dir-1 support sole_y=0.000000
+PASS: idle/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/2 dir1 support sole_y=0.000000
+PASS: idle/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/2 dir-1 support sole_y=0.000000
+PASS: idle/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/3 dir1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/3 dir1 support sole_y=0.000000
+PASS: idle/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/3 dir-1 hip_gap=0.000000 neck_gap=0.000000
+PASS: idle/3 dir-1 support sole_y=0.000000
+PASS: idle/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/4 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/4 dir1 support sole_y=0.000000
+PASS: idle/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: idle/4 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: idle/4 dir-1 support sole_y=0.000000
+PASS: run exact frame count 6
+PASS: run/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/1 dir1 support sole_y=0.000000
+PASS: run/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/1 dir-1 support sole_y=0.000000
+PASS: run/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/2 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: run/2 dir1 support sole_y=0.000000
+PASS: run/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/2 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: run/2 dir-1 support sole_y=0.000000
+PASS: run/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/3 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/3 dir1 support sole_y=0.000000
+PASS: run/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/3 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/3 dir-1 support sole_y=0.000000
+PASS: run/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/4 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/4 dir1 support sole_y=0.000000
+PASS: run/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/4 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/4 dir-1 support sole_y=0.000000
+PASS: run/5 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/5 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/5 dir1 support sole_y=0.000000
+PASS: run/5 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/5 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/5 dir-1 support sole_y=0.000000
+PASS: run/6 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/6 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/6 dir1 support sole_y=0.000000
+PASS: run/6 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: run/6 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: run/6 dir-1 support sole_y=0.000000
+PASS: jump exact frame count 2
+PASS: jump/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: jump/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: jump/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall exact frame count 2
+PASS: fall/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/2 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: fall/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: fall/2 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash exact frame count 5
+PASS: slash/1 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/1 dir1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash/1 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/1 dir-1 hip_gap=0.000004 neck_gap=0.000000
+PASS: slash/2 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/2 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/2 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/2 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/3 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir1 sword tip relative centre=(52.361,-67.210), face_front=-2.691; forward=true
+PASS: slash/3 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/3 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/3 dir-1 sword tip relative centre=(-52.361,-67.210), face_front=2.691; forward=true
+PASS: slash/4 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/4 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/4 dir1 sword tip relative centre=(39.181,-35.390), face_front=-2.691; forward=true
+PASS: slash/4 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/4 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/4 dir-1 sword tip relative centre=(-39.181,-35.390), face_front=2.691; forward=true
+PASS: slash/5 dir1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/5 dir1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/5 dir1 sword tip relative centre=(39.181,-35.390), face_front=-2.691; forward=true
+PASS: slash/5 dir-1 zero rotation; 2x image scale .5; flip root only; linear
+PASS: slash/5 dir-1 hip_gap=0.000002 neck_gap=0.000000
+PASS: slash/5 dir-1 sword tip relative centre=(-39.181,-35.390), face_front=2.691; forward=true
+PASS: idle silhouette height=96.012527px (~96, source-anchor tolerance .1); sole0; frame128 bottom margin8
+PASS: slash total .30s
+PASS: idle6fps run12fps fall12fps/loop per09
+PASS: jump two frames total .38s per09/A0
+PASS: left/right actual layer corners mirror exactly; grip anchor follows same root
+Pose rig: 38 action/frame/direction checks; failures=0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/rig_smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: idle has 4 frames
+PASS: idle frame at 0.000: foot_near touches baseline
+PASS: idle frame at 0.000: foot_far touches baseline
+PASS: idle frame at 0.167: foot_near touches baseline
+PASS: idle frame at 0.167: foot_far touches baseline
+PASS: idle frame at 0.333: foot_near touches baseline
+PASS: idle frame at 0.333: foot_far touches baseline
+PASS: idle frame at 0.500: foot_near touches baseline
+PASS: idle frame at 0.500: foot_far touches baseline
+PASS: run has 6 frames
+PASS: jump_up has 2 frames
+PASS: apex_flip has 6 frames
+PASS: fall has 2 frames
+PASS: land has 2 frames
+PASS: land frame at 0.000: foot_near touches baseline
+PASS: land frame at 0.000: foot_far touches baseline
+PASS: land frame at 0.083: foot_near touches baseline
+PASS: land frame at 0.083: foot_far touches baseline
+PASS: turn has 2 frames
+PASS: slash_1 has 4 frames
+PASS: slash_2 has 4 frames
+PASS: slash_3 has 5 frames
+PASS: shoot has 5 frames
+PASS: hurt has 2 frames
+PASS: knockdown has 4 frames
+PASS: all joints stay at authored parent anchors in every frame
+PASS: all local angles stay within proposed joint limits
+PASS: apex clip completes exactly 360 degrees at 0.20 s
+PASS: turn stays within A0 0.05 s
+PASS: basic slash keeps A0 0.30 s
+PASS: real A0 player starts grounded
+PASS: toggle off restores original A0 sprite
+PASS: toggle on replaces only the sprite
+PASS: bow toggle swaps weapon
+PASS: real idle state selects idle
+PASS: real movement selects run
+PASS: real reversal selects turn
+PASS: real slash selects basic dao clip
+PASS: real slash input with bow selects shoot preview
+PASS: real jump selects ascent
+PASS: real flight selects apex flip then fall
+PASS: real 360 flip completes before same-height landing
+PASS: real khinh cong activates unchanged
+PASS: both khinh-cong flips finish before landing
+PASS: visual rig never rotates/scales body or slash hitbox
+Rig smoke failures: 0
+exit=0
+
+$ /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --headless --fixed-fps 60 --path prototype --script res://tests/weapon_direction_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem exact action set
+PASS: kiem idle exact frame count
+PASS: kiem run exact frame count
+PASS: kiem jump exact frame count
+PASS: kiem fall exact frame count
+PASS: kiem slash exact frame count
+PASS: kiem thrust exact frame count
+PASS: kiem idle/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/1 dir1 nocked arrow only during pull
+PASS: kiem idle/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/1 dir-1 nocked arrow only during pull
+PASS: kiem idle/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/2 dir1 nocked arrow only during pull
+PASS: kiem idle/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/2 dir-1 nocked arrow only during pull
+PASS: kiem idle/3 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/3 dir1 nocked arrow only during pull
+PASS: kiem idle/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/3 dir-1 nocked arrow only during pull
+PASS: kiem idle/4 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/4 dir1 nocked arrow only during pull
+PASS: kiem idle/4 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem idle/4 dir-1 nocked arrow only during pull
+PASS: kiem run/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/1 dir1 nocked arrow only during pull
+PASS: kiem run/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/1 dir-1 nocked arrow only during pull
+PASS: kiem run/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/2 dir1 nocked arrow only during pull
+PASS: kiem run/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/2 dir-1 nocked arrow only during pull
+PASS: kiem run/3 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/3 dir1 nocked arrow only during pull
+PASS: kiem run/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/3 dir-1 nocked arrow only during pull
+PASS: kiem run/4 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/4 dir1 nocked arrow only during pull
+PASS: kiem run/4 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/4 dir-1 nocked arrow only during pull
+PASS: kiem run/5 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/5 dir1 nocked arrow only during pull
+PASS: kiem run/5 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/5 dir-1 nocked arrow only during pull
+PASS: kiem run/6 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem run/6 dir1 nocked arrow only during pull
+PASS: kiem run/6 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem run/6 dir-1 nocked arrow only during pull
+PASS: kiem jump/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem jump/1 dir1 nocked arrow only during pull
+PASS: kiem jump/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem jump/1 dir-1 nocked arrow only during pull
+PASS: kiem jump/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem jump/2 dir1 nocked arrow only during pull
+PASS: kiem jump/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem jump/2 dir-1 nocked arrow only during pull
+PASS: kiem fall/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem fall/1 dir1 nocked arrow only during pull
+PASS: kiem fall/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem fall/1 dir-1 nocked arrow only during pull
+PASS: kiem fall/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem fall/2 dir1 nocked arrow only during pull
+PASS: kiem fall/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem fall/2 dir-1 nocked arrow only during pull
+PASS: kiem slash/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/1 dir1 nocked arrow only during pull
+PASS: slash/1 dir1 hand=(-12.04472, -83.00984) grip=(-12.04472, -83.00984) tip=(-43.86453, -114.8297) gap=0.000002 forward=-31.820 raised=true
+PASS: kiem slash/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/1 dir-1 nocked arrow only during pull
+PASS: slash/1 dir-1 hand=(12.04472, -83.00984) grip=(12.04472, -83.00984) tip=(43.86453, -114.8297) gap=0.000002 forward=-31.820 raised=true
+PASS: kiem slash/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/2 dir1 nocked arrow only during pull
+PASS: slash/2 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(39.18117, -99.03001) gap=0.000008 forward=31.820 raised=false
+PASS: kiem slash/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/2 dir-1 nocked arrow only during pull
+PASS: slash/2 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-39.18117, -99.03001) gap=0.000008 forward=31.820 raised=false
+PASS: kiem slash/3 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/3 dir1 nocked arrow only during pull
+PASS: slash/3 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: kiem slash/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/3 dir-1 nocked arrow only during pull
+PASS: slash/3 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: kiem slash/4 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/4 dir1 nocked arrow only during pull
+PASS: slash/4 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(39.18117, -35.3904) gap=0.000008 forward=31.820 raised=false
+PASS: kiem slash/4 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/4 dir-1 nocked arrow only during pull
+PASS: slash/4 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-39.18117, -35.3904) gap=0.000008 forward=31.820 raised=false
+PASS: kiem slash/5 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/5 dir1 nocked arrow only during pull
+PASS: slash/5 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(39.18117, -35.3904) gap=0.000008 forward=31.820 raised=false
+PASS: kiem slash/5 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem slash/5 dir-1 nocked arrow only during pull
+PASS: slash/5 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-39.18117, -35.3904) gap=0.000008 forward=31.820 raised=false
+PASS: kiem thrust/1 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem thrust/1 dir1 nocked arrow only during pull
+PASS: thrust/1 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: kiem thrust/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem thrust/1 dir-1 nocked arrow only during pull
+PASS: thrust/1 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: kiem thrust/2 dir1 all Sprite2D rotation0, only root flip
+PASS: kiem thrust/2 dir1 nocked arrow only during pull
+PASS: thrust/2 dir1 hand=(7.361359, -67.2102) grip=(7.361359, -67.21021) tip=(52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: kiem thrust/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: kiem thrust/2 dir-1 nocked arrow only during pull
+PASS: thrust/2 dir-1 hand=(-7.361359, -67.2102) grip=(-7.361359, -67.21021) tip=(-52.36136, -67.21021) gap=0.000008 forward=45.000 raised=false
+PASS: cung exact action set
+PASS: cung idle exact frame count
+PASS: cung run exact frame count
+PASS: cung jump exact frame count
+PASS: cung fall exact frame count
+PASS: cung shoot exact frame count
+PASS: cung run_shoot exact frame count
+PASS: cung idle/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung idle/1 dir1 nocked arrow only during pull
+PASS: cung idle/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung idle/1 dir-1 nocked arrow only during pull
+PASS: cung idle/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung idle/2 dir1 nocked arrow only during pull
+PASS: cung idle/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung idle/2 dir-1 nocked arrow only during pull
+PASS: cung idle/3 dir1 all Sprite2D rotation0, only root flip
+PASS: cung idle/3 dir1 nocked arrow only during pull
+PASS: cung idle/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung idle/3 dir-1 nocked arrow only during pull
+PASS: cung idle/4 dir1 all Sprite2D rotation0, only root flip
+PASS: cung idle/4 dir1 nocked arrow only during pull
+PASS: cung idle/4 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung idle/4 dir-1 nocked arrow only during pull
+PASS: cung run/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/1 dir1 nocked arrow only during pull
+PASS: cung run/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/1 dir-1 nocked arrow only during pull
+PASS: cung run/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/2 dir1 nocked arrow only during pull
+PASS: cung run/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/2 dir-1 nocked arrow only during pull
+PASS: cung run/3 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/3 dir1 nocked arrow only during pull
+PASS: cung run/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/3 dir-1 nocked arrow only during pull
+PASS: cung run/4 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/4 dir1 nocked arrow only during pull
+PASS: cung run/4 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/4 dir-1 nocked arrow only during pull
+PASS: cung run/5 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/5 dir1 nocked arrow only during pull
+PASS: cung run/5 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/5 dir-1 nocked arrow only during pull
+PASS: cung run/6 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run/6 dir1 nocked arrow only during pull
+PASS: cung run/6 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run/6 dir-1 nocked arrow only during pull
+PASS: cung jump/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung jump/1 dir1 nocked arrow only during pull
+PASS: cung jump/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung jump/1 dir-1 nocked arrow only during pull
+PASS: cung jump/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung jump/2 dir1 nocked arrow only during pull
+PASS: cung jump/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung jump/2 dir-1 nocked arrow only during pull
+PASS: cung fall/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung fall/1 dir1 nocked arrow only during pull
+PASS: cung fall/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung fall/1 dir-1 nocked arrow only during pull
+PASS: cung fall/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung fall/2 dir1 nocked arrow only during pull
+PASS: cung fall/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung fall/2 dir-1 nocked arrow only during pull
+PASS: cung shoot/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/1 dir1 nocked arrow only during pull
+PASS: shoot/1 dir1 arrow spawn only on release
+PASS: shoot/1 dir1 bow grip=(37.79678, -69.90305) far_hand=(37.79678, -69.90305) belly=(38.87871, -69.90305) string=(28.92493, -69.90305) grip_gap=0.000000 front=9.954
+PASS: cung shoot/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/1 dir-1 nocked arrow only during pull
+PASS: shoot/1 dir-1 arrow spawn only on release
+PASS: shoot/1 dir-1 bow grip=(-37.79678, -69.90305) far_hand=(-37.79678, -69.90305) belly=(-38.87871, -69.90305) string=(-28.92493, -69.90305) grip_gap=0.000000 front=9.954
+PASS: cung shoot/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/2 dir1 nocked arrow only during pull
+PASS: nocked dir1 tail=(-12.2503, -71.47957) string=(-12.2503, -71.47957) tip=(44.97116, -71.47957) bow=(34.70555, -70.83041)
+PASS: shoot/2 dir1 arrow spawn only on release
+PASS: shoot/2 dir1 bow grip=(34.70555, -70.83041) far_hand=(34.70555, -70.83041) belly=(35.78748, -70.83041) string=(-12.2503, -71.47957) grip_gap=0.000000 front=48.038
+PASS: shoot/2 dir1 drawn string=(-12.2503, -71.47957) near_hand=(-12.12665, -73.3034) gap=1.828016
+PASS: cung shoot/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/2 dir-1 nocked arrow only during pull
+PASS: nocked dir-1 tail=(12.2503, -71.47957) string=(12.2503, -71.47957) tip=(-44.97116, -71.47957) bow=(-34.70555, -70.83041)
+PASS: shoot/2 dir-1 arrow spawn only on release
+PASS: shoot/2 dir-1 bow grip=(-34.70555, -70.83041) far_hand=(-34.70555, -70.83041) belly=(-35.78748, -70.83041) string=(12.2503, -71.47957) grip_gap=0.000000 front=48.038
+PASS: shoot/2 dir-1 drawn string=(12.2503, -71.47957) near_hand=(12.12665, -73.3034) gap=1.828016
+PASS: cung shoot/3 dir1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/3 dir1 nocked arrow only during pull
+PASS: shoot/3 dir1 arrow spawn only on release
+PASS: shoot/3 dir1 bow grip=(35.63292, -70.83041) far_hand=(35.63292, -70.83041) belly=(36.71485, -70.83041) string=(26.76107, -70.83041) grip_gap=0.000000 front=9.954
+PASS: release spawns exactly one separate arrow
+PASS: arrow dir1 tail=(26.76107, -70.83041) tip=(83.98254, -70.83041) tip_after0.1s=(107.9825, -70.83041) forward_travel=24.000
+PASS: cung shoot/3 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung shoot/3 dir-1 nocked arrow only during pull
+PASS: shoot/3 dir-1 arrow spawn only on release
+PASS: shoot/3 dir-1 bow grip=(-35.63292, -70.83041) far_hand=(-35.63292, -70.83041) belly=(-36.71485, -70.83041) string=(-26.76107, -70.83041) grip_gap=0.000000 front=9.954
+PASS: release spawns exactly one separate arrow
+PASS: arrow dir-1 tail=(-26.76107, -70.83041) tip=(-83.98254, -70.83041) tip_after0.1s=(-107.9825, -70.83041) forward_travel=24.000
+PASS: cung run_shoot/1 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run_shoot/1 dir1 nocked arrow only during pull
+PASS: nocked dir1 tail=(-9.800577, -69.58852) string=(-9.800577, -69.58852) tip=(47.42089, -69.58852) bow=(37.15527, -68.93935)
+PASS: run_shoot/1 dir1 arrow spawn only on release
+PASS: run_shoot/1 dir1 bow grip=(37.15527, -68.93935) far_hand=(37.15527, -68.93935) belly=(38.23721, -68.93935) string=(-9.800577, -69.58852) grip_gap=0.000000 front=48.038
+PASS: run_shoot/1 dir1 drawn string=(-9.800577, -69.58852) near_hand=(-9.986048, -72.03059) gap=2.449103
+PASS: cung run_shoot/1 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run_shoot/1 dir-1 nocked arrow only during pull
+PASS: nocked dir-1 tail=(9.800577, -69.58852) string=(9.800577, -69.58852) tip=(-47.42089, -69.58852) bow=(-37.15527, -68.93935)
+PASS: run_shoot/1 dir-1 arrow spawn only on release
+PASS: run_shoot/1 dir-1 bow grip=(-37.15527, -68.93935) far_hand=(-37.15527, -68.93935) belly=(-38.23721, -68.93935) string=(9.800577, -69.58852) grip_gap=0.000000 front=48.038
+PASS: run_shoot/1 dir-1 drawn string=(9.800577, -69.58852) near_hand=(9.986048, -72.03059) gap=2.449103
+PASS: cung run_shoot/2 dir1 all Sprite2D rotation0, only root flip
+PASS: cung run_shoot/2 dir1 nocked arrow only during pull
+PASS: run_shoot/2 dir1 arrow spawn only on release
+PASS: run_shoot/2 dir1 bow grip=(25.84535, -70.33041) far_hand=(25.84535, -70.33041) belly=(26.92728, -70.33041) string=(16.97351, -70.33041) grip_gap=0.000000 front=9.954
+PASS: release spawns exactly one separate arrow
+PASS: arrow dir1 tail=(16.97351, -70.33041) tip=(74.19497, -70.33041) tip_after0.1s=(98.19497, -70.33041) forward_travel=24.000
+PASS: cung run_shoot/2 dir-1 all Sprite2D rotation0, only root flip
+PASS: cung run_shoot/2 dir-1 nocked arrow only during pull
+PASS: run_shoot/2 dir-1 arrow spawn only on release
+PASS: run_shoot/2 dir-1 bow grip=(-25.84535, -70.33041) far_hand=(-25.84535, -70.33041) belly=(-26.92728, -70.33041) string=(-16.97351, -70.33041) grip_gap=0.000000 front=9.954
+PASS: release spawns exactly one separate arrow
+PASS: arrow dir-1 tail=(-16.97351, -70.33041) tip=(-74.19497, -70.33041) tip_after0.1s=(-98.19497, -70.33041) forward_travel=24.000
+PASS: level1 slash/1 dir1 actual grip=(-12.04472, -83.00984) hand=(-12.04472, -83.00984) tip=(-43.86453, -114.8297) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/1 dir-1 actual grip=(12.04472, -83.00984) hand=(12.04472, -83.00984) tip=(43.86453, -114.8297) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(39.18117, -99.03001) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir1 centre=(90.0, -78.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-39.18117, -99.03001) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir-1 centre=(-90.0, -78.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/3 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir1 centre=(100.0, -48.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/3 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir-1 centre=(-100.0, -48.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/4 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(39.18117, -35.3904) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir1 centre=(85.0, -38.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/4 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-39.18117, -35.3904) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir-1 centre=(-85.0, -38.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/5 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(39.18117, -35.3904) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir1 centre=(87.0, -36.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 slash/5 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-39.18117, -35.3904) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir-1 centre=(-87.0, -36.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 thrust/1 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 thrust/1 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 thrust/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level1 thrust/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-52.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: level30 slash/1 dir1 actual grip=(-12.04472, -83.00984) hand=(-12.04472, -83.00984) tip=(-45.98585, -116.951) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/1 dir-1 actual grip=(12.04472, -83.00984) hand=(12.04472, -83.00984) tip=(45.98585, -116.951) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(41.30248, -101.1513) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir1 centre=(90.0, -78.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-41.30248, -101.1513) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir-1 centre=(-90.0, -78.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/3 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir1 centre=(100.0, -48.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/3 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir-1 centre=(-100.0, -48.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/4 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(41.30248, -33.26908) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir1 centre=(85.0, -38.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/4 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-41.30248, -33.26908) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir-1 centre=(-85.0, -38.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/5 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(41.30248, -33.26908) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir1 centre=(87.0, -36.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 slash/5 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-41.30248, -33.26908) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir-1 centre=(-87.0, -36.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 thrust/1 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 thrust/1 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 thrust/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level30 thrust/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-55.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/1 dir1 actual grip=(-12.04472, -83.00984) hand=(-12.04472, -83.00984) tip=(-47.40006, -118.3652) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/1 dir-1 actual grip=(12.04472, -83.00984) hand=(12.04472, -83.00984) tip=(47.40006, -118.3652) gap=0.000002
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(42.7167, -102.5655) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir1 centre=(90.0, -78.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-42.7167, -102.5655) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail1 dir-1 centre=(-90.0, -78.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/3 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir1 centre=(100.0, -48.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/3 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail2 dir-1 centre=(-100.0, -48.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/4 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(42.7167, -31.85487) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir1 centre=(85.0, -38.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/4 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-42.7167, -31.85487) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail3 dir-1 centre=(-85.0, -38.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/5 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(42.7167, -31.85487) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir1 centre=(87.0, -36.0) grip=(7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 slash/5 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-42.7167, -31.85487) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: shared trail4 dir-1 centre=(-87.0, -36.0) grip=(-7.361359, -67.21021); centred and forward
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 thrust/1 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 thrust/1 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 thrust/2 dir1 actual grip=(7.361359, -67.21021) hand=(7.361359, -67.2102) tip=(57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: level60 thrust/2 dir-1 actual grip=(-7.361359, -67.21021) hand=(-7.361359, -67.2102) tip=(-57.36136, -67.21021) gap=0.000008
+PASS: held weapon hidden, selected baked blade visible
+PASS: no trail on preparation/thrust
+PASS: all Sprite2Drotation0, static2xscale; root flip only
+PASS: body/head/legs transforms identical across levels
+PASS: slash completes in18ticks/60fps=.30s, returns idle and clears blade/trail
+PASS: switch Kiếm attack -> Cung: no sword or sword trail remains; bow only
+PASS: Cung release creates separate arrow before switch
+PASS: switch Cung release -> Kiếm: bow/nocked/flying arrows cleared; sword only
+Template attack frame/level/direction checks=42
+Weapon-direction sampled frame/direction pairs=80; failures=0
+exit=0
+
+$ python3 tools/check_weapon_template.py
+PASS level1/gio_sau: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0126deg, blade_length=76.2033px2x, grip_to_ink=0.7071, tip_to_ink=0.1974, green=0, runtime_copy=True
+PASS level30/gio_sau: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0633deg, blade_length=80.3620px2x, grip_to_ink=0.7071, tip_to_ink=0.5406, green=0, runtime_copy=True
+PASS level60/gio_sau: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1013deg, blade_length=85.0118px2x, grip_to_ink=0.7071, tip_to_ink=0.2979, green=0, runtime_copy=True
+PASS gio_sau: cross-level axes spread=0.0887deg; max length change vslevel30=5.7861%; pairwise max=11.5593% (limits3deg/15%)
+PASS level1/vung_len: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0126deg, blade_length=76.2033px2x, grip_to_ink=0.7071, tip_to_ink=0.1974, green=0, runtime_copy=True
+PASS level30/vung_len: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0633deg, blade_length=80.3620px2x, grip_to_ink=0.7071, tip_to_ink=0.5406, green=0, runtime_copy=True
+PASS level60/vung_len: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1236deg, blade_length=85.0118px2x, grip_to_ink=0.7071, tip_to_ink=0.2979, green=0, runtime_copy=True
+PASS vung_len: cross-level axes spread=0.1110deg; max length change vslevel30=5.7861%; pairwise max=11.5593% (limits3deg/15%)
+PASS level1/ngang: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1281deg, blade_length=75.9007px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS level30/ngang: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=0.1099deg, blade_length=80.4026px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS level60/ngang: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1201deg, blade_length=84.8098px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS ngang: cross-level axes spread=0.2380deg; max length change vslevel30=5.5992%; pairwise max=11.7378% (limits3deg/15%)
+PASS level1/bo_xuong: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0126deg, blade_length=76.2033px2x, grip_to_ink=0.7071, tip_to_ink=0.1974, green=0, runtime_copy=True
+PASS level30/bo_xuong: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.0633deg, blade_length=80.3620px2x, grip_to_ink=0.7071, tip_to_ink=0.5406, green=0, runtime_copy=True
+PASS level60/bo_xuong: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1013deg, blade_length=85.0118px2x, grip_to_ink=0.7071, tip_to_ink=0.2979, green=0, runtime_copy=True
+PASS bo_xuong: cross-level axes spread=0.0887deg; max length change vslevel30=5.7861%; pairwise max=11.5593% (limits3deg/15%)
+PASS level1/dam: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1281deg, blade_length=75.9007px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS level30/dam: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=0.1099deg, blade_length=80.4026px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS level60/dam: canvas=(256, 256), grip=[96.0, 144.0], actual_axis_error=-0.1201deg, blade_length=84.8098px2x, grip_to_ink=0.7071, tip_to_ink=0.7071, green=0, runtime_copy=True
+PASS dam: cross-level axes spread=0.2380deg; max length change vslevel30=5.5992%; pairwise max=11.7378% (limits3deg/15%)
+PASS shared trail1: canvas=[320, 208], centre=[160, 104], alpha_max=255, green=0; one asset shared by all levels
+PASS shared trail2: canvas=[320, 208], centre=[160, 104], alpha_max=255, green=0; one asset shared by all levels
+PASS shared trail3: canvas=[320, 208], centre=[160, 104], alpha_max=217, green=0; one asset shared by all levels
+PASS shared trail4: canvas=[320, 208], centre=[160, 104], alpha_max=89, green=0; one asset shared by all levels
+PASS slash5beats total= 0.3 seconds; no A0/config changes
+Drawn levels: ['1', '30', '60'] ; future template slots not yet drawn: ['10', '20', '40', '50'] ; no claim of35completed blades
+Weapon template failures: 0 []
+exit=0
+
+$ Xvfb :96 -screen 0 1600x720x24 -nolisten tcp -ac; DISPLAY=:96 LIBGL_ALWAYS_SOFTWARE=1 /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-swing
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+Actual Godot swing capture: res://pose_rig/reports/swing_right.png 1600x720 error=0; 3levels x5static beats
+exit=0
+
+$ DISPLAY=:96 LIBGL_ALWAYS_SOFTWARE=1 /tmp/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-swing --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+Actual Godot swing capture: res://pose_rig/reports/swing_left.png 1600x720 error=0; 3levels x5static beats
+exit=0
+
+$ python3 tools/build_weapon_template.py
+Own generated source SHA256: e6f26f5d00de881233ce339a0e7078dc55198dd36a85378869ccf73f6ef9ae61
+Baked15 static sword PNGs; angles= {'gio_sau': -135, 'vung_len': -45, 'ngang': 0, 'bo_xuong': 45, 'dam': 0} ; canvas256x256; shared grip(96,144);2x
+Drawn levels1/30/60; planned10/20/40/50 explicitly not_drawn; shared trails4; no runtime rotation
+Slash5beats total: 0.3 s; source body IDs: ['body_11', 'body_12', 'body_12', 'body_12', 'body_12']
+Nocked arrow flags enabled only on drawn-string frames; source body PNGs unchanged
+
+$ scope and historical byte checks
+OK: old05_log bytes preserved; exactly ONE appended entry
+OK: config/A0 tuning, dao_uc, old rig, reference unchanged
+OK: changed paths within scope; no other docs modified
+OK: all29body/head/leg PNGs identical to main
+OK: tracked tools bytecode removed; ignore rule present; no tracked export preset
+
+Requested literal grep is NOT0lines; user chose verbatim output and an explicit non-pass. Full grep is in commit message only, avoiding recursive matches in checked files.

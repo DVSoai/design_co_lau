@@ -1,7 +1,7 @@
 {
-  "status": "pilot; Ki\u1ebfm/Cung; five15fps shoot slots compressed to3 painted phases; six12fps run-shoot slots compressed to2 phases; thrust2frames .10s proposed, no standalone thrust timing in09; slash .30s unchanged",
+  "status": "pilot; Kiếm/Cung; five15fps shoot slots compressed to3 painted phases; six12fps run-shoot slots compressed to2 phases; thrust2frames .10s proposed, no standalone thrust timing in09; slash .30s unchanged",
   "arrow_speed": 240,
-  "arrow_asset": "arrow_1",
+  "arrow_asset": "ready_arrow",
   "schools": {
     "kiem": {
       "idle": {
@@ -158,18 +158,30 @@
             "legs": "legs_10",
             "head": "head_2",
             "weapon": "kiem_2",
-            "duration": 0.075,
+            "duration": 0.05,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "gio_sau",
+            "trail": null,
+            "trail_offset": [
+              0,
+              0
+            ]
           },
           {
             "body": "body_12",
             "legs": "legs_10",
             "head": "head_2",
             "weapon": "kiem_3",
-            "duration": 0.075,
+            "duration": 0.05,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "vung_len",
+            "trail": "1",
+            "trail_offset": [
+              90,
+              -78
+            ]
           },
           {
             "body": "body_12",
@@ -178,7 +190,13 @@
             "weapon": "kiem_4",
             "duration": 0.075,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "ngang",
+            "trail": "2",
+            "trail_offset": [
+              100,
+              -48
+            ]
           },
           {
             "body": "body_12",
@@ -187,7 +205,28 @@
             "weapon": "kiem_5",
             "duration": 0.075,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "bo_xuong",
+            "trail": "3",
+            "trail_offset": [
+              85,
+              -38
+            ]
+          },
+          {
+            "body": "body_12",
+            "legs": "legs_10",
+            "head": "head_2",
+            "weapon": "kiem_5",
+            "duration": 0.05,
+            "attack": true,
+            "spawn": false,
+            "swing_angle": "bo_xuong",
+            "trail": "4",
+            "trail_offset": [
+              87,
+              -36
+            ]
           }
         ]
       },
@@ -201,7 +240,13 @@
             "weapon": "kiem_6",
             "duration": 0.05,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "dam",
+            "trail": null,
+            "trail_offset": [
+              0,
+              0
+            ]
           },
           {
             "body": "body_12",
@@ -210,7 +255,13 @@
             "weapon": "kiem_6",
             "duration": 0.05,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "swing_angle": "dam",
+            "trail": null,
+            "trail_offset": [
+              0,
+              0
+            ]
           }
         ]
       }
@@ -226,7 +277,8 @@
             "weapon": "cung_1",
             "duration": 0.16666666666666666,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_02",
@@ -235,7 +287,8 @@
             "weapon": "cung_1",
             "duration": 0.16666666666666666,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_01",
@@ -244,7 +297,8 @@
             "weapon": "cung_1",
             "duration": 0.16666666666666666,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_02",
@@ -253,7 +307,8 @@
             "weapon": "cung_1",
             "duration": 0.16666666666666666,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           }
         ]
       },
@@ -267,7 +322,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_04",
@@ -276,7 +332,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_05",
@@ -285,7 +342,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_06",
@@ -294,7 +352,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_07",
@@ -303,7 +362,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_08",
@@ -312,7 +372,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           }
         ]
       },
@@ -326,7 +387,8 @@
             "weapon": "cung_1",
             "duration": 0.19,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_09",
@@ -335,7 +397,8 @@
             "weapon": "cung_1",
             "duration": 0.19,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           }
         ]
       },
@@ -349,7 +412,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_10",
@@ -358,7 +422,8 @@
             "weapon": "cung_1",
             "duration": 0.08333333333333333,
             "attack": false,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           }
         ]
       },
@@ -372,7 +437,8 @@
             "weapon": "cung_2",
             "duration": 0.13333333333333333,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "nocked": false
           },
           {
             "body": "body_cung_2",
@@ -381,7 +447,8 @@
             "weapon": "cung_3",
             "duration": 0.06666666666666667,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "nocked": true
           },
           {
             "body": "body_cung_3",
@@ -390,7 +457,8 @@
             "weapon": "cung_4",
             "duration": 0.13333333333333333,
             "attack": true,
-            "spawn": true
+            "spawn": true,
+            "nocked": false
           }
         ]
       },
@@ -404,7 +472,8 @@
             "weapon": "cung_3",
             "duration": 0.16666666666666666,
             "attack": true,
-            "spawn": false
+            "spawn": false,
+            "nocked": true
           },
           {
             "body": "body_cung_3",
@@ -413,7 +482,8 @@
             "weapon": "cung_4",
             "duration": 0.3333333333333333,
             "attack": true,
-            "spawn": true
+            "spawn": true,
+            "nocked": false
           }
         ]
       }
@@ -574,18 +644,30 @@
           "legs": "legs_10",
           "head": "head_2",
           "weapon": "kiem_2",
-          "duration": 0.075,
+          "duration": 0.05,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "gio_sau",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
         },
         {
           "body": "body_12",
           "legs": "legs_10",
           "head": "head_2",
           "weapon": "kiem_3",
-          "duration": 0.075,
+          "duration": 0.05,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "vung_len",
+          "trail": "1",
+          "trail_offset": [
+            90,
+            -78
+          ]
         },
         {
           "body": "body_12",
@@ -594,7 +676,13 @@
           "weapon": "kiem_4",
           "duration": 0.075,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "ngang",
+          "trail": "2",
+          "trail_offset": [
+            100,
+            -48
+          ]
         },
         {
           "body": "body_12",
@@ -603,7 +691,28 @@
           "weapon": "kiem_5",
           "duration": 0.075,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "bo_xuong",
+          "trail": "3",
+          "trail_offset": [
+            85,
+            -38
+          ]
+        },
+        {
+          "body": "body_12",
+          "legs": "legs_10",
+          "head": "head_2",
+          "weapon": "kiem_5",
+          "duration": 0.05,
+          "attack": true,
+          "spawn": false,
+          "swing_angle": "bo_xuong",
+          "trail": "4",
+          "trail_offset": [
+            87,
+            -36
+          ]
         }
       ]
     },
@@ -617,7 +726,13 @@
           "weapon": "kiem_6",
           "duration": 0.05,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "dam",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
         },
         {
           "body": "body_12",
@@ -626,9 +741,16 @@
           "weapon": "kiem_6",
           "duration": 0.05,
           "attack": true,
-          "spawn": false
+          "spawn": false,
+          "swing_angle": "dam",
+          "trail": null,
+          "trail_offset": [
+            0,
+            0
+          ]
         }
       ]
     }
-  }
+  },
+  "swing_owner": "swing.json owns Kiếm slash/thrust; frames copies generated only for compatibility"
 }
