@@ -223,7 +223,7 @@ trước chỉ là lưu đối chiếu, không quy định hình vũ khí hiện
 Mục này thay mọi quy định nhân vật trước đó (rig 16 mảnh, bộ tư thế STYLE-B vẽ tay,
 pixel 96 px). Các mục cũ giữ lại để đối chiếu, không còn hiệu lực cho nhân vật người.
 
-**1. Style.** Bản **v2_a** trong `art/concept/style_v2/`. Viền đậm đều (2–3% chiều cao
+**1. Style.** Mẫu chính: hai bảng ở mục 8. Bản **v2_a** trong `art/concept/style_v2/` chỉ còn là chuẩn viền/màu. Viền đậm đều (2–3% chiều cao
 người), màu phẳng, đổ bóng 2–3 tông sắc nét, khối to rõ, đầu to (~1/3 chiều cao).
 Hiển thị ~160 px trên màn 1600×720, ảnh nguồn độ phân giải cao, lọc linear, không ép
 palette 32 màu. Khối STYLE cho mọi prompt nhân vật người (dán nguyên văn), sau đó là
@@ -267,7 +267,9 @@ Bản đồ làm sau khi nhân vật chính xong.
 **8. Bảng thiết kế tham khảo (người dùng gửi 30/10/2026)** — nhân vật lấy từ hai bảng:
 `art/reference/chr_dbl_board_trang_bi.png` (bảng A: trang bị, vũ khí, chiêu, hào quang) và
 `art/reference/chr_dbl_board_animation.png` (bảng B: động tác, cải trang, thú cưỡi). Chỉ học
-thiết kế, không cắt ghép ảnh vào game; vẽ lại bằng STYLE-V2 nét mịn, không vẽ pixel.
+thiết kế, không cắt ghép ảnh vào game.
+
+**Hai bảng này là MẪU CHÍNH về hình nhân vật** (người dùng chốt 30/10/2026, thay v2_a làm mẫu): dáng chibi đầu to, mặt, tóc, khăn đỏ, màu bão hòa đỏ/vàng/xanh, viền tối rõ, đổ bóng tương phản như bảng. Mọi prompt nhân vật đính kèm hai bảng + ảnh `ref_dinh_bo_linh.png` và yêu cầu "giống nhân vật trên bảng". Chỉ khác bảng ở độ phân giải: vẽ to, nét sạch để hiển thị ~160 px mà không vỡ (không thu nhỏ thành pixel 30–40 px như ô trên bảng). Khối STYLE-V2 vẫn dùng cho phần viền đậm/màu phẳng; chỗ nào STYLE-V2 khác bảng thì theo bảng. Mọi bản vẽ phải đặt cạnh bảng để so; không giống bảng là không đạt.
 
 *Lấy theo bảng:*
 - Ngoại hình Đinh Bộ Lĩnh: tóc đen búi, khăn/dải đỏ, mặt và dáng chibi đầu to (đầu ≈ 1/2,8–1/3

@@ -529,3 +529,5 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
   (chr_dbl_board_trang_bi.png, chr_dbl_board_animation.png; bảng B cắt bỏ dải tiêu đề).
   Giữ tên/cấp/số liệu chiêu, nội tại, thú cưỡi theo GDD (Hổ → Voi chiến); cải trang thần
   thoại để phạm vi sau; bỏ động tác "đi". Bảng gán hiệu ứng → chiêu ghi ở 01_art_bible mục 8.
+- Người dùng chốt: hai bảng thiết kế là mẫu chính về hình nhân vật (thay v2_a làm mẫu); vẽ độ
+  phân giải cao giống bảng, so cạnh bảng khi duyệt.
