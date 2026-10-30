@@ -263,3 +263,37 @@ thời trang. Mỗi ô × mỗi cấp có 1 icon.
 (1) hệ thống 30 khung + Lv1 hai phái; (2) Lv10/20/30; (3) Lv40/50/60; (4) hiệu ứng đủ
 8 chiêu mỗi phái; (5) hào quang cường hóa, cưỡi Trâu/Ngựa chiến/Voi chiến, icon 10 ô × 7 cấp.
 Bản đồ làm sau khi nhân vật chính xong.
+
+**8. Bảng thiết kế tham khảo (người dùng gửi 30/10/2026)** — nhân vật lấy từ hai bảng:
+`art/reference/chr_dbl_board_trang_bi.png` (bảng A: trang bị, vũ khí, chiêu, hào quang) và
+`art/reference/chr_dbl_board_animation.png` (bảng B: động tác, cải trang, thú cưỡi). Chỉ học
+thiết kế, không cắt ghép ảnh vào game; vẽ lại bằng STYLE-V2 nét mịn, không vẽ pixel.
+
+*Lấy theo bảng:*
+- Ngoại hình Đinh Bộ Lĩnh: tóc đen búi, khăn/dải đỏ, mặt và dáng chibi đầu to (đầu ≈ 1/2,8–1/3
+  chiều cao) như hàng "Tổng thể" bảng A.
+- Trang phục 7 cấp theo hàng nón/áo/quần/găng/giày bảng A: Lv1 nón lá, áo nâu; Lv10–30 vải
+  xanh/tím; Lv40–60 giáp đỏ vàng, mũ tướng.
+- Kiếm và cung 7 cấp, vệt chém và mũi tên đổi màu theo cấp (bảng A mục 2–3).
+- Hào quang Full +8/+12/+14/+16 (bảng A mục 8, bảng B mục 10).
+- Hiệu ứng chiêu (bảng A mục 5–6, bảng B mục 6–7) gán cho chiêu GDD như dưới.
+- Icon 10 ô × 7 cấp, icon sách chiêu (bảng B mục 11).
+
+*Đổi lại cho khớp tài liệu:*
+- **Tên, cấp mở, số liệu chiêu giữ theo GDD**; chỉ lấy hình hiệu ứng. Gán:
+  Kiếm — Trảm Kiếm ← Trảm Phong; Song Trảm ← Liên Trảm; Quét Ngang ← Hồi Phong Trảm;
+  Thiết Kỵ Xung Phong ← Xung Phong; Khai Sơn Trảm ← Thiên Quân Trảm; Vạn Quân Trảm ← Long Trảm;
+  Vạn Thắng ← Càn Khôn Trảm; Chấn Uy vẽ mới.
+  Cung — Xạ Tiễn ← Xạ Tiễn; Phá Giáp Tiễn ← Xuyên Giáp Tiễn; Song Tiễn ← Liên Tiễn;
+  Thần Tiễn Xuyên Giáp ← Phong Tỏa Tiễn; Tam Tiễn Liên Châu ← Tán Hoa Tiễn; Vạn Tiễn ← Thiên Vũ
+  Tiễn; Hộ Thân Khí, Liều Mạng Giương Cung vẽ mới; Hỏa Vũ Tiễn để dự phòng.
+- **Nội tại theo GDD** (Kiếm Tâm, Kiên Cường, Tâm Nhãn, Ẩn Mình). Các icon bị động trên bảng
+  chỉ dùng làm icon chỉ số/tiềm năng.
+- **Thú cưỡi theo GDD: Trâu, Ngựa chiến, Voi chiến.** Hổ trên bảng thay bằng Voi chiến. Thú
+  cấp 0–99, mốc ngoại hình 1/20/40/60/99 (không có Lv100). Cưỡi thú để Mốc sau.
+- **Cải trang Sơn Tinh / Thủy Tinh / Thánh Gióng** = biến hình thay cả người, [Phạm vi sau]
+  theo 17_ngoai_hinh; chưa làm.
+- **Bỏ hàng "Đi"**: chỉ có chạy (bảng 30 khung).
+- Nhân vật áo đỏ, áo choàng đỏ ở bảng B là dáng đồ cấp cao; **Lv1 theo bảng A** (nón lá, áo nâu).
+  Áo choàng là ô thời trang.
+- Đòn thường "Tấn công 1/2/3" trên bảng B dựng bằng 16 tư thế đánh trong bảng 30 khung.

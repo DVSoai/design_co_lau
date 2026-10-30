@@ -525,3 +525,7 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Sửa: 01_art_bible (mục mới + ghi chú ở Phong cách), AGENTS.md (STYLE-V2, ngoại lệ phát sáng),
   09_animation_spec (mục 30 khung/định dạng chiêu), 16_rig_nhan_vat (đánh dấu đã thay, tóm tắt
   cách mới), 17_ngoai_hinh (10 ô, khối lượng 36 hình/cấp, hào quang). Nhật ký cũ giữ nguyên.
+- Bổ sung: nhân vật lấy từ 2 bảng thiết kế người dùng gửi, lưu ở art/reference/
+  (chr_dbl_board_trang_bi.png, chr_dbl_board_animation.png; bảng B cắt bỏ dải tiêu đề).
+  Giữ tên/cấp/số liệu chiêu, nội tại, thú cưỡi theo GDD (Hổ → Voi chiến); cải trang thần
+  thoại để phạm vi sau; bỏ động tác "đi". Bảng gán hiệu ứng → chiêu ghi ở 01_art_bible mục 8.
