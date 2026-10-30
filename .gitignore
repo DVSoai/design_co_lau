@@ -1,3 +1,4 @@
+# Python bytecode caches must remain untracked
 __pycache__/
 *.pyc
 .godot/

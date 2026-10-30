@@ -18,7 +18,7 @@ func run() -> void:
 	var rig = load("res://pose_rig/rig_frames.tscn").instantiate()
 	root.add_child(rig)
 	rig.autoplay=false
-	var expected := {"idle":4,"run":6,"jump":2,"fall":2,"slash":4}
+	var expected := {"idle":4,"run":6,"jump":2,"fall":2,"slash":5}
 	var total := 0
 	for action in expected:
 		check(rig.clips[action].frames.size()==expected[action],"%s exact frame count %d" % [action,expected[action]])
@@ -27,7 +27,7 @@ func run() -> void:
 				rig.set_facing(direction)
 				rig.sample(action,index)
 				var transforms_ok: bool = rig.rotation==0 and rig.scale==Vector2(direction,1)
-				for sprite: Sprite2D in rig.sprites.values():
+				for sprite: Sprite2D in rig.all_visual_sprites():
 					transforms_ok=transforms_ok and sprite.rotation==0 and sprite.scale==Vector2(.5,.5) and sprite.texture_filter==CanvasItem.TEXTURE_FILTER_LINEAR
 				check(transforms_ok,"%s/%d dir%d zero rotation; 2x image scale .5; flip root only; linear" % [action,index+1,direction])
 				var f: Dictionary = rig.clips[action].frames[index]
@@ -62,7 +62,7 @@ func run() -> void:
 	for direction in [1,-1]:
 		rig.set_facing(direction)
 		var current: Array = []
-		for sprite: Sprite2D in rig.sprites.values(): current.append(sprite.to_global(Vector2.ZERO)-rig.global_position)
+		for sprite: Sprite2D in rig.all_visual_sprites(): current.append(sprite.to_global(Vector2.ZERO)-rig.global_position)
 		corners.append(current)
 	var mirrored := true
 	for i in corners[0].size():mirrored=mirrored and corners[1][i].is_equal_approx(Vector2(-corners[0][i].x,corners[0][i].y))

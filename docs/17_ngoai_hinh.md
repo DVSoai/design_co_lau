@@ -53,3 +53,24 @@ Item thường: id ổn định itm_, part_set. Thời trang: id itm_fsh_, part_
 | title | 1 hình trên đầu |
 
 Số mẫu IAP/ingame mỗi ô chưa chốt, nên chưa thể tính tổng art thời trang. Áo choàng/ánh kim có vòng 6–10 frame đề xuất chạy song song rig, không kéo dài attack/hit window. Chỉ sản xuất/duyệt sau thiết kế mẫu.
+
+## Khung mẫu vũ khí theo cấp — bản thử chưa duyệt
+
+Mỗi nhân vật chỉ trang bị **Kiếm HOẶC Cung** theo phái, không cầm/đeo đồng thời
+hai loại. Các mẫu đứng cạnh nhau trong viewer là nhân vật so sánh riêng.
+
+Bảy cấp vũ khí1/10/20/30/40/50/60 dùng chung5IDgóc: gio_sau, vung_len, ngang,
+bo_xuong, dam. Mỗi bộ thay bằng5PNGvẽ sẵn, runtime không xoay. Bản thử hiện có
+cấp1/30/60 (15PNG);10/20/40/50 là slotchưa vẽ, không coi là asset đã hoàn thành.
+Cùng góc: canvas256×256ở2×, grip(96,144) cùng pixel; trục mũi lệch≤3° và chiều
+lưỡi khác≤15%. Góc ngang và đâm có thể dùng cùng hướng nhưng IDriêng.
+Vệt4khung dùng chung mọi cấp, đặt theo **tâm ảnh +offsetlogic** trong swing.json;
+không vẽ lại vệt theo từng bộ kiếm. Khi tấn công ẩn hình kiếm cầm/đeo và hiện
+lưỡi đã đăng ký vào tay; không chồng hai kiếm.
+
+`tools/build_weapon_template.py` chỉ đăng ký/co đồng dạng và xoayOFFLINEtừ
+nguồn tạo riêng, xuấtPNGgóc cố định bằng supersampling/BICUBIC→LANCZOS.
+`tools/check_weapon_template.py` kiểm cả metadata lẫn trục pixel/chiều lưỡi thực.
+Runtime mỗi Sprite2Drotation0, scale0,5cố định, chỉ lật nodegốc.
+Cung có tên trên dây ở pha kéo; tên bay là Sprite2Driêng chỉ sinh khi buông.
+Khung mẫu/phép kiểm chưa thay duyệt mỹ thuật hay bộ đồ/các cấp còn thiếu.
