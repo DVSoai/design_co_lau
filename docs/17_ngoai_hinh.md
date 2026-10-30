@@ -4,7 +4,9 @@
 
 ## Trang bị thường và part_set
 
-Mỗi item có part_set. Áo thay thân/tay trên gần xa; quần thay đùi/cẳng chân gần xa; vũ khí thay kiem/cung; nón/khăn nếu có ô thay phần trên đầu. Các ô đổi độc lập; mảnh còn lại dùng bộ gốc. Cùng bậc dùng chung hình, màu/hoa văn riêng theo món là tùy chọn sau.
+10 ô theo GDD; chỉ nón/áo/quần/vũ khí hiện lên người (găng nằm trong hình áo, giày trong hình quần); dây chuyền, nhẫn, ngọc bội, bùa chỉ có icon (chốt 30/10/2026). Mỗi item có part_set: nón thay bộ đầu, áo thay bộ thân, quần thay bộ chân, vũ khí thay hình cầm tay kiem/cung. Các ô đổi độc lập; mảnh còn lại dùng bộ gốc. Cùng bậc dùng chung hình, màu/hoa văn riêng theo món là tùy chọn sau.
+
+Cấp mở: t1=Lv1, t2=Lv10, t3=Lv20, t4=Lv30, t5=Lv40, t6=Lv50, t7=Lv60. Thang màu chốt 30/10/2026: nâu xám (nón lá) → bạc → xanh lam → tím → vàng đồng → đỏ vàng → đỏ vàng rực; xem `01_art_bible.md`.
 
 | Bậc | Hướng thiết kế riêng thế kỷ 10 (chưa duyệt art) |
 |---|---|
@@ -20,7 +22,7 @@ Mọi bậc có áo/quần/kiếm/cung riêng; bám STYLE/AVOID, không áo dài
 
 ## Hiệu ứng cường hóa — đề xuất, chưa chốt số
 
-+8 ánh kim nhẹ trên áo/vũ khí; +12 vệt phản sáng theo đường vung; +16 hạt bụi/tia lửa quanh vũ khí khi chuyển động/va chạm. Chỉ phản xạ kim loại, bụi và tia lửa vật lý; không hào quang năng lượng, không hạt phép tự phát. Cần thử độ dễ đọc và chốt mốc ở Mốc A1.
+Chốt 30/10/2026: hào quang quanh nhân vật khi đủ bộ **Full +8 / +12 / +14 / +16**, mạnh dần theo mốc; **được dùng lửa/ánh sáng/hào quang**. Vũ khí Lv50–60 có lửa/hào quang riêng; vệt chém và mũi tên đổi màu theo cấp (trắng → xanh → vàng → đỏ lửa). Thay quy định cũ "chỉ phản xạ kim loại, không hào quang năng lượng". Số chỉ số và độ dễ đọc thử ở Mốc A1.
 
 ## Các ô thời trang bản đầu
 
@@ -39,7 +41,7 @@ Thời trang theo ô độc lập, mỗi món một dạng hình cố định, k
 
 Item thường: id ổn định itm_, part_set. Thời trang: id itm_fsh_, part_set, stats, source=iap/ingame, slot; dùng sku_/ent_ cho sản phẩm/quyền lợi mua, theo 14_online_migration. Quyền sở hữu IAP dùng chung 3 ô, lựa chọn mặc và món kiếm trong game thuộc từng ô; cấp quyền lợi idempotent, không cộng chỉ số 3 lần. part_set là map part_id→asset_id, không cho món kiếm hiển thị thành cung sai phái.
 
-7 bậc × (áo 3 mảnh + quần 4 mảnh + kiếm 1 + cung 1) = **63 mảnh thay thế**, 28 part_set danh mục. Không vẽ lại toàn bộ clip cho từng bậc. Đầu gốc/tay/bàn chân dùng lại. Nếu vẽ nón trang bị riêng, cộng tối thiểu 1 lớp/món; chưa tính vào 63.
+Chốt 30/10/2026 (thay con số "63 mảnh" của rig cũ): mỗi cấp vẽ **nón 8 + áo 18 + quần 10 = 36 hình** đúng bảng 30 khung, cộng **kiếm 1–2 + cung 1–2** hình cầm tay. 7 cấp ≈ 252 hình trang phục + 14–28 hình vũ khí. Hình vung/vệt chém và bắn cung **dùng chung mọi cấp** (đổi màu theo cấp). Icon: 10 ô × 7 cấp = 70.
 
 | Ô thời trang | Khối lượng mỗi mẫu |
 |---|---|
