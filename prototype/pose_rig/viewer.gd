@@ -73,20 +73,26 @@ func build() -> void:
 		b.pressed.connect(button_pressed.bind(title))
 	if page=="frames":
 		for i in 30:
-			var at:=Vector2(90+(i%10)*153,265+(i/10)*200)
-			var a=make_actor(at+Vector2(0,-24 if i in [9,10,11] else 0),1.667)
+			var cell:=Rect2(12+(i%6)*264,78+(i/6)*128,252,120)
+			var a=make_actor(cell.get_center(),128.0/96.204)
 			a.sample_frame(i)
-			label_at("%02d" % i,at+Vector2(-12,6),16)
+			var box: Rect2=actor_bounds(a)
+			var factor:=minf(1.0,minf(236.0/box.size.x,102.0/box.size.y))
+			a.get_parent().scale*=factor
+			box=actor_bounds(a)
+			a.get_parent().position+=cell.get_center()-box.get_center()+Vector2(0,-5)
+			label_at("%02d" % i,cell.position+Vector2(2,101),14)
+
 		actor=make_actor(Vector2(1490,96),.3,true)
 	elif page=="attacks":
 		var ids: Array=["slash","tram_kiem"] if school=="kiem" else ["shoot","xa_tien"]
 		for row in 2:
-			var a=make_actor(Vector2(160,300+row*310),1.667,true)
+			var a=make_actor(Vector2(160,300+row*310),(128.0/96.204),true)
 			a.play(ids[row])
 			if row==0:actor=a
 			label_at(ids[row]+" / tốc độ thật",Vector2(24,110+row*310),20)
 			for i in a.skills_data[ids[row]].ground.size():
-				var s=make_actor(Vector2(430+i*230,300+row*310),1.667)
+				var s=make_actor(Vector2(430+i*230,300+row*310),(128.0/96.204))
 				s.action=ids[row]
 				s.sample_beat(i,true)
 				label_at("Nhịp%d" % i,Vector2(400+i*230,310+row*310),16)
@@ -99,10 +105,10 @@ func build() -> void:
 		t.scale=Vector2.ONE*4
 		add_child(t)
 		label_at("Lv1 mới — Kiếm" if school=="kiem" else "Lv1 mới — Cung",Vector2(680,100),22)
-		actor=make_actor(Vector2(850,430),1.667,true)
+		actor=make_actor(Vector2(850,430),(128.0/96.204),true)
 		var close=make_actor(Vector2(1250,570),4.0)
 		close.sample_frame(0)
-		label_at("Cỡ ~160 px",Vector2(760,460),18)
+		label_at("Cỡ 128 px",Vector2(760,460),18)
 		label_at("Phóng để so nét",Vector2(1140,600),18)
 func rebuild() -> void:
 	for c in get_children():
@@ -132,3 +138,16 @@ func button_pressed(title: String) -> void:
 	else:
 		page={"30 khung":"frames","Các đòn/chiêu":"attacks","So cạnh bảng":"compare"}[title]
 		rebuild()
+
+func actor_bounds(a: Node2D) -> Rect2:
+	var result:=Rect2()
+	var first:=true
+	for sprite: Sprite2D in a.all_visual_sprites():
+		if not sprite.visible or sprite.texture==null:continue
+		var rect:=Rect2(sprite.texture.get_image().get_used_rect())
+		if sprite.centered:rect.position-=sprite.texture.get_size()/2
+		var corners: Array=[sprite.to_global(rect.position),sprite.to_global(rect.end),sprite.to_global(Vector2(rect.position.x,rect.end.y)),sprite.to_global(Vector2(rect.end.x,rect.position.y))]
+		for point: Vector2 in corners:
+			if first:result=Rect2(point,Vector2.ZERO);first=false
+			else:result=result.expand(point)
+	return result

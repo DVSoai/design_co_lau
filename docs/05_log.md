@@ -631,3 +631,32 @@ STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile acti
 
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
 ```
+
+
+## 30/10/2026 — g1_nhan_vat_chot_size_followup — chưa duyệt
+
+- Sửa tiếp cùng nhánh theo người dùng: **số cũ khoảng160px là sai**. Người96px logic
+  A0 hiển thị128px trên1600×720. Không thay ảnh người hay số A0; viewer dùng hệ số
+  128/96,204 theo chiều cao RGBA đo thực. Hai tài liệu16/17 và README/viewer ghi chuẩn128.
+  Art bible01 còn chuẩn cũ nhưng nằm ngoài phạm vi lượt này; quyết định trực tiếp mới
+  của người dùng được ưu tiên, chưa tự sửa01.
+- Đọc cơ chế/lấy số đo từ dữ liệu và ảnh tham khảo tại máy: người ghép33px ở bộ gốc,
+  131px ở bộ4×; hiệu ứng được cấu thành bởi5hình riêng. Chỉ tự xây dữ liệu/hình của mình.
+  Script, số đo chi tiết và ảnh so cùng128px nằm trong `/tmp/lv1-size-followup/`, không
+  commit ảnh hoặc mã tham khảo. Không thêm tài nguyên bên thứ ba.
+- Cỡ thực từ PNG: kiếm cầm tay0,780284H (tính cả chuôi theo trục), cung0,375H,
+  tên thường0,578125H, tên chiêu0,593750H. Tất cả nằm trong khoảng người dùng yêu cầu.
+- Thay vệt rời bằng5PNG vung riêng ghép lưỡi+vệt,4hình quét có hình học khác nhau theo
+  góc. Nhịp giơ không vệt. Trảm Kiếm dùng5bản ghép xanh tương ứng. Runtime vẽ1PNG/nhịp
+  theo tâm, bù offset để grip trùng tay; không xoay sprite, không dời lưỡi liềm dùng chung.
+  Mask và lưỡi rời giữ để kiểm offline; bỏ5file trail cũ. Chỉ hình tự tạo bằng script từ
+  kiếm nguồn của dự án, không dùng ảnh tham khảo làm đầu vào texture.
+- Kiểm từ alpha thực: độ rộng/cao hình vung dưới1,6H/1,1H; khoảng mũi–mép vệt lớn
+  nhất0,626719px logic, dưới2px. Kiểm texture ghép thật bằng so toàn bộ RGBA với lưỡi+
+  mask, kiểm grip tại Sprite2D thật≤1px. Chuẩn96logic, hitbox và nhịp chém A0 giữ nguyên.
+- Dải30khung đổi6cột×5hàng, co thumbnail vừa ô và đo bounds thật để tránh chồng.
+  Thumbnail là ảnh xem tổng quan; cỡ128px xem ở trang chạy đòn/chiêu và so cạnh bảng.
+  Test viewer kiểm mọi cặp ô hai hướng và chiều cao người chạy thật128px.
+- Đầu ra test, lệnh chụp Godot/Xvfb1600×720 phải/trái và kiểm tên được giữ nguyên văn
+  trong commit; `prototype/pose_rig/reports/lv1_size_checks.txt` lưu đầu ra không chứa
+  nội dung tham khảo. Lv1 vẫn chờ người dùng duyệt; không làm Lv10–60.

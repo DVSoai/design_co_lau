@@ -427,3 +427,12 @@ shoot3khung, run_shoot2khung. Giữ mốc chân y0 và cổ/hông; chọn phái/
 trong scene xem riêng. Thời gian pilot và sự kiện sinh tên ghi ở09_animation_spec.
 Tờ cung đã sinh2lần, loại lần1 vì khoảng kéo không tới tay; các tờ mới khác1lần.
 [Báo cáo, nguồn, ảnh chụp, script và số đo](reports/g1_kiem_cung_report.md).
+
+## Hiệu chỉnh cỡ nhân vật và hình vung —30/10/2026 (chưa duyệt)
+
+Người96px logic A0 hiển thị **128px trên màn1600×720**. Chỉ thay cỡ xem nhân vật, không đổi số A0. Kiếm cầm tay dài0,75–0,8H,
+cung cao0,35–0,4H, tên dài0,55–0,65H. Ảnh vung lớn nhất không quá1,6H×1,1H.
+Mỗi nhịp dùng một PNG ghép kiếm với vệt có hình dạng riêng, vẽ theo tâm, grip trùng
+nắm tay≤1px; vệt nối mũi kiếm≤2px. Nhịp giơ chỉ kiếm, không có vệt rời.
+Kiểm kích thước và khoảng hở từ PNG thực bằng `tools/check_lv1_sizes.py`.
+Lv1 vẫn chờ người dùng duyệt, chưa làm Lv10–60 theo mẫu mới.

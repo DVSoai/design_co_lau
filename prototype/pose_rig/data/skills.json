@@ -12,11 +12,6 @@
               "id": "swing_0",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_0",
-              "dx": 60,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -30,11 +25,6 @@
               "id": "swing_1",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_1",
-              "dx": 64,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -48,11 +38,6 @@
               "id": "swing_2",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_2",
-              "dx": 68,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -66,11 +51,6 @@
               "id": "swing_3",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_3",
-              "dx": 72,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -84,11 +64,6 @@
               "id": "swing_4",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_4",
-              "dx": 76,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -104,11 +79,6 @@
               "id": "swing_0",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_0",
-              "dx": 60,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -122,11 +92,6 @@
               "id": "swing_1",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_1",
-              "dx": 64,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -140,11 +105,6 @@
               "id": "swing_2",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_2",
-              "dx": 68,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -158,11 +118,6 @@
               "id": "swing_3",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_3",
-              "dx": 72,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -176,11 +131,6 @@
               "id": "swing_4",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_4",
-              "dx": 76,
-              "dy": -51
             }
           ],
           "projectile": null,
@@ -296,19 +246,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_0",
+              "id": "swing_skill_0",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_0",
-              "dx": 60,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -319,19 +259,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_1",
+              "id": "swing_skill_1",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_1",
-              "dx": 64,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -342,19 +272,9 @@
           "duration": 0.075,
           "effects": [
             {
-              "id": "swing_2",
+              "id": "swing_skill_2",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_2",
-              "dx": 68,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -365,19 +285,9 @@
           "duration": 0.075,
           "effects": [
             {
-              "id": "swing_3",
+              "id": "swing_skill_3",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_3",
-              "dx": 72,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -388,19 +298,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_4",
+              "id": "swing_skill_4",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_4",
-              "dx": 76,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -413,19 +313,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_0",
+              "id": "swing_skill_0",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_0",
-              "dx": 60,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -436,19 +326,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_1",
+              "id": "swing_skill_1",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_1",
-              "dx": 64,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -459,19 +339,9 @@
           "duration": 0.075,
           "effects": [
             {
-              "id": "swing_2",
+              "id": "swing_skill_2",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_2",
-              "dx": 68,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -482,19 +352,9 @@
           "duration": 0.075,
           "effects": [
             {
-              "id": "swing_3",
+              "id": "swing_skill_3",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_3",
-              "dx": 72,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,
@@ -505,19 +365,9 @@
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_4",
+              "id": "swing_skill_4",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "white_4",
-              "dx": 76,
-              "dy": -51
-            },
-            {
-              "id": "tram_kiem",
-              "dx": 72,
-              "dy": -53
             }
           ],
           "projectile": null,

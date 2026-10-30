@@ -4,99 +4,51 @@
     "swing_0": {
       "frames": [
         {
-          "asset": "blade_0",
+          "asset": "swing_0",
           "duration": 0.05,
           "anchor": "grip"
         }
       ],
       "placement": "grip",
       "z": 6
-    },
-    "white_0": {
-      "frames": [
-        {
-          "asset": "trail_0",
-          "duration": 0.05,
-          "dx": 0,
-          "dy": 0
-        }
-      ],
-      "placement": "centre",
-      "z": 7
     },
     "swing_1": {
       "frames": [
         {
-          "asset": "blade_1",
+          "asset": "swing_1",
           "duration": 0.05,
           "anchor": "grip"
         }
       ],
       "placement": "grip",
       "z": 6
-    },
-    "white_1": {
-      "frames": [
-        {
-          "asset": "trail_1",
-          "duration": 0.05,
-          "dx": 0,
-          "dy": 0
-        }
-      ],
-      "placement": "centre",
-      "z": 7
     },
     "swing_2": {
       "frames": [
         {
-          "asset": "blade_2",
+          "asset": "swing_2",
           "duration": 0.05,
           "anchor": "grip"
         }
       ],
       "placement": "grip",
       "z": 6
-    },
-    "white_2": {
-      "frames": [
-        {
-          "asset": "trail_2",
-          "duration": 0.05,
-          "dx": 0,
-          "dy": 0
-        }
-      ],
-      "placement": "centre",
-      "z": 7
     },
     "swing_3": {
       "frames": [
         {
-          "asset": "blade_3",
+          "asset": "swing_3",
           "duration": 0.05,
           "anchor": "grip"
         }
       ],
       "placement": "grip",
       "z": 6
-    },
-    "white_3": {
-      "frames": [
-        {
-          "asset": "trail_3",
-          "duration": 0.05,
-          "dx": 0,
-          "dy": 0
-        }
-      ],
-      "placement": "centre",
-      "z": 7
     },
     "swing_4": {
       "frames": [
         {
-          "asset": "blade_4",
+          "asset": "swing_4",
           "duration": 0.05,
           "anchor": "grip"
         }
@@ -104,17 +56,60 @@
       "placement": "grip",
       "z": 6
     },
-    "white_4": {
+    "swing_skill_0": {
       "frames": [
         {
-          "asset": "trail_4",
+          "asset": "swing_skill_0",
           "duration": 0.05,
-          "dx": 0,
-          "dy": 0
+          "anchor": "grip"
         }
       ],
-      "placement": "centre",
-      "z": 7
+      "placement": "grip",
+      "z": 6
+    },
+    "swing_skill_1": {
+      "frames": [
+        {
+          "asset": "swing_skill_1",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "swing_skill_2": {
+      "frames": [
+        {
+          "asset": "swing_skill_2",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "swing_skill_3": {
+      "frames": [
+        {
+          "asset": "swing_skill_3",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
+    },
+    "swing_skill_4": {
+      "frames": [
+        {
+          "asset": "swing_skill_4",
+          "duration": 0.05,
+          "anchor": "grip"
+        }
+      ],
+      "placement": "grip",
+      "z": 6
     },
     "tram_kiem": {
       "frames": [

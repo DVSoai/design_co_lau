@@ -1524,17 +1524,17 @@
     "sword": {
       "file": "sword.png",
       "size": [
-        77,
-        84
+        105,
+        115
       ],
       "anchors": {
         "grip": [
-          14.72,
-          58.65
+          20.124194997996856,
+          80.18233944514373
         ],
         "tip": [
-          76.36,
-          -0.46
+          104.39426155210869,
+          -0.6288810936874017
         ]
       },
       "source": {
@@ -1559,29 +1559,29 @@
     "bow_idle": {
       "file": "bow_idle.png",
       "size": [
-        31,
-        104
+        21,
+        72
       ],
       "anchors": {
         "grip": [
-          25.5,
-          51.5
+          17.653846153846153,
+          35.65384615384615
         ],
         "belly": [
-          30.25,
-          51.5
+          20.942307692307693,
+          35.65384615384615
         ],
         "string": [
-          2.25,
-          51.5
+          1.5576923076923077,
+          35.65384615384615
         ],
         "top": [
-          2.5,
-          7.25
+          1.7307692307692308,
+          5.019230769230769
         ],
         "bottom": [
-          3.25,
-          97.75
+          2.25,
+          67.67307692307692
         ]
       },
       "source": {
@@ -1606,29 +1606,29 @@
     "bow_draw": {
       "file": "bow_draw.png",
       "size": [
-        31,
-        104
+        21,
+        72
       ],
       "anchors": {
         "grip": [
-          25.5,
-          51.5
+          17.653846153846153,
+          35.65384615384615
         ],
         "belly": [
-          30.25,
-          51.5
+          20.942307692307693,
+          35.65384615384615
         ],
         "string": [
-          2.25,
-          51.5
+          1.5576923076923077,
+          35.65384615384615
         ],
         "top": [
-          2.5,
-          7.25
+          1.7307692307692308,
+          5.019230769230769
         ],
         "bottom": [
-          3.25,
-          97.75
+          2.25,
+          67.67307692307692
         ]
       },
       "source": "clean own idle bow wood; no baked arrow",
@@ -1637,29 +1637,29 @@
     "bow_release": {
       "file": "bow_release.png",
       "size": [
-        31,
-        103
+        22,
+        72
       ],
       "anchors": {
         "grip": [
-          25.0,
-          51.5
+          17.475728155339805,
+          36.0
         ],
         "belly": [
-          29.5,
-          51.5
+          20.62135922330097,
+          36.0
         ],
         "string": [
-          3.75,
-          51.5
+          2.621359223300971,
+          36.0
         ],
         "top": [
-          4.0,
-          7.25
+          2.796116504854369,
+          5.067961165048544
         ],
         "bottom": [
-          3.75,
-          97.5
+          2.621359223300971,
+          68.15533980582525
         ]
       },
       "source": {
@@ -1715,20 +1715,36 @@
     "arrow": {
       "file": "arrow.png",
       "size": [
-        158,
-        15
+        115,
+        18
       ],
       "anchors": {
         "tail": [
-          6.731999999999999,
-          7.68
+          4.8875,
+          9.200000000000001
         ],
         "tip": [
-          156.024,
-          7.92
+          113.275,
+          9.4875
         ]
       },
-      "source": "own arrow normalized for full draw span",
+      "source": {
+        "sheet": "weapons",
+        "cell": 5,
+        "crop": [
+          20,
+          565,
+          440,
+          665
+        ],
+        "bounds": [
+          9,
+          21,
+          409,
+          84
+        ],
+        "scale": 0.24
+      },
       "status": "drawn_unapproved"
     },
     "white_a": {
@@ -1827,17 +1843,17 @@
     "skill_arrow": {
       "file": "skill_arrow.png",
       "size": [
-        110,
-        27
+        115,
+        28
       ],
       "anchors": {
         "tail": [
-          6.72,
-          13.44
+          7.0254545454545445,
+          14.050909090909089
         ],
         "tip": [
-          106.88,
-          13.44
+          111.73818181818181,
+          14.050909090909089
         ]
       },
       "source": {
@@ -1862,29 +1878,29 @@
     "bow_draw_15": {
       "file": "bow_draw_15.png",
       "size": [
-        99,
-        124
+        97,
+        92
       ],
       "anchors": {
         "grip": [
-          93.5,
-          61.5
+          93.65384615384616,
+          45.65384615384615
         ],
         "belly": [
-          98.25,
-          61.5
+          96.9423076923077,
+          45.65384615384615
         ],
         "string": [
-          4.266999999999996,
-          55.753
+          4.420846153846156,
+          39.90684615384615
         ],
         "top": [
-          70.5,
-          17.25
+          77.73076923076923,
+          15.01923076923077
         ],
         "bottom": [
-          71.25,
-          107.75
+          78.25,
+          77.67307692307692
         ]
       },
       "source": "own bow source, V-string to measured near hand",
@@ -1893,29 +1909,29 @@
     "bow_draw_16": {
       "file": "bow_draw_16.png",
       "size": [
-        103,
-        124
+        101,
+        92
       ],
       "anchors": {
         "grip": [
-          97.5,
-          61.5
+          97.65384615384616,
+          45.65384615384615
         ],
         "belly": [
-          102.25,
-          61.5
+          100.9423076923077,
+          45.65384615384615
         ],
         "string": [
-          4.064999999999998,
-          56.829
+          4.218846153846158,
+          40.982846153846154
         ],
         "top": [
-          74.5,
-          17.25
+          81.73076923076923,
+          15.01923076923077
         ],
         "bottom": [
-          75.25,
-          107.75
+          82.25,
+          77.67307692307692
         ]
       },
       "source": "own bow source, V-string to measured near hand",
@@ -1924,172 +1940,412 @@
     "blade_0": {
       "file": "blade_0.png",
       "size": [
-        256,
-        256
+        384,
+        384
       ],
       "anchors": {
         "grip": [
-          96,
-          144
+          192.0,
+          192.0
         ],
         "tip": [
-          156.38825092681523,
-          83.61174907318477
+          222.2186032172586,
+          79.22263745942661
         ]
       },
       "source": "offline rotation of own sword",
       "status": "drawn_unapproved"
+    },
+    "swing_mask_0": {
+      "file": "swing_mask_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          222.2186032172586,
+          79.22263745942661
+        ]
+      },
+      "source": "own independently swept tip-sector mask",
+      "status": "drawn_unapproved"
+    },
+    "swing_0": {
+      "file": "swing_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          222.2186032172586,
+          79.22263745942661
+        ]
+      },
+      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_0",
+      "blade_asset": "blade_0",
+      "has_trail": false
+    },
+    "swing_skill_0": {
+      "file": "swing_skill_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          222.2186032172586,
+          79.22263745942661
+        ]
+      },
+      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_0",
+      "blade_asset": "blade_0",
+      "has_trail": false
     },
     "blade_1": {
       "file": "blade_1.png",
       "size": [
-        256,
-        256
+        384,
+        384
       ],
       "anchors": {
         "grip": [
-          96,
-          144
+          192.0,
+          192.0
         ],
         "tip": [
-          176.25151969674766,
-          114.790835575756
+          287.6406843676057,
+          125.03167184626697
         ]
       },
       "source": "offline rotation of own sword",
       "status": "drawn_unapproved"
+    },
+    "swing_mask_1": {
+      "file": "swing_mask_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          125.03167184626697
+        ]
+      },
+      "source": "own independently swept tip-sector mask",
+      "status": "drawn_unapproved"
+    },
+    "swing_1": {
+      "file": "swing_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          125.03167184626697
+        ]
+      },
+      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_1",
+      "blade_asset": "blade_1",
+      "has_trail": true
+    },
+    "swing_skill_1": {
+      "file": "swing_skill_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          125.03167184626697
+        ]
+      },
+      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_1",
+      "blade_asset": "blade_1",
+      "has_trail": true
     },
     "blade_2": {
       "file": "blade_2.png",
       "size": [
-        256,
-        256
+        384,
+        384
       ],
       "anchors": {
         "grip": [
-          96,
-          144
+          192.0,
+          192.0
         ],
         "tip": [
-          181.40188346869172,
-          144.0
+          308.755717127728,
+          192.0
         ]
       },
       "source": "offline rotation of own sword",
       "status": "drawn_unapproved"
+    },
+    "swing_mask_2": {
+      "file": "swing_mask_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          308.755717127728,
+          192.0
+        ]
+      },
+      "source": "own independently swept tip-sector mask",
+      "status": "drawn_unapproved"
+    },
+    "swing_2": {
+      "file": "swing_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          308.755717127728,
+          192.0
+        ]
+      },
+      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_2",
+      "blade_asset": "blade_2",
+      "has_trail": true
+    },
+    "swing_skill_2": {
+      "file": "swing_skill_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          308.755717127728,
+          192.0
+        ]
+      },
+      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_2",
+      "blade_asset": "blade_2",
+      "has_trail": true
     },
     "blade_3": {
       "file": "blade_3.png",
       "size": [
-        256,
-        256
+        384,
+        384
       ],
       "anchors": {
         "grip": [
-          96,
-          144
+          192.0,
+          192.0
         ],
         "tip": [
-          169.96020061492533,
-          186.70094173434586
+          287.6406843676057,
+          258.968328153733
         ]
       },
       "source": "offline rotation of own sword",
       "status": "drawn_unapproved"
+    },
+    "swing_mask_3": {
+      "file": "swing_mask_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          258.968328153733
+        ]
+      },
+      "source": "own independently swept tip-sector mask",
+      "status": "drawn_unapproved"
+    },
+    "swing_3": {
+      "file": "swing_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          258.968328153733
+        ]
+      },
+      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_3",
+      "blade_asset": "blade_3",
+      "has_trail": true
+    },
+    "swing_skill_3": {
+      "file": "swing_skill_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          287.6406843676057,
+          258.968328153733
+        ]
+      },
+      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_3",
+      "blade_asset": "blade_3",
+      "has_trail": true
     },
     "blade_4": {
       "file": "blade_4.png",
       "size": [
-        256,
-        256
+        384,
+        384
       ],
       "anchors": {
         "grip": [
-          96,
-          144
+          192.0,
+          192.0
         ],
         "tip": [
-          176.25151969674766,
-          173.209164424244
+          250.377858563864,
+          293.1134170696823
         ]
       },
       "source": "offline rotation of own sword",
       "status": "drawn_unapproved"
     },
-    "trail_0": {
-      "file": "trail_0.png",
+    "swing_mask_4": {
+      "file": "swing_mask_4.png",
       "size": [
-        63,
-        52
+        384,
+        384
       ],
       "anchors": {
-        "centre": [
-          31.5,
-          26.0
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          250.377858563864,
+          293.1134170696823
         ]
       },
-      "source": "own white crescent phases",
+      "source": "own independently swept tip-sector mask",
       "status": "drawn_unapproved"
     },
-    "trail_1": {
-      "file": "trail_1.png",
+    "swing_4": {
+      "file": "swing_4.png",
       "size": [
-        123,
-        81
+        384,
+        384
       ],
       "anchors": {
-        "centre": [
-          61.5,
-          40.5
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          250.377858563864,
+          293.1134170696823
         ]
       },
-      "source": "own white crescent phases",
-      "status": "drawn_unapproved"
+      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_4",
+      "blade_asset": "blade_4",
+      "has_trail": true
     },
-    "trail_2": {
-      "file": "trail_2.png",
+    "swing_skill_4": {
+      "file": "swing_skill_4.png",
       "size": [
-        145,
-        95
+        384,
+        384
       ],
       "anchors": {
-        "centre": [
-          72.5,
-          47.5
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          250.377858563864,
+          293.1134170696823
         ]
       },
-      "source": "own white crescent phases",
-      "status": "drawn_unapproved"
-    },
-    "trail_3": {
-      "file": "trail_3.png",
-      "size": [
-        145,
-        95
-      ],
-      "anchors": {
-        "centre": [
-          72.5,
-          47.5
-        ]
-      },
-      "source": "own white crescent phases",
-      "status": "drawn_unapproved"
-    },
-    "trail_4": {
-      "file": "trail_4.png",
-      "size": [
-        68,
-        56
-      ],
-      "anchors": {
-        "centre": [
-          34.0,
-          28.0
-        ]
-      },
-      "source": "own white crescent phases",
-      "status": "drawn_unapproved"
+      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_mask_4",
+      "blade_asset": "blade_4",
+      "has_trail": true
     }
   },
   "references": [

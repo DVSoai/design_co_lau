@@ -1,3 +1,17 @@
+## Sửa cỡ hiển thị và hình vung —30/10/2026, chưa duyệt
+
+Nhân vật96px logic A0 hiển thị **128px** ở1600×720. Viewer minh họa hệ số720/540; đo RGBA idle96,204px nên
+hiệu chỉnh128/96,204 để ảnh duyệt cao128px. Không đổi tuning A0 hay hình người.
+Trang30khung dùng thumbnail tự co vừa ô (6cột×5hàng) để không chồng; xem cỡ thật128px
+ở trang đòn/chiêu và so cạnh bảng. Thumbnail không phải thước đo cỡ trong game.
+
+Kiếm cầm tay0,75–0,8H; cung0,35–0,4H; tên0,55–0,65H. H=96logic.
+Mỗi nhịp một ảnh vung ghép **kiếm+vệt liền mũi**, neo tâm và hiệu chỉnh grip về tay;
+nhịp giơ không vệt. Bốn mặt quét khác hình học, không dời một lưỡi liềm chung.
+Trảm Kiếm dùng bản ghép xanh tương ứng. Mask/kiếm rời chỉ là đầu vào kiểm tra offline,
+runtime mỗi nhịp chỉ nạp1PNG ghép. Kiểm bằng `python3 tools/check_lv1_sizes.py`.
+Ảnh so nhân vật tham khảo cùng128px chỉ ở `/tmp/lv1-size-followup/`, không commit.
+
 # Lv1 / 30 khung — bước 1/5, chưa duyệt (30/10/2026)
 
 Mở `res://pose_rig/pose_rig.tscn` bằng **Godot 4.7.2 Standard**. Chọn Kiếm/Cung,

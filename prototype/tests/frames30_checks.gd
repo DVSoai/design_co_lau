@@ -43,13 +43,13 @@ func run() -> void:
 						if school=="kiem":
 							var gap: float=a.landmarks.weapon_grip.distance_to(a.landmarks.grip)
 							var forward: float=a.landmarks.tip.x-a.landmarks.grip.x
-							var centre: Vector2=a.effect_sprites[1].position
+							var centre: Vector2=a.effect_sprites[0].position
 							var blade: Sprite2D=a.effect_sprites[0]
 							var asset: String=a.effects_data[beat.effects[0].id].frames[0].asset
 							var grip_world: Vector2=blade.to_global(a.anchor(asset,"grip")*2-blade.texture.get_size()/2)
 							var hand_world: Vector2=a.to_global(a.landmarks.grip)
 							check(grip_world.distance_to(hand_world)<=1 and blade.centered,"actual centred Sprite2D grip-to-hand <=1")
-							check(gap<=1 and forward>0 and centre.x>a.landmarks.grip.x,"sword actual grip gap=%.6f tip_forward=%.3f trail_forward=%.3f" % [gap,forward,centre.x-a.landmarks.grip.x])
+							check(gap<=1 and forward>0,"sword actual grip gap=%.6f tip_forward=%.3f composite_centre_offset=%.3f" % [gap,forward,centre.x-a.landmarks.grip.x])
 						else:
 							check(a.landmarks.belly.x>a.landmarks.string.x,"bow belly forward, string behind")
 							check(a.nocked_arrow.visible==beat.nocked and a.arrows.size()==(1 if beat.projectile!=null else 0),"nocked only draw; separate projectile only release")
