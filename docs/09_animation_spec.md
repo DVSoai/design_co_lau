@@ -42,23 +42,25 @@ quay trái lật gương và đảo dấu dx. Trong nhịp đánh, vũ khí cầ
 chém thay cho vũ khí. Các chiêu khác nhau chủ yếu ở hiệu ứng, thân dùng lại 16 tư thế.
 Tên, cấp mở và số liệu 8 chiêu mỗi phái giữ theo GDD.
 
-**Đòn chém cơ bản (sửa 30/10/2026):** Kiếm **lia ngang hông**, không giơ cao bổ
-xuống. Hạ trọng tâm, chân choãi, kéo kiếm và vặn hông rồi lia ra trước, giữ, về thủ.
-6nhịp: thủ → kéo → lia → kéo dài/giữ → giữ → về thủ, mỗi nhịp0,05s (tổng0,30s).
-Cửa sổ trúng0,10–0,20s theo A0. Hình vung theo tâm, grip trùng tay≤1px. Hai lớp quét
-nối tiếp: lia ra ở nhịp2, kéo dài ở nhịp3, tàn ở nhịp4; nhịp thủ/về thủ chỉ lưỡi.
-Vệt dài1,2–1,6H, cao≤0,35H, bắt đầu ngay mũi kiếm (khe≤2px), một khối liền,
-mép tơi có kiểm soát và alpha đuôi giảm dần. H=96px logic. Trảm Kiếm cùng dáng,
-vệt dài/dày hơn, có lõi sáng và lớp xanh theo bảng mẫu mục5. Cấp1trắng; cam/đỏ
-chỉ lưu bảng màu cho cấp sau, chưa vẽ bộ cấp sau.
-
-Giới hạn1,6H ở đây đo **vệt**, không phải toàn ảnh gồm cả kiếm và vệt nối từ mũi;
-thay giới hạn ảnh vung cũ của bản thử trước. Mũi trong nhịp lia cao0,35–0,65H từ chân.
-4thân đánh mới thay các ô thân cũ, không xoay sprite. Tư thế chân choãi là hình bổ sung
-riêng của prototype;10hình chân dùng chung trước đó vẫn giữ nguyên để không phá chạy/nhảy.
+**Đòn chém cơ bản (sửa 30/10/2026, bản vẽ chưa duyệt):** Kiếm lia ngang hông,
+không giơ cao bổ xuống. Bốn hình thân khác nhau: thủ thấp (gối khuỵu), kéo kiếm sau
+hông (vai xoay), lia (tay duỗi ngang hông, hông vặn, chân trước bước dài), thu về ngực.
+Năm nhịp thủ/kéo/lia/giữ/thu dùng khung 14/15/16/16/17, thời lượng
+0,05/0,05/0,10/0,05/0,05 s; tổng 0,30 s, cửa sổ trúng 0,10–0,20 s giữ A0.
+Mọi nhịp đánh đều ẩn kiếm cầm tay. Hình vung vẽ sẵn gồm đoạn lưỡi ngắn trong tay và
+vệt, neo theo tâm ảnh, grip trùng tay ≤1 px; không vẽ thêm cây kiếm thẳng nguyên dài.
+Nhịp kéo: đường trắng mảnh cong sát hông. Nhịp lia: vệt trắng dày cong ôm trước thân,
+đuôi xé tơi, thêm một vệt ngắn lao ra trước. Nhịp giữ: vệt nhạt dần kèm vệt nhỏ quét
+ngược. Viền tối mảnh để đọc trên nền sáng. Tổng chiều dài ngang của mọi lớp vệt
+≤1,3H; pixel vệt chính gần nhất cách phần áo thân ≤4 px logic (không tính bàn tay).
+Mũi lưỡi ở nhịp lia/giữ cao 0,35–0,65H tính từ chân. H khoảng 96 px logic.
+Trảm Kiếm cùng dáng, vệt dày hơn và lớp sáng xanh theo bảng mẫu mục 5; Lv1 thường
+trắng/xám nhạt. Bảng màu cam/đỏ chỉ giữ cho cấp sau, chưa sản xuất bộ cấp cao.
+Chân thủ/lunge bổ sung riêng trong prototype; bộ chung vẫn đủ 8 đầu/18 thân/10 chân.
 
 **Bắn cung cơ bản:** 8nhịp: giương2 → giữ2 → thả1 → hồi3; tên bay chỉ sinh tại nhịp5.
-Hình cung hiện có giữ hướng; tên đặt sẵn trên dây trong4nhịp đầu, biến mất khi thả.
+Cung cao 0,90–1,00H; tên đặt sẵn trong 4 nhịp đầu, đuôi trùng tay kéo dây và
+thân tên qua điểm tựa cung, biến mất khi thả. Tên bay bắt đầu tại dây cung đã thả.
 Mỗi nhịp0,05s, tổng0,40s, thả tại0,20s — **Đề xuất cho nhịp xem prototype**, không phải
 số đã đo/chốt của game thật. Nhịp đất và trên không cùng cấu trúc, dùng tư thế riêng.
 

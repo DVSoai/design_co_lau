@@ -127,6 +127,66 @@
       "placement": "grip",
       "z": 6
     },
+    "swing_surge_2": {
+      "frames": [
+        {
+          "asset": "swing_surge_2",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
+    "swing_surge_3": {
+      "frames": [
+        {
+          "asset": "swing_surge_3",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
+    "swing_reverse_3": {
+      "frames": [
+        {
+          "asset": "swing_reverse_3",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
+    "swing_skill_surge_2": {
+      "frames": [
+        {
+          "asset": "swing_skill_surge_2",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
+    "swing_skill_surge_3": {
+      "frames": [
+        {
+          "asset": "swing_skill_surge_3",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
+    "swing_skill_reverse_3": {
+      "frames": [
+        {
+          "asset": "swing_skill_reverse_3",
+          "duration": 0.05
+        }
+      ],
+      "placement": "grip",
+      "z": 7
+    },
     "bow_draw": {
       "frames": [
         {

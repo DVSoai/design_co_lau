@@ -75,7 +75,9 @@ func sample_frame(index: int) -> void:
 	var f: Dictionary=frames_data.frames[index]
 	var ids: Dictionary={}
 	for layer in ["legs","body","head"]:ids[layer]=parts.levels["1"][layer][int(f.layers[layer].image)]
+	if school=="cung" and f.layers.body.has("cung_image"):ids.body=parts.levels["1"].body[int(f.layers.body.cung_image)]
 	if f.layers.legs.get('stance',false):ids.legs=parts.levels['1'].combat_stance
+	if f.layers.legs.get('lunge',false):ids.legs=parts.levels['1'].combat_lunge
 	var legs: String=ids.legs
 	var body: String=ids.body
 	var head: String=ids.head
@@ -128,11 +130,11 @@ func sample_beat(index: int, emit_projectile: bool=false) -> void:
 		effect_sprites.append(s)
 	update_effects()
 	if beat.nocked:
-		put(nocked_arrow,"arrow",landmarks.string,"tail")
+		put(nocked_arrow,beat.get("nocked_asset","arrow"),landmarks.string,"tail")
 	if emit_projectile and beat.projectile!=null:
 		var s:=make_sprite("projectile_"+beat.projectile.id)
 		s.z_index=9
-		put(s,beat.projectile.id,landmarks.far_hand+Vector2(beat.projectile.dx,beat.projectile.dy),"tail")
+		put(s,beat.projectile.id,landmarks.string+Vector2(beat.projectile.dx,beat.projectile.dy),"tail")
 		arrows.append(s)
 		release_count+=1
 func update_effects() -> void:

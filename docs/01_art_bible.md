@@ -275,12 +275,11 @@ Bản đồ làm sau khi nhân vật chính xong.
 `art/reference/chr_dbl_board_animation.png` (bảng B: động tác, cải trang, thú cưỡi). Chỉ học
 thiết kế, không cắt ghép ảnh vào game.
 
-**Hai bảng này là MẪU CHÍNH về hình nhân vật** (người dùng chốt 30/10/2026, thay v2_a làm mẫu): dáng chibi đầu to, mặt, tóc, khăn đỏ, màu bão hòa đỏ/vàng/xanh, viền tối rõ, đổ bóng tương phản như bảng. Mọi prompt nhân vật đính kèm hai bảng + ảnh `ref_dinh_bo_linh.png` và yêu cầu "giống nhân vật trên bảng". Chỉ khác bảng ở độ phân giải: vẽ to, nét sạch để hiển thị ~160 px mà không vỡ (không thu nhỏ thành pixel 30–40 px như ô trên bảng). Khối STYLE-V2 vẫn dùng cho phần viền đậm/màu phẳng; chỗ nào STYLE-V2 khác bảng thì theo bảng. Mọi bản vẽ phải đặt cạnh bảng để so; không giống bảng là không đạt.
+**Hai bảng này là MẪU CHÍNH về hình nhân vật** (người dùng chốt 30/10/2026, thay v2_a làm mẫu): dáng chibi đầu to, mặt, tóc, khăn đỏ, màu bão hòa đỏ/vàng/xanh, viền tối rõ, đổ bóng tương phản như bảng. Mọi prompt nhân vật đính kèm hai bảng + ảnh `ref_dinh_bo_linh.png` và yêu cầu "giống nhân vật trên bảng". Chỉ khác bảng ở độ phân giải: vẽ to, nét sạch để hiển thị 128 px trên màn 1600×720 mà không vỡ (không thu nhỏ thành pixel 30–40 px như ô trên bảng). Khối STYLE-V2 vẫn dùng cho phần viền đậm/màu phẳng; chỗ nào STYLE-V2 khác bảng thì theo bảng. Mọi bản vẽ phải đặt cạnh bảng để so; không giống bảng là không đạt.
 
 *Lấy theo bảng:*
-- Ngoại hình Đinh Bộ Lĩnh: tóc đen búi, khăn/dải đỏ, mặt và dáng chibi đầu to (đầu ≈ 1/2,8–1/3
-  chiều cao) như hàng "Tổng thể" bảng A.
-- Trang phục 7 cấp theo hàng nón/áo/quần/găng/giày bảng A: Lv1 nón lá, áo nâu; Lv10–30 vải
+- Ngoại hình Đinh Bộ Lĩnh: tóc đen búi, khăn/dải đỏ, mặt và dáng chibi đầu to (đầu kèm tóc, không tính nón/chóp nón = 0,40H ± 0,03 ở khung 00) như hàng "Tổng thể" bảng A.
+- Trang phục 7 cấp theo hàng nón/áo/quần/găng/giày bảng A: Lv1 không nón lá, áo giao lĩnh nâu dài, giày, dải tóc đỏ; Lv10–30 vải
   xanh/tím; Lv40–60 giáp đỏ vàng, mũ tướng.
 - Kiếm và cung 7 cấp, vệt chém và mũi tên đổi màu theo cấp (bảng A mục 2–3).
 - Hào quang Full +8/+12/+14/+16 (bảng A mục 8, bảng B mục 10).
@@ -302,6 +301,21 @@ thiết kế, không cắt ghép ảnh vào game.
 - **Cải trang Sơn Tinh / Thủy Tinh / Thánh Gióng** = biến hình thay cả người, [Phạm vi sau]
   theo 17_ngoai_hinh; chưa làm.
 - **Bỏ hàng "Đi"**: chỉ có chạy (bảng 30 khung).
-- Nhân vật áo đỏ, áo choàng đỏ ở bảng B là dáng đồ cấp cao; **Lv1 theo bảng A** (nón lá, áo nâu).
+- Nhân vật áo đỏ, áo choàng đỏ ở bảng B là dáng đồ cấp cao; **Lv1 theo bảng A** (không nón lá, áo giao lĩnh nâu dài, giày, dải tóc đỏ).
   Áo choàng là ô thời trang.
 - Đòn thường "Tấn công 1/2/3" trên bảng B dựng bằng 16 tư thế đánh trong bảng 30 khung.
+
+**Cập nhật ưu tiên theo quyết định cuối 30/10/2026 — bộ hình thử chưa duyệt:**
+Mẫu ngoại hình là hàng “Tổng thể” Lv1, không lấy nón lá ở hàng trang bị. Đầu kèm tóc
+bằng 0,40H ± 0,03, thay các tỉ lệ cũ và đề nghị 0,50H trước đó. Người cao 128 px
+khi hiển thị trên 1600×720, tương ứng khoảng 96 px logic A0; thân/chân ngắn, chắc.
+Áo giao lĩnh nâu dài, giày và dải tóc đỏ; không đổi trang phục theo các đoạn STYLE cũ
+khi chúng trái quyết định này. Các mô tả cũ ở mục 1/4 giữ để tra lịch sử.
+Kiếm cầm tay: cạnh dài nhất của hộp pixel không trong suốt = 0,75–0,80H;
+không thay bằng phép đo dọc trục lưỡi. Cung cầm/giương cao 0,90–1,00H (thay số cũ
+0,35–0,40H); tên dài 0,55–0,65H. Kiếm chúc xuống sau ngoài đánh; cung ở trước thân.
+Trong nhịp đánh ẩn kiếm cầm, hình vung có đoạn lưỡi ngắn cùng vệt cong sát thân;
+không tăng đoạn lưỡi này thành cây kiếm cầm tay nguyên chiều dài.
+Tên đặt sẵn: đuôi ở tay kéo dây, thân tên qua điểm tựa trên cung; khi thả, đuôi tên bay
+bắt đầu tại dây đã thả, không nhảy sang bàn tay cầm thân cung. Góc được vẽ sẵn vào ảnh;
+mọi Sprite2D vẫn rotation = 0. Kiếm và cung thuộc hai phái riêng, không hiện cùng người.

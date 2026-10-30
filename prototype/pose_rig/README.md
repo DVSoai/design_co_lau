@@ -1,3 +1,36 @@
+## Bản hiện tại —30/10/2026, chưa duyệt mỹ thuật
+
+Theo `docs/18_luong_tham_khao.md` mục 4: ngoại hình hàng Tổng thể Lv1, không nón,
+áo giao lĩnh nâu dài, giày, dải tóc đỏ; đầu/tóc 0,40H ±0,03. Hiển thị 128 px trên
+1600×720. Dữ liệu `parts.presentation` đo lại alpha người thật để tính hệ số xem.
+Kiếm cầm đo cạnh dài nhất hộp alpha: 0,75–0,80H; cung 0,90–1,00H; tên 0,55–0,65H.
+Tên được căn bằng pixel thân tên thật qua dây và điểm tựa cung; lúc thả sinh tại dây.
+Kiếm đánh 5 nhịp thủ/kéo/lia/giữ/thu, 0,30 s; hit 0,10–0,20 s. Ẩn kiếm cầm,
+thay bằng hình vung có lưỡi ngắn + vệt cong sát áo, toàn bộ vệt ≤1,3H.
+Cung 8 nhịp, thả nhịp 5; tổng 0,40 s vẫn là đề xuất xem thử.
+Chỉ có Lv1; hai phái không mang chung kiếm/cung. Các mục dưới là lịch sử, số cũ
+không thay các quy định hiện tại ở đây.
+
+```sh
+python3 tools/check_lv1_30.py
+python3 tools/check_lv1_sizes.py
+python3 tools/check_arrow_alignment.py
+python3 tools/audit_lv1_redraw.py --base 3371ab3
+godot --headless --fixed-fps 60 --path prototype --script res://tests/compact_anatomy_checks.gd
+godot --headless --fixed-fps 60 --path prototype --script res://tests/arrow_alignment_checks.gd
+```
+
+Dựng ảnh so bằng scene thật (cần display/Xvfb):
+
+```sh
+godot --path prototype res://pose_rig/review_capture.tscn -- --out /tmp/ref_render/own
+python3 tools/compare_ref_lv1.py --out /tmp/ref_render/comparisons
+```
+
+Chạy trình dựng tham khảo theo docs/18 trước khi so. Ảnh so ba cột và tài nguyên
+tham khảo chỉ lưu `/tmp`, tuyệt đối không commit. Ảnh viewer của dự án ở `reports/`; cột bảng mẫu và nhân vật mới đều cao 128 px.
+Báo cáo kiểm tra hiện tại: `reports/lv1_compact40_checks.txt`.
+
 ## Sửa đúng dáng Kiếm và cách cầm —30/10/2026, chưa duyệt
 
 Kiếm6nhịp lia ngang: thủ/kéo/lia/giữ/giữ/về thủ,0,30s, hit0,10–0,20s.

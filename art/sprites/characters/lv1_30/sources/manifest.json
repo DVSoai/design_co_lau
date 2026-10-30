@@ -12,35 +12,35 @@
       "image": "heads.png",
       "prompt": "heads.prompt.txt",
       "sha256": "92509c8146dcf00dd455958130d6baaa27c1ee6ccb832265bd6e3ec2d1a3c651",
-      "status": "retained, awaiting visual approval",
+      "status": "historical source, not active in current common body set",
       "extra_reference": null
     },
     {
       "image": "bodies_a.png",
       "prompt": "bodies_a.prompt.txt",
       "sha256": "e01ca1dd2af3282d5a10852181898c0cde77971abab41cd18f830569da8da024",
-      "status": "retained, awaiting visual approval",
+      "status": "historical source, not active in current common body set",
       "extra_reference": null
     },
     {
       "image": "bodies_b_rejected.png",
       "prompt": "bodies_b_rejected.prompt.txt",
       "sha256": "13170d93d837c46087ba6469b9fdb6f7bd033faea535dda1bbdbba94398b1590",
-      "status": "rejected: head baked into torso",
+      "status": "historical source, not active in current common body set",
       "extra_reference": null
     },
     {
       "image": "bodies_b.png",
       "prompt": "bodies_b.prompt.txt",
       "sha256": "82005d19f4d7fdb91713294b970384df3c023bfb577b012a4982019b87feb18f",
-      "status": "retained, awaiting visual approval",
+      "status": "historical source, not active in current common body set",
       "extra_reference": "art/sprites/characters/lv1_30/sources/bodies_a.png"
     },
     {
       "image": "legs.png",
       "prompt": "legs.prompt.txt",
       "sha256": "fdc66217914feb318c43d746951b26223c50956a9ccd32ed46531343b41b7e46",
-      "status": "retained, awaiting visual approval",
+      "status": "historical source, not active in current common body set",
       "extra_reference": null
     },
     {
@@ -54,8 +54,125 @@
       "image": "horizontal_attack.png",
       "prompt": "horizontal_attack.prompt.txt",
       "sha256": "1276b278729a45eb54b8cebc08832c314cdac671e6ff03f226560d8eca3022f2",
-      "status": "retained, awaiting visual approval",
+      "status": "historical source, not active in current common body set",
       "extra_reference": "art/sprites/characters/lv1_30/sources/bodies_a.png"
+    },
+    {
+      "image": "heads_50.png",
+      "prompt": "heads_50.prompt.txt",
+      "sha256": "9665671c16bb3eac68198ddc74ec4821e40af38d2d91049bc460c2759638d541",
+      "status": "active derivation, awaiting user visual approval",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ]
+    },
+    {
+      "image": "bodies_a_50.png",
+      "prompt": "bodies_a_50.prompt.txt",
+      "sha256": "1113ca31396ae499d16db2bf8702c4f52017e25564bfa9232016f540f62d405b",
+      "status": "superseded brief; retained as history, not used",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ],
+      "extra_references": [
+        "art/sprites/characters/lv1_30/sources/bodies_a.png"
+      ]
+    },
+    {
+      "image": "bodies_b_50.png",
+      "prompt": "bodies_b_50.prompt.txt",
+      "sha256": "c869863490346dea3f71959a6ceb485ada165cd41fb43d204ef08abc9837859a",
+      "status": "superseded brief; retained as history, not used",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ],
+      "extra_references": [
+        "art/sprites/characters/lv1_30/sources/bodies_a.png"
+      ]
+    },
+    {
+      "image": "legs_50.png",
+      "prompt": "legs_50.prompt.txt",
+      "sha256": "a607fff476041b4f49e2e0ad61d3fa7fffe5994f6377de2663456e53f037c4f2",
+      "status": "superseded brief; retained as history, not used",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ]
+    },
+    {
+      "image": "hat_50.png",
+      "prompt": "hat_50.prompt.txt",
+      "sha256": "a59b66112ab68780fb96f6e35ed59966aa25714f5b596a9534fcf0e1c355c4d1",
+      "status": "superseded brief; retained as history, not used",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ]
+    },
+    {
+      "image": "compact_swings_50.png",
+      "prompt": "compact_swings_50.prompt.txt",
+      "sha256": "5feb73818631754bc5e1b17ed6a26981125745fd5dc923d11c51fb67e5ac4618",
+      "status": "active derivation, awaiting user visual approval",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ]
+    },
+    {
+      "image": "bodies_a_board40.png",
+      "prompt": "bodies_a_board40.prompt.txt",
+      "sha256": "b3d4efbd316e4dd9d2d59259790fc669f98fe33e1f3f73ab7aaea18d2ea7eb3b",
+      "status": "active derivation, awaiting user visual approval",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ],
+      "extra_references": [
+        "own Lv1 Total board crop, enlarged for reading",
+        "art/sprites/characters/lv1_30/sources/bodies_a.png"
+      ]
+    },
+    {
+      "image": "bodies_b_board40.png",
+      "prompt": "bodies_b_board40.prompt.txt",
+      "sha256": "e0c369544b606cfb8af1b1dc50a2fe19391e0579f4b292ae3402771cb5fa97bf",
+      "status": "active derivation, awaiting user visual approval",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ],
+      "extra_references": [
+        "own Lv1 Total board crop, enlarged for reading",
+        "art/sprites/characters/lv1_30/sources/bodies_a.png"
+      ]
+    },
+    {
+      "image": "legs_board40.png",
+      "prompt": "legs_board40.prompt.txt",
+      "sha256": "cd40f2366d2fbcdce85fc617999bb89d994659c447eaff428ad910e6a6756d40",
+      "status": "active derivation, awaiting user visual approval",
+      "references": [
+        "art/reference/chr_dbl_board_trang_bi.png",
+        "art/reference/chr_dbl_board_animation.png",
+        "art/reference/ref_dinh_bo_linh.png"
+      ],
+      "extra_references": [
+        "own Lv1 Total board crop, enlarged for reading"
+      ]
     }
-  ]
+  ],
+  "current_decision": "head/hair 0.40H; no hat; brown long cross-collar robe, shoes; held bow 0.9–1.0H; pending approval"
 }

@@ -12,7 +12,8 @@
         "body": {
           "image": 0,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 0,
@@ -40,7 +41,8 @@
         "body": {
           "image": 1,
           "dx": 0,
-          "dy": -1
+          "dy": -1,
+          "cung_image": 12
         },
         "legs": {
           "image": 0,
@@ -68,7 +70,8 @@
         "body": {
           "image": 2,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 1,
@@ -96,7 +99,8 @@
         "body": {
           "image": 3,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 2,
@@ -124,7 +128,8 @@
         "body": {
           "image": 4,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 3,
@@ -152,7 +157,8 @@
         "body": {
           "image": 2,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 4,
@@ -180,7 +186,8 @@
         "body": {
           "image": 3,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 5,
@@ -208,7 +215,8 @@
         "body": {
           "image": 4,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 1,
@@ -348,7 +356,8 @@
         "body": {
           "image": 5,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 6,
@@ -376,7 +385,8 @@
         "body": {
           "image": 5,
           "dx": 0,
-          "dy": 0
+          "dy": 0,
+          "cung_image": 12
         },
         "legs": {
           "image": 6,
@@ -468,7 +478,8 @@
           "image": 0,
           "dx": 0,
           "dy": 0,
-          "stance": true
+          "stance": true,
+          "lunge": true
         },
         "weapon": {
           "image": 0,
@@ -491,7 +502,7 @@
         "body": {
           "image": 12,
           "dx": 0,
-          "dy": -6
+          "dy": 0
         },
         "legs": {
           "image": 0,

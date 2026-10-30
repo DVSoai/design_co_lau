@@ -54,9 +54,10 @@ func run() -> void:
 							check(a.landmarks.belly.x>a.landmarks.string.x,"bow belly forward, string behind")
 							check(a.nocked_arrow.visible==beat.nocked and a.arrows.size()==(1 if beat.projectile!=null else 0),"nocked only draw; separate projectile only release")
 							if beat.nocked:
-								var tail: Vector2=a.nocked_arrow.position+a.anchor("arrow","tail")
+								var ready: String=beat.get("nocked_asset","arrow")
+								var tail: Vector2=a.nocked_arrow.position+a.anchor(ready,"tail")
 								check(tail.distance_to(a.landmarks.string)<=1,"nocked tail on string")
-								var tip: Vector2=a.nocked_arrow.position+a.anchor("arrow","tip")
+								var tip: Vector2=a.nocked_arrow.position+a.anchor(ready,"tip")
 								check(tip.x>a.landmarks.far_hand.x,"nocked arrow tip beyond bow")
 								check(a.landmarks.string.distance_to(a.landmarks.near_hand)<=1,"V string meets actual near-hand anchor")
 						cases+=1

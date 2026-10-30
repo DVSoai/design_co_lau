@@ -37,6 +37,6 @@ for id,at in positions.items():
  box=Image.open(ROOT/'prototype/pose_rig/art/lv1_30'/P['assets'][id]['file']).getbbox()
  ys += [at[1]+box[1]*.5,at[1]+box[3]*.5]
 height=max(ys)-min(ys)
-check(abs(height-96)<.5 and abs(max(ys))<.5,'idle actual RGBA height=%.3f logic px sole=%.3f; preview1600x720 height=%.3f px' % (height,max(ys),height*(128/96.204)))
+check(abs(height-96)<.5 and abs(max(ys))<.5,'idle actual RGBA height=%.3f logic px sole=%.3f; preview1600x720 height=%.3f px' % (height,max(ys),height*P['presentation']['display_factor']))
 print(f'Lv1 real-file checks failures={fail}; assets={len(P["assets"])} frames=30 skills=4')
 sys.exit(bool(fail))

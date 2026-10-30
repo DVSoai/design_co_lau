@@ -7,8 +7,10 @@ var page := "frames"
 var air_mode:=false
 var action_option: OptionButton
 var old_size: Vector2i
+var preview_factor:=1.0
 func _ready() -> void:
 	old_size=get_window().content_scale_size
+	preview_factor=float(JSON.parse_string(FileAccess.get_file_as_string("res://pose_rig/data/parts.json")).presentation.display_factor)
 	get_window().content_scale_size=Vector2i(1600,720)
 	RenderingServer.set_default_clear_color(Color("202833"))
 	var args:=OS.get_cmdline_user_args()
@@ -17,7 +19,9 @@ func _ready() -> void:
 	if "--attacks" in args:page="attacks"
 	if "--compare" in args:page="compare"
 	build()
-	if "--capture-lv1" in args:capture.call_deferred()
+	if "--capture-lv1" in args:
+		if page=="compare":actor.autoplay=false;actor.sample_frame(0)
+		capture.call_deferred()
 func label_at(text: String, at: Vector2, size: int=18) -> Label:
 	var l:=Label.new()
 	l.text=text
@@ -74,7 +78,7 @@ func build() -> void:
 	if page=="frames":
 		for i in 30:
 			var cell:=Rect2(12+(i%6)*264,78+(i/6)*128,252,120)
-			var a=make_actor(cell.get_center(),128.0/96.204)
+			var a=make_actor(cell.get_center(),preview_factor)
 			a.sample_frame(i)
 			var box: Rect2=actor_bounds(a)
 			var factor:=minf(1.0,minf(236.0/box.size.x,102.0/box.size.y))
@@ -87,7 +91,7 @@ func build() -> void:
 	elif page=="attacks":
 		var ids: Array=["slash","tram_kiem"] if school=="kiem" else ["shoot","xa_tien"]
 		for row in 2:
-			var a=make_actor(Vector2(100,360+row*310),(128.0/96.204),true)
+			var a=make_actor(Vector2(210,360+row*310),(preview_factor),true)
 			a.play(ids[row])
 			if row==0:actor=a
 			label_at(ids[row]+" / tốc độ thật",Vector2(24,110+row*310),20)
@@ -95,7 +99,7 @@ func build() -> void:
 				var columns:=3 if school=="kiem" else 4
 				var step:=360 if school=="kiem" else 275
 				var at:=Vector2(500+(i%columns)*step,210+row*310+(i/columns)*140)
-				var s=make_actor(at,(128.0/96.204))
+				var s=make_actor(at,(preview_factor))
 				s.action=ids[row]
 				s.sample_beat(i,true)
 				label_at("Nhịp%d" % i,at+Vector2(-90,-110),16)
@@ -104,11 +108,11 @@ func build() -> void:
 		var t:=Sprite2D.new()
 		t.texture=load("res://pose_rig/reports/reference_lv1.png")
 		t.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
-		t.position=Vector2(250,350)
-		t.scale=Vector2.ONE*4
+		t.position=Vector2(250,366)
+		t.scale=Vector2.ONE*(128.0/t.texture.get_height())
 		add_child(t)
 		label_at("Lv1 mới — Kiếm" if school=="kiem" else "Lv1 mới — Cung",Vector2(680,100),22)
-		actor=make_actor(Vector2(850,430),(128.0/96.204),true)
+		actor=make_actor(Vector2(850,430),(preview_factor),true)
 		var close=make_actor(Vector2(1250,570),4.0)
 		close.sample_frame(0)
 		label_at("Cỡ 128 px",Vector2(760,460),18)

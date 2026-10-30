@@ -51,292 +51,461 @@
         "cung": "bow_hold"
       },
       "run_weapon": "sword_run",
-      "combat_stance": "legs_guard"
+      "combat_stance": "legs_guard",
+      "combat_lunge": "legs_lunge"
     }
   },
   "assets": {
-    "head_0": {
-      "file": "head_0.png",
+    "head_without_hat_0": {
+      "file": "head_without_hat_0.png",
       "size": [
-        81,
-        72
+        95,
+        77
       ],
       "anchors": {
         "neck": [
-          43.577,
-          68.239
+          55.3,
+          77
         ]
       },
       "source": {
-        "sheet": "heads",
+        "sheet": "heads_50",
         "cell": 0,
         "crop": [
           0,
           0,
-          384,
-          512
+          465,
+          402
         ],
         "bounds": [
-          32,
-          135,
-          372,
-          437
+          41,
+          72,
+          449,
+          402
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.23333333333333334
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_0": {
+      "file": "head_0.png",
+      "size": [
+        95,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          55.3,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_0",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_1": {
+      "file": "head_without_hat_1.png",
+      "size": [
+        95,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          53.2,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 1,
+        "crop": [
+          470,
+          0,
+          910,
+          402
+        ],
+        "bounds": [
+          10,
+          72,
+          418,
+          402
+        ],
+        "scale": 0.23333333333333334
       },
       "status": "drawn_unapproved"
     },
     "head_1": {
       "file": "head_1.png",
       "size": [
-        81,
-        73
+        95,
+        77
       ],
       "anchors": {
         "neck": [
-          44.535,
-          68.958
+          53.2,
+          77
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 1,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_1",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_2": {
+      "file": "head_without_hat_2.png",
+      "size": [
+        87,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          49.85,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 2,
         "crop": [
-          384,
+          920,
           0,
-          768,
-          512
+          1330,
+          434
         ],
         "bounds": [
-          26,
-          133,
-          364,
-          437
+          11,
+          84,
+          402,
+          430
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.22254335260115607
       },
       "status": "drawn_unapproved"
     },
     "head_2": {
       "file": "head_2.png",
       "size": [
-        85,
-        75
+        87,
+        77
       ],
       "anchors": {
         "neck": [
-          41.662,
-          71.592
+          49.85,
+          77
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 2,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_2",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_3": {
+      "file": "head_without_hat_3.png",
+      "size": [
+        95,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          61.301,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 3,
         "crop": [
-          768,
+          1335,
           0,
-          1152,
-          512
+          1774,
+          390
         ],
         "bounds": [
-          20,
-          124,
-          376,
-          439
+          14,
+          81,
+          397,
+          390
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.24919093851132687
       },
       "status": "drawn_unapproved"
     },
     "head_3": {
       "file": "head_3.png",
       "size": [
-        77,
-        71
+        95,
+        77
       ],
       "anchors": {
         "neck": [
-          42.38,
-          64.169
+          61.301,
+          77
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 3,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_3",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_4": {
+      "file": "head_without_hat_4.png",
+      "size": [
+        95,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          54.194,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 4,
         "crop": [
-          1152,
           0,
-          1536,
-          512
+          444,
+          465,
+          800
         ],
         "bounds": [
-          20,
-          142,
-          341,
-          437
+          35,
+          15,
+          455,
+          356
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.22580645161290322
       },
       "status": "drawn_unapproved"
     },
     "head_4": {
       "file": "head_4.png",
       "size": [
-        73,
-        79
+        256,
+        256
       ],
       "anchors": {
         "neck": [
-          8.859,
-          45.732
+          128,
+          128
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 4,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_4",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 90
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_5": {
+      "file": "head_without_hat_5.png",
+      "size": [
+        92,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          51.857,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 5,
         "crop": [
-          0,
-          512,
-          384,
-          1024
+          470,
+          444,
+          910,
+          802
         ],
         "bounds": [
-          48,
-          43,
-          352,
-          372
+          7,
+          15,
+          416,
+          358
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.22448979591836735
       },
       "status": "drawn_unapproved"
     },
     "head_5": {
       "file": "head_5.png",
       "size": [
-        87,
-        76
+        256,
+        256
       ],
       "anchors": {
         "neck": [
-          42.859,
-          8.62
+          128,
+          128
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 5,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_5",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 180
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_6": {
+      "file": "head_without_hat_6.png",
+      "size": [
+        87,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          53.378,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 6,
         "crop": [
-          384,
-          512,
-          768,
-          1024
+          920,
+          444,
+          1330,
+          800
         ],
         "bounds": [
-          7,
-          43,
-          369,
-          362
+          0,
+          18,
+          384,
+          356
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.22713864306784662
       },
       "status": "drawn_unapproved"
     },
     "head_6": {
       "file": "head_6.png",
       "size": [
-        72,
-        80
+        256,
+        256
       ],
       "anchors": {
         "neck": [
-          63.93,
-          45.972
+          128,
+          128
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 6,
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_6",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 270
+      },
+      "status": "drawn_unapproved"
+    },
+    "head_without_hat_7": {
+      "file": "head_without_hat_7.png",
+      "size": [
+        95,
+        77
+      ],
+      "anchors": {
+        "neck": [
+          58.484,
+          77
+        ]
+      },
+      "source": {
+        "sheet": "heads_50",
+        "cell": 7,
         "crop": [
-          768,
-          512,
-          1152,
-          1024
+          1335,
+          444,
+          1774,
+          818
         ],
         "bounds": [
-          24,
-          41,
-          323,
-          375
+          1,
+          20,
+          420,
+          360
         ],
-        "scale": 0.23943661971830985
+        "scale": 0.22580645161290322
       },
       "status": "drawn_unapproved"
     },
     "head_7": {
       "file": "head_7.png",
       "size": [
-        85,
-        73
+        95,
+        77
       ],
       "anchors": {
         "neck": [
-          45.254,
-          72.07
+          58.484,
+          77
         ]
       },
       "source": {
-        "sheet": "heads",
-        "cell": 7,
-        "crop": [
-          1152,
-          512,
-          1536,
-          1024
-        ],
-        "bounds": [
-          12,
-          54,
-          366,
-          357
-        ],
-        "scale": 0.23943661971830985
+        "sheet": "heads_50",
+        "bare_asset": "head_without_hat_7",
+        "hat": false,
+        "target_ratio": 0.4,
+        "offline_angle": 0
       },
       "status": "drawn_unapproved"
     },
     "body_0": {
       "file": "body_0.png",
       "size": [
-        79,
-        75
+        106,
+        100
       ],
       "anchors": {
         "neck": [
-          39.816,
-          5.205
+          57.77,
+          6.757
         ],
         "hip": [
-          37.474,
-          61.156
+          54.392,
+          56.757
         ],
         "grip": [
-          73.647,
-          67.662
+          97.973,
+          74.324
         ],
         "far_hand": [
-          8.067,
-          67.401
+          11.486,
+          73.986
         ],
         "near_hand": [
-          73.647,
-          67.662
+          97.973,
+          74.324
         ],
         "back": [
-          19.258,
-          35.132
+          32.432,
+          29.73
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 0,
         "crop": [
           0,
@@ -345,49 +514,49 @@
           341
         ],
         "bounds": [
-          122,
-          45,
-          427,
-          333
+          109,
+          46,
+          424,
+          341
         ],
-        "scale": 0.26023720943453776
+        "scale": 0.33783783783783783
       },
       "status": "drawn_unapproved"
     },
     "body_1": {
       "file": "body_1.png",
       "size": [
-        82,
-        75
+        105,
+        98
       ],
       "anchors": {
         "neck": [
-          37.507,
-          4.949
+          51.99,
+          6.665
         ],
         "hip": [
-          37.507,
-          60.949
+          50.99,
+          56.655
         ],
         "grip": [
-          72.93,
-          67.981
+          95.981,
+          74.652
         ],
         "far_hand": [
-          8.856,
-          67.721
+          12.331,
+          73.652
         ],
         "near_hand": [
-          72.93,
-          67.981
+          95.981,
+          74.652
         ],
         "back": [
-          19.274,
-          34.902
+          29.327,
+          29.994
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 1,
         "crop": [
           512,
@@ -396,49 +565,49 @@
           341
         ],
         "bounds": [
-          94,
+          82,
           46,
-          409,
-          333
+          397,
+          341
         ],
-        "scale": 0.26046511627906976
+        "scale": 0.3332666866600023
       },
       "status": "drawn_unapproved"
     },
     "body_2": {
       "file": "body_2.png",
       "size": [
-        125,
-        75
+        146,
+        92
       ],
       "anchors": {
         "neck": [
-          71.789,
-          6.798
+          83.947,
+          7.574
         ],
         "hip": [
-          57.377,
-          60.912
+          67.852,
+          54.913
         ],
         "grip": [
-          119.376,
-          27.193
+          136.02,
+          29.034
         ],
         "far_hand": [
-          8.43,
-          51.394
+          11.677,
+          53.65
         ],
         "near_hand": [
-          119.376,
-          27.193
+          136.02,
+          29.034
         ],
         "back": [
-          38.342,
-          33.719
+          47.339,
+          29.666
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 2,
         "crop": [
           1024,
@@ -447,49 +616,49 @@
           341
         ],
         "bounds": [
-          2,
-          51,
+          0,
+          50,
           463,
-          328
+          341
         ],
-        "scale": 0.2719279763722069
+        "scale": 0.31559091493990427
       },
       "status": "drawn_unapproved"
     },
     "body_3": {
       "file": "body_3.png",
       "size": [
-        133,
-        78
+        150,
+        94
       ],
       "anchors": {
         "neck": [
-          71.234,
-          7.064
+          80.16,
+          9.124
         ],
         "hip": [
-          60.931,
-          62.109
+          65.822,
+          57.024
         ],
         "grip": [
-          123.334,
-          20.016
+          140.116,
+          24.113
         ],
         "far_hand": [
-          10.008,
-          60.931
+          11.405,
+          50.181
         ],
         "near_hand": [
-          123.334,
-          20.016
+          140.116,
+          24.113
         ],
         "back": [
-          40.326,
-          32.673
+          44.642,
+          30.956
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 3,
         "crop": [
           0,
@@ -498,49 +667,49 @@
           683
         ],
         "bounds": [
-          33,
-          38,
-          486,
-          304
+          36,
+          35,
+          496,
+          323
         ],
-        "scale": 0.29435386046469686
+        "scale": 0.3258521995904196
       },
       "status": "drawn_unapproved"
     },
     "body_4": {
       "file": "body_4.png",
       "size": [
-        140,
-        81
+        152,
+        95
       ],
       "anchors": {
         "neck": [
-          79.135,
-          8.863
+          88.418,
+          9.362
         ],
         "hip": [
-          67.423,
-          63.625
+          72.815,
+          56.865
         ],
         "grip": [
-          128.516,
-          43.366
+          140.082,
+          42.302
         ],
         "far_hand": [
-          14.877,
-          32.604
+          14.216,
+          33.287
         ],
         "near_hand": [
-          128.516,
-          43.366
+          140.082,
+          42.302
         ],
         "back": [
-          45.265,
-          31.971
+          50.277,
+          29.126
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 4,
         "crop": [
           512,
@@ -549,49 +718,49 @@
           683
         ],
         "bounds": [
-          35,
-          45,
-          476,
-          302
+          38,
+          47,
+          475,
+          320
         ],
-        "scale": 0.3165408278958126
+        "scale": 0.34673763648382716
       },
       "status": "drawn_unapproved"
     },
     "body_5": {
       "file": "body_5.png",
       "size": [
-        140,
-        74
+        160,
+        94
       ],
       "anchors": {
         "neck": [
-          73.966,
-          3.255
+          87.54,
+          7.988
         ],
         "hip": [
-          62.132,
-          57.99
+          72.229,
+          55.586
         ],
         "grip": [
-          15.681,
-          44.084
+          20.304,
+          46.267
         ],
         "far_hand": [
-          124.264,
-          22.486
+          146.788,
+          26.295
         ],
         "near_hand": [
-          15.681,
-          44.084
+          20.304,
+          46.267
         ],
         "back": [
-          41.421,
-          28.403
+          50.594,
+          28.958
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 5,
         "crop": [
           1024,
@@ -600,49 +769,49 @@
           683
         ],
         "bounds": [
-          6,
-          52,
-          480,
-          302
+          0,
+          48,
+          481,
+          331
         ],
-        "scale": 0.2958659095385544
+        "scale": 0.3328528925566291
       },
       "status": "drawn_unapproved"
     },
     "body_6": {
       "file": "body_6.png",
       "size": [
-        97,
-        89
+        89,
+        80
       ],
       "anchors": {
         "neck": [
-          90.598,
-          47.618
+          83.287,
+          42.761
         ],
         "hip": [
-          34.941,
-          41.434
+          33.818,
+          35.495
         ],
         "grip": [
-          53.184,
-          25.046
+          50.028,
+          23.477
         ],
         "far_hand": [
-          39.269,
-          59.368
+          35.774,
+          58.413
         ],
         "near_hand": [
-          53.184,
-          25.046
+          50.028,
+          23.477
         ],
         "back": [
-          13.296,
-          10.513
+          15.651,
+          13.136
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 6,
         "crop": [
           0,
@@ -651,49 +820,49 @@
           1024
         ],
         "bounds": [
-          122,
+          115,
           0,
-          436,
-          288
+          432,
+          285
         ],
-        "scale": 0.3092082730095703
+        "scale": 0.2794866631447745
       },
       "status": "drawn_unapproved"
     },
     "body_7": {
       "file": "body_7.png",
       "size": [
-        108,
-        83
+        96,
+        74
       ],
       "anchors": {
         "neck": [
-          60.543,
-          72.408
+          53.777,
+          64.046
         ],
         "hip": [
-          59.022,
-          16.429
+          52.966,
+          14.052
         ],
         "grip": [
-          13.386,
-          32.857
+          11.89,
+          25.672
         ],
         "far_hand": [
-          98.268,
-          31.64
+          88.907,
+          24.862
         ],
         "near_hand": [
-          13.386,
-          32.857
+          11.89,
+          25.672
         ],
         "back": [
-          37.725,
-          -13.995
+          35.401,
+          -7.567
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 7,
         "crop": [
           512,
@@ -702,49 +871,49 @@
           1024
         ],
         "bounds": [
-          79,
+          78,
           0,
           434,
-          273
+          274
         ],
-        "scale": 0.30423551978342317
+        "scale": 0.27023474137614506
       },
       "status": "drawn_unapproved"
     },
     "body_8": {
       "file": "body_8.png",
       "size": [
-        102,
-        93
+        98,
+        92
       ],
       "anchors": {
         "neck": [
-          87.569,
-          56.196
+          81.776,
+          51.311
         ],
         "hip": [
-          32.408,
-          46.543
+          32.71,
+          41.69
         ],
         "grip": [
-          56.886,
-          18.617
+          56.762,
+          16.355
         ],
         "far_hand": [
-          32.063,
-          49.99
+          28.541,
+          45.217
         ],
         "near_hand": [
-          56.886,
-          18.617
+          56.762,
+          16.355
         ],
         "back": [
-          8.274,
-          12.067
+          11.866,
+          16.035
         ]
       },
       "source": {
-        "sheet": "bodies_a",
+        "sheet": "bodies_a_board40",
         "cell": 8,
         "crop": [
           1024,
@@ -753,253 +922,253 @@
           1024
         ],
         "bounds": [
-          72,
+          71,
           0,
-          368,
-          270
+          376,
+          288
         ],
-        "scale": 0.34476066350449647
+        "scale": 0.32069076786835204
       },
       "status": "drawn_unapproved"
     },
     "body_9": {
       "file": "body_9.png",
       "size": [
-        74,
-        71
+        99,
+        84
       ],
       "anchors": {
         "neck": [
-          45.05,
-          4.775
+          68.506,
+          6.553
         ],
         "hip": [
-          40.898,
-          60.621
+          50.039,
+          53.018
         ],
         "grip": [
-          26.781,
-          44.22
+          30.381,
+          56.592
         ],
         "far_hand": [
-          62.904,
-          44.22
+          91.44,
+          50.039
         ],
         "near_hand": [
-          26.781,
-          44.22
+          30.381,
+          56.592
         ],
         "back": [
-          26.366,
-          39.86
+          30.679,
+          29.189
         ]
       },
       "source": {
-        "sheet": "horizontal_attack",
+        "sheet": "bodies_b_board40",
         "cell": 0,
         "crop": [
           0,
           0,
           512,
-          512
+          341
         ],
         "bounds": [
-          53,
-          103,
-          409,
-          447
+          102,
+          56,
+          436,
+          339
         ],
-        "scale": 0.20760542471058835
+        "scale": 0.2978513068522824
       },
       "status": "drawn_unapproved"
     },
     "body_10": {
       "file": "body_10.png",
       "size": [
-        100,
-        73
+        106,
+        87
       ],
       "anchors": {
         "neck": [
-          53.376,
-          6.943
+          73.569,
+          7.882
         ],
         "hip": [
-          51.857,
-          62.923
+          62.475,
+          56.636
         ],
         "grip": [
-          20.179,
-          45.131
+          13.721,
+          48.462
         ],
         "far_hand": [
-          91.997,
-          37.537
+          95.756,
+          69.773
         ],
         "near_hand": [
-          20.179,
-          45.131
+          13.721,
+          48.462
         ],
         "back": [
-          36.669,
-          41.225
+          43.499,
+          33.281
         ]
       },
       "source": {
-        "sheet": "horizontal_attack",
+        "sheet": "bodies_b_board40",
         "cell": 1,
         "crop": [
           512,
           0,
           1024,
-          512
+          341
         ],
         "bounds": [
-          8,
-          109,
-          469,
-          446
+          26,
+          40,
+          388,
+          339
         ],
-        "scale": 0.21697441717321111
+        "scale": 0.291938762808254
       },
       "status": "drawn_unapproved"
     },
     "body_11": {
       "file": "body_11.png",
       "size": [
-        103,
-        72
+        142,
+        81
       ],
       "anchors": {
         "neck": [
-          48.264,
-          6.505
+          76.79,
+          7.061
         ],
         "hip": [
-          40.08,
-          61.904
+          59.137,
+          53.841
         ],
         "grip": [
-          95.269,
-          31.477
+          136.515,
+          31.481
         ],
         "far_hand": [
-          5.876,
-          45.956
+          2.354,
+          38.248
         ],
         "near_hand": [
-          95.269,
-          31.477
+          136.515,
+          31.481
         ],
         "back": [
-          25.391,
-          40.92
+          40.013,
+          30.304
         ]
       },
       "source": {
-        "sheet": "horizontal_attack",
+        "sheet": "bodies_b_board40",
         "cell": 2,
         "crop": [
           1024,
           0,
           1536,
-          512
+          341
         ],
         "bounds": [
           0,
-          112,
-          493,
-          454
+          64,
+          484,
+          341
         ],
-        "scale": 0.2098438228340437
+        "scale": 0.2942143770285353
       },
       "status": "drawn_unapproved"
     },
     "body_12": {
       "file": "body_12.png",
       "size": [
-        99,
-        71
+        91,
+        88
       ],
       "anchors": {
         "neck": [
-          54.112,
-          4.579
+          49.701,
+          8.084
         ],
         "hip": [
-          43.289,
-          59.523
+          45.21,
+          58.084
         ],
         "grip": [
-          92.823,
-          56.609
+          73.353,
+          25.15
         ],
         "far_hand": [
-          8.325,
-          33.091
+          29.341,
+          60.18
         ],
         "near_hand": [
-          92.823,
-          56.609
+          73.353,
+          25.15
         ],
         "back": [
-          28.721,
-          38.711
+          25.749,
+          34.132
         ]
       },
       "source": {
-        "sheet": "horizontal_attack",
+        "sheet": "bodies_b_board40",
         "cell": 3,
         "crop": [
           0,
+          341,
           512,
-          512,
-          1024
+          683
         ],
         "bounds": [
-          30,
-          63,
-          507,
-          403
+          100,
+          22,
+          404,
+          317
         ],
-        "scale": 0.20812236094920655
+        "scale": 0.2994011976047904
       },
       "status": "drawn_unapproved"
     },
     "body_13": {
       "file": "body_13.png",
       "size": [
-        154,
-        88
+        145,
+        87
       ],
       "anchors": {
         "neck": [
-          69.302,
-          6.056
+          75.42,
+          7.542
         ],
         "hip": [
-          61.901,
-          61.564
+          64.862,
+          56.414
         ],
         "grip": [
-          146.005,
-          27.923
+          139.075,
+          25.945
         ],
         "far_hand": [
-          33.642,
-          44.071
+          22.928,
+          37.71
         ],
         "near_hand": [
-          146.005,
-          27.923
+          139.075,
+          25.945
         ],
         "back": [
-          38.352,
-          27.923
+          45.252,
+          32.28
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "bodies_b_board40",
         "cell": 4,
         "crop": [
           512,
@@ -1008,49 +1177,49 @@
           683
         ],
         "bounds": [
-          53,
-          71,
+          31,
+          31,
           512,
-          332
+          318
         ],
-        "scale": 0.3364167420498639
+        "scale": 0.30168143114959795
       },
       "status": "drawn_unapproved"
     },
     "body_14": {
       "file": "body_14.png",
       "size": [
-        103,
-        84
+        96,
+        86
       ],
       "anchors": {
         "neck": [
-          52.238,
-          4.514
+          59.927,
+          7.155
         ],
         "hip": [
-          44.499,
-          59.977
+          50.982,
+          56.349
         ],
         "grip": [
-          72.553,
-          64.491
+          41.74,
+          59.33
         ],
         "far_hand": [
-          92.223,
-          63.524
+          82.287,
+          59.628
         ],
         "near_hand": [
-          72.553,
-          64.491
+          41.74,
+          59.33
         ],
         "back": [
-          21.927,
-          27.731
+          31.603,
+          32.498
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "bodies_b_board40",
         "cell": 5,
         "crop": [
           1024,
@@ -1059,49 +1228,49 @@
           683
         ],
         "bounds": [
-          83,
-          72,
-          401,
-          332
+          46,
+          29,
+          369,
+          318
         ],
-        "scale": 0.3224574077934151
+        "scale": 0.2981423969999719
       },
       "status": "drawn_unapproved"
     },
     "body_15": {
       "file": "body_15.png",
       "size": [
-        142,
-        79
+        158,
+        100
       ],
       "anchors": {
         "neck": [
-          75.017,
-          6.352
+          78.153,
+          9.523
         ],
         "hip": [
-          72.899,
-          62.312
+          75.197,
+          59.435
         ],
         "grip": [
-          45.373,
-          13.612
+          44.659,
+          14.777
         ],
         "far_hand": [
-          134.606,
-          19.359
+          154.007,
+          25.613
         ],
         "near_hand": [
-          45.373,
-          13.612
+          44.659,
+          14.777
         ],
         "back": [
-          51.725,
-          32.064
+          53.853,
+          33.166
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "bodies_b_board40",
         "cell": 6,
         "crop": [
           0,
@@ -1110,49 +1279,49 @@
           1024
         ],
         "bounds": [
-          33,
-          36,
-          504,
-          296
+          30,
+          1,
+          512,
+          306
         ],
-        "scale": 0.3024862450738713
+        "scale": 0.3283722541370373
       },
       "status": "drawn_unapproved"
     },
     "body_16": {
       "file": "body_16.png",
       "size": [
-        149,
-        80
+        153,
+        99
       ],
       "anchors": {
         "neck": [
-          82.845,
-          7.475
+          81.911,
+          8.99
         ],
         "hip": [
-          77.55,
-          63.224
+          79.58,
+          58.936
         ],
         "grip": [
-          49.52,
-          13.704
+          47.948,
+          13.985
         ],
         "far_hand": [
-          142.955,
-          18.375
+          148.505,
+          23.641
         ],
         "near_hand": [
-          49.52,
-          13.704
+          47.948,
+          13.985
         ],
         "back": [
-          55.749,
-          32.079
+          57.937,
+          32.298
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "bodies_b_board40",
         "cell": 7,
         "crop": [
           512,
@@ -1161,49 +1330,49 @@
           1024
         ],
         "bounds": [
-          18,
-          38,
-          495,
-          296
+          28,
+          6,
+          488,
+          303
         ],
-        "scale": 0.31144773347989196
+        "scale": 0.3329709621360288
       },
       "status": "drawn_unapproved"
     },
     "body_17": {
       "file": "body_17.png",
       "size": [
-        149,
-        83
+        160,
+        98
       ],
       "anchors": {
         "neck": [
-          83.753,
-          10.124
+          86.152,
+          8.252
         ],
         "hip": [
-          79.458,
-          65.959
+          82.191,
+          58.095
         ],
         "grip": [
-          34.36,
-          13.499
+          35.649,
+          3.961
         ],
         "far_hand": [
-          142.042,
-          24.236
+          154.48,
+          22.776
         ],
         "near_hand": [
-          34.36,
-          13.499
+          35.649,
+          3.961
         ],
         "back": [
-          57.983,
-          35.28
+          60.736,
+          31.688
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "bodies_b_board40",
         "cell": 8,
         "crop": [
           1024,
@@ -1212,292 +1381,257 @@
           1024
         ],
         "bounds": [
-          3,
-          28,
-          490,
-          298
+          0,
+          8,
+          484,
+          306
         ],
-        "scale": 0.3067859955389482
-      },
-      "status": "drawn_unapproved"
-    },
-    "legs_guard": {
-      "file": "legs_guard.png",
-      "size": [
-        96,
-        61
-      ],
-      "anchors": {
-        "hip": [
-          46.698,
-          4.936
-        ],
-        "sole": [
-          46.698,
-          60.936
-        ]
-      },
-      "source": {
-        "sheet": "horizontal_attack",
-        "cell": 4,
-        "crop": [
-          500,
-          550,
-          1020,
-          965
-        ],
-        "bounds": [
-          4,
-          69,
-          511,
-          390
-        ],
-        "scale": 0.18983050847457628
+        "scale": 0.33008513993780103
       },
       "status": "drawn_unapproved"
     },
     "legs_0": {
       "file": "legs_0.png",
       "size": [
-        64,
-        75
+        57,
+        70
       ],
       "anchors": {
         "hip": [
-          33.098,
-          6.782
+          28.351,
+          5.301
         ],
         "sole": [
-          37.982,
-          74.607
+          28.351,
+          70
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 0,
         "crop": [
           0,
           0,
-          355,
-          444
+          397,
+          396
         ],
         "bounds": [
-          40,
-          117,
-          275,
-          393
+          73,
+          57,
+          322,
+          361
         ],
-        "scale": 0.27129770534508063
+        "scale": 0.23049645390070922
       },
       "status": "drawn_unapproved"
     },
     "legs_1": {
       "file": "legs_1.png",
       "size": [
-        88,
-        69
+        70,
+        63
       ],
       "anchors": {
         "hip": [
-          42.731,
-          6.215
+          39.455,
+          4.801
         ],
         "sole": [
-          67.851,
-          69.405
+          11.899,
+          63
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 1,
         "crop": [
-          355,
+          397,
           0,
-          710,
-          444
+          793,
+          396
         ],
         "bounds": [
           0,
-          124,
-          341,
-          392
+          60,
+          333,
+          364
         ],
-        "scale": 0.2589748109680418
+        "scale": 0.20875838555425003
       },
       "status": "drawn_unapproved"
     },
     "legs_2": {
       "file": "legs_2.png",
       "size": [
-        57,
-        73
+        60,
+        67
       ],
       "anchors": {
         "hip": [
-          28.818,
-          6.498
+          38.499,
+          4.568
         ],
         "sole": [
-          14.126,
-          72.892
+          18.271,
+          66.34
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 2,
         "crop": [
-          710,
+          793,
           0,
-          1064,
-          444
+          1190,
+          396
         ],
         "bounds": [
-          43,
-          132,
-          244,
-          392
+          6,
+          61,
+          281,
+          368
         ],
-        "scale": 0.28252761083906464
+        "scale": 0.21750811729056263
       },
       "status": "drawn_unapproved"
     },
     "legs_3": {
       "file": "legs_3.png",
       "size": [
-        91,
-        56
+        82,
+        54
       ],
       "anchors": {
         "hip": [
-          39.138,
-          6.18
+          37.516,
+          3.731
         ],
         "sole": [
-          81.365,
-          59.479
+          78.348,
+          54.305
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 3,
         "crop": [
-          1064,
+          1190,
           0,
-          1419,
-          444
+          1586,
+          396
         ],
         "bounds": [
           0,
-          117,
-          355,
-          334
+          57,
+          396,
+          319
         ],
-        "scale": 0.2574852605531192
+        "scale": 0.2072703660115689
       },
       "status": "drawn_unapproved"
     },
     "legs_4": {
       "file": "legs_4.png",
       "size": [
-        84,
-        70
+        70,
+        69
       ],
       "anchors": {
         "hip": [
-          39.442,
-          5.597
+          46.447,
+          5.491
         ],
         "sole": [
-          67.159,
-          67.692
+          57.43,
+          69
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 4,
         "crop": [
-          1419,
+          1586,
           0,
-          1774,
-          444
+          1983,
+          396
         ],
         "bounds": [
-          23,
-          129,
-          340,
-          392
+          64,
+          58,
+          370,
+          360
         ],
-        "scale": 0.26650277840248593
+        "scale": 0.22880516629593692
       },
       "status": "drawn_unapproved"
     },
     "legs_5": {
       "file": "legs_5.png",
       "size": [
-        85,
-        67
+        91,
+        65
       ],
       "anchors": {
         "hip": [
-          44.338,
-          6.513
+          44.107,
+          5.117
         ],
         "sole": [
-          74.648,
-          67.384
+          21.444,
+          65
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 5,
         "crop": [
           0,
-          444,
-          355,
-          887
+          396,
+          397,
+          793
         ],
         "bounds": [
-          17,
-          82,
-          355,
-          350
+          11,
+          52,
+          383,
+          319
         ],
-        "scale": 0.250498214380441
+        "scale": 0.24368508941428968
       },
       "status": "drawn_unapproved"
     },
     "legs_6": {
       "file": "legs_6.png",
       "size": [
-        89,
-        74
+        81,
+        68
       ],
       "anchors": {
         "hip": [
-          41.318,
-          11.149
+          40.265,
+          5.177
         ],
         "sole": [
-          24.594,
-          77.061
+          39.977,
+          70.176
         ]
       },
       "source": {
-        "sheet": "legs",
+        "sheet": "legs_board40",
         "cell": 6,
         "crop": [
-          355,
-          444,
-          710,
-          887
+          397,
+          396,
+          793,
+          793
         ],
         "bounds": [
-          73,
-          59,
-          345,
-          284
+          56,
+          43,
+          339,
+          278
         ],
-        "scale": 0.32791749317633906
+        "scale": 0.2876078039940847
       },
       "status": "drawn_unapproved"
     },
@@ -1513,11 +1647,15 @@
           96
         ],
         "sole": [
-          30.087999999999994,
-          79.27600000000001
+          31.001000000000005,
+          95.71199999999999
         ]
       },
-      "source": "offline rotation of own legs painting",
+      "source": {
+        "sheet": "legs_board40",
+        "cell": 6,
+        "offline_angle": 90
+      },
       "status": "drawn_unapproved"
     },
     "legs_8": {
@@ -1532,11 +1670,15 @@
           96
         ],
         "sole": [
-          112.72399999999998,
-          30.087999999999994
+          96.288,
+          31.001000000000005
         ]
       },
-      "source": "offline rotation of own legs painting",
+      "source": {
+        "sheet": "legs_board40",
+        "cell": 6,
+        "offline_angle": 180
+      },
       "status": "drawn_unapproved"
     },
     "legs_9": {
@@ -1551,27 +1693,77 @@
           96
         ],
         "sole": [
-          161.912,
-          112.72399999999998
+          160.999,
+          96.288
         ]
       },
-      "source": "offline rotation of own legs painting",
+      "source": {
+        "sheet": "legs_board40",
+        "cell": 6,
+        "offline_angle": 270
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_guard": {
+      "file": "legs_guard.png",
+      "size": [
+        96,
+        62
+      ],
+      "anchors": {
+        "hip": [
+          45.539687232552716,
+          5.086672372208823
+        ],
+        "sole": [
+          45.781825254804325,
+          62.086672372208824
+        ]
+      },
+      "source": {
+        "sheet": "legs_board40",
+        "cell": 7,
+        "stance_height_source": 57
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_lunge": {
+      "file": "legs_lunge.png",
+      "size": [
+        86,
+        63
+      ],
+      "anchors": {
+        "hip": [
+          49.39059260405385,
+          5.617979266594461
+        ],
+        "sole": [
+          44.474640259941204,
+          62.61797926659447
+        ]
+      },
+      "source": {
+        "sheet": "legs_board40",
+        "cell": 8,
+        "stance_height_source": 57
+      },
       "status": "drawn_unapproved"
     },
     "sword": {
       "file": "sword.png",
       "size": [
-        105,
-        115
+        109,
+        119
       ],
       "anchors": {
         "grip": [
-          20.124194997996856,
-          80.18233944514373
+          20.815787051449142,
+          82.93790153311768
         ],
         "tip": [
-          104.39426155210869,
-          -0.6288810936874017
+          107.98189532939243,
+          -0.6504933453577857
         ]
       },
       "source": {
@@ -1596,29 +1788,29 @@
     "bow_idle": {
       "file": "bow_idle.png",
       "size": [
-        21,
-        72
+        55,
+        185
       ],
       "anchors": {
         "grip": [
-          17.653846153846153,
-          35.65384615384615
+          45.36057692307692,
+          91.61057692307692
         ],
         "belly": [
-          20.942307692307693,
-          35.65384615384615
+          53.81009615384615,
+          91.61057692307692
         ],
         "string": [
-          1.5576923076923077,
-          35.65384615384615
+          4.002403846153846,
+          91.61057692307692
         ],
         "top": [
-          1.7307692307692308,
-          5.019230769230769
+          4.447115384615384,
+          12.896634615384615
         ],
         "bottom": [
-          2.25,
-          67.67307692307692
+          5.78125,
+          173.88221153846152
         ]
       },
       "source": {
@@ -1643,29 +1835,29 @@
     "bow_draw": {
       "file": "bow_draw.png",
       "size": [
-        21,
-        72
+        55,
+        185
       ],
       "anchors": {
         "grip": [
-          17.653846153846153,
-          35.65384615384615
+          45.36057692307692,
+          91.61057692307692
         ],
         "belly": [
-          20.942307692307693,
-          35.65384615384615
+          53.81009615384615,
+          91.61057692307692
         ],
         "string": [
-          1.5576923076923077,
-          35.65384615384615
+          4.002403846153846,
+          91.61057692307692
         ],
         "top": [
-          1.7307692307692308,
-          5.019230769230769
+          4.447115384615384,
+          12.896634615384615
         ],
         "bottom": [
-          2.25,
-          67.67307692307692
+          5.78125,
+          173.88221153846152
         ]
       },
       "source": "clean own idle bow wood; no baked arrow",
@@ -1674,29 +1866,29 @@
     "bow_release": {
       "file": "bow_release.png",
       "size": [
-        22,
-        72
+        56,
+        185
       ],
       "anchors": {
         "grip": [
-          17.475728155339805,
-          36.0
+          44.90291262135923,
+          92.5
         ],
         "belly": [
-          20.62135922330097,
-          36.0
+          52.98543689320389,
+          92.5
         ],
         "string": [
-          2.621359223300971,
-          36.0
+          6.735436893203884,
+          92.5
         ],
         "top": [
-          2.796116504854369,
-          5.067961165048544
+          7.184466019417476,
+          13.021844660194175
         ],
         "bottom": [
-          2.621359223300971,
-          68.15533980582525
+          6.735436893203884,
+          175.12135922330097
         ]
       },
       "source": {
@@ -1752,192 +1944,127 @@
     "arrow": {
       "file": "arrow.png",
       "size": [
-        115,
-        18
+        256,
+        128
       ],
       "anchors": {
         "tail": [
-          4.8875,
-          9.200000000000001
+          32.0,
+          64.0
         ],
         "tip": [
-          113.275,
-          9.4875
+          147.92790782421633,
+          64.0
         ]
       },
       "source": {
         "sheet": "weapons",
-        "cell": 5,
-        "crop": [
-          20,
-          565,
-          440,
-          665
-        ],
-        "bounds": [
-          9,
-          21,
-          409,
-          84
-        ],
-        "scale": 0.24
-      },
-      "status": "drawn_unapproved"
-    },
-    "white_a": {
-      "file": "white_a.png",
-      "size": [
-        90,
-        74
-      ],
-      "anchors": {
-        "centre": [
-          44.8,
-          36.0
-        ]
-      },
-      "source": {
-        "sheet": "weapons",
-        "cell": 6,
-        "crop": [
-          470,
-          490,
-          750,
-          730
-        ],
-        "bounds": [
-          26,
-          33,
-          252,
-          218
-        ],
-        "scale": 0.4
-      },
-      "status": "drawn_unapproved"
-    },
-    "white_b": {
-      "file": "white_b.png",
-      "size": [
-        145,
-        95
-      ],
-      "anchors": {
-        "centre": [
-          76.0,
-          46.4
-        ]
-      },
-      "source": {
-        "sheet": "weapons",
-        "cell": 7,
-        "crop": [
-          785,
-          480,
-          1160,
-          755
-        ],
-        "bounds": [
-          0,
-          19,
-          362,
-          256
-        ],
-        "scale": 0.4
-      },
-      "status": "drawn_unapproved"
-    },
-    "skill_slash": {
-      "file": "skill_slash.png",
-      "size": [
-        150,
-        96
-      ],
-      "anchors": {
-        "centre": [
-          79.6,
-          46.8
-        ]
-      },
-      "source": {
-        "sheet": "weapons",
-        "cell": 8,
-        "crop": [
-          1190,
-          480,
-          1580,
-          755
-        ],
-        "bounds": [
-          0,
-          17,
-          376,
-          258
-        ],
-        "scale": 0.4
+        "arrow_source": "arrow",
+        "offline_angle": 0,
+        "shaft_calibration_iteration": 1,
+        "measured_slope_before": -0.0009267300239046299,
+        "measured_tail_dy_before": 0.06115984937655128
       },
       "status": "drawn_unapproved"
     },
     "skill_arrow": {
       "file": "skill_arrow.png",
       "size": [
-        115,
-        28
+        256,
+        128
       ],
       "anchors": {
         "tail": [
-          7.0254545454545445,
-          14.050909090909089
+          32.0,
+          64.0
         ],
         "tip": [
-          111.73818181818181,
-          14.050909090909089
+          143.9970909090909,
+          64.0
         ]
       },
       "source": {
         "sheet": "weapons",
-        "cell": 9,
-        "crop": [
-          1600,
-          560,
-          1975,
-          675
+        "arrow_source": "skill_arrow",
+        "offline_angle": 0,
+        "shaft_calibration_iteration": 1,
+        "measured_slope_before": 0.0005199712282586684,
+        "measured_tail_dy_before": 0.0749798511149038
+      },
+      "status": "drawn_unapproved"
+    },
+    "arrow_draw_15": {
+      "file": "arrow_draw_15.png",
+      "size": [
+        256,
+        128
+      ],
+      "anchors": {
+        "tail": [
+          32.0,
+          64.0
         ],
-        "bounds": [
-          13,
-          16,
-          357,
-          101
+        "tip": [
+          147.36285376399417,
+          75.43205073148701
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "arrow_source": "arrow",
+        "offline_angle": 5.659332252884044
+      },
+      "status": "drawn_unapproved"
+    },
+    "arrow_draw_16": {
+      "file": "arrow_draw_16.png",
+      "size": [
+        256,
+        128
+      ],
+      "anchors": {
+        "tail": [
+          32.0,
+          64.0
         ],
-        "scale": 0.32
+        "tip": [
+          147.39710025958243,
+          75.08102270460066
+        ]
+      },
+      "source": {
+        "sheet": "weapons",
+        "arrow_source": "arrow",
+        "offline_angle": 5.485017701616633
       },
       "status": "drawn_unapproved"
     },
     "bow_draw_15": {
       "file": "bow_draw_15.png",
       "size": [
-        97,
-        92
+        123,
+        205
       ],
       "anchors": {
         "grip": [
-          93.65384615384616,
-          45.65384615384615
+          113.36057692307692,
+          101.61057692307692
         ],
         "belly": [
-          96.9423076923077,
-          45.65384615384615
+          121.81009615384616,
+          101.61057692307692
         ],
         "string": [
-          4.420846153846156,
-          39.90684615384615
+          4.012576923076907,
+          90.77457692307692
         ],
         "top": [
-          77.73076923076923,
-          15.01923076923077
+          72.44711538461539,
+          22.896634615384613
         ],
         "bottom": [
-          78.25,
-          77.67307692307692
+          73.78125,
+          183.88221153846152
         ]
       },
       "source": "own bow source, V-string to measured near hand",
@@ -1946,29 +2073,29 @@
     "bow_draw_16": {
       "file": "bow_draw_16.png",
       "size": [
-        101,
-        92
+        115,
+        205
       ],
       "anchors": {
         "grip": [
-          97.65384615384616,
-          45.65384615384615
+          105.36057692307692,
+          101.61057692307692
         ],
         "belly": [
-          100.9423076923077,
-          45.65384615384615
+          113.81009615384616,
+          101.61057692307692
         ],
         "string": [
-          4.218846153846158,
-          40.982846153846154
+          4.803576923076932,
+          91.95457692307693
         ],
         "top": [
-          81.73076923076923,
-          15.01923076923077
+          64.44711538461539,
+          22.896634615384613
         ],
         "bottom": [
-          82.25,
-          77.67307692307692
+          65.78125,
+          183.88221153846152
         ]
       },
       "source": "own bow source, V-string to measured near hand",
@@ -1986,8 +2113,8 @@
           192.0
         ],
         "tip": [
-          86.18338438609176,
-          241.34309822080925
+          78.51504452699213,
+          233.30514582920028
         ]
       },
       "source": "own held weapon offline bake",
@@ -2005,8 +2132,8 @@
           192.0
         ],
         "tip": [
-          77.0180645641132,
-          212.2744175114256
+          76.50882740962116,
+          227.3091948985163
         ]
       },
       "source": "own held weapon offline bake",
@@ -2024,549 +2151,707 @@
           192.0
         ],
         "belly": [
-          194.3252934535173,
-          194.3252934535173
+          199.93995087034247,
+          194.88990577834068
         ],
         "string": [
-          180.61830046436268,
-          180.61830046436268
+          153.13602995042896,
+          177.85467171654295
         ],
         "top": [
-          202.40262860784054,
-          159.078740052834
+          180.47567593130495,
+          104.03986128115997
         ],
         "bottom": [
-          158.46682072296105,
-          203.7488511335611
+          126.66904229192069,
+          255.77312088110716
         ]
       },
       "source": "own held weapon offline bake",
       "status": "drawn_unapproved"
     },
-    "blade_0": {
-      "file": "blade_0.png",
+    "attack_fragment": {
+      "file": "attack_fragment.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own horizontal sword",
+      "source": {
+        "sheet": "compact_swings_50",
+        "crop": [
+          110,
+          335,
+          345,
+          425
+        ],
+        "short_width_source": 70,
+        "offline_angle": -8.801708323207807
+      },
       "status": "drawn_unapproved"
     },
     "swing_mask_0": {
       "file": "swing_mask_0.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 0,
+        "paint_layer": "curve",
+        "blue": false
+      },
       "status": "drawn_unapproved"
     },
     "swing_0": {
       "file": "swing_0.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 0,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_0",
-      "blade_asset": "blade_0",
+      "blade_asset": "attack_fragment",
       "has_trail": false,
-      "trail_phase": "out",
-      "trail_color": "white"
-    },
-    "swing_skill_mask_0": {
-      "file": "swing_skill_mask_0.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own continuous horizontal brush mask",
-      "status": "drawn_unapproved"
-    },
-    "swing_skill_0": {
-      "file": "swing_skill_0.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own sword + unique flat brushed horizontal trail",
-      "status": "drawn_unapproved",
-      "trail_mask": "swing_skill_mask_0",
-      "blade_asset": "blade_0",
-      "has_trail": false,
-      "trail_phase": "out",
-      "trail_color": "blue"
-    },
-    "blade_1": {
-      "file": "blade_1.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own horizontal sword",
-      "status": "drawn_unapproved"
+      "pose_role": "guard"
     },
     "swing_mask_1": {
       "file": "swing_mask_1.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 1,
+        "paint_layer": "curve",
+        "blue": false
+      },
       "status": "drawn_unapproved"
     },
     "swing_1": {
       "file": "swing_1.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 1,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_1",
-      "blade_asset": "blade_1",
+      "blade_asset": "attack_fragment",
       "has_trail": true,
-      "trail_phase": "out",
-      "trail_color": "white"
-    },
-    "swing_skill_mask_1": {
-      "file": "swing_skill_mask_1.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own continuous horizontal brush mask",
-      "status": "drawn_unapproved"
-    },
-    "swing_skill_1": {
-      "file": "swing_skill_1.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own sword + unique flat brushed horizontal trail",
-      "status": "drawn_unapproved",
-      "trail_mask": "swing_skill_mask_1",
-      "blade_asset": "blade_1",
-      "has_trail": true,
-      "trail_phase": "out",
-      "trail_color": "blue"
-    },
-    "blade_2": {
-      "file": "blade_2.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own horizontal sword",
-      "status": "drawn_unapproved"
+      "pose_role": "pull"
     },
     "swing_mask_2": {
       "file": "swing_mask_2.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 2,
+        "paint_layer": "curve",
+        "blue": false
+      },
       "status": "drawn_unapproved"
     },
     "swing_2": {
       "file": "swing_2.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 2,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_2",
-      "blade_asset": "blade_2",
+      "blade_asset": "attack_fragment",
       "has_trail": true,
-      "trail_phase": "extend",
-      "trail_color": "white"
-    },
-    "swing_skill_mask_2": {
-      "file": "swing_skill_mask_2.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own continuous horizontal brush mask",
-      "status": "drawn_unapproved"
-    },
-    "swing_skill_2": {
-      "file": "swing_skill_2.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own sword + unique flat brushed horizontal trail",
-      "status": "drawn_unapproved",
-      "trail_mask": "swing_skill_mask_2",
-      "blade_asset": "blade_2",
-      "has_trail": true,
-      "trail_phase": "extend",
-      "trail_color": "blue"
-    },
-    "blade_3": {
-      "file": "blade_3.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own horizontal sword",
-      "status": "drawn_unapproved"
+      "pose_role": "sweep"
     },
     "swing_mask_3": {
       "file": "swing_mask_3.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 3,
+        "paint_layer": "curve",
+        "blue": false
+      },
       "status": "drawn_unapproved"
     },
     "swing_3": {
       "file": "swing_3.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 3,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_3",
-      "blade_asset": "blade_3",
+      "blade_asset": "attack_fragment",
       "has_trail": true,
-      "trail_phase": "out",
-      "trail_color": "white"
-    },
-    "swing_skill_mask_3": {
-      "file": "swing_skill_mask_3.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own continuous horizontal brush mask",
-      "status": "drawn_unapproved"
-    },
-    "swing_skill_3": {
-      "file": "swing_skill_3.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own sword + unique flat brushed horizontal trail",
-      "status": "drawn_unapproved",
-      "trail_mask": "swing_skill_mask_3",
-      "blade_asset": "blade_3",
-      "has_trail": true,
-      "trail_phase": "out",
-      "trail_color": "blue"
-    },
-    "blade_4": {
-      "file": "blade_4.png",
-      "size": [
-        768,
-        256
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          128.0
-        ],
-        "tip": [
-          308.755717127728,
-          128.0
-        ]
-      },
-      "source": "own horizontal sword",
-      "status": "drawn_unapproved"
+      "pose_role": "hold"
     },
     "swing_mask_4": {
       "file": "swing_mask_4.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 4,
+        "paint_layer": "curve",
+        "blue": false
+      },
       "status": "drawn_unapproved"
     },
     "swing_4": {
       "file": "swing_4.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 4,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_4",
-      "blade_asset": "blade_4",
+      "blade_asset": "attack_fragment",
       "has_trail": false,
-      "trail_phase": "out",
-      "trail_color": "white"
+      "pose_role": "recover"
+    },
+    "swing_surge_2": {
+      "file": "swing_surge_2.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "surge",
+        "phase": 2,
+        "blue": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_surge_3": {
+      "file": "swing_surge_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "surge",
+        "phase": 3,
+        "blue": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_reverse_3": {
+      "file": "swing_reverse_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "reverse",
+        "phase": 3,
+        "blue": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_mask_0": {
+      "file": "swing_skill_mask_0.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 0,
+        "paint_layer": "curve",
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_0": {
+      "file": "swing_skill_0.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 0,
+        "short_fragment": "attack_fragment"
+      },
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_skill_mask_0",
+      "blade_asset": "attack_fragment",
+      "has_trail": false,
+      "pose_role": "guard"
+    },
+    "swing_skill_mask_1": {
+      "file": "swing_skill_mask_1.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 1,
+        "paint_layer": "curve",
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_1": {
+      "file": "swing_skill_1.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 1,
+        "short_fragment": "attack_fragment"
+      },
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_skill_mask_1",
+      "blade_asset": "attack_fragment",
+      "has_trail": true,
+      "pose_role": "pull"
+    },
+    "swing_skill_mask_2": {
+      "file": "swing_skill_mask_2.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 2,
+        "paint_layer": "curve",
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_2": {
+      "file": "swing_skill_2.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 2,
+        "short_fragment": "attack_fragment"
+      },
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_skill_mask_2",
+      "blade_asset": "attack_fragment",
+      "has_trail": true,
+      "pose_role": "sweep"
+    },
+    "swing_skill_mask_3": {
+      "file": "swing_skill_mask_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 3,
+        "paint_layer": "curve",
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_3": {
+      "file": "swing_skill_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 3,
+        "short_fragment": "attack_fragment"
+      },
+      "status": "drawn_unapproved",
+      "trail_mask": "swing_skill_mask_3",
+      "blade_asset": "attack_fragment",
+      "has_trail": true,
+      "pose_role": "hold"
     },
     "swing_skill_mask_4": {
       "file": "swing_skill_mask_4.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own continuous horizontal brush mask",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 4,
+        "paint_layer": "curve",
+        "blue": true
+      },
       "status": "drawn_unapproved"
     },
     "swing_skill_4": {
       "file": "swing_skill_4.png",
       "size": [
-        768,
-        256
+        512,
+        384
       ],
       "anchors": {
         "grip": [
           192.0,
-          128.0
+          160.0
         ],
         "tip": [
-          308.755717127728,
-          128.0
+          246.3529413293688,
+          160.0
         ]
       },
-      "source": "own sword + unique flat brushed horizontal trail",
+      "source": {
+        "sheet": "compact_swings_50",
+        "phase": 4,
+        "short_fragment": "attack_fragment"
+      },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_4",
-      "blade_asset": "blade_4",
+      "blade_asset": "attack_fragment",
       "has_trail": false,
-      "trail_phase": "out",
-      "trail_color": "blue"
+      "pose_role": "recover"
+    },
+    "swing_skill_surge_2": {
+      "file": "swing_skill_surge_2.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "surge",
+        "phase": 2,
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_surge_3": {
+      "file": "swing_skill_surge_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "surge",
+        "phase": 3,
+        "blue": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "swing_skill_reverse_3": {
+      "file": "swing_skill_reverse_3.png",
+      "size": [
+        512,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          160.0
+        ],
+        "tip": [
+          246.3529413293688,
+          160.0
+        ]
+      },
+      "source": {
+        "sheet": "compact_swings_50",
+        "paint_layer": "reverse",
+        "phase": 3,
+        "blue": true
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [
@@ -2582,5 +2867,15 @@
       "path": "art/reference/ref_dinh_bo_linh.png",
       "sha256": "62507c983bebc6fbeef3b8673356cb2c825052dac7a900fef36649c2b4be0cd3"
     }
-  ]
+  ],
+  "presentation": {
+    "standing_height_source": 191.69899999999998,
+    "standing_height_logic": 95.84949999999999,
+    "head_without_hat_source": 77,
+    "head_ratio_target": 0.4,
+    "head_ratio_measured": 0.4016713702210236,
+    "display_height": 128,
+    "display_factor": 1.3354268932023643,
+    "hat_excluded_asset": "head_without_hat_0"
+  }
 }
