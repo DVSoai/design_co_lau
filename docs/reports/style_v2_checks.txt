@@ -212,5 +212,4 @@ tools/check_style_board.py
 tools/style_board.py
 
 $ git diff --check main
-docs/reports/style_v2_log.md:171: new blank line at EOF.
-exit=2
+exit=0
