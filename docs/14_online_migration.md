@@ -10,8 +10,8 @@ Mọi thứ có trong dữ liệu game mang một **id dạng chữ, không bao 
 
 | Loại | Mẫu id | Ví dụ |
 |---|---|---|
-| Vật phẩm mẫu | `itm_<nhóm>_<tên>` | `itm_dao_t1`, `itm_da_mai_05`, `itm_bua_bao_ho_so` |
-| Kỹ năng | `skl_<phái>_<tên>` | `skl_dao_tram_dao`, `skl_cung_xa_tien` |
+| Vật phẩm mẫu | `itm_<nhóm>_<tên>` | `itm_kiem_t1`, `itm_da_mai_05`, `itm_bua_bao_ho_so` |
+| Kỹ năng | `skl_<phái>_<tên>` | `skl_kiem_tram_kiem`, `skl_cung_xa_tien` |
 | Nhiệm vụ | `qst_<số ba chữ số>` | `qst_014` |
 | Bản đồ | `map_<tên>` | `map_dao_uc`, `map_ai_tam_diep` |
 | Quái và boss | `mob_<tên>`, `bos_<tên>` | `mob_tho_phi`, `bos_hau_ngo_tien_phong` |

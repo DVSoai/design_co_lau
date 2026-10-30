@@ -16,7 +16,7 @@ GRIPS=[(385,135),(904,368),(1110,160),(86,713),(674,627),(1170,650)]
 TIPS=[(87,452),(558,49),(1480,405),(568,695),(982,910),(1460,909)]
 # Head and weapon generators used larger native artwork. Register each ENTIRE
 # sheet uniformly before the single common export factor, never stretch axes/poses.
-REG={'body':1.0,'legs':1.0,'head':130/420,'dao':.43}
+REG={'body':1.0,'legs':1.0,'head':130/420,'kiem':.5,'cung':.63,'arrow':.2,'body_cung':.9}
 COMMON=192/(199+230+130)
 def key(image):
  a=np.asarray(image.convert('RGBA')).copy();rgb=a[:,:,:3].astype(float);g=rgb[:,:,1];other=np.maximum(rgb[:,:,0],rgb[:,:,2]);excess=g-other
@@ -28,7 +28,7 @@ def key(image):
 
 def main():
  O.mkdir(parents=True,exist_ok=True);D.mkdir(parents=True,exist_ok=True);entries={};meta={}
- for kind,file,cols,rows,count in [('body','poses_body',4,3,12),('legs','poses_legs',5,2,10),('head','poses_head',3,1,3),('dao','weapon_dao',3,2,6)]:
+ for kind,file,cols,rows,count in [('body','poses_body',4,3,12),('legs','poses_legs',5,2,10),('head','poses_head',3,1,3)]:
   src=Image.open(C/(file+'.png'));a=key(src);labels,n=ndimage.label(a[:,:,3]>80);objects=ndimage.find_objects(labels)
   components=[]
   for i,sl in enumerate(objects,1):
@@ -62,7 +62,8 @@ def main():
    else:e['anchors']={'grip':point(GRIPS[index]),'tip':point(TIPS[index])}
    entries[id]=e
   meta[kind]={'source_sha256':hashlib.sha256((C/(file+'.png')).read_bytes()).hexdigest(),'components':len(components),'count':count}
- data={'version':1,'status':'pilot, not approved','common_scale':COMMON,'registration':REG,'registration_note':'Source sheets NOT natively same anatomical scale. Uniform whole-sheet head/weapon registration disclosed; one common export factor after registration. No per-pose or nonuniform resize.','assets':entries,'sources':meta}
+ append_weapons(entries,meta)
+ data={'version':2,'status':'pilot, not approved','common_scale':COMMON,'registration':REG,'registration_note':'Source sheets NOT natively same anatomical scale. Uniform whole-sheet head/weapon registration disclosed; one common export factor after registration. No per-pose or nonuniform resize.','assets':entries,'sources':meta}
  (O/'anchors.json').write_text(json.dumps(data,indent=2)+'\n');(D/'anchors.json').write_text(json.dumps(data,indent=2)+'\n')
  for id,e in entries.items():
   dest=R/'prototype/pose_rig/art'/e['file'];dest.parent.mkdir(exist_ok=True);dest.write_bytes((O/e['file']).read_bytes())
@@ -70,12 +71,44 @@ def main():
  for id,e in entries.items():print(id,e['size'],'effective scale=',e['effective_scale'],'anchors=',e['anchors'])
  # Faithful unquantized reference for engine comparison.
  ref=Image.open(R/'art/reference/ref_dinh_bo_linh.png');arr=key(ref.crop((610,20,780,570)));ri=Image.fromarray(arr);ri=ri.crop(ri.getbbox());ri=ri.resize((round(ri.width*192/ri.height),192),Image.Resampling.LANCZOS);ri.save(R/'prototype/pose_rig/art/reference_side.png')
- clips={}
- def frame(body,legs,head=1,dao=1,duration=1/6,attack=False):return {'body':f'body_{body:02}','legs':f'legs_{legs:02}','head':f'head_{head}','weapon':f'dao_{dao}','duration':duration,'attack':attack}
- clips['idle']={'loop':True,'frames':[frame(1,1),frame(2,1),frame(1,1),frame(2,1)]}
- clips['run']={'loop':True,'frames':[frame(b,l,duration=1/12) for b,l in zip(range(3,9),range(2,8))]}
- clips['jump']={'loop':False,'frames':[frame(9,8,duration=.19),frame(9,8,duration=.19)]}
- clips['fall']={'loop':True,'frames':[frame(10,9,duration=1/12),frame(10,9,duration=1/12)]}
- clips['slash']={'loop':False,'frames':[frame(11,10,2,2,.075,True),frame(12,10,2,3,.075,True),frame(12,10,2,4,.075,True),frame(12,10,2,5,.075,True)]}
- (D/'frames.json').write_text(json.dumps({'status':'pilot; idle/run/jump/fall frame counts/rates follow09; duplicate jump/fall painted pose until new drawings; slash4 frames explicitly requested .30s, not final combo spec','clips':clips},indent=2)+'\n')
+ build_frames()
+
+def append_weapons(entries,meta):
+ regions=json.loads((D/'source_regions.json').read_text())['parts']
+ cache={}
+ for region in regions:
+  name=region['source']
+  if name not in cache:
+   image=Image.open(C/name);a=key(image);labels,n=ndimage.label(a[:,:,3]>80);objects=ndimage.find_objects(labels)
+   cache[name]=(a,labels,objects)
+  a,labels,objects=cache[name];x0,y0,x1,y1=region['box'];chosen=[]
+  for i,sl in enumerate(objects,1):
+   if sl is not None and np.count_nonzero(labels[sl]==i)>30 and x0<=(sl[1].start+sl[1].stop)/2<x1 and y0<=(sl[0].start+sl[0].stop)/2<y1:chosen.append(i)
+  assert chosen,region['id']
+  mask=ndimage.binary_dilation(np.isin(labels,chosen),iterations=3);ys,xs=np.where(mask)
+  bx0=max(0,int(xs.min()));by0=max(0,int(ys.min()));bx1=min(a.shape[1],int(xs.max())+1);by1=min(a.shape[0],int(ys.max())+1)
+  crop=a[by0:by1,bx0:bx1].copy();crop[~mask[by0:by1,bx0:bx1]]=0
+  f=COMMON*region['registration_scale'];image=Image.fromarray(crop).resize((max(1,round(crop.shape[1]*f)),max(1,round(crop.shape[0]*f))),Image.Resampling.LANCZOS)
+  out=np.array(image);visible=out[:,:,3]>0;out[:,:,1][visible]=np.minimum(out[:,:,1][visible],np.maximum(out[:,:,0][visible],out[:,:,2][visible]));out[~visible]=0
+  id=region['id'];Image.fromarray(out).save(O/(id+'.png'))
+  anchors={k:[round((point[0]-bx0)*f,6),round((point[1]-by0)*f,6)] for k,point in region['anchors'].items()}
+  entries[id]={'file':id+'.png','source':name,'source_box':[bx0,by0,bx1,by1],'registration_scale':region['registration_scale'],'common_export_scale':COMMON,'effective_scale':f,'size':[out.shape[1],out.shape[0]],'anchors':anchors}
+  meta[name]={'source_sha256':hashlib.sha256((C/name).read_bytes()).hexdigest(),'manual_regions':sum(r['source']==name for r in regions)}
+
+def build_frames():
+ def frame(body,legs,head=1,weapon='kiem_1',duration=1/6,attack=False,spawn=False):
+  return {'body':body,'legs':f'legs_{legs:02}','head':f'head_{head}','weapon':weapon,'duration':duration,'attack':attack,'spawn':spawn}
+ def base(weapon):return {
+  'idle':{'loop':True,'frames':[frame(f'body_{b:02}',1,weapon=weapon) for b in [1,2,1,2]]},
+  'run':{'loop':True,'frames':[frame(f'body_{b:02}',l,weapon=weapon,duration=1/12) for b,l in zip(range(3,9),range(2,8))]},
+  'jump':{'loop':False,'frames':[frame('body_09',8,weapon=weapon,duration=.19) for _ in range(2)]},
+  'fall':{'loop':True,'frames':[frame('body_10',9,weapon=weapon,duration=1/12) for _ in range(2)]}}
+ kiem=base('kiem_1');cung=base('cung_1')
+ kiem['slash']={'loop':False,'frames':[frame(b,10,2,w,.075,True) for b,w in [('body_11','kiem_2'),('body_12','kiem_3'),('body_12','kiem_4'),('body_12','kiem_5')]]}
+ kiem['thrust']={'loop':False,'frames':[frame('body_12',10,2,'kiem_6',.05,True),frame('body_12',10,2,'kiem_6',.05,True)]}
+ # Three authored shooting phases retain five15fps timing slots (ready2/draw1/release2).
+ cung['shoot']={'loop':False,'frames':[frame('body_cung_1',1,1,'cung_2',2/15,True),frame('body_cung_2',1,1,'cung_3',1/15,True),frame('body_cung_3',1,1,'cung_4',2/15,True,True)]}
+ # Two running phases retain six12fps timing slots; release starts at original slot3.
+ cung['run_shoot']={'loop':True,'frames':[frame('body_cung_4',3,1,'cung_3',2/12,True),frame('body_cung_3',4,1,'cung_4',4/12,True,True)]}
+ (D/'frames.json').write_text(json.dumps({'status':'pilot; Kiếm/Cung; five15fps shoot slots compressed to3 painted phases; six12fps run-shoot slots compressed to2 phases; thrust2frames .10s proposed, no standalone thrust timing in09; slash .30s unchanged','arrow_speed':240,'arrow_asset':'arrow_1','schools':{'kiem':kiem,'cung':cung},'clips':kiem},indent=2)+'\n')
 if __name__=='__main__':main()

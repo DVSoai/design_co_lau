@@ -5,7 +5,7 @@ Tài liệu này quy định mỗi nhân vật, quái, boss, hiệu ứng và gi
 ## Quy ước
 
 - **Tốc độ chuẩn:** 12 khung mỗi giây (mỗi khung khoảng 83 mili giây). Đòn thường và chiêu có hồi chiêu từ 1 giây trở lên dùng 15 khung mỗi giây.
-- **Chiêu bấm liên tục** (hồi chiêu dưới 1 giây, như Trảm Đao 0,4 giây hay Song Tiễn 0,55 giây) chạy 18 khung mỗi giây, và số khung tối đa bằng hồi chiêu nhân 18 (0,4 giây → 7 khung; 0,45 → 8; 0,5 và 0,55 → 9). Như vậy động tác luôn xong trước khi chiêu hồi xong, người chơi bấm liên tục không bị khựng. Phần hoành tráng của chiêu (cờ lau, mưa tên) làm bằng hiệu ứng chạy song song, không kéo dài động tác.
+- **Chiêu bấm liên tục** (hồi chiêu dưới 1 giây, như Trảm Kiếm 0,4 giây hay Song Tiễn 0,55 giây) chạy 18 khung mỗi giây, và số khung tối đa bằng hồi chiêu nhân 18 (0,4 giây → 7 khung; 0,45 → 8; 0,5 và 0,55 → 9). Như vậy động tác luôn xong trước khi chiêu hồi xong, người chơi bấm liên tục không bị khựng. Phần hoành tráng của chiêu (cờ lau, mưa tên) làm bằng hiệu ứng chạy song song, không kéo dài động tác.
 - **Khung sprite:** theo kích thước trong art bible (nhân vật cao 96 px trong khung 128×128, chân cách đáy khung 8 điểm ảnh; boss người cao ~132 px trong khung 192×192 (tạm thời)).
 - **Sự kiện trong động tác** ghi bằng số khung, đếm từ 1:
   - `hit` — khung bắt đầu gây sát thương (hộp đánh bật lên).
@@ -53,13 +53,13 @@ khi lên/xuống và không chèn khung treo đỉnh. Khinh công cần lần b�
 ### Bản thử rig greybox Giai đoạn 1 (chưa duyệt)
 
 `16_rig_nhan_vat.md` và `prototype/rig/data/animations.json` dựng thử các động tác
-chung/Đao/Cung bằng khối màu. Đề xuất **6 pose lộn trong 0,20 s**, khóa kết thúc 360°,
+chung/Kiếm/Cung bằng khối màu. Đề xuất **6 pose lộn trong 0,20 s**, khóa kết thúc 360°,
 và **2 pose quay đầu trong 0,05 s**; hai tổng thời gian giữ A0, số pose chưa được duyệt.
 Chém cơ bản 4 pose chia 0,10/0,10/0,05/0,05 s để giữ cửa sổ trúng A0; combo 2–3
 và bắn thường theo bảng bên dưới chỉ xem, chưa thêm cơ chế mới vào A0.
 Không thay bảng số khung thành phẩm hay đánh dấu các mục này Đã duyệt vì có greybox.
 
-## Phái Đao
+## Phái Kiếm
 
 Đòn thường là chuỗi ba nhát; bấm tiếp trong khung `cancel` thì sang nhát sau.
 
@@ -73,8 +73,8 @@ Mười chiêu (tên và số liệu ở Phần 2 GDD, mục 3). Chiêu nội t�
 
 | Chiêu | Kiểu động tác | Khung | Sự kiện |
 |---|---|---|---|
-| Trảm Đao | Chém ngang một nhát | 5 | hit 3 |
-| Đao Tâm (nội tại) | Không có động tác | — | Hiệu ứng ánh đao lướt quanh người khi vào trận |
+| Trảm Kiếm | Chém ngang một nhát | 5 | hit 3 |
+| Kiếm Tâm (nội tại) | Không có động tác | — | Hiệu ứng ánh kiếm lướt quanh người khi vào trận |
 | Song Trảm | Hai nhát chéo liên tiếp | 7 | hit 3, hit 5 |
 | Chấn Uy | Dậm đất, sóng chấn quanh người | 6 | hit 4 |
 | Quét Ngang | Xoay người quét vòng | 7 | hit 3 đến 5 |
@@ -192,12 +192,30 @@ linear,4 lớp chỉ dời/lật; hình vung vẽ sẵn, không xoay vũ khí. R
 
 | Clip | Khung dữ liệu | Hình lớp dùng | Thời lượng |
 |---|---:|---|---|
-| idle | 4 | body1,2,1,2; legs1; head1; dao1 sau lưng | 1/6s mỗi khung, lặp |
-| run | 6 | body3–8; legs2–7; head1; dao1 sau lưng | 1/12s mỗi khung, lặp |
-| jump | 2 | body9; legs8; head1; dao1 | 0,19s mỗi khung; lên đỉnh0,38s |
-| fall | 2 | body10; legs9; head1; dao1 | 1/12s mỗi khung, lặp |
-| slash | 4 | body11,12,12,12; legs10; head2; dao2,3,4,5 | 0,075s mỗi khung, tổng0,30s |
+| idle | 4 | body1,2,1,2; legs1; head1; kiem1 sau lưng | 1/6s mỗi khung, lặp |
+| run | 6 | body3–8; legs2–7; head1; kiem1 sau lưng | 1/12s mỗi khung, lặp |
+| jump | 2 | body9; legs8; head1; kiem1 | 0,19s mỗi khung; lên đỉnh0,38s |
+| fall | 2 | body10; legs9; head1; kiem1 | 1/12s mỗi khung, lặp |
+| slash | 4 | body11,12,12,12; legs10; head2; kiem2,3,4,5 | 0,075s mỗi khung, tổng0,30s |
 
 Hai frame jump/fall hiện dùng cùng hình, không tuyên bố đã vẽ đủ biến thể.
 Slash4 là ngoại lệ pilot theo lệnh, chưa thay bảng8 khung combo thành phẩm.
-Hurt/head3 và dao6 có nguồn để soát, chưa đưa thành động tác hoàn chỉnh.
+Hurt/head3 vẫn chưa thành động tác hoàn chỉnh; kiem6 được dùng trong thrust pilot mới.
+
+## Pilot Kiếm/Cung —30/10/2026, chưa duyệt
+
+Không đổi bảng số/chiêu hoặc đặc tả động tác thành phẩm phía trên. Pilot nén các
+nhịp thời gian thành ít hình tư thế, vẫn giữ tổng thời gian và mốc sinh tên:
+
+| Phái/clip | Hình tư thế | Thời lượng từng pha | Sự kiện |
+|---|---:|---|---|
+| Kiếm idle/run/jump/fall | 4/6/2/2 | như pilot trước | kiếm sau lưng |
+| Kiếm slash | 4 | 0,075s mỗi khung, tổng0,30s | giơ/vung/chém/kết thúc |
+| Kiếm thrust | 2 | 0,05s mỗi khung, tổng0,10s — **Đề xuất riêng cho pilot**,09chưa có thời lượng đâm độc lập | dùng kiem_6, không đổi số chiêu có sẵn |
+| Cung idle/run/jump/fall | 4/6/2/2 | như Kiếm | cung sau lưng |
+| Cung shoot | 3 | cầm2/15s; giương1/15s; thả2/15s | tổng5/15s; sinh tên ở đầu thả tại3/15s, tương ứng spawn4 của bảng5khung/15fps |
+| Cung run_shoot | 2 | giương2/12s; thả4/12s | tổng6/12s; sinh tên ở2/12s, tương ứng spawn3 của bảng6khung/12fps |
+
+Tên là hình riêng bay theo hướng mặt,240px/s **Đề xuất chỉ cho xem thử**, cấu
+hình trong pose_rig/data/frames.json; không ghi vào tuningA0 hoặc bảng số game.
+Bản thử chưa có damage/hit/cancel mới; không thay nhân vật A0/Đào Úc.

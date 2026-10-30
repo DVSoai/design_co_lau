@@ -1,0 +1,446 @@
+{
+  "method": "Manually inspected anatomical registration points in source pixels; component ownership by centroid in source box; no runtime rotation",
+  "parts": [
+    {
+      "id": "kiem_1",
+      "source": "weapon_kiem.png",
+      "box": [
+        90,
+        110,
+        445,
+        480
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          392,
+          160
+        ],
+        "tip": [
+          106,
+          463
+        ]
+      }
+    },
+    {
+      "id": "kiem_2",
+      "source": "weapon_kiem.png",
+      "box": [
+        580,
+        90,
+        900,
+        465
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          844,
+          402
+        ],
+        "tip": [
+          595,
+          108
+        ]
+      }
+    },
+    {
+      "id": "kiem_3",
+      "source": "weapon_kiem.png",
+      "box": [
+        1035,
+        85,
+        1500,
+        480
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          1095,
+          417
+        ],
+        "tip": [
+          1379,
+          138
+        ]
+      }
+    },
+    {
+      "id": "kiem_4",
+      "source": "weapon_kiem.png",
+      "box": [
+        35,
+        675,
+        630,
+        815
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          108,
+          747
+        ],
+        "tip": [
+          470,
+          746
+        ]
+      }
+    },
+    {
+      "id": "kiem_5",
+      "source": "weapon_kiem.png",
+      "box": [
+        595,
+        565,
+        980,
+        950
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          655,
+          627
+        ],
+        "tip": [
+          912,
+          878
+        ]
+      }
+    },
+    {
+      "id": "kiem_6",
+      "source": "weapon_kiem.png",
+      "box": [
+        1035,
+        700,
+        1505,
+        800
+      ],
+      "registration_scale": 0.5,
+      "anchors": {
+        "grip": [
+          1113,
+          747
+        ],
+        "tip": [
+          1488,
+          746
+        ]
+      }
+    },
+    {
+      "id": "cung_1",
+      "source": "weapon_cung.png",
+      "box": [
+        150,
+        10,
+        495,
+        480
+      ],
+      "registration_scale": 0.63,
+      "anchors": {
+        "grip": [
+          333,
+          278
+        ],
+        "belly": [
+          350,
+          278
+        ],
+        "string": [
+          282,
+          280
+        ]
+      }
+    },
+    {
+      "id": "cung_2",
+      "source": "weapon_cung.png",
+      "box": [
+        675,
+        10,
+        810,
+        500
+      ],
+      "registration_scale": 0.63,
+      "anchors": {
+        "grip": [
+          778,
+          258
+        ],
+        "belly": [
+          788,
+          258
+        ],
+        "string": [
+          696,
+          258
+        ]
+      }
+    },
+    {
+      "id": "cung_3",
+      "source": "weapon_cung.png",
+      "box": [
+        950,
+        10,
+        1440,
+        500
+      ],
+      "registration_scale": 0.63,
+      "anchors": {
+        "grip": [
+          1408,
+          258
+        ],
+        "belly": [
+          1418,
+          258
+        ],
+        "string": [
+          974,
+          252
+        ]
+      }
+    },
+    {
+      "id": "cung_4",
+      "source": "weapon_cung.png",
+      "box": [
+        250,
+        510,
+        380,
+        995
+      ],
+      "registration_scale": 0.63,
+      "anchors": {
+        "grip": [
+          352,
+          752
+        ],
+        "belly": [
+          362,
+          752
+        ],
+        "string": [
+          270,
+          752
+        ]
+      }
+    },
+    {
+      "id": "cung_5",
+      "source": "weapon_cung.png",
+      "box": [
+        650,
+        510,
+        990,
+        995
+      ],
+      "registration_scale": 0.63,
+      "anchors": {
+        "grip": [
+          751,
+          752
+        ],
+        "belly": [
+          761,
+          752
+        ],
+        "string": [
+          670,
+          752
+        ]
+      }
+    },
+    {
+      "id": "arrow_1",
+      "source": "arrow.png",
+      "box": [
+        65,
+        255,
+        1050,
+        420
+      ],
+      "registration_scale": 0.2,
+      "anchors": {
+        "tail": [
+          119,
+          338
+        ],
+        "tip": [
+          1028,
+          338
+        ]
+      }
+    },
+    {
+      "id": "arrow_2",
+      "source": "arrow.png",
+      "box": [
+        1150,
+        220,
+        2100,
+        425
+      ],
+      "registration_scale": 0.2,
+      "anchors": {
+        "tail": [
+          1204,
+          333
+        ],
+        "tip": [
+          2082,
+          333
+        ]
+      }
+    },
+    {
+      "id": "body_cung_1",
+      "source": "poses_body_cung.png",
+      "box": [
+        35,
+        180,
+        535,
+        565
+      ],
+      "registration_scale": 0.9,
+      "anchors": {
+        "neck": [
+          202,
+          218
+        ],
+        "hip": [
+          211,
+          445
+        ],
+        "near_hand": [
+          209,
+          337
+        ],
+        "far_hand": [
+          492,
+          258
+        ],
+        "grip": [
+          209,
+          337
+        ],
+        "back": [
+          180,
+          246
+        ]
+      }
+    },
+    {
+      "id": "body_cung_2",
+      "source": "poses_body_cung.png",
+      "box": [
+        540,
+        180,
+        1050,
+        565
+      ],
+      "registration_scale": 0.9,
+      "anchors": {
+        "neck": [
+          758,
+          217
+        ],
+        "hip": [
+          758,
+          445
+        ],
+        "near_hand": [
+          716,
+          236
+        ],
+        "far_hand": [
+          1019,
+          252
+        ],
+        "grip": [
+          716,
+          236
+        ],
+        "back": [
+          736,
+          245
+        ]
+      }
+    },
+    {
+      "id": "body_cung_3",
+      "source": "poses_body_cung.png",
+      "box": [
+        1045,
+        155,
+        1610,
+        565
+      ],
+      "registration_scale": 0.9,
+      "anchors": {
+        "neck": [
+          1292,
+          219
+        ],
+        "hip": [
+          1293,
+          445
+        ],
+        "near_hand": [
+          1095,
+          199
+        ],
+        "far_hand": [
+          1560,
+          252
+        ],
+        "grip": [
+          1095,
+          199
+        ],
+        "back": [
+          1270,
+          247
+        ]
+      }
+    },
+    {
+      "id": "body_cung_4",
+      "source": "poses_body_cung.png",
+      "box": [
+        1625,
+        180,
+        2160,
+        570
+      ],
+      "registration_scale": 0.9,
+      "anchors": {
+        "neck": [
+          1831,
+          224
+        ],
+        "hip": [
+          1815,
+          447
+        ],
+        "near_hand": [
+          1812,
+          243
+        ],
+        "far_hand": [
+          2117,
+          263
+        ],
+        "grip": [
+          1812,
+          243
+        ],
+        "back": [
+          1809,
+          252
+        ]
+      }
+    }
+  ]
+}

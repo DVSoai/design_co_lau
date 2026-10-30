@@ -4,7 +4,7 @@ Tài liệu này quy định mọi hình ảnh trong game trông như thế nào
 
 ## Game là gì
 
-Cờ Lau Khởi Nghĩa là game nhập vai hành động 2D cuộn ngang trên điện thoại Android, kể chuyện Đinh Bộ Lĩnh dẹp loạn 12 sứ quân ở Bắc Bộ thế kỷ 10 (khoảng năm 944 đến 968). Người chơi chỉ điều khiển Đinh Bộ Lĩnh, chọn một trong hai phái: Đao (cận chiến, gây choáng) hoặc Cung (tầm xa, ghim chân). Ngoại hình nhân vật chính chỉ đổi theo vũ khí và quần áo đang mặc. Giọng game là dã sử hiện thực: không có quái vật thần thoại, không có phép thuật lấp lánh; quái là thú vật có thật ở Bắc Bộ hoặc con người cùng thời.
+Cờ Lau Khởi Nghĩa là game nhập vai hành động 2D cuộn ngang trên điện thoại Android, kể chuyện Đinh Bộ Lĩnh dẹp loạn 12 sứ quân ở Bắc Bộ thế kỷ 10 (khoảng năm 944 đến 968). Người chơi chỉ điều khiển Đinh Bộ Lĩnh, chọn một trong hai phái: Kiếm (cận chiến, gây choáng) hoặc Cung (tầm xa, ghim chân). Ngoại hình nhân vật chính chỉ đổi theo vũ khí và quần áo đang mặc. Giọng game là dã sử hiện thực: không có quái vật thần thoại, không có phép thuật lấp lánh; quái là thú vật có thật ở Bắc Bộ hoặc con người cùng thời.
 
 ## Phong cách
 
@@ -83,7 +83,7 @@ ngoài quần không dùng pants trừ ánh tóc #59443E của ma trận đầu.
 
 ### Bổ sung vật liệu bộ phận 29/10/2026 (chưa duyệt mỹ thuật)
 
-Riêng vũ khí `dao`/`bow` được dùng thêm limestone của palette_v3. Lưỡi đao lấy
+Riêng vũ khí `dao`/`bow` được dùng thêm limestone của palette_v3. Lưỡi kiếm lấy
 #A5B8B0 làm chính, #718B87 bóng, #D9DDD0 sáng, viền #17151A; cán/vỏ vẫn belt.
 Cung gỗ belt và dây sáng #D9DDD0. Đùi của quần ngang gối chỉ pants (và nét
 outline); skin từ gối xuống. Kiểm nhóm màu theo từng mảnh, không mở limestone
@@ -127,7 +127,7 @@ Các bậc trang bị chỉ thay áo, quần, vũ khí tương ứng, cùng hệ
 - **Dân thường và lính:** áo cánh ngắn tay hoặc dài tay, khố hoặc quần vải ngắn, chân đất hoặc dép cỏ, xà cạp quấn chân. **Nón lá chỉ dành cho dân làng và một số thổ phỉ; lính các sứ quân dùng khăn chít đầu hoặc mũ trụ đơn giản và mang màu cờ của sứ quân để phân biệt phe.**
 - **Tướng:** giáp da, giáp vảy sắt hoặc đồng, mũ trụ đơn giản tròn, áo choàng ngắn.
 - **Tóc:** **Đinh Bộ Lĩnh búi tóc nhỏ trên đỉnh đầu**, không dùng tóc dài buộc đuôi bay. Nhân vật khác có thể búi tóc hoặc dùng khăn chít đầu che tóc.
-- **Vũ khí:** đao lưỡi rộng một cạnh, giáo, nỏ, cung tre hoặc cung sừng, khiên mây tròn.
+- **Vũ khí:** kiếm thẳng hai lưỡi cho phái Kiếm; đao lưỡi rộng một cạnh chỉ là vũ khí lính địch/đạo cụ, cùng giáo, nỏ, cung tre hoặc cung sừng, khiên mây tròn.
 - **Kiến trúc:** nhà gỗ sàn mái tranh, mái ngói đất nung đơn giản, thành đất đắp lũy, cổng gỗ, chòi canh, chùa gỗ nhỏ. Kinh đô Hoa Lư là thành đất nối các dãy núi đá vôi.
 - **Cấm:** áo dài, nón quai thao, long bào, trang phục võ sĩ và chiến binh bí mật Nhật Bản, kiếm katana, kiến trúc mái cong kiểu cung đình Trung Hoa.
 
@@ -175,7 +175,7 @@ Quyết định mới thay quy trình rig16 mảnh cho nhân vật/NPC/quái ng�
 thân kèm hai tay, chân (quần/cẳng/bàn chân), vũ khí. Mỗi lớp có trọn bộ hình
 tư thế; runtime chỉ dời/lật, không xoay khớp hoặc xoay vũ khí theo tay.
 Đòn đánh dùng hình vung vũ khí vẽ sẵn kèm vệt vật lý, lưỡi sắc theo chiều chém;
-ngoài đòn đánh dùng hình đao sau lưng, đi theo thân. Thay áo/quần phải có đủ
+ngoài đòn đánh dùng hình kiếm sau lưng, đi theo thân. Thay áo/quần phải có đủ
 bộ tư thế tương ứng; chỉ làm bậc0 trong bản thử này.
 
 Nhân vật người giữ ảnh độ phân giải2× và hiển thị linear, không ép palette32 màu.
@@ -192,3 +192,26 @@ sau đó xuất cùng hệ số; không co x/y khác nhau hoặc sửa tư thế
 cả hệ số đăng ký và hệ số thực từ từng nguồn, không gọi tờ gốc đồng tỉ lệ.
 Bản thử chỉ idle/run/jump/fall/slash; chưa thay nhân vật A0/Đào Úc.
 Rig16 mảnh đã dừng, giữ nguyên để đối chiếu; xem16_rig và báo cáo pilot.
+
+## Kiếm/Cung — quy tắc hình vũ khí (người dùng chốt30/10/2026)
+
+Phái Kiếm dùng kiếm **thẳng hai lưỡi**, mũi nhọn, chắn tay nhỏ, cán quấn dây.
+Không dùng katana hoặc kiếm Trung Hoa cầu kỳ; khối AVOID giữ nguyên. Bảy bậc
+đều giữ cấu trúc này, khác vật liệu/hoàn thiện: t1sắt thô; t2sắt rèn; t3thép;
+t4thép/chắn đồng nhỏ; t5thép tôi; t6thép sẫm; t7thép tốt/hoa văn lau tiết chế.
+Không đổi chỉ số, cơ chế hoặc số liệu chiêu; Trảm Kiếm và Kiếm Tâm là tên hiện tại.
+
+- Đi/đứng: kiếm đeo sau lưng, chuôi nhô qua vai phía sau, mũi xuống sau mông;
+  hình đi theo thân, không xoay.
+- Đánh: mỗi khung có hình vung riêng kèm vệt trắng vật lý; **chuôi ở tay gần,
+  lưỡi ra xa người theo chiều chém, vệt ở phía mũi đang lao tới**. Không xoay kiếm
+  theo tay. Khung giơ mũi cao hơn chuôi; vung/chém/kết thúc/đâm mũi ở trước tay.
+- Cung đi/đứng đeo chéo sau lưng. Khi bắn: tay xa duỗi ra trước, cầm cung gần
+  thẳng đứng; **lưng cong phồng ra trước, dây ở sau về phía người bắn**.
+  Giương: dây chữV tới tay gần cạnh má; thả: dây thẳng. Tên là hình riêng,
+  mũi ở đầu phía trước và bay ra trước sau khung thả.
+
+Bản thử dùng tranh2×, Sprite2Dlinear scale0,5 cố định, rotation0; chỉ lật gốc.
+Mốc và hình thật được kiểm trong `weapon_direction_checks.gd`; tài nguyên cũ
+của rig16mảnh đã dừng không bị đổi ID hay nội dung. Các đoạn rig lịch sử phía
+trước chỉ là lưu đối chiếu, không quy định hình vũ khí hiện hành.

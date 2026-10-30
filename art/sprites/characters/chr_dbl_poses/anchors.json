@@ -1,12 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
   "status": "pilot, not approved",
   "common_scale": 0.3434704830053667,
   "registration": {
     "body": 1.0,
     "legs": 1.0,
     "head": 0.30952380952380953,
-    "dao": 0.43
+    "kiem": 0.5,
+    "cung": 0.63,
+    "arrow": 0.2,
+    "body_cung": 0.9
   },
   "registration_note": "Source sheets NOT natively same anatomical scale. Uniform whole-sheet head/weapon registration disclosed; one common export factor after registration. No per-pose or nonuniform resize.",
   "assets": {
@@ -769,165 +772,546 @@
         ]
       }
     },
-    "dao_1": {
-      "file": "dao_1.png",
-      "source": "weapon_dao.png",
+    "kiem_1": {
+      "file": "kiem_1.png",
+      "source": "weapon_kiem.png",
       "source_box": [
+        101,
+        121,
+        431,
+        469
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
+        57,
+        60
+      ],
+      "anchors": {
+        "grip": [
+          49.974955,
+          6.697674
+        ],
+        "tip": [
+          0.858676,
+          58.733453
+        ]
+      }
+    },
+    "kiem_2": {
+      "file": "kiem_2.png",
+      "source": "weapon_kiem.png",
+      "source_box": [
+        591,
+        103,
+        886,
+        451
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
+        51,
+        60
+      ],
+      "anchors": {
+        "grip": [
+          43.449016,
+          51.348837
+        ],
+        "tip": [
+          0.686941,
+          0.858676
+        ]
+      }
+    },
+    "kiem_3": {
+      "file": "kiem_3.png",
+      "source": "weapon_kiem.png",
+      "source_box": [
+        1051,
+        96,
+        1489,
+        465
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
+        75,
+        63
+      ],
+      "anchors": {
+        "grip": [
+          7.556351,
+          55.127013
+        ],
+        "tip": [
+          56.329159,
+          7.21288
+        ]
+      }
+    },
+    "kiem_4": {
+      "file": "kiem_4.png",
+      "source": "weapon_kiem.png",
+      "source_box": [
+        47,
+        692,
+        614,
+        794
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
+        97,
+        18
+      ],
+      "anchors": {
+        "grip": [
+          10.47585,
+          9.445438
+        ],
+        "tip": [
+          72.644007,
+          9.273703
+        ]
+      }
+    },
+    "kiem_5": {
+      "file": "kiem_5.png",
+      "source": "weapon_kiem.png",
+      "source_box": [
+        609,
+        580,
+        961,
+        945
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
+        60,
+        63
+      ],
+      "anchors": {
+        "grip": [
+          7.899821,
+          8.071556
+        ],
+        "tip": [
+          52.035778,
+          51.177102
+        ]
+      }
+    },
+    "kiem_6": {
+      "file": "kiem_6.png",
+      "source": "weapon_kiem.png",
+      "source_box": [
+        1042,
+        710,
+        1493,
+        787
+      ],
+      "registration_scale": 0.5,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.17173524150268335,
+      "size": [
         77,
-        87,
-        436,
-        461
-      ],
-      "registration_scale": 0.43,
-      "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
-      "size": [
-        53,
-        55
+        13
       ],
       "anchors": {
         "grip": [
-          45.489231,
-          7.089231
+          12.193202,
+          6.354204
         ],
         "tip": [
-          1.476923,
-          53.907692
+          76.593918,
+          6.182469
         ]
       }
     },
-    "dao_2": {
-      "file": "dao_2.png",
-      "source": "weapon_dao.png",
+    "cung_1": {
+      "file": "cung_1.png",
+      "source": "weapon_cung.png",
       "source_box": [
-        552,
-        38,
-        950,
-        415
+        170,
+        27,
+        477,
+        462
       ],
-      "registration_scale": 0.43,
+      "registration_scale": 0.63,
       "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
+      "effective_scale": 0.21638640429338102,
       "size": [
-        59,
-        56
+        66,
+        94
       ],
       "anchors": {
         "grip": [
-          51.987692,
-          48.738462
+          35.270984,
+          54.312987
         ],
-        "tip": [
-          0.886154,
-          1.624615
+        "belly": [
+          38.949553,
+          54.312987
+        ],
+        "string": [
+          24.235277,
+          54.74576
         ]
       }
     },
-    "dao_3": {
-      "file": "dao_3.png",
-      "source": "weapon_dao.png",
+    "cung_2": {
+      "file": "cung_2.png",
+      "source": "weapon_cung.png",
       "source_box": [
-        1024,
-        0,
-        1536,
-        512
+        685,
+        25,
+        795,
+        489
       ],
-      "registration_scale": 0.43,
+      "registration_scale": 0.63,
       "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
+      "effective_scale": 0.21638640429338102,
       "size": [
-        76,
-        76
+        24,
+        100
       ],
       "anchors": {
         "grip": [
-          12.701538,
-          23.630769
+          20.123936,
+          50.418032
         ],
-        "tip": [
-          67.347692,
-          59.815385
+        "belly": [
+          22.2878,
+          50.418032
+        ],
+        "string": [
+          2.38025,
+          50.418032
         ]
       }
     },
-    "dao_4": {
-      "file": "dao_4.png",
-      "source": "weapon_dao.png",
+    "cung_3": {
+      "file": "cung_3.png",
+      "source": "weapon_cung.png",
       "source_box": [
-        0,
-        512,
-        577,
-        1024
+        962,
+        25,
+        1425,
+        489
       ],
-      "registration_scale": 0.43,
+      "registration_scale": 0.63,
       "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
+      "effective_scale": 0.21638640429338102,
       "size": [
-        85,
-        76
+        100,
+        100
       ],
       "anchors": {
         "grip": [
-          12.701538,
-          29.686154
+          96.508336,
+          50.418032
         ],
-        "tip": [
-          83.889231,
-          27.027692
+        "belly": [
+          98.6722,
+          50.418032
+        ],
+        "string": [
+          2.596637,
+          49.119714
         ]
       }
     },
-    "dao_5": {
-      "file": "dao_5.png",
-      "source": "weapon_dao.png",
+    "cung_4": {
+      "file": "cung_4.png",
+      "source": "weapon_cung.png",
       "source_box": [
-        618,
-        581,
-        998,
-        917
+        260,
+        519,
+        370,
+        983
       ],
-      "registration_scale": 0.43,
+      "registration_scale": 0.63,
       "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
+      "effective_scale": 0.21638640429338102,
       "size": [
-        56,
-        50
+        24,
+        100
       ],
       "anchors": {
         "grip": [
-          8.270769,
-          6.793846
+          19.907549,
+          50.418032
         ],
-        "tip": [
-          53.76,
-          48.590769
+        "belly": [
+          22.071413,
+          50.418032
+        ],
+        "string": [
+          2.163864,
+          50.418032
         ]
       }
     },
-    "dao_6": {
-      "file": "dao_6.png",
-      "source": "weapon_dao.png",
+    "cung_5": {
+      "file": "cung_5.png",
+      "source": "weapon_cung.png",
       "source_box": [
-        1110,
-        597,
-        1467,
-        922
+        658,
+        519,
+        974,
+        983
       ],
-      "registration_scale": 0.43,
+      "registration_scale": 0.63,
       "common_export_scale": 0.3434704830053667,
-      "effective_scale": 0.14769230769230768,
+      "effective_scale": 0.21638640429338102,
       "size": [
-        53,
-        48
+        68,
+        100
       ],
       "anchors": {
         "grip": [
-          8.861538,
-          7.827692
+          20.123936,
+          50.418032
+        ],
+        "belly": [
+          22.2878,
+          50.418032
+        ],
+        "string": [
+          2.596637,
+          50.418032
+        ]
+      }
+    },
+    "arrow_1": {
+      "file": "arrow_1.png",
+      "source": "arrow.png",
+      "source_box": [
+        81,
+        273,
+        1032,
+        402
+      ],
+      "registration_scale": 0.2,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.06869409660107334,
+      "size": [
+        65,
+        9
+      ],
+      "anchors": {
+        "tail": [
+          2.610376,
+          4.465116
         ],
         "tip": [
-          51.692308,
-          46.08
+          65.053309,
+          4.465116
+        ]
+      }
+    },
+    "arrow_2": {
+      "file": "arrow_2.png",
+      "source": "arrow.png",
+      "source_box": [
+        1168,
+        238,
+        2086,
+        410
+      ],
+      "registration_scale": 0.2,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.06869409660107334,
+      "size": [
+        63,
+        12
+      ],
+      "anchors": {
+        "tail": [
+          2.472987,
+          6.525939
+        ],
+        "tip": [
+          62.786404,
+          6.525939
+        ]
+      }
+    },
+    "body_cung_1": {
+      "file": "body_cung_1.png",
+      "source": "poses_body_cung.png",
+      "source_box": [
+        54,
+        200,
+        517,
+        548
+      ],
+      "registration_scale": 0.9,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.30912343470483006,
+      "size": [
+        143,
+        108
+      ],
+      "anchors": {
+        "neck": [
+          45.750268,
+          5.564222
+        ],
+        "hip": [
+          48.532379,
+          75.735242
+        ],
+        "near_hand": [
+          47.914132,
+          42.349911
+        ],
+        "far_hand": [
+          135.396064,
+          17.929159
+        ],
+        "grip": [
+          47.914132,
+          42.349911
+        ],
+        "back": [
+          38.949553,
+          14.219678
+        ]
+      }
+    },
+    "body_cung_2": {
+      "file": "body_cung_2.png",
+      "source": "poses_body_cung.png",
+      "source_box": [
+        551,
+        198,
+        1045,
+        546
+      ],
+      "registration_scale": 0.9,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.30912343470483006,
+      "size": [
+        153,
+        108
+      ],
+      "anchors": {
+        "neck": [
+          63.988551,
+          5.873345
+        ],
+        "hip": [
+          63.988551,
+          76.353488
+        ],
+        "near_hand": [
+          51.005367,
+          11.746691
+        ],
+        "far_hand": [
+          144.669767,
+          16.692665
+        ],
+        "grip": [
+          51.005367,
+          11.746691
+        ],
+        "back": [
+          57.187835,
+          14.528801
+        ]
+      }
+    },
+    "body_cung_3": {
+      "file": "body_cung_3.png",
+      "source": "poses_body_cung.png",
+      "source_box": [
+        1057,
+        173,
+        1592,
+        547
+      ],
+      "registration_scale": 0.9,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.30912343470483006,
+      "size": [
+        165,
+        116
+      ],
+      "anchors": {
+        "neck": [
+          72.644007,
+          14.219678
+        ],
+        "hip": [
+          72.953131,
+          84.081574
+        ],
+        "near_hand": [
+          11.746691,
+          8.037209
+        ],
+        "far_hand": [
+          155.489088,
+          24.420751
+        ],
+        "grip": [
+          11.746691,
+          8.037209
+        ],
+        "back": [
+          65.843292,
+          22.875134
+        ]
+      }
+    },
+    "body_cung_4": {
+      "file": "body_cung_4.png",
+      "source": "poses_body_cung.png",
+      "source_box": [
+        1640,
+        205,
+        2147,
+        553
+      ],
+      "registration_scale": 0.9,
+      "common_export_scale": 0.3434704830053667,
+      "effective_scale": 0.30912343470483006,
+      "size": [
+        157,
+        108
+      ],
+      "anchors": {
+        "neck": [
+          59.042576,
+          5.873345
+        ],
+        "hip": [
+          54.096601,
+          74.807871
+        ],
+        "near_hand": [
+          53.169231,
+          11.746691
+        ],
+        "far_hand": [
+          147.451878,
+          17.929159
+        ],
+        "grip": [
+          53.169231,
+          11.746691
+        ],
+        "back": [
+          52.24186,
+          14.528801
         ]
       }
     }
@@ -948,10 +1332,21 @@
       "components": 3,
       "count": 3
     },
-    "dao": {
-      "source_sha256": "3e931a44f76eb2225614422f00dfb4a755d6824c98e3507f47cab763acaeb47d",
-      "components": 8,
-      "count": 6
+    "weapon_kiem.png": {
+      "source_sha256": "cc376416e4d7e0bbf06c93ba1e6aa6406eb896aabef58d432d178202756179ea",
+      "manual_regions": 6
+    },
+    "weapon_cung.png": {
+      "source_sha256": "8cb6fd6efb2ebaaa652e498f9c25aec91e4f5fa6f3589263b9d19832f789e4fa",
+      "manual_regions": 5
+    },
+    "arrow.png": {
+      "source_sha256": "adb4a3298035625eeec1882ab6a2bf851727a7a4f90c37353268c570e8aa88bd",
+      "manual_regions": 2
+    },
+    "poses_body_cung.png": {
+      "source_sha256": "adcd6d92268b87131cc7a82fa5cc2a11afddd3f7d9978d347bc0f60827b46564",
+      "manual_regions": 4
     }
   }
 }

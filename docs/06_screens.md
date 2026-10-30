@@ -84,10 +84,10 @@ font, không chèn chữ vào ảnh asset. Mockup thành phẩm vẫn phải duy
 
 ### SCR-04 Chọn phái
 
-- **Mục đích:** chọn Đao hoặc Cung ở nhiệm vụ 10. Lựa chọn cố định cho ô nhân vật này.
+- **Mục đích:** chọn Kiếm hoặc Cung ở nhiệm vụ 10. Lựa chọn cố định cho ô nhân vật này.
 - **Bố cục:** hai nửa màn. Mỗi nửa: Đinh Bộ Lĩnh cầm vũ khí phái đó đang làm động tác mẫu, tên phái, ba dòng đặc điểm (tầm đánh, hiệu ứng phụ, cách chơi), hai chiêu tiêu biểu có biểu tượng. Dưới cùng: nút "Chọn phái này" cho mỗi bên.
-- **Trạng thái:** đang xem một bên (bên kia tối đi); xác nhận ("Phái không đổi được trong ô nhân vật này. Chọn phái Đao?").
-- **Chữ:** "Phái Đao — cận chiến, gây choáng", "Phái Cung — tầm xa, ghim chân".
+- **Trạng thái:** đang xem một bên (bên kia tối đi); xác nhận ("Phái không đổi được trong ô nhân vật này. Chọn phái Kiếm?").
+- **Chữ:** "Phái Kiếm — cận chiến, gây choáng", "Phái Cung — tầm xa, ghim chân".
 
 ### SCR-05 Màn chơi (HUD)
 

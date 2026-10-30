@@ -83,3 +83,8 @@ Bản sửa ngày 28/10/2026 (vẫn là v2.4): đồng bộ `14_online_migration
 - Thêm đặc tả màn hình và trạng thái, luồng tương tác, bố cục bản đồ, đặc tả hoạt ảnh, storyboard.
 - Thêm khuôn P13b (trạng thái màn hình) và P17 (tranh cutscene), script dựng bố cục.
 - Giữ nguyên phong cách pixel art chibi, bảng màu, khối STYLE và AVOID, và mô tả nhân vật của v1.
+
+Bản thử nhân vật hiện tại: **Kiếm/Cung**, bộ tư thế vẽ trọn theo lớp trong
+`prototype/pose_rig/`; mở từ nút **Nhân vật tư thế (thử)** ở A0. Có đổi phái,
+động tác và hướng nhìn. Đây là tài nguyên chưa duyệt; không thay sốA0 hoặc
+nhân vật Đào Úc. [Báo cáo Kiếm/Cung](docs/reports/g1_kiem_cung_report.md).

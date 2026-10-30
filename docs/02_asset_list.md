@@ -20,7 +20,7 @@ Có bốn loại hạng mục:
 - [x] `sty_explore_free` — **bỏ qua có phê duyệt**, không tạo ảnh không STYLE vì đã xác định hướng pixel; thay bằng mẫu C vẽ tay để đối chiếu (`art/concept/style/sty_explore_c_v2.png`); xem `05_log.md`
 - [x] Người dùng chọn **B — pixel bán hiện đại** ngày 28/10/2026; đã cập nhật Art Bible, thông số và nhật ký
 - [x] `chr_dbl_base` — ảnh gốc Đinh Bộ Lĩnh xoay bốn hướng (P1). **Đã duyệt v9**, lưu `art/reference/ref_dinh_bo_linh.png` (dựng lại từ ảnh chụp màn hình; thay bằng file gốc nếu tìm được)
-- [ ] `chr_dbl_parts` — **dừng (quyết định29/10/2026), giữ bản cũ đối chiếu:** đã có concept một tờ/16 mảnh, PNG co theo một s chung và khớp đo lại, đầu do Claude vẽ tay từng pixel, tay đã rút ngắn, rig Sprite2D và báo cáo kiểm (`reports/g1_parts_art_report.md`); chờ Claude/người dùng soát mỹ thuật. Bộ bộ phận theo tỉ lệ nhân vật **96 px** (P2): đầu kèm tóc, thân, cánh tay trên/dưới gần và xa, đùi/cẳng chân gần và xa, bàn tay, vũ khí. Từng mảnh có điểm khớp, phần vẽ bù bị che, hệ tọa độ và lớp gần/xa. Tạo bằng imagegen + snap_pixel + sửa pixel bằng script, kiểm bằng check_sprite và kiểm khớp phù hợp; Claude/người dùng duyệt từng mảnh bằng script và bằng mắt. Xem giới hạn công cụ hiện tại trong art bible Cập nhật 29/10/2026: sửa màu đao/cung, đùi và giảm khuỵu gối 35%; [báo cáo polish](reports/g1_parts_polish_report.md); vẫn chưa duyệt.
+- [ ] `chr_dbl_parts` — **dừng (quyết định29/10/2026), giữ bản cũ đối chiếu:** đã có concept một tờ/16 mảnh, PNG co theo một s chung và khớp đo lại, đầu do Claude vẽ tay từng pixel, tay đã rút ngắn, rig Sprite2D và báo cáo kiểm (`reports/g1_parts_art_report.md`); chờ Claude/người dùng soát mỹ thuật. Bộ bộ phận theo tỉ lệ nhân vật **96 px** (P2): đầu kèm tóc, thân, cánh tay trên/dưới gần và xa, đùi/cẳng chân gần và xa, bàn tay, vũ khí. Từng mảnh có điểm khớp, phần vẽ bù bị che, hệ tọa độ và lớp gần/xa. Tạo bằng imagegen + snap_pixel + sửa pixel bằng script, kiểm bằng check_sprite và kiểm khớp phù hợp; Claude/người dùng duyệt từng mảnh bằng script và bằng mắt. Xem giới hạn công cụ hiện tại trong art bible Cập nhật 29/10/2026: sửa màu kiếm/cung, đùi và giảm khuỵu gối 35%; [báo cáo polish](reports/g1_parts_polish_report.md); vẫn chưa duyệt.
 - [x] `palette` — bảng 32 màu rút từ các ảnh đã duyệt, dựa trên 16 màu khung xương trong art bible; lưu `art/reference/palette.png`. **Đã duyệt palette_v3** (kèm `palette.gpl`)
 - [ ] `chr_dbl_idle_side_96` — **PLACEHOLDER**, `art/sprites/characters/chr_dbl_idle_side_96.png`: báo cáo kỹ thuật cũ ghi kích thước/chiều cao/palette/nền/NEAREST; **chưa đạt mỹ thuật và chưa được người dùng duyệt**, không coi báo cáo cũ là kiểm đạt theo quy trình bộ phận mới. Giữ làm mẫu tạm để kiểm thử nguyên mẫu Godot; thay bằng pose ghép từ bộ phận mới theo art bible sau khi qua kiểm tra và duyệt; không yêu cầu thuê họa sĩ hay chỉnh tay. Không đánh dấu `[x]` trước khi duyệt bản thay thế.
 
@@ -28,8 +28,8 @@ Có bốn loại hạng mục:
 
 - [ ] `chr_dbl_rig_greybox` — **bước 1: đã dựng bản thử, chưa duyệt**. Khối màu 96 px, 16 mảnh có khớp, 13 clip/48 khung trong `prototype/rig/`; bảng bộ phận, đo ảnh nghiêng và thời lượng tại `16_rig_nhan_vat.md`. Có công tắc rig/cung, xem pose và contact sheet. Chờ người dùng duyệt tỉ lệ/khớp/pose trước khi vẽ; không đóng `chr_dbl_parts`, trang bị hay động tác thành phẩm.
 
-- [ ] `chr_dbl_t1` — bộ phận thay thế trang bị bậc 1 (áo, quần, vũ khí Đao/Cung), chung điểm khớp và dữ liệu hoạt ảnh; không vẽ lại cả động tác (P3)
-- [ ] `chr_dbl_anim_dao_t1`, `chr_dbl_anim_cung_t1` — dữ liệu ghép bộ phận theo từng frame (vị trí, góc, thứ tự lớp, thời lượng, hit/spawn), đủ số khung trong `09_animation_spec.md`; số khung đang chưa chốt phải dựng/duyệt trước khi đóng hạng mục. Lộn đỉnh/chiêu lớn có thể thêm khung vẽ riêng khi cần (P4)
+- [ ] `chr_dbl_t1` — bộ phận thay thế trang bị bậc 1 (áo, quần, vũ khí Kiếm/Cung), chung điểm khớp và dữ liệu hoạt ảnh; không vẽ lại cả động tác (P3)
+- [ ] `chr_dbl_anim_kiem_t1`, `chr_dbl_anim_cung_t1` — dữ liệu ghép bộ phận theo từng frame (vị trí, góc, thứ tự lớp, thời lượng, hit/spawn), đủ số khung trong `09_animation_spec.md`; số khung đang chưa chốt phải dựng/duyệt trước khi đóng hạng mục. Lộn đỉnh/chiêu lớn có thể thêm khung vẽ riêng khi cần (P4)
 - [ ] `map_dao_uc_bg`, `map_dao_uc_tiles` — cảnh nền và tileset Đào Úc (P9, P10). Khi duyệt cảnh nền, sao chép thành `art/reference/ref_map_hoa_lu.png` cho tới khi có cảnh làng Hoa Lư
 - [ ] `lay_dao_uc` — **người dùng chấp nhận bản thử khối màu 29/10/2026; chưa duyệt chính thức (A1)**: [bố cục Đào Úc](../design/maps/lay_dao_uc_v1.md) + [đấu trường boss Hậu Ngô](../design/maps/lay_dao_uc_boss_v1.md), bảng kiểm và ảnh phủ nút960/1200; theo `08_map_layout.md`.
 - [ ] `enm_tho_phi`, `enm_hau_ngo_giao`, `enm_hau_ngo_cung`, `enm_doi_truong_hau_ngo` — quái Đào Úc (P6)
@@ -90,7 +90,7 @@ Có bốn loại hạng mục:
 - [ ] Boss: `bos_do_canh_thac`, `bos_nguyen_sieu`, `bos_la_duong`, `bos_ly_khue`, `bos_nguyen_thu_tiep`, `bos_nguyen_khoan`, `bos_kieu_cong_han`, `bos_kieu_thuan` (P7)
 - [ ] NPC: `npc_ngo_nhat_khanh`, `npc_ngo_chan_luu` (P5)
 - [ ] Bộ phận thay thế áo/quần/vũ khí `chr_dbl_t5`, `chr_dbl_t6`, `chr_dbl_t7`, dùng lại dữ liệu động tác; thú cưỡi `mnt_voi` và thú cưỡi ngoại hình
-- [ ] Hiệu ứng `vfx_skills_dao`, `vfx_skills_cung`, hiệu ứng đòn đặc biệt của boss (P15)
+- [ ] Hiệu ứng `vfx_skills_kiem`, `vfx_skills_cung`, hiệu ứng đòn đặc biệt của boss (P15)
 - [ ] Storyboard `cs14_sb` đến `cs25_sb`, `beats_hoi4`, `beats_hoi5`; mockup `ui_coronation`
 
 ## Giai đoạn 6 — Chuẩn hóa và chốt
@@ -106,11 +106,11 @@ Có bốn loại hạng mục:
 
 ## Part_set và thời trang — chưa duyệt art
 
-- [ ] chr_dbl_t1…t7: mỗi bậc 4 part_set áo/quần/đao/cung, tổng 63 mảnh thay thế; mô tả tại 17_ngoai_hinh.md.
+- [ ] chr_dbl_t1…t7: mỗi bậc 4 part_set áo/quần/kiếm/cung, tổng 63 mảnh thay thế; mô tả tại 17_ngoai_hinh.md.
 - [ ] `fsh_head_<ten>` — khăn/búi tóc: head; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
 - [ ] `fsh_shirt_<ten>` — áo: body + upper_arm_near/far; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
 - [ ] `fsh_pants_<ten>` — quần: thigh_near/far + shin_near/far; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
-- [ ] `fsh_weapon_<ten>` — vũ khí: dao hoặc bow theo phái; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
+- [ ] `fsh_weapon_<ten>` — vũ khí: kiem hoặc cung theo phái; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
 - [ ] `fsh_cape_<ten>` — áo choàng: cape sau lưng, khớp vai; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
 - [ ] `fsh_face_<ten>` — khăn che mặt/mặt nạ tuồng/chèo: face_overlay trên mặt; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
 - [ ] `fsh_mount_<ten>` — thú cưỡi ngoại hình; một dạng cố định; metadata source=iap/ingame, chỉ vẽ sau duyệt mẫu.
@@ -118,4 +118,4 @@ Có bốn loại hạng mục:
 
 ## Pilot nhân vật theo tư thế vẽ trọn
 
-- [ ] `chr_dbl_poses_t0` — **bản thử, chưa duyệt**:4 tờ nguồn (12 thân,10 chân,3 đầu,6 đao), ảnh2×,4 lớp linear, idle/run/jump/fall/slash; [báo cáo](reports/g1_pose_sheets_report.md). Không thay nhân vật A0/Đào Úc; rig16 mảnh dừng. Đang chờ người dùng soát mỹ thuật.
+- [ ] `chr_dbl_poses_t0` — **kiếm + cung, bản thử chưa duyệt**: hình tư thế chung,6kiếm/5cung/2tên/4thân bắn mới, ảnh2×/linear, chuyển phái/động tác, mốc và test hướng vũ khí; [báo cáo hiện tại](reports/g1_kiem_cung_report.md). Không thay A0/Đào Úc; rig16mảnh giữ lịch sử.

@@ -90,11 +90,11 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a1-05"></a>
 
-- [ ] Bộ phận trang bị thay thế t1, t2 (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
+- [ ] Bộ phận trang bị thay thế t1, t2 (áo/quần/vũ khí), cả Kiếm và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
 
 <a id="a1-06"></a>
 
-- [ ] Dữ liệu ghép từng frame phái Đao và phái Cung ở bậc 1, đủ động tác trong `09_animation_spec.md`; khung đặc biệt bổ sung khi cần.
+- [ ] Dữ liệu ghép từng frame phái Kiếm và phái Cung ở bậc 1, đủ động tác trong `09_animation_spec.md`; khung đặc biệt bổ sung khi cần.
 
 <a id="a1-07"></a>
 
@@ -188,7 +188,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a1-34"></a>
 
-- [ ] Số liệu và đặc tả đủ 20 chiêu hai phái đã duyệt (hệ thống lõi); concept hiệu ứng cơ bản và chiêu chủ động/hỗ trợ mở ở cấp 10: Trảm Đao (Đao), Xạ Tiễn (Cung). Bốn chiêu nội tại Đao Tâm, Kiên Cường, Tâm Nhãn, Ẩn Mình không cần concept hiệu ứng.
+- [ ] Số liệu và đặc tả đủ 20 chiêu hai phái đã duyệt (hệ thống lõi); concept hiệu ứng cơ bản và chiêu chủ động/hỗ trợ mở ở cấp 10: Trảm Kiếm (Kiếm), Xạ Tiễn (Cung). Bốn chiêu nội tại Kiếm Tâm, Kiên Cường, Tâm Nhãn, Ẩn Mình không cần concept hiệu ứng.
 
 <a id="a1-35"></a>
 
@@ -254,7 +254,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a2-01"></a>
 
-- [ ] Bộ phận trang bị thay thế t3 (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
+- [ ] Bộ phận trang bị thay thế t3 (áo/quần/vũ khí), cả Kiếm và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
 
 ### 2. Thế giới
 
@@ -324,7 +324,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a2-22"></a>
 
-- [ ] Concept hiệu ứng chiêu mở ở cấp 20, 25: Song Trảm, Chấn Uy (Đao); Phá Giáp Tiễn, Hộ Thân Khí (Cung).
+- [ ] Concept hiệu ứng chiêu mở ở cấp 20, 25: Song Trảm, Chấn Uy (Kiếm); Phá Giáp Tiễn, Hộ Thân Khí (Cung).
 
 ### 7. Câu chuyện
 
@@ -362,7 +362,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a3-01"></a>
 
-- [ ] Bộ phận trang bị thay thế t4 (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
+- [ ] Bộ phận trang bị thay thế t4 (áo/quần/vũ khí), cả Kiếm và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
 
 ### 2. Thế giới
 
@@ -432,7 +432,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a3-23"></a>
 
-- [ ] Concept hiệu ứng chiêu mở ở cấp 30, 35: Quét Ngang, Thiết Kỵ Xung Phong (Đao); Song Tiễn, Liều Mạng Giương Cung (Cung).
+- [ ] Concept hiệu ứng chiêu mở ở cấp 30, 35: Quét Ngang, Thiết Kỵ Xung Phong (Kiếm); Song Tiễn, Liều Mạng Giương Cung (Cung).
 
 ### 7. Câu chuyện
 
@@ -474,7 +474,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a4-01"></a>
 
-- [ ] Bộ phận trang bị thay thế t5, t6 (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
+- [ ] Bộ phận trang bị thay thế t5, t6 (áo/quần/vũ khí), cả Kiếm và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
 
 ### 2. Thế giới
 
@@ -544,7 +544,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a4-22"></a>
 
-- [ ] Concept hiệu ứng chiêu mở ở cấp 40, 50: Khai Sơn Trảm, Vạn Quân Trảm (Đao); Thần Tiễn Xuyên Giáp, Tam Tiễn Liên Châu (Cung).
+- [ ] Concept hiệu ứng chiêu mở ở cấp 40, 50: Khai Sơn Trảm, Vạn Quân Trảm (Kiếm); Thần Tiễn Xuyên Giáp, Tam Tiễn Liên Châu (Cung).
 
 ### 7. Câu chuyện
 
@@ -582,7 +582,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a5-01"></a>
 
-- [ ] Bộ phận trang bị thay thế t7 (áo/quần/vũ khí), cả Đao và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
+- [ ] Bộ phận trang bị thay thế t7 (áo/quần/vũ khí), cả Kiếm và Cung, dùng chung hệ khớp/dữ liệu động tác đã duyệt.
 
 ### 2. Thế giới
 
@@ -644,7 +644,7 @@ Ghi nhận trên theo xác nhận trực tiếp của người dùng, không suy
 
 <a id="a5-19"></a>
 
-- [ ] Concept hiệu ứng chiêu mở ở cấp 60 (tuyệt kỹ): Vạn Thắng (Đao), Vạn Tiễn (Cung).
+- [ ] Concept hiệu ứng chiêu mở ở cấp 60 (tuyệt kỹ): Vạn Thắng (Kiếm), Vạn Tiễn (Cung).
 
 ### 7. Câu chuyện
 
