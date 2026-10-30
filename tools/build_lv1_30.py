@@ -48,6 +48,11 @@ B=[((294,136),(277,309),(212,85),(446,317)),((803,147),(785,309),(729,52),(920,3
 for i,(n,h,g,f) in enumerate(A+B):
  scale=56/math.dist(n,h)
  piece('bodies_a' if i<9 else 'bodies_b',i if i<9 else i-9,3,3,f'body_{i}',{'neck':n,'hip':h,'grip':g,'far_hand':f,'near_hand':g,'back':(h[0]-70,h[1]-100)},scale)
+# Four newly painted horizontal combat torsos; preserve common18-image layer.
+combat=[((270,126),(250,395),(182,316),(356,316)),((766,141),(759,399),(613,317),(944,282)),((1254,143),(1215,407),(1478,262),(1052,331)),((290,597),(238,861),(476,847),(70,734))]
+for i,(n,h,g,f) in enumerate(combat):
+ piece('horizontal_attack',i,3,2,f'body_{9+i}',{'neck':n,'hip':h,'grip':g,'far_hand':f,'near_hand':g,'back':(h[0]-70,h[1]-100)},56/math.dist(n,h))
+piece('horizontal_attack',4,3,2,'legs_guard',{'hip':(750,645),'sole':(750,940)},56/295,(500,550,1020,965))
 # Legs source is1774x887.
 legpoints=[((162,142),(180,392)),((520,148),(617,392)),((855,155),(803,390)),((1216,141),(1380,348)),((1590,150),(1694,383)),((194,552),(315,795)),((554,537),(503,738)),((879,554),(898,751)),((1224,755),(1240,535)),((1508,672),(1700,637))]
 for i,(hip,sole) in enumerate(legpoints):
@@ -94,37 +99,49 @@ for body_id in [15,16]:
  canvas=Image.fromarray(a);p={k:[v[0]+shift,v[1]+10] for k,v in p.items()};p['string']=[p['grip'][0]+dx,p['grip'][1]+dy]
  ImageDraw.Draw(canvas).line([tuple(p['top']),tuple(p['string']),tuple(p['bottom'])],fill='#EAD8B8',width=2)
  save(f'bow_draw_{body_id}',canvas,p,'own bow source, V-string to measured near hand')
-# Five unique combined swings: independently swept tip sectors for each beat.
-# Preparation has no trail. These offline rasters are rendered as ONE centred image.
+# Bake held sword and bow directions once in tools, never at runtime.
+def held_variant(source,id,angle):
+ im=Image.open(BASE/(source+'.png'));e=assets[source];g=np.array(e['anchors']['grip']);centre=np.array([192.,192.])
+ old=math.degrees(math.atan2(*(np.array(e['anchors']['tip'])-g)[::-1])) if source=='sword' else 0
+ turn=angle-old;r=math.radians(turn);rot=np.array([[math.cos(r),-math.sin(r)],[math.sin(r),math.cos(r)]])
+ canvas=Image.new('RGBA',(384,384));canvas.alpha_composite(im,(round(192-g[0]),round(192-g[1])));canvas=canvas.rotate(-turn,Image.Resampling.BICUBIC,center=(192,192))
+ save(id,canvas,{k:list(centre+rot@(np.array(v)-g)) for k,v in e['anchors'].items()},'own held weapon offline bake')
+held_variant('sword','sword_hold',155)
+held_variant('sword','sword_run',170)
+held_variant('bow_idle','bow_hold',45)
+# Horizontal attack images: one centred sword+continuous brushed sweep per beat.
 sword=Image.open(BASE/'sword.png');grip=assets['sword']['anchors']['grip'];tip=assets['sword']['anchors']['tip'];old=math.degrees(math.atan2(tip[1]-grip[1],tip[0]-grip[0]));length=math.dist(tip,grip)
-for i,angle in enumerate([-75,-35,0,35,60]):
- centre=np.array([192.,192.]);canvas=Image.new('RGBA',(384,384));canvas.alpha_composite(sword,(round(192-grip[0]),round(192-grip[1])));canvas=canvas.rotate(-(angle-old),Image.Resampling.BICUBIC,center=(192,192))
- tp=centre+length*np.array([math.cos(math.radians(angle)),math.sin(math.radians(angle))])
- points={'grip':list(centre),'tip':list(tp)}
- save(f'blade_{i}',canvas,points,'offline rotation of own sword')
- trail=Image.new('RGBA',canvas.size)
- if i:
-  # Independently authored curved sweeps with a sharp tip junction and tapering tail.
-  reach,tail,depth=[(0,0,0),(22,92,72),(35,132,96),(42,116,84),(27,98,64)][i]
-  def curve(p0,p1,p2,p3):
-   return [(1-t)**3*np.array(p0)+3*(1-t)**2*t*np.array(p1)+3*(1-t)*t*t*np.array(p2)+t**3*np.array(p3) for t in np.linspace(0,1,90)]
-  local=curve((length,0),(length+reach,-depth*.45),(length-tail*.4,-depth),(length-tail,-depth))
-  local+=curve((length-tail,-depth),(length-tail*.35,-depth*.45),(length-12,-12),(length,0))
-  r=math.radians(angle);rotation=np.array([[math.cos(r),-math.sin(r)],[math.sin(r),math.cos(r)]])
-  polygon=[tuple((centre+rotation@v)*4) for v in local]
-  big=Image.new('RGBA',(1536,1536));ImageDraw.Draw(big).polygon(polygon,fill='#FFFFFF')
-  trail=big.resize((384,384),Image.Resampling.LANCZOS)
- save(f'swing_mask_{i}',trail,points,'own independently swept tip-sector mask')
- combined=trail.copy();combined.alpha_composite(canvas)
- save(f'swing_{i}',combined,points,'own sword + unique continuous white tip sweep; single runtime texture')
- assets[f'swing_{i}']['trail_mask']=f'swing_mask_{i}'
- assets[f'swing_{i}']['blade_asset']=f'blade_{i}'
- assets[f'swing_{i}']['has_trail']=bool(i)
- blue=np.array(trail);blue[:,:,:3]=[90,205,255];blue[blue[:,:,3]==0,:3]=0
- skill=Image.fromarray(blue);skill.alpha_composite(canvas)
- save(f'swing_skill_{i}',skill,points,'own sword + unique blue skill sweep; single runtime texture')
- assets[f'swing_skill_{i}'].update({'trail_mask':f'swing_mask_{i}','blade_asset':f'blade_{i}','has_trail':bool(i)})
-parts={'schema':1,'status':'Lv1 unapproved','scale':.5,'levels':{'1':{'head':[f'head_{i}' for i in range(8)],'body':[f'body_{i}' for i in range(18)],'legs':[f'legs_{i}' for i in range(10)],'weapons':{'kiem':'sword','cung':'bow_idle'}}},'assets':assets,'references':[{'path':'art/reference/'+n,'sha256':hashlib.sha256((ROOT/'art/reference'/n).read_bytes()).hexdigest()} for n in ['chr_dbl_board_trang_bi.png','chr_dbl_board_animation.png','ref_dinh_bo_linh.png']]}
+for i in range(5):
+ centre=np.array([192.,128.]);canvas=Image.new('RGBA',(768,256));canvas.alpha_composite(sword,(round(centre[0]-grip[0]),round(centre[1]-grip[1])));canvas=canvas.rotate(old,Image.Resampling.BICUBIC,center=tuple(centre))
+ tp=centre+np.array([length,0]);points={'grip':list(centre),'tip':list(tp)}
+ save(f'blade_{i}',canvas,points,'own horizontal sword')
+ # Lia-out and stretched phases. Last image is blade-only recovery.
+ for prefix,gain,height in [('swing',1.,40),('swing_skill',1.09,58)]:
+  trail=Image.new('RGBA',canvas.size)
+  if i in [1,2,3]:
+   span=[0,244,286,268,0][i]*gain
+   start=tp+np.array([-1.,0.]);finish=start+np.array([span,0.])
+   samples=np.linspace(0,1,360);upper=[];lower=[]
+   for t in samples:
+    # Asymmetric brush edge, no holes; bounded deterministic waviness.
+    half=(2+(height/2)*math.sin(math.pi*t)**.65)*(1-.32*t)
+    rough=(math.sin(t*147)+.5*math.sin(t*311))*1.7*math.sin(math.pi*t)
+    upper.append(tuple(start+np.array([span*t,-half+rough])))
+    lower.append(tuple(start+np.array([span*t,half+rough*.7])))
+   big=Image.new('RGBA',(3072,1024));ImageDraw.Draw(big).polygon([(x*4,y*4) for x,y in upper+lower[::-1]],fill='white')
+   trail=big.resize(canvas.size,Image.Resampling.LANCZOS)
+   ar=np.array(trail);xx=np.indices(ar.shape[:2])[1];t=np.clip((xx-start[0])/span,0,1)
+   ar[:,:,3]=(ar[:,:,3]*(1-.82*t**1.7)).astype('uint8');trail=Image.fromarray(ar)
+  mask_id=f'{prefix}_mask_{i}';save(mask_id,trail,points,'own continuous horizontal brush mask')
+  colored=np.array(trail)
+  if prefix=='swing_skill':
+   yy=np.indices(colored.shape[:2])[0];v=np.clip(np.abs(yy-tp[1])/(height/2),0,1)
+   for c,(lo,hi) in enumerate([(245,48),(255,180),(255,255)]):colored[:,:,c]=(lo+(hi-lo)*v).astype('uint8')
+   colored[colored[:,:,3]==0,:3]=0
+  combined=Image.fromarray(colored);combined.alpha_composite(canvas)
+  save(f'{prefix}_{i}',combined,points,'own sword + unique flat brushed horizontal trail')
+  assets[f'{prefix}_{i}'].update({'trail_mask':mask_id,'blade_asset':f'blade_{i}','has_trail':i in [1,2,3],'trail_phase':'extend' if i==2 else 'out','trail_color':'blue' if prefix=='swing_skill' else 'white'})
+parts={'schema':1,'status':'Lv1 unapproved','scale':.5,'levels':{'1':{'head':[f'head_{i}' for i in range(8)],'body':[f'body_{i}' for i in range(18)],'legs':[f'legs_{i}' for i in range(10)],'weapons':{'kiem':'sword_hold','cung':'bow_hold'},'run_weapon':'sword_run','combat_stance':'legs_guard'}},'assets':assets,'references':[{'path':'art/reference/'+n,'sha256':hashlib.sha256((ROOT/'art/reference'/n).read_bytes()).hexdigest()} for n in ['chr_dbl_board_trang_bi.png','chr_dbl_board_animation.png','ref_dinh_bo_linh.png']]}
 (DATA/'parts.json').write_text(json.dumps(parts,ensure_ascii=False,indent=2)+'\n')
 # Four entries per frame, independently composed registrations. Origins relative to feet.
 combos=[(0,0,0),(1,1,0)]+[(0,2+i%3,1+i%5) for i in range(6)]+[(0,5,6),(4,6,7),(5,7,8),(6,8,9),(3,5,6),(2,5,6)]+[(7,b,l) for b,l in [(9,0),(10,0),(11,0),(12,0),(13,0),(14,0),(15,0),(16,0),(17,0),(9,6),(10,6),(11,6),(12,6),(15,6),(16,6),(17,6)]]
@@ -133,27 +150,27 @@ frames=[]
 for i,(h,b,l) in enumerate(combos):
  layers={k:{'image':idx,'dx':0,'dy':0} for k,idx in [('head',h),('body',b),('legs',l),('weapon',0)]}
  if i==1:layers['body']['dy']=-1;layers['head']['dy']=-1
- frames.append({'id':i,'layers':layers,'attack':i>=14,'nocked':i in [20,21]})
+ if i in [14,15,16,17,18,19]:layers['legs']['stance']=True
+ if i==17:layers['body']['dy']=-6
+ frames.append({'id':i,'layers':layers,'attack':i>=14,'held_visible':i in list(range(8))+[12,13],'nocked':i in [20,21]})
 (DATA/'frames30.json').write_text(json.dumps({'schema':1,'frames':frames,'clips':{'idle':{'frames':[0,1],'durations':[.6,.6],'loop':True},'run':{'frames':list(range(2,8)),'durations':[1/12]*6,'loop':True},'apex_flip':{'frames':list(range(8,12)),'durations':[.05]*4,'loop':False},'jump':{'frames':[12],'durations':[.38],'loop':False},'fall':{'frames':[13],'durations':[1/12],'loop':True}}},ensure_ascii=False,indent=2)+'\n')
-effects={'schema':1,'effects':{}}
+effects={'schema':1,'palette_slots':{'lv1':{'core':'#FFFFFF','edge':'#E4EBF0'},'future_orange':{'core':'#FFF0C0','edge':'#FF8A30','status':'not_drawn'},'future_red':{'core':'#FFE0B0','edge':'#E54430','status':'not_drawn'}},'effects':{}}
 for i in range(5):effects['effects'][f'swing_{i}']={'frames':[{'asset':f'swing_{i}','duration':.05,'anchor':'grip'}],'placement':'grip','z':6}
 for i in range(5):effects['effects'][f'swing_skill_{i}']={'frames':[{'asset':f'swing_skill_{i}','duration':.05,'anchor':'grip'}],'placement':'grip','z':6}
-effects['effects']['tram_kiem']={'frames':[{'asset':'skill_slash','duration':.05,'dx':j*3,'dy':0} for j in range(4)],'placement':'centre','z':8}
 effects['effects']['bow_draw']={'frames':[{'asset':'bow_draw_15','duration':.1}],'placement':'far_hand','z':5}
 effects['effects']['bow_draw_hold']={'frames':[{'asset':'bow_draw_16','duration':.1}],'placement':'far_hand','z':5}
 effects['effects']['bow_release']={'frames':[{'asset':'bow_release','duration':.1}],'placement':'far_hand','z':5}
 (DATA/'effects.json').write_text(json.dumps(effects,ensure_ascii=False,indent=2)+'\n')
 def beat(frame,duration,fx=None,proj=None,nocked=False):return {'frame':frame,'duration':duration,'effects':fx or [],'projectile':proj,'nocked':nocked}
-slash=[beat([14,15,16,16,16][i],dur,[{'id':f'swing_{i}','dx':0,'dy':0}]) for i,dur in enumerate([.05,.05,.075,.075,.05])]
-shoot=[beat(20,.1,[{'id':'bow_draw','dx':0,'dy':0}],nocked=True),beat(21,.1,[{'id':'bow_draw_hold','dx':0,'dy':0}],nocked=True),beat(22,.1,[{'id':'bow_release','dx':0,'dy':0}],{'id':'arrow','dx':0,'dy':0})]
+slash=[beat(frame,.05,[{'id':f'swing_{fx}','dx':0,'dy':0}]) for frame,fx in [(14,0),(15,1),(16,2),(17,3),(17,4),(14,4)]]
+shoot=[beat(20,.05,[{'id':'bow_draw','dx':0,'dy':0}],nocked=True),beat(20,.05,[{'id':'bow_draw','dx':0,'dy':0}],nocked=True),beat(21,.05,[{'id':'bow_draw_hold','dx':0,'dy':0}],nocked=True),beat(21,.05,[{'id':'bow_draw_hold','dx':0,'dy':0}],nocked=True),beat(22,.05,[{'id':'bow_release','dx':0,'dy':0}],{'id':'arrow','dx':0,'dy':0})]+[beat(22,.05,[{'id':'bow_release','dx':0,'dy':0}]) for _ in range(3)]
 tram=json.loads(json.dumps(slash))
-for i,b in enumerate(tram):
- b['effects']=[{'id':f'swing_skill_{i}','dx':0,'dy':0}]
-xa=json.loads(json.dumps(shoot));xa[-1]['projectile']['id']='skill_arrow'
+for b in tram:b['effects'][0]['id']=b['effects'][0]['id'].replace('swing_','swing_skill_')
+xa=json.loads(json.dumps(shoot));xa[4]['projectile']['id']='skill_arrow'
 skills={'schema':1,'skills':{}}
 for id,school,beats in [('slash','kiem',slash),('shoot','cung',shoot),('tram_kiem','kiem',tram),('xa_tien','cung',xa)]:skills['skills'][id]={'school':school,'ground':beats,'air':[{**b,'frame':{14:23,15:24,16:25,17:26,20:27,21:28,22:29}.get(b['frame'],b['frame'])} for b in json.loads(json.dumps(beats))],'hit_window':[.1,.2] if school=='kiem' else None,'status':'visual prototype, gameplay numbers unchanged'}
 (DATA/'skills.json').write_text(json.dumps(skills,ensure_ascii=False,indent=2)+'\n')
-print(f'Lv1 built: head8 body18 legs10; {len(assets)} transparent PNGs; frames30=30; skills4 ground+air. References never sliced into textures.')
+print(f'Lv1 built: head8 body18 legs10 common +1 combat stance; {len(assets)} transparent PNGs; frames30=30; skills4 ground+air. References never sliced into textures.')
 
 # Remove obsolete displaced standalone-trail outputs from the previous prototype.
 for i in range(5):

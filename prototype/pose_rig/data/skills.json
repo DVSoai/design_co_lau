@@ -32,7 +32,7 @@
         },
         {
           "frame": 16,
-          "duration": 0.075,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_2",
@@ -44,8 +44,8 @@
           "nocked": false
         },
         {
-          "frame": 16,
-          "duration": 0.075,
+          "frame": 17,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_3",
@@ -57,7 +57,20 @@
           "nocked": false
         },
         {
-          "frame": 16,
+          "frame": 17,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -99,7 +112,7 @@
         },
         {
           "frame": 25,
-          "duration": 0.075,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_2",
@@ -111,8 +124,8 @@
           "nocked": false
         },
         {
-          "frame": 25,
-          "duration": 0.075,
+          "frame": 26,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_3",
@@ -124,7 +137,20 @@
           "nocked": false
         },
         {
-          "frame": 25,
+          "frame": 26,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_4",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 23,
           "duration": 0.05,
           "effects": [
             {
@@ -148,7 +174,20 @@
       "ground": [
         {
           "frame": 20,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 20,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw",
@@ -161,7 +200,20 @@
         },
         {
           "frame": 21,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 21,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw_hold",
@@ -174,7 +226,7 @@
         },
         {
           "frame": 22,
-          "duration": 0.1,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_release",
@@ -188,12 +240,64 @@
             "dy": 0
           },
           "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
         }
       ],
       "air": [
         {
           "frame": 27,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 27,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw",
@@ -206,7 +310,20 @@
         },
         {
           "frame": 28,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 28,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw_hold",
@@ -219,7 +336,7 @@
         },
         {
           "frame": 29,
-          "duration": 0.1,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_release",
@@ -232,6 +349,45 @@
             "dx": 0,
             "dy": 0
           },
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
           "nocked": false
         }
       ],
@@ -269,7 +425,7 @@
         },
         {
           "frame": 16,
-          "duration": 0.075,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_2",
@@ -281,8 +437,8 @@
           "nocked": false
         },
         {
-          "frame": 16,
-          "duration": 0.075,
+          "frame": 17,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_3",
@@ -294,7 +450,20 @@
           "nocked": false
         },
         {
-          "frame": 16,
+          "frame": 17,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_4",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -336,7 +505,7 @@
         },
         {
           "frame": 25,
-          "duration": 0.075,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_2",
@@ -348,8 +517,8 @@
           "nocked": false
         },
         {
-          "frame": 25,
-          "duration": 0.075,
+          "frame": 26,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_3",
@@ -361,7 +530,20 @@
           "nocked": false
         },
         {
-          "frame": 25,
+          "frame": 26,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_4",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 23,
           "duration": 0.05,
           "effects": [
             {
@@ -385,7 +567,20 @@
       "ground": [
         {
           "frame": 20,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 20,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw",
@@ -398,7 +593,20 @@
         },
         {
           "frame": 21,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 21,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw_hold",
@@ -411,7 +619,7 @@
         },
         {
           "frame": 22,
-          "duration": 0.1,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_release",
@@ -425,12 +633,64 @@
             "dy": 0
           },
           "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
         }
       ],
       "air": [
         {
           "frame": 27,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 27,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw",
@@ -443,7 +703,20 @@
         },
         {
           "frame": 28,
-          "duration": 0.1,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true
+        },
+        {
+          "frame": 28,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_draw_hold",
@@ -456,7 +729,7 @@
         },
         {
           "frame": 29,
-          "duration": 0.1,
+          "duration": 0.05,
           "effects": [
             {
               "id": "bow_release",
@@ -469,6 +742,45 @@
             "dx": 0,
             "dy": 0
           },
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false
+        },
+        {
+          "frame": 29,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
           "nocked": false
         }
       ],

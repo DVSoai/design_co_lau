@@ -660,3 +660,58 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Đầu ra test, lệnh chụp Godot/Xvfb1600×720 phải/trái và kiểm tên được giữ nguyên văn
   trong commit; `prototype/pose_rig/reports/lv1_size_checks.txt` lưu đầu ra không chứa
   nội dung tham khảo. Lv1 vẫn chờ người dùng duyệt; không làm Lv10–60.
+
+
+## 30/10/2026 — g1_horizontal_and_held_weapons — chưa duyệt
+
+- Mẫu đòn trước **sai lớp: Đao**, không phải Kiếm. Đối chiếu chỉ đọc dữ liệu tham khảo:
+  lớp1/chiêu1 là Kiếm, lớp4/chiêu28 là Cung, lớp5/chiêu37 là Đao. Không chép code,
+  ảnh, ID/offset vào bộ hình game. Các file soi tham khảo chỉ ở `/tmp/horizontal-reference/`.
+- Kiếm sửa thành6nhịp **thủ → kéo → lia ngang → giữ/kéo dài → giữ → về thủ**.
+  Mỗi nhịp0,05s, tổng0,30s, hit0,10–0,20s giữ A0. Mũi nằm ngang hông/ngực,
+  không giơ cao bổ xuống. Vệt lia ra ở nhịp2, kéo dài ở nhịp3, tàn ở nhịp4;
+  nhịp thủ/về thủ chỉ kiếm. Trảm Kiếm cùng dáng với lớp sáng xanh dài/dày hơn.
+- Vệt riêng dài1,2–1,6H, cao≤0,35H; mép tơi liên tục, alpha đuôi giảm dần,
+  nối mũi≤2px. Lõi trắng Lv1, lưu sẵn slot màu cam/đỏ cho bước sau (chưa vẽ cấp sau).
+  H=96logic. Giới hạn toàn ảnh1,6H của bản cũ không còn phù hợp vì vệt mới bắt đầu
+  ở mũi, ngoài phần kiếm0,78H; sửa test theo đúng giới hạn vệt mới, không che FAIL.
+  Kiểm PNG thực: RGBA ghép lưỡi+mask, kích thước vệt,1khối liền, alpha đầu/đuôi,
+  khoảng hở mũi–mép vệt nhìn thấy. Runtime mỗi nhịp1texture neo tâm, rotation0.
+- Vẽ mới4thân thay `body_9..12` bằng imagegen, cùng mẫu Lv1 và điểm neo hip/neck/hand.
+  Thêm1hình `legs_guard` phụ trợ để choãi chân/hạ trọng tâm ở các nhịp trên đất;
+  bộ10hình chân di chuyển vẫn nguyên vẹn,18ô thân vẫn18 (thay4ô). Chân phụ trợ chỉ là
+  thử nghiệm chưa duyệt, không tự chốt lại khối lượng art/trang bị. Nhịp trên không dùng
+  chân bay cũ. Nguồn và prompt: `art/sprites/characters/lv1_30/sources/horizontal_attack.*`.
+- Cung đối chiếu đúng8nhịp: giương2, giữ2, thả1, hồi3; chỉ sinh tên ởnhịp5, tại0,20s.
+  Tên đặt trên dây4nhịp đầu. Mỗi nhịp0,05s/tổng0,40s là **Đề xuất thời gian xem prototype**,
+  không tuyên bố đó là thời gian tuyệt đối đo từ nguồn hay số game thật đã duyệt.
+  Hình cung/tên giữ bộ hiện có, hướng bụng trước/dây sau giữ nguyên.
+- Bổ sung cách cầm theo người dùng: đứng/nhảy kiếm ở tay trước ngang hông, mũi chéo
+  xuống sau; chạy gần ngang về sau. Cung ở tay trước, chéo trước thân, đầu trên ra trước/
+  đầu dưới về sau. Vẽ góc sẵn offline, runtime không xoay. Chỉ hiện ở tư thế đứng/chạy/
+  nhảy/rơi, ẩn cả lộn và đánh. Không bê số khung21 tham khảo sang khung21 bảng dự án:
+  khung này ở dự án đang giương cung nên phải ẩn hình cầm tay, hiện hình cung của nhịp đánh.
+- Giữ người96logic/hiển thị128px, số chạy/nhảy/hitbox A0 không đổi. Viewer giữ dải30khung
+  không chồng, dải đòn đổi lưới để hiển thị đủ6nhịp Kiếm/8nhịp Cung. Ảnh chụp thật
+  Xvfb/Godot1600×720 cả hai hướng, không imagegen cho kết quả/so sánh.
+- Tài liệu:09 sửa mục Đòn chém cơ bản và nhịp Cung,16 ghi tư thế/kiểm tra;01 chỉ sửa
+  mục Kiếm/Cung — quy tắc hình vũ khí theo phạm vi bổ sung. README ghi cách xem mới.
+  Không sửa17, GDD,02 hay prototype/config/dao_uc/rig cũ/art reference. Không đánh dấu[x].
+- Test cũ vẫn chạy (pilot cũ giữ riêng làm hồi quy); test30khung kiểm bộ hiện hành,
+  thêm `horizontal_weapon_checks.gd` đo vị trí sprite thật hai hướng, kiểm8nhịp Cung.
+  Đầu ra nguyên văn trong commit và `prototype/pose_rig/reports/lv1_horizontal_checks.txt`.
+  Không thêm tài nguyên bên thứ ba. Lv1 vẫn chờ người dùng duyệt; chưa làm Lv10–60.
+
+### Prompt nguyên văn — horizontal_attack
+
+Đính kèm hai bảng `chr_dbl_board_trang_bi.png`, `chr_dbl_board_animation.png`,
+`ref_dinh_bo_linh.png`, và tờ thân `sources/bodies_a.png`. 1lần sinh, giữ nguồn mới,
+chưa duyệt mỹ thuật. Chỉ dùng imagegen vẽ nguồn, script tách/ghép/kiểm hình thật.
+
+```text
+Production source of FIVE isolated Lv1 character pieces, equal 3 columns x2 rows, last bottom-right cell EMPTY. Bright pure green #00FF00 background, generous gaps, no text. First two references are primary design: brown wrap short-sleeve shirt, belt, knee pants, chunky bare limbs, red headband character but NO HEAD on these pieces. Fourth reference gives exactly the headless-torso separation and shirt colors. NO face, hair, head, hat, weapons, slash effects. All looking RIGHT in three-quarter side view. Same torso scale in all four cells. ROW1: (1) headless torso with both arms, low sword guard: near fist close to RIGHT waist at belly-button height, far fist before abdomen, shoulders relaxed; (2) headless torso coiling hips and shoulders to pull a sword BACK HORIZONTALLY: near fist to LEFT hip at waist level, elbow bent, far arm balancing forward; (3) headless torso uncoiling hips and shoulders in a HORIZONTAL WAIST-HIGH sweep to RIGHT: near fist extended to RIGHT at belly-button height, elbow slightly bent, far arm counterbalancing. ROW2: (4) headless torso follow-through from horizontal waist-level sweep: near fist low-forward RIGHT at hip level, shoulders twisted, no arm above chest; (5) ONLY a pair of legs from waist through soles, brown knee pants, bare feet widely planted on SAME horizontal baseline, knees bent in a stable low martial stance, weight centered, no torso/head, feet pointing slightly right; (6) empty green. Neck stumps and waist pads for overlap. Do NOT depict an overhead swing. No axe-chopping motion. Strong thick clean contours, few big folds. Match the brown Lv1 clothing and chunky chibi silhouette on the attached boards.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```

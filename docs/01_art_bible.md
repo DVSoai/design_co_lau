@@ -203,15 +203,21 @@ Không dùng katana hoặc kiếm Trung Hoa cầu kỳ; khối AVOID giữ nguy�
 t4thép/chắn đồng nhỏ; t5thép tôi; t6thép sẫm; t7thép tốt/hoa văn lau tiết chế.
 Không đổi chỉ số, cơ chế hoặc số liệu chiêu; Trảm Kiếm và Kiếm Tâm là tên hiện tại.
 
-- Đi/đứng: kiếm đeo sau lưng, chuôi nhô qua vai phía sau, mũi xuống sau mông;
-  hình đi theo thân, không xoay.
-- Đánh: mỗi khung có hình vung riêng kèm vệt trắng vật lý; **chuôi ở tay gần,
-  lưỡi ra xa người theo chiều chém, vệt ở phía mũi đang lao tới**. Không xoay kiếm
-  theo tay. Khung giơ mũi cao hơn chuôi; vung/chém/kết thúc/đâm mũi ở trước tay.
-- Cung đi/đứng đeo chéo sau lưng. Khi bắn: tay xa duỗi ra trước, cầm cung gần
-  thẳng đứng; **lưng cong phồng ra trước, dây ở sau về phía người bắn**.
+- Đứng/chạy/nhảy: kiếm cầm ở **tay trước ngang hông**, mũi **chéo xuống phía sau**,
+  vắt trước thân; chạy thì lưỡi gần ngang hơn về sau, nhảy như đứng. Không chĩa lên/ra
+  trước khi không đánh. Hình theo thân bằng điểm neo, không xoay sprite runtime.
+- Đánh: **lia ngang hông** theo chuỗi thủ → kéo → lia → giữ → về thủ, hạ trọng tâm,
+  chân choãi và vặn hông. Ẩn kiếm cầm tay, mỗi nhịp có hình kiếm+vệt riêng neo theo tâm;
+  grip trùng nắm tay≤1px, vệt nối mũi≤2px. Không giơ cao bổ xuống hay dùng vệt trăng khuyết.
+  Vệt thường trắng ngang dẹt, mép tơi/đuôi mờ; Trảm Kiếm thêm lớp sáng xanh theo bảng mục5.
+- Cung đứng/chạy/nhảy cầm **tay trước, chéo trước thân**: đầu trên chếch lên trước,
+  đầu dưới xuống sau, bụng hướng ra trước; không dựng sau lưng. Khi bắn, tay xa duỗi ra
+  trước cầm cung; **lưng cong phồng ra trước, dây ở sau về phía người bắn**.
   Giương: dây chữV tới tay gần cạnh má; thả: dây thẳng. Tên là hình riêng,
   mũi ở đầu phía trước và bay ra trước sau khung thả.
+- Vũ khí cầm tay chỉ hiện ở tư thế đứng/chạy/nhảy/rơi (khung0–7,12–13 của bảng dự án);
+  ẩn cả4khung lộn và mọi khung đánh. Không nhầm chỉ số khung trên không của nguồn
+  tham khảo với khung21giương cung của bảng dự án.
 
 Bản thử dùng tranh2×, Sprite2Dlinear scale0,5 cố định, rotation0; chỉ lật gốc.
 Mốc và hình thật được kiểm trong `weapon_direction_checks.gd`; tài nguyên cũ

@@ -4,4 +4,4 @@ STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile acti
 
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
 
-Processing: tools/build_lv1_30.py; offline rotation of own sword
+Processing: tools/build_lv1_30.py; own horizontal sword

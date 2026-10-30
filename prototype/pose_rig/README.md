@@ -1,3 +1,22 @@
+## Sửa đúng dáng Kiếm và cách cầm —30/10/2026, chưa duyệt
+
+Kiếm6nhịp lia ngang: thủ/kéo/lia/giữ/giữ/về thủ,0,30s, hit0,10–0,20s.
+Vệt trắng ngang dài, mép tơi và đuôi giảm alpha; hai lớp lia ra/kéo dài nối tiếp.
+Trảm Kiếm cùng dáng với vệt xanh dài/dày hơn. 4thân mới thay ô cũ; chân choãi bổ sung
+riêng, không đổi bộ10chân di chuyển. Cung8nhịp, thả ởnhịp5/t=0,20s; tổng0,40s là
+đề xuất cho preview, không lấy làm số game thật đã chốt.
+Ngoài đánh: kiếm chúc xuống sau (chạy gần ngang hơn); cung chéo trước thân, đều tay
+trước. Lộn/đánh ẩn hình cầm tay. Cỡ hiển thị vẫn128px, A0 không đổi.
+
+Kiểm thêm:
+
+```sh
+python3 tools/check_lv1_sizes.py
+godot --headless --fixed-fps 60 --path prototype --script res://tests/horizontal_weapon_checks.gd
+```
+
+Báo cáo lượt mới: `reports/lv1_horizontal_checks.txt`. Các mục pilot bên dưới là lịch sử.
+
 ## Sửa cỡ hiển thị và hình vung —30/10/2026, chưa duyệt
 
 Nhân vật96px logic A0 hiển thị **128px** ở1600×720. Viewer minh họa hệ số720/540; đo RGBA idle96,204px nên

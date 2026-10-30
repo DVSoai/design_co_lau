@@ -75,6 +75,7 @@ func sample_frame(index: int) -> void:
 	var f: Dictionary=frames_data.frames[index]
 	var ids: Dictionary={}
 	for layer in ["legs","body","head"]:ids[layer]=parts.levels["1"][layer][int(f.layers[layer].image)]
+	if f.layers.legs.get('stance',false):ids.legs=parts.levels['1'].combat_stance
 	var legs: String=ids.legs
 	var body: String=ids.body
 	var head: String=ids.head
@@ -92,16 +93,18 @@ func sample_frame(index: int) -> void:
 	var far_hand: Vector2=sprites.body.position+anchor(body,"far_hand")
 	var near_hand: Vector2=sprites.body.position+anchor(body,"near_hand")
 	var back: Vector2=sprites.body.position+anchor(body,"back")
+	var held_hand: Vector2=grip if grip.x>=far_hand.x else far_hand
 	var weapon: String=parts.levels["1"].weapons[school]
+	if school=="kiem" and index in range(2,8):weapon=parts.levels["1"].run_weapon
 	var wo: Dictionary=f.layers.weapon
-	put(sprites.weapon,weapon,(grip if school=="kiem" else far_hand)+Vector2(wo.dx,wo.dy),"grip")
+	put(sprites.weapon,weapon,held_hand+Vector2(wo.dx,wo.dy),"grip")
 	sprites.weapon.z_index=3
-	sprites.weapon.visible=not f.attack
+	sprites.weapon.visible=f.get("held_visible",not f.attack) and not f.attack
 	quiver.visible=school=="cung"
 	if school=="cung":put(quiver,"quiver",back,"back")
 	else:quiver.texture=null
 	nocked_arrow.visible=false
-	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand}
+	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand,"held_hand":held_hand}
 	hit_active=false
 func beats() -> Array:
 	return skills_data[action]["air" if airborne else "ground"]

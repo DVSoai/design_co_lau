@@ -49,6 +49,13 @@
       "sha256": "d29f789245d5ae47a374cbde29d61fcfa828aeaa4b53d4630f0d571c0f6471ec",
       "status": "retained, awaiting visual approval",
       "extra_reference": null
+    },
+    {
+      "image": "horizontal_attack.png",
+      "prompt": "horizontal_attack.prompt.txt",
+      "sha256": "1276b278729a45eb54b8cebc08832c314cdac671e6ff03f226560d8eca3022f2",
+      "status": "retained, awaiting visual approval",
+      "extra_reference": "art/sprites/characters/lv1_30/sources/bodies_a.png"
     }
   ]
 }

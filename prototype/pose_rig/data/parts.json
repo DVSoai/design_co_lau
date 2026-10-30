@@ -47,9 +47,11 @@
         "legs_9"
       ],
       "weapons": {
-        "kiem": "sword",
-        "cung": "bow_idle"
-      }
+        "kiem": "sword_hold",
+        "cung": "bow_hold"
+      },
+      "run_weapon": "sword_run",
+      "combat_stance": "legs_guard"
     }
   },
   "assets": {
@@ -763,204 +765,204 @@
     "body_9": {
       "file": "body_9.png",
       "size": [
-        116,
-        94
+        74,
+        71
       ],
       "anchors": {
         "neck": [
-          57.02,
-          27.705
+          45.05,
+          4.775
         ],
         "hip": [
-          51.544,
-          83.436
+          40.898,
+          60.621
         ],
         "grip": [
-          30.604,
-          11.275
+          26.781,
+          44.22
         ],
         "far_hand": [
-          105.987,
-          86.013
+          62.904,
+          44.22
         ],
         "near_hand": [
-          30.604,
-          11.275
+          26.781,
+          44.22
         ],
         "back": [
-          28.993,
-          51.222
+          26.366,
+          39.86
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "horizontal_attack",
         "cell": 0,
         "crop": [
           0,
           0,
           512,
-          341
+          512
         ],
         "bounds": [
-          117,
-          50,
-          477,
-          341
+          53,
+          103,
+          409,
+          447
         ],
-        "scale": 0.32214779907315866
+        "scale": 0.20760542471058835
       },
       "status": "drawn_unapproved"
     },
     "body_10": {
       "file": "body_10.png",
       "size": [
-        106,
-        109
+        100,
+        73
       ],
       "anchors": {
         "neck": [
-          59.437,
-          42.602
+          53.376,
+          6.943
         ],
         "hip": [
-          53.253,
-          98.26
+          51.857,
+          62.923
         ],
         "grip": [
-          34.013,
-          9.963
+          20.179,
+          45.131
         ],
         "far_hand": [
-          99.634,
-          100.664
+          91.997,
+          37.537
         ],
         "near_hand": [
-          34.013,
-          9.963
+          20.179,
+          45.131
         ],
         "back": [
-          29.203,
-          63.903
+          36.669,
+          41.225
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "horizontal_attack",
         "cell": 1,
         "crop": [
           512,
           0,
           1024,
-          341
+          512
         ],
         "bounds": [
-          118,
-          23,
-          427,
-          341
+          8,
+          109,
+          469,
+          446
         ],
-        "scale": 0.34356474778841145
+        "scale": 0.21697441717321111
       },
       "status": "drawn_unapproved"
     },
     "body_11": {
       "file": "body_11.png",
       "size": [
-        145,
-        75
+        103,
+        72
       ],
       "anchors": {
         "neck": [
-          57.989,
-          7.594
+          48.264,
+          6.505
         ],
         "hip": [
-          51.086,
-          63.167
+          40.08,
+          61.904
         ],
         "grip": [
-          134.272,
-          26.578
+          95.269,
+          31.477
         ],
         "far_hand": [
-          37.279,
-          44.872
+          5.876,
+          45.956
         ],
         "near_hand": [
-          134.272,
-          26.578
+          95.269,
+          31.477
         ],
         "back": [
-          26.923,
-          28.649
+          25.391,
+          40.92
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "horizontal_attack",
         "cell": 2,
         "crop": [
           1024,
           0,
           1536,
-          341
+          512
         ],
         "bounds": [
-          68,
-          124,
-          487,
-          341
+          0,
+          112,
+          493,
+          454
         ],
-        "scale": 0.3451730137292564
+        "scale": 0.2098438228340437
       },
       "status": "drawn_unapproved"
     },
     "body_12": {
       "file": "body_12.png",
       "size": [
-        94,
-        85
+        99,
+        71
       ],
       "anchors": {
         "neck": [
-          60.281,
-          6.482
+          54.112,
+          4.579
         ],
         "hip": [
-          48.613,
-          61.253
+          43.289,
+          59.523
         ],
         "grip": [
-          84.911,
-          70.976
+          92.823,
+          56.609
         ],
         "far_hand": [
-          27.548,
-          41.483
+          8.325,
+          33.091
         ],
         "near_hand": [
-          84.911,
-          70.976
+          92.823,
+          56.609
         ],
         "back": [
-          25.927,
-          28.844
+          28.721,
+          38.711
         ]
       },
       "source": {
-        "sheet": "bodies_b",
+        "sheet": "horizontal_attack",
         "cell": 3,
         "crop": [
           0,
-          341,
           512,
-          683
+          512,
+          1024
         ],
         "bounds": [
-          81,
-          67,
-          372,
-          329
+          30,
+          63,
+          507,
+          403
         ],
-        "scale": 0.3240894866822562
+        "scale": 0.20812236094920655
       },
       "status": "drawn_unapproved"
     },
@@ -1216,6 +1218,41 @@
           298
         ],
         "scale": 0.3067859955389482
+      },
+      "status": "drawn_unapproved"
+    },
+    "legs_guard": {
+      "file": "legs_guard.png",
+      "size": [
+        96,
+        61
+      ],
+      "anchors": {
+        "hip": [
+          46.698,
+          4.936
+        ],
+        "sole": [
+          46.698,
+          60.936
+        ]
+      },
+      "source": {
+        "sheet": "horizontal_attack",
+        "cell": 4,
+        "crop": [
+          500,
+          550,
+          1020,
+          965
+        ],
+        "bounds": [
+          4,
+          69,
+          511,
+          390
+        ],
+        "scale": 0.18983050847457628
       },
       "status": "drawn_unapproved"
     },
@@ -1937,8 +1974,8 @@
       "source": "own bow source, V-string to measured near hand",
       "status": "drawn_unapproved"
     },
-    "blade_0": {
-      "file": "blade_0.png",
+    "sword_hold": {
+      "file": "sword_hold.png",
       "size": [
         384,
         384
@@ -1949,403 +1986,587 @@
           192.0
         ],
         "tip": [
-          222.2186032172586,
-          79.22263745942661
+          86.18338438609176,
+          241.34309822080925
         ]
       },
-      "source": "offline rotation of own sword",
+      "source": "own held weapon offline bake",
+      "status": "drawn_unapproved"
+    },
+    "sword_run": {
+      "file": "sword_run.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "tip": [
+          77.0180645641132,
+          212.2744175114256
+        ]
+      },
+      "source": "own held weapon offline bake",
+      "status": "drawn_unapproved"
+    },
+    "bow_hold": {
+      "file": "bow_hold.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          192.0
+        ],
+        "belly": [
+          194.3252934535173,
+          194.3252934535173
+        ],
+        "string": [
+          180.61830046436268,
+          180.61830046436268
+        ],
+        "top": [
+          202.40262860784054,
+          159.078740052834
+        ],
+        "bottom": [
+          158.46682072296105,
+          203.7488511335611
+        ]
+      },
+      "source": "own held weapon offline bake",
+      "status": "drawn_unapproved"
+    },
+    "blade_0": {
+      "file": "blade_0.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own horizontal sword",
       "status": "drawn_unapproved"
     },
     "swing_mask_0": {
       "file": "swing_mask_0.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          222.2186032172586,
-          79.22263745942661
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own independently swept tip-sector mask",
+      "source": "own continuous horizontal brush mask",
       "status": "drawn_unapproved"
     },
     "swing_0": {
       "file": "swing_0.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          222.2186032172586,
-          79.22263745942661
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_0",
       "blade_asset": "blade_0",
-      "has_trail": false
+      "has_trail": false,
+      "trail_phase": "out",
+      "trail_color": "white"
+    },
+    "swing_skill_mask_0": {
+      "file": "swing_skill_mask_0.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own continuous horizontal brush mask",
+      "status": "drawn_unapproved"
     },
     "swing_skill_0": {
       "file": "swing_skill_0.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          222.2186032172586,
-          79.22263745942661
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
-      "trail_mask": "swing_mask_0",
+      "trail_mask": "swing_skill_mask_0",
       "blade_asset": "blade_0",
-      "has_trail": false
+      "has_trail": false,
+      "trail_phase": "out",
+      "trail_color": "blue"
     },
     "blade_1": {
       "file": "blade_1.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          125.03167184626697
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "offline rotation of own sword",
+      "source": "own horizontal sword",
       "status": "drawn_unapproved"
     },
     "swing_mask_1": {
       "file": "swing_mask_1.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          125.03167184626697
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own independently swept tip-sector mask",
+      "source": "own continuous horizontal brush mask",
       "status": "drawn_unapproved"
     },
     "swing_1": {
       "file": "swing_1.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          125.03167184626697
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_1",
       "blade_asset": "blade_1",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "out",
+      "trail_color": "white"
+    },
+    "swing_skill_mask_1": {
+      "file": "swing_skill_mask_1.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own continuous horizontal brush mask",
+      "status": "drawn_unapproved"
     },
     "swing_skill_1": {
       "file": "swing_skill_1.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          125.03167184626697
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
-      "trail_mask": "swing_mask_1",
+      "trail_mask": "swing_skill_mask_1",
       "blade_asset": "blade_1",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "out",
+      "trail_color": "blue"
     },
     "blade_2": {
       "file": "blade_2.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
           308.755717127728,
-          192.0
+          128.0
         ]
       },
-      "source": "offline rotation of own sword",
+      "source": "own horizontal sword",
       "status": "drawn_unapproved"
     },
     "swing_mask_2": {
       "file": "swing_mask_2.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
           308.755717127728,
-          192.0
+          128.0
         ]
       },
-      "source": "own independently swept tip-sector mask",
+      "source": "own continuous horizontal brush mask",
       "status": "drawn_unapproved"
     },
     "swing_2": {
       "file": "swing_2.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
           308.755717127728,
-          192.0
+          128.0
         ]
       },
-      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_2",
       "blade_asset": "blade_2",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "extend",
+      "trail_color": "white"
+    },
+    "swing_skill_mask_2": {
+      "file": "swing_skill_mask_2.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own continuous horizontal brush mask",
+      "status": "drawn_unapproved"
     },
     "swing_skill_2": {
       "file": "swing_skill_2.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
           308.755717127728,
-          192.0
+          128.0
         ]
       },
-      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
-      "trail_mask": "swing_mask_2",
+      "trail_mask": "swing_skill_mask_2",
       "blade_asset": "blade_2",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "extend",
+      "trail_color": "blue"
     },
     "blade_3": {
       "file": "blade_3.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          258.968328153733
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "offline rotation of own sword",
+      "source": "own horizontal sword",
       "status": "drawn_unapproved"
     },
     "swing_mask_3": {
       "file": "swing_mask_3.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          258.968328153733
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own independently swept tip-sector mask",
+      "source": "own continuous horizontal brush mask",
       "status": "drawn_unapproved"
     },
     "swing_3": {
       "file": "swing_3.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          258.968328153733
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_3",
       "blade_asset": "blade_3",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "out",
+      "trail_color": "white"
+    },
+    "swing_skill_mask_3": {
+      "file": "swing_skill_mask_3.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own continuous horizontal brush mask",
+      "status": "drawn_unapproved"
     },
     "swing_skill_3": {
       "file": "swing_skill_3.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          287.6406843676057,
-          258.968328153733
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
-      "trail_mask": "swing_mask_3",
+      "trail_mask": "swing_skill_mask_3",
       "blade_asset": "blade_3",
-      "has_trail": true
+      "has_trail": true,
+      "trail_phase": "out",
+      "trail_color": "blue"
     },
     "blade_4": {
       "file": "blade_4.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          250.377858563864,
-          293.1134170696823
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "offline rotation of own sword",
+      "source": "own horizontal sword",
       "status": "drawn_unapproved"
     },
     "swing_mask_4": {
       "file": "swing_mask_4.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          250.377858563864,
-          293.1134170696823
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own independently swept tip-sector mask",
+      "source": "own continuous horizontal brush mask",
       "status": "drawn_unapproved"
     },
     "swing_4": {
       "file": "swing_4.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          250.377858563864,
-          293.1134170696823
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique continuous white tip sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_4",
       "blade_asset": "blade_4",
-      "has_trail": true
+      "has_trail": false,
+      "trail_phase": "out",
+      "trail_color": "white"
+    },
+    "swing_skill_mask_4": {
+      "file": "swing_skill_mask_4.png",
+      "size": [
+        768,
+        256
+      ],
+      "anchors": {
+        "grip": [
+          192.0,
+          128.0
+        ],
+        "tip": [
+          308.755717127728,
+          128.0
+        ]
+      },
+      "source": "own continuous horizontal brush mask",
+      "status": "drawn_unapproved"
     },
     "swing_skill_4": {
       "file": "swing_skill_4.png",
       "size": [
-        384,
-        384
+        768,
+        256
       ],
       "anchors": {
         "grip": [
           192.0,
-          192.0
+          128.0
         ],
         "tip": [
-          250.377858563864,
-          293.1134170696823
+          308.755717127728,
+          128.0
         ]
       },
-      "source": "own sword + unique blue skill sweep; single runtime texture",
+      "source": "own sword + unique flat brushed horizontal trail",
       "status": "drawn_unapproved",
-      "trail_mask": "swing_mask_4",
+      "trail_mask": "swing_skill_mask_4",
       "blade_asset": "blade_4",
-      "has_trail": true
+      "has_trail": false,
+      "trail_phase": "out",
+      "trail_color": "blue"
     }
   },
   "references": [

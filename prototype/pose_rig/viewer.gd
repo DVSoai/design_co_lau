@@ -87,15 +87,18 @@ func build() -> void:
 	elif page=="attacks":
 		var ids: Array=["slash","tram_kiem"] if school=="kiem" else ["shoot","xa_tien"]
 		for row in 2:
-			var a=make_actor(Vector2(160,300+row*310),(128.0/96.204),true)
+			var a=make_actor(Vector2(100,360+row*310),(128.0/96.204),true)
 			a.play(ids[row])
 			if row==0:actor=a
 			label_at(ids[row]+" / tốc độ thật",Vector2(24,110+row*310),20)
 			for i in a.skills_data[ids[row]].ground.size():
-				var s=make_actor(Vector2(430+i*230,300+row*310),(128.0/96.204))
+				var columns:=3 if school=="kiem" else 4
+				var step:=360 if school=="kiem" else 275
+				var at:=Vector2(500+(i%columns)*step,210+row*310+(i/columns)*140)
+				var s=make_actor(at,(128.0/96.204))
 				s.action=ids[row]
 				s.sample_beat(i,true)
-				label_at("Nhịp%d" % i,Vector2(400+i*230,310+row*310),16)
+				label_at("Nhịp%d" % i,at+Vector2(-90,-110),16)
 	else:
 		label_at("Mẫu Lv1 từ bảng — chỉ để đối chiếu",Vector2(60,100),22)
 		var t:=Sprite2D.new()

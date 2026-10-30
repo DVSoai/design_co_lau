@@ -436,3 +436,20 @@ Mỗi nhịp dùng một PNG ghép kiếm với vệt có hình dạng riêng, v
 nắm tay≤1px; vệt nối mũi kiếm≤2px. Nhịp giơ chỉ kiếm, không có vệt rời.
 Kiểm kích thước và khoảng hở từ PNG thực bằng `tools/check_lv1_sizes.py`.
 Lv1 vẫn chờ người dùng duyệt, chưa làm Lv10–60 theo mẫu mới.
+
+## Lia ngang và cách cầm ngoài đánh —30/10/2026, chưa duyệt
+
+Thay nhịp bổ cũ bằng6nhịp lia ngang hông, không giơ kiếm cao; số đo A0 và tổng0,30s,
+hit0,10–0,20s giữ nguyên. Bốn thân `body_9..12` vẽ mới theo cùng mẫu Lv1/điểm neo.
+Thêm `legs_guard` phụ trợ cho chân choãi/hạ trọng tâm; bộ10chân di chuyển chung vẫn
+nguyên vẹn. Đây là hình phụ trợ prototype, chưa tự duyệt hay chốt lại khối lượng art.
+Vệt có lớp lia ra rồi kéo dài, dài1,2–1,6H và cao≤0,35H; Trảm Kiếm dài/dày hơn, xanh
+sáng. Đo vệt riêng: giới hạn cũ1,6Hcho toàn ảnh không còn áp dụng vì còn phần kiếm.
+
+Hình cầm bake offline: kiếm đứng/nhảy chúc xuống sau, chạy gần ngang về sau; cung
+chéo trước thân. Runtime chỉ dời/lật, rotation0. Giữ nguyên người96logic/hiển thị128px.
+Tư thế đứng/chạy/nhảy/rơi có vũ khí cầm tay; lộn/đánh không. Không bê chỉ số khung21
+tham khảo sang bảng30khung riêng (21ở bảng này đang giương cung, phải ẩn hình cầm tay).
+`horizontal_weapon_checks.gd` đo Sprite2D thật ở hai hướng; `check_lv1_sizes.py` đo
+vệt từ alpha thật, độ liền, tơi mép/alpha đuôi và khoảng hở mũi–vệt.
+Cung8nhịp, thả nhịp5; tổng0,40s là đề xuất xem hoạt ảnh, chưa duyệt số game thật.
