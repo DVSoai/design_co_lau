@@ -1,0 +1,1 @@
+Original edited artwork normalization: {"sheet": "carry_v4_leg_shoes", "candidate": 0, "crop": [148, 91, 829, 633], "scale": 0.12548262548262548, "marked_joint": [675.0, 115.0]}

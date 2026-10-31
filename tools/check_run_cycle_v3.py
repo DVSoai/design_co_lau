@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 """PIL/NumPy measurements on actual run2..7 textures, with baseline scope checks."""
 from pathlib import Path
-import argparse,hashlib,itertools,json,math,subprocess,sys
+import argparse,copy,hashlib,itertools,json,math,subprocess,sys
 import numpy as np
 from PIL import Image
 
 R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
-parser=argparse.ArgumentParser();parser.add_argument('--baseline',default='8f6f3e8');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--baseline',default='cc2a04a');args=parser.parse_args()
 p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());H=p['presentation']['standing_height_logic'];fail=0
 def old(path):return subprocess.check_output(['git','show',args.baseline+':'+path],cwd=R)
 def check(ok,message):
     global fail
     print(('PASS: ' if ok else 'FAIL: ')+message);fail+=not ok
 base_p=json.loads(old('prototype/pose_rig/data/parts.json'));base_f=json.loads(old('prototype/pose_rig/data/frames30.json'))
-check(all(row==base_f['frames'][i] for i,row in enumerate(f['frames']) if i not in range(2,8)),'all24 non-run frame rows exactly equal baseline')
+def without_carry(row,i):
+    row=copy.deepcopy(row)
+    if i in [0,1,12,21]:
+        row['layers']['weapon'].pop('cung_asset',None)
+        row['registrations']['cung'].pop('weapon',None)
+    return row
+check(all(without_carry(row,i)==without_carry(base_f['frames'][i],i) for i,row in enumerate(f['frames']) if i not in range(2,8)),'all24 non-run rows unchanged except authorized held-bow asset/registration0,1,12,21')
 check({k:v for k,v in f.items() if k!='frames'}=={k:v for k,v in base_f.items() if k!='frames'},'clip/frame mapping and numeric reference table unchanged')
 check(all(p['assets'][id]==data for id,data in base_p['assets'].items()),'all existing asset registrations/metadata unchanged; new run assets only')
 old_images=subprocess.check_output(['git','ls-tree','-r','--name-only',args.baseline,'--','prototype/pose_rig/art','art/sprites'],cwd=R,text=True).splitlines()

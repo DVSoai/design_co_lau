@@ -175,3 +175,5 @@ if __name__=='__main__':
     main()
     from build_run_cycle_v3 import run as update_running
     update_running()
+    from build_carry_v4 import run as update_carry
+    update_carry()

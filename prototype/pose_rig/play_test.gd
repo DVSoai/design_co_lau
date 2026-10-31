@@ -56,6 +56,8 @@ func capture_play() -> void:
 	if "--cung" in args:player.switch_school()
 	player.position=Vector2(390,460)
 	player.facing=-1 if "--left" in args else 1
+	# Keep the running review clear of the dummy; normal gameplay is unaffected.
+	if "--run" in args and player.facing>0:player.position.x=300
 	for i in 5:await get_tree().physics_frame
 	if "--run" in args:
 		Input.action_press("left" if player.facing<0 else "right")

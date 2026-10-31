@@ -5183,6 +5183,104 @@
         "angle_from_vertical": 40
       },
       "status": "drawn_unapproved"
+    },
+    "carry_v4_legs_3": {
+      "file": "carry_v4_legs_3.png",
+      "size": [
+        85,
+        68
+      ],
+      "anchors": {
+        "hip": [
+          66.12934362934362,
+          3.011583011583012
+        ],
+        "foot_left": [
+          7.152509652509653,
+          53.83204633204633
+        ],
+        "foot_right": [
+          66.75675675675676,
+          66.38030888030887
+        ],
+        "sole": [
+          66.12934362934362,
+          68
+        ]
+      },
+      "source": {
+        "sheet": "carry_v4_leg_shoes",
+        "candidate": 0,
+        "crop": [
+          148,
+          91,
+          829,
+          633
+        ],
+        "scale": 0.12548262548262548,
+        "marked_joint": [
+          675.0,
+          115.0
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "carry_v4_bow": {
+      "file": "carry_v4_bow.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "top": [
+          177.3810831353507,
+          71.5508314642316
+        ],
+        "bottom": [
+          78.6189168646493,
+          184.4491685357684
+        ],
+        "grip": [
+          135.9063215777467,
+          131.32623592254433
+        ],
+        "belly": [
+          135.9063215777467,
+          131.32623592254433
+        ],
+        "string": [
+          128.0,
+          128.0
+        ]
+      },
+      "source": {
+        "sheet": "carry_v4_bow",
+        "candidate": 0,
+        "crop": [
+          187,
+          102,
+          762,
+          748
+        ],
+        "length_source": 150,
+        "perpendicular_normalization": 0.4,
+        "grip": "center_wrapped_handle",
+        "marked_grip": [
+          562.0,
+          482.0
+        ],
+        "marked_tips": [
+          [
+            731.0,
+            127.0
+          ],
+          [
+            214.0,
+            718.0
+          ]
+        ]
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [
