@@ -1,0 +1,1 @@
+Offline registration of original run artwork: {"own_asset": "bow_hold", "carry_grip": "lower_wood_limb", "angle_from_vertical": 40}

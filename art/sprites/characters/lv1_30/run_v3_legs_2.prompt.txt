@@ -1,0 +1,1 @@
+Offline registration of original run artwork: {"sheet": "run_v3_legs", "crop": [988, 92, 1521, 385], "phase": 2, "scale": 0.23985239852398524}

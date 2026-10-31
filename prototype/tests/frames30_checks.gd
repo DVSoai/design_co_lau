@@ -23,7 +23,7 @@ func run() -> void:
 				var ok: bool=f.layers.size()==4 and a.scale==Vector2(dir,1)
 				for s: Sprite2D in a.all_visual_sprites():ok=ok and s.rotation==0
 				check(ok,"%s frame%d dir%d four layers, rotation0 root flip" % [school,i,dir])
-				check(a.quiver.visible==(school=="cung") and a.sprites.weapon.texture.resource_path.ends_with("sword_run.png" if school=="kiem" and i in range(2,8) else ("sword_hold.png" if school=="kiem" else "bow_hold.png")),"exclusive class weapon/quiver")
+				check(a.quiver.visible==(school=="cung") and a.sprites.weapon.texture.resource_path.ends_with("sword_run.png" if school=="kiem" and i in range(2,8) else ("sword_hold.png" if school=="kiem" else ("run_v3_bow.png" if i in range(2,8) else "bow_hold.png"))),"exclusive class weapon/quiver")
 				cases+=1
 		for id in a.skills_data:
 			if a.skills_data[id].school!=school:continue

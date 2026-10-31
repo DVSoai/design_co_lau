@@ -4386,6 +4386,803 @@
         "scale": 0.12165450121654502
       },
       "status": "drawn_unapproved"
+    },
+    "run_v3_legs_0": {
+      "file": "run_v3_legs_0.png",
+      "size": [
+        130,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          64.88754325259515,
+          4.948096885813149
+        ],
+        "sole": [
+          64.88754325259515,
+          70
+        ],
+        "foot_left": [
+          6.29757785467128,
+          61.62629757785467
+        ],
+        "foot_right": [
+          108.63321799307958,
+          69.72318339100346
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          26,
+          106,
+          606,
+          417
+        ],
+        "phase": 0,
+        "scale": 0.22491349480968859
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_legs_1": {
+      "file": "run_v3_legs_1.png",
+      "size": [
+        67,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          47.62376237623762,
+          4.7194719471947195
+        ],
+        "sole": [
+          47.62376237623762,
+          70
+        ],
+        "foot_left": [
+          39.04290429042904,
+          69.2904290429043
+        ],
+        "foot_right": [
+          54.059405940594054,
+          69.2904290429043
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          597,
+          104,
+          909,
+          429
+        ],
+        "phase": 1,
+        "scale": 0.2145214521452145
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_legs_2": {
+      "file": "run_v3_legs_2.png",
+      "size": [
+        128,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          65.59963099630997,
+          5.276752767527675
+        ],
+        "sole": [
+          65.59963099630997,
+          70
+        ],
+        "foot_left": [
+          7.915129151291513,
+          70.03690036900369
+        ],
+        "foot_right": [
+          109.37269372693727,
+          64.04059040590406
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          988,
+          92,
+          1521,
+          385
+        ],
+        "phase": 2,
+        "scale": 0.23985239852398524
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_legs_3": {
+      "file": "run_v3_legs_3.png",
+      "size": [
+        124,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          62.17881944444444,
+          4.965277777777778
+        ],
+        "sole": [
+          62.17881944444444,
+          70
+        ],
+        "foot_left": [
+          7.447916666666667,
+          67.48263888888889
+        ],
+        "foot_right": [
+          102.23958333333333,
+          69.73958333333333
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          37,
+          573,
+          587,
+          883
+        ],
+        "phase": 3,
+        "scale": 0.22569444444444445
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_legs_4": {
+      "file": "run_v3_legs_4.png",
+      "size": [
+        91,
+        70
+      ],
+      "anchors": {
+        "hip": [
+          48.38187702265372,
+          4.627831715210356
+        ],
+        "sole": [
+          48.38187702265372,
+          70
+        ],
+        "foot_left": [
+          8.624595469255663,
+          69.41747572815534
+        ],
+        "foot_right": [
+          70.04854368932038,
+          46.699029126213595
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          602,
+          554,
+          1036,
+          885
+        ],
+        "phase": 4,
+        "scale": 0.21035598705501618
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_legs_5": {
+      "file": "run_v3_legs_5.png",
+      "size": [
+        110,
+        71
+      ],
+      "anchors": {
+        "hip": [
+          74.23151750972762,
+          5.56420233463035
+        ],
+        "sole": [
+          74.23151750972762,
+          71
+        ],
+        "foot_left": [
+          5.311284046692607,
+          70.3112840466926
+        ],
+        "foot_right": [
+          95.09727626459144,
+          61.96498054474708
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_legs",
+        "crop": [
+          1059,
+          546,
+          1494,
+          825
+        ],
+        "phase": 5,
+        "scale": 0.2529182879377432
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_0": {
+      "file": "run_v3_kiem_body_0.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          109.0,
+          157.0
+        ],
+        "near_hand": [
+          109.0,
+          157.0
+        ],
+        "far_hand": [
+          212.0,
+          113.0
+        ],
+        "free_hand": [
+          212.0,
+          113.0
+        ],
+        "back": [
+          151.84187113849868,
+          142.195630845209
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 0,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_1": {
+      "file": "run_v3_kiem_body_1.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          107.0,
+          158.0
+        ],
+        "near_hand": [
+          107.0,
+          158.0
+        ],
+        "far_hand": [
+          214.0,
+          135.0
+        ],
+        "free_hand": [
+          214.0,
+          135.0
+        ],
+        "back": [
+          151.65641951412763,
+          142.11171289730802
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 1,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_2": {
+      "file": "run_v3_kiem_body_2.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          109.0,
+          157.0
+        ],
+        "near_hand": [
+          109.0,
+          157.0
+        ],
+        "far_hand": [
+          215.0,
+          159.0
+        ],
+        "free_hand": [
+          215.0,
+          159.0
+        ],
+        "back": [
+          151.74302112956798,
+          142.06907350756373
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 2,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_3": {
+      "file": "run_v3_kiem_body_3.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          109.0,
+          157.0
+        ],
+        "near_hand": [
+          109.0,
+          157.0
+        ],
+        "far_hand": [
+          85.0,
+          112.0
+        ],
+        "free_hand": [
+          85.0,
+          112.0
+        ],
+        "back": [
+          152.3826329450637,
+          142.35822186926714
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 3,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_4": {
+      "file": "run_v3_kiem_body_4.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          109.0,
+          157.0
+        ],
+        "near_hand": [
+          109.0,
+          157.0
+        ],
+        "far_hand": [
+          89.0,
+          99.0
+        ],
+        "free_hand": [
+          89.0,
+          99.0
+        ],
+        "back": [
+          152.346383884087,
+          142.47578768666304
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 4,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": true
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_kiem_body_5": {
+      "file": "run_v3_kiem_body_5.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          112.0,
+          156.0
+        ],
+        "near_hand": [
+          112.0,
+          156.0
+        ],
+        "far_hand": [
+          207.0,
+          155.0
+        ],
+        "free_hand": [
+          207.0,
+          155.0
+        ],
+        "back": [
+          152.23748057312315,
+          142.47578768666304
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_sword_torsos",
+        "phase": 5,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_0": {
+      "file": "run_v3_cung_body_0.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          206.0,
+          158.0
+        ],
+        "near_hand": [
+          206.0,
+          158.0
+        ],
+        "far_hand": [
+          208.0,
+          114.0
+        ],
+        "free_hand": [
+          208.0,
+          114.0
+        ],
+        "back": [
+          149.44912838441184,
+          140.34722762433745
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 0,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_1": {
+      "file": "run_v3_cung_body_1.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          198.0,
+          157.0
+        ],
+        "near_hand": [
+          198.0,
+          157.0
+        ],
+        "far_hand": [
+          211.0,
+          126.0
+        ],
+        "free_hand": [
+          211.0,
+          126.0
+        ],
+        "back": [
+          149.65555580805562,
+          140.53405547676962
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 1,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_2": {
+      "file": "run_v3_cung_body_2.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          193.0,
+          159.0
+        ],
+        "near_hand": [
+          193.0,
+          159.0
+        ],
+        "far_hand": [
+          212.0,
+          150.0
+        ],
+        "free_hand": [
+          212.0,
+          150.0
+        ],
+        "back": [
+          149.6740212503042,
+          140.41031763986464
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 2,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_3": {
+      "file": "run_v3_cung_body_3.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          222.0,
+          159.0
+        ],
+        "near_hand": [
+          222.0,
+          159.0
+        ],
+        "far_hand": [
+          101.0,
+          135.0
+        ],
+        "free_hand": [
+          101.0,
+          135.0
+        ],
+        "back": [
+          149.81078582357418,
+          140.65464075732032
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 3,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_4": {
+      "file": "run_v3_cung_body_4.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          220.0,
+          159.0
+        ],
+        "near_hand": [
+          220.0,
+          159.0
+        ],
+        "far_hand": [
+          109.0,
+          136.0
+        ],
+        "free_hand": [
+          109.0,
+          136.0
+        ],
+        "back": [
+          149.70050256201236,
+          140.5947346083288
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 4,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_cung_body_5": {
+      "file": "run_v3_cung_body_5.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          212.0,
+          155.0
+        ],
+        "near_hand": [
+          212.0,
+          155.0
+        ],
+        "far_hand": [
+          116.0,
+          156.0
+        ],
+        "free_hand": [
+          116.0,
+          156.0
+        ],
+        "back": [
+          150.4192541796232,
+          140.88682359564777
+        ]
+      },
+      "source": {
+        "sheet": "run_v3_torsos",
+        "phase": 5,
+        "lean_offline_degrees": 12,
+        "short_coat_factor": 0.4,
+        "held_arm_component": false
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_v3_bow": {
+      "file": "run_v3_bow.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchors": {
+        "grip": [
+          129.0,
+          224.0
+        ],
+        "belly": [
+          198.42747621231462,
+          197.48469915047934
+        ],
+        "string": [
+          160.53919538182848,
+          165.1538410002853
+        ],
+        "top": [
+          211.97178621588947,
+          105.5654941355902
+        ],
+        "bottom": [
+          108.4886986455432,
+          228.89183552029164
+        ]
+      },
+      "source": {
+        "own_asset": "bow_hold",
+        "carry_grip": "lower_wood_limb",
+        "angle_from_vertical": 40
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [

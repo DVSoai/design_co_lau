@@ -6,22 +6,22 @@ import numpy as np
 from PIL import Image
 
 R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
-p=json.loads((D/'parts.json').read_text());H=p['presentation']['standing_height_source'];fail=0
+p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());H=p['presentation']['standing_height_source'];fail=0
 def check(ok,message):
     global fail
     print(('PASS: ' if ok else 'FAIL: ')+message);fail+=not ok
 def array(id):return np.array(Image.open(ART/p['assets'][id]['file']).convert('RGBA'))
 hashes=[];wide=0
 for i in range(6):
-    id=f'run_leg_{i}';a=array(id);h=hashlib.sha256(a.tobytes()).hexdigest();hashes.append(h)
+    id=f['frames'][i+2]['layers']['legs']['asset'];a=array(id);h=hashlib.sha256(a.tobytes()).hexdigest();hashes.append(h)
     left,right=[np.array(p['assets'][id]['anchors'][k]) for k in ['foot_left','foot_right']]
-    span=np.linalg.norm(left-right)/H;wide+=span>=.25
+    span=np.linalg.norm(left-right)/H;wide+=span>=.3
     print(f'{id} RGBA_SHA256={h} feet/H={span:.9f}')
     for at in [left,right]:
         x,y=np.rint(at).astype(int);region=a[max(0,y-2):y+3,max(0,x-2):x+3,3]
         check(region.size>0 and region.max()>127,id+' measured foot lands on actual boot pixels')
 check(len(set(hashes))==6,'all15 run-frame hash pairs differ')
-check(wide>=4,f'wide strides={wide}/6, threshold .25H')
+check(wide>=4,f'wide strides={wide}/6, threshold .30H')
 for action in ['slash','tram_kiem']:
     for eid,ids in p['numeric_trails'][action].items():
         for i,id in enumerate(ids):

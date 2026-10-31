@@ -1,0 +1,1 @@
+Offline registration of original run artwork: {"sheet": "run_v3_sword_torsos", "phase": 2, "lean_offline_degrees": 12, "short_coat_factor": 0.4, "held_arm_component": false}

@@ -21,8 +21,7 @@ func run() -> void:
 				var expected: bool=frame in range(8) or frame in [12,21]
 				check(held.visible==expected,"%s dir%d frame%d held-visible=%s; hide flip/attack" % [school,dir,frame,held.visible])
 				if not expected:continue
-				var id: String=a.parts.levels["1"].weapons[school]
-				if school=="kiem" and frame in range(2,8):id=a.parts.levels["1"].run_weapon
+				var id: String=a.landmarks.weapon_asset
 				var grip: Vector2=asset_point(a,held,id,"grip")
 				var hand: Vector2=a.to_global(a.landmarks.held_hand)
 				check(grip.distance_to(hand)<=1,"held grip at actual front hand gap=%.6f" % grip.distance_to(hand))

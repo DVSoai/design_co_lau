@@ -171,4 +171,7 @@ def main():
         (D/(name+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     print('Registered painted necks; 30 numeric reference rows; full .78H blades; Kiếm6 / Cung8-ground,7-air reference beats.')
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    main()
+    from build_run_cycle_v3 import run as update_running
+    update_running()

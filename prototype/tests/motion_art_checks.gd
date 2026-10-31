@@ -39,8 +39,7 @@ func run() -> void:
 			check(wide>=4,"at least four running strides separate feet by >=.25H; got%d" % wide)
 			for frame in [0,1,2,3,4,5,6,7,12,21]:
 				a.sample_frame(frame)
-				var id: String=a.parts.levels["1"].weapons[school]
-				if school=="kiem" and frame in range(2,8):id=a.parts.levels["1"].run_weapon
+				var id: String=a.landmarks.weapon_asset
 				var grip:=point(a,a.sprites.weapon,id,"grip")
 				var hand: Vector2=a.to_global(a.landmarks.held_hand)
 				var pixel: Vector2=a.sprites.body.to_local(hand)

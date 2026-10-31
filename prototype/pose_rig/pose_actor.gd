@@ -122,8 +122,10 @@ func sample_frame(index: int) -> void:
 	var near_hand: Vector2=sprites.body.position+anchor(body,"near_hand")
 	var back: Vector2=sprites.body.position+anchor(body,"back")
 	var held_hand: Vector2=grip if grip.x>=far_hand.x else far_hand
+	if f.get("held_hand","")=="grip":held_hand=grip
 	var weapon: String=parts.levels["1"].weapons[school]
 	if school=="kiem" and index in range(2,8):weapon=parts.levels["1"].run_weapon
+	if school=="cung":weapon=f.layers.weapon.get("cung_asset",weapon)
 	var wo: Dictionary=f.layers.weapon
 	put(sprites.weapon,weapon,held_hand+Vector2(wo.dx,wo.dy),"grip")
 	if f.has("registrations") and f.registrations[school].has("weapon"):
@@ -131,7 +133,7 @@ func sample_frame(index: int) -> void:
 		var offsets: Array=frames_data.reference.image_offsets[school][int(raw[0])]
 		var registration: Array=f.registrations[school].weapon
 		sprites.weapon.position=Vector2(raw[1]+offsets[0],-raw[2]+offsets[1])*3+Vector2(registration[0],registration[1])
-	sprites.weapon.z_index=3
+	sprites.weapon.z_index=int(f.get("held_weapon_z",{}).get(school,3))
 	sprites.weapon.visible=f.get("held_visible",not f.attack)
 	held_fingers.visible=sprites.weapon.visible
 	if held_fingers.visible:
@@ -139,10 +141,20 @@ func sample_frame(index: int) -> void:
 		if not hand_masks.has(key):
 			var im: Image=sprites.body.texture.get_image().duplicate()
 			var centre: Vector2=(held_hand-sprites.body.position)*2
-			for y in im.get_height():
-				for x in im.get_width():
-					var c:=im.get_pixel(x,y)
-					if Vector2(x,y).distance_to(centre)>9 or c.r<.6 or c.g<.3 or c.r-c.g<.08:im.set_pixel(x,y,Color.TRANSPARENT)
+			if index in range(2,8):
+				# The new run canvases are larger: build only the small finger region
+				# on first use instead of scanning80k pixels during each new run pose.
+				var source:=im
+				im=Image.create(source.get_width(),source.get_height(),false,Image.FORMAT_RGBA8)
+				for y in range(maxi(0,int(floor(centre.y-9))),mini(im.get_height(),int(ceil(centre.y+9))+1)):
+					for x in range(maxi(0,int(floor(centre.x-9))),mini(im.get_width(),int(ceil(centre.x+9))+1)):
+						var c:=source.get_pixel(x,y)
+						if Vector2(x,y).distance_to(centre)<=9 and c.r>=.6 and c.g>=.3 and c.r-c.g>=.08:im.set_pixel(x,y,c)
+			else:
+				for y in im.get_height():
+					for x in im.get_width():
+						var c:=im.get_pixel(x,y)
+						if Vector2(x,y).distance_to(centre)>9 or c.r<.6 or c.g<.3 or c.r-c.g<.08:im.set_pixel(x,y,Color.TRANSPARENT)
 			hand_masks[key]=ImageTexture.create_from_image(im)
 		held_fingers.texture=hand_masks[key]
 		held_fingers.position=sprites.body.position
@@ -154,7 +166,7 @@ func sample_frame(index: int) -> void:
 	if school=="cung":put(quiver,"quiver",back,"back")
 	else:quiver.texture=null
 	nocked_arrow.visible=false
-	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand,"held_hand":held_hand,"head_asset":head,"body_asset":body,"legs_asset":legs}
+	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand,"held_hand":held_hand,"head_asset":head,"body_asset":body,"legs_asset":legs,"weapon_asset":weapon,"free_hand":sprites.body.position+anchor(body,"free_hand") if parts.assets[body].anchors.has("free_hand") else far_hand}
 	hit_active=false
 func beats() -> Array:
 	return skills_data[action]["air" if airborne else "ground"]
