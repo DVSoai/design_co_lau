@@ -252,3 +252,7 @@ for old_id in ['blade_'+str(i) for i in range(5)]+['white_a','white_b','skill_sl
   for suffix in ['.png','.prompt.txt','.png.import']:
    old=folder/(old_id+suffix)
    if old.exists():old.unlink()
+
+# Apply the current source-number/paint-registration stage after rebuilding sheets.
+from update_pose_playtest import main as register_playtest
+register_playtest()

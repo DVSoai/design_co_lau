@@ -305,3 +305,25 @@ thả; tên bay riêng chỉ sinh khi thả. Kéo dài thân gỗ của ảnh t�
 đi qua lưng cung; giữ kích thước lông/mũi, cùng ảnh dùng cho tên bay, không co
 runtime. Không đổi nhịp/spawn/speed của pilotCung hiện tại hoặc sốA0.
 Một nhân vật chỉKiếm hoặcCung; đổi phái xóa ngay hình/vệt/tên còn lại.
+
+
+## Cập nhật prototype nhân vật — 31/10/2026 (chưa duyệt mỹ thuật)
+
+Theo yêu cầu dùng bảng số `docs/ref/so_lieu_tham_khao.json`: dữ liệu30khung và
+chiêu Kiếm1/Cung28 là nguồn chuẩn cho lượt sửa này. Giữ nguyên dữ liệu nguồn,
+đổi chỉ số sang slot tranh tự vẽ qua bảng ánh xạ trong `tools/update_pose_playtest.py`;
+vị trí gốc dùng x=(dx_khung+dx_hinh)×hướng, y=-dy_khung+dy_hinh, quy đổi3logic/px.
+Crop/neo tranh riêng được hiệu chỉnh tường minh trong `frames30.registrations`.
+Đầu-cổ và thân-hông trùng≤1px ở30khung×2phái×2hướng. Thân cung15/16/17 căn theo
+phần da cổ thật, không dựa vào mốc cũ lệch sau gáy.
+
+Kiếm và Trảm Kiếm dùng6nhịp của nguồn, .05s/nhịp, tổng.30s; hitA0[.10,.20).
+Phần lưỡi thép (không cán) đo alpha thực0,782H, vệt nối mũi≤1px; thay mô tả
+"lưỡi ngắn"/5nhịp của prototype trước. Cung8nhịp đất/.40s,7nhịp không/.35s,
+bắn nhịp5/.20s theo sự kiện nguồn. Vệt hiệu ứng riêng đặt theo tâm và chuỗi độ lệch
+nguồn; hìnhlóe tự vẽ. Tên gắn dây lúc giương và rời dây thành sprite độc lập khi thả.
+
+Scene `prototype/pose_rig/play_test.tscn` dùng kế thừa controllerA0: đứng/chạy,
+nhảy/rơi, lộn đỉnh, đánh/chiêu; không đổi `prototype/config`, camera và sát thươngA0.
+Thời lượng visual của cung dài hơn cửa sổ đánhA0; đây là prototype, không chốt số game thật.
+Khác biệt so với số tham khảo và lý do xem log31/10/2026.

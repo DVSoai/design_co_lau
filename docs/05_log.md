@@ -895,3 +895,34 @@ STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile acti
 
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
+
+
+## 31/10/2026 — Sửa cổ, lưỡi đầy đủ và scene thử nhân vật mới (chưa duyệt)
+
+- Nhánh `feat/g1-nhan-vat-chot` merge main mới nhất, giữ bản18có mục dùng trực tiếp bảng số.
+- Nguồn đọc trực tiếp: `docs/ref/so_lieu_tham_khao.json`; đối chiếu bảng30khung trong
+  Char.java và công thức vẽ. Không đưa mã/ảnh tham khảo mới vào repo.
+- Mốc cổ thân đo lại trên pixel da ở cổ áo. Sửa các thân đứng/đánh/cung,
+  đặc biệt15/16/17; head.dx/dy=0, tất cả cổ và hông ghép≤1px cả120trường hợp.
+- Lưỡi dùng chính tranh kiếm tự vẽ đã có, bake trục ngang và kéo riêng phần lưỡi.
+  Phần thép đo alpha0,782477H, không tính cán; Trảm Kiếm và Kiếm dùng lưỡi đầy đủ,
+  vệt tự dựng bằng ImageDraw nối tại mũi. Không imagegen, không ảnh/mã bên ngoài mới.
+  Script đã chạy: `python3 tools/update_pose_playtest.py`; phép đo/test ở
+  `tools/check_lv1_sizes.py` và `prototype/tests/neck_blade_checks.gd`.
+- Dữ liệu nguồn giữ nguyên30dòng, độ lệch hình, danh sách khung cầm vũ khí,
+ 6nhịp chiêuKiếm1 và8đất/7không chiêuCung28; hiệu ứng vẽ riêng chạy đúng chuỗi
+ độ lệch và tâmảnh nguồn. Chỉ ánh xạ số hình sang tranh riêng đã có.
+- Khác biệt có chủ đích:1pxnguồn32H→3logic để giữ cỡA0≈96H. Tranh người có
+ đầu≈.402H thay vì.58H nguồn, cung≈.965H thay vì1.01H, giữ bộ hìnhLv1 và tỉ lệ
+ đã yêu cầu trước; kiếm thép≈.782H theo.78Hnguồn. Không vẽ lại tỉ lệ người trong lượt sửa cổ.
+- Khác biệt neo: ảnh riêng khác hình/crop nên nguyên dx/dy nguồn không tự khớp cổ/hông/tay.
+ `registrations` lưu hiệu chỉnh từng lớp/khung/phái; công thức và raworigin nguồn giữ nguyên,
+ kết quả phải khớp khớp thật≤1px. Vũ khí cầm/vung giữ grip ở tay; tên dùngdx/dynguồn
+ quy đổi rồi hiệu chỉnh về dây thật. Không dịch tên rời dây chỉ để khớp origin nguồn.
+- Khác biệt thời gian: JSONnguồn không ghi số giây; dùng.05s mỗi nhịp để giữ Kiếm.30s,
+ thảCung.20s. Controller, hitbox, hitwindow, sát thương, cooldown lấy nguyênA0.
+ Tên240logicpx/s giữ từ pilot, chưa có số tốc độ trong bảng nguồn; không coi đây là số game thật.
+- Scene riêng `play_test.tscn` kế thừa A0, nền phẳng+3bục, pose_actor4lớp,
+ phím/cảm ứng, đổi phái,2ôchiêu, hình nộm/số sát thương. main.tscn chỉ thêm nút điều hướng;
+ không sửa config/controller/nhân vậtA0 cũ. Ảnh scene và viewer chụp bằng Godot/Xvfb thật.
+- Chưa nghiệm thu mỹ thuật, cảm giác hay đa chạm Android; không tự duyệt tài nguyên.

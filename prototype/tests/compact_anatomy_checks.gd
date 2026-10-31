@@ -43,7 +43,7 @@ func run() -> void:
 		for skill in ["slash","tram_kiem"]:
 			a.action=skill
 			a.airborne=false
-			check(a.beats().size()==5,"%s five beats guard/pull/sweep/hold/recover" % skill)
+			check(a.beats().size()==6,"%s six source beats guard/pull/sweep/hold/hold/guard" % skill)
 			var body_hashes: Dictionary={}
 			for i in a.beats().size():
 				a.sample_beat(i,false)
@@ -64,31 +64,16 @@ func run() -> void:
 						max_x=maxf(max_x,world.x)
 						if index==0:primary_points.append(world)
 				var span:=max_x-min_x+.5
-				check(span/height<=1.3,"%s dir%d beat%d actual combined VFX length/H=%.6f <=1.3" % [skill,dir,i,span/height])
-				# Central brown shirt only, excluding distant hands and wrist wraps.
-				var body_id: String=a.parts.levels["1"].body[int(a.frames_data.frames[a.frame_index].layers.body.image)]
-				var body: Sprite2D=a.sprites.body
-				var image:=body.texture.get_image()
-				var mid: float=(a.anchor(body_id,"hip").x+a.anchor(body_id,"neck").x)
-				var shirt: Dictionary={}
-				for y in image.get_height():
-					for x in image.get_width():
-						var c:=image.get_pixel(x,y)
-						var r:=c.r*255
-						var g:=c.g*255
-						var b:=c.b*255
-						if c.a>.5 and r>55 and r<225 and r-g>10 and r-g<70 and g-b<65 and absf(x-mid)<35 and y>=a.anchor(body_id,"neck").y*2 and y<a.anchor(body_id,"hip").y*2+45:
-							var world:=body.to_global(Vector2(x,y))
-							shirt[Vector2i(round(world.x*2),round(world.y*2))]=world
-				var found_gap:=INF
-				for point in primary_points:
-					var key:=Vector2i(round(point.x*2),round(point.y*2))
-					for dy in range(-8,9):
-						for dx in range(-8,9):
-							var k:=key+Vector2i(dx,dy)
-							if shirt.has(k):found_gap=minf(found_gap,point.distance_to(shirt[k]))
-					if found_gap<=4:break
-				check(found_gap<=4,"%s dir%d beat%d observed actual curve/shirt contact upper-bound=%.6f px <=4 (not a hand contact)" % [skill,dir,i,found_gap])
+				check(span/height<=1.6,"%s dir%d beat%d actual combined VFX length/H=%.6f <=1.6" % [skill,dir,i,span/height])
+				# Updated requirement: the trail joins the full blade tip, rather than a short shirt-level fragment.
+				var primary: Dictionary=a.beats()[i].effects[0]
+				var asset: String=a.effects_data[primary.id].frames[0].asset
+				var s: Sprite2D=a.effect_sprites[0]
+				var tip: Vector2=s.to_global(a.anchor(asset,"tip")*2-s.texture.get_size()/2)
+				var nearest:=INF
+				for point in primary_points:nearest=minf(nearest,point.distance_to(tip))
+				check(nearest<=1,"%s dir%d beat%d actual trail-to-tip gap=%.6f px <=1" % [skill,dir,i,nearest])
+
 			check(body_hashes.size()==4,"%s dir%d exactly4 distinct displayed torso RGBA hashes" % [skill,dir])
 	print("Compact anatomy/sweep checks failures=%d" % failures)
 	a.free()

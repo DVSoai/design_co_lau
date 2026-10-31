@@ -21,7 +21,7 @@ for f in F['frames']:
 for id,s in S.items():
  for mode in ['ground','air']:
   for b in s[mode]:
-   check(14<=b['frame']<30 and len(b['effects'])<=3 and all(x['id'] in E for x in b['effects']),f'{id}/{mode} frame{b["frame"]} valid beat')
+   check(13<=b['frame']<30 and len(b['effects'])<=3 and all(x['id'] in E for x in b['effects']),f'{id}/{mode} frame{b["frame"]} valid beat')
  check(sum(x['duration'] for x in s['ground'])<.40000001,f'{id} visual duration={sum(x["duration"] for x in s["ground"]):.6f}s')
 check(abs(sum(x['duration'] for x in S['slash']['ground'])-.3)<1e-9 and S['slash']['hit_window']==[.1,.2],'slash .30s, hit .10-.20')
 for ref in P['references']:check(hashlib.sha256((ROOT/ref['path']).read_bytes()).hexdigest()==ref['sha256'],'reference unchanged hash '+ref['path'])

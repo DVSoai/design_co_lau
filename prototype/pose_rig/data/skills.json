@@ -5,7 +5,7 @@
       "school": "kiem",
       "ground": [
         {
-          "frame": 14,
+          "frame": 13,
           "duration": 0.05,
           "effects": [
             {
@@ -16,40 +16,62 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 13,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 14,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_1",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [
+              {
+                "id": 16,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
         {
           "frame": 15,
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_1",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 16,
-          "duration": 0.1,
-          "effects": [
-            {
               "id": "swing_2",
               "dx": 0,
               "dy": 0
-            },
-            {
-              "id": "swing_surge_2",
-              "dx": 0,
-              "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 15,
+            "hieu_ung": [
+              {
+                "id": 39,
+                "dx": 23,
+                "dy": -14
+              }
+            ],
+            "dan": null
+          }
         },
         {
           "frame": 16,
@@ -59,24 +81,38 @@
               "id": "swing_3",
               "dx": 0,
               "dy": 0
-            },
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 16,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 16,
+          "duration": 0.05,
+          "effects": [
             {
-              "id": "swing_surge_3",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_reverse_3",
+              "id": "swing_3",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 16,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 17,
+          "frame": 13,
           "duration": 0.05,
           "effects": [
             {
@@ -87,12 +123,17 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 13,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "air": [
         {
-          "frame": 23,
+          "frame": 22,
           "duration": 0.05,
           "effects": [
             {
@@ -103,10 +144,15 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 22,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 24,
+          "frame": 23,
           "duration": 0.05,
           "effects": [
             {
@@ -117,26 +163,43 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [
+              {
+                "id": 16,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
         {
-          "frame": 25,
-          "duration": 0.1,
+          "frame": 24,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_2",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_surge_2",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 24,
+            "hieu_ung": [
+              {
+                "id": 39,
+                "dx": 19,
+                "dy": -13
+              }
+            ],
+            "dan": null
+          }
         },
         {
           "frame": 25,
@@ -146,24 +209,38 @@
               "id": "swing_3",
               "dx": 0,
               "dy": 0
-            },
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 25,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 25,
+          "duration": 0.05,
+          "effects": [
             {
-              "id": "swing_surge_3",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_reverse_3",
+              "id": "swing_3",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 25,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 26,
+          "frame": 22,
           "duration": 0.05,
           "effects": [
             {
@@ -174,20 +251,26 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 22,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "hit_window": [
         0.1,
         0.2
       ],
-      "status": "visual prototype, gameplay numbers unchanged"
+      "status": "visual prototype, gameplay numbers unchanged",
+      "reference_skill": "kiem_1"
     },
     "shoot": {
       "school": "cung",
       "ground": [
         {
-          "frame": 20,
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -198,319 +281,166 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_15"
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [
+              {
+                "id": 10,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
-        {
-          "frame": 20,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_15"
-        },
-        {
-          "frame": 21,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw_hold",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_16"
-        },
-        {
-          "frame": 21,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw_hold",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_16"
-        },
-        {
-          "frame": 22,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": {
-            "id": "arrow",
-            "dx": 0,
-            "dy": 0
-          },
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 22,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 22,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 22,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        }
-      ],
-      "air": [
-        {
-          "frame": 27,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_15"
-        },
-        {
-          "frame": 27,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_15"
-        },
-        {
-          "frame": 28,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw_hold",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_16"
-        },
-        {
-          "frame": 28,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_draw_hold",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": true,
-          "nocked_asset": "arrow_draw_16"
-        },
-        {
-          "frame": 29,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": {
-            "id": "arrow",
-            "dx": 0,
-            "dy": 0
-          },
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 29,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 29,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 29,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        }
-      ],
-      "hit_window": null,
-      "status": "visual prototype, gameplay numbers unchanged"
-    },
-    "tram_kiem": {
-      "school": "kiem",
-      "ground": [
         {
           "frame": 14,
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_skill_0",
+              "id": "bow_draw",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
+          "nocked": true,
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 15,
+          "frame": 18,
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_skill_1",
+              "id": "bow_draw_hold",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
+          "nocked": true,
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 16,
-          "duration": 0.1,
-          "effects": [
-            {
-              "id": "swing_skill_2",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_skill_surge_2",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 16,
+          "frame": 18,
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_skill_3",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_skill_surge_3",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_skill_reverse_3",
+              "id": "bow_draw_hold",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
+          "nocked": true,
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 18,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "arrow",
+            "dx": 27,
+            "dy": -48,
+            "register_to_string": true
+          },
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [
+              {
+                "id": 50,
+                "dx": -4,
+                "dy": -15
+              }
+            ],
+            "dan": {
+              "id": 1,
+              "dx": 9,
+              "dy": -16
+            }
+          }
         },
         {
           "frame": 17,
           "duration": 0.05,
           "effects": [
             {
-              "id": "swing_skill_4",
+              "id": "bow_release",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 17,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 17,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "air": [
@@ -519,6 +449,162 @@
           "duration": 0.05,
           "effects": [
             {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true,
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [
+              {
+                "id": 10,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
+        },
+        {
+          "frame": 23,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true,
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 27,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true,
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 27,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_draw_hold",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": true,
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 27,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": {
+            "id": "arrow",
+            "dx": 27,
+            "dy": -48,
+            "register_to_string": true
+          },
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": {
+              "id": 1,
+              "dx": 9,
+              "dy": -16
+            }
+          }
+        },
+        {
+          "frame": 26,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 26,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 26,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "bow_release",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 26,
+            "hieu_ung": [],
+            "dan": null
+          }
+        }
+      ],
+      "hit_window": null,
+      "status": "visual prototype, gameplay numbers unchanged",
+      "reference_skill": "cung_28"
+    },
+    "tram_kiem": {
+      "school": "kiem",
+      "ground": [
+        {
+          "frame": 13,
+          "duration": 0.05,
+          "effects": [
+            {
               "id": "swing_skill_0",
               "dx": 0,
               "dy": 0
@@ -526,10 +612,15 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 13,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 24,
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -540,53 +631,84 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [
+              {
+                "id": 16,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
         {
-          "frame": 25,
-          "duration": 0.1,
+          "frame": 15,
+          "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_2",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_skill_surge_2",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 15,
+            "hieu_ung": [
+              {
+                "id": 39,
+                "dx": 23,
+                "dy": -14
+              }
+            ],
+            "dan": null
+          }
         },
         {
-          "frame": 25,
+          "frame": 16,
           "duration": 0.05,
           "effects": [
             {
               "id": "swing_skill_3",
               "dx": 0,
               "dy": 0
-            },
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 16,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 16,
+          "duration": 0.05,
+          "effects": [
             {
-              "id": "swing_skill_surge_3",
-              "dx": 0,
-              "dy": 0
-            },
-            {
-              "id": "swing_skill_reverse_3",
+              "id": "swing_skill_3",
               "dx": 0,
               "dy": 0
             }
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 16,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 26,
+          "frame": 13,
           "duration": 0.05,
           "effects": [
             {
@@ -597,20 +719,154 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 13,
+            "hieu_ung": [],
+            "dan": null
+          }
+        }
+      ],
+      "air": [
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_0",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 22,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 23,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_1",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [
+              {
+                "id": 16,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
+        },
+        {
+          "frame": 24,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_2",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 24,
+            "hieu_ung": [
+              {
+                "id": 39,
+                "dx": 19,
+                "dy": -13
+              }
+            ],
+            "dan": null
+          }
+        },
+        {
+          "frame": 25,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_3",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 25,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 25,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_3",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 25,
+            "hieu_ung": [],
+            "dan": null
+          }
+        },
+        {
+          "frame": 22,
+          "duration": 0.05,
+          "effects": [
+            {
+              "id": "swing_skill_4",
+              "dx": 0,
+              "dy": 0
+            }
+          ],
+          "projectile": null,
+          "nocked": false,
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 22,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "hit_window": [
         0.1,
         0.2
       ],
-      "status": "visual prototype, gameplay numbers unchanged"
+      "status": "visual prototype, gameplay numbers unchanged",
+      "reference_skill": "kiem_1"
     },
     "xa_tien": {
       "school": "cung",
       "ground": [
         {
-          "frame": 20,
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -621,10 +877,21 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_15"
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [
+              {
+                "id": 10,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
         {
-          "frame": 20,
+          "frame": 14,
           "duration": 0.05,
           "effects": [
             {
@@ -635,10 +902,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_15"
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 14,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 21,
+          "frame": 18,
           "duration": 0.05,
           "effects": [
             {
@@ -649,10 +921,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_16"
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 21,
+          "frame": 18,
           "duration": 0.05,
           "effects": [
             {
@@ -663,10 +940,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_16"
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 22,
+          "frame": 18,
           "duration": 0.05,
           "effects": [
             {
@@ -677,14 +959,30 @@
           ],
           "projectile": {
             "id": "skill_arrow",
-            "dx": 0,
-            "dy": 0
+            "dx": 27,
+            "dy": -48,
+            "register_to_string": true
           },
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 18,
+            "hieu_ung": [
+              {
+                "id": 50,
+                "dx": -4,
+                "dy": -15
+              }
+            ],
+            "dan": {
+              "id": 1,
+              "dx": 9,
+              "dy": -16
+            }
+          }
         },
         {
-          "frame": 22,
+          "frame": 17,
           "duration": 0.05,
           "effects": [
             {
@@ -695,10 +993,15 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 22,
+          "frame": 17,
           "duration": 0.05,
           "effects": [
             {
@@ -709,10 +1012,15 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 22,
+          "frame": 17,
           "duration": 0.05,
           "effects": [
             {
@@ -723,12 +1031,17 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 17,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "air": [
         {
-          "frame": 27,
+          "frame": 23,
           "duration": 0.05,
           "effects": [
             {
@@ -739,10 +1052,21 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_15"
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [
+              {
+                "id": 10,
+                "dx": 0,
+                "dy": 0
+              }
+            ],
+            "dan": null
+          }
         },
         {
-          "frame": 27,
+          "frame": 23,
           "duration": 0.05,
           "effects": [
             {
@@ -753,10 +1077,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_15"
+          "nocked_asset": "arrow_draw_15",
+          "reference": {
+            "khung_than": 23,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 28,
+          "frame": 27,
           "duration": 0.05,
           "effects": [
             {
@@ -767,10 +1096,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_16"
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 28,
+          "frame": 27,
           "duration": 0.05,
           "effects": [
             {
@@ -781,10 +1115,15 @@
           ],
           "projectile": null,
           "nocked": true,
-          "nocked_asset": "arrow_draw_16"
+          "nocked_asset": "arrow_draw_16",
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 29,
+          "frame": 27,
           "duration": 0.05,
           "effects": [
             {
@@ -795,14 +1134,24 @@
           ],
           "projectile": {
             "id": "skill_arrow",
-            "dx": 0,
-            "dy": 0
+            "dx": 27,
+            "dy": -48,
+            "register_to_string": true
           },
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 27,
+            "hieu_ung": [],
+            "dan": {
+              "id": 1,
+              "dx": 9,
+              "dy": -16
+            }
+          }
         },
         {
-          "frame": 29,
+          "frame": 26,
           "duration": 0.05,
           "effects": [
             {
@@ -813,10 +1162,15 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 26,
+            "hieu_ung": [],
+            "dan": null
+          }
         },
         {
-          "frame": 29,
+          "frame": 26,
           "duration": 0.05,
           "effects": [
             {
@@ -827,25 +1181,17 @@
           ],
           "projectile": null,
           "nocked": false,
-          "nocked_asset": null
-        },
-        {
-          "frame": 29,
-          "duration": 0.05,
-          "effects": [
-            {
-              "id": "bow_release",
-              "dx": 0,
-              "dy": 0
-            }
-          ],
-          "projectile": null,
-          "nocked": false,
-          "nocked_asset": null
+          "nocked_asset": null,
+          "reference": {
+            "khung_than": 26,
+            "hieu_ung": [],
+            "dan": null
+          }
         }
       ],
       "hit_window": null,
-      "status": "visual prototype, gameplay numbers unchanged"
+      "status": "visual prototype, gameplay numbers unchanged",
+      "reference_skill": "cung_28"
     }
   }
 }

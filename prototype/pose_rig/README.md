@@ -1,3 +1,40 @@
+## Chạy thử nhân vật mới — 31/10/2026
+
+Từ root repo: `godot --path prototype res://pose_rig/play_test.tscn`, hoặc bấm
+**Thử nhân vật mới** trên màn A0. A/D/←/→ di chuyển; Space/W/↑ nhảy;
+J/X đánh; Tab đổi Kiếm/Cung; 1 Trảm Kiếm, 2 Xạ Tiễn. Cảm ứng dùng d-pad A0,
+ĐÁNH, PHÁI và hai ô chiêu. Chiêu của phái còn lại không kích hoạt. Có nền phẳng,
+ba bục và hình nộm hiện số sát thương. Scene/controller/nhân vật A0 cũ giữ nguyên.
+
+Bản hiện hành thay các mô tả lưỡi ngắn/5 nhịp bên dưới: lưỡi đánh thật
+0,782H (không tính cán), vệt nối mũi. Kiếm6 nhịp theo bảng nguồn, Cung8 đất/7 không;
+nhịp .05s, hit và controller lấy nguyên `prototype/config`. Đầu/cổ và hông ghép
+bằng điểm đo trên tranh tự vẽ; mọi Sprite2D rotation0, chỉ gốc lật.
+
+`tools/update_pose_playtest.py` đọc trực tiếp `docs/ref/so_lieu_tham_khao.json`:
+30 dòng nguồn, lựa chọn hình qua bản đồ slot tranh tự vẽ, công thức vị trí, các độ lệch
+hình/hiệu ứng, frame và sự kiện bắn của chiêu1/28. `registrations` ghi rõ hiệu chỉnh
+crop/khớp cổ-hông theo từng phái/khung; không sửa số liệu nguồn. Đạn giữ tọa độ
+nguồn và hiệu chỉnh về dây thật để không xuất hiện rời cung. Các khác biệt tỉ lệ,
+neo và thời gian được ghi ở cuối `docs/05_log.md`, mục31/10/2026.
+
+Kiểm tra từ root sau import:
+
+```sh
+godot --headless --path prototype --editor --import --quit
+python3 tools/check_all_godot.py
+python3 tools/check_lv1_sizes.py
+python3 tools/check_lv1_30.py
+python3 tools/check_arrow_alignment.py
+python3 tools/capture_lv1_30.py --pages frames attacks
+```
+
+`playtest_godot_checks.txt` trong reports chứa nguyên output13 suite độc lập;
+classic_checks chạy qua wrapper hiện có. Chụp viewer bằng Xvfb1600×720, cả2phái/2hướng.
+`reports/play_*` là ảnh scene chơi thử thật. Chưa thử đa chạm trên Android, chưa xuất APK.
+
+---
+
 ## Bản hiện tại —30/10/2026, chưa duyệt mỹ thuật
 
 Theo `docs/18_luong_tham_khao.md` mục 4: ngoại hình hàng Tổng thể Lv1, không nón,

@@ -1,0 +1,1 @@
+Offline numeric registration of existing independently drawn Cờ Lau sword; no new generated or reference pixels.

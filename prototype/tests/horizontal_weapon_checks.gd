@@ -18,7 +18,7 @@ func run() -> void:
 			for frame in 30:
 				a.sample_frame(frame)
 				var held: Sprite2D=a.sprites.weapon
-				var expected: bool=frame in range(8) or frame in [12,13]
+				var expected: bool=frame in range(8) or frame in [12,21]
 				check(held.visible==expected,"%s dir%d frame%d held-visible=%s; hide flip/attack" % [school,dir,frame,held.visible])
 				if not expected:continue
 				var id: String=a.parts.levels["1"].weapons[school]
@@ -54,7 +54,7 @@ func run() -> void:
 							var h: float=a.global_position.y-tip.y
 							check(dir*(tip.x-g.x)>0 and absf(tip.y-g.y)<.1 and g.distance_to(hand)<=1,"%s air%s dir%d beat%d horizontal actual grip gap=%.6f" % [action,airborne,dir,i,g.distance_to(hand)])
 							if a.parts.assets[id].get("pose_role","") in ["sweep","hold"]:check(h>=.35*96 and h<=.65*96,"lia tip height=%.6f H=%.6f (range.35-.65H)" % [h,h/96])
-						check(absf(total-.3)<.000001 and a.skills_data[action].hit_window==[.1,.2],"five compact beats .30s hit.10-.20")
+						check(absf(total-.3)<.000001 and a.skills_data[action].hit_window==[.1,.2],"six reference beats .30s hit.10-.20")
 	a.set_school("cung")
 	a.action="shoot"
 	a.airborne=false

@@ -37,15 +37,15 @@ for id in ['arrow','skill_arrow']:
 hashes={id:hashlib.sha256(rgba(id).tobytes()).hexdigest() for id in ['body_9','body_10','body_11','body_12']}
 for id,h in hashes.items():print('BODY RGBA SHA256',id,h)
 check(len(set(hashes.values()))==4,'four genuinely different torso RGBA hashes')
-fragment=rgba('attack_fragment');short=np.linalg.norm(anchor('attack_fragment','tip')-anchor('attack_fragment','grip'))
-check(short/H<.35,f'attack blade fragment length/H={short/H:.6f}; full held sword not reused')
+fragment=rgba('attack_blade');short=np.linalg.norm(anchor('attack_blade','tip')-anchor('attack_blade','blade_root'))
+check(.75<=short/H<=.8,f'full attack blade length/H={short/H:.6f}, target .75..8')
 for prefix in ['swing','swing_skill']:
  for i in range(5):
   id=f'{prefix}_{i}';mask_id=A[id]['trail_mask'];expected=Image.fromarray(rgba(mask_id));expected.alpha_composite(Image.fromarray(fragment))
   clean=np.array(expected);rr,gg,bb=clean[:,:,:3].astype(int).transpose(2,0,1);clean[(gg>1.18*np.maximum(rr,bb))&(gg>90)]=0
-  check(np.array_equal(clean,rgba(id)),id+' real single-texture short fragment + painted compact curve, final key cleanup')
+  check(np.array_equal(clean,rgba(id)),id+' real single-texture full blade + tip-connected painted trail, final key cleanup')
 for skill in ['slash','tram_kiem']:
- beats=S[skill]['ground'];check(len(beats)==5 and abs(sum(b['duration'] for b in beats)-.30)<1e-9 and S[skill]['hit_window']==[.1,.2],skill+' five beats total.30s hit.10-.20')
+ beats=S[skill]['ground'];check(len(beats)==6 and abs(sum(b['duration'] for b in beats)-.30)<1e-9 and S[skill]['hit_window']==[.1,.2],skill+' six reference beats total.30s hit.10-.20')
  for i,beat in enumerate(beats):
   body,bp,grip=pose(beat['frame']);all_vfx=[]
   for spec in beat['effects']:
@@ -53,14 +53,13 @@ for skill in ['slash','tram_kiem']:
    if len(ps):all_vfx.append(ps-anchor(id,'grip')+grip+np.array([spec['dx'],spec['dy']])*2)
   if not all_vfx:continue
   vfx=np.concatenate(all_vfx);span=np.ptp(vfx[:,0])+1
-  check(span/H<=1.3,f'{skill} beat{i+1} combined visible VFX length/H={span/H:.6f} including forward/reverse layers')
-  if i in [2,3]:
-   # Shirt only: exclude skin/hands/wrist wraps outside the central torso band.
-   ar=rgba(body);rr,gg,bb=ar[:,:,:3].astype(int).transpose(2,0,1);yy,xx=np.indices(ar.shape[:2]);mid=(anchor(body,'hip')[0]+anchor(body,'neck')[0])/2
-   cloth=(ar[:,:,3]>127)&(rr>55)&(rr<225)&(rr-gg>10)&(rr-gg<70)&(gg-bb<65)&(np.abs(xx-mid)<35)&(yy>=anchor(body,'neck')[1])&(yy<anchor(body,'hip')[1]+45)
-   y,x=np.where(cloth);shirt=np.column_stack([x,y])+bp
-   primary=A[E[beat['effects'][0]['id']]['frames'][0]['asset']]['trail_mask'];p=points(primary)-anchor(primary,'grip')+grip
-   gap=cKDTree(shirt).query(p)[0].min()/2
-   check(gap<=4,f'{skill} beat{i+1} actual painted curve-to-central-shirt={gap:.6f} logic px (hands excluded)')
+  check(span/H<=1.6,f'{skill} beat{i+1} combined visible VFX length/H={span/H:.6f} including forward/reverse layers')
+  if i in [2,3,4]:
+   primary=A[E[beat['effects'][0]['id']]['frames'][0]['asset']]['trail_mask']
+   gap=cKDTree(points(primary)).query(anchor('attack_blade','tip'))[0]/2
+   check(gap<=1,f'{skill} beat{i+1} actual trail-to-blade-tip gap={gap:.6f} logic px')
+blade_pixels=points('attack_blade_only',127)
+blade_span=np.ptp(blade_pixels[:,0])+1
+check(.75<=blade_span/H<=.8,f'actual opaque blade (excluding handle) span/H={blade_span/H:.6f}')
 print(f'Lv1 compact/proportion/weapon checks failures={failures}')
 sys.exit(bool(failures))

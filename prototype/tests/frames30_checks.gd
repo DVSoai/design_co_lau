@@ -84,7 +84,7 @@ func run() -> void:
 	for tick in 4:
 		check(a.frame_index==8+tick,"baked somersault phase %d, zero runtime rotation" % tick)
 		a._process(.05)
-	check(a.action=="fall" and a.frame_index==13,"360 cycle completes at .20s and returns upright fall")
+	check(a.action=="fall" and a.frame_index==22,"360 cycle completes at .20s and returns upright fall")
 	print("Frames30 checks cases=%d failures=%d" % [cases,failures])
 	a.free()
 	quit(1 if failures else 0)

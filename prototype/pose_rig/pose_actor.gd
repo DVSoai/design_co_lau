@@ -21,6 +21,7 @@ var airborne := false
 var landmarks: Dictionary = {}
 var hit_active := false
 var release_count := 0
+var reference_effects: Array[Dictionary] = []
 func _ready() -> void:
 	parts=read_data("parts")
 	frames_data=read_data("frames30")
@@ -61,6 +62,9 @@ func clear_arrows() -> void:
 		s.visible=false
 		s.queue_free()
 	arrows.clear()
+func clear_reference_effects() -> void:
+	for fx in reference_effects:fx.sprite.queue_free()
+	reference_effects.clear()
 func set_school(id: String) -> void:
 	assert(id in ["kiem","cung"])
 	school=id
@@ -91,6 +95,18 @@ func sample_frame(index: int) -> void:
 	var neck: Vector2=sprites.body.position+anchor(body,"neck")
 	var ho: Dictionary=f.layers.head
 	put(sprites.head,head,neck+Vector2(ho.dx,ho.dy),"neck")
+	# Source formula and offsets are untouched. Crop/anatomy registration is explicit
+	# per painted pose, so copied numeric origins cannot pull apart our neck/hip joints.
+	if f.has("registrations"):
+		for layer in ["legs","body","head"]:
+			var key: String={"legs":"chan","body":"than","head":"dau"}[layer]
+			var raw: Array=f.reference[key]
+			var image_offset: Array=frames_data.reference.image_offsets[key][int(raw[0])]
+			var origin:=Vector2(raw[1]+image_offset[0],-raw[2]+image_offset[1])*float(frames_data.reference.logic_per_reference_px)
+			var correction: Array=f.registrations[school][layer]
+			sprites[layer].position=origin+Vector2(correction[0],correction[1])
+		hip=sprites.legs.position+anchor(legs,"hip")
+		neck=sprites.body.position+anchor(body,"neck")
 	var grip: Vector2=sprites.body.position+anchor(body,"grip")
 	var far_hand: Vector2=sprites.body.position+anchor(body,"far_hand")
 	var near_hand: Vector2=sprites.body.position+anchor(body,"near_hand")
@@ -101,18 +117,19 @@ func sample_frame(index: int) -> void:
 	var wo: Dictionary=f.layers.weapon
 	put(sprites.weapon,weapon,held_hand+Vector2(wo.dx,wo.dy),"grip")
 	sprites.weapon.z_index=3
-	sprites.weapon.visible=f.get("held_visible",not f.attack) and not f.attack
+	sprites.weapon.visible=f.get("held_visible",not f.attack)
 	quiver.visible=school=="cung"
 	if school=="cung":put(quiver,"quiver",back,"back")
 	else:quiver.texture=null
 	nocked_arrow.visible=false
-	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand,"held_hand":held_hand}
+	landmarks={"hip":hip,"neck":neck,"grip":grip,"far_hand":far_hand,"near_hand":near_hand,"held_hand":held_hand,"head_asset":head,"body_asset":body,"legs_asset":legs}
 	hit_active=false
 func beats() -> Array:
 	return skills_data[action]["air" if airborne else "ground"]
 func play(id: String) -> void:
 	assert(id in frames_data.clips or (id in skills_data and skills_data[id].school==school))
 	action=id
+	clear_reference_effects()
 	elapsed=0
 	beat_index=0
 	effect_elapsed=0
@@ -122,6 +139,7 @@ func sample_beat(index: int, emit_projectile: bool=false) -> void:
 	beat_index=index
 	effect_elapsed=0
 	var beat: Dictionary=beats()[index]
+	if not autoplay:clear_reference_effects()
 	sample_frame(int(beat.frame))
 	sprites.weapon.visible=false
 	for spec in beat.effects:
@@ -129,12 +147,25 @@ func sample_beat(index: int, emit_projectile: bool=false) -> void:
 		s.z_index=int(effects_data[spec.id].z)
 		effect_sprites.append(s)
 	update_effects()
+	if beat.has("reference"):
+		for spec in beat.reference.hieu_ung:
+			var flash:=make_sprite("numeric_effect_%d" % int(spec.id))
+			flash.centered=true
+			flash.texture=load("res://pose_rig/art/lv1_30/pose_flash.png")
+			flash.z_index=7
+			var offsets: Array=frames_data.reference.effect_offsets[str(int(spec.id))].do_lech
+			reference_effects.append({"sprite":flash,"offsets":offsets,"elapsed":0.0,"origin":Vector2(spec.dx,spec.dy)*3})
+		update_reference_effects(0)
 	if beat.nocked:
 		put(nocked_arrow,beat.get("nocked_asset","arrow"),landmarks.string,"tail")
 	if emit_projectile and beat.projectile!=null:
 		var s:=make_sprite("projectile_"+beat.projectile.id)
 		s.z_index=9
-		put(s,beat.projectile.id,landmarks.string+Vector2(beat.projectile.dx,beat.projectile.dy),"tail")
+		var origin:=Vector2(beat.projectile.dx,beat.projectile.dy)
+		var correction: Vector2=landmarks.string-origin if beat.projectile.get("register_to_string",false) else landmarks.string
+		landmarks.projectile_source_origin=origin
+		landmarks.projectile_registration=correction
+		put(s,beat.projectile.id,origin+correction,"tail")
 		arrows.append(s)
 		release_count+=1
 func update_effects() -> void:
@@ -167,6 +198,7 @@ func update_effects() -> void:
 			s.centered=true
 			s.position+=s.texture.get_size()*.25
 func _process(delta: float) -> void:
+	update_reference_effects(delta)
 	for s in arrows.duplicate():
 		s.position.x+=240*delta
 		if s.position.x>500:
@@ -207,4 +239,16 @@ func _process(delta: float) -> void:
 		var id:=int(clip.frames[next])
 		if id!=frame_index:sample_frame(id)
 func all_visual_sprites() -> Array:
-	return sprites.values()+[quiver,nocked_arrow]+effect_sprites+arrows
+	var out: Array=sprites.values()+[quiver,nocked_arrow]+effect_sprites+arrows
+	for fx in reference_effects:out.append(fx.sprite)
+	return out
+func update_reference_effects(delta: float) -> void:
+	for fx in reference_effects.duplicate():
+		fx.elapsed+=delta
+		var index:=int(fx.elapsed/.05)
+		if index>=fx.offsets.size():
+			fx.sprite.queue_free()
+			reference_effects.erase(fx)
+		else:
+			var offset: Array=fx.offsets[index]
+			fx.sprite.position=fx.origin+Vector2(offset[0],offset[1])*3
