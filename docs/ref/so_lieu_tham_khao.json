@@ -1,0 +1,4730 @@
+{
+ "ghi_chu": "Số liệu cơ chế đọc từ game tham khảo (không có ảnh/mã). Đơn vị px gốc (×4 ≈ màn cao 720). Lớp: 1=Kiếm, 4=Cung.",
+ "cong_thuc": {
+  "vi_tri_lop": "x = goc + (dx_khung + dx_hinh) * huong; y = goc - dy_khung + dy_hinh",
+  "neo_than": "quay phải neo góc trên-trái; quay trái lật gương",
+  "neo_hieu_ung": "tâm ảnh; quay trái lật và đảo dấu dx",
+  "vu_khi_cam_tay_hien_o_khung": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   12,
+   21
+  ]
+ },
+ "so_hinh_moi_bo": {
+  "dau": 8,
+  "than": 18,
+  "chan": 10,
+  "vu_khi": 2
+ },
+ "bang_30_khung": [
+  {
+   "khung": 0,
+   "dau": [
+    0,
+    -10,
+    32
+   ],
+   "chan": [
+    1,
+    -7,
+    7
+   ],
+   "than": [
+    1,
+    -11,
+    15
+   ],
+   "vu_khi": [
+    1,
+    -9,
+    45
+   ]
+  },
+  {
+   "khung": 1,
+   "dau": [
+    0,
+    -10,
+    33
+   ],
+   "chan": [
+    1,
+    -7,
+    7
+   ],
+   "than": [
+    1,
+    -11,
+    16
+   ],
+   "vu_khi": [
+    1,
+    -9,
+    46
+   ]
+  },
+  {
+   "khung": 2,
+   "dau": [
+    1,
+    -10,
+    33
+   ],
+   "chan": [
+    2,
+    -10,
+    11
+   ],
+   "than": [
+    2,
+    -9,
+    16
+   ],
+   "vu_khi": [
+    1,
+    -12,
+    49
+   ]
+  },
+  {
+   "khung": 3,
+   "dau": [
+    1,
+    -10,
+    32
+   ],
+   "chan": [
+    3,
+    -11,
+    9
+   ],
+   "than": [
+    3,
+    -11,
+    16
+   ],
+   "vu_khi": [
+    1,
+    -13,
+    47
+   ]
+  },
+  {
+   "khung": 4,
+   "dau": [
+    1,
+    -10,
+    34
+   ],
+   "chan": [
+    4,
+    -9,
+    9
+   ],
+   "than": [
+    4,
+    -8,
+    16
+   ],
+   "vu_khi": [
+    1,
+    -12,
+    47
+   ]
+  },
+  {
+   "khung": 5,
+   "dau": [
+    1,
+    -10,
+    34
+   ],
+   "chan": [
+    5,
+    -11,
+    11
+   ],
+   "than": [
+    5,
+    -10,
+    17
+   ],
+   "vu_khi": [
+    1,
+    -13,
+    49
+   ]
+  },
+  {
+   "khung": 6,
+   "dau": [
+    1,
+    -10,
+    33
+   ],
+   "chan": [
+    6,
+    -9,
+    9
+   ],
+   "than": [
+    6,
+    -8,
+    16
+   ],
+   "vu_khi": [
+    1,
+    -12,
+    47
+   ]
+  },
+  {
+   "khung": 7,
+   "dau": [
+    0,
+    -9,
+    36
+   ],
+   "chan": [
+    7,
+    -5,
+    15
+   ],
+   "than": [
+    7,
+    -10,
+    21
+   ],
+   "vu_khi": [
+    1,
+    -8,
+    49
+   ]
+  },
+  {
+   "khung": 8,
+   "dau": [
+    4,
+    -13,
+    26
+   ],
+   "chan": [
+    0,
+    0,
+    0
+   ],
+   "than": [
+    0,
+    0,
+    0
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 9,
+   "dau": [
+    5,
+    -13,
+    25
+   ],
+   "chan": [
+    0,
+    0,
+    0
+   ],
+   "than": [
+    0,
+    0,
+    0
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 10,
+   "dau": [
+    6,
+    -12,
+    26
+   ],
+   "chan": [
+    0,
+    0,
+    0
+   ],
+   "than": [
+    0,
+    0,
+    0
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 11,
+   "dau": [
+    7,
+    -13,
+    25
+   ],
+   "chan": [
+    0,
+    0,
+    0
+   ],
+   "than": [
+    0,
+    0,
+    0
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 12,
+   "dau": [
+    0,
+    -9,
+    35
+   ],
+   "chan": [
+    8,
+    -4,
+    13
+   ],
+   "than": [
+    8,
+    -14,
+    27
+   ],
+   "vu_khi": [
+    1,
+    -9,
+    49
+   ]
+  },
+  {
+   "khung": 13,
+   "dau": [
+    0,
+    -9,
+    31
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    10,
+    -10,
+    17
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 14,
+   "dau": [
+    2,
+    -7,
+    33
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    11,
+    -8,
+    15
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 15,
+   "dau": [
+    2,
+    -8,
+    32
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    12,
+    -8,
+    14
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 16,
+   "dau": [
+    2,
+    -7,
+    32
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    13,
+    -12,
+    15
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 17,
+   "dau": [
+    0,
+    -11,
+    31
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    14,
+    -15,
+    18
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 18,
+   "dau": [
+    2,
+    -9,
+    32
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    15,
+    -13,
+    19
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 19,
+   "dau": [
+    2,
+    -9,
+    31
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    16,
+    -7,
+    22
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 20,
+   "dau": [
+    2,
+    -9,
+    32
+   ],
+   "chan": [
+    9,
+    -11,
+    8
+   ],
+   "than": [
+    17,
+    -11,
+    18
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 21,
+   "dau": [
+    3,
+    -12,
+    34
+   ],
+   "chan": [
+    8,
+    -4,
+    13
+   ],
+   "than": [
+    8,
+    -15,
+    25
+   ],
+   "vu_khi": [
+    1,
+    -10,
+    46
+   ]
+  },
+  {
+   "khung": 22,
+   "dau": [
+    0,
+    -9,
+    32
+   ],
+   "chan": [
+    8,
+    -4,
+    9
+   ],
+   "than": [
+    10,
+    -10,
+    18
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 23,
+   "dau": [
+    2,
+    -7,
+    34
+   ],
+   "chan": [
+    8,
+    -4,
+    9
+   ],
+   "than": [
+    11,
+    -8,
+    16
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 24,
+   "dau": [
+    2,
+    -8,
+    33
+   ],
+   "chan": [
+    8,
+    -4,
+    9
+   ],
+   "than": [
+    12,
+    -8,
+    15
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 25,
+   "dau": [
+    2,
+    -7,
+    33
+   ],
+   "chan": [
+    8,
+    -4,
+    9
+   ],
+   "than": [
+    13,
+    -12,
+    16
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 26,
+   "dau": [
+    0,
+    -11,
+    32
+   ],
+   "chan": [
+    7,
+    -5,
+    9
+   ],
+   "than": [
+    14,
+    -15,
+    19
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 27,
+   "dau": [
+    2,
+    -9,
+    33
+   ],
+   "chan": [
+    7,
+    -5,
+    9
+   ],
+   "than": [
+    15,
+    -13,
+    20
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 28,
+   "dau": [
+    2,
+    -9,
+    32
+   ],
+   "chan": [
+    7,
+    -5,
+    9
+   ],
+   "than": [
+    16,
+    -7,
+    23
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "khung": 29,
+   "dau": [
+    2,
+    -9,
+    33
+   ],
+   "chan": [
+    7,
+    -5,
+    9
+   ],
+   "than": [
+    17,
+    -11,
+    19
+   ],
+   "vu_khi": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "do_lech_hinh_bo_mac_dinh": {
+  "dau": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "chan": [
+   [
+    4,
+    4
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "than": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "kiem": [
+   [
+    0,
+    0
+   ],
+   [
+    -4,
+    27
+   ]
+  ],
+  "cung": [
+   [
+    0,
+    0
+   ],
+   [
+    -10,
+    9
+   ]
+  ]
+ },
+ "chieu": {
+  "kiem_1": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 16,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 39,
+       "dx": 23,
+       "dy": -14
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 16,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [
+      {
+       "id": 39,
+       "dx": 19,
+       "dy": -13
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 25,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 25,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_3": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 6,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 39,
+       "dx": 23,
+       "dy": -14
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [
+      {
+       "id": 40,
+       "dx": 30,
+       "dy": -16
+      },
+      {
+       "id": 40,
+       "dx": 32,
+       "dy": -16
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [
+      {
+       "id": 40,
+       "dx": 26,
+       "dy": -17
+      },
+      {
+       "id": 40,
+       "dx": 29,
+       "dy": -17
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 6,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [
+      {
+       "id": 39,
+       "dx": 16,
+       "dy": -10
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 25,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 25,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [
+      {
+       "id": 40,
+       "dx": 32,
+       "dy": -16
+      },
+      {
+       "id": 40,
+       "dx": 30,
+       "dy": -16
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_4": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 64,
+       "dx": 22,
+       "dy": -4
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [
+      {
+       "id": 64,
+       "dx": 24,
+       "dy": -1
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_5": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 53,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 11,
+       "dx": 33,
+       "dy": -11
+      },
+      {
+       "id": 46,
+       "dx": 28,
+       "dy": -15
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 17,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [
+      {
+       "id": 11,
+       "dx": 33,
+       "dy": -11
+      },
+      {
+       "id": 46,
+       "dx": 28,
+       "dy": -15
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_6": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 57,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [
+      {
+       "id": 57,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_7": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 3,
+       "dx": 12,
+       "dy": -6
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 18,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 9,
+       "dx": -1,
+       "dy": -47
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 9,
+       "dx": -1,
+       "dy": -47
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 12,
+       "dx": -1,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": -9
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": 26
+      },
+      {
+       "id": 33,
+       "dx": 36,
+       "dy": -7
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 12,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": -9
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": 26
+      },
+      {
+       "id": 33,
+       "dx": 33,
+       "dy": -7
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [
+      {
+       "id": 33,
+       "dx": 7,
+       "dy": -13
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [
+      {
+       "id": 18,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [
+      {
+       "id": 32,
+       "dx": 0,
+       "dy": 0
+      },
+      {
+       "id": 18,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": -9
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [
+      {
+       "id": 33,
+       "dx": 36,
+       "dy": -7
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [
+      {
+       "id": 20,
+       "dx": 31,
+       "dy": 26
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_9": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 17,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 45,
+       "dx": 22,
+       "dy": -16
+      },
+      {
+       "id": 45,
+       "dx": 16,
+       "dy": -28
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 45,
+       "dx": 26,
+       "dy": -13
+      },
+      {
+       "id": 45,
+       "dx": 9,
+       "dy": -1
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 17,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [
+      {
+       "id": 45,
+       "dx": 22,
+       "dy": -16
+      },
+      {
+       "id": 45,
+       "dx": 16,
+       "dy": -28
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 24,
+     "hieu_ung": [
+      {
+       "id": 45,
+       "dx": 26,
+       "dy": -13
+      },
+      {
+       "id": 45,
+       "dx": 9,
+       "dy": -1
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 22,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_61": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 12,
+       "dx": -1,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 94,
+       "dx": 25,
+       "dy": -2
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 35,
+       "dx": -8,
+       "dy": 14
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 35,
+       "dx": -2,
+       "dy": -13
+      },
+      {
+       "id": 35,
+       "dx": -2,
+       "dy": 12
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 96,
+       "dx": 50,
+       "dy": -14
+      },
+      {
+       "id": 35,
+       "dx": 3,
+       "dy": 3
+      },
+      {
+       "id": 35,
+       "dx": 13,
+       "dy": 3
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 94,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [
+      {
+       "id": 35,
+       "dx": -5,
+       "dy": 4
+      },
+      {
+       "id": 35,
+       "dx": -4,
+       "dy": 15
+      },
+      {
+       "id": 35,
+       "dx": 21,
+       "dy": 9
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [
+      {
+       "id": 96,
+       "dx": 58,
+       "dy": -8
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 29,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "kiem_67": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 142,
+       "dx": 0,
+       "dy": -2
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  },
+  "kiem_73": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 16,
+       "dx": 1,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 108,
+       "dx": 3,
+       "dy": -14
+      },
+      {
+       "id": 123,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 32,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  },
+  "kiem_79": {
+   "lop": 1,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 154,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 16,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [
+      {
+       "id": 159,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [
+      {
+       "id": 160,
+       "dx": 26,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 16,
+       "dx": 0,
+       "dy": 0
+      },
+      {
+       "id": 155,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 15,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 16,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 13,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  },
+  "cung_28": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 50,
+       "dx": -4,
+       "dy": -15
+      }
+     ],
+     "dan": {
+      "id": 1,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": {
+      "id": 1,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_30": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 50,
+       "dx": -3,
+       "dy": -15
+      }
+     ],
+     "dan": {
+      "id": 2,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": {
+      "id": 2,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_31": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 66,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [
+      {
+       "id": 66,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_32": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 50,
+       "dx": -4,
+       "dy": -15
+      }
+     ],
+     "dan": {
+      "id": 3,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": {
+      "id": 3,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_33": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 13,
+     "hieu_ung": [
+      {
+       "id": 52,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 22,
+     "hieu_ung": [
+      {
+       "id": 52,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_34": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 43,
+       "dx": -1,
+       "dy": -15
+      }
+     ],
+     "dan": {
+      "id": 4,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": {
+      "id": 4,
+      "dx": 10,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [
+      {
+       "id": 43,
+       "dx": -3,
+       "dy": -15
+      }
+     ],
+     "dan": {
+      "id": 4,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_36": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 43,
+       "dx": -1,
+       "dy": -13
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": {
+      "id": 5,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [
+      {
+       "id": 43,
+       "dx": -5,
+       "dy": -17
+      }
+     ],
+     "dan": {
+      "id": 5,
+      "dx": 9,
+      "dy": -16
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_58": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 3,
+       "dx": 10,
+       "dy": -6
+      },
+      {
+       "id": 21,
+       "dx": 6,
+       "dy": -14
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [
+      {
+       "id": 3,
+       "dx": 15,
+       "dy": -10
+      },
+      {
+       "id": 21,
+       "dx": 7,
+       "dy": -14
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 28,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_64": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 105,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": {
+      "id": 11,
+      "dx": 19,
+      "dy": -17
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": [
+    {
+     "khung_than": 23,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 23,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 27,
+     "hieu_ung": [
+      {
+       "id": 105,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": {
+      "id": 11,
+      "dx": 22,
+      "dy": -17
+     }
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 26,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ]
+  },
+  "cung_70": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 19,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [
+      {
+       "id": 142,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 20,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  },
+  "cung_76": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      },
+      {
+       "id": 147,
+       "dx": 24,
+       "dy": -20
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 91,
+       "dx": 24,
+       "dy": -1
+      }
+     ],
+     "dan": {
+      "id": 11,
+      "dx": 31,
+      "dy": -15
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  },
+  "cung_82": {
+   "lop": 4,
+   "thu_tu_trong_lop": null,
+   "ground": [
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 170,
+       "dx": 2,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [
+      {
+       "id": 10,
+       "dx": 0,
+       "dy": 0
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 14,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 18,
+     "hieu_ung": [
+      {
+       "id": 171,
+       "dx": 22,
+       "dy": -21
+      },
+      {
+       "id": 173,
+       "dx": 14,
+       "dy": -7
+      }
+     ],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [
+      {
+       "id": 172,
+       "dx": 37,
+       "dy": -23
+      }
+     ],
+     "dan": {
+      "id": 15,
+      "dx": 85,
+      "dy": -22
+     }
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    },
+    {
+     "khung_than": 17,
+     "hieu_ung": [],
+     "dan": null
+    }
+   ],
+   "air": []
+  }
+ },
+ "hieu_ung": {
+  "3": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     -10,
+     -7
+    ],
+    [
+     -11,
+     -8
+    ],
+    [
+     -13,
+     -7
+    ],
+    [
+     -13,
+     -7
+    ]
+   ]
+  },
+  "6": {
+   "so_hinh": 15,
+   "do_lech": [
+    [
+     7,
+     -7
+    ],
+    [
+     12,
+     -7
+    ],
+    [
+     2,
+     -17
+    ],
+    [
+     -15,
+     -16
+    ],
+    [
+     9,
+     -12
+    ],
+    [
+     -17,
+     -11
+    ],
+    [
+     -6,
+     -25
+    ],
+    [
+     7,
+     -24
+    ],
+    [
+     19,
+     -15
+    ],
+    [
+     9,
+     -7
+    ],
+    [
+     -17,
+     -11
+    ],
+    [
+     -6,
+     -25
+    ],
+    [
+     7,
+     -24
+    ],
+    [
+     19,
+     -15
+    ],
+    [
+     9,
+     -7
+    ]
+   ]
+  },
+  "9": {
+   "so_hinh": 1,
+   "do_lech": [
+    [
+     4,
+     -4
+    ]
+   ]
+  },
+  "10": {
+   "so_hinh": 7,
+   "do_lech": [
+    [
+     5,
+     -16
+    ],
+    [
+     5,
+     -16
+    ],
+    [
+     2,
+     -20
+    ],
+    [
+     2,
+     -20
+    ],
+    [
+     2,
+     -20
+    ],
+    [
+     2,
+     -20
+    ],
+    [
+     2,
+     -20
+    ]
+   ]
+  },
+  "11": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     -9,
+     -6
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -9,
+     -6
+    ],
+    [
+     5,
+     2
+    ]
+   ]
+  },
+  "12": {
+   "so_hinh": 5,
+   "do_lech": [
+    [
+     -16,
+     -11
+    ],
+    [
+     -8,
+     -26
+    ],
+    [
+     22,
+     -23
+    ],
+    [
+     24,
+     -19
+    ],
+    [
+     21,
+     -8
+    ]
+   ]
+  },
+  "16": {
+   "so_hinh": 5,
+   "do_lech": [
+    [
+     6,
+     -6
+    ],
+    [
+     14,
+     -10
+    ],
+    [
+     2,
+     -17
+    ],
+    [
+     -15,
+     -16
+    ],
+    [
+     9,
+     -12
+    ]
+   ]
+  },
+  "17": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     6,
+     -7
+    ],
+    [
+     15,
+     -16
+    ],
+    [
+     17,
+     -17
+    ],
+    [
+     12,
+     -5
+    ]
+   ]
+  },
+  "18": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     3,
+     -49
+    ],
+    [
+     3,
+     -49
+    ]
+   ]
+  },
+  "20": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     2,
+     -49
+    ],
+    [
+     2,
+     -49
+    ]
+   ]
+  },
+  "21": {
+   "so_hinh": 12,
+   "do_lech": [
+    [
+     -6,
+     -8
+    ],
+    [
+     -6,
+     -8
+    ],
+    [
+     -6,
+     -13
+    ],
+    [
+     -6,
+     -13
+    ],
+    [
+     -5,
+     -15
+    ],
+    [
+     -5,
+     -15
+    ],
+    [
+     3,
+     -8
+    ],
+    [
+     3,
+     -8
+    ],
+    [
+     5,
+     -13
+    ],
+    [
+     5,
+     -13
+    ],
+    [
+     7,
+     -15
+    ],
+    [
+     7,
+     -15
+    ]
+   ]
+  },
+  "32": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     -17,
+     -10
+    ],
+    [
+     -21,
+     -23
+    ],
+    [
+     21,
+     -22
+    ],
+    [
+     24,
+     -19
+    ]
+   ]
+  },
+  "33": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "35": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     36,
+     -18
+    ],
+    [
+     33,
+     -12
+    ]
+   ]
+  },
+  "39": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     -5,
+     2
+    ]
+   ]
+  },
+  "40": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "43": {
+   "so_hinh": 3,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "45": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     2,
+     -1
+    ],
+    [
+     15,
+     -1
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     13,
+     0
+    ]
+   ]
+  },
+  "46": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     -3,
+     1
+    ],
+    [
+     11,
+     -8
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     -3,
+     1
+    ]
+   ]
+  },
+  "50": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "52": {
+   "so_hinh": 6,
+   "do_lech": [
+    [
+     -1,
+     -9
+    ],
+    [
+     7,
+     -11
+    ],
+    [
+     0,
+     -15
+    ],
+    [
+     2,
+     -17
+    ],
+    [
+     -2,
+     -23
+    ],
+    [
+     -5,
+     -28
+    ]
+   ]
+  },
+  "53": {
+   "so_hinh": 3,
+   "do_lech": [
+    [
+     6,
+     -6
+    ],
+    [
+     12,
+     -6
+    ],
+    [
+     17,
+     -11
+    ]
+   ]
+  },
+  "57": {
+   "so_hinh": 7,
+   "do_lech": [
+    [
+     0,
+     -4
+    ],
+    [
+     1,
+     -6
+    ],
+    [
+     1,
+     -11
+    ],
+    [
+     1,
+     -16
+    ],
+    [
+     2,
+     -20
+    ],
+    [
+     1,
+     -25
+    ],
+    [
+     3,
+     -29
+    ]
+   ]
+  },
+  "64": {
+   "so_hinh": 7,
+   "do_lech": [
+    [
+     2,
+     -8
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     -9
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     -9
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     -8
+    ]
+   ]
+  },
+  "66": {
+   "so_hinh": 8,
+   "do_lech": [
+    [
+     -5,
+     -12
+    ],
+    [
+     1,
+     -12
+    ],
+    [
+     -1,
+     -12
+    ],
+    [
+     1,
+     -14
+    ],
+    [
+     7,
+     -11
+    ],
+    [
+     -4,
+     -14
+    ],
+    [
+     -1,
+     -11
+    ],
+    [
+     3,
+     -13
+    ]
+   ]
+  },
+  "91": {
+   "so_hinh": 5,
+   "do_lech": [
+    [
+     1,
+     -13
+    ],
+    [
+     1,
+     -14
+    ],
+    [
+     2,
+     -14
+    ],
+    [
+     1,
+     -12
+    ],
+    [
+     0,
+     -14
+    ]
+   ]
+  },
+  "94": {
+   "so_hinh": 5,
+   "do_lech": [
+    [
+     0,
+     -15
+    ],
+    [
+     1,
+     -12
+    ],
+    [
+     1,
+     -12
+    ],
+    [
+     0,
+     -11
+    ],
+    [
+     1,
+     -11
+    ]
+   ]
+  },
+  "96": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "105": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     0,
+     -22
+    ],
+    [
+     -2,
+     -23
+    ],
+    [
+     3,
+     -22
+    ],
+    [
+     0,
+     -13
+    ]
+   ]
+  },
+  "108": {
+   "so_hinh": 7,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -7
+    ],
+    [
+     -2,
+     -6
+    ]
+   ]
+  },
+  "123": {
+   "so_hinh": 12,
+   "do_lech": [
+    [
+     13,
+     -25
+    ],
+    [
+     23,
+     -25
+    ],
+    [
+     33,
+     -25
+    ],
+    [
+     43,
+     -25
+    ],
+    [
+     53,
+     -25
+    ],
+    [
+     63,
+     -25
+    ],
+    [
+     73,
+     -25
+    ],
+    [
+     83,
+     -25
+    ],
+    [
+     93,
+     -25
+    ],
+    [
+     103,
+     -25
+    ],
+    [
+     113,
+     -25
+    ],
+    [
+     123,
+     -25
+    ]
+   ]
+  },
+  "142": {
+   "so_hinh": 6,
+   "do_lech": [
+    [
+     2,
+     -24
+    ],
+    [
+     0,
+     -28
+    ],
+    [
+     1,
+     -28
+    ],
+    [
+     0,
+     -29
+    ],
+    [
+     5,
+     -31
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "147": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "154": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     1,
+     -40
+    ],
+    [
+     2,
+     -45
+    ],
+    [
+     3,
+     -45
+    ],
+    [
+     3,
+     -27
+    ]
+   ]
+  },
+  "155": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     1,
+     -33
+    ],
+    [
+     2,
+     -26
+    ],
+    [
+     -1,
+     -35
+    ],
+    [
+     -3,
+     -36
+    ]
+   ]
+  },
+  "159": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     3,
+     -20
+    ],
+    [
+     -1,
+     -33
+    ],
+    [
+     1,
+     -26
+    ],
+    [
+     0,
+     -35
+    ]
+   ]
+  },
+  "160": {
+   "so_hinh": 8,
+   "do_lech": [
+    [
+     36,
+     -23
+    ],
+    [
+     51,
+     -25
+    ],
+    [
+     62,
+     -23
+    ],
+    [
+     69,
+     -23
+    ],
+    [
+     91,
+     -23
+    ],
+    [
+     93,
+     -25
+    ],
+    [
+     105,
+     -23
+    ],
+    [
+     114,
+     -22
+    ]
+   ]
+  },
+  "170": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     0,
+     -17
+    ],
+    [
+     1,
+     -46
+    ],
+    [
+     8,
+     -45
+    ],
+    [
+     8,
+     -45
+    ]
+   ]
+  },
+  "171": {
+   "so_hinh": 4,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "172": {
+   "so_hinh": 3,
+   "do_lech": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "173": {
+   "so_hinh": 2,
+   "do_lech": [
+    [
+     37,
+     -14
+    ],
+    [
+     39,
+     -13
+    ]
+   ]
+  }
+ },
+ "so_do": {
+  "nhan_vat_cao_px_goc": 32,
+  "dau_kem_toc_H": 0.58,
+  "kiem_cam_tay_dai_H": 0.78,
+  "cung_cam_tay_cao_H": 1.01,
+  "hinh_vung_lon_nhat": "rộng ≤1,6 H, cao ≤1,1 H"
+ }
+}
