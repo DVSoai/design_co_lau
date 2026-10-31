@@ -47,6 +47,8 @@ def main():
                       'formula': ref['cong_thuc']['vi_tri_lop'],
                       'image_offsets': ref['do_lech_hinh_bo_mac_dinh'],
                       'effect_offsets':ref['hieu_ung']}
+    from refresh_character_motion import refresh
+    refresh(p,f,ref)
     # Keep source origins verbatim and make the conversion to our cropped drawings explicit.
     for row in f['frames']:
         row['registrations']={}
@@ -55,6 +57,8 @@ def main():
             for layer in ['legs','body','head']:
                 index=layers[layer].get('cung_image',layers[layer]['image']) if school=='cung' and layer=='body' else layers[layer]['image']
                 ids[layer]=p['levels']['1'][layer][index]
+                ids[layer]=layers[layer].get('asset',ids[layer])
+                if school=='cung' and layer=='body':ids[layer]=layers[layer].get('cung_asset',ids[layer])
             if layers['legs'].get('stance'):ids['legs']='legs_guard'
             if layers['legs'].get('lunge'):ids['legs']='legs_lunge'
             anchor=lambda layer,key:np.array(p['assets'][ids[layer]]['anchors'][key])*.5
@@ -62,12 +66,30 @@ def main():
             if row['id'] in [9,10,11]:pos['legs']=np.array([0,-45])-anchor('legs','hip')
             pos['body']=pos['legs']+anchor('legs','hip')-anchor('body','hip')
             pos['head']=pos['body']+anchor('body','neck')-anchor('head','neck')
+            if row['id'] in range(2,8):
+                # The source torso row drives the run bob, not the old crouched
+                # leg crop height. Our redrawn legs register to that moving hip.
+                neutral=p['assets'][p['levels']['1']['legs'][0]]['anchors']
+                standing_hip=(np.array(neutral['hip'])-neutral['sole'])*.5
+                raw=row['reference']['than'];base=ref['bang_30_khung'][0]['than']
+                moving_hip=standing_hip+np.array([raw[1]-base[1],base[2]-raw[2]])*3
+                pos['legs']=moving_hip-anchor('legs','hip')
+                pos['body']=moving_hip-anchor('body','hip')
+                pos['head']=pos['body']+anchor('body','neck')-anchor('head','neck')
+            if 'roll_origin' in row:pos={layer:np.array(row['roll_origin'],float) for layer in ['legs','body','head']}
             corrections={}
             for layer,key in [('legs','chan'),('body','than'),('head','dau')]:
                 image,dx,dy=row['reference'][key]
                 ox,oy=ref['do_lech_hinh_bo_mac_dinh'][key][image]
                 raw=np.array([dx+ox,-dy+oy])*3
                 corrections[layer]=list(pos[layer]-raw)
+            bp=p['assets'][ids['body']]['anchors']
+            hand=np.array(bp['grip'] if bp['grip'][0]>=bp['far_hand'][0] else bp['far_hand'])*.5+pos['body']
+            weapon=p['levels']['1']['weapons'][school]
+            if school=='kiem' and row['id'] in range(2,8):weapon=p['levels']['1']['run_weapon']
+            wi,wx,wy=row['reference']['vu_khi'];ox,oy=ref['do_lech_hinh_bo_mac_dinh'][school][wi]
+            raw=np.array([wx+ox,-wy+oy])*3
+            corrections['weapon']=list(hand-np.array(p['assets'][weapon]['anchors']['grip'])*.5-raw)
             row['registrations'][school]=corrections
     # A full blade from our independently drawn sword, baked horizontal offline.
     asset = p['assets']['sword']

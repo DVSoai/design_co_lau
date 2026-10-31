@@ -926,3 +926,109 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
  phím/cảm ứng, đổi phái,2ôchiêu, hình nộm/số sát thương. main.tscn chỉ thêm nút điều hướng;
  không sửa config/controller/nhân vậtA0 cũ. Ảnh scene và viewer chụp bằng Godot/Xvfb thật.
 - Chưa nghiệm thu mỹ thuật, cảm giác hay đa chạm Android; không tự duyệt tài nguyên.
+
+
+## 31/10/2026 — Chạy / cầm / vệt / nhảy-lộn-rơi, lượt sửa theo đối chiếu nguồn
+
+**Chưa duyệt mỹ thuật hoặc cảm giác chơi.** Chỉ prototype Lv1 trên nhánh feature,
+không mở PR hay merge vào main. Không sửa config, controller và nhân vật A0 cũ.
+
+- Đã dùng thư mục nguồn thật ngoài checkout đích; ls, các dòng Java kèm số dòng,
+  output đầy đủ `ref_render.py --out /tmp/ref_render` và bảng raw số nguồn ↔ vị trí
+  sprite thật được dán nguyên văn trong commit message. Ảnh tham khảo và ảnh so
+  ba cột giữ riêng dưới `/tmp/ref_render`, không commit mã/ảnh tham khảo.
+- Đã mở riêng đủ45ảnh gốc được chỉ định: đứng, chạy, cuộn trong gió, rơi, đánh,
+  cầm hai vũ khí, hiệu ứng16/39và10/50. Dựng ảnh so từ Godot thật ở cùng H128px.
+- **Khung2–7:** lấy nguyên từng dòng bảng30khung (đầu/chân/thân/vũ khí +dx,dy),
+  số độ lệch hình của từng phần. Sáu chân mới tự vẽ riêng có6hash khác nhau,
+  ít nhất4khung sải chân≥0,25H. Dùng thân thẳng, không dùng thân gập cũ.
+  Khoảng đỉnh đầu–hông khi chạy lệch≤0,05H so với đứng. Raw và phần hiệu chỉnh
+  crop/khớp được giữ riêng trong `registrations`, in đầy đủ bằng test placement.
+- **Khung cầm0–7,12,21:** dùng raw vũ khí của từng khung và phần12/14, rồi đăng ký
+  crop của tranh riêng về tâm nắm tay. Kiếm chéo xuống sau, có mask ngón tay từ
+  chính pixel thân phủ lên chuôi. Cung nghiêng40°; vẽ thêm thân tay thấp đưa ra
+  trước để dây không cắt phần thân giữa. Không dịch cung rời bàn tay để vượt test.
+- **Lên7 / lộn8–11 / rơi12:** đối chiếu các dòng chọn khung khi vận tốc lên và
+  rơi trong Java. Vẽ dáng cuộn tròn ôm gối, đầu cúi, bake4góc90°; vòng gió riêng
+  neo tâm. Vẽ dáng rơi12một gối co cao, một tay giơ nắm. Khung13là thủ kiếm,
+  không dùng cho rơi. Giữ nguyên A0lên đỉnh0,38s, một vòng lộn0,20s.
+- **Kiếm, Trảm Kiếm:** giữ nguyên byte PNG lưỡi dài từ commit a528fc7; phần thép
+  không cán đo≈0,782477H. Đọc trực tiếp nhịp chiêu1: hiệu ứng16ở nhịp2,39ở nhịp3.
+  Vệt16bắt đầu cong ôm hông, qua lia to/dày;39thêm vệt ngắn lao trước, đuôi xé tơi;
+  giữ thì tan. Texture vệt tự vẽ, neo tâm, baseoffset+frameoffset theo nguồn,
+  vẽ trên người. Review tĩnh dựng lại cả hiệu ứng từ nhịp trước, không mất16khi39sinh.
+  Test đo diện tích pixel alpha≥0,8 của vệt16lia≥0,25H²; Trảm Kiếm cùng dáng, xanh
+  rõ và dày hơn. Viền tối mảnh; không dùng một pixel đậm để đại diện cả lõi.
+- **Ô chiêu:** tăng riêng hai ô lên84×84logic, chữ hai dòng; kiểm font thật tại
+  viewport960×540và1200×540. Không đổi layout điều khiển A0 gốc.
+- **Khác số nguồn và lý do:** vẫn quy đổi3logic/px gốc cho bộ người≈96logic.
+  Tỉ lệ đầu/trang phục riêng của bộ Lv1 giữ nguyên thay vì chép ngoại hình nguồn;
+  số thứ tự hình được ánh xạ sang tranh mới. Crop khác nên đăng ký khớp được
+  hiệu chỉnh riêng; raw dx/dy không sửa. Thời gian mỗi nhịp0,05s giữ hit/cooldownA0;
+  bảng nguồn không ghi giây. Vệt mới to/đậm theo yêu cầu đọc rõ ở128px, không sao
+  chép hình gốc. Các số và vị trí đã đặt có trong output placement, không giấu
+  hiệu chỉnh trong sprite transform hoặc xoay node runtime.
+- Kiểm số liệu bằng script PIL/NumPy trên PNG thật: `tools/check_motion_art.py`
+  (nguyên script và output lưu trong report Python và commit message), cùng các
+  test Godot chạy scene thật. Không coi headless là nghiệm thu Android.
+
+### Ảnh tự vẽ / lời nhắc nguyên văn
+
+
+#### slash_crescent_surge_v1 — v1, chưa duyệt
+
+Tệp: `art/sprites/characters/lv1_30/sources/slash_crescent_surge_v1.png`.
+Ảnh đã đính kèm: `art/sprites/characters/lv1_30/sources/compact_swings_50.png`.
+Vệt cong và vệt lao ra trước, nền xanh rồi tách; không dùng ảnh tham khảo làm đầu vào.
+
+Prompt nguyên văn:
+
+```text
+Edit only the attached independently authored effects sheet into a CLEAN TWO-CELL source sheet for a mobile game, landscape 1536x768 or similar. Pure solid #00FF00 background everywhere outside the two shapes. NO TEXT, NO weapons, NO swords, NO people. Remove all swords completely. LEFT CELL: one large, very thick horizontal sweeping white wind crescent shaped like a broad hooked C wrapping around an empty center where a fighter's hips would be, opening to the RIGHT. Its lower belly sweeps powerfully forward right and finishes in three large torn pointed tongues, NOT tiny particles. The upper hook curls back over the empty hip area. Broad opaque white core, pale cool-gray hard cel shading and thin dark brown-black contour. The crescent should have substantial filled area at least 40 percent of its bounding box. RIGHT CELL: one separate short thick white horizontal surge moving right like a ragged flame of displaced air, broad at its left rear, 3 big trailing torn tongues on the left, a crisp pointed broad spearhead on the right. Compact, not a thin line. White wind, no literal orange fire, no sparks. Both cells separated with a large green gutter, both have generous green padding, their bounding boxes must not touch. Preserve the clean strong contour and bold solid white of the attached original shapes, make the left crescent markedly thicker and more horizontal. This is source artwork for independent animation sprites, not a diagram or comparison board. Only these two shapes.
+Style: 2D pixel art for a side-scrolling mobile action RPG, semi-realistic proportions about 4 heads tall, clean dark outline, 32-color palette, 3-tone shading with soft highlights, readable silhouettes, light source from top-left. Setting: northern Vietnam in the 10th century: limestone karst, rice fields, earthen ramparts, thatched or simple clay-tiled roofs, white reed-plume banners.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+#### run_strides_v1 — v1, chưa duyệt
+
+Tệp: `art/sprites/characters/lv1_30/sources/run_strides_v1.png`.
+Ảnh đã đính kèm: `art/sprites/characters/lv1_30/sources/legs_board40.png`.
+Sáu dáng chạy mới, không cắt lại sáu dáng cũ.
+
+Prompt nguyên văn:
+
+```text
+Redraw ONLY six running lower-body poses for the same original brown-clothed character as in the attached source sheet. Make a NEW 3-column by 2-row sprite source sheet, with six equally sized square cells, plenty of pure #00FF00 green gutters and margins. No labels, no lines, no text, no torsos, no heads, no arms. Each cell contains the waist belt, short two-flap brown tunic skirt, brown knee-length pants, cream calf wraps and BROWN SHOES matching the attached original (boots override the barefoot generic style below). All six face RIGHT. These must be visibly DIFFERENT frames of ONE RUN cycle: top-left right foot fully stretched forward and left leg pushing far backward; top-middle left foot leaving ground with right foot landing in front; top-right right leg supporting straight down and left knee lifting forward; bottom-left left foot reaching forward while right leg stretches far behind; bottom-middle right foot leaving ground and left foot contacting in front; bottom-right left leg supporting straight down and right knee passing forward. No squat, no deep crouch, no folded-in ball of legs. Tall extended knees and readable large stride gaps: in four of the six poses, shoe centers separated horizontally by at least the width of the waistband; do not overlap both shoes. The top waist location and total waist-to-ground height must be consistent in all six cells so the torso will remain upright. Show the entire waistband and both entire shoes in every pose. The skirt flaps are SHORT enough to show thighs and extended knees, not long enough to cover the strides. Chunky strong simple cartoon linework, broad coherent flat color shapes, clean readable at tiny mobile scale. Entire silhouettes isolated on flat #00FF00, no shadows on background. Follow attached ORIGINAL character's costume and style, but the locomotion must now have six distinct clear running strides. Boots and short tunic from the reference sheet take priority over generic costume below.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+#### air_poses_wind_v1 — v1, chưa duyệt
+
+Tệp: `art/sprites/characters/lv1_30/sources/air_poses_wind_v1.png`.
+Ảnh đã đính kèm: `prototype/pose_rig/art/lv1_30/head_7.png; prototype/pose_rig/art/lv1_30/body_0.png; art/sprites/characters/lv1_30/sources/run_strides_v1.png`.
+Dáng cuộn, dáng rơi và vòng gió; chia lớp/bake góc offline.
+
+Prompt nguyên văn:
+
+```text
+Create ONE original sprite source sheet on pure flat #00FF00 with THREE isolated items in a 2x2 grid (bottom-right cell empty). Match the same brown tunic, brown knee pants, tan calf wraps, brown shoes, thick dark outlines, large head, red hair ribbon and black topknot as these independently drawn character pieces. No text, no weapons, no arrows, no background shadows. TOP LEFT: complete right-facing chibi fighter tucked into a very compact somersault ball: both knees drawn tightly against the chest, hands hugging shins, back curled, chin lowered, head bowed to knees. Entire figure fits a near-circular silhouette, NOT an upright or stretched jumping person. Keep brown shoes and red hair ribbon readable. We will rotate this single compact pose offline 90 degrees per frame. TOP RIGHT: complete fighter in an upright falling pose facing RIGHT, one knee raised high in front and the other leg stretched downward, torso only slightly leaned forward, back fist raised above his head and forward hand clenched low outside the body at hip height, ready to hold a weapon. Arms must be visibly separate from face, knee and chest; no weapons. Keep the same large-head proportions as our existing sprites. BOTTOM LEFT: separate circular white swirling WIND RING, empty transparent-to-green center (no character inside), near-opaque solid white thick curved segments with small hard gray cel-shading and a thin dark brown-black outline. 3 connected bold sweeping hooked arcs forming one round rotating wind ring, a few large sharp torn ends, no particles/no blur/no glow. Enough empty center for the tucked fighter to sit within. All three objects comfortably inside their own cells with generous green space and gutters, completely separate; never overlap. The body costume stays brown (not the cream generic description), shoes not bare feet; prioritize attached independently drawn pieces. Only these three original items.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+#### bow_low_torso_v1 — v1, chưa duyệt
+
+Tệp: `art/sprites/characters/lv1_30/sources/bow_low_torso_v1.png`.
+Ảnh đã đính kèm: `prototype/pose_rig/art/lv1_30/body_0.png`.
+Thân cung mới có tay thấp đưa xa ra trước; không đổi hình đầu/trang phục.
+
+Prompt nguyên văn:
+
+```text
+Edit this original headless brown-tunic body into a headless upper-body sprite for holding a bow LOW and well AHEAD to the RIGHT. Preserve the same sleeveless brown crossover tunic, belt and cream edging, tan skin, wrist wraps, thick dark outline, scale and upright chest. No head, hair, legs, weapons, bow or text. Pure #00FF00 background. The chest/neck stays vertical, not crouched or hunched. Near/right arm must reach LOW and FORWARD: upper arm slopes down alongside ribs, elbow low near waist, forearm extends almost horizontally to the RIGHT at belt height, hand clenched into a solid holding fist. Put this fist far beyond the right edge of the torso, at least one entire torso-width from the chest center. This creates enough clearance for a diagonal bow/string entirely in front of the torso. Back/left arm remains lowered near the body. Keep the whole tunic skirt and both entire hands, with generous green margins. This is one connected torso with both arms, not a full character and not a sheet. Do not add any other objects. Brown outfit and wrist wraps of the attached sprite take priority over generic costume text below.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+Đối chiếu nhấp nhô chạy cuối lượt: tâm hông lấy đúng chênh dx/dy của dòng thân2–7 so với dòng thân0, nhân3logic; các crop chân mới đăng ký vào hông đó. Test in và so trực tiếp từng delta, tránh để chiều cao crop chân cũ làm thân gập hoặc làm sai nhấp nhô.

@@ -23,6 +23,14 @@ Godot **4.7.2 Standard/GDScript**. Khối màu phân biệt mảnh, không phả
 - Mỗi nhân vật một phái; đầu/thân/chân dùng chung hai phái.
 - Thông số A0 không đổi (nhảy, chạy, viewport, nhịp chém 0,30 s).
 
+Bảng khung hiện hành (đính chính31/10/2026):0–1đứng,2–7chạy;7đang lên;
+8–11lộn;12rơi;13–29tư thế đánh,13là thủ kiếm. Không dùng13cho rơi.
+Lộn dùng người cuộn tròn gối ôm ngực, đầu cúi; bốn góc90° bake trước, vòng gió
+trắng là hiệu ứng riêng neo tâm. Giữ A0lên đỉnh0,38s và0,20s/vòng.
+Khung12rơi có một gối co cao và một tay giơ nắm, vẫn cầm vũ khí theo phái.
+Sáu chân chạy và các pose chuyên biệt là ảnh tự vẽ bổ sung, vẫn ghép bốn lớp;
+raw bảng30khung không đổi, đăng ký crop/khớp ghi riêng trong dữ liệu.
+
 ## 1. Đo ảnh tham chiếu
 
 Ảnh thật: `art/reference/ref_dinh_bo_linh.png`, 1735×576, góc nghiêng nhìn phải ở

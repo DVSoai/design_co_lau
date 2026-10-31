@@ -488,16 +488,16 @@
           56.757
         ],
         "grip": [
-          97.973,
-          74.324
+          96,
+          77
         ],
         "far_hand": [
           11.486,
           73.986
         ],
         "near_hand": [
-          97.973,
-          74.324
+          96,
+          77
         ],
         "back": [
           32.432,
@@ -2117,7 +2117,11 @@
           233.30514582920028
         ]
       },
-      "source": "own held weapon offline bake",
+      "source": {
+        "own_asset": "sword",
+        "held_angle": 160,
+        "offline_rotation": 203.79969262600693
+      },
       "status": "drawn_unapproved"
     },
     "sword_run": {
@@ -2132,11 +2136,15 @@
           192.0
         ],
         "tip": [
-          76.50882740962116,
-          227.3091948985163
+          78.51504452699213,
+          233.30514582920028
         ]
       },
-      "source": "own held weapon offline bake",
+      "source": {
+        "own_asset": "sword",
+        "held_angle": 160,
+        "offline_rotation": 203.79969262600693
+      },
       "status": "drawn_unapproved"
     },
     "bow_hold": {
@@ -2151,23 +2159,27 @@
           192.0
         ],
         "belly": [
-          199.93995087034247,
-          194.88990577834068
+          198.42747621231462,
+          197.48469915047934
         ],
         "string": [
-          153.13602995042896,
-          177.85467171654295
+          160.53919538182848,
+          165.1538410002853
         ],
         "top": [
-          180.47567593130495,
-          104.03986128115997
+          211.97178621588947,
+          105.5654941355902
         ],
         "bottom": [
-          126.66904229192069,
-          255.77312088110716
+          108.4886986455432,
+          228.89183552029164
         ]
       },
-      "source": "own held weapon offline bake",
+      "source": {
+        "own_asset": "bow_idle",
+        "held_angle": 40,
+        "offline_rotation": 40.474816032242586
+      },
       "status": "drawn_unapproved"
     },
     "attack_fragment": {
@@ -3003,6 +3015,1377 @@
         "blade_length_H": 0.78
       },
       "status": "drawn_unapproved"
+    },
+    "run_leg_0": {
+      "file": "run_leg_0.png",
+      "size": [
+        109,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          55.58922558922559,
+          4.158249158249158
+        ],
+        "sole": [
+          55.58922558922559,
+          69
+        ],
+        "foot_left": [
+          9.191919191919192,
+          67.84511784511784
+        ],
+        "foot_right": [
+          88.63636363636364,
+          68.93939393939394
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          56,
+          96,
+          554,
+          412
+        ],
+        "phase": 0,
+        "scale": 0.21885521885521886
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_leg_1": {
+      "file": "run_leg_1.png",
+      "size": [
+        90,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          47.94019933554817,
+          4.102990033222591
+        ],
+        "sole": [
+          47.94019933554817,
+          69
+        ],
+        "foot_left": [
+          8.205980066445182,
+          62.19269102990033
+        ],
+        "foot_right": [
+          69.1029900332226,
+          68.88704318936877
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          594,
+          93,
+          1009,
+          413
+        ],
+        "phase": 1,
+        "scale": 0.2159468438538206
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_leg_2": {
+      "file": "run_leg_2.png",
+      "size": [
+        69,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          33.006230529595015,
+          3.8473520249221185
+        ],
+        "sole": [
+          33.006230529595015,
+          69
+        ],
+        "foot_left": [
+          14.883177570093457,
+          68.64485981308411
+        ],
+        "foot_right": [
+          53.05295950155763,
+          52.44548286604361
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          1120,
+          86,
+          1463,
+          426
+        ],
+        "phase": 2,
+        "scale": 0.20249221183800623
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_leg_3": {
+      "file": "run_leg_3.png",
+      "size": [
+        111,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          56.31188118811881,
+          4.075907590759075
+        ],
+        "sole": [
+          56.31188118811881,
+          69
+        ],
+        "foot_left": [
+          9.224422442244224,
+          63.28382838283828
+        ],
+        "foot_right": [
+          91.6006600660066,
+          68.86138613861385
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          42,
+          573,
+          559,
+          895
+        ],
+        "phase": 3,
+        "scale": 0.2145214521452145
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_leg_4": {
+      "file": "run_leg_4.png",
+      "size": [
+        92,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          48.80258899676375,
+          3.9967637540453076
+        ],
+        "sole": [
+          48.80258899676375,
+          69
+        ],
+        "foot_left": [
+          7.572815533980583,
+          58.26860841423948
+        ],
+        "foot_right": [
+          74.0453074433657,
+          68.7864077669903
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          589,
+          569,
+          1025,
+          897
+        ],
+        "phase": 4,
+        "scale": 0.21035598705501618
+      },
+      "status": "drawn_unapproved"
+    },
+    "run_leg_5": {
+      "file": "run_leg_5.png",
+      "size": [
+        64,
+        69
+      ],
+      "anchors": {
+        "hip": [
+          29.120795107033636,
+          3.7767584097859324
+        ],
+        "sole": [
+          29.120795107033636,
+          69
+        ],
+        "foot_left": [
+          14.709480122324159,
+          68.57798165137615
+        ],
+        "foot_right": [
+          46.116207951070336,
+          51.28440366972477
+        ]
+      },
+      "source": {
+        "sheet": "run_strides_v1",
+        "crop": [
+          1128,
+          566,
+          1449,
+          912
+        ],
+        "phase": 5,
+        "scale": 0.19877675840978593
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_head_0": {
+      "file": "roll_head_0.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.89375000000001,
+          115.25416666666666
+        ],
+        "hip": [
+          85.52291666666667,
+          150.45833333333331
+        ],
+        "sole": [
+          126.05208333333334,
+          178.5625
+        ],
+        "grip": [
+          134.92708333333334,
+          134.1875
+        ],
+        "near_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "far_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "back": [
+          85.52291666666667,
+          150.45833333333331
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 0,
+        "layer": "head"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_head_1": {
+      "file": "roll_head_1.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.74583333333334,
+          108.89375000000001
+        ],
+        "hip": [
+          73.54166666666669,
+          85.52291666666667
+        ],
+        "sole": [
+          45.4375,
+          126.05208333333334
+        ],
+        "grip": [
+          89.8125,
+          134.92708333333334
+        ],
+        "near_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "far_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "back": [
+          73.54166666666669,
+          85.52291666666667
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 90,
+        "layer": "head"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_head_2": {
+      "file": "roll_head_2.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.10624999999999,
+          108.74583333333334
+        ],
+        "hip": [
+          138.47708333333333,
+          73.54166666666669
+        ],
+        "sole": [
+          97.94791666666664,
+          45.4375
+        ],
+        "grip": [
+          89.07291666666666,
+          89.8125
+        ],
+        "near_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "far_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "back": [
+          138.47708333333333,
+          73.54166666666669
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 180,
+        "layer": "head"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_head_3": {
+      "file": "roll_head_3.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.25416666666666,
+          115.10624999999999
+        ],
+        "hip": [
+          150.45833333333331,
+          138.47708333333333
+        ],
+        "sole": [
+          178.5625,
+          97.94791666666664
+        ],
+        "grip": [
+          134.1875,
+          89.07291666666666
+        ],
+        "near_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "far_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "back": [
+          150.45833333333331,
+          138.47708333333333
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 270,
+        "layer": "head"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_legs_0": {
+      "file": "roll_legs_0.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.89375000000001,
+          115.25416666666666
+        ],
+        "hip": [
+          85.52291666666667,
+          150.45833333333331
+        ],
+        "sole": [
+          126.05208333333334,
+          178.5625
+        ],
+        "grip": [
+          134.92708333333334,
+          134.1875
+        ],
+        "near_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "far_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "back": [
+          85.52291666666667,
+          150.45833333333331
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 0,
+        "layer": "legs"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_legs_1": {
+      "file": "roll_legs_1.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.74583333333334,
+          108.89375000000001
+        ],
+        "hip": [
+          73.54166666666669,
+          85.52291666666667
+        ],
+        "sole": [
+          45.4375,
+          126.05208333333334
+        ],
+        "grip": [
+          89.8125,
+          134.92708333333334
+        ],
+        "near_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "far_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "back": [
+          73.54166666666669,
+          85.52291666666667
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 90,
+        "layer": "legs"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_legs_2": {
+      "file": "roll_legs_2.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.10624999999999,
+          108.74583333333334
+        ],
+        "hip": [
+          138.47708333333333,
+          73.54166666666669
+        ],
+        "sole": [
+          97.94791666666664,
+          45.4375
+        ],
+        "grip": [
+          89.07291666666666,
+          89.8125
+        ],
+        "near_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "far_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "back": [
+          138.47708333333333,
+          73.54166666666669
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 180,
+        "layer": "legs"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_legs_3": {
+      "file": "roll_legs_3.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.25416666666666,
+          115.10624999999999
+        ],
+        "hip": [
+          150.45833333333331,
+          138.47708333333333
+        ],
+        "sole": [
+          178.5625,
+          97.94791666666664
+        ],
+        "grip": [
+          134.1875,
+          89.07291666666666
+        ],
+        "near_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "far_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "back": [
+          150.45833333333331,
+          138.47708333333333
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 270,
+        "layer": "legs"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_body_0": {
+      "file": "roll_body_0.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.89375000000001,
+          115.25416666666666
+        ],
+        "hip": [
+          85.52291666666667,
+          150.45833333333331
+        ],
+        "sole": [
+          126.05208333333334,
+          178.5625
+        ],
+        "grip": [
+          134.92708333333334,
+          134.1875
+        ],
+        "near_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "far_hand": [
+          134.92708333333334,
+          134.1875
+        ],
+        "back": [
+          85.52291666666667,
+          150.45833333333331
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 0,
+        "layer": "body"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_body_1": {
+      "file": "roll_body_1.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          108.74583333333334,
+          108.89375000000001
+        ],
+        "hip": [
+          73.54166666666669,
+          85.52291666666667
+        ],
+        "sole": [
+          45.4375,
+          126.05208333333334
+        ],
+        "grip": [
+          89.8125,
+          134.92708333333334
+        ],
+        "near_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "far_hand": [
+          89.8125,
+          134.92708333333334
+        ],
+        "back": [
+          73.54166666666669,
+          85.52291666666667
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 90,
+        "layer": "body"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_body_2": {
+      "file": "roll_body_2.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.10624999999999,
+          108.74583333333334
+        ],
+        "hip": [
+          138.47708333333333,
+          73.54166666666669
+        ],
+        "sole": [
+          97.94791666666664,
+          45.4375
+        ],
+        "grip": [
+          89.07291666666666,
+          89.8125
+        ],
+        "near_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "far_hand": [
+          89.07291666666666,
+          89.8125
+        ],
+        "back": [
+          138.47708333333333,
+          73.54166666666669
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 180,
+        "layer": "body"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_body_3": {
+      "file": "roll_body_3.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchors": {
+        "neck": [
+          115.25416666666666,
+          115.10624999999999
+        ],
+        "hip": [
+          150.45833333333331,
+          138.47708333333333
+        ],
+        "sole": [
+          178.5625,
+          97.94791666666664
+        ],
+        "grip": [
+          134.1875,
+          89.07291666666666
+        ],
+        "near_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "far_hand": [
+          134.1875,
+          89.07291666666666
+        ],
+        "back": [
+          150.45833333333331,
+          138.47708333333333
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          210,
+          15,
+          595,
+          495
+        ],
+        "rotation_offline": 270,
+        "layer": "body"
+      },
+      "status": "drawn_unapproved"
+    },
+    "fall_head_0": {
+      "file": "fall_head_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          131.28205128205127,
+          114.37948717948719
+        ],
+        "hip": [
+          105.02564102564102,
+          134.72820512820513
+        ],
+        "sole": [
+          72.2051282051282,
+          217.43589743589743
+        ],
+        "grip": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "near_hand": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "far_hand": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "back": [
+          105.02564102564102,
+          134.72820512820513
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          865,
+          15,
+          1335,
+          600
+        ],
+        "rotation_offline": 0,
+        "layer": "head"
+      },
+      "status": "drawn_unapproved"
+    },
+    "fall_legs_0": {
+      "file": "fall_legs_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          131.28205128205127,
+          114.37948717948719
+        ],
+        "hip": [
+          105.02564102564102,
+          134.72820512820513
+        ],
+        "sole": [
+          72.2051282051282,
+          217.43589743589743
+        ],
+        "grip": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "near_hand": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "far_hand": [
+          190.6871794871795,
+          142.93333333333334
+        ],
+        "back": [
+          105.02564102564102,
+          134.72820512820513
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          865,
+          15,
+          1335,
+          600
+        ],
+        "rotation_offline": 0,
+        "layer": "legs"
+      },
+      "status": "drawn_unapproved"
+    },
+    "fall_body_0": {
+      "file": "fall_body_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          131.28205128205127,
+          114.37948717948719
+        ],
+        "hip": [
+          105.02564102564102,
+          134.72820512820513
+        ],
+        "sole": [
+          72.2051282051282,
+          217.43589743589743
+        ],
+        "grip": [
+          190.0,
+          142.0
+        ],
+        "near_hand": [
+          190.0,
+          142.0
+        ],
+        "far_hand": [
+          190.0,
+          142.0
+        ],
+        "back": [
+          105.02564102564102,
+          134.72820512820513
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "crop": [
+          865,
+          15,
+          1335,
+          600
+        ],
+        "rotation_offline": 0,
+        "layer": "body"
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_wind_0": {
+      "file": "roll_wind_0.png",
+      "size": [
+        208,
+        208
+      ],
+      "anchors": {
+        "centre": [
+          104,
+          104
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "effect": "separate_centered_wind",
+        "rotation_offline": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_wind_1": {
+      "file": "roll_wind_1.png",
+      "size": [
+        208,
+        208
+      ],
+      "anchors": {
+        "centre": [
+          104,
+          104
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "effect": "separate_centered_wind",
+        "rotation_offline": 90
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_wind_2": {
+      "file": "roll_wind_2.png",
+      "size": [
+        208,
+        208
+      ],
+      "anchors": {
+        "centre": [
+          104,
+          104
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "effect": "separate_centered_wind",
+        "rotation_offline": 180
+      },
+      "status": "drawn_unapproved"
+    },
+    "roll_wind_3": {
+      "file": "roll_wind_3.png",
+      "size": [
+        208,
+        208
+      ],
+      "anchors": {
+        "centre": [
+          104,
+          104
+        ]
+      },
+      "source": {
+        "sheet": "air_poses_wind_v1",
+        "effect": "separate_centered_wind",
+        "rotation_offline": 270
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_16_0": {
+      "file": "trail_slash_16_0.png",
+      "size": [
+        174,
+        112
+      ],
+      "anchors": {
+        "centre": [
+          87.0,
+          56.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 0,
+        "core_alpha": 1,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_16_1": {
+      "file": "trail_slash_16_1.png",
+      "size": [
+        268,
+        150
+      ],
+      "anchors": {
+        "centre": [
+          134.0,
+          75.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 1,
+        "core_alpha": 1,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_16_2": {
+      "file": "trail_slash_16_2.png",
+      "size": [
+        268,
+        128
+      ],
+      "anchors": {
+        "centre": [
+          134.0,
+          64.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 2,
+        "core_alpha": 1,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_16_3": {
+      "file": "trail_slash_16_3.png",
+      "size": [
+        214,
+        112
+      ],
+      "anchors": {
+        "centre": [
+          107.0,
+          56.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 3,
+        "core_alpha": 0.55,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_16_4": {
+      "file": "trail_slash_16_4.png",
+      "size": [
+        174,
+        90
+      ],
+      "anchors": {
+        "centre": [
+          87.0,
+          45.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 4,
+        "core_alpha": 0.22,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_39_0": {
+      "file": "trail_slash_39_0.png",
+      "size": [
+        156,
+        64
+      ],
+      "anchors": {
+        "centre": [
+          78.0,
+          32.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 39,
+        "phase": 0,
+        "core_alpha": 1,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_slash_39_1": {
+      "file": "trail_slash_39_1.png",
+      "size": [
+        156,
+        51
+      ],
+      "anchors": {
+        "centre": [
+          78.0,
+          25.5
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 39,
+        "phase": 1,
+        "core_alpha": 0.45,
+        "palette": "white"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_16_0": {
+      "file": "trail_tram_kiem_16_0.png",
+      "size": [
+        188,
+        127
+      ],
+      "anchors": {
+        "centre": [
+          94.0,
+          63.5
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 0,
+        "core_alpha": 1,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_16_1": {
+      "file": "trail_tram_kiem_16_1.png",
+      "size": [
+        289,
+        169
+      ],
+      "anchors": {
+        "centre": [
+          144.5,
+          84.5
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 1,
+        "core_alpha": 1,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_16_2": {
+      "file": "trail_tram_kiem_16_2.png",
+      "size": [
+        289,
+        144
+      ],
+      "anchors": {
+        "centre": [
+          144.5,
+          72.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 2,
+        "core_alpha": 1,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_16_3": {
+      "file": "trail_tram_kiem_16_3.png",
+      "size": [
+        231,
+        127
+      ],
+      "anchors": {
+        "centre": [
+          115.5,
+          63.5
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 3,
+        "core_alpha": 0.55,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_16_4": {
+      "file": "trail_tram_kiem_16_4.png",
+      "size": [
+        188,
+        101
+      ],
+      "anchors": {
+        "centre": [
+          94.0,
+          50.5
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 16,
+        "phase": 4,
+        "core_alpha": 0.22,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_39_0": {
+      "file": "trail_tram_kiem_39_0.png",
+      "size": [
+        168,
+        72
+      ],
+      "anchors": {
+        "centre": [
+          84.0,
+          36.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 39,
+        "phase": 0,
+        "core_alpha": 1,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "trail_tram_kiem_39_1": {
+      "file": "trail_tram_kiem_39_1.png",
+      "size": [
+        168,
+        58
+      ],
+      "anchors": {
+        "centre": [
+          84.0,
+          29.0
+        ]
+      },
+      "source": {
+        "sheet": "slash_crescent_surge_v1",
+        "effect": 39,
+        "phase": 1,
+        "core_alpha": 0.45,
+        "palette": "blue"
+      },
+      "status": "drawn_unapproved"
+    },
+    "body_hold_cung": {
+      "file": "body_hold_cung.png",
+      "size": [
+        157,
+        93
+      ],
+      "anchors": {
+        "neck": [
+          55.839416058394164,
+          4.257907542579075
+        ],
+        "hip": [
+          53.40632603406326,
+          54.257907542579076
+        ],
+        "grip": [
+          145.0,
+          57.0
+        ],
+        "near_hand": [
+          145.0,
+          57.0
+        ],
+        "far_hand": [
+          10.583941605839417,
+          72.38442822384428
+        ],
+        "back": [
+          31.508515815085158,
+          25.547445255474454
+        ]
+      },
+      "source": {
+        "sheet": "bow_low_torso_v1",
+        "crop": [
+          131,
+          120,
+          1420,
+          882
+        ],
+        "scale": 0.12165450121654502
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [
@@ -3028,5 +4411,39 @@
     "display_height": 128,
     "display_factor": 1.3354268932023643,
     "hat_excluded_asset": "head_without_hat_0"
+  },
+  "roll_winds": [
+    "roll_wind_0",
+    "roll_wind_1",
+    "roll_wind_2",
+    "roll_wind_3"
+  ],
+  "numeric_trails": {
+    "slash": {
+      "16": [
+        "trail_slash_16_0",
+        "trail_slash_16_1",
+        "trail_slash_16_2",
+        "trail_slash_16_3",
+        "trail_slash_16_4"
+      ],
+      "39": [
+        "trail_slash_39_0",
+        "trail_slash_39_1"
+      ]
+    },
+    "tram_kiem": {
+      "16": [
+        "trail_tram_kiem_16_0",
+        "trail_tram_kiem_16_1",
+        "trail_tram_kiem_16_2",
+        "trail_tram_kiem_16_3",
+        "trail_tram_kiem_16_4"
+      ],
+      "39": [
+        "trail_tram_kiem_39_0",
+        "trail_tram_kiem_39_1"
+      ]
+    }
   }
 }

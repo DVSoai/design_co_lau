@@ -26,17 +26,16 @@ x = gốc + (dx khung + dx hình) × hướng; quay trái lật gương ở node
 | Khung | Dùng cho |
 |---|---|
 | 0–1 | Đứng thở |
-| 2–7 | Chạy (6 khung) |
+| 2–7 | Chạy (6 khung); khung 7 cũng dùng khi đang lên |
 | 8–11 | Lộn người ở đỉnh nhảy / khinh công (4 khung trong 0,20 s A0) |
-| 12 | Nhảy lên |
-| 13 | Rơi |
-| 14–29 | 16 tư thế đánh, dùng chung cho đòn thường và mọi chiêu |
+| 12 | Rơi: một gối co cao, một tay giơ nắm, vẫn cầm vũ khí |
+| 13–29 | Tư thế đánh; khung 13 là thủ kiếm, tuyệt đối không dùng cho rơi |
 
 Bộ hình mỗi cấp trang phục: đầu 8, thân 18, chân 10. Mọi cấp dùng cùng bảng 30 khung
 và cùng điểm neo; đổi cấp chỉ thay bộ hình.
 
 **Định dạng chiêu.** Mỗi chiêu có danh sách nhịp trên mặt đất và danh sách nhịp trên
-không. Mỗi nhịp = 1 khung thân (14–29) + tối đa 3 hiệu ứng {id, dx, dy} + 1 đạn/mũi tên
+không. Mỗi nhịp = 1 khung thân (13–29) + tối đa 3 hiệu ứng {id, dx, dy} + 1 đạn/mũi tên
 {id, dx, dy}. Hiệu ứng là chuỗi hình {ảnh, dx, dy}, vẽ theo **tâm ảnh**, trên lớp nhân vật;
 quay trái lật gương và đảo dấu dx. Trong nhịp đánh, vũ khí cầm tay bị ẩn; hình vung/vệt
 chém thay cho vũ khí. Các chiêu khác nhau chủ yếu ở hiệu ứng, thân dùng lại 16 tư thế.
@@ -67,9 +66,11 @@ số đã đo/chốt của game thật. Nhịp đất và trên không cùng c�
 **Cầm vũ khí ngoài đánh:** kiếm cầm tay trước ngang hông, mũi chéo xuống phía sau;
 chạy thì gần ngang hơn về sau, nhảy giữ như đứng. Cung cầm tay trước, nằm chéo trước
 thân (đầu trên ra trước, đầu dưới về sau), bụng ra trước. Chỉ hiện ở tư thế đứng/chạy/
-nhảy/rơi; ẩn khi lộn và mọi nhịp đánh. Trong bảng30khung của dự án,0–7/12–13 là cầm;
-8–11lộn và14–29đánh là ẩn. Khung21ở dữ liệu tham khảo là tư thế trên không, không phải
-khung21đang dùng giương cung trong bảng dự án; không bật vũ khí cầm tay đè hình cung đánh.
+nhảy/rơi; ẩn khi lộn và khi phát đòn. Khung cầm theo bảng nguồn:0–7,12,21;
+13 là thủ kiếm. Trong chiêu, hình vung/cung đánh thay vũ khí cầm tay kể cả khi
+nhịp chọn một khung có cờ cầm. Kiếm cùng hướng chéo xuống sau lúc đứng/chạy/rơi;
+chuôi trong nắm tay, lớp ngón tay thật phủ lên chuôi. Cung nghiêng40° so với phương đứng,
+tay thấp đưa ra trước để trục dây không cắt phần thân giữa.
 
 **Để Mốc sau (bỏ khỏi bộ hiện tại):** trúng đòn, choáng, ngã xuống, đứng dậy, nói chuyện,
 cưỡi thú ngồi yên/đánh, lên cấp, mừng, quay đầu riêng (quay đầu chỉ lật hướng). Các dòng
@@ -327,3 +328,25 @@ Scene `prototype/pose_rig/play_test.tscn` dùng kế thừa controllerA0: đứn
 nhảy/rơi, lộn đỉnh, đánh/chiêu; không đổi `prototype/config`, camera và sát thươngA0.
 Thời lượng visual của cung dài hơn cửa sổ đánhA0; đây là prototype, không chốt số game thật.
 Khác biệt so với số tham khảo và lý do xem log31/10/2026.
+
+
+## Hiệu chỉnh chạy / cầm / nhảy–lộn–rơi / vệt — 31/10/2026 (chưa duyệt)
+
+Bảng khung đầu tài liệu là chuẩn hiện hành:0–1đứng,2–7chạy,7đang lên,8–11lộn,
+12rơi,13–29đánh. Chân chạy sáu hình tự vẽ mới, sải trước/đạp sau/co gối/chạm đất;
+thân thẳng, không dùng thân gập của bảng cũ. Raw dx/dy lớp và bộ hình lấy nguyên
+`docs/ref/so_lieu_tham_khao.json`; `registrations` ghi riêng hiệu chỉnh crop/khớp
+của ảnh tự vẽ, không đổi số nguồn. Phần vũ khí dùng cả dx/dy khung lẫn dx/dy hình
+của phần12/14 rồi đăng ký grip vào tâm nắm tay thật. Hai hướng chỉ lật gốc.
+
+Lộn là dáng cuộn tròn gối ôm ngực, đầu cúi, bốn góc90° bake offline; vòng gió
+trắng tách riêng, neo tâm. Rơi12là dáng một gối co cao, một tay giơ nắm.
+Không sửa controller/config: lên đỉnh0,38s, một vòng lộn0,20s,4khung×0,05s.
+
+Kiếm giữ lưỡi thép0,75–0,8H. Hiệu ứng16sinh ở nhịp2, kéo vệt cong ôm hông;
+nhịp3hiện vệt16to/dày cộng hiệu ứng39lao ra trước, đuôi xé tơi; nhịp giữ tan dần.
+Vệt16và39có texture riêng, neo tâm, đặt theo đúng baseoffset+frameoffset của nguồn,
+vẽ ở COMBAT_EFFECT_Ztrên thân. Review khung tĩnh cũng dựng lại hiệu ứng từ các
+nhịp trước; không được thay vệt bằng lóe nhỏ hoặc làm mất16khi39sinh ra.
+Ở lia, diện tích pixel alpha≥0,8 của vệt16≥0,25H², viền tối mảnh; Trảm Kiếm
+cùng hình, dày hơn và lớp xanh rõ. Ô chiêu scene thử dùng cạnh84logic, chữ hai dòng.

@@ -1,0 +1,1 @@
+Offline crop/registration of independently drawn source: {"sheet": "slash_crescent_surge_v1", "effect": 16, "phase": 1, "core_alpha": 1, "palette": "blue"}

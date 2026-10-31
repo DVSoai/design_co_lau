@@ -1,0 +1,1 @@
+Offline crop/registration of independently drawn source: {"sheet": "bow_low_torso_v1", "crop": [131, 120, 1420, 882], "scale": 0.12165450121654502}

@@ -1,0 +1,1 @@
+Offline crop/registration of independently drawn source: {"sheet": "run_strides_v1", "crop": [1128, 566, 1449, 912], "phase": 5, "scale": 0.19877675840978593}

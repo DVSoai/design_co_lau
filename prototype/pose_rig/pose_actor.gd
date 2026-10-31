@@ -22,6 +22,9 @@ var landmarks: Dictionary = {}
 var hit_active := false
 var release_count := 0
 var reference_effects: Array[Dictionary] = []
+var held_fingers: Sprite2D
+var roll_wind: Sprite2D
+var hand_masks: Dictionary={}
 func _ready() -> void:
 	parts=read_data("parts")
 	frames_data=read_data("frames30")
@@ -33,6 +36,11 @@ func _ready() -> void:
 	quiver.z_index=-1
 	nocked_arrow=make_sprite("nocked_arrow")
 	nocked_arrow.z_index=8
+	held_fingers=make_sprite("held_fingers")
+	held_fingers.z_index=4
+	roll_wind=make_sprite("roll_wind")
+	roll_wind.centered=true
+	roll_wind.z_index=preload("res://config/tuning.gd").COMBAT_EFFECT_Z
 	sample_frame(0)
 func read_data(id: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string("res://pose_rig/data/"+id+".json"))
@@ -80,6 +88,8 @@ func sample_frame(index: int) -> void:
 	var ids: Dictionary={}
 	for layer in ["legs","body","head"]:ids[layer]=parts.levels["1"][layer][int(f.layers[layer].image)]
 	if school=="cung" and f.layers.body.has("cung_image"):ids.body=parts.levels["1"].body[int(f.layers.body.cung_image)]
+	for layer in ["legs","body","head"]:ids[layer]=f.layers[layer].get("asset",ids[layer])
+	if school=="cung":ids.body=f.layers.body.get("cung_asset",ids.body)
 	if f.layers.legs.get('stance',false):ids.legs=parts.levels['1'].combat_stance
 	if f.layers.legs.get('lunge',false):ids.legs=parts.levels['1'].combat_lunge
 	var legs: String=ids.legs
@@ -116,8 +126,30 @@ func sample_frame(index: int) -> void:
 	if school=="kiem" and index in range(2,8):weapon=parts.levels["1"].run_weapon
 	var wo: Dictionary=f.layers.weapon
 	put(sprites.weapon,weapon,held_hand+Vector2(wo.dx,wo.dy),"grip")
+	if f.has("registrations") and f.registrations[school].has("weapon"):
+		var raw: Array=f.reference.vu_khi
+		var offsets: Array=frames_data.reference.image_offsets[school][int(raw[0])]
+		var registration: Array=f.registrations[school].weapon
+		sprites.weapon.position=Vector2(raw[1]+offsets[0],-raw[2]+offsets[1])*3+Vector2(registration[0],registration[1])
 	sprites.weapon.z_index=3
 	sprites.weapon.visible=f.get("held_visible",not f.attack)
+	held_fingers.visible=sprites.weapon.visible
+	if held_fingers.visible:
+		var key:=body+str(held_hand-sprites.body.position)
+		if not hand_masks.has(key):
+			var im: Image=sprites.body.texture.get_image().duplicate()
+			var centre: Vector2=(held_hand-sprites.body.position)*2
+			for y in im.get_height():
+				for x in im.get_width():
+					var c:=im.get_pixel(x,y)
+					if Vector2(x,y).distance_to(centre)>9 or c.r<.6 or c.g<.3 or c.r-c.g<.08:im.set_pixel(x,y,Color.TRANSPARENT)
+			hand_masks[key]=ImageTexture.create_from_image(im)
+		held_fingers.texture=hand_masks[key]
+		held_fingers.position=sprites.body.position
+	roll_wind.visible=index in range(8,12) and parts.has("roll_winds")
+	if roll_wind.visible:
+		roll_wind.texture=load("res://pose_rig/art/lv1_30/"+parts.assets[parts.roll_winds[index-8]].file)
+		roll_wind.position=sprites.legs.position+sprites.legs.texture.get_size()*.25
 	quiver.visible=school=="cung"
 	if school=="cung":put(quiver,"quiver",back,"back")
 	else:quiver.texture=null
@@ -142,20 +174,23 @@ func sample_beat(index: int, emit_projectile: bool=false) -> void:
 	if not autoplay:clear_reference_effects()
 	sample_frame(int(beat.frame))
 	sprites.weapon.visible=false
+	held_fingers.visible=false
 	for spec in beat.effects:
 		var s:=make_sprite("effect_"+spec.id)
 		s.z_index=int(effects_data[spec.id].z)
 		effect_sprites.append(s)
 	update_effects()
-	if beat.has("reference"):
-		for spec in beat.reference.hieu_ung:
-			var flash:=make_sprite("numeric_effect_%d" % int(spec.id))
-			flash.centered=true
-			flash.texture=load("res://pose_rig/art/lv1_30/pose_flash.png")
-			flash.z_index=7
-			var offsets: Array=frames_data.reference.effect_offsets[str(int(spec.id))].do_lech
-			reference_effects.append({"sprite":flash,"offsets":offsets,"elapsed":0.0,"origin":Vector2(spec.dx,spec.dy)*3})
-		update_reference_effects(0)
+	if not autoplay:
+		# A frozen review beat must include the effect born in an earlier beat.
+		for previous in range(index+1):
+			var age:=0.0
+			for j in range(previous,index):age+=float(beats()[j].duration)
+			spawn_reference_effects(beats()[previous],age)
+	else:
+		var start:=0.0
+		for j in range(index):start+=float(beats()[j].duration)
+		spawn_reference_effects(beat,maxf(0,elapsed-start))
+	update_reference_effects(0)
 	if beat.nocked:
 		put(nocked_arrow,beat.get("nocked_asset","arrow"),landmarks.string,"tail")
 	if emit_projectile and beat.projectile!=null:
@@ -239,16 +274,29 @@ func _process(delta: float) -> void:
 		var id:=int(clip.frames[next])
 		if id!=frame_index:sample_frame(id)
 func all_visual_sprites() -> Array:
-	var out: Array=sprites.values()+[quiver,nocked_arrow]+effect_sprites+arrows
+	var out: Array=sprites.values()+[quiver,nocked_arrow,held_fingers,roll_wind]+effect_sprites+arrows
 	for fx in reference_effects:out.append(fx.sprite)
 	return out
+func spawn_reference_effects(beat: Dictionary,age: float) -> void:
+	if not beat.has("reference"):return
+	for spec in beat.reference.hieu_ung:
+		var offsets: Array=frames_data.reference.effect_offsets[str(int(spec.id))].do_lech
+		if int((age+.000000001)/.05)>=offsets.size():continue
+		var flash:=make_sprite("numeric_effect_%d" % int(spec.id))
+		flash.centered=true
+		flash.z_index=preload("res://config/tuning.gd").COMBAT_EFFECT_Z
+		var assets: Array=[]
+		if parts.get("numeric_trails",{}).has(action):assets=parts.numeric_trails[action].get(str(int(spec.id)),[])
+		reference_effects.append({"sprite":flash,"offsets":offsets,"elapsed":age,"origin":Vector2(spec.dx,spec.dy)*3,"assets":assets,"effect_id":int(spec.id)})
 func update_reference_effects(delta: float) -> void:
 	for fx in reference_effects.duplicate():
 		fx.elapsed+=delta
-		var index:=int(fx.elapsed/.05)
+		var index:=int((fx.elapsed+.000000001)/.05)
 		if index>=fx.offsets.size():
 			fx.sprite.queue_free()
 			reference_effects.erase(fx)
 		else:
+			var file: String=parts.assets[fx.assets[index]].file if not fx.assets.is_empty() else "pose_flash.png"
+			fx.sprite.texture=load("res://pose_rig/art/lv1_30/"+file)
 			var offset: Array=fx.offsets[index]
 			fx.sprite.position=fx.origin+Vector2(offset[0],offset[1])*3

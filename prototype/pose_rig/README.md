@@ -1,3 +1,31 @@
+## Bản sửa chạy / cầm / trên không / vệt —31/10/2026, chưa duyệt
+
+Bảng hiện hành: đứng0–1, chạy2–7 (lên dùng7), cuộn tròn8–11 trong vòng gió
+riêng, rơi12, đánh13–29;13là thủ kiếm. Không dùng12cho lên hoặc13/22cho rơi.
+Nhịp A0vẫn0,38s lên đỉnh,0,20s/vòng. Sáu chân chạy được vẽ lại riêng, thân giữ
+thẳng; grip kiếm nằm trong nắm tay và có lớp ngón tay phủ chuôi; cung40° cầm thấp
+ra trước, trục dây không cắt phần thân giữa.
+
+Vệt16sinh nhịp2 và tiếp tục qua nhịp3; vệt39sinh thêm ở nhịp3. Hình vệt tự vẽ,
+neo tâm theo raw số nguồn, lớp vẽ trên người. Lõi vệt lia đủ đậm và đủ diện tích,
+Trảm Kiếm xanh/dày hơn, nhịp giữ tan. Lưỡi dài cũ giữ nguyên PNG. Các khung tĩnh
+cũng dựng đủ hiệu ứng từ nhịp trước. Ô chiêu84×84logic, tên hai dòng.
+
+```sh
+python3 tools/update_pose_playtest.py
+godot --headless --path prototype --editor --import --quit
+python3 tools/check_all_godot.py --out prototype/pose_rig/reports/motion_godot_checks.txt
+python3 tools/check_motion_art.py
+python3 tools/capture_motion_review.py
+```
+
+Lệnh chụp cần Xvfb/Mesa; tạo16ảnh Godot thật1600×720, đủ hai phái/hướng,
+viewer và đòn thường/chiêu trong màn chơi thử. `frame_placement_proof.gd` in nguyên
+số tham khảo và vị trí sprite đã đặt. Bằng chứng ls/dòng Java/renderer ở commit
+message, không đưa mã hoặc ảnh tham khảo vào repo. Các phần dưới là lịch sử.
+
+---
+
 ## Chạy thử nhân vật mới — 31/10/2026
 
 Từ root repo: `godot --path prototype res://pose_rig/play_test.tscn`, hoặc bấm
@@ -29,7 +57,7 @@ python3 tools/check_arrow_alignment.py
 python3 tools/capture_lv1_30.py --pages frames attacks
 ```
 
-`playtest_godot_checks.txt` trong reports chứa nguyên output13 suite độc lập;
+`playtest_godot_checks.txt` trong reports chứa nguyên output các suite độc lập;
 classic_checks chạy qua wrapper hiện có. Chụp viewer bằng Xvfb1600×720, cả2phái/2hướng.
 `reports/play_*` là ảnh scene chơi thử thật. Chưa thử đa chạm trên Android, chưa xuất APK.
 

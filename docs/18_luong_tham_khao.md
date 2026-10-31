@@ -22,7 +22,7 @@ lúc đứng/chạy/nhảy), `ref_don_kiem.png`, `ref_don_cung.png` (đòn cơ b
   Quay phải neo góc trên-trái; quay trái lật gương. Không xoay.
 - **Bộ hình** (`nj_part`): loại 0 đầu 8 hình, 1 thân 18, 2 chân 10, 3 vũ khí 2.
   Phần vũ khí 12 = kiếm, 14 = cung.
-- **Vũ khí cầm tay chỉ hiện** ở khung 0–7 (đứng, chạy), 12 (nhảy), 21. Lộn người và mọi
+- **Vũ khí cầm tay chỉ hiện** ở khung 0–7 (đứng, chạy), 12 (rơi), 21. Lộn người và mọi
   khung đánh: không vẽ vũ khí cầm tay; hình hiệu ứng thay cho vũ khí.
 - **Lớp** (bảng `skill` trong `nja.sql`, cột `class`): 1 = Kiếm, 4 = Cung, 5 = Đao.
   **Chỉ so Kiếm với lớp 1, Cung với lớp 4.** Không dùng chiêu lớp 5 (Đao) làm mẫu Kiếm.
@@ -60,3 +60,23 @@ hình mặc định, khung có vũ khí cầm tay, toàn bộ chiêu lớp Kiế
 (khung thân, hiệu ứng, đạn, dx, dy), độ lệch từng hình của các hiệu ứng đó, và số đo tỉ lệ.
 **Được dùng thẳng các số này** (khung, nhịp, độ lệch, tỉ lệ) để dựng nhân vật Cờ Lau; hình vẽ
 vẫn là của mình. Không cần zip vẫn làm được; có zip thì chạy thêm `ref_render.py` để xem hình.
+
+
+## 6. Bảng khung đã đối chiếu lại31/10/2026
+
+| Khung | Dùng hiện hành |
+|---|---|
+|0–1|Đứng|
+|2–7|Chạy6khung;7dùng cho đang lên|
+|8–11|Người cuộn tròn trong vòng gió riêng; bốn góc90°,0,20s/vòng|
+|12|Rơi, một gối co cao, một tay giơ nắm; vẫn cầm vũ khí|
+|13–29|Tư thế đánh;13là thủ kiếm, không phải rơi|
+
+Đã mở riêng ảnh gốc của từng nhóm và dựng `ref_render.py` ra `/tmp/ref_render`.
+Dòng chọn khung trong Char.java của checkout thực tế nằm ở1629–1650và2198–2214;
+công thức tổng quát của checkout này nằm khoảng4550–4610, sau vùng3770–3960
+được nêu trong yêu cầu. Bằng chứng đường dẫn, ls, dòng mã kèm số dòng và output
+renderer giữ ngoài checkout và được dán nguyên văn vào commit message.
+`frame_placement_proof.gd` in raw số nguồn và tọa độ sprite thật sau đăng ký từng lớp,
+khung, phái, hướng; mỗi nhịp chiêu in cả offset nguồn lẫn tâm hiệu ứng đã đặt.
+Không đưa ảnh/mã tham khảo vào file repo. Những mô tả lên12/rơi13 trước đây là sai.

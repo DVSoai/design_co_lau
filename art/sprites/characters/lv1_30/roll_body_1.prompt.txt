@@ -1,0 +1,1 @@
+Offline crop/registration of independently drawn source: {"sheet": "air_poses_wind_v1", "crop": [210, 15, 595, 495], "rotation_offline": 90, "layer": "body"}

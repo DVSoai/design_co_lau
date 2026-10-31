@@ -64,7 +64,7 @@ func run() -> void:
 					check(a.beats()[i].reference==source[i] and int(a.beats()[i].frame)==int(source[i].khung_than),"exact source body/effect/projectile beat row")
 					a.sample_beat(i)
 					for fx in a.reference_effects:
-						var offset: Array=fx.offsets[0]
+						var offset: Array=fx.offsets[int((fx.elapsed+.000000001)/.05)]
 						check(fx.sprite.position.distance_to(fx.origin+Vector2(offset[0],offset[1])*3)<.001,"actual numeric effect uses source offset and centered image")
 	print("Neck/blade checks: poses=%d failures=%d" % [cases,failures])
 	a.free()

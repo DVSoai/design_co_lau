@@ -1,0 +1,1 @@
+Offline crop/registration of independently drawn source: {"sheet": "air_poses_wind_v1", "effect": "separate_centered_wind", "rotation_offline": 90}

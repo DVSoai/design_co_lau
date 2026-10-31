@@ -1,0 +1,165 @@
+Exact Python dimension-check script:
+from pathlib import Path
+from PIL import Image
+paths=sorted(Path("prototype/pose_rig/reports").glob("play_*.png"))+sorted(Path("prototype/pose_rig/reports").glob("lv1_*_attacks_*.png"))+sorted(Path("prototype/pose_rig/reports").glob("lv1_*_frames_*.png"))
+assert len(paths)==16
+for path in paths:
+    image=Image.open(path)
+    assert image.size==(1600,720)
+    print(str(path)+": "+str(image.size)+" actual Godot screenshot")
+print("Screenshot dimensions PASS: "+str(len(paths)))
+
+Output:
+prototype/pose_rig/reports/play_cung_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_cung_left_skill.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_cung_right.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_cung_right_skill.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_kiem_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_kiem_left_skill.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_kiem_right.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/play_kiem_right_skill.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_cung_attacks_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_cung_attacks_right.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_kiem_attacks_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_kiem_attacks_right.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_cung_frames_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_cung_frames_right.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_kiem_frames_left.png: (1600, 720) actual Godot screenshot
+prototype/pose_rig/reports/lv1_kiem_frames_right.png: (1600, 720) actual Godot screenshot
+Screenshot dimensions PASS: 16
+
+Exact Xvfb/Godot capture commands and output:
+$ python3 tools/capture_lv1_30.py --godot /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --pages frames attacks
+$ Xvfb :114 -screen 0 1600x720x24 -nolisten tcp -ac
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_kiem_frames_right.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --attacks
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_kiem_attacks_right.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_kiem_frames_left.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --left --attacks
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_kiem_attacks_left.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --cung
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_cung_frames_right.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --cung --attacks
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_cung_attacks_right.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --cung --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_cung_frames_left.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path prototype --windowed --resolution 1600x720 res://pose_rig/pose_rig.tscn -- --capture-lv1 --cung --left --attacks
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot capture res://pose_rig/reports/lv1_cung_attacks_left.png 1600x720 error=0
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+exit=0
+Captured8 actual Godot PNGs: 2schools x2directions x2pages, all1600x720.
+exit=0
+$ Xvfb :116 -screen 0 1600x720x24 -nolisten tcp -ac
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_kiem_right.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --skill
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_kiem_right_skill.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_kiem_left.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --left --skill
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_kiem_left_skill.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --cung
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_cung_right.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --cung --skill
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_cung_right_skill.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --cung --left
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_cung_left.png 1600x720 error=0
+exit=0
+$ /workspace/.setup/tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --fixed-fps 60 --path prototype --windowed --resolution 1600x720 res://pose_rig/play_test.tscn -- --capture-play --attack --cung --left --skill
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+Actual Godot play-test capture res://pose_rig/reports/play_cung_left_skill.png 1600x720 error=0
+exit=0
+Captured16 actual Godot PNGs at1600x720: viewer8 + playable attacks8, both schools/directions.

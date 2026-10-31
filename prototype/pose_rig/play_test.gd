@@ -56,9 +56,15 @@ func capture_play() -> void:
 	if "--cung" in args:player.switch_school()
 	player.position=Vector2(390,460)
 	player.facing=-1 if "--left" in args else 1
-	for i in 5:await get_tree().process_frame
+	for i in 5:await get_tree().physics_frame
+	if "--attack" in args:
+		if "--skill" in args:player.request_skill("tram_kiem" if player.school=="kiem" else "xa_tien")
+		else:Input.action_press("slash")
+		await get_tree().physics_frame
+		Input.action_release("slash")
+		for i in 6:await get_tree().physics_frame
 	await RenderingServer.frame_post_draw
-	var path:="res://pose_rig/reports/play_%s_%s.png" % [player.school,"left" if player.facing<0 else "right"]
+	var path:="res://pose_rig/reports/play_%s_%s%s.png" % [player.school,"left" if player.facing<0 else "right","_skill" if "--skill" in args else ""]
 	var err:=get_viewport().get_texture().get_image().save_png(path)
 	print("Actual Godot play-test capture %s 1600x720 error=%d" % [path,err])
 	get_tree().quit(0 if err==OK else 1)

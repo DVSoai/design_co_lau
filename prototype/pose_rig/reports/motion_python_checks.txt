@@ -1,0 +1,471 @@
+Exact new pixel-measurement script:
+#!/usr/bin/env python3
+"""Measure actual authored RGBA, not bounds claimed by the generator."""
+from pathlib import Path
+import hashlib,json,sys
+import numpy as np
+from PIL import Image
+
+R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
+p=json.loads((D/'parts.json').read_text());H=p['presentation']['standing_height_source'];fail=0
+def check(ok,message):
+    global fail
+    print(('PASS: ' if ok else 'FAIL: ')+message);fail+=not ok
+def array(id):return np.array(Image.open(ART/p['assets'][id]['file']).convert('RGBA'))
+hashes=[];wide=0
+for i in range(6):
+    id=f'run_leg_{i}';a=array(id);h=hashlib.sha256(a.tobytes()).hexdigest();hashes.append(h)
+    left,right=[np.array(p['assets'][id]['anchors'][k]) for k in ['foot_left','foot_right']]
+    span=np.linalg.norm(left-right)/H;wide+=span>=.25
+    print(f'{id} RGBA_SHA256={h} feet/H={span:.9f}')
+    for at in [left,right]:
+        x,y=np.rint(at).astype(int);region=a[max(0,y-2):y+3,max(0,x-2):x+3,3]
+        check(region.size>0 and region.max()>127,id+' measured foot lands on actual boot pixels')
+check(len(set(hashes))==6,'all15 run-frame hash pairs differ')
+check(wide>=4,f'wide strides={wide}/6, threshold .25H')
+for action in ['slash','tram_kiem']:
+    for eid,ids in p['numeric_trails'][action].items():
+        for i,id in enumerate(ids):
+            a=array(id);alpha=a[:,:,3];opaque=int((alpha>=204).sum());visible=int((alpha>12).sum());core=float(np.quantile(alpha[alpha>12],.90))/255
+            print(f'{id} opaque_area/H2={opaque/H**2:.9f} visible_area/H2={visible/H**2:.9f} core_alpha_p90={core:.9f}')
+            if eid=='16' and i in [1,2]:
+                check(opaque/H**2>=.25 and core>=.8,id+' sweep opaque area>=.25H2 and core>=.8')
+blade=array('attack_blade_only');ys,xs=np.where(blade[:,:,3]>=128);length=(xs.max()-xs.min()+1)/H
+check(.75<=length<=.8,f'actual blade excluding hilt/H={length:.9f}')
+for frame in range(4):
+    image=Image.new('RGBA',(224,224))
+    for layer in ['legs','body','head']:image.alpha_composite(Image.fromarray(array(f'roll_{layer}_{frame}')))
+    box=image.getbbox();width,height=box[2]-box[0],box[3]-box[1]
+    check(.6<=width/height<=1.7,f'tucked{frame} actual human silhouette={width}x{height}, compact aspect={width/height:.6f}')
+f=json.loads((D/'frames30.json').read_text())
+check(f['clips']['jump']['frames']==[7] and f['clips']['apex_flip']['frames']==[8,9,10,11] and f['clips']['fall']['frames']==[12],'clip source mapping rise7 / roll8..11 / fall12')
+print(f'Motion real-RGBA checks failures={fail}')
+sys.exit(bool(fail))
+
+Raw outputs:
+$ python3 tools/check_lv1_30.py
+PASS: only Lv1 implemented; no new Lv10..60 completion claims
+PASS: head unique assets=8/8
+PASS: body unique assets=18/18
+PASS: legs unique assets=10/10
+PASS: head_without_hat_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_without_hat_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_without_hat_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_without_hat_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_without_hat_4 95x77 green=0 transparent=2418 copy/prompt OK
+PASS: head_4 256x256 green=0 transparent=60639 copy/prompt OK
+PASS: head_without_hat_5 92x77 green=0 transparent=2346 copy/prompt OK
+PASS: head_5 256x256 green=0 transparent=60798 copy/prompt OK
+PASS: head_without_hat_6 87x77 green=0 transparent=1897 copy/prompt OK
+PASS: head_6 256x256 green=0 transparent=60734 copy/prompt OK
+PASS: head_without_hat_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: head_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: body_0 106x100 green=0 transparent=2674 copy/prompt OK
+PASS: body_1 105x98 green=0 transparent=2627 copy/prompt OK
+PASS: body_2 146x92 green=0 transparent=5119 copy/prompt OK
+PASS: body_3 150x94 green=0 transparent=5244 copy/prompt OK
+PASS: body_4 152x95 green=0 transparent=4745 copy/prompt OK
+PASS: body_5 160x94 green=0 transparent=6809 copy/prompt OK
+PASS: body_6 89x80 green=0 transparent=1924 copy/prompt OK
+PASS: body_7 96x74 green=0 transparent=1691 copy/prompt OK
+PASS: body_8 98x92 green=0 transparent=2200 copy/prompt OK
+PASS: body_9 99x84 green=0 transparent=2177 copy/prompt OK
+PASS: body_10 106x87 green=0 transparent=2715 copy/prompt OK
+PASS: body_11 142x81 green=0 transparent=4945 copy/prompt OK
+PASS: body_12 91x88 green=0 transparent=1869 copy/prompt OK
+PASS: body_13 145x87 green=0 transparent=5578 copy/prompt OK
+PASS: body_14 96x86 green=0 transparent=2112 copy/prompt OK
+PASS: body_15 158x100 green=0 transparent=7245 copy/prompt OK
+PASS: body_16 153x99 green=0 transparent=7181 copy/prompt OK
+PASS: body_17 160x98 green=0 transparent=7404 copy/prompt OK
+PASS: legs_0 57x70 green=0 transparent=1210 copy/prompt OK
+PASS: legs_1 70x63 green=0 transparent=1951 copy/prompt OK
+PASS: legs_2 60x67 green=0 transparent=1677 copy/prompt OK
+PASS: legs_3 82x54 green=0 transparent=2234 copy/prompt OK
+PASS: legs_4 70x69 green=0 transparent=2186 copy/prompt OK
+PASS: legs_5 91x65 green=0 transparent=2838 copy/prompt OK
+PASS: legs_6 81x68 green=0 transparent=1881 copy/prompt OK
+PASS: legs_7 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_8 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_9 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_guard 96x62 green=0 transparent=2670 copy/prompt OK
+PASS: legs_lunge 86x63 green=0 transparent=2666 copy/prompt OK
+PASS: sword 109x119 green=0 transparent=9717 copy/prompt OK
+PASS: bow_idle 55x185 green=0 transparent=4938 copy/prompt OK
+PASS: bow_draw 55x185 green=0 transparent=6747 copy/prompt OK
+PASS: bow_release 56x185 green=0 transparent=5040 copy/prompt OK
+PASS: quiver 37x70 green=0 transparent=1016 copy/prompt OK
+PASS: arrow 256x128 green=0 transparent=31355 copy/prompt OK
+PASS: skill_arrow 256x128 green=0 transparent=29687 copy/prompt OK
+PASS: arrow_draw_15 256x128 green=0 transparent=31428 copy/prompt OK
+PASS: arrow_draw_16 256x128 green=0 transparent=31429 copy/prompt OK
+PASS: bow_draw_15 123x205 green=0 transparent=21368 copy/prompt OK
+PASS: bow_draw_16 115x205 green=0 transparent=19745 copy/prompt OK
+PASS: sword_hold 384x384 green=0 transparent=144403 copy/prompt OK
+PASS: sword_run 384x384 green=0 transparent=144403 copy/prompt OK
+PASS: bow_hold 384x384 green=0 transparent=142246 copy/prompt OK
+PASS: attack_fragment 512x384 green=0 transparent=195673 copy/prompt OK
+PASS: swing_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_0 512x384 green=0 transparent=191282 copy/prompt OK
+PASS: swing_mask_1 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_1 512x384 green=0 transparent=191005 copy/prompt OK
+PASS: swing_mask_2 512x384 green=0 transparent=195481 copy/prompt OK
+PASS: swing_2 512x384 green=0 transparent=190706 copy/prompt OK
+PASS: swing_mask_3 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_3 512x384 green=0 transparent=191005 copy/prompt OK
+PASS: swing_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_4 512x384 green=0 transparent=191282 copy/prompt OK
+PASS: swing_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: swing_skill_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_0 512x384 green=0 transparent=191282 copy/prompt OK
+PASS: swing_skill_mask_1 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_1 512x384 green=0 transparent=190818 copy/prompt OK
+PASS: swing_skill_mask_2 512x384 green=0 transparent=194893 copy/prompt OK
+PASS: swing_skill_2 512x384 green=0 transparent=190395 copy/prompt OK
+PASS: swing_skill_mask_3 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_3 512x384 green=0 transparent=190818 copy/prompt OK
+PASS: swing_skill_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_4 512x384 green=0 transparent=191282 copy/prompt OK
+PASS: swing_skill_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_skill_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_skill_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: attack_blade 512x384 green=0 transparent=191282 copy/prompt OK
+PASS: attack_blade_only 512x384 green=0 transparent=193201 copy/prompt OK
+PASS: pose_flash 24x24 green=0 transparent=423 copy/prompt OK
+PASS: run_leg_0 109x69 green=0 transparent=4207 copy/prompt OK
+PASS: run_leg_1 90x69 green=0 transparent=3139 copy/prompt OK
+PASS: run_leg_2 69x69 green=0 transparent=2040 copy/prompt OK
+PASS: run_leg_3 111x69 green=0 transparent=4399 copy/prompt OK
+PASS: run_leg_4 92x69 green=0 transparent=3411 copy/prompt OK
+PASS: run_leg_5 64x69 green=0 transparent=1772 copy/prompt OK
+PASS: roll_head_0 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_1 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_2 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_3 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_legs_0 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_1 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_2 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_3 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_body_0 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_1 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_2 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_3 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: fall_head_0 256x256 green=0 transparent=60400 copy/prompt OK
+PASS: fall_legs_0 256x256 green=0 transparent=60290 copy/prompt OK
+PASS: fall_body_0 256x256 green=0 transparent=60858 copy/prompt OK
+PASS: roll_wind_0 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_1 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_2 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_3 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: trail_slash_16_0 174x112 green=0 transparent=9912 copy/prompt OK
+PASS: trail_slash_16_1 268x150 green=0 transparent=21027 copy/prompt OK
+PASS: trail_slash_16_2 268x128 green=0 transparent=17785 copy/prompt OK
+PASS: trail_slash_16_3 214x112 green=0 transparent=12498 copy/prompt OK
+PASS: trail_slash_16_4 174x90 green=0 transparent=8406 copy/prompt OK
+PASS: trail_slash_39_0 156x64 green=0 transparent=4514 copy/prompt OK
+PASS: trail_slash_39_1 156x51 green=0 transparent=3672 copy/prompt OK
+PASS: trail_tram_kiem_16_0 188x127 green=0 transparent=12181 copy/prompt OK
+PASS: trail_tram_kiem_16_1 289x169 green=0 transparent=25634 copy/prompt OK
+PASS: trail_tram_kiem_16_2 289x144 green=0 transparent=21657 copy/prompt OK
+PASS: trail_tram_kiem_16_3 231x127 green=0 transparent=15328 copy/prompt OK
+PASS: trail_tram_kiem_16_4 188x101 green=0 transparent=10184 copy/prompt OK
+PASS: trail_tram_kiem_39_0 168x72 green=0 transparent=5480 copy/prompt OK
+PASS: trail_tram_kiem_39_1 168x58 green=0 transparent=4525 copy/prompt OK
+PASS: body_hold_cung 157x93 green=0 transparent=6568 copy/prompt OK
+PASS: 30 rows
+PASS: frame0 four layers
+PASS: frame0 valid head index
+PASS: frame0 valid body index
+PASS: frame0 valid legs index
+PASS: frame1 four layers
+PASS: frame1 valid head index
+PASS: frame1 valid body index
+PASS: frame1 valid legs index
+PASS: frame2 four layers
+PASS: frame2 valid head index
+PASS: frame2 valid body index
+PASS: frame2 valid legs index
+PASS: frame3 four layers
+PASS: frame3 valid head index
+PASS: frame3 valid body index
+PASS: frame3 valid legs index
+PASS: frame4 four layers
+PASS: frame4 valid head index
+PASS: frame4 valid body index
+PASS: frame4 valid legs index
+PASS: frame5 four layers
+PASS: frame5 valid head index
+PASS: frame5 valid body index
+PASS: frame5 valid legs index
+PASS: frame6 four layers
+PASS: frame6 valid head index
+PASS: frame6 valid body index
+PASS: frame6 valid legs index
+PASS: frame7 four layers
+PASS: frame7 valid head index
+PASS: frame7 valid body index
+PASS: frame7 valid legs index
+PASS: frame8 four layers
+PASS: frame8 valid head index
+PASS: frame8 valid body index
+PASS: frame8 valid legs index
+PASS: frame9 four layers
+PASS: frame9 valid head index
+PASS: frame9 valid body index
+PASS: frame9 valid legs index
+PASS: frame10 four layers
+PASS: frame10 valid head index
+PASS: frame10 valid body index
+PASS: frame10 valid legs index
+PASS: frame11 four layers
+PASS: frame11 valid head index
+PASS: frame11 valid body index
+PASS: frame11 valid legs index
+PASS: frame12 four layers
+PASS: frame12 valid head index
+PASS: frame12 valid body index
+PASS: frame12 valid legs index
+PASS: frame13 four layers
+PASS: frame13 valid head index
+PASS: frame13 valid body index
+PASS: frame13 valid legs index
+PASS: frame14 four layers
+PASS: frame14 valid head index
+PASS: frame14 valid body index
+PASS: frame14 valid legs index
+PASS: frame15 four layers
+PASS: frame15 valid head index
+PASS: frame15 valid body index
+PASS: frame15 valid legs index
+PASS: frame16 four layers
+PASS: frame16 valid head index
+PASS: frame16 valid body index
+PASS: frame16 valid legs index
+PASS: frame17 four layers
+PASS: frame17 valid head index
+PASS: frame17 valid body index
+PASS: frame17 valid legs index
+PASS: frame18 four layers
+PASS: frame18 valid head index
+PASS: frame18 valid body index
+PASS: frame18 valid legs index
+PASS: frame19 four layers
+PASS: frame19 valid head index
+PASS: frame19 valid body index
+PASS: frame19 valid legs index
+PASS: frame20 four layers
+PASS: frame20 valid head index
+PASS: frame20 valid body index
+PASS: frame20 valid legs index
+PASS: frame21 four layers
+PASS: frame21 valid head index
+PASS: frame21 valid body index
+PASS: frame21 valid legs index
+PASS: frame22 four layers
+PASS: frame22 valid head index
+PASS: frame22 valid body index
+PASS: frame22 valid legs index
+PASS: frame23 four layers
+PASS: frame23 valid head index
+PASS: frame23 valid body index
+PASS: frame23 valid legs index
+PASS: frame24 four layers
+PASS: frame24 valid head index
+PASS: frame24 valid body index
+PASS: frame24 valid legs index
+PASS: frame25 four layers
+PASS: frame25 valid head index
+PASS: frame25 valid body index
+PASS: frame25 valid legs index
+PASS: frame26 four layers
+PASS: frame26 valid head index
+PASS: frame26 valid body index
+PASS: frame26 valid legs index
+PASS: frame27 four layers
+PASS: frame27 valid head index
+PASS: frame27 valid body index
+PASS: frame27 valid legs index
+PASS: frame28 four layers
+PASS: frame28 valid head index
+PASS: frame28 valid body index
+PASS: frame28 valid legs index
+PASS: frame29 four layers
+PASS: frame29 valid head index
+PASS: frame29 valid body index
+PASS: frame29 valid legs index
+PASS: slash/ground frame13 valid beat
+PASS: slash/ground frame14 valid beat
+PASS: slash/ground frame15 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame13 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash/air frame23 valid beat
+PASS: slash/air frame24 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash visual duration=0.300000s
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot visual duration=0.400000s
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/ground frame14 valid beat
+PASS: tram_kiem/ground frame15 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem/air frame23 valid beat
+PASS: tram_kiem/air frame24 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem visual duration=0.300000s
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien visual duration=0.400000s
+PASS: slash .30s, hit .10-.20
+PASS: reference unchanged hash art/reference/chr_dbl_board_trang_bi.png
+PASS: reference unchanged hash art/reference/chr_dbl_board_animation.png
+PASS: reference unchanged hash art/reference/ref_dinh_bo_linh.png
+PASS: idle actual RGBA height=95.849 logic px sole=0.000; preview1600x720 height=128.000 px
+Lv1 real-file checks failures=0; assets=130 frames=30 skills=4
+exit=0
+
+$ python3 tools/check_lv1_sizes.py
+PASS: frame00 bare head/hair=77.000 source pixels H=191.699000 ratio=0.401671, target.40 +/- .03
+PASS: all8 active heads have no hat
+PASS: frame00 head RGBA exactly equals bare-head asset; no hat hidden in measurement
+PASS: sword_hold longest alpha side/H=0.772044 (same metric as ref_render, not axial length)
+PASS: sword_run longest alpha side/H=0.772044 (same metric as ref_render, not axial length)
+PASS: bow_idle actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_release actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_draw_15 actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_draw_16 actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_hold actual opaque axial span=185.504, ratio=0.967684H (held bow measured along its tilted axis)
+PASS: arrow actual length/H=0.620765
+PASS: skill_arrow actual length/H=0.636414
+BODY RGBA SHA256 body_9 a16c11f1e093db95114172f17bcf7d015b1262ad0279a028415341bd259eb871
+BODY RGBA SHA256 body_10 c9f3d502499f994479ee9acc4c3a20ddb059754ffa84b5012c1960cb8de2470b
+BODY RGBA SHA256 body_11 cfb1e6be248c5018f4cbff910232747e377fba174320ac877f627c308de2af74
+BODY RGBA SHA256 body_12 8763ee3b849423c5f503456b70d1d439c5d5d9b9fe8588bfb42b37a8bb4da2ab
+PASS: four genuinely different torso RGBA hashes
+PASS: full attack blade length/H=0.777260, target .75..8
+PASS: swing_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: slash six reference beats total.30s hit.10-.20
+PASS: slash beat2 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat4 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat5 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem six reference beats total.30s hit.10-.20
+PASS: tram_kiem beat2 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat4 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat5 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: actual opaque blade (excluding handle) span/H=0.782477
+Lv1 compact/proportion/weapon checks failures=0
+exit=0
+
+$ python3 tools/check_arrow_alignment.py
+PASS: arrow_draw_15 actual shaft slope=0.101646; nock gap=0.048253 logic px; bow-rest gap=0.090401 logic px
+PASS: arrow_draw_16 actual shaft slope=0.097468; nock gap=0.021232 logic px; bow-rest gap=0.050987 logic px
+PASS: arrow actual shaft slope=-0.000927; nock gap=0.030580 logic px; bow-rest gap=0.012894 logic px
+PASS: skill_arrow actual shaft slope=-0.007192; nock gap=0.248981 logic px; bow-rest gap=0.111732 logic px
+Actual painted-shaft alignment failures=0
+exit=0
+
+$ python3 tools/check_motion_art.py
+run_leg_0 RGBA_SHA256=18ea224c7c05799b75488baa742f431a5df6d51a06b69052e85fe8a50b620c6a feet/H=0.414462154
+PASS: run_leg_0 measured foot lands on actual boot pixels
+PASS: run_leg_0 measured foot lands on actual boot pixels
+run_leg_1 RGBA_SHA256=76da2b63f3d853431556dcd57890c0e8e1e6517ca25359d8274f88c4a82e8028 feet/H=0.319583602
+PASS: run_leg_1 measured foot lands on actual boot pixels
+PASS: run_leg_1 measured foot lands on actual boot pixels
+run_leg_2 RGBA_SHA256=74baae34b55652acdc33f76c97598988f04f2b83843772300a019208fd101386 feet/H=0.216303009
+PASS: run_leg_2 measured foot lands on actual boot pixels
+PASS: run_leg_2 measured foot lands on actual boot pixels
+run_leg_3 RGBA_SHA256=bacfd4f1b27173154ab546f7b30fe0cf03911b669d450a594e582f5661106f4f feet/H=0.430700448
+PASS: run_leg_3 measured foot lands on actual boot pixels
+PASS: run_leg_3 measured foot lands on actual boot pixels
+run_leg_4 RGBA_SHA256=12036e07326ca97b5beabaa3fbce5ed5e6180135082d1ec293c92888c0f6ce63 feet/H=0.351068354
+PASS: run_leg_4 measured foot lands on actual boot pixels
+PASS: run_leg_4 measured foot lands on actual boot pixels
+run_leg_5 RGBA_SHA256=96957b2c77ca13a668a8791bb7608985cd3a99b24be8798838848e2570e0a50c feet/H=0.187028510
+PASS: run_leg_5 measured foot lands on actual boot pixels
+PASS: run_leg_5 measured foot lands on actual boot pixels
+PASS: all15 run-frame hash pairs differ
+PASS: wide strides=4/6, threshold .25H
+trail_slash_16_0 opaque_area/H2=0.222294748 visible_area/H2=0.242377196 core_alpha_p90=1.000000000
+trail_slash_16_1 opaque_area/H2=0.462304501 visible_area/H2=0.492727506 core_alpha_p90=1.000000000
+PASS: trail_slash_16_1 sweep opaque area>=.25H2 and core>=.8
+trail_slash_16_2 opaque_area/H2=0.393240470 visible_area/H2=0.422221239 core_alpha_p90=1.000000000
+PASS: trail_slash_16_2 sweep opaque area>=.25H2 and core>=.8
+trail_slash_16_3 opaque_area/H2=0.000000000 visible_area/H2=0.295086821 core_alpha_p90=0.549019608
+trail_slash_16_4 opaque_area/H2=0.000000000 visible_area/H2=0.190892111 core_alpha_p90=0.219607843
+trail_slash_39_0 opaque_area/H2=0.123433587 visible_area/H2=0.137366126 core_alpha_p90=1.000000000
+trail_slash_39_1 opaque_area/H2=0.000000000 visible_area/H2=0.109664320 core_alpha_p90=0.447058824
+trail_tram_kiem_16_0 opaque_area/H2=0.272990685 visible_area/H2=0.295631061 core_alpha_p90=1.000000000
+trail_tram_kiem_16_1 opaque_area/H2=0.563696376 visible_area/H2=0.596541248 core_alpha_p90=1.000000000
+PASS: trail_tram_kiem_16_1 sweep opaque area>=.25H2 and core>=.8
+trail_tram_kiem_16_2 opaque_area/H2=0.478305151 visible_area/H2=0.510115968 core_alpha_p90=1.000000000
+PASS: trail_tram_kiem_16_2 sweep opaque area>=.25H2 and core>=.8
+trail_tram_kiem_16_3 opaque_area/H2=0.000000000 visible_area/H2=0.359878570 core_alpha_p90=0.549019608
+trail_tram_kiem_16_4 opaque_area/H2=0.000000000 visible_area/H2=0.230703253 core_alpha_p90=0.219607843
+trail_tram_kiem_39_0 opaque_area/H2=0.150455094 visible_area/H2=0.165775444 core_alpha_p90=1.000000000
+trail_tram_kiem_39_1 opaque_area/H2=0.000000000 visible_area/H2=0.133393176 core_alpha_p90=0.447058824
+PASS: actual blade excluding hilt/H=0.782476695
+PASS: tucked0 actual human silhouette=113x142, compact aspect=0.795775
+PASS: tucked1 actual human silhouette=142x113, compact aspect=1.256637
+PASS: tucked2 actual human silhouette=113x142, compact aspect=0.795775
+PASS: tucked3 actual human silhouette=142x113, compact aspect=1.256637
+PASS: clip source mapping rise7 / roll8..11 / fall12
+Motion real-RGBA checks failures=0
+exit=0

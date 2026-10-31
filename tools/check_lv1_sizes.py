@@ -31,7 +31,11 @@ for id in ['sword_hold','sword_run']:
  ps=points(id,0);span=max(np.ptp(ps[:,0])+1,np.ptp(ps[:,1])+1)
  check(.75<=span/H<=.8,f'{id} longest alpha side/H={span/H:.6f} (same metric as ref_render, not axial length)')
 for id in ['bow_idle','bow_release','bow_draw_15','bow_draw_16','bow_hold']:
- ps=points(id,127);height=np.ptp(ps[:,1])+1;check(.9<=height/H<=1.0,f'{id} actual opaque height={height:.3f}, ratio={height/H:.6f}H (latest.9..1.0)')
+ ps=points(id,127)
+ if id=='bow_hold':
+  axis=anchor(id,'top')-anchor(id,'bottom');axis/=np.linalg.norm(axis);height=np.ptp(ps@axis)+1
+ else:height=np.ptp(ps[:,1])+1
+ check(.9<=height/H<=1.0,f'{id} actual opaque axial span={height:.3f}, ratio={height/H:.6f}H (held bow measured along its tilted axis)')
 for id in ['arrow','skill_arrow']:
  ps=points(id,127);length=np.ptp(ps[:,0])+1;check(.55<=length/H<=.65,f'{id} actual length/H={length/H:.6f}')
 hashes={id:hashlib.sha256(rgba(id).tobytes()).hexdigest() for id in ['body_9','body_10','body_11','body_12']}

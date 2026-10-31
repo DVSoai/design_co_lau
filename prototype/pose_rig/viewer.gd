@@ -88,6 +88,7 @@ func build() -> void:
 			label_at("%02d" % i,cell.position+Vector2(2,101),14)
 
 		actor=make_actor(Vector2(1490,96),.3,true)
+		if "--capture-lv1" in OS.get_cmdline_user_args():actor.visible=false
 	elif page=="attacks":
 		var ids: Array=["slash","tram_kiem"] if school=="kiem" else ["shoot","xa_tien"]
 		for row in 2:
