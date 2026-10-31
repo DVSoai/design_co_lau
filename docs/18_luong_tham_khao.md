@@ -51,3 +51,12 @@ lúc đứng/chạy/nhảy), `ref_don_kiem.png`, `ref_don_cung.png` (đòn cơ b
 3. Xuất ảnh so tạm: bản mình | bảng mẫu | game tham khảo, cùng chiều cao 128 px.
    Khác kiểu (tư thế, cách cầm, hướng/dáng vệt, tỉ lệ) là chưa đạt.
 4. Ghi kết quả so (bằng lời) vào log; không commit ảnh so có hình game tham khảo.
+
+## 5. Số liệu đã trích sẵn trong repo (người dùng chốt 31/10/2026)
+
+`docs/ref/so_lieu_tham_khao.json` chứa **số liệu cơ chế** đã đọc từ game tham khảo — không có
+ảnh, không có mã: công thức đặt lớp, bảng 30 khung (đầu/chân/thân/vũ khí + dx, dy), độ lệch
+hình mặc định, khung có vũ khí cầm tay, toàn bộ chiêu lớp Kiếm (1) và Cung (4) theo nhịp
+(khung thân, hiệu ứng, đạn, dx, dy), độ lệch từng hình của các hiệu ứng đó, và số đo tỉ lệ.
+**Được dùng thẳng các số này** (khung, nhịp, độ lệch, tỉ lệ) để dựng nhân vật Cờ Lau; hình vẽ
+vẫn là của mình. Không cần zip vẫn làm được; có zip thì chạy thêm `ref_render.py` để xem hình.
