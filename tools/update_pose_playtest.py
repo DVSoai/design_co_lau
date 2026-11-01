@@ -186,3 +186,6 @@ if __name__=='__main__':
     raise_held_arms()
     from build_held_props_v8 import run as update_held_props
     update_held_props()
+
+    from update_bow_readability_v9 import run as update_bow_readability
+    update_bow_readability()

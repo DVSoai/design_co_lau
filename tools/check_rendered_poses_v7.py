@@ -11,7 +11,7 @@ from PIL import Image
 from scipy.ndimage import label,find_objects,binary_dilation,distance_transform_edt
 
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v8');parser.add_argument('--out',default='prototype/pose_rig/reports/held_v8_image_results.json');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v9');parser.add_argument('--out',default='prototype/pose_rig/reports/bow_v9_image_results.json');args=parser.parse_args()
 BBOX_TARGETS=json.loads((ROOT/'docs/ref/so_lieu_tham_khao.json').read_text())['khung_kich_thuoc_128']
 DIR=ROOT/args.renders;manifest=json.loads((DIR/'manifest.json').read_text());failures=[];measurements=[]
 def check(ok,message):

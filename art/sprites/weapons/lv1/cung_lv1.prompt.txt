@@ -1,1 +1,1 @@
-Original editable SVG, user-authorized fallback B. Source: cung_lv1_master.svg. Broad silver two-plane blade / slender deep C recurve with dark string. Deterministic anti-aliased export. See SVG and build_held_props_v8.py for exact construction.
+Original editable SVG v9: unchanged cubic curve,23degree transform, original crop, dimensions and grip. Tapered dark-red wood with a bright lengthwise plane; black contour; contrasting moss-green leather; brass tips; fine pale string. SVG/script edit explicitly requested by user.

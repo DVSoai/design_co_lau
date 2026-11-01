@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse,os,shlex,subprocess,time
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--godot',default='godot');parser.add_argument('--ablation-only',action='store_true');parser.add_argument('--ablation-out',default='res://pose_rig/reports/ablation_v8');args=parser.parse_args();root=Path(__file__).resolve().parents[1]
+    parser=argparse.ArgumentParser();parser.add_argument('--godot',default='godot');parser.add_argument('--viewer-readability',action='store_true');parser.add_argument('--ablation-only',action='store_true');parser.add_argument('--ablation-out',default='res://pose_rig/reports/ablation_v9');args=parser.parse_args();root=Path(__file__).resolve().parents[1]
     def run(cmd,env=None):
         print('$ '+shlex.join(cmd),flush=True);p=subprocess.run(cmd,cwd=root,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=360);print(p.stdout,end='');print('exit='+str(p.returncode),flush=True)
         if p.returncode or 'ERROR:' in p.stdout:raise SystemExit(p.returncode or 1)
@@ -17,9 +17,9 @@ def main():
                 if subprocess.run(['xdpyinfo'],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0:break
                 time.sleep(.1)
             else:raise RuntimeError('Xvfb readiness timeout')
-            run([args.godot,'--audio-driver','Dummy','--fixed-fps','60','--path','prototype','--windowed','--resolution','1600x720','res://pose_rig/render_ablation_v7.tscn','--','--ablation-out='+args.ablation_out],env)
+            run([args.godot,'--audio-driver','Dummy','--fixed-fps','60','--path','prototype','--windowed','--resolution','1600x720','res://pose_rig/render_ablation_v7.tscn','--','--ablation-out='+args.ablation_out]+(['--viewer-readability'] if args.viewer_readability else []),env)
         finally:server.terminate();server.wait(timeout=10)
-    if args.ablation_only:print('Actual ablation only:120 complete11-view atlases. Export is not acceptance.');return
-    print('Actual review25x1600x720 +2 GPU H128 samples +120 complete11-view layer-ablation atlases. Image tests run separately; export alone is not a pass.')
+    if args.ablation_only:print('Actual ablation only:120 complete %d-view atlases. Export is not acceptance.' % (13 if args.viewer_readability else 11));return
+    print('Actual review25x1600x720 +2 GPU H128 samples +120 complete %d-view layer-ablation atlases. Image tests run separately; export alone is not a pass.' % (13 if args.viewer_readability else 11))
 
 if __name__=='__main__':main()

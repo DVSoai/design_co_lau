@@ -14,7 +14,12 @@ for group,n in [('head',8),('body',18),('legs',10)]:
  ids=P['levels']['1'][group];check(len(ids)==n and len(set(ids))==n,f'{group} unique assets={len(set(ids))}/{n}')
 for id,item in P['assets'].items():
  source=item.get('source',{});export=source.get('export') if isinstance(source,dict) else None
- a=ROOT/(export or 'art/sprites/characters/lv1_30/'+item['file']);b=ROOT/'prototype/pose_rig/art/lv1_30'/item['file'];im=Image.open(a).convert('RGBA');ar=np.array(im).astype(int);r,g,bl,alpha=ar.transpose(2,0,1);green=int(((g>1.18*np.maximum(r,bl))&(g>90)&(alpha>0)).sum());hasalpha=int((alpha==0).sum());check(list(im.size)==item['size'] and a.read_bytes()==b.read_bytes() and green==0 and hasalpha>0 and a.with_suffix('.prompt.txt').exists(),f'{id} {im.width}x{im.height} green={green} transparent={hasalpha} copy/prompt OK')
+ a=ROOT/(export or 'art/sprites/characters/lv1_30/'+item['file']);b=ROOT/'prototype/pose_rig/art/lv1_30'/item['file'];im=Image.open(a).convert('RGBA');ar=np.array(im).astype(int);r,g,bl,alpha=ar.transpose(2,0,1);candidate=(g>1.18*np.maximum(r,bl))&(g>90)&(alpha>0)
+ # The user explicitly requested a moss-green leather grip on the held bow.
+ # Keep rejecting chroma-key green; only this bounded, desaturated leather palette
+ # is intentional. Every other asset retains the original zero-green constraint.
+ allowed_leather=(r>=60)&(r<=160)&(g>=80)&(g<=200)&(bl>=30)&(bl<=105) if id=='cung_lv1' else np.zeros_like(candidate)
+ green=int((candidate&~allowed_leather).sum());moss=int((candidate&allowed_leather).sum());hasalpha=int((alpha==0).sum());check(list(im.size)==item['size'] and a.read_bytes()==b.read_bytes() and green==0 and hasalpha>0 and a.with_suffix('.prompt.txt').exists(),f'{id} {im.width}x{im.height} unexpected_green={green} permitted_moss={moss} transparent={hasalpha} copy/prompt OK')
 check(len(F['frames'])==30,'30 rows')
 for f in F['frames']:
  check(set(f['layers'])=={'head','body','legs','weapon'},f'frame{f["id"]} four layers')
