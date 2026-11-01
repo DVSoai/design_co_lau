@@ -27,12 +27,12 @@ check(abs(head_h/H-.40)<=.03,f'frame00 bare head/hair={head_h:.3f} source pixels
 check(all(A[f'head_{i}']['source'].get('hat') is False for i in range(8)),'all8 active heads have no hat')
 check(np.array_equal(rgba('head_0'),rgba('head_without_hat_0')),'frame00 head RGBA exactly equals bare-head asset; no hat hidden in measurement')
 # Full held sword and actual held bow remain independent of the short attack fragment.
-for id in ['sword_hold','sword_run']:
+for id in [P['levels']['1']['weapons']['kiem']]:
  ps=points(id,0);span=max(np.ptp(ps[:,0])+1,np.ptp(ps[:,1])+1)
  check(.75<=span/H<=.8,f'{id} longest alpha side/H={span/H:.6f} (same metric as ref_render, not axial length)')
-for id in ['bow_idle','bow_release','bow_draw_15','bow_draw_16','bow_hold']:
+for id in ['bow_idle','bow_release','bow_draw_15','bow_draw_16',P['levels']['1']['weapons']['cung']]:
  ps=points(id,127)
- if id=='bow_hold':
+ if id==P['levels']['1']['weapons']['cung']:
   axis=anchor(id,'top')-anchor(id,'bottom');axis/=np.linalg.norm(axis);height=np.ptp(ps@axis)+1
  else:height=np.ptp(ps[:,1])+1
  check(.9<=height/H<=1.0,f'{id} actual opaque axial span={height:.3f}, ratio={height/H:.6f}H (held bow measured along its tilted axis)')

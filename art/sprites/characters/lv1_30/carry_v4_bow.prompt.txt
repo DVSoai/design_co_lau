@@ -1,1 +1,0 @@
-Original edited artwork normalization: {"sheet": "carry_v4_bow", "candidate": 0, "crop": [187, 102, 762, 748], "length_source": 150, "perpendicular_normalization": 0.4, "grip": "center_wrapped_handle", "marked_grip": [562.0, 482.0], "marked_tips": [[731.0, 127.0], [214.0, 718.0]]}

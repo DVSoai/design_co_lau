@@ -23,8 +23,8 @@ func run() -> void:
 				var ok: bool=f.layers.size()==4 and a.scale==Vector2(dir,1)
 				for s: Sprite2D in a.all_visual_sprites():ok=ok and s.rotation==0
 				check(ok,"%s frame%d dir%d four layers, rotation0 root flip" % [school,i,dir])
-				var bow_asset: String=f.layers.weapon.get("cung_asset","bow_hold")
-				check(a.quiver.visible==(school=="cung") and a.sprites.weapon.texture.resource_path.ends_with("sword_run.png" if school=="kiem" and i in range(2,8) else ("sword_hold.png" if school=="kiem" else a.parts.assets[bow_asset].file)),"exclusive class weapon/quiver")
+				var held_asset: String=a.parts.levels["1"].weapons[school]
+				check(a.quiver.visible==(school=="cung") and a.sprites.weapon.texture.resource_path.ends_with(a.parts.assets[held_asset].file),"exclusive class weapon/quiver; one shared held texture")
 				cases+=1
 		for id in a.skills_data:
 			if a.skills_data[id].school!=school:continue

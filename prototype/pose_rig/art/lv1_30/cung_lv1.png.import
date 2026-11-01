@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7sy7tkpfpchh"
-path="res://.godot/imported/run_v3_bow.png-e291286d63a3e7f4430e32a5e399e38c.ctex"
+uid="uid://e6uv23pxtfvt"
+path="res://.godot/imported/cung_lv1.png-62254f1fa84083a457379339f2ffe232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pose_rig/art/lv1_30/run_v3_bow.png"
-dest_files=["res://.godot/imported/run_v3_bow.png-e291286d63a3e7f4430e32a5e399e38c.ctex"]
+source_file="res://pose_rig/art/lv1_30/cung_lv1.png"
+dest_files=["res://.godot/imported/cung_lv1.png-62254f1fa84083a457379339f2ffe232.ctex"]
 
 [params]
 

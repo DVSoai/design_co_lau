@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtbn3oxqwin6b"
-path="res://.godot/imported/sword_run.png-75f05f82a81ff277e7b3d40a99f7a465.ctex"
+uid="uid://cjiec7cnj2nyy"
+path="res://.godot/imported/kiem_lv1.png-241896f85cdb63c0b9fb190589550123.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pose_rig/art/lv1_30/sword_run.png"
-dest_files=["res://.godot/imported/sword_run.png-75f05f82a81ff277e7b3d40a99f7a465.ctex"]
+source_file="res://pose_rig/art/lv1_30/kiem_lv1.png"
+dest_files=["res://.godot/imported/kiem_lv1.png-241896f85cdb63c0b9fb190589550123.ctex"]
 
 [params]
 

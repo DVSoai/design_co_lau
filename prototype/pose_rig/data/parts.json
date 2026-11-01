@@ -47,10 +47,10 @@
         "legs_9"
       ],
       "weapons": {
-        "kiem": "sword_hold",
-        "cung": "bow_hold"
+        "kiem": "kiem_lv1",
+        "cung": "cung_lv1"
       },
-      "run_weapon": "sword_run",
+      "run_weapon": "kiem_lv1",
       "combat_stance": "legs_guard",
       "combat_lunge": "legs_lunge"
     }
@@ -2101,87 +2101,6 @@
       "source": "own bow source, V-string to measured near hand",
       "status": "drawn_unapproved"
     },
-    "sword_hold": {
-      "file": "sword_hold.png",
-      "size": [
-        384,
-        384
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          192.0
-        ],
-        "tip": [
-          78.51504452699213,
-          233.30514582920028
-        ]
-      },
-      "source": {
-        "own_asset": "sword",
-        "held_angle": 160,
-        "offline_rotation": 203.79969262600693
-      },
-      "status": "drawn_unapproved"
-    },
-    "sword_run": {
-      "file": "sword_run.png",
-      "size": [
-        384,
-        384
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          192.0
-        ],
-        "tip": [
-          78.51504452699213,
-          233.30514582920028
-        ]
-      },
-      "source": {
-        "own_asset": "sword",
-        "held_angle": 160,
-        "offline_rotation": 203.79969262600693
-      },
-      "status": "drawn_unapproved"
-    },
-    "bow_hold": {
-      "file": "bow_hold.png",
-      "size": [
-        384,
-        384
-      ],
-      "anchors": {
-        "grip": [
-          192.0,
-          192.0
-        ],
-        "belly": [
-          198.42747621231462,
-          197.48469915047934
-        ],
-        "string": [
-          160.53919538182848,
-          165.1538410002853
-        ],
-        "top": [
-          211.97178621588947,
-          105.5654941355902
-        ],
-        "bottom": [
-          108.4886986455432,
-          228.89183552029164
-        ]
-      },
-      "source": {
-        "own_asset": "bow_idle",
-        "held_angle": 40,
-        "offline_rotation": 40.474816032242586
-      },
-      "status": "drawn_unapproved"
-    },
     "attack_fragment": {
       "file": "attack_fragment.png",
       "size": [
@@ -2259,9 +2178,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_0",
@@ -2317,9 +2244,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_1",
@@ -2375,9 +2310,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_2",
@@ -2433,9 +2376,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_3",
@@ -2491,9 +2442,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_mask_4",
@@ -2621,9 +2580,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_0",
@@ -2679,9 +2646,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_1",
@@ -2737,9 +2712,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_2",
@@ -2795,9 +2778,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_3",
@@ -2853,9 +2844,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved",
       "trail_mask": "swing_skill_mask_4",
@@ -2956,9 +2955,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved"
     },
@@ -2983,9 +2990,17 @@
         ]
       },
       "source": {
-        "own_asset": "sword.png",
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
-        "blade_length_H": 0.78
+        "preserved_grip": [
+          176,
+          160
+        ],
+        "preserved_tip": [
+          350,
+          160
+        ]
       },
       "status": "drawn_unapproved"
     },
@@ -5149,41 +5164,6 @@
       },
       "status": "drawn_unapproved"
     },
-    "run_v3_bow": {
-      "file": "run_v3_bow.png",
-      "size": [
-        384,
-        384
-      ],
-      "anchors": {
-        "grip": [
-          129.0,
-          224.0
-        ],
-        "belly": [
-          198.42747621231462,
-          197.48469915047934
-        ],
-        "string": [
-          160.53919538182848,
-          165.1538410002853
-        ],
-        "top": [
-          211.97178621588947,
-          105.5654941355902
-        ],
-        "bottom": [
-          108.4886986455432,
-          228.89183552029164
-        ]
-      },
-      "source": {
-        "own_asset": "bow_hold",
-        "carry_grip": "lower_wood_limb",
-        "angle_from_vertical": 40
-      },
-      "status": "drawn_unapproved"
-    },
     "carry_v4_legs_3": {
       "file": "carry_v4_legs_3.png",
       "size": [
@@ -5225,60 +5205,73 @@
       },
       "status": "drawn_unapproved"
     },
-    "carry_v4_bow": {
-      "file": "carry_v4_bow.png",
+    "kiem_lv1": {
+      "file": "kiem_lv1.png",
       "size": [
-        256,
-        256
+        150,
+        60
       ],
       "anchors": {
-        "top": [
-          177.3810831353507,
-          71.5508314642316
-        ],
-        "bottom": [
-          78.6189168646493,
-          184.4491685357684
-        ],
         "grip": [
-          135.9063215777467,
-          131.32623592254433
+          106,
+          19
         ],
-        "belly": [
-          135.9063215777467,
-          131.32623592254433
+        "blade_root": [
+          89.70987843182048,
+          26.06463457214257
         ],
-        "string": [
-          128.0,
-          128.0
+        "tip": [
+          2.404692616871971,
+          57.41405766287611
+        ],
+        "pommel": [
+          121.65080007143578,
+          13.643165045625505
         ]
       },
       "source": {
-        "sheet": "carry_v4_bow",
-        "candidate": 0,
-        "crop": [
-          187,
-          102,
-          762,
-          748
+        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "export": "art/sprites/weapons/lv1/kiem_lv1.png",
+        "uniform_scale": 0.28829732421875,
+        "outline_source_px": 1,
+        "white_string_dilation_source_px": 0
+      },
+      "status": "drawn_unapproved"
+    },
+    "cung_lv1": {
+      "file": "cung_lv1.png",
+      "size": [
+        152,
+        113
+      ],
+      "anchors": {
+        "grip": [
+          76,
+          53
         ],
-        "length_source": 150,
-        "perpendicular_normalization": 0.4,
-        "grip": "center_wrapped_handle",
-        "marked_grip": [
-          562.0,
-          482.0
+        "top": [
+          147.73325202000967,
+          11.130166374936278
         ],
-        "marked_tips": [
-          [
-            731.0,
-            127.0
-          ],
-          [
-            214.0,
-            718.0
-          ]
+        "bottom": [
+          7.082457964689321,
+          109.61491262765307
+        ],
+        "belly": [
+          76.20739217038785,
+          52.86814880583708
+        ],
+        "string": [
+          67.8283553141271,
+          52.696600468540005
         ]
+      },
+      "source": {
+        "master": "art/sprites/weapons/lv1/cung_lv1_master.png",
+        "export": "art/sprites/weapons/lv1/cung_lv1.png",
+        "uniform_scale": 0.29377887566557753,
+        "outline_source_px": 1,
+        "white_string_dilation_source_px": 1
       },
       "status": "drawn_unapproved"
     }
@@ -5339,6 +5332,108 @@
         "trail_tram_kiem_39_0",
         "trail_tram_kiem_39_1"
       ]
+    }
+  },
+  "weapon_masters": {
+    "kiem": {
+      "asset": "kiem_lv1",
+      "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+      "master_size": [
+        512,
+        201
+      ],
+      "master_anchors": {
+        "grip": [
+          365.15024232633283,
+          66.4232633279483
+        ],
+        "blade_root": [
+          307.70274636510504,
+          86.94022617124395
+        ],
+        "tip": [
+          4.872374798061389,
+          195.68012924071084
+        ],
+        "pommel": [
+          418.49434571890146,
+          43.8546042003231
+        ]
+      },
+      "source_sheet": "sword_candidates",
+      "source_points": {
+        "grip": [
+          1100.0,
+          210.0
+        ],
+        "blade_root": [
+          960.0,
+          260.0
+        ],
+        "tip": [
+          222.0,
+          525.0
+        ],
+        "pommel": [
+          1230.0,
+          155.0
+        ]
+      },
+      "offline_rotation_degrees": 0
+    },
+    "cung": {
+      "asset": "cung_lv1",
+      "master": "art/sprites/weapons/lv1/cung_lv1_master.png",
+      "master_size": [
+        512,
+        378
+      ],
+      "master_anchors": {
+        "grip": [
+          256.0,
+          176.55506607929516
+        ],
+        "top": [
+          499.4683558767619,
+          34.482283152543374
+        ],
+        "bottom": [
+          20.70420465361598,
+          369.7165508635638
+        ],
+        "belly": [
+          256.0,
+          176.55506607929516
+        ],
+        "string": [
+          227.47842288769934,
+          175.97112914064218
+        ]
+      },
+      "source_sheet": "bow_double_recurve",
+      "source_points": {
+        "grip": [
+          525.0,
+          460.0
+        ],
+        "top": [
+          155.0,
+          802.0
+        ],
+        "bottom": [
+          861.0,
+          32.0
+        ],
+        "belly": [
+          525.0,
+          460.0
+        ],
+        "string": [
+          575.0,
+          450.0
+        ]
+      },
+      "offline_rotation_degrees": 192.48281462031164
     }
   }
 }

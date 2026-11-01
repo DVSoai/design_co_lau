@@ -4,27 +4,22 @@ from pathlib import Path
 import argparse,copy,hashlib,itertools,json,math,subprocess,sys
 import numpy as np
 from PIL import Image
+from weapon_v5_scope import RETIRED,REPAINTED,frame_without_weapon,asset_is_unchanged
 
 R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
-parser=argparse.ArgumentParser();parser.add_argument('--baseline',default='cc2a04a');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--baseline',default='ae1327c');args=parser.parse_args()
 p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());H=p['presentation']['standing_height_logic'];fail=0
 def old(path):return subprocess.check_output(['git','show',args.baseline+':'+path],cwd=R)
 def check(ok,message):
     global fail
     print(('PASS: ' if ok else 'FAIL: ')+message);fail+=not ok
 base_p=json.loads(old('prototype/pose_rig/data/parts.json'));base_f=json.loads(old('prototype/pose_rig/data/frames30.json'))
-def without_carry(row,i):
-    row=copy.deepcopy(row)
-    if i in [0,1,12,21]:
-        row['layers']['weapon'].pop('cung_asset',None)
-        row['registrations']['cung'].pop('weapon',None)
-    return row
-check(all(without_carry(row,i)==without_carry(base_f['frames'][i],i) for i,row in enumerate(f['frames']) if i not in range(2,8)),'all24 non-run rows unchanged except authorized held-bow asset/registration0,1,12,21')
+check(all(frame_without_weapon(row)==frame_without_weapon(base_f['frames'][i]) for i,row in enumerate(f['frames'])),'all30 anatomy/frame rows unchanged outside authorized shared weapon placement/depth')
 check({k:v for k,v in f.items() if k!='frames'}=={k:v for k,v in base_f.items() if k!='frames'},'clip/frame mapping and numeric reference table unchanged')
-check(all(p['assets'][id]==data for id,data in base_p['assets'].items()),'all existing asset registrations/metadata unchanged; new run assets only')
+check(all(asset_is_unchanged(id,data,p['assets']) for id,data in base_p['assets'].items()),'all non-weapon asset registrations unchanged; authorized retired/repainted IDs explicit')
 old_images=subprocess.check_output(['git','ls-tree','-r','--name-only',args.baseline,'--','prototype/pose_rig/art','art/sprites'],cwd=R,text=True).splitlines()
 for path in old_images:
-    if path.endswith('.png'):check((R/path).read_bytes()==old(path),'unchanged baseline image '+path)
+    if path.endswith('.png') and Path(path).stem not in RETIRED|REPAINTED:check((R/path).read_bytes()==old(path),'unchanged baseline image '+path)
 for path in ['prototype/pose_rig/data/skills.json','prototype/pose_rig/data/effects.json','prototype/config/tuning.gd','prototype/config/runtime_tuning.gd','prototype/scripts/player.gd']:
     check((R/path).read_bytes()==old(path),'unchanged '+path)
 def image(id):return np.array(Image.open(ART/p['assets'][id]['file']).convert('RGBA'))
@@ -36,7 +31,7 @@ def pos(row,school,layer):
 for school in ['kiem','cung']:
     wide=0;free=[];body_hash=[];leg_hash=[]
     for i in range(6):
-        row=f['frames'][i+2];body_id=row['layers']['body']['asset' if school=='kiem' else 'cung_asset'];leg_id=row['layers']['legs']['asset'];weapon_id=p['levels']['1']['run_weapon'] if school=='kiem' else row['layers']['weapon']['cung_asset']
+        row=f['frames'][i+2];body_id=row['layers']['body']['asset' if school=='kiem' else 'cung_asset'];leg_id=row['layers']['legs']['asset'];weapon_id=p['levels']['1']['run_weapon'] if school=='kiem' else p['levels']['1']['weapons']['cung']
         body,leg,weapon=[image(id) for id in [body_id,leg_id,weapon_id]]
         bh=hashlib.sha256(body.tobytes()).hexdigest();lh=hashlib.sha256(leg.tobytes()).hexdigest();body_hash.append(bh);leg_hash.append(lh)
         stride=np.linalg.norm(anchor(leg_id,'foot_left')-anchor(leg_id,'foot_right'))/H;wide+=stride>=.3

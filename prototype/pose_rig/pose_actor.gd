@@ -124,8 +124,6 @@ func sample_frame(index: int) -> void:
 	var held_hand: Vector2=grip if grip.x>=far_hand.x else far_hand
 	if f.get("held_hand","")=="grip":held_hand=grip
 	var weapon: String=parts.levels["1"].weapons[school]
-	if school=="kiem" and index in range(2,8):weapon=parts.levels["1"].run_weapon
-	if school=="cung":weapon=f.layers.weapon.get("cung_asset",weapon)
 	var wo: Dictionary=f.layers.weapon
 	put(sprites.weapon,weapon,held_hand+Vector2(wo.dx,wo.dy),"grip")
 	if f.has("registrations") and f.registrations[school].has("weapon"):

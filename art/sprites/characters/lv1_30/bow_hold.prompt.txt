@@ -1,1 +1,0 @@
-Offline crop/registration of independently drawn source: {"own_asset": "bow_idle", "held_angle": 40, "offline_rotation": 40.474816032242586}

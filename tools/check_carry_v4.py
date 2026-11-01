@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Independent PIL whole-shoe occlusion, connected feet, bow and narrow-scope checks."""
 from pathlib import Path
-import copy,json,subprocess,sys
+import copy,io,json,subprocess,sys
 import numpy as np
 from PIL import Image,ImageDraw
 from scipy.ndimage import label,binary_dilation
 from build_carry_v4 import position
+from weapon_v5_scope import frame_without_weapon,parts_without_weapon,asset_is_unchanged
 
 R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
 p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());H=p['presentation']['standing_height_logic']
@@ -16,21 +17,21 @@ def check(ok,message):
 def baseline(path):return subprocess.check_output(['git','show','cc2a04a:'+path],cwd=R)
 old_f=json.loads(baseline('prototype/pose_rig/data/frames30.json'));old_p=json.loads(baseline('prototype/pose_rig/data/parts.json'))
 def invariant(row,i):
-    row=copy.deepcopy(row)
-    if i in HELD:
-        row['layers']['weapon'].pop('cung_asset',None);row['registrations']['cung'].pop('weapon',None)
+    row=frame_without_weapon(row)
     if i==3:
         row['layers']['legs'].pop('asset',None)
         for school in ['kiem','cung']:row['registrations'][school].pop('legs',None)
-    if i==6:row['held_weapon_z'].pop('cung',None)
+    if i==6:row.get('held_weapon_z',{}).pop('cung',None)
     return row
-check(all(invariant(row,i)==invariant(old_f['frames'][i],i) for i,row in enumerate(f['frames'])),'all30 frame rows byte-equivalent data outside frame3 leg, held-bow registration and frame6 bow depth')
+check(all(invariant(row,i)==invariant(old_f['frames'][i],i) for i,row in enumerate(f['frames'])),'all30 frame rows unchanged outside approved frame3 leg and shared held-weapon placement/depth')
 check({k:v for k,v in f.items() if k!='frames'}=={k:v for k,v in old_f.items() if k!='frames'},'all clip mappings/timings and source reference tables unchanged')
-check({k:v for k,v in p.items() if k!='assets'}=={k:v for k,v in old_p.items() if k!='assets'},'all parts mappings/presentation unchanged; new assets only')
-check(all(p['assets'][k]==v for k,v in old_p['assets'].items()),'every preexisting asset metadata unchanged')
+check(parts_without_weapon(p)==parts_without_weapon(old_p),'all anatomy mappings/presentation unchanged outside shared-weapon aliases/master metadata')
+check(all(asset_is_unchanged(k,v,p['assets']) for k,v in old_p['assets'].items()),'every preexisting non-weapon asset metadata unchanged; retired/repainted weapon IDs are explicit')
 for path in ['prototype/pose_rig/data/skills.json','prototype/pose_rig/data/effects.json','prototype/pose_rig/player_controller.gd','prototype/config/tuning.gd','prototype/config/runtime_tuning.gd']:
     if (R/path).exists():check((R/path).read_bytes()==baseline(path),'unchanged '+path)
-def pixels(id,parts=p):return np.array(Image.open(ART/parts['assets'][id]['file']).convert('RGBA'))
+def pixels(id,parts=p):
+    source=ART/parts['assets'][id]['file'] if parts is p else io.BytesIO(baseline('prototype/pose_rig/art/lv1_30/'+parts['assets'][id]['file']))
+    return np.array(Image.open(source).convert('RGBA'))
 def ids(row,school,parts=p):
     return {'legs':row['layers']['legs'].get('asset',parts['levels']['1']['legs'][row['layers']['legs']['image']]),
             'body':row['layers']['body'].get('cung_asset' if school=='cung' else 'asset',parts['levels']['1']['body'][row['layers']['body'].get('cung_image',row['layers']['body']['image'])] if school=='cung' else row['layers']['body']['asset']),
@@ -68,7 +69,7 @@ for school in ['kiem','cung']:
             key={'head':'dau','body':'than','legs':'chan','weapon':'vu_khi'}[layer]
             print(f'PLACEMENT {school} frame{frame} {layer}: source [image,dx,dy]={row["reference"][key]}; image_offset={f["reference"]["image_offsets"][school if layer=="weapon" else key][row["reference"][key][0]]}; own_registration={row["registrations"][school][layer]}; own_top_left={position(f,row,school,layer).tolist()}')
         if school!='cung':continue
-        bow=p['assets'][row['layers']['weapon']['cung_asset']];a={k:np.array(v)*.5 for k,v in bow['anchors'].items()}
+        bow=p['assets'][p['levels']['1']['weapons']['cung']];a={k:np.array(v)*.5 for k,v in bow['anchors'].items()}
         body_id=ids(row,school)['body'];ba=p['assets'][body_id]['anchors'];key='grip' if row.get('held_hand')=='grip' or ba['grip'][0]>=ba['far_hand'][0] else 'far_hand'
         hand=position(f,row,school,'body')+np.array(ba[key])*.5;origin=position(f,row,school,'weapon')
         gap=np.linalg.norm(hand-(origin+(a['top']+a['bottom'])*.5))/H

@@ -1139,3 +1139,155 @@ Edit this isolated wooden sports bow for a cartoon character. Create two origina
 STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
 ```
+
+
+### 2026-11-01 — Lv1 v5: một hình cầm tay chung mỗi vũ khí, bản gốc512px (chưa duyệt)
+
+Vẽ lại kiếm/cung theo hàng Lv1 của art/reference/chr_dbl_board_trang_bi.png. Đã mở riêng ảnh262/283 để so độ dày viền và mảng chất liệu, đọc phần vũ khí12/14 từ tệp nhị phân và bảng30 khung dòng345; chỉ dùng số liệu, không chép ảnh/mã tham khảo vào các tệp theo dõi. Bốn mục bằng chứng nguồn thật/ls, dòng mã có số dòng, renderer đầy đủ và số đặt khung được lưu nguyên văn trong commit message.
+
+Kiếm: chọn phương án chắn đồng oval đơn giản; lưỡi có sống giữa, mặt sáng bạc/ngà và mặt tối xanh xám, vệt phản quang lớn, cán quấn dây nâu, tua đỏ. Cung: bỏ hai phương án đầu vì phần giữa cách dây quá xa; chọn bản cong kép mềm ở lượt sau, thân gỗ hổ phách dày, mặt tối nâu, đầu cong ngược bịt đồng, chuôi giữa quấn da, dây trắng. Không nén hẹp toàn hình cung như lượt cũ. Chuẩn hóa góc cầm trước khi xuất: kiếm chéo xuống sau, cung trục55° so với đứng; sprite runtime luôn rotation0.
+
+Bản gốc trong art/sprites/weapons/lv1/kiem_lv1_master.png và cung_lv1_master.png, mỗi cạnh dài đúng512px, nền alpha trong suốt, prompt nguyên văn cạnh ảnh. Giữ các bản ứng viên và prompt trong sources/ để truy xuất. Khi thu nhỏ, gia cố viền bằng1pixel nguồn màu mực tối; dây trắng đã vẽ được nở1pixel nguồn để không thành nét xám dưới1pixel màn hình. Điểm grip được bắt vào pixel dây/da liền kề tâm sau thu nhỏ trong bán kính2pixel nguồn, tránh đặt lên nếp gấp tối; không đặt xuống cành cung. Metadata ghi đầy đủ điểm trên bản gốc, tỉ lệ thu nhỏ và điểm grip thật của sprite.
+
+Mỗi phái chỉ còn MỘT texture cầm tay: kiem_lv1.png hoặc cung_lv1.png cho0–7,12,21, cả hai hướng. Bỏ lựa chọn texture riêng khi chạy trong pose_actor; run_weapon chỉ là alias cùng ID kiếm, không có hình khác. Xóa5 biến thể cũ cùng PNG/import/prompt ở chỗ xuất. Lớp vũ khí cố định sau thân/chân (z=-1) và ngón tay phía trước; mọi khung chỉ dịch theo grip và dx/dy rồi lật gốc nhân vật, không đổi tỉ lệ/góc/độ sâu theo khung. Giữ nguyên nắm tay và mọi hình đầu/thân/chân.
+
+Lưỡi vung được lấy trực tiếp từ bản gốc kiếm mới, cùng mảng bạc/ngà–xanh xám, sống giữa và viền. Giữ nguyên grip[176,160], gốc lưỡi[201,160], mũi[350,160] trong canvas hành động; phần cán đăng ký riêng để vừa tay. Mười hình swing/swing_skill được ghép lại từ lưỡi này và mask vệt cũ, giữ mọi giá trị alpha của vệt. Không sửa hình/vệt độc lập16/39, thông số kỹ năng, nhịp hit, tên bay hay các hình giương/bắn cung.
+
+Kết quả:19/19 bộ Godot headless và7/7 trình kiểm Python qua. Test mới lấy RID texture thật qua20 mẫu khung/hướng mỗi phái, grip–tay≤1pixel, cùng góc/tỉ lệ/độ sâu. Kiếm cầm tay cạnh dài alpha/H=0,782476695 (giữ đúng cách đo test cũ); cung chiều dài alpha theo trục/H=0,954796868; lưỡi vung riêng có150pixel nguồn, trong khoảng0,75–0,8H. Bàn chân48/48 giữ hai vùng nhìn thấy tách biệt, không bị vũ khí che. Cung tay–trung điểm/H=0,039153868, chênh hai đầu7,382062%, vẫn qua test giữa cung cũ.
+
+Đo pixel trên PNG Godot/GPU thật ở H128 (không dùng ảnh AI phóng to làm bằng chứng): tại4 lát cắt mỗi vũ khí, mỗi phía có tối thiểu2 ô pixel tối alpha≥0,8, đạt yêu cầu≥1pixel; dây cung có161pixel lõi trắng alpha≥0,8. Lưỡi vung có665pixel mặt sáng/phản quang và1240pixel mặt tối xanh xám trên ảnh thật. Script đo đầy đủ cùng output trong weapons_v5_python_checks.txt. Các test cũ chỉ đổi tra đường dẫn nguồn/ID texture mới và ngoại lệ phạm vi đúng vũ khí; các ngưỡng cổ, chân, nhảy, độ dài lưỡi, độ phủ vệt và nhịp chiêu giữ nguyên.
+
+Ảnh duyệt art/sprites/weapons/lv1/review_lv1.png là chụp Godot1600×720 thật: hai bản gốc512px phía trên và bốn nhân vật H128 khung0/4 hai phái phía dưới. Xuất thêm dải30 khung hai hướng, các đòn, dải chạy, màn chơi thử: tổng25 ảnh1600×720 và2 ảnh vũ khí riêng256×256 tại đúng hệ số H128. Chuỗi update_pose_playtest thêm stage master cuối; build_weapon_masters_v5 tái tạo độc lập ra cùng byte. Không sửa config/A0/địa hình, không tự duyệt mỹ thuật, chưa kiểm thiết bị Android.
+
+Đăng ký bản gốc và sprite (điểm theo pixel nguồn của ảnh riêng):
+
+```json
+{
+  "kiem": {
+    "asset": "kiem_lv1",
+    "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+    "master_size": [
+      512,
+      201
+    ],
+    "master_anchors": {
+      "grip": [
+        365.15024232633283,
+        66.4232633279483
+      ],
+      "blade_root": [
+        307.70274636510504,
+        86.94022617124395
+      ],
+      "tip": [
+        4.872374798061389,
+        195.68012924071084
+      ],
+      "pommel": [
+        418.49434571890146,
+        43.8546042003231
+      ]
+    },
+    "source_sheet": "sword_candidates",
+    "source_points": {
+      "grip": [
+        1100.0,
+        210.0
+      ],
+      "blade_root": [
+        960.0,
+        260.0
+      ],
+      "tip": [
+        222.0,
+        525.0
+      ],
+      "pommel": [
+        1230.0,
+        155.0
+      ]
+    },
+    "offline_rotation_degrees": 0
+  },
+  "cung": {
+    "asset": "cung_lv1",
+    "master": "art/sprites/weapons/lv1/cung_lv1_master.png",
+    "master_size": [
+      512,
+      378
+    ],
+    "master_anchors": {
+      "grip": [
+        256.0,
+        176.55506607929516
+      ],
+      "top": [
+        499.4683558767619,
+        34.482283152543374
+      ],
+      "bottom": [
+        20.70420465361598,
+        369.7165508635638
+      ],
+      "belly": [
+        256.0,
+        176.55506607929516
+      ],
+      "string": [
+        227.47842288769934,
+        175.97112914064218
+      ]
+    },
+    "source_sheet": "bow_double_recurve",
+    "source_points": {
+      "grip": [
+        525.0,
+        460.0
+      ],
+      "top": [
+        155.0,
+        802.0
+      ],
+      "bottom": [
+        861.0,
+        32.0
+      ],
+      "belly": [
+        525.0,
+        460.0
+      ],
+      "string": [
+        575.0,
+        450.0
+      ]
+    },
+    "offline_rotation_degrees": 192.48281462031164
+  }
+}
+```
+
+#### Prompt nguyên văn — vũ khí Lv1 v5
+
+sword_candidates — tham chiếu riêng đã đính kèm: art/reference/chr_dbl_board_trang_bi.png
+
+```text
+Create TWO original isolated candidate level-one straight double-edged swords for the attached character equipment design board, taking visual cues ONLY from the plain first sword in row2. Put the two variants in separate spacious areas, one above the other; no grid or labels. Each sword entirely visible with HANDLE at UPPER RIGHT and blade pointing diagonally DOWN LEFT at20 degrees below horizontal. Character faces RIGHT, this is the resting sword extending behind the thigh. Broad strong straight pointed double-edged blade, NOT curved, substantial width and bold dark brown-black outline matching the character's outline. Steel has a CENTRAL RIDGE with sharply separated bright ivory-silver face and deep blue-grey shadow face, thin white reflective edge and one large angular reflected streak. Three simple controlled shading planes, no flat uniform grey. SMALL plain warm-brass crossguard, chunky brown cord-wrapped grip with clear diagonal wraps, brass pommel, short tied RED TASSEL at pommel trailing upward-right behind hand. Grip must be large enough for a sturdy cartoon fist. Both variants same proportions: blade70% of total weapon length, thick outline about2% of full weapon length, blade width9% of blade length. Variant1 plain oval brass guard, variant2 small diamond brass guard. Clean high-quality original game-asset painting, very readable when the complete character is128px high. Transparent background, no scenery, hands, character, arrows, effects, text, logos or borders. These are object concepts, no comparison graphics. Generic style details below must not add a person. The attached board is our own design; use its Lv1 material language, not ornate higher levels.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+bow_candidates — tham chiếu riêng đã đính kèm: art/reference/chr_dbl_board_trang_bi.png
+
+```text
+Create TWO original isolated candidate level-one wooden sports bows for the attached character equipment board, taking visual cues ONLY from the first plain bow in row3. Two widely separated objects side by side, no text or labels. Each bow is already posed DIAGONALLY: upper end points UPPER RIGHT and lower end points LOWER LEFT, axis45degrees from vertical. Strong chunky dark-outlined warm brown wood with simple golden amber lit face and dark umber shadow face; NOT a thin stick. Both limbs have visibly shaped RECURVED TIPS bending back, with small plain BRASS END CAPS and a conspicuous clear WHITE STRING joining the ends. Grip is at the TRUE MIDDLE, wrapped in chunky brown leather, with brass collars at both ends of that wrap; upper and lower tips equally far from grip. Thick lively carved recurved limbs, large clean bends and two or three broad material highlights. Keep the center handle near the midpoint between the two tips (within4percent of tip-to-tip length): shallow center brace but pronounced recurves/broad S-shaped limb silhouettes AWAY from the center, not a uniform straight rod. The wood must have enough thickness to remain clearly several pixels wide beside a128px-tall cartoon character; outer dark outline about2percent of total bow length, wooden limb width5percent of length, white string width1percent of length. The string is behind the wood on the LEFT; wood bulges toward enemyRIGHT. Candidate1 balanced smooth recurve and candidate2 stronger recurved hooked tips. Only original plain Lv1 material language of our board, no ornate high-level motifs. Transparent background, no person, hand, arrows, effects, text, logos, labels or borders. Complete objects without clipping; generic style details below must not introduce swords or people.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```
+
+bow_double_recurve — tham chiếu riêng đã đính kèm: art/reference/chr_dbl_board_trang_bi.png
+
+```text
+Draw two original cartoon wooden archery bows, as equipment sprites for our own Vietnamese tenth-century character design board attached. Transparent background, two isolated objects side by side, no labels or text. Each bow tilted lower-left to upper-right45degrees from vertical. Thick warm amber wood, dark umber shadow planes, strong dark outline, leather-wrapped CENTER grip, small brass collars and brass end caps, clear thick white string. The wood is NOT a thin stick: use full chunky DOUBLE-RECURVE profiles with both quarter-length regions bulging outward to the RIGHT, while the handle at the very center returns close to the string. Center-grip brace distance only3percent of end-to-end length; the two end caps equally far from the grip. Shape like a bold decorative double-S rather than a simple semicircle. Curve both tips back. Keep wood thickness5percent of length and dark outline2percent of length, white string1percent. Distinct clean broad highlights and shadows, crisp readable art at tiny game scale. Candidate1 smooth double-S; candidate2 angular double-S. No hands, people, arrows, scenes, glow, borders or other objects. Use only the first plain Lv1 bow in row3 of our board for material/color guidance. Give equal care to both upper and lower halves.
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.
+```

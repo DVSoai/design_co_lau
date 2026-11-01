@@ -1,0 +1,1389 @@
+Exact new master/runtime/GPU pixel measurement script:
+
+#!/usr/bin/env python3
+"""Measure real master/runtime PNGs and real H128 Godot GPU contour pixels."""
+from pathlib import Path
+import json,subprocess,sys
+import numpy as np
+from PIL import Image
+from build_carry_v4 import position
+from weapon_v5_scope import RETIRED,REPAINTED,HELD,frame_without_weapon,asset_is_unchanged
+
+R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30';OUT=R/'art/sprites/weapons/lv1';REPORT=R/'prototype/pose_rig/reports'
+p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());H=p['presentation']['standing_height_source'];fail=0
+def check(ok,message):
+    global fail
+    print(('PASS: ' if ok else 'FAIL: ')+message);fail+=not ok
+def rgba(path):return np.array(Image.open(path).convert('RGBA'))
+def old(path):return subprocess.check_output(['git','show','ae1327c:'+path],cwd=R)
+old_f=json.loads(old('prototype/pose_rig/data/frames30.json'));old_p=json.loads(old('prototype/pose_rig/data/parts.json'))
+check(all(frame_without_weapon(row)==frame_without_weapon(old_f['frames'][i]) for i,row in enumerate(f['frames'])),'all30 anatomy/source frame rows unchanged; only held weapon registration/depth changed')
+check(all(asset_is_unchanged(k,v,p['assets']) for k,v in old_p['assets'].items()),'only explicit old held variants retired and12 action blade composites repainted; all other asset metadata unchanged')
+check(p['levels']['1']['run_weapon']==p['levels']['1']['weapons']['kiem'],'run weapon alias is the SAME canonical sword asset')
+for id in sorted(RETIRED):
+    check(id not in p['assets'] and not (ART/(id+'.png')).exists() and not (R/'art/sprites/characters/lv1_30'/(id+'.png')).exists(),'obsolete held texture physically removed: '+id)
+for school in ['kiem','cung']:
+    id=p['levels']['1']['weapons'][school];a=p['assets'][id];image=rgba(ART/a['file']);master=rgba(OUT/(school+'_lv1_master.png'))
+    check(max(master.shape[:2])==512 and np.any(master[:,:,3]==0) and np.any(master[:,:,3]>=250),school+' master has512px long side, real transparency and opaque painted core')
+    check((ART/a['file']).read_bytes()==(OUT/(school+'_lv1.png')).read_bytes(),school+' engine texture is byte-identical to canonical exported sprite')
+    alpha=image[:,:,3];ys,xs=np.where(alpha>0);span=max(np.ptp(xs)+1,np.ptp(ys)+1)
+    if school=='cung':
+        axis=np.array(a['anchors']['top'])-a['anchors']['bottom'];axis/=np.linalg.norm(axis);ys,xs=np.where(alpha>=128);span=np.ptp(np.column_stack([xs,ys])@axis)+1
+    ratio=span/H;check((.75<=ratio<=.8) if school=='kiem' else (.9<=ratio<=1),f'{school} real opaque span/H={ratio:.9f}; sword longest alpha side, bow opaque axial span')
+    grip=np.array(a['anchors']['grip']);sample=image[round(grip[1]),round(grip[0])];check(sample[3]>=230 and sample[0]>=80,f'{school} middle cord/leather grip at actual RGBA={sample.tolist()}')
+    for frame in HELD:
+        row=f['frames'][frame];check('cung_asset' not in row['layers']['weapon'],f'{school} frame{frame}: no per-frame texture override')
+        bid=row['layers']['body'].get('cung_asset' if school=='cung' else 'asset',p['levels']['1']['body'][row['layers']['body'].get('cung_image',row['layers']['body']['image']) if school=='cung' else row['layers']['body']['image']])
+        ba=p['assets'][bid]['anchors'];key='grip' if row.get('held_hand')=='grip' or ba['grip'][0]>=ba['far_hand'][0] else 'far_hand'
+        hand=position(f,row,school,'body')+np.array(ba[key])*.5;placed=position(f,row,school,'weapon')+grip*.5;gap=np.linalg.norm(hand-placed)
+        check(gap<=1,f'{school} frame{frame} grip-to-painted-hand={gap:.9f}logic px')
+        print(f'PLACEMENT {school} frame{frame}: source [image,dx,dy]={row["reference"]["vu_khi"]}; own_registration={row["registrations"][school]["weapon"]}; own_top_left={position(f,row,school,"weapon").tolist()}; shared_texture={a["file"]}')
+    rr,gg,bb=image[:,:,:3].astype(int).transpose(2,0,1);opaque=alpha>=204
+    bright=opaque&(rr>190)&(gg>190)&(bb>190);dark=opaque&(rr<80)&(gg<70)&(bb<70);brass=opaque&(rr>150)&(gg>90)&(gg<225)&(bb<160)
+    check(dark.sum()>=30 and brass.sum()>=8,f'{school} dark outline pixels={dark.sum()}; brass cap/guard pixels={brass.sum()}')
+    if school=='kiem':
+        steel_shadow=opaque&(rr>=70)&(rr<180)&(bb>rr+5);red=opaque&(rr>150)&(gg<95)&(bb<95)
+        check(bright.sum()>=25 and steel_shadow.sum()>=25 and red.sum()>=8,f'held sword bright/reflected steel={bright.sum()}, blue-grey shadow steel={steel_shadow.sum()}, red tassel={red.sum()} real opaque pixels')
+    else:check(bright.sum()>=30,f'held bow WHITE STRING opaque light pixels={bright.sum()}')
+    # Read the real GPU PNG rendered at the same scale as H128 actors, not a magnified mockup.
+    gpu=rgba(REPORT/f'weapon_v5_{school}_128.png');factor=.5*p['presentation']['display_factor'];gpu_grip=np.array([128.,128.])
+    def point(key):return gpu_grip+(np.array(a['anchors'][key])-grip)*factor
+    lo,hi=(point('blade_root'),point('tip')) if school=='kiem' else (point('bottom'),point('top'))
+    axis=(hi-lo)/np.linalg.norm(hi-lo);normal=np.array([-axis[1],axis[0]])
+    def at_pixel(v):
+        x,y=np.floor(v).astype(int)
+        return gpu[y,x] if 0<=x<gpu.shape[1] and 0<=y<gpu.shape[0] else np.zeros(4,dtype='uint8')
+    minimum=999
+    for t in [.2,.35,.65,.8]:
+        centre=lo+(hi-lo)*t;values=[]
+        for n in np.arange(-32,32.001,.125):
+            q=centre+normal*n;color=at_pixel(q);values.append((n,tuple(np.floor(q).astype(int)),color))
+        if school=='kiem':warm=[n for n,_,c in values if c[3]>=204 and c[:3].min()>90]
+        else:warm=[n for n,_,c in values if c[3]>=204 and int(c[0])-int(c[1])>15 and int(c[1])-int(c[2])>8 and c[0]>75]
+        check(bool(warm),f'{school} GPU cross-section{t}: painted material detected')
+        if not warm:continue
+        left,right=min(warm),max(warm)
+        counts=[]
+        for side,start,end in [('left',left-4,left),('right',right,right+4)]:
+            pixels={xy for n,xy,c in values if start<=n<=end and c[3]>=204 and c[0]<80 and c[1]<70 and c[2]<70}
+            count=len(pixels);counts.append(count);minimum=min(minimum,count)
+            check(count>=1,f'{school} GPU H128 section{t} {side}: opaque DARK contour pixel cells={count} >=1px')
+    print(f'{school} minimum measured opaque dark contour pixel cells per sampled side={minimum}; real GPU render factor={factor:.9f}')
+    if school=='cung':
+        rgb=gpu[:,:,:3];white=(gpu[:,:,3]>=204)&(rgb.min(axis=2)>215)
+        check(white.sum()>=20,f'GPU H128 white string core pixels={white.sum()} (not a grey subpixel line)')
+for id in sorted(REPAINTED):check(p['assets'][id]['source']['master']==p['weapon_masters']['kiem']['master'],id+' steel material derives from same detailed sword master')
+blade=rgba(ART/'attack_blade_only.png');mask=blade[:,:,3]>=204;rgb=blade[:,:,:3].astype(int);light=mask&(rgb.min(axis=2)>190);shadow=mask&(rgb[:,:,0]>65)&(rgb[:,:,0]<180)&(rgb[:,:,2]>rgb[:,:,0]+5)
+check(light.sum()>=100 and shadow.sum()>=100,f'action blade retains bright ridge/reflection={light.sum()} and blue-grey shadow face={shadow.sum()} opaque pixels')
+check((OUT/'review_lv1.png').read_bytes()==(REPORT/'weapon_v5_review.png').read_bytes(),'review_lv1.png is the actual Godot master+frame0/frame4 capture')
+print(f'Weapon master/source/actual H128 pixel checks failures={fail}');sys.exit(bool(fail))
+
+
+$ python3 tools/check_lv1_30.py
+PASS: only Lv1 implemented; no new Lv10..60 completion claims
+PASS: head unique assets=8/8
+PASS: body unique assets=18/18
+PASS: legs unique assets=10/10
+PASS: head_without_hat_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_without_hat_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_without_hat_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_without_hat_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_without_hat_4 95x77 green=0 transparent=2418 copy/prompt OK
+PASS: head_4 256x256 green=0 transparent=60639 copy/prompt OK
+PASS: head_without_hat_5 92x77 green=0 transparent=2346 copy/prompt OK
+PASS: head_5 256x256 green=0 transparent=60798 copy/prompt OK
+PASS: head_without_hat_6 87x77 green=0 transparent=1897 copy/prompt OK
+PASS: head_6 256x256 green=0 transparent=60734 copy/prompt OK
+PASS: head_without_hat_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: head_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: body_0 106x100 green=0 transparent=2674 copy/prompt OK
+PASS: body_1 105x98 green=0 transparent=2627 copy/prompt OK
+PASS: body_2 146x92 green=0 transparent=5119 copy/prompt OK
+PASS: body_3 150x94 green=0 transparent=5244 copy/prompt OK
+PASS: body_4 152x95 green=0 transparent=4745 copy/prompt OK
+PASS: body_5 160x94 green=0 transparent=6809 copy/prompt OK
+PASS: body_6 89x80 green=0 transparent=1924 copy/prompt OK
+PASS: body_7 96x74 green=0 transparent=1691 copy/prompt OK
+PASS: body_8 98x92 green=0 transparent=2200 copy/prompt OK
+PASS: body_9 99x84 green=0 transparent=2177 copy/prompt OK
+PASS: body_10 106x87 green=0 transparent=2715 copy/prompt OK
+PASS: body_11 142x81 green=0 transparent=4945 copy/prompt OK
+PASS: body_12 91x88 green=0 transparent=1869 copy/prompt OK
+PASS: body_13 145x87 green=0 transparent=5578 copy/prompt OK
+PASS: body_14 96x86 green=0 transparent=2112 copy/prompt OK
+PASS: body_15 158x100 green=0 transparent=7245 copy/prompt OK
+PASS: body_16 153x99 green=0 transparent=7181 copy/prompt OK
+PASS: body_17 160x98 green=0 transparent=7404 copy/prompt OK
+PASS: legs_0 57x70 green=0 transparent=1210 copy/prompt OK
+PASS: legs_1 70x63 green=0 transparent=1951 copy/prompt OK
+PASS: legs_2 60x67 green=0 transparent=1677 copy/prompt OK
+PASS: legs_3 82x54 green=0 transparent=2234 copy/prompt OK
+PASS: legs_4 70x69 green=0 transparent=2186 copy/prompt OK
+PASS: legs_5 91x65 green=0 transparent=2838 copy/prompt OK
+PASS: legs_6 81x68 green=0 transparent=1881 copy/prompt OK
+PASS: legs_7 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_8 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_9 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_guard 96x62 green=0 transparent=2670 copy/prompt OK
+PASS: legs_lunge 86x63 green=0 transparent=2666 copy/prompt OK
+PASS: sword 109x119 green=0 transparent=9717 copy/prompt OK
+PASS: bow_idle 55x185 green=0 transparent=4938 copy/prompt OK
+PASS: bow_draw 55x185 green=0 transparent=6747 copy/prompt OK
+PASS: bow_release 56x185 green=0 transparent=5040 copy/prompt OK
+PASS: quiver 37x70 green=0 transparent=1016 copy/prompt OK
+PASS: arrow 256x128 green=0 transparent=31355 copy/prompt OK
+PASS: skill_arrow 256x128 green=0 transparent=29687 copy/prompt OK
+PASS: arrow_draw_15 256x128 green=0 transparent=31428 copy/prompt OK
+PASS: arrow_draw_16 256x128 green=0 transparent=31429 copy/prompt OK
+PASS: bow_draw_15 123x205 green=0 transparent=21368 copy/prompt OK
+PASS: bow_draw_16 115x205 green=0 transparent=19745 copy/prompt OK
+PASS: attack_fragment 512x384 green=0 transparent=195673 copy/prompt OK
+PASS: swing_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_0 512x384 green=0 transparent=192059 copy/prompt OK
+PASS: swing_mask_1 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_1 512x384 green=0 transparent=191728 copy/prompt OK
+PASS: swing_mask_2 512x384 green=0 transparent=195481 copy/prompt OK
+PASS: swing_2 512x384 green=0 transparent=191322 copy/prompt OK
+PASS: swing_mask_3 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_3 512x384 green=0 transparent=191728 copy/prompt OK
+PASS: swing_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_4 512x384 green=0 transparent=192059 copy/prompt OK
+PASS: swing_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: swing_skill_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_0 512x384 green=0 transparent=192059 copy/prompt OK
+PASS: swing_skill_mask_1 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_1 512x384 green=0 transparent=191471 copy/prompt OK
+PASS: swing_skill_mask_2 512x384 green=0 transparent=194893 copy/prompt OK
+PASS: swing_skill_2 512x384 green=0 transparent=190887 copy/prompt OK
+PASS: swing_skill_mask_3 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_3 512x384 green=0 transparent=191471 copy/prompt OK
+PASS: swing_skill_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_4 512x384 green=0 transparent=192059 copy/prompt OK
+PASS: swing_skill_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_skill_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_skill_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: attack_blade 512x384 green=0 transparent=192059 copy/prompt OK
+PASS: attack_blade_only 512x384 green=0 transparent=193580 copy/prompt OK
+PASS: pose_flash 24x24 green=0 transparent=423 copy/prompt OK
+PASS: run_leg_0 109x69 green=0 transparent=4207 copy/prompt OK
+PASS: run_leg_1 90x69 green=0 transparent=3139 copy/prompt OK
+PASS: run_leg_2 69x69 green=0 transparent=2040 copy/prompt OK
+PASS: run_leg_3 111x69 green=0 transparent=4399 copy/prompt OK
+PASS: run_leg_4 92x69 green=0 transparent=3411 copy/prompt OK
+PASS: run_leg_5 64x69 green=0 transparent=1772 copy/prompt OK
+PASS: roll_head_0 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_1 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_2 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_3 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_legs_0 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_1 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_2 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_3 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_body_0 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_1 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_2 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_3 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: fall_head_0 256x256 green=0 transparent=60400 copy/prompt OK
+PASS: fall_legs_0 256x256 green=0 transparent=60290 copy/prompt OK
+PASS: fall_body_0 256x256 green=0 transparent=60858 copy/prompt OK
+PASS: roll_wind_0 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_1 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_2 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_3 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: trail_slash_16_0 174x112 green=0 transparent=9912 copy/prompt OK
+PASS: trail_slash_16_1 268x150 green=0 transparent=21027 copy/prompt OK
+PASS: trail_slash_16_2 268x128 green=0 transparent=17785 copy/prompt OK
+PASS: trail_slash_16_3 214x112 green=0 transparent=12498 copy/prompt OK
+PASS: trail_slash_16_4 174x90 green=0 transparent=8406 copy/prompt OK
+PASS: trail_slash_39_0 156x64 green=0 transparent=4514 copy/prompt OK
+PASS: trail_slash_39_1 156x51 green=0 transparent=3672 copy/prompt OK
+PASS: trail_tram_kiem_16_0 188x127 green=0 transparent=12181 copy/prompt OK
+PASS: trail_tram_kiem_16_1 289x169 green=0 transparent=25634 copy/prompt OK
+PASS: trail_tram_kiem_16_2 289x144 green=0 transparent=21657 copy/prompt OK
+PASS: trail_tram_kiem_16_3 231x127 green=0 transparent=15328 copy/prompt OK
+PASS: trail_tram_kiem_16_4 188x101 green=0 transparent=10184 copy/prompt OK
+PASS: trail_tram_kiem_39_0 168x72 green=0 transparent=5480 copy/prompt OK
+PASS: trail_tram_kiem_39_1 168x58 green=0 transparent=4525 copy/prompt OK
+PASS: body_hold_cung 157x93 green=0 transparent=6568 copy/prompt OK
+PASS: run_v3_legs_0 130x70 green=0 transparent=5513 copy/prompt OK
+PASS: run_v3_legs_1 67x70 green=0 transparent=1973 copy/prompt OK
+PASS: run_v3_legs_2 128x70 green=0 transparent=5371 copy/prompt OK
+PASS: run_v3_legs_3 124x70 green=0 transparent=5143 copy/prompt OK
+PASS: run_v3_legs_4 91x70 green=0 transparent=3669 copy/prompt OK
+PASS: run_v3_legs_5 110x71 green=0 transparent=3868 copy/prompt OK
+PASS: run_v3_kiem_body_0 320x256 green=0 transparent=76589 copy/prompt OK
+PASS: run_v3_kiem_body_1 320x256 green=0 transparent=76685 copy/prompt OK
+PASS: run_v3_kiem_body_2 320x256 green=0 transparent=76559 copy/prompt OK
+PASS: run_v3_kiem_body_3 320x256 green=0 transparent=76654 copy/prompt OK
+PASS: run_v3_kiem_body_4 320x256 green=0 transparent=77135 copy/prompt OK
+PASS: run_v3_kiem_body_5 320x256 green=0 transparent=77077 copy/prompt OK
+PASS: run_v3_cung_body_0 320x256 green=0 transparent=76986 copy/prompt OK
+PASS: run_v3_cung_body_1 320x256 green=0 transparent=77150 copy/prompt OK
+PASS: run_v3_cung_body_2 320x256 green=0 transparent=76898 copy/prompt OK
+PASS: run_v3_cung_body_3 320x256 green=0 transparent=76766 copy/prompt OK
+PASS: run_v3_cung_body_4 320x256 green=0 transparent=76824 copy/prompt OK
+PASS: run_v3_cung_body_5 320x256 green=0 transparent=77296 copy/prompt OK
+PASS: carry_v4_legs_3 85x68 green=0 transparent=2722 copy/prompt OK
+PASS: kiem_lv1 150x60 green=0 transparent=6638 copy/prompt OK
+PASS: cung_lv1 152x113 green=0 transparent=13379 copy/prompt OK
+PASS: 30 rows
+PASS: frame0 four layers
+PASS: frame0 valid head index
+PASS: frame0 valid body index
+PASS: frame0 valid legs index
+PASS: frame1 four layers
+PASS: frame1 valid head index
+PASS: frame1 valid body index
+PASS: frame1 valid legs index
+PASS: frame2 four layers
+PASS: frame2 valid head index
+PASS: frame2 valid body index
+PASS: frame2 valid legs index
+PASS: frame3 four layers
+PASS: frame3 valid head index
+PASS: frame3 valid body index
+PASS: frame3 valid legs index
+PASS: frame4 four layers
+PASS: frame4 valid head index
+PASS: frame4 valid body index
+PASS: frame4 valid legs index
+PASS: frame5 four layers
+PASS: frame5 valid head index
+PASS: frame5 valid body index
+PASS: frame5 valid legs index
+PASS: frame6 four layers
+PASS: frame6 valid head index
+PASS: frame6 valid body index
+PASS: frame6 valid legs index
+PASS: frame7 four layers
+PASS: frame7 valid head index
+PASS: frame7 valid body index
+PASS: frame7 valid legs index
+PASS: frame8 four layers
+PASS: frame8 valid head index
+PASS: frame8 valid body index
+PASS: frame8 valid legs index
+PASS: frame9 four layers
+PASS: frame9 valid head index
+PASS: frame9 valid body index
+PASS: frame9 valid legs index
+PASS: frame10 four layers
+PASS: frame10 valid head index
+PASS: frame10 valid body index
+PASS: frame10 valid legs index
+PASS: frame11 four layers
+PASS: frame11 valid head index
+PASS: frame11 valid body index
+PASS: frame11 valid legs index
+PASS: frame12 four layers
+PASS: frame12 valid head index
+PASS: frame12 valid body index
+PASS: frame12 valid legs index
+PASS: frame13 four layers
+PASS: frame13 valid head index
+PASS: frame13 valid body index
+PASS: frame13 valid legs index
+PASS: frame14 four layers
+PASS: frame14 valid head index
+PASS: frame14 valid body index
+PASS: frame14 valid legs index
+PASS: frame15 four layers
+PASS: frame15 valid head index
+PASS: frame15 valid body index
+PASS: frame15 valid legs index
+PASS: frame16 four layers
+PASS: frame16 valid head index
+PASS: frame16 valid body index
+PASS: frame16 valid legs index
+PASS: frame17 four layers
+PASS: frame17 valid head index
+PASS: frame17 valid body index
+PASS: frame17 valid legs index
+PASS: frame18 four layers
+PASS: frame18 valid head index
+PASS: frame18 valid body index
+PASS: frame18 valid legs index
+PASS: frame19 four layers
+PASS: frame19 valid head index
+PASS: frame19 valid body index
+PASS: frame19 valid legs index
+PASS: frame20 four layers
+PASS: frame20 valid head index
+PASS: frame20 valid body index
+PASS: frame20 valid legs index
+PASS: frame21 four layers
+PASS: frame21 valid head index
+PASS: frame21 valid body index
+PASS: frame21 valid legs index
+PASS: frame22 four layers
+PASS: frame22 valid head index
+PASS: frame22 valid body index
+PASS: frame22 valid legs index
+PASS: frame23 four layers
+PASS: frame23 valid head index
+PASS: frame23 valid body index
+PASS: frame23 valid legs index
+PASS: frame24 four layers
+PASS: frame24 valid head index
+PASS: frame24 valid body index
+PASS: frame24 valid legs index
+PASS: frame25 four layers
+PASS: frame25 valid head index
+PASS: frame25 valid body index
+PASS: frame25 valid legs index
+PASS: frame26 four layers
+PASS: frame26 valid head index
+PASS: frame26 valid body index
+PASS: frame26 valid legs index
+PASS: frame27 four layers
+PASS: frame27 valid head index
+PASS: frame27 valid body index
+PASS: frame27 valid legs index
+PASS: frame28 four layers
+PASS: frame28 valid head index
+PASS: frame28 valid body index
+PASS: frame28 valid legs index
+PASS: frame29 four layers
+PASS: frame29 valid head index
+PASS: frame29 valid body index
+PASS: frame29 valid legs index
+PASS: slash/ground frame13 valid beat
+PASS: slash/ground frame14 valid beat
+PASS: slash/ground frame15 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame13 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash/air frame23 valid beat
+PASS: slash/air frame24 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash visual duration=0.300000s
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot visual duration=0.400000s
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/ground frame14 valid beat
+PASS: tram_kiem/ground frame15 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem/air frame23 valid beat
+PASS: tram_kiem/air frame24 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem visual duration=0.300000s
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien visual duration=0.400000s
+PASS: slash .30s, hit .10-.20
+PASS: reference unchanged hash art/reference/chr_dbl_board_trang_bi.png
+PASS: reference unchanged hash art/reference/chr_dbl_board_animation.png
+PASS: reference unchanged hash art/reference/ref_dinh_bo_linh.png
+PASS: idle actual RGBA height=95.849 logic px sole=0.000; preview1600x720 height=128.000 px
+Lv1 real-file checks failures=0; assets=148 frames=30 skills=4
+exit=0
+
+$ python3 tools/check_lv1_sizes.py
+PASS: frame00 bare head/hair=77.000 source pixels H=191.699000 ratio=0.401671, target.40 +/- .03
+PASS: all8 active heads have no hat
+PASS: frame00 head RGBA exactly equals bare-head asset; no hat hidden in measurement
+PASS: kiem_lv1 longest alpha side/H=0.782477 (same metric as ref_render, not axial length)
+PASS: bow_idle actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_release actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_draw_15 actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: bow_draw_16 actual opaque axial span=185.000, ratio=0.965055H (held bow measured along its tilted axis)
+PASS: cung_lv1 actual opaque axial span=183.034, ratio=0.954797H (held bow measured along its tilted axis)
+PASS: arrow actual length/H=0.620765
+PASS: skill_arrow actual length/H=0.636414
+BODY RGBA SHA256 body_9 a16c11f1e093db95114172f17bcf7d015b1262ad0279a028415341bd259eb871
+BODY RGBA SHA256 body_10 c9f3d502499f994479ee9acc4c3a20ddb059754ffa84b5012c1960cb8de2470b
+BODY RGBA SHA256 body_11 cfb1e6be248c5018f4cbff910232747e377fba174320ac877f627c308de2af74
+BODY RGBA SHA256 body_12 8763ee3b849423c5f503456b70d1d439c5d5d9b9fe8588bfb42b37a8bb4da2ab
+PASS: four genuinely different torso RGBA hashes
+PASS: full attack blade length/H=0.777260, target .75..8
+PASS: swing_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: slash six reference beats total.30s hit.10-.20
+PASS: slash beat2 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat4 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat5 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem six reference beats total.30s hit.10-.20
+PASS: tram_kiem beat2 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat4 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat5 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: actual opaque blade (excluding handle) span/H=0.782477
+Lv1 compact/proportion/weapon checks failures=0
+exit=0
+
+$ python3 tools/check_arrow_alignment.py
+PASS: arrow_draw_15 actual shaft slope=0.101646; nock gap=0.048253 logic px; bow-rest gap=0.090401 logic px
+PASS: arrow_draw_16 actual shaft slope=0.097468; nock gap=0.021232 logic px; bow-rest gap=0.050987 logic px
+PASS: arrow actual shaft slope=-0.000927; nock gap=0.030580 logic px; bow-rest gap=0.012894 logic px
+PASS: skill_arrow actual shaft slope=-0.007192; nock gap=0.248981 logic px; bow-rest gap=0.111732 logic px
+Actual painted-shaft alignment failures=0
+exit=0
+
+$ python3 tools/check_motion_art.py
+run_v3_legs_0 RGBA_SHA256=1db7492bb4d688864f62c32b8834b32d91b13ed15fb5aaf96db004bba33360bf feet/H=0.535503350
+PASS: run_v3_legs_0 measured foot lands on actual boot pixels
+PASS: run_v3_legs_0 measured foot lands on actual boot pixels
+carry_v4_legs_3 RGBA_SHA256=2108c457c6c92c5c97b77ea21f38d7536726f12ba754ebf9bff1938561d8f1e8 feet/H=0.317741860
+PASS: carry_v4_legs_3 measured foot lands on actual boot pixels
+PASS: carry_v4_legs_3 measured foot lands on actual boot pixels
+run_v3_legs_2 RGBA_SHA256=326755dc003f28402d8a28a1067bad7d2dac521dd33a19000c3b72b4833b1603 feet/H=0.530178071
+PASS: run_v3_legs_2 measured foot lands on actual boot pixels
+PASS: run_v3_legs_2 measured foot lands on actual boot pixels
+run_v3_legs_3 RGBA_SHA256=ec3f2baedbbeb9e06dfd84b94f2cc57ea5e2244c8aec18c0207da9bd8ff3b38d feet/H=0.494621940
+PASS: run_v3_legs_3 measured foot lands on actual boot pixels
+PASS: run_v3_legs_3 measured foot lands on actual boot pixels
+run_v3_legs_4 RGBA_SHA256=4d41f08621fd8df16a09e00d7b66866e28079387779100cf6285e738a42e0ed9 feet/H=0.341632875
+PASS: run_v3_legs_4 measured foot lands on actual boot pixels
+PASS: run_v3_legs_4 measured foot lands on actual boot pixels
+run_v3_legs_5 RGBA_SHA256=96e531bffbb2accadcf70e7083b67b82ac13c12cebd49db2b7002c1802ea4043 feet/H=0.470388915
+PASS: run_v3_legs_5 measured foot lands on actual boot pixels
+PASS: run_v3_legs_5 measured foot lands on actual boot pixels
+PASS: all15 run-frame hash pairs differ
+PASS: wide strides=6/6, threshold .30H
+trail_slash_16_0 opaque_area/H2=0.222294748 visible_area/H2=0.242377196 core_alpha_p90=1.000000000
+trail_slash_16_1 opaque_area/H2=0.462304501 visible_area/H2=0.492727506 core_alpha_p90=1.000000000
+PASS: trail_slash_16_1 sweep opaque area>=.25H2 and core>=.8
+trail_slash_16_2 opaque_area/H2=0.393240470 visible_area/H2=0.422221239 core_alpha_p90=1.000000000
+PASS: trail_slash_16_2 sweep opaque area>=.25H2 and core>=.8
+trail_slash_16_3 opaque_area/H2=0.000000000 visible_area/H2=0.295086821 core_alpha_p90=0.549019608
+trail_slash_16_4 opaque_area/H2=0.000000000 visible_area/H2=0.190892111 core_alpha_p90=0.219607843
+trail_slash_39_0 opaque_area/H2=0.123433587 visible_area/H2=0.137366126 core_alpha_p90=1.000000000
+trail_slash_39_1 opaque_area/H2=0.000000000 visible_area/H2=0.109664320 core_alpha_p90=0.447058824
+trail_tram_kiem_16_0 opaque_area/H2=0.272990685 visible_area/H2=0.295631061 core_alpha_p90=1.000000000
+trail_tram_kiem_16_1 opaque_area/H2=0.563696376 visible_area/H2=0.596541248 core_alpha_p90=1.000000000
+PASS: trail_tram_kiem_16_1 sweep opaque area>=.25H2 and core>=.8
+trail_tram_kiem_16_2 opaque_area/H2=0.478305151 visible_area/H2=0.510115968 core_alpha_p90=1.000000000
+PASS: trail_tram_kiem_16_2 sweep opaque area>=.25H2 and core>=.8
+trail_tram_kiem_16_3 opaque_area/H2=0.000000000 visible_area/H2=0.359878570 core_alpha_p90=0.549019608
+trail_tram_kiem_16_4 opaque_area/H2=0.000000000 visible_area/H2=0.230703253 core_alpha_p90=0.219607843
+trail_tram_kiem_39_0 opaque_area/H2=0.150455094 visible_area/H2=0.165775444 core_alpha_p90=1.000000000
+trail_tram_kiem_39_1 opaque_area/H2=0.000000000 visible_area/H2=0.133393176 core_alpha_p90=0.447058824
+PASS: actual blade excluding hilt/H=0.782476695
+PASS: tucked0 actual human silhouette=113x142, compact aspect=0.795775
+PASS: tucked1 actual human silhouette=142x113, compact aspect=1.256637
+PASS: tucked2 actual human silhouette=113x142, compact aspect=0.795775
+PASS: tucked3 actual human silhouette=142x113, compact aspect=1.256637
+PASS: clip source mapping rise7 / roll8..11 / fall12
+Motion real-RGBA checks failures=0
+exit=0
+
+$ python3 tools/check_run_cycle_v3.py
+PASS: all30 anatomy/frame rows unchanged outside authorized shared weapon placement/depth
+PASS: clip/frame mapping and numeric reference table unchanged
+PASS: all non-weapon asset registrations unchanged; authorized retired/repainted IDs explicit
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_idle_side_96.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_idle_side_96_x4.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/body.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/bow.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/dao.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/foot_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/foot_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/forearm_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/forearm_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/hand_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/hand_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/head.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/shin_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/shin_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/thigh_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/thigh_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/upper_arm_far.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_parts/upper_arm_near.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/arrow_1.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/arrow_2.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_01.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_02.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_03.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_04.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_05.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_06.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_07.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_08.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_09.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_10.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_11.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_12.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_cung_1.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_cung_2.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_cung_3.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/body_cung_4.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/cung_1.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/cung_2.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/cung_3.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/cung_4.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/cung_5.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/head_1.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/head_2.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/head_3.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_1.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_2.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_3.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_4.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_5.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/kiem_6.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_01.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_02.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_03.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_04.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_05.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_06.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_07.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_08.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_09.png
+PASS: unchanged baseline image art/sprites/characters/chr_dbl_poses/legs_10.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/arrow.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/arrow_draw_15.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/arrow_draw_16.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/attack_fragment.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_10.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_11.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_12.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_13.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_14.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_15.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_16.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_17.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_6.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_7.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_8.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_9.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/body_hold_cung.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/bow_draw.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/bow_draw_15.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/bow_draw_16.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/bow_idle.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/bow_release.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/carry_v4_legs_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/fall_body_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/fall_head_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/fall_legs_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_6.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_7.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_6.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/head_without_hat_7.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_6.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_7.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_8.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_9.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_guard.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/legs_lunge.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/pose_flash.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/quiver.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_body_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_body_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_body_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_body_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_head_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_head_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_head_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_head_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_legs_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_legs_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_legs_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_legs_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_wind_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_wind_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_wind_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/roll_wind_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_leg_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_cung_body_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_kiem_body_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/run_v3_legs_5.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/skill_arrow.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/air_poses_wind_v1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_a.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_a_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_a_board40.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_b.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_b_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_b_board40.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bodies_b_rejected.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/bow_low_torso_v1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/carry_v4_leg_candidates.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/carry_v4_leg_shoes.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/compact_swings_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/hat_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/heads.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/heads_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/horizontal_attack.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/legs.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/legs_50.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/legs_board40.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/run_strides_v1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/run_v3_legs.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/run_v3_sword_torsos.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/run_v3_torsos.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/slash_crescent_surge_v1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sources/weapons.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_mask_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_mask_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_mask_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_mask_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_mask_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_reverse_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_mask_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_mask_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_mask_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_mask_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_mask_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_reverse_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_surge_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_skill_surge_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_surge_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/swing_surge_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/sword.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_16_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_16_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_16_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_16_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_16_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_39_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_slash_39_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_16_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_16_1.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_16_2.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_16_3.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_16_4.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_39_0.png
+PASS: unchanged baseline image art/sprites/characters/lv1_30/trail_tram_kiem_39_1.png
+PASS: unchanged baseline image art/sprites/weapons/swing/arrow_ready.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv1_bo_xuong.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv1_dam.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv1_gio_sau.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv1_ngang.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv1_vung_len.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv30_bo_xuong.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv30_dam.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv30_gio_sau.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv30_ngang.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv30_vung_len.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv60_bo_xuong.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv60_dam.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv60_gio_sau.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv60_ngang.png
+PASS: unchanged baseline image art/sprites/weapons/swing/lv60_vung_len.png
+PASS: unchanged baseline image art/sprites/weapons/swing/sources/straight_tiers.png
+PASS: unchanged baseline image art/sprites/weapons/swing/trail_1.png
+PASS: unchanged baseline image art/sprites/weapons/swing/trail_2.png
+PASS: unchanged baseline image art/sprites/weapons/swing/trail_3.png
+PASS: unchanged baseline image art/sprites/weapons/swing/trail_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/arrow_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/arrow_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_01.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_02.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_03.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_04.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_05.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_06.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_07.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_08.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_09.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_10.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_11.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_12.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_cung_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_cung_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_cung_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/body_cung_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/cung_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/cung_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/cung_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/cung_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/cung_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/head_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/head_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/head_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/kiem_6.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_01.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_02.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_03.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_04.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_05.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_06.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_07.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_08.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_09.png
+PASS: unchanged baseline image prototype/pose_rig/art/legs_10.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/arrow.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/arrow_draw_15.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/arrow_draw_16.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/attack_fragment.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_10.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_11.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_12.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_13.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_14.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_15.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_16.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_17.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_6.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_7.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_8.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_9.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/body_hold_cung.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/bow_draw.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/bow_draw_15.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/bow_draw_16.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/bow_idle.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/bow_release.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/carry_v4_legs_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/fall_body_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/fall_head_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/fall_legs_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_6.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_7.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_6.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/head_without_hat_7.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_6.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_7.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_8.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_9.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_guard.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/legs_lunge.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/pose_flash.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/quiver.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_body_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_body_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_body_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_body_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_head_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_head_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_head_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_head_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_legs_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_legs_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_legs_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_legs_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_wind_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_wind_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_wind_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/roll_wind_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_leg_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_cung_body_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_kiem_body_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/run_v3_legs_5.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/skill_arrow.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_mask_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_mask_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_mask_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_mask_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_mask_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_reverse_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_mask_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_mask_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_mask_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_mask_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_mask_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_reverse_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_surge_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_skill_surge_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_surge_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/swing_surge_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/sword.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_16_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_16_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_16_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_16_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_16_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_39_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_slash_39_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_16_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_16_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_16_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_16_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_16_4.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_39_0.png
+PASS: unchanged baseline image prototype/pose_rig/art/lv1_30/trail_tram_kiem_39_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/reference_side.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/arrow_ready.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv1_bo_xuong.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv1_dam.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv1_gio_sau.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv1_ngang.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv1_vung_len.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv30_bo_xuong.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv30_dam.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv30_gio_sau.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv30_ngang.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv30_vung_len.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv60_bo_xuong.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv60_dam.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv60_gio_sau.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv60_ngang.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/lv60_vung_len.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/trail_1.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/trail_2.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/trail_3.png
+PASS: unchanged baseline image prototype/pose_rig/art/swing/trail_4.png
+PASS: unchanged prototype/pose_rig/data/skills.json
+PASS: unchanged prototype/pose_rig/data/effects.json
+PASS: unchanged prototype/config/tuning.gd
+PASS: unchanged prototype/config/runtime_tuning.gd
+PASS: unchanged prototype/scripts/player.gd
+PASS: kiem frame2 torso lean=12.000000000deg; foot span/H=0.535503350
+PASS: kiem frame2 grip painted skin RGBA=(252, 170, 92, 255)
+PASS: kiem frame2 free_hand painted skin RGBA=(253, 170, 96, 255)
+PASS: kiem frame2 rendered weapon cover=0.000000000%, raw silhouette overlap=4.173990421%, z=-1
+RGBA hashes kiem frame2: torso=97f884974f9e0e01965b3b6933c9a60c4563c0b4a2c136a54a63def9a80008f2, legs=1db7492bb4d688864f62c32b8834b32d91b13ed15fb5aaf96db004bba33360bf
+PLACEMENT kiem frame2 head source=[1, -10, 33] own_top_left=[-15.402207729556018, -98.30319001834515] registration=[14.597792270443982, 0.6968099816548516]
+PLACEMENT kiem frame2 body source=[2, -9, 16] own_top_left=[-74.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame2 legs source=[2, -10, 11] own_top_left=[-26.443771626297575, -37.82354844290657] registration=[3.5562283737024245, -4.823548442906571]
+PLACEMENT kiem frame2 weapon source=[1, -12, 49] own_top_left=[-72.5, -41.349500000000006] registration=[-24.5, 24.650499999999994]
+PASS: kiem frame3 torso lean=12.000000000deg; foot span/H=0.317741860
+PASS: kiem frame3 grip painted skin RGBA=(251, 171, 92, 255)
+PASS: kiem frame3 free_hand painted skin RGBA=(248, 165, 93, 255)
+PASS: kiem frame3 rendered weapon cover=0.000000000%, raw silhouette overlap=2.575897657%, z=-1
+RGBA hashes kiem frame3: torso=4ef889dccf067d74edb1a50798b0e3f342dd24c4e472a0233d66ba0b955a1641, legs=2108c457c6c92c5c97b77ea21f38d7536726f12ba754ebf9bff1938561d8f1e8
+PLACEMENT kiem frame3 head source=[1, -10, 32] own_top_left=[-21.402207729556018, -98.30319001834515] registration=[8.597792270443982, -2.3031900183451484]
+PLACEMENT kiem frame3 body source=[3, -11, 16] own_top_left=[-80.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame3 legs source=[3, -11, 9] own_top_left=[-33.06467181467181, -36.855291505791506] registration=[-0.06467181467181149, -9.855291505791506]
+PLACEMENT kiem frame3 weapon source=[1, -13, 47] own_top_left=[-79.5, -40.849500000000006] registration=[-28.5, 19.150499999999994]
+PASS: kiem frame4 torso lean=12.000000000deg; foot span/H=0.530178071
+PASS: kiem frame4 grip painted skin RGBA=(253, 173, 94, 255)
+PASS: kiem frame4 free_hand painted skin RGBA=(254, 181, 102, 255)
+PASS: kiem frame4 rendered weapon cover=0.000000000%, raw silhouette overlap=3.402558055%, z=-1
+RGBA hashes kiem frame4: torso=559f7702871ac5b5845c53743d304b541bc85dee62418c62c8990b15ccaa27c5, legs=326755dc003f28402d8a28a1067bad7d2dac521dd33a19000c3b72b4833b1603
+PLACEMENT kiem frame4 head source=[1, -10, 34] own_top_left=[-12.402207729556018, -98.30319001834515] registration=[17.597792270443982, 3.6968099816548516]
+PLACEMENT kiem frame4 body source=[4, -8, 16] own_top_left=[-71.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame4 legs source=[4, -9, 9] own_top_left=[-23.799815498154985, -37.98787638376383] registration=[3.2001845018450155, -10.987876383763833]
+PLACEMENT kiem frame4 weapon source=[1, -12, 47] own_top_left=[-69.5, -41.349500000000006] registration=[-21.5, 18.650499999999994]
+PASS: kiem frame5 torso lean=12.000000000deg; foot span/H=0.494621940
+PASS: kiem frame5 grip painted skin RGBA=(252, 170, 92, 255)
+PASS: kiem frame5 free_hand painted skin RGBA=(252, 174, 95, 255)
+PASS: kiem frame5 rendered weapon cover=0.000000000%, raw silhouette overlap=3.774813185%, z=-1
+RGBA hashes kiem frame5: torso=6b68ffc43dff222ca0ef7e5aaf4d6a0dae63e77ee5673e5165f62f11e446eb13, legs=ec3f2baedbbeb9e06dfd84b94f2cc57ea5e2244c8aec18c0207da9bd8ff3b38d
+PLACEMENT kiem frame5 head source=[1, -10, 34] own_top_left=[-18.402207729556018, -101.30319001834515] registration=[11.597792270443982, 0.6968099816548516]
+PLACEMENT kiem frame5 body source=[5, -10, 17] own_top_left=[-77.0, -113.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame5 legs source=[5, -11, 11] own_top_left=[-28.08940972222222, -40.832138888888885] registration=[4.910590277777779, -7.832138888888885]
+PLACEMENT kiem frame5 weapon source=[1, -13, 49] own_top_left=[-75.5, -44.349500000000006] registration=[-24.5, 21.650499999999994]
+PASS: kiem frame6 torso lean=12.000000000deg; foot span/H=0.341632875
+PASS: kiem frame6 grip painted skin RGBA=(252, 170, 92, 255)
+PASS: kiem frame6 free_hand painted skin RGBA=(251, 172, 94, 255)
+PASS: kiem frame6 rendered weapon cover=0.000000000%, raw silhouette overlap=3.797552459%, z=-1
+RGBA hashes kiem frame6: torso=1b68213d6f9ed63add3c0663428544e79ee5d288499f18921f1d08a404b3b7af, legs=4d41f08621fd8df16a09e00d7b66866e28079387779100cf6285e738a42e0ed9
+PLACEMENT kiem frame6 head source=[1, -10, 33] own_top_left=[-12.402207729556018, -98.30319001834515] registration=[17.597792270443982, 0.6968099816548516]
+PLACEMENT kiem frame6 body source=[6, -8, 16] own_top_left=[-71.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame6 legs source=[6, -9, 9] own_top_left=[-15.19093851132686, -37.66341585760518] registration=[11.80906148867314, -10.66341585760518]
+PLACEMENT kiem frame6 weapon source=[1, -12, 47] own_top_left=[-69.5, -41.349500000000006] registration=[-21.5, 18.650499999999994]
+PASS: kiem frame7 torso lean=12.000000000deg; foot span/H=0.470388915
+PASS: kiem frame7 grip painted skin RGBA=(253, 173, 94, 255)
+PASS: kiem frame7 free_hand painted skin RGBA=(253, 170, 93, 255)
+PASS: kiem frame7 rendered weapon cover=0.000000000%, raw silhouette overlap=4.279574041%, z=-1
+RGBA hashes kiem frame7: torso=8f568b560031b93ee8160f441377e910e1a0b0fd4faa13cfe66bcf1608b45c36, legs=96e531bffbb2accadcf70e7083b67b82ac13c12cebd49db2b7002c1802ea4043
+PLACEMENT kiem frame7 head source=[0, -9, 36] own_top_left=[-19.452207729556015, -113.30319001834515] registration=[7.547792270443985, -5.303190018345148]
+PLACEMENT kiem frame7 body source=[7, -10, 21] own_top_left=[-77.0, -125.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT kiem frame7 legs source=[7, -5, 15] own_top_left=[-34.11575875486381, -53.131601167315175] registration=[-19.115758754863812, -8.131601167315175]
+PLACEMENT kiem frame7 weapon source=[1, -8, 49] own_top_left=[-74.0, -56.849500000000006] registration=[-38.0, 9.150499999999994]
+PASS: kiem: >=.30H strides=6/6
+PASS: kiem: free hand movement relative to hip/H=0.727997747
+PASS: kiem: all15 torso pairs and all15 leg pairs have distinct RGBA hashes
+PASS: cung frame2 torso lean=12.000000000deg; foot span/H=0.535503350
+PASS: cung frame2 grip painted skin RGBA=(253, 174, 98, 255)
+PASS: cung frame2 free_hand painted skin RGBA=(228, 127, 66, 255)
+PASS: cung frame2 rendered weapon cover=0.000000000%, raw silhouette overlap=14.439921932%, z=-1
+RGBA hashes cung frame2: torso=1bb38928a98cdc429d61e08fb0903c2e24f239f7e108fed8799da8d43e8c63dd, legs=1db7492bb4d688864f62c32b8834b32d91b13ed15fb5aaf96db004bba33360bf
+PLACEMENT cung frame2 head source=[1, -10, 33] own_top_left=[-15.402207729556018, -98.30319001834515] registration=[14.597792270443982, 0.6968099816548516]
+PLACEMENT cung frame2 body source=[2, -9, 16] own_top_left=[-74.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame2 legs source=[2, -10, 11] own_top_left=[-26.443771626297575, -37.82354844290657] registration=[3.5562283737024245, -4.823548442906571]
+PLACEMENT cung frame2 weapon source=[1, -12, 49] own_top_left=[-9.0, -57.849500000000006] registration=[57.0, 62.150499999999994]
+PASS: cung frame3 torso lean=12.000000000deg; foot span/H=0.317741860
+PASS: cung frame3 grip painted skin RGBA=(253, 174, 101, 255)
+PASS: cung frame3 free_hand painted skin RGBA=(238, 139, 77, 255)
+PASS: cung frame3 rendered weapon cover=0.000000000%, raw silhouette overlap=24.436018900%, z=-1
+RGBA hashes cung frame3: torso=9490da79b2cc918725ae05273605c62e4251a67df39b672cec77a16b4bc23ea5, legs=2108c457c6c92c5c97b77ea21f38d7536726f12ba754ebf9bff1938561d8f1e8
+PLACEMENT cung frame3 head source=[1, -10, 32] own_top_left=[-21.402207729556018, -98.30319001834515] registration=[8.597792270443982, -2.3031900183451484]
+PLACEMENT cung frame3 body source=[3, -11, 16] own_top_left=[-80.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame3 legs source=[3, -11, 9] own_top_left=[-33.06467181467181, -36.855291505791506] registration=[-0.06467181467181149, -9.855291505791506]
+PLACEMENT cung frame3 weapon source=[1, -13, 47] own_top_left=[-19.0, -58.349500000000006] registration=[50.0, 55.650499999999994]
+PASS: cung frame4 torso lean=12.000000000deg; foot span/H=0.530178071
+PASS: cung frame4 grip painted skin RGBA=(253, 174, 97, 255)
+PASS: cung frame4 free_hand painted skin RGBA=(236, 129, 64, 255)
+PASS: cung frame4 rendered weapon cover=0.000000000%, raw silhouette overlap=14.520955979%, z=-1
+RGBA hashes cung frame4: torso=90ce31887c32f7976d669f4d8bdc744b29b395915722c2b32b7818e059fd1ff9, legs=326755dc003f28402d8a28a1067bad7d2dac521dd33a19000c3b72b4833b1603
+PLACEMENT cung frame4 head source=[1, -10, 34] own_top_left=[-12.402207729556018, -98.30319001834515] registration=[17.597792270443982, 3.6968099816548516]
+PLACEMENT cung frame4 body source=[4, -8, 16] own_top_left=[-71.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame4 legs source=[4, -9, 9] own_top_left=[-23.799815498154985, -37.98787638376383] registration=[3.2001845018450155, -10.987876383763833]
+PLACEMENT cung frame4 weapon source=[1, -12, 47] own_top_left=[-12.5, -57.349500000000006] registration=[53.5, 56.650499999999994]
+PASS: cung frame5 torso lean=12.000000000deg; foot span/H=0.494621940
+PASS: cung frame5 grip painted skin RGBA=(251, 175, 99, 255)
+PASS: cung frame5 free_hand painted skin RGBA=(253, 172, 96, 255)
+PASS: cung frame5 rendered weapon cover=0.000000000%, raw silhouette overlap=13.801468325%, z=-1
+RGBA hashes cung frame5: torso=85af650904e2b6ecbd3bb8dd52777a99e0509227ef5e545d5b84fb3c6f182e44, legs=ec3f2baedbbeb9e06dfd84b94f2cc57ea5e2244c8aec18c0207da9bd8ff3b38d
+PLACEMENT cung frame5 head source=[1, -10, 34] own_top_left=[-18.402207729556018, -101.30319001834515] registration=[11.597792270443982, 0.6968099816548516]
+PLACEMENT cung frame5 body source=[5, -10, 17] own_top_left=[-77.0, -113.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame5 legs source=[5, -11, 11] own_top_left=[-28.08940972222222, -40.832138888888885] registration=[4.910590277777779, -7.832138888888885]
+PLACEMENT cung frame5 weapon source=[1, -13, 49] own_top_left=[-4.0, -60.349500000000006] registration=[65.0, 59.650499999999994]
+PASS: cung frame6 torso lean=12.000000000deg; foot span/H=0.341632875
+PASS: cung frame6 grip painted skin RGBA=(251, 172, 99, 255)
+PASS: cung frame6 free_hand painted skin RGBA=(250, 169, 94, 255)
+PASS: cung frame6 rendered weapon cover=0.000000000%, raw silhouette overlap=14.438008047%, z=-1
+RGBA hashes cung frame6: torso=0e0a7c177bf20f8878752b817d41fa6080aa0a4e60e61c6b1f4821676e7c6f1c, legs=4d41f08621fd8df16a09e00d7b66866e28079387779100cf6285e738a42e0ed9
+PLACEMENT cung frame6 head source=[1, -10, 33] own_top_left=[-12.402207729556018, -98.30319001834515] registration=[17.597792270443982, 0.6968099816548516]
+PLACEMENT cung frame6 body source=[6, -8, 16] own_top_left=[-71.0, -110.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame6 legs source=[6, -9, 9] own_top_left=[-15.19093851132686, -37.66341585760518] registration=[11.80906148867314, -10.66341585760518]
+PLACEMENT cung frame6 weapon source=[1, -12, 47] own_top_left=[1.0, -57.349500000000006] registration=[67.0, 56.650499999999994]
+PASS: cung frame7 torso lean=12.000000000deg; foot span/H=0.470388915
+PASS: cung frame7 grip painted skin RGBA=(255, 164, 87, 255)
+PASS: cung frame7 free_hand painted skin RGBA=(252, 174, 100, 255)
+PASS: cung frame7 rendered weapon cover=0.000000000%, raw silhouette overlap=20.359771149%, z=-1
+RGBA hashes cung frame7: torso=a81d70c554bcba3736724eb50f5e9e419ddbc6f8638ea46b4066c8a71115cfdf, legs=96e531bffbb2accadcf70e7083b67b82ac13c12cebd49db2b7002c1802ea4043
+PLACEMENT cung frame7 head source=[0, -9, 36] own_top_left=[-19.452207729556015, -113.30319001834515] registration=[7.547792270443985, -5.303190018345148]
+PLACEMENT cung frame7 body source=[7, -10, 21] own_top_left=[-77.0, -125.3495] registration=[-47.0, -62.349500000000006]
+PLACEMENT cung frame7 legs source=[7, -5, 15] own_top_left=[-34.11575875486381, -53.131601167315175] registration=[-19.115758754863812, -8.131601167315175]
+PLACEMENT cung frame7 weapon source=[1, -8, 49] own_top_left=[-9.0, -74.3495] registration=[45.0, 45.650499999999994]
+PASS: cung: >=.30H strides=6/6
+PASS: cung: free hand movement relative to hip/H=0.584295840
+PASS: cung: all15 torso pairs and all15 leg pairs have distinct RGBA hashes
+Run-only real-file checks failures=0
+exit=0
+
+$ python3 tools/check_carry_v4.py
+PASS: all30 frame rows unchanged outside approved frame3 leg and shared held-weapon placement/depth
+PASS: all clip mappings/timings and source reference tables unchanged
+PASS: all anatomy mappings/presentation unchanged outside shared-weapon aliases/master metadata
+PASS: every preexisting non-weapon asset metadata unchanged; retired/repainted weapon IDs are explicit
+PASS: unchanged prototype/pose_rig/data/skills.json
+PASS: unchanged prototype/pose_rig/data/effects.json
+PASS: unchanged prototype/config/tuning.gd
+PASS: unchanged prototype/config/runtime_tuning.gd
+PASS: kiem frame2 dir-1 foot0: whole shoe area=335.192157, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=336/336
+PASS: kiem frame2 dir-1 foot1: whole shoe area=339.062745, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=341/341
+PASS: kiem frame2 dir-1: TWO separate connected visible shoes
+PASS: kiem frame3 dir-1 foot0: whole shoe area=277.219608, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=281/281
+PASS: kiem frame3 dir-1 foot1: whole shoe area=274.945098, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: kiem frame3 dir-1: TWO separate connected visible shoes
+PASS: kiem frame4 dir-1 foot0: whole shoe area=353.898039, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=356/356
+PASS: kiem frame4 dir-1 foot1: whole shoe area=297.850980, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=297/297
+PASS: kiem frame4 dir-1: TWO separate connected visible shoes
+PASS: kiem frame5 dir-1 foot0: whole shoe area=317.070588, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=320/320
+PASS: kiem frame5 dir-1 foot1: whole shoe area=276.643137, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: kiem frame5 dir-1: TWO separate connected visible shoes
+PASS: kiem frame6 dir-1 foot0: whole shoe area=203.109804, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=204/204
+PASS: kiem frame6 dir-1 foot1: whole shoe area=265.964706, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=269/269
+PASS: kiem frame6 dir-1: TWO separate connected visible shoes
+PASS: kiem frame7 dir-1 foot0: whole shoe area=323.639216, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=323/323
+PASS: kiem frame7 dir-1 foot1: whole shoe area=299.988235, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=302/302
+PASS: kiem frame7 dir-1: TWO separate connected visible shoes
+PASS: kiem frame2 dir1 foot0: whole shoe area=335.192157, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=336/336
+PASS: kiem frame2 dir1 foot1: whole shoe area=339.062745, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=341/341
+PASS: kiem frame2 dir1: TWO separate connected visible shoes
+PASS: kiem frame3 dir1 foot0: whole shoe area=277.219608, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=281/281
+PASS: kiem frame3 dir1 foot1: whole shoe area=274.945098, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: kiem frame3 dir1: TWO separate connected visible shoes
+PASS: kiem frame4 dir1 foot0: whole shoe area=353.898039, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=356/356
+PASS: kiem frame4 dir1 foot1: whole shoe area=297.850980, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=297/297
+PASS: kiem frame4 dir1: TWO separate connected visible shoes
+PASS: kiem frame5 dir1 foot0: whole shoe area=317.070588, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=320/320
+PASS: kiem frame5 dir1 foot1: whole shoe area=276.643137, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: kiem frame5 dir1: TWO separate connected visible shoes
+PASS: kiem frame6 dir1 foot0: whole shoe area=203.109804, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=204/204
+PASS: kiem frame6 dir1 foot1: whole shoe area=265.964706, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=269/269
+PASS: kiem frame6 dir1: TWO separate connected visible shoes
+PASS: kiem frame7 dir1 foot0: whole shoe area=323.639216, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=323/323
+PASS: kiem frame7 dir1 foot1: whole shoe area=299.988235, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=302/302
+PASS: kiem frame7 dir1: TWO separate connected visible shoes
+PLACEMENT kiem frame0 weapon: source [image,dx,dy]=[1, -9, 45]; image_offset=[-4, 27]; own_registration=[6.804000000000002, 22.272000000000006]; own_top_left=[-32.196, -31.727999999999994]
+PLACEMENT kiem frame1 weapon: source [image,dx,dy]=[1, -9, 46]; image_offset=[-4, 27]; own_registration=[6.804000000000002, 25.272000000000006]; own_top_left=[-32.196, -31.727999999999994]
+PLACEMENT kiem frame2 weapon: source [image,dx,dy]=[1, -12, 49]; image_offset=[-4, 27]; own_registration=[-24.5, 24.650499999999994]; own_top_left=[-72.5, -41.349500000000006]
+PLACEMENT kiem frame3 head: source [image,dx,dy]=[1, -10, 32]; image_offset=[0, 0]; own_registration=[8.597792270443982, -2.3031900183451484]; own_top_left=[-21.402207729556018, -98.30319001834515]
+PLACEMENT kiem frame3 body: source [image,dx,dy]=[3, -11, 16]; image_offset=[0, 0]; own_registration=[-47.0, -62.349500000000006]; own_top_left=[-80.0, -110.3495]
+PLACEMENT kiem frame3 legs: source [image,dx,dy]=[3, -11, 9]; image_offset=[0, 0]; own_registration=[-0.06467181467181149, -9.855291505791506]; own_top_left=[-33.06467181467181, -36.855291505791506]
+PLACEMENT kiem frame3 weapon: source [image,dx,dy]=[1, -13, 47]; image_offset=[-4, 27]; own_registration=[-28.5, 19.150499999999994]; own_top_left=[-79.5, -40.849500000000006]
+PLACEMENT kiem frame4 weapon: source [image,dx,dy]=[1, -12, 47]; image_offset=[-4, 27]; own_registration=[-21.5, 18.650499999999994]; own_top_left=[-69.5, -41.349500000000006]
+PLACEMENT kiem frame5 weapon: source [image,dx,dy]=[1, -13, 49]; image_offset=[-4, 27]; own_registration=[-24.5, 21.650499999999994]; own_top_left=[-75.5, -44.349500000000006]
+PLACEMENT kiem frame6 weapon: source [image,dx,dy]=[1, -12, 47]; image_offset=[-4, 27]; own_registration=[-21.5, 18.650499999999994]; own_top_left=[-69.5, -41.349500000000006]
+PLACEMENT kiem frame7 weapon: source [image,dx,dy]=[1, -8, 49]; image_offset=[-4, 27]; own_registration=[-38.0, 9.150499999999994]; own_top_left=[-74.0, -56.849500000000006]
+PLACEMENT kiem frame12 weapon: source [image,dx,dy]=[1, -9, 49]; image_offset=[-4, 27]; own_registration=[53.8974358974359, 0.7820512820512846]; own_top_left=[14.897435897435898, -65.21794871794872]
+PLACEMENT kiem frame21 weapon: source [image,dx,dy]=[1, -10, 46]; image_offset=[-4, 27]; own_registration=[40.631179487179494, 0.636397435897436]; own_top_left=[-1.3688205128205055, -56.363602564102564]
+PASS: cung frame2 dir-1 foot0: whole shoe area=335.192157, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=336/336
+PASS: cung frame2 dir-1 foot1: whole shoe area=339.062745, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=341/341
+PASS: cung frame2 dir-1: TWO separate connected visible shoes
+PASS: cung frame3 dir-1 foot0: whole shoe area=277.219608, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=281/281
+PASS: cung frame3 dir-1 foot1: whole shoe area=274.945098, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: cung frame3 dir-1: TWO separate connected visible shoes
+PASS: cung frame4 dir-1 foot0: whole shoe area=353.898039, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=356/356
+PASS: cung frame4 dir-1 foot1: whole shoe area=297.850980, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=297/297
+PASS: cung frame4 dir-1: TWO separate connected visible shoes
+PASS: cung frame5 dir-1 foot0: whole shoe area=317.070588, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=320/320
+PASS: cung frame5 dir-1 foot1: whole shoe area=276.643137, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: cung frame5 dir-1: TWO separate connected visible shoes
+PASS: cung frame6 dir-1 foot0: whole shoe area=203.109804, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=204/204
+PASS: cung frame6 dir-1 foot1: whole shoe area=265.964706, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=269/269
+PASS: cung frame6 dir-1: TWO separate connected visible shoes
+PASS: cung frame7 dir-1 foot0: whole shoe area=323.639216, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=323/323
+PASS: cung frame7 dir-1 foot1: whole shoe area=299.988235, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=302/302
+PASS: cung frame7 dir-1: TWO separate connected visible shoes
+PASS: cung frame2 dir1 foot0: whole shoe area=335.192157, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=336/336
+PASS: cung frame2 dir1 foot1: whole shoe area=339.062745, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=341/341
+PASS: cung frame2 dir1: TWO separate connected visible shoes
+PASS: cung frame3 dir1 foot0: whole shoe area=277.219608, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=281/281
+PASS: cung frame3 dir1 foot1: whole shoe area=274.945098, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: cung frame3 dir1: TWO separate connected visible shoes
+PASS: cung frame4 dir1 foot0: whole shoe area=353.898039, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=356/356
+PASS: cung frame4 dir1 foot1: whole shoe area=297.850980, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=297/297
+PASS: cung frame4 dir1: TWO separate connected visible shoes
+PASS: cung frame5 dir1 foot0: whole shoe area=317.070588, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=320/320
+PASS: cung frame5 dir1 foot1: whole shoe area=276.643137, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=277/277
+PASS: cung frame5 dir1: TWO separate connected visible shoes
+PASS: cung frame6 dir1 foot0: whole shoe area=203.109804, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=204/204
+PASS: cung frame6 dir1 foot1: whole shoe area=265.964706, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=269/269
+PASS: cung frame6 dir1: TWO separate connected visible shoes
+PASS: cung frame7 dir1 foot0: whole shoe area=323.639216, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=323/323
+PASS: cung frame7 dir1 foot1: whole shoe area=299.988235, covered=0.000000000% <=30%
+PASS: whole visible shoe connected pixels=302/302
+PASS: cung frame7 dir1: TWO separate connected visible shoes
+PLACEMENT cung frame0 weapon: source [image,dx,dy]=[1, -9, 45]; image_offset=[-10, 9]; own_registration=[64.79683698296837, 50.52154622871046]; own_top_left=[7.796836982968372, -57.47845377128954]
+PASS: bow frame0 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame1 weapon: source [image,dx,dy]=[1, -9, 46]; image_offset=[-10, 9]; own_registration=[64.79683698296837, 53.52154622871046]; own_top_left=[7.796836982968372, -57.47845377128954]
+PASS: bow frame1 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame2 weapon: source [image,dx,dy]=[1, -12, 49]; image_offset=[-10, 9]; own_registration=[57.0, 62.150499999999994]; own_top_left=[-9.0, -57.849500000000006]
+PASS: bow frame2 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame3 head: source [image,dx,dy]=[1, -10, 32]; image_offset=[0, 0]; own_registration=[8.597792270443982, -2.3031900183451484]; own_top_left=[-21.402207729556018, -98.30319001834515]
+PLACEMENT cung frame3 body: source [image,dx,dy]=[3, -11, 16]; image_offset=[0, 0]; own_registration=[-47.0, -62.349500000000006]; own_top_left=[-80.0, -110.3495]
+PLACEMENT cung frame3 legs: source [image,dx,dy]=[3, -11, 9]; image_offset=[0, 0]; own_registration=[-0.06467181467181149, -9.855291505791506]; own_top_left=[-33.06467181467181, -36.855291505791506]
+PLACEMENT cung frame3 weapon: source [image,dx,dy]=[1, -13, 47]; image_offset=[-10, 9]; own_registration=[50.0, 55.650499999999994]; own_top_left=[-19.0, -58.349500000000006]
+PASS: bow frame3 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame4 weapon: source [image,dx,dy]=[1, -12, 47]; image_offset=[-10, 9]; own_registration=[53.5, 56.650499999999994]; own_top_left=[-12.5, -57.349500000000006]
+PASS: bow frame4 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame5 weapon: source [image,dx,dy]=[1, -13, 49]; image_offset=[-10, 9]; own_registration=[65.0, 59.650499999999994]; own_top_left=[-4.0, -60.349500000000006]
+PASS: bow frame5 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame6 weapon: source [image,dx,dy]=[1, -12, 47]; image_offset=[-10, 9]; own_registration=[67.0, 56.650499999999994]; own_top_left=[1.0, -57.349500000000006]
+PASS: bow frame6 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame7 weapon: source [image,dx,dy]=[1, -8, 49]; image_offset=[-10, 9]; own_registration=[45.0, 45.650499999999994]; own_top_left=[-9.0, -74.3495]
+PASS: bow frame7 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame12 weapon: source [image,dx,dy]=[1, -9, 49]; image_offset=[-10, 9]; own_registration=[86.8974358974359, 37.782051282051285]; own_top_left=[29.897435897435898, -82.21794871794872]
+PASS: bow frame12 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+PLACEMENT cung frame21 weapon: source [image,dx,dy]=[1, -10, 46]; image_offset=[-10, 9]; own_registration=[73.6311794871795, 37.636397435897436]; own_top_left=[13.631179487179494, -73.36360256410256]
+PASS: bow frame21 hand-midpoint/H=0.039153868; tip distances=[np.float64(41.529334250493164), np.float64(44.595055589228735)]; imbalance(shorter denominator)=7.382062328%; true middle grip=[76, 53]
+Old frame3 rear shoe-only covered=1.150414256%; this does not measure its hidden calf or silhouette readability.
+PASS: negative control: BOTH former sole landmarks land on the SAME front shoe; whole-shoe polygons now select the real rear shoe independently
+PASS: negative control: old bow_hold midpoint gap/H=0.210150739, correctly rejected
+PASS: negative control: old run_v3_bow midpoint gap/H=0.338000650, correctly rejected
+Maximum whole-foot covered area=0.000000000%;24 frame/school/direction cases,48 shoes; failures=0
+exit=0
+
+$ python3 tools/check_weapon_masters_v5.py
+PASS: all30 anatomy/source frame rows unchanged; only held weapon registration/depth changed
+PASS: only explicit old held variants retired and12 action blade composites repainted; all other asset metadata unchanged
+PASS: run weapon alias is the SAME canonical sword asset
+PASS: obsolete held texture physically removed: bow_hold
+PASS: obsolete held texture physically removed: carry_v4_bow
+PASS: obsolete held texture physically removed: run_v3_bow
+PASS: obsolete held texture physically removed: sword_hold
+PASS: obsolete held texture physically removed: sword_run
+PASS: kiem master has512px long side, real transparency and opaque painted core
+PASS: kiem engine texture is byte-identical to canonical exported sprite
+PASS: kiem real opaque span/H=0.782476695; sword longest alpha side, bow opaque axial span
+PASS: kiem middle cord/leather grip at actual RGBA=[111, 55, 29, 255]
+PASS: kiem frame0: no per-frame texture override
+PASS: kiem frame0 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame0: source [image,dx,dy]=[1, -9, 45]; own_registration=[6.804000000000002, 22.272000000000006]; own_top_left=[-32.196, -31.727999999999994]; shared_texture=kiem_lv1.png
+PASS: kiem frame1: no per-frame texture override
+PASS: kiem frame1 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame1: source [image,dx,dy]=[1, -9, 46]; own_registration=[6.804000000000002, 25.272000000000006]; own_top_left=[-32.196, -31.727999999999994]; shared_texture=kiem_lv1.png
+PASS: kiem frame2: no per-frame texture override
+PASS: kiem frame2 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame2: source [image,dx,dy]=[1, -12, 49]; own_registration=[-24.5, 24.650499999999994]; own_top_left=[-72.5, -41.349500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame3: no per-frame texture override
+PASS: kiem frame3 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame3: source [image,dx,dy]=[1, -13, 47]; own_registration=[-28.5, 19.150499999999994]; own_top_left=[-79.5, -40.849500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame4: no per-frame texture override
+PASS: kiem frame4 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame4: source [image,dx,dy]=[1, -12, 47]; own_registration=[-21.5, 18.650499999999994]; own_top_left=[-69.5, -41.349500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame5: no per-frame texture override
+PASS: kiem frame5 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame5: source [image,dx,dy]=[1, -13, 49]; own_registration=[-24.5, 21.650499999999994]; own_top_left=[-75.5, -44.349500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame6: no per-frame texture override
+PASS: kiem frame6 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame6: source [image,dx,dy]=[1, -12, 47]; own_registration=[-21.5, 18.650499999999994]; own_top_left=[-69.5, -41.349500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame7: no per-frame texture override
+PASS: kiem frame7 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame7: source [image,dx,dy]=[1, -8, 49]; own_registration=[-38.0, 9.150499999999994]; own_top_left=[-74.0, -56.849500000000006]; shared_texture=kiem_lv1.png
+PASS: kiem frame12: no per-frame texture override
+PASS: kiem frame12 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame12: source [image,dx,dy]=[1, -9, 49]; own_registration=[53.8974358974359, 0.7820512820512846]; own_top_left=[14.897435897435898, -65.21794871794872]; shared_texture=kiem_lv1.png
+PASS: kiem frame21: no per-frame texture override
+PASS: kiem frame21 grip-to-painted-hand=0.000000000logic px
+PLACEMENT kiem frame21: source [image,dx,dy]=[1, -10, 46]; own_registration=[40.631179487179494, 0.636397435897436]; own_top_left=[-1.3688205128205055, -56.363602564102564]; shared_texture=kiem_lv1.png
+PASS: kiem dark outline pixels=948; brass cap/guard pixels=47
+PASS: held sword bright/reflected steel=232, blue-grey shadow steel=479, red tassel=75 real opaque pixels
+PASS: kiem GPU cross-section0.2: painted material detected
+PASS: kiem GPU H128 section0.2 left: opaque DARK contour pixel cells=2 >=1px
+PASS: kiem GPU H128 section0.2 right: opaque DARK contour pixel cells=3 >=1px
+PASS: kiem GPU cross-section0.35: painted material detected
+PASS: kiem GPU H128 section0.35 left: opaque DARK contour pixel cells=3 >=1px
+PASS: kiem GPU H128 section0.35 right: opaque DARK contour pixel cells=2 >=1px
+PASS: kiem GPU cross-section0.65: painted material detected
+PASS: kiem GPU H128 section0.65 left: opaque DARK contour pixel cells=2 >=1px
+PASS: kiem GPU H128 section0.65 right: opaque DARK contour pixel cells=2 >=1px
+PASS: kiem GPU cross-section0.8: painted material detected
+PASS: kiem GPU H128 section0.8 left: opaque DARK contour pixel cells=2 >=1px
+PASS: kiem GPU H128 section0.8 right: opaque DARK contour pixel cells=3 >=1px
+kiem minimum measured opaque dark contour pixel cells per sampled side=2; real GPU render factor=0.667713447
+PASS: cung master has512px long side, real transparency and opaque painted core
+PASS: cung engine texture is byte-identical to canonical exported sprite
+PASS: cung real opaque span/H=0.954796868; sword longest alpha side, bow opaque axial span
+PASS: cung middle cord/leather grip at actual RGBA=[87, 53, 40, 255]
+PASS: cung frame0: no per-frame texture override
+PASS: cung frame0 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame0: source [image,dx,dy]=[1, -9, 45]; own_registration=[64.79683698296837, 50.52154622871046]; own_top_left=[7.796836982968372, -57.47845377128954]; shared_texture=cung_lv1.png
+PASS: cung frame1: no per-frame texture override
+PASS: cung frame1 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame1: source [image,dx,dy]=[1, -9, 46]; own_registration=[64.79683698296837, 53.52154622871046]; own_top_left=[7.796836982968372, -57.47845377128954]; shared_texture=cung_lv1.png
+PASS: cung frame2: no per-frame texture override
+PASS: cung frame2 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame2: source [image,dx,dy]=[1, -12, 49]; own_registration=[57.0, 62.150499999999994]; own_top_left=[-9.0, -57.849500000000006]; shared_texture=cung_lv1.png
+PASS: cung frame3: no per-frame texture override
+PASS: cung frame3 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame3: source [image,dx,dy]=[1, -13, 47]; own_registration=[50.0, 55.650499999999994]; own_top_left=[-19.0, -58.349500000000006]; shared_texture=cung_lv1.png
+PASS: cung frame4: no per-frame texture override
+PASS: cung frame4 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame4: source [image,dx,dy]=[1, -12, 47]; own_registration=[53.5, 56.650499999999994]; own_top_left=[-12.5, -57.349500000000006]; shared_texture=cung_lv1.png
+PASS: cung frame5: no per-frame texture override
+PASS: cung frame5 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame5: source [image,dx,dy]=[1, -13, 49]; own_registration=[65.0, 59.650499999999994]; own_top_left=[-4.0, -60.349500000000006]; shared_texture=cung_lv1.png
+PASS: cung frame6: no per-frame texture override
+PASS: cung frame6 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame6: source [image,dx,dy]=[1, -12, 47]; own_registration=[67.0, 56.650499999999994]; own_top_left=[1.0, -57.349500000000006]; shared_texture=cung_lv1.png
+PASS: cung frame7: no per-frame texture override
+PASS: cung frame7 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame7: source [image,dx,dy]=[1, -8, 49]; own_registration=[45.0, 45.650499999999994]; own_top_left=[-9.0, -74.3495]; shared_texture=cung_lv1.png
+PASS: cung frame12: no per-frame texture override
+PASS: cung frame12 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame12: source [image,dx,dy]=[1, -9, 49]; own_registration=[86.8974358974359, 37.782051282051285]; own_top_left=[29.897435897435898, -82.21794871794872]; shared_texture=cung_lv1.png
+PASS: cung frame21: no per-frame texture override
+PASS: cung frame21 grip-to-painted-hand=0.000000000logic px
+PLACEMENT cung frame21: source [image,dx,dy]=[1, -10, 46]; own_registration=[73.6311794871795, 37.636397435897436]; own_top_left=[13.631179487179494, -73.36360256410256]; shared_texture=cung_lv1.png
+PASS: cung dark outline pixels=1614; brass cap/guard pixels=541
+PASS: held bow WHITE STRING opaque light pixels=523
+PASS: cung GPU cross-section0.2: painted material detected
+PASS: cung GPU H128 section0.2 left: opaque DARK contour pixel cells=3 >=1px
+PASS: cung GPU H128 section0.2 right: opaque DARK contour pixel cells=2 >=1px
+PASS: cung GPU cross-section0.35: painted material detected
+PASS: cung GPU H128 section0.35 left: opaque DARK contour pixel cells=2 >=1px
+PASS: cung GPU H128 section0.35 right: opaque DARK contour pixel cells=2 >=1px
+PASS: cung GPU cross-section0.65: painted material detected
+PASS: cung GPU H128 section0.65 left: opaque DARK contour pixel cells=2 >=1px
+PASS: cung GPU H128 section0.65 right: opaque DARK contour pixel cells=3 >=1px
+PASS: cung GPU cross-section0.8: painted material detected
+PASS: cung GPU H128 section0.8 left: opaque DARK contour pixel cells=5 >=1px
+PASS: cung GPU H128 section0.8 right: opaque DARK contour pixel cells=2 >=1px
+cung minimum measured opaque dark contour pixel cells per sampled side=2; real GPU render factor=0.667713447
+PASS: GPU H128 white string core pixels=161 (not a grey subpixel line)
+PASS: attack_blade steel material derives from same detailed sword master
+PASS: attack_blade_only steel material derives from same detailed sword master
+PASS: swing_0 steel material derives from same detailed sword master
+PASS: swing_1 steel material derives from same detailed sword master
+PASS: swing_2 steel material derives from same detailed sword master
+PASS: swing_3 steel material derives from same detailed sword master
+PASS: swing_4 steel material derives from same detailed sword master
+PASS: swing_skill_0 steel material derives from same detailed sword master
+PASS: swing_skill_1 steel material derives from same detailed sword master
+PASS: swing_skill_2 steel material derives from same detailed sword master
+PASS: swing_skill_3 steel material derives from same detailed sword master
+PASS: swing_skill_4 steel material derives from same detailed sword master
+PASS: action blade retains bright ridge/reflection=665 and blue-grey shadow face=1240 opaque pixels
+PASS: review_lv1.png is the actual Godot master+frame0/frame4 capture
+Weapon master/source/actual H128 pixel checks failures=0
+exit=0
+
+$ python3 tools/build_weapon_masters_v5.py
+Shared Lv1 weapon masters:512px, one held texture per school0–7/12/21; old variants removed; action blade samples identical master materials; anatomy/trails/timings unchanged.
+exit=0
+Byte-identical parts/frames/masters/runtime sprites/action composites on rebuild: PASS

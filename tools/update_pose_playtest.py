@@ -177,3 +177,5 @@ if __name__=='__main__':
     update_running()
     from build_carry_v4 import run as update_carry
     update_carry()
+    from build_weapon_masters_v5 import run as update_weapon_masters
+    update_weapon_masters()
