@@ -19,7 +19,7 @@ def luminance(rgb):
     linear=np.where(rgb<=.04045,rgb/12.92,((rgb+.055)/1.055)**2.4)
     return linear@np.array([.2126,.7152,.0722])
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v9');ap.add_argument('--out',default='prototype/pose_rig/reports/bow_v9_readability_results.json');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v10');ap.add_argument('--out',default='prototype/pose_rig/reports/held_v10_bow_readability_results.json');args=ap.parse_args()
     folder=ROOT/args.renders;manifest=json.loads((folder/'manifest.json').read_text());failures=[];rows=[]
     def check(ok,msg):
         print(('PASS: ' if ok else 'FAIL: ')+msg)

@@ -140,6 +140,9 @@ func sample_frame(index: int) -> void:
 	held_fingers.visible=sprites.weapon.visible
 	if held_fingers.visible:
 		var key:=body+str(held_hand-sprites.body.position)
+		var drawn_hand: String=parts.assets[body].get("source",{}).get("held_hand_overlay","")
+		if drawn_hand!="" and not hand_masks.has(key):
+			hand_masks[key]=load("res://pose_rig/art/lv1_30/"+drawn_hand)
 		if not hand_masks.has(key):
 			var im: Image=sprites.body.texture.get_image().duplicate()
 			var centre: Vector2=(held_hand-sprites.body.position)*2

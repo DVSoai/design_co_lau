@@ -1,0 +1,606 @@
+{
+  "measurements": [
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": -1,
+      "actual_delta_px": [
+        0.0,
+        0.0
+      ],
+      "reference_delta_px": [
+        0.0,
+        0.0
+      ],
+      "max_axis_error_px": 0.0,
+      "palm_gap_px": 0.41739360257891217
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": -1,
+      "actual_delta_px": [
+        -0.01832142274167836,
+        -3.9182311359338655
+      ],
+      "reference_delta_px": [
+        0.0,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.01832142274167836,
+      "palm_gap_px": 0.692999572943404
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": -1,
+      "actual_delta_px": [
+        11.796031388679893,
+        -15.58712300824476
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.0708405489852364,
+      "palm_gap_px": 0.4348058450240979
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": -1,
+      "actual_delta_px": [
+        15.766502503909777,
+        -7.722960923156137
+      ],
+      "reference_delta_px": [
+        15.633587786259541,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.13291471765023566,
+      "palm_gap_px": 0.4889700554404217
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": -1,
+      "actual_delta_px": [
+        11.88893276848637,
+        -7.704595184487175
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.16374192879171368,
+      "palm_gap_px": 0.5976372805540464
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": -1,
+      "actual_delta_px": [
+        15.682162961982698,
+        -15.600757053093247
+      ],
+      "reference_delta_px": [
+        15.633587786259541,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.048575175723156505,
+      "palm_gap_px": 0.3885171730419319
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": -1,
+      "actual_delta_px": [
+        11.88893276848637,
+        -7.704595184487175
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.16374192879171368,
+      "palm_gap_px": 0.47197762622995904
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": -1,
+      "actual_delta_px": [
+        -3.8422822220439627,
+        -15.590577818416392
+      ],
+      "reference_delta_px": [
+        -3.9083969465648853,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.0661147245209226,
+      "palm_gap_px": 0.6666937029447371
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": -1,
+      "actual_delta_px": [
+        0.06930116907020079,
+        -15.588393720159246
+      ],
+      "reference_delta_px": [
+        0.0,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.06930116907020079,
+      "palm_gap_px": 0.6405990684308163
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": -1,
+      "actual_delta_px": [
+        3.8952056855417823,
+        -3.915060941994085
+      ],
+      "reference_delta_px": [
+        3.9083969465648853,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.013191261023103085,
+      "palm_gap_px": 0.7437399752714621
+    },
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": 1,
+      "actual_delta_px": [
+        0.0,
+        0.0
+      ],
+      "reference_delta_px": [
+        0.0,
+        0.0
+      ],
+      "max_axis_error_px": 0.0,
+      "palm_gap_px": 0.41739360257891217
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": 1,
+      "actual_delta_px": [
+        0.018321422741692572,
+        -3.9182311359338655
+      ],
+      "reference_delta_px": [
+        0.0,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.018321422741692572,
+      "palm_gap_px": 0.6929995729434179
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.796031388679907,
+        -15.58712300824476
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.0708405489852506,
+      "palm_gap_px": 0.4348058450240979
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": 1,
+      "actual_delta_px": [
+        -15.766502503909791,
+        -7.722960923156137
+      ],
+      "reference_delta_px": [
+        -15.633587786259541,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.13291471765024987,
+      "palm_gap_px": 0.4889700554404305
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.888932768486384,
+        -7.704595184487175
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.1637419287917279,
+      "palm_gap_px": 0.5976372805540358
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": 1,
+      "actual_delta_px": [
+        -15.682162961982684,
+        -15.600757053093247
+      ],
+      "reference_delta_px": [
+        -15.633587786259541,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.048575175723142294,
+      "palm_gap_px": 0.3885171730419319
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.888932768486384,
+        -7.704595184487175
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.1637419287917279,
+      "palm_gap_px": 0.47197762622995904
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": 1,
+      "actual_delta_px": [
+        3.8422822220439485,
+        -15.590577818416392
+      ],
+      "reference_delta_px": [
+        3.9083969465648853,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.06611472452093681,
+      "palm_gap_px": 0.6666937029447513
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": 1,
+      "actual_delta_px": [
+        -0.069301169070215,
+        -15.588393720159246
+      ],
+      "reference_delta_px": [
+        0.0,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.069301169070215,
+      "palm_gap_px": 0.6405990684308236
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": 1,
+      "actual_delta_px": [
+        -3.8951690186684402,
+        -3.9150563388822093
+      ],
+      "reference_delta_px": [
+        -3.9083969465648853,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.013227927896445113,
+      "palm_gap_px": 0.7437399752714621
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": -1,
+      "actual_delta_px": [
+        0.0,
+        0.0
+      ],
+      "reference_delta_px": [
+        0.0,
+        0.0
+      ],
+      "max_axis_error_px": 0.0,
+      "palm_gap_px": 0.43105891504821314
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": -1,
+      "actual_delta_px": [
+        -0.0011209450920119934,
+        -3.7239804829430057
+      ],
+      "reference_delta_px": [
+        0.0,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.1844164636218797,
+      "palm_gap_px": 0.2247643902887464
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": -1,
+      "actual_delta_px": [
+        11.536139919041247,
+        -15.445873605374132
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.18905092065340945,
+      "palm_gap_px": 0.29360685644171064
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": -1,
+      "actual_delta_px": [
+        15.539363908235785,
+        -7.5569275771171505
+      ],
+      "reference_delta_px": [
+        15.633587786259541,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.2598663160126202,
+      "palm_gap_px": 0.5220750504253527
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": -1,
+      "actual_delta_px": [
+        11.549310418486002,
+        -7.596337391265507
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.22045650186426347,
+      "palm_gap_px": 0.2169304578186608
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": -1,
+      "actual_delta_px": [
+        15.524687601909264,
+        -15.406361663883516
+      ],
+      "reference_delta_px": [
+        15.633587786259541,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.22722612237602569,
+      "palm_gap_px": 0.32241373618993224
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": -1,
+      "actual_delta_px": [
+        11.549310418486002,
+        -7.596337391265507
+      ],
+      "reference_delta_px": [
+        11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.22045650186426347,
+      "palm_gap_px": 0.8403868156985742
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": -1,
+      "actual_delta_px": [
+        -3.8371037281179383,
+        -15.405544108069876
+      ],
+      "reference_delta_px": [
+        -3.9083969465648853,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.22804367818966575,
+      "palm_gap_px": 0.36041104572924876
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": -1,
+      "actual_delta_px": [
+        0.12824682061864223,
+        -15.361976493015234
+      ],
+      "reference_delta_px": [
+        0.0,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.2716112932443071,
+      "palm_gap_px": 0.35355339059326774
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": -1,
+      "actual_delta_px": [
+        3.4401327810313234,
+        -3.880348809670636
+      ],
+      "reference_delta_px": [
+        3.9083969465648853,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.468264165533562,
+      "palm_gap_px": 0.36552853665770724
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": 1,
+      "actual_delta_px": [
+        0.0,
+        0.0
+      ],
+      "reference_delta_px": [
+        0.0,
+        0.0
+      ],
+      "max_axis_error_px": 0.0,
+      "palm_gap_px": 0.43105891504819915
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": 1,
+      "actual_delta_px": [
+        0.0010743123144720812,
+        -3.7240336625012276
+      ],
+      "reference_delta_px": [
+        0.0,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.18436328406365776,
+      "palm_gap_px": 0.22476439028870399
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.536209262124956,
+        -15.445769853416508
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.18898157756970058,
+      "palm_gap_px": 0.29360685644171425
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": 1,
+      "actual_delta_px": [
+        -15.539475905681826,
+        -7.557706807776597
+      ],
+      "reference_delta_px": [
+        -15.633587786259541,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.2590870853531735,
+      "palm_gap_px": 0.5220750504253638
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.549357051263527,
+        -7.596390570823729
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.22040332230604154,
+      "palm_gap_px": 0.2169304578186284
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": 1,
+      "actual_delta_px": [
+        -15.52488317886555,
+        -15.407399152009233
+      ],
+      "reference_delta_px": [
+        -15.633587786259541,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.22618863425030789,
+      "palm_gap_px": 0.32241373618993224
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": 1,
+      "actual_delta_px": [
+        -11.549357051263527,
+        -7.596390570823729
+      ],
+      "reference_delta_px": [
+        -11.725190839694656,
+        -7.816793893129771
+      ],
+      "max_axis_error_px": 0.22040332230604154,
+      "palm_gap_px": 0.8403868156985987
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": 1,
+      "actual_delta_px": [
+        3.837057095340384,
+        -15.405597287628098
+      ],
+      "reference_delta_px": [
+        3.9083969465648853,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.22799049863144383,
+      "palm_gap_px": 0.36041104572924876
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": 1,
+      "actual_delta_px": [
+        -0.12831020892298284,
+        -15.362029672573456
+      ],
+      "reference_delta_px": [
+        0.0,
+        -15.633587786259541
+      ],
+      "max_axis_error_px": 0.2715581136860852,
+      "palm_gap_px": 0.35355339059326774
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": 1,
+      "actual_delta_px": [
+        -3.4401794138088633,
+        -3.880401989228858
+      ],
+      "reference_delta_px": [
+        -3.9083969465648853,
+        -3.9083969465648853
+      ],
+      "max_axis_error_px": 0.46821753275602207,
+      "palm_gap_px": 0.36552853665769686
+    }
+  ],
+  "failures": [],
+  "failure_count": 0
+}

@@ -1,0 +1,862 @@
+{
+	"columns": 4,
+	"description": "Real Godot transparent RGBA, full actor and removal/isolation of every main layer; no claimed image landmarks.",
+	"entries": [
+		{
+			"direction": -1,
+			"file": "kiem_left_00.png",
+			"frame": 0,
+			"legs_texture": "legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_01.png",
+			"frame": 1,
+			"legs_texture": "legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_02.png",
+			"frame": 2,
+			"legs_texture": "run_v3_legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_03.png",
+			"frame": 3,
+			"legs_texture": "carry_v4_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_04.png",
+			"frame": 4,
+			"legs_texture": "run_v3_legs_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_05.png",
+			"frame": 5,
+			"legs_texture": "run_v3_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_06.png",
+			"frame": 6,
+			"legs_texture": "run_v3_legs_4.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_07.png",
+			"frame": 7,
+			"legs_texture": "run_v3_legs_5.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_08.png",
+			"frame": 8,
+			"legs_texture": "roll_legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_09.png",
+			"frame": 9,
+			"legs_texture": "roll_legs_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_10.png",
+			"frame": 10,
+			"legs_texture": "roll_legs_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_11.png",
+			"frame": 11,
+			"legs_texture": "roll_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_12.png",
+			"frame": 12,
+			"legs_texture": "chest_fall_legs.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_13.png",
+			"frame": 13,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_14.png",
+			"frame": 14,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_15.png",
+			"frame": 15,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_16.png",
+			"frame": 16,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_17.png",
+			"frame": 17,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_18.png",
+			"frame": 18,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_19.png",
+			"frame": 19,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_20.png",
+			"frame": 20,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_21.png",
+			"frame": 21,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_22.png",
+			"frame": 22,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_23.png",
+			"frame": 23,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_24.png",
+			"frame": 24,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_25.png",
+			"frame": 25,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_26.png",
+			"frame": 26,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_27.png",
+			"frame": 27,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_28.png",
+			"frame": 28,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "kiem_left_29.png",
+			"frame": 29,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_00.png",
+			"frame": 0,
+			"legs_texture": "legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_01.png",
+			"frame": 1,
+			"legs_texture": "legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_02.png",
+			"frame": 2,
+			"legs_texture": "run_v3_legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_03.png",
+			"frame": 3,
+			"legs_texture": "carry_v4_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_04.png",
+			"frame": 4,
+			"legs_texture": "run_v3_legs_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_05.png",
+			"frame": 5,
+			"legs_texture": "run_v3_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_06.png",
+			"frame": 6,
+			"legs_texture": "run_v3_legs_4.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_07.png",
+			"frame": 7,
+			"legs_texture": "run_v3_legs_5.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_08.png",
+			"frame": 8,
+			"legs_texture": "roll_legs_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_09.png",
+			"frame": 9,
+			"legs_texture": "roll_legs_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_10.png",
+			"frame": 10,
+			"legs_texture": "roll_legs_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_11.png",
+			"frame": 11,
+			"legs_texture": "roll_legs_3.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_12.png",
+			"frame": 12,
+			"legs_texture": "chest_fall_legs.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_13.png",
+			"frame": 13,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_14.png",
+			"frame": 14,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_15.png",
+			"frame": 15,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_16.png",
+			"frame": 16,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_17.png",
+			"frame": 17,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_18.png",
+			"frame": 18,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_19.png",
+			"frame": 19,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_20.png",
+			"frame": 20,
+			"legs_texture": "attack_stance_0.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_21.png",
+			"frame": 21,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_22.png",
+			"frame": 22,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_23.png",
+			"frame": 23,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_24.png",
+			"frame": 24,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_25.png",
+			"frame": 25,
+			"legs_texture": "attack_stance_1.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_26.png",
+			"frame": 26,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_27.png",
+			"frame": 27,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_28.png",
+			"frame": 28,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": 1,
+			"file": "kiem_right_29.png",
+			"frame": 29,
+			"legs_texture": "attack_stance_2.png",
+			"school": "kiem"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_00.png",
+			"frame": 0,
+			"legs_texture": "legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_01.png",
+			"frame": 1,
+			"legs_texture": "legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_02.png",
+			"frame": 2,
+			"legs_texture": "run_v3_legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_03.png",
+			"frame": 3,
+			"legs_texture": "carry_v4_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_04.png",
+			"frame": 4,
+			"legs_texture": "run_v3_legs_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_05.png",
+			"frame": 5,
+			"legs_texture": "run_v3_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_06.png",
+			"frame": 6,
+			"legs_texture": "run_v3_legs_4.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_07.png",
+			"frame": 7,
+			"legs_texture": "run_v3_legs_5.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_08.png",
+			"frame": 8,
+			"legs_texture": "roll_legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_09.png",
+			"frame": 9,
+			"legs_texture": "roll_legs_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_10.png",
+			"frame": 10,
+			"legs_texture": "roll_legs_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_11.png",
+			"frame": 11,
+			"legs_texture": "roll_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_12.png",
+			"frame": 12,
+			"legs_texture": "chest_fall_legs.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_13.png",
+			"frame": 13,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_14.png",
+			"frame": 14,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_15.png",
+			"frame": 15,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_16.png",
+			"frame": 16,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_17.png",
+			"frame": 17,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_18.png",
+			"frame": 18,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_19.png",
+			"frame": 19,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_20.png",
+			"frame": 20,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_21.png",
+			"frame": 21,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_22.png",
+			"frame": 22,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_23.png",
+			"frame": 23,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_24.png",
+			"frame": 24,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_25.png",
+			"frame": 25,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_26.png",
+			"frame": 26,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_27.png",
+			"frame": 27,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_28.png",
+			"frame": 28,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": -1,
+			"file": "cung_left_29.png",
+			"frame": 29,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_00.png",
+			"frame": 0,
+			"legs_texture": "legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_01.png",
+			"frame": 1,
+			"legs_texture": "legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_02.png",
+			"frame": 2,
+			"legs_texture": "run_v3_legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_03.png",
+			"frame": 3,
+			"legs_texture": "carry_v4_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_04.png",
+			"frame": 4,
+			"legs_texture": "run_v3_legs_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_05.png",
+			"frame": 5,
+			"legs_texture": "run_v3_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_06.png",
+			"frame": 6,
+			"legs_texture": "run_v3_legs_4.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_07.png",
+			"frame": 7,
+			"legs_texture": "run_v3_legs_5.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_08.png",
+			"frame": 8,
+			"legs_texture": "roll_legs_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_09.png",
+			"frame": 9,
+			"legs_texture": "roll_legs_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_10.png",
+			"frame": 10,
+			"legs_texture": "roll_legs_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_11.png",
+			"frame": 11,
+			"legs_texture": "roll_legs_3.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_12.png",
+			"frame": 12,
+			"legs_texture": "chest_fall_legs.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_13.png",
+			"frame": 13,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_14.png",
+			"frame": 14,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_15.png",
+			"frame": 15,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_16.png",
+			"frame": 16,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_17.png",
+			"frame": 17,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_18.png",
+			"frame": 18,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_19.png",
+			"frame": 19,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_20.png",
+			"frame": 20,
+			"legs_texture": "attack_stance_0.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_21.png",
+			"frame": 21,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_22.png",
+			"frame": 22,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_23.png",
+			"frame": 23,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_24.png",
+			"frame": 24,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_25.png",
+			"frame": 25,
+			"legs_texture": "attack_stance_1.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_26.png",
+			"frame": 26,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_27.png",
+			"frame": 27,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_28.png",
+			"frame": 28,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		},
+		{
+			"direction": 1,
+			"file": "cung_right_29.png",
+			"frame": 29,
+			"legs_texture": "attack_stance_2.png",
+			"school": "cung"
+		}
+	],
+	"tile_size": 256,
+	"variants": [
+		"full",
+		"no_weapon",
+		"no_body",
+		"no_legs",
+		"no_head",
+		"weapon_only",
+		"legs_only",
+		"body_only",
+		"head_only",
+		"fingers_only",
+		"no_fingers",
+		"viewer_full",
+		"viewer_empty"
+	]
+}

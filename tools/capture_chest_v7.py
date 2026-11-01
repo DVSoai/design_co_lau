@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse,os,shlex,subprocess,time
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--godot',default='godot');parser.add_argument('--viewer-readability',action='store_true');parser.add_argument('--ablation-only',action='store_true');parser.add_argument('--ablation-out',default='res://pose_rig/reports/ablation_v9');args=parser.parse_args();root=Path(__file__).resolve().parents[1]
+    parser=argparse.ArgumentParser();parser.add_argument('--godot',default='godot');parser.add_argument('--viewer-readability',action='store_true');parser.add_argument('--ablation-only',action='store_true');parser.add_argument('--ablation-out',default='res://pose_rig/reports/ablation_v10');args=parser.parse_args();root=Path(__file__).resolve().parents[1]
     def run(cmd,env=None):
         print('$ '+shlex.join(cmd),flush=True);p=subprocess.run(cmd,cwd=root,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=360);print(p.stdout,end='');print('exit='+str(p.returncode),flush=True)
         if p.returncode or 'ERROR:' in p.stdout:raise SystemExit(p.returncode or 1)

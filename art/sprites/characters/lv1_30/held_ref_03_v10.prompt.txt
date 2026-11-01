@@ -1,0 +1,1 @@
+Original front-arm-only SVG; reference-delta placement relative to unchanged frame0. Fist reuses original own art by translation. See sources/held_ref_03_v10.svg.

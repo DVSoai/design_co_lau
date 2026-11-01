@@ -1,0 +1,2791 @@
+{
+  "failures": [],
+  "failure_count": 0,
+  "measurements": [
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        58
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.998051997140806,
+      "weapon_whole_visible": 0.9733689352116309,
+      "blade_width_H": 0.14973251137020344,
+      "blade_width_sections_px": [
+        18.97398784775291,
+        19.357535063019174,
+        19.35753506301917,
+        18.868703878268818
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.41739360257891217,
+      "grip_height_H": 0.5874495967741935
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        62
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.9985354569064671,
+      "weapon_whole_visible": 0.9766083376154285,
+      "blade_width_H": 0.147823567787711,
+      "blade_width_sections_px": [
+        18.97434920738882,
+        18.868484146265196,
+        18.868484146265196,
+        19.357542274371273
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.692999572943404,
+      "grip_height_H": 0.6159855769230769
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        54,
+        69
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9996840511188504,
+      "weapon_whole_visible": 0.9760577980974967,
+      "blade_width_H": 0.14974080674246176,
+      "blade_width_sections_px": [
+        18.867399786580073,
+        18.976086899612614,
+        19.357559626457594,
+        19.357559626457594
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.4348058450240979,
+      "grip_height_H": 0.676025390625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737147
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        62,
+        64
+      ],
+      "legs_bbox_px": [
+        57,
+        45
+      ],
+      "weapon_core_visible": 0.9996345658788934,
+      "weapon_whole_visible": 0.9774782646735393,
+      "blade_width_H": 0.147828382715344,
+      "blade_width_sections_px": [
+        18.48651752920271,
+        19.357548445925346,
+        18.866320248329437,
+        18.977745726798624
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.4889700554404217,
+      "grip_height_H": 0.61474609375,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        58,
+        66
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9997829270368807,
+      "weapon_whole_visible": 0.9762758753497996,
+      "blade_width_H": 0.14782793703756011,
+      "blade_width_sections_px": [
+        19.35755297759359,
+        18.866543221988586,
+        18.866543221988586,
+        18.977408659626803
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.5976372805540464,
+      "grip_height_H": 0.6162405303030303,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.548583403711011
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        77,
+        65
+      ],
+      "legs_bbox_px": [
+        83,
+        47
+      ],
+      "weapon_core_visible": 0.9990359126570382,
+      "weapon_whole_visible": 0.976966038049322,
+      "blade_width_H": 0.14782232295715372,
+      "blade_width_sections_px": [
+        18.868971773361075,
+        18.97354290367028,
+        18.868971773361075,
+        19.35752451981878
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.3885171730419319,
+      "grip_height_H": 0.646728515625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565925
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        65
+      ],
+      "legs_bbox_px": [
+        60,
+        46
+      ],
+      "weapon_core_visible": 0.9996840288526938,
+      "weapon_whole_visible": 0.9758750356392519,
+      "blade_width_H": 0.14782793703756011,
+      "blade_width_sections_px": [
+        19.35755297759359,
+        18.866543221988586,
+        18.866543221988586,
+        18.977408659626803
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.47197762622995904,
+      "grip_height_H": 0.615966796875,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9888603301620799,
+      "shoe_span_H": 0.3642028199870568
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        67,
+        57
+      ],
+      "legs_bbox_px": [
+        74,
+        47
+      ],
+      "weapon_core_visible": 0.997797700785789,
+      "weapon_whole_visible": 0.9736061906185521,
+      "blade_width_H": 0.14740815412479913,
+      "blade_width_sections_px": [
+        19.35754870841579,
+        18.485435965638146,
+        18.86824372797429,
+        18.86824372797429
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.6666937029447371,
+      "grip_height_H": 0.5203125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.40202692099748877
+    },
+    {
+      "school": "kiem",
+      "frame": 8,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        44
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 9,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        34
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 10,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        43
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 11,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        33
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        57
+      ],
+      "legs_bbox_px": [
+        64,
+        54
+      ],
+      "weapon_core_visible": 0.9999506780405625,
+      "weapon_whole_visible": 0.975063250895749,
+      "blade_width_H": 0.14740874923558067,
+      "blade_width_sections_px": [
+        19.357546832969604,
+        18.868319902154326,
+        18.868319902154326,
+        18.485390304492594
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.6405990684308163,
+      "grip_height_H": 0.4412802419354839
+    },
+    {
+      "school": "kiem",
+      "frame": 13,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 14,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        71,
+        58
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 15,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        95,
+        54
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 16,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 17,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 18,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 19,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 20,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        59,
+        63
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "weapon_core_visible": 0.9988997480678016,
+      "weapon_whole_visible": 0.9765160787053053,
+      "blade_width_H": 0.14741351973668407,
+      "blade_width_sections_px": [
+        18.485015983759812,
+        18.86893052629556,
+        18.86893052629556,
+        19.35752626986738
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.7437399752714621,
+      "grip_height_H": 0.6171875,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 22,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 23,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        71,
+        58
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 24,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        94,
+        54
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 25,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 26,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 27,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 28,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 29,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        58
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.998051997140806,
+      "weapon_whole_visible": 0.9733689352116309,
+      "blade_width_H": 0.14973251137020346,
+      "blade_width_sections_px": [
+        18.97398784775291,
+        19.357535063019178,
+        19.357535063019178,
+        18.868703878268818
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.41739360257891217,
+      "grip_height_H": 0.5874495967741935
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        62
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.9985354569064671,
+      "weapon_whole_visible": 0.9766083376154285,
+      "blade_width_H": 0.147823567787711,
+      "blade_width_sections_px": [
+        18.97434920738882,
+        18.868484146265196,
+        18.868484146265196,
+        19.357542274371273
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.6929995729434179,
+      "grip_height_H": 0.6159855769230769
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        54,
+        69
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9996840511188504,
+      "weapon_whole_visible": 0.9760577980974967,
+      "blade_width_H": 0.14974080674246176,
+      "blade_width_sections_px": [
+        18.867399786580076,
+        18.976086899612618,
+        19.357559626457594,
+        19.357559626457594
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.4348058450240979,
+      "grip_height_H": 0.676025390625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737146
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        62,
+        64
+      ],
+      "legs_bbox_px": [
+        57,
+        45
+      ],
+      "weapon_core_visible": 0.9996345658788934,
+      "weapon_whole_visible": 0.9774782646735393,
+      "blade_width_H": 0.147828382715344,
+      "blade_width_sections_px": [
+        18.486517529202715,
+        19.357548445925346,
+        18.866320248329433,
+        18.977745726798624
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.4889700554404305,
+      "grip_height_H": 0.61474609375,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        58,
+        66
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9997829270368807,
+      "weapon_whole_visible": 0.9762758753497996,
+      "blade_width_H": 0.14782793703756011,
+      "blade_width_sections_px": [
+        19.35755297759359,
+        18.866543221988586,
+        18.866543221988586,
+        18.977408659626803
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.5976372805540358,
+      "grip_height_H": 0.6162405303030303,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5485834037110107
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        77,
+        65
+      ],
+      "legs_bbox_px": [
+        83,
+        47
+      ],
+      "weapon_core_visible": 0.9990359126570382,
+      "weapon_whole_visible": 0.976966038049322,
+      "blade_width_H": 0.14782232295715372,
+      "blade_width_sections_px": [
+        18.868971773361075,
+        18.97354290367028,
+        18.868971773361075,
+        19.35752451981878
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.3885171730419319,
+      "grip_height_H": 0.646728515625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565924
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        65
+      ],
+      "legs_bbox_px": [
+        60,
+        46
+      ],
+      "weapon_core_visible": 0.9996840288526938,
+      "weapon_whole_visible": 0.9758750356392519,
+      "blade_width_H": 0.14782793703756011,
+      "blade_width_sections_px": [
+        19.35755297759359,
+        18.866543221988586,
+        18.866543221988586,
+        18.977408659626803
+      ],
+      "weapon_visible_bbox_px": [
+        101,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.47197762622995904,
+      "grip_height_H": 0.615966796875,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9888603301620799,
+      "shoe_span_H": 0.3642028199870568
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        67,
+        57
+      ],
+      "legs_bbox_px": [
+        74,
+        47
+      ],
+      "weapon_core_visible": 0.997797700785789,
+      "weapon_whole_visible": 0.9736061906185521,
+      "blade_width_H": 0.14740815412479913,
+      "blade_width_sections_px": [
+        19.35754870841579,
+        18.485435965638146,
+        18.86824372797429,
+        18.86824372797429
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.6666937029447513,
+      "grip_height_H": 0.5203125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4020269209974887
+    },
+    {
+      "school": "kiem",
+      "frame": 8,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        44
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 9,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        34
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 10,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        43
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 11,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        33
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        57
+      ],
+      "legs_bbox_px": [
+        64,
+        54
+      ],
+      "weapon_core_visible": 0.9999506780405625,
+      "weapon_whole_visible": 0.975063250895749,
+      "blade_width_H": 0.14740874923558067,
+      "blade_width_sections_px": [
+        19.357546832969604,
+        18.868319902154326,
+        18.868319902154326,
+        18.485390304492594
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        59
+      ],
+      "palm_grip_centres_gap_px": 0.6405990684308236,
+      "grip_height_H": 0.4412802419354839
+    },
+    {
+      "school": "kiem",
+      "frame": 13,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 14,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        71,
+        58
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 15,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        95,
+        54
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 16,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 17,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 18,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 19,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 20,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        59,
+        63
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "weapon_core_visible": 0.9988997480678016,
+      "weapon_whole_visible": 0.9765160242494568,
+      "blade_width_H": 0.14741351973668404,
+      "blade_width_sections_px": [
+        18.485015983759812,
+        18.86893052629556,
+        18.868930526295557,
+        19.35752626986738
+      ],
+      "weapon_visible_bbox_px": [
+        100,
+        58
+      ],
+      "palm_grip_centres_gap_px": 0.7437399752714621,
+      "grip_height_H": 0.6171875,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 22,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 23,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        71,
+        58
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 24,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        94,
+        54
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 25,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 26,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 27,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 28,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 29,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        58
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.9925121075341963,
+      "weapon_whole_visible": 0.9592643058827848,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.40977894835332446,
+      "bow_painted_ends": [
+        [
+          127.0,
+          50.0
+        ],
+        [
+          177.0,
+          177.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.43105891504821314,
+      "grip_height_H": 0.5859375,
+      "wrap_skin_gap_px": 0.7380529941828164,
+      "bow_above_head_px": 33,
+      "bow_height_H": 1.0078125
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        62
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.99220865697369,
+      "weapon_whole_visible": 0.9630189097889653,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4110820992523068,
+      "bow_painted_ends": [
+        [
+          127.0,
+          46.0
+        ],
+        [
+          177.0,
+          173.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        128
+      ],
+      "palm_grip_centres_gap_px": 0.2247643902887464,
+      "grip_height_H": 0.6156250000000001,
+      "wrap_skin_gap_px": 0.6324555320336669,
+      "bow_above_head_px": 36,
+      "bow_height_H": 1.0
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        54,
+        69
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9883453406426819,
+      "weapon_whole_visible": 0.9614248213121028,
+      "bow_chord_angle_deg": 21.879151337575287,
+      "bow_curve_depth_H": 0.41681100704431917,
+      "bow_painted_ends": [
+        [
+          139.0,
+          34.0
+        ],
+        [
+          190.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.29360685644171064,
+      "grip_height_H": 0.67724609375,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 45,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737147
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        62,
+        64
+      ],
+      "legs_bbox_px": [
+        57,
+        45
+      ],
+      "weapon_core_visible": 0.9886954930356295,
+      "weapon_whole_visible": 0.9628897855098744,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4110820992523068,
+      "bow_painted_ends": [
+        [
+          143.0,
+          42.0
+        ],
+        [
+          193.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.5220750504253527,
+      "grip_height_H": 0.6145833333333334,
+      "wrap_skin_gap_px": 0.6324555320336713,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        58,
+        66
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9868926311191824,
+      "weapon_whole_visible": 0.957755346658472,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4110820992523068,
+      "bow_painted_ends": [
+        [
+          139.0,
+          42.0
+        ],
+        [
+          189.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.2169304578186608,
+      "grip_height_H": 0.6162405303030303,
+      "wrap_skin_gap_px": 0.6324555320336713,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.548583403711011
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        77,
+        65
+      ],
+      "legs_bbox_px": [
+        83,
+        47
+      ],
+      "weapon_core_visible": 0.9891548884546164,
+      "weapon_whole_visible": 0.9623673616529014,
+      "bow_chord_angle_deg": 21.879151337575287,
+      "bow_curve_depth_H": 0.41681100704431917,
+      "bow_painted_ends": [
+        [
+          143.0,
+          34.0
+        ],
+        [
+          194.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.32241373618993224,
+      "grip_height_H": 0.646728515625,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 41,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565925
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        65
+      ],
+      "legs_bbox_px": [
+        60,
+        46
+      ],
+      "weapon_core_visible": 0.9877518312525525,
+      "weapon_whole_visible": 0.9584993572702856,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4110820992523068,
+      "bow_painted_ends": [
+        [
+          139.0,
+          42.0
+        ],
+        [
+          189.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.8403868156985742,
+      "grip_height_H": 0.6152935606060606,
+      "wrap_skin_gap_px": 0.6324555320336713,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9892455852593034,
+      "shoe_span_H": 0.3652603707973431
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        67,
+        57
+      ],
+      "legs_bbox_px": [
+        74,
+        47
+      ],
+      "weapon_core_visible": 0.9847380465195695,
+      "weapon_whole_visible": 0.9552741727375129,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4183400582855843,
+      "bow_painted_ends": [
+        [
+          124.0,
+          34.0
+        ],
+        [
+          174.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.36041104572924876,
+      "grip_height_H": 0.5191271551724138,
+      "wrap_skin_gap_px": 0.8321658488546658,
+      "bow_above_head_px": 25,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4022059305996296
+    },
+    {
+      "school": "cung",
+      "frame": 8,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        44
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 9,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        34
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 10,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        43
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 11,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        33
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        57
+      ],
+      "legs_bbox_px": [
+        64,
+        54
+      ],
+      "weapon_core_visible": 0.9959503715860436,
+      "weapon_whole_visible": 0.9673846053217101,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.42037778179965907,
+      "bow_painted_ends": [
+        [
+          128.0,
+          34.0
+        ],
+        [
+          178.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.35355339059326774,
+      "grip_height_H": 0.4415322580645161,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 11,
+      "bow_height_H": 1.0078125
+    },
+    {
+      "school": "cung",
+      "frame": 13,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 14,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 15,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        95,
+        54
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 16,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 17,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 18,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 19,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 20,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        59,
+        63
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "weapon_core_visible": 0.992211522703631,
+      "weapon_whole_visible": 0.9661738459637891,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.40977894835332446,
+      "bow_painted_ends": [
+        [
+          131.0,
+          46.0
+        ],
+        [
+          181.0,
+          173.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        128
+      ],
+      "palm_grip_centres_gap_px": 0.36552853665770724,
+      "grip_height_H": 0.6163793103448276,
+      "wrap_skin_gap_px": 0.7380529941828164,
+      "bow_above_head_px": 36,
+      "bow_height_H": 1.0,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 22,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 23,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 24,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        94,
+        54
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 25,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 26,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 27,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 28,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 29,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        58
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.992512136757148,
+      "weapon_whole_visible": 0.9592644425411823,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.40977894835332435,
+      "bow_painted_ends": [
+        [
+          128.0,
+          50.0
+        ],
+        [
+          78.0,
+          177.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.43105891504819915,
+      "grip_height_H": 0.5859375,
+      "wrap_skin_gap_px": 0.7380529941828305,
+      "bow_above_head_px": 33,
+      "bow_height_H": 1.0078125
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        65,
+        62
+      ],
+      "legs_bbox_px": [
+        38,
+        47
+      ],
+      "weapon_core_visible": 0.99220865697369,
+      "weapon_whole_visible": 0.9630189097889653,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4110820992523066,
+      "bow_painted_ends": [
+        [
+          128.0,
+          46.0
+        ],
+        [
+          78.0,
+          173.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        128
+      ],
+      "palm_grip_centres_gap_px": 0.22476439028870399,
+      "grip_height_H": 0.6156250000000001,
+      "wrap_skin_gap_px": 0.6324555320336939,
+      "bow_above_head_px": 36,
+      "bow_height_H": 1.0
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        54,
+        69
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9883452956608435,
+      "weapon_whole_visible": 0.9614245659758569,
+      "bow_chord_angle_deg": 21.879151337575287,
+      "bow_curve_depth_H": 0.41681100704431917,
+      "bow_painted_ends": [
+        [
+          116.0,
+          34.0
+        ],
+        [
+          65.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.29360685644171425,
+      "grip_height_H": 0.67724609375,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 45,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737146
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        62,
+        64
+      ],
+      "legs_bbox_px": [
+        57,
+        45
+      ],
+      "weapon_core_visible": 0.9886954930356295,
+      "weapon_whole_visible": 0.9628901549544446,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.41108209925230665,
+      "bow_painted_ends": [
+        [
+          112.0,
+          42.0
+        ],
+        [
+          62.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.5220750504253638,
+      "grip_height_H": 0.6145833333333334,
+      "wrap_skin_gap_px": 0.6324555320336983,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        58,
+        66
+      ],
+      "legs_bbox_px": [
+        86,
+        47
+      ],
+      "weapon_core_visible": 0.9868926311191824,
+      "weapon_whole_visible": 0.957755346658472,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.41108209925230665,
+      "bow_painted_ends": [
+        [
+          116.0,
+          42.0
+        ],
+        [
+          66.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.2169304578186284,
+      "grip_height_H": 0.6162405303030303,
+      "wrap_skin_gap_px": 0.6324555320336983,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5485834037110107
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        77,
+        65
+      ],
+      "legs_bbox_px": [
+        83,
+        47
+      ],
+      "weapon_core_visible": 0.9891571266332027,
+      "weapon_whole_visible": 0.9623698622861548,
+      "bow_chord_angle_deg": 21.879151337575287,
+      "bow_curve_depth_H": 0.41681100704431917,
+      "bow_painted_ends": [
+        [
+          112.0,
+          34.0
+        ],
+        [
+          61.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.32241373618993224,
+      "grip_height_H": 0.646728515625,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 41,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565924
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        65
+      ],
+      "legs_bbox_px": [
+        60,
+        46
+      ],
+      "weapon_core_visible": 0.9877518312525525,
+      "weapon_whole_visible": 0.9584993572702856,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.41108209925230665,
+      "bow_painted_ends": [
+        [
+          116.0,
+          42.0
+        ],
+        [
+          66.0,
+          169.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.8403868156985987,
+      "grip_height_H": 0.6152935606060606,
+      "wrap_skin_gap_px": 0.6324555320336983,
+      "bow_above_head_px": 37,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9892455852593034,
+      "shoe_span_H": 0.3652603707973431
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        67,
+        57
+      ],
+      "legs_bbox_px": [
+        74,
+        47
+      ],
+      "weapon_core_visible": 0.9847364462007143,
+      "weapon_whole_visible": 0.9552728087248112,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.4183400582855844,
+      "bow_painted_ends": [
+        [
+          131.0,
+          34.0
+        ],
+        [
+          81.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.36041104572924876,
+      "grip_height_H": 0.5191271551724138,
+      "wrap_skin_gap_px": 0.8321658488546538,
+      "bow_above_head_px": 25,
+      "bow_height_H": 1.0078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4022059305996296
+    },
+    {
+      "school": "cung",
+      "frame": 8,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        44
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 9,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        34
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 10,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        34,
+        38
+      ],
+      "legs_bbox_px": [
+        57,
+        43
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 11,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        38,
+        33
+      ],
+      "legs_bbox_px": [
+        43,
+        57
+      ]
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        51,
+        57
+      ],
+      "legs_bbox_px": [
+        64,
+        54
+      ],
+      "weapon_core_visible": 0.9959503715860436,
+      "weapon_whole_visible": 0.9673846053217101,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.42037778179965907,
+      "bow_painted_ends": [
+        [
+          127.0,
+          34.0
+        ],
+        [
+          77.0,
+          161.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        84,
+        129
+      ],
+      "palm_grip_centres_gap_px": 0.35355339059326774,
+      "grip_height_H": 0.4415322580645161,
+      "wrap_skin_gap_px": 0.5656854249492461,
+      "bow_above_head_px": 11,
+      "bow_height_H": 1.0078125
+    },
+    {
+      "school": "cung",
+      "frame": 13,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 14,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 15,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        95,
+        54
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 16,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 17,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 18,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 19,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 20,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        87,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        59,
+        63
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "weapon_core_visible": 0.992211522703631,
+      "weapon_whole_visible": 0.9661738459637889,
+      "bow_chord_angle_deg": 21.489598798599,
+      "bow_curve_depth_H": 0.40977894835332435,
+      "bow_painted_ends": [
+        [
+          124.0,
+          46.0
+        ],
+        [
+          74.0,
+          173.0
+        ]
+      ],
+      "weapon_visible_bbox_px": [
+        85,
+        128
+      ],
+      "palm_grip_centres_gap_px": 0.36552853665769686,
+      "grip_height_H": 0.6163793103448276,
+      "wrap_skin_gap_px": 0.7380529941828305,
+      "bow_above_head_px": 36,
+      "bow_height_H": 1.0,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 22,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        66,
+        56
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 23,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 24,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        94,
+        54
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 25,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        61,
+        59
+      ],
+      "legs_bbox_px": [
+        48,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 26,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 27,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        102,
+        66
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 28,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        107,
+        65
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 29,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "body_bbox_px": [
+        105,
+        67
+      ],
+      "legs_bbox_px": [
+        82,
+        45
+      ],
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    }
+  ],
+  "method": "Only actual Godot full/removed/isolated RGBA images. No authored pose landmarks or registration coordinates."
+}

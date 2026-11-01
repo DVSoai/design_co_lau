@@ -5,7 +5,7 @@ from io import BytesIO
 import subprocess,json
 import numpy as np
 from PIL import Image
-ROOT=Path(__file__).resolve().parents[1];BASE='f6b9316';failures=[]
+ROOT=Path(__file__).resolve().parents[2];BASE='f6b9316';failures=[]
 def original(path):return subprocess.check_output(['git','show',BASE+':'+str(path)],cwd=ROOT)
 def check(ok,msg):
  print(('PASS: ' if ok else 'FAIL: ')+msg)

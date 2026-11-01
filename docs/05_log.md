@@ -1455,3 +1455,32 @@ Prompt sửa sheet tay trên đã thiếu khối STYLE/AVOID chuẩn; ghi nhận
 - check_lv1_30.py trước đây coi mọi màu xanh lá là nền tách còn sót, nên bắt nhầm50 pixel chuôi xanh được yêu cầu. Cho phép riêng bảng xanh rêu hữu hạn của cung (kể cả màu overshoot do thu Lanczos); tiếp tục bắt xanh chroma-key ngoài bảng, và giữ điều kiện không xanh cho mọi ảnh khác. Đây là cập nhật loại màu có chủ ý, không bỏ kiểm alpha/copy/prompt hoặc ngưỡng thị giác.
 - Đã cập nhật review_lv1.png: master và4 ô khung0/4 hai phái, lấy ảnh Godot thật phóng2×. Bảng có ảnh nguồn đặt cạnh ở /tmp/ref_render/review_lv1.png. Có25 ảnh xvfb1600×720 hai hướng gồm dải30 khung, đòn, chạy và màn chơi thử; hai mẫu GPU H128;120 atlas1024×1024, mỗi atlas13 ảnh độc lập (1560 lượt render).
 - Báo cáo đầy đủ: reports/bow_v9_godot_checks.txt, bow_v9_python_checks.txt, bow_v9_capture_checks.txt, bow_v9_readability_results.json và bow_v9_image_results.json. Output nguyên văn cùng hai lệnh kiểm tên nằm trong commit message. Chạy lại bước xuất chỉ cung cho cùng byte ảnh; bộ thông số và các file kiếm cũng được bảo vệ bằng hash. Bộ hình vẫn chờ duyệt mỹ thuật.
+
+
+## 2026-11-01 — Đặt vũ khí theo từng khung tham khảo, giữ nguyên hình (v10)
+
+- Đã đọc Char.java dòng345 và kiểm phần tử thứ4 với bang_30_khung: mọi hàng0–7,12,21 trùng JSON. Chạy ref_render.py đầy đủ, mở ref_cam_cung/ref_cam_kiem để so. Đường dẫn thật/ls, trích dòng có số và toàn bộ output lưu ngoài repo để dán nguyên văn vào commit. Không đưa ảnh/mã nguồn tham khảo vào file trong kho.
+- Công thức mới đúng theo lệnh: W(i)=W(0) hiện tại + (dx(i)−dx(0), −(dy(i)−dy(0))) ×512/131 pixel hiển thị. Đổi sang logic bằng cách chia display_factor hiện hành; registrations bù gốc3× cũ. Lật node gốc cho hướng trái. Khung0 giữ nguyên toàn bộ dictionary và ảnh ghép. Lưu gốc0 bất biến trong held_reference_base_v10 để chạy lại không cộng dồn.
+
+| Khung | dx,dy nguồn | Lùi màn phải (px) | Nâng (px) |
+|---|---|---:|---:|
+|0|−9,45|0|0|
+|1|−9,46|0|3,908397|
+|2|−12,49|11,725191|15,633588|
+|3|−13,47|15,633588|7,816794|
+|4|−12,47|11,725191|7,816794|
+|5|−13,49|15,633588|15,633588|
+|6|−12,47|11,725191|7,816794|
+|7|−8,49|−3,908397 (tiến)|15,633588|
+|12|−9,49|0|15,633588|
+|21|−10,46|3,908397|3,908397|
+
+- Khung7 tiến một đơn vị so với0 là số liệu thật, không ép nó lùi theo mô tả chung. Khung12 và21 cũng dùng đúng hàng riêng, không thay bằng khung chạy gần giống. Không có lệch có chủ ý khỏi delta nguồn; sai khác ảnh dưới đây là lấy mẫu raster.
+- Chỉ vẽ lại cánh tay trước theo vị trí mới ở1–7,12,21;0 giữ nguyên. Dùng lại nguyên nét nắm tay SVG tự vẽ trước, chỉ dịch chuyển; cẳng tay/khuỷu nối bằng nét bo tròn cùng palette. Đầu, chân, điểm neo hông/cổ, thân ngoài vùng tay trước và tay tự do giữ nguyên. Các bản held_ref_*_v10 có SVG/ROI riêng. Lưu ảnh ngón tay phủ chuôi riêng để vùng cổ/áo gần tay mới không bị nhận nhầm làm ngón tay. Các sprite vẫn rotation0.
+- Toàn bộ file hình kiếm/cung (PNG nguồn/hiển thị, SVG, prompt) giữ nguyên byte; tất cả asset cũ cũng không sửa. Mỗi phái vẫn dùng đúng1 texture. skills/effects và clip/reference gốc không đổi. Chỉ thêm asset thân có tay mới và đổi registrations vũ khí/chọn thân ở các khung được phép.
+- Test Godot mới kiểm delta thực trên Sprite2D, đúng512/131 với sai số≤0,0001px và đối xứng trái/phải,0–7/12/21 cả hai phái. Tổng14/14 suite headless đạt. Kiểm hình tách lớp đủ120 tư thế vẫn đạt các yêu cầu cũ về lộ vũ khí, bbox, đầu, chân và áo; độ rõ cung vẫn đạt trên nền viewer thật.
+- Test ảnh mới lấy trọng tâm alpha toàn texture bất biến để đo dịch chuyển grip, vì tâm vùng màu nhỏ trên chuôi quấn dây có thể dao động hơn1px khi lấy mẫu. Không dùng landmark tự khai làm bằng chứng. Khung2–6 đo lùi11,536–15,767px, nâng7,557–15,601px; tất cả≥10/6px. Sai số ảnh so với delta nguồn lớn nhất0,46827px. Tâm chuôi/nắm tay nhận diện từ pixel riêng vẫn cách≤1px, lớn nhất0,84039px. So ảnh đủ lớp với ảnh bỏ ngón tay xác nhận nắm tay thật sự phủ chuôi.
+- Quy tắc tay đứng trước ngực với độ cao cố định0,45–0,6/0,55–0,7 H và nhún chạy±0,03 H trước đây bị công thức mới thay thế ở1–7/12/21. Giữ kiểm cũ ở0 vì0 được yêu cầu giữ nguyên; các khung khác in độ cao để chẩn đoán, dùng test delta chính xác và ngưỡng≥10px/≥6px mới để bắt đạt. Không ép sai số liệu nguồn để qua các quy tắc cũ mâu thuẫn.
+- Chuyển tools/check_held_scope_v8.py và tools/check_bow_scope_v9.py sang tools/legacy/ vì chúng yêu cầu tay/thân/đặt vũ khí đứng yên theo phiên bản cũ. Thay bằng check_held_scope_v10.py và check_held_reference_v10.py; README legacy ghi rõ. Bản in print_frame_placement.gd vẫn chỉ là chẩn đoán, không tính là test.
+- Đã chụp25 ảnh xvfb1600×720 hai hướng, có màn chơi thử, dải30 khung/đánh/chạy và master;120 atlas13 lớp độc lập,1560 lượt render. Bốn bảng đúng yêu cầu: /tmp/ref_render/held_v10_compare_kiem_right.png, kiem_left.png, cung_right.png, cung_left.png (cùng tiền tố held_v10_compare_); mỗi bảng2048×660, hàng của mình nằm ngay dưới0–7 nguồn, chuẩnH128. Chỉ lưu ngoài repo. Review riêng trong kho cập nhật từ ảnh thật0/4, không chứa ảnh nguồn.
+- Báo cáo nguyên văn ở reports/held_v10_godot_checks.txt, held_v10_python_checks.txt, held_v10_capture_checks.txt; kết quả JSON ảnh ở held_v10_image_results/held_v10_placement_image_results/held_v10_bow_readability_results. Commit chứa đủ4 mục bằng chứng nguồn, toàn bộ output, lệnh chụp và hai lệnh kiểm tên. Chạy lại bước đặt cho đúng cùng byte ảnh/dữ liệu. Bộ hình vẫn chờ duyệt mỹ thuật.

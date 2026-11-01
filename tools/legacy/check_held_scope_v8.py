@@ -4,7 +4,7 @@ from pathlib import Path
 import json,hashlib,subprocess
 import numpy as np
 from PIL import Image
-R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';P=json.loads((D/'parts.json').read_text());F=json.loads((D/'frames30.json').read_text());fails=[]
+R=Path(__file__).resolve().parents[2];D=R/'prototype/pose_rig/data';P=json.loads((D/'parts.json').read_text());F=json.loads((D/'frames30.json').read_text());fails=[]
 def check(ok,msg):
  print(('PASS: ' if ok else 'FAIL: ')+msg)
  if not ok:fails.append(msg)

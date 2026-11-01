@@ -1,0 +1,2869 @@
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/air_frame_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem dir-1 actual upward input -> frame7
+PASS: fresh near-apex press performs A0 extra jump
+PASS: kiem dir-1 extra jump displays all tucked frames8..11
+PASS: kiem dir-1 actual descent -> frame12; never guard13
+PASS: unchanged A0 .38s apex / .20s roll
+PASS: kiem dir1 actual upward input -> frame7
+PASS: fresh near-apex press performs A0 extra jump
+PASS: kiem dir1 extra jump displays all tucked frames8..11
+PASS: kiem dir1 actual descent -> frame12; never guard13
+PASS: unchanged A0 .38s apex / .20s roll
+PASS: cung dir-1 actual upward input -> frame7
+PASS: fresh near-apex press performs A0 extra jump
+PASS: cung dir-1 extra jump displays all tucked frames8..11
+PASS: cung dir-1 actual descent -> frame12; never guard13
+PASS: unchanged A0 .38s apex / .20s roll
+PASS: cung dir1 actual upward input -> frame7
+PASS: fresh near-apex press performs A0 extra jump
+PASS: cung dir1 extra jump displays all tucked frames8..11
+PASS: cung dir1 actual descent -> frame12; never guard13
+PASS: unchanged A0 .38s apex / .20s roll
+Live air-frame checks failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/arrow_alignment_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: shoot dir-1 beat1 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: shoot dir-1 beat2 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: shoot dir-1 beat3 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: shoot dir-1 beat4 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: shoot dir-1 release actual shaft/rest gap=0.012893 tail starts at released string, gap=0.000001
+PASS: pre-baked axes, every Sprite2Drotation0
+PASS: xa_tien dir-1 beat1 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: xa_tien dir-1 beat2 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: xa_tien dir-1 beat3 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: xa_tien dir-1 beat4 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: xa_tien dir-1 release actual shaft/rest gap=0.098977 tail starts at released string, gap=0.000001
+PASS: pre-baked axes, every Sprite2Drotation0
+PASS: shoot dir1 beat1 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: shoot dir1 beat2 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: shoot dir1 beat3 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: shoot dir1 beat4 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: shoot dir1 release actual shaft/rest gap=0.012893 tail starts at released string, gap=0.000001
+PASS: pre-baked axes, every Sprite2Drotation0
+PASS: xa_tien dir1 beat1 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: xa_tien dir1 beat2 actual shaft/rest gap=0.082188 nock/string gap=0.000004
+PASS: xa_tien dir1 beat3 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: xa_tien dir1 beat4 actual shaft/rest gap=0.050985 nock/string gap=0.000002
+PASS: xa_tien dir1 release actual shaft/rest gap=0.098977 tail starts at released string, gap=0.000001
+PASS: pre-baked axes, every Sprite2Drotation0
+Arrow actual shaft/nock checks failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/attack_stance_contract_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem dir-1 frame13 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame14 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame15 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame16 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame17 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame18 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame19 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame20 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir-1 frame21 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir-1 frame22 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir-1 frame23 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir-1 frame24 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir-1 frame25 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir-1 frame26 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir-1 frame27 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir-1 frame28 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir-1 frame29 exact shared stance group2 texture=attack_stance_2.png
+PASS: exactly THREE actual attack-leg textures across13–29
+PASS: run asset contract: six distinct body and six distinct leg RGBA textures
+PASS: kiem dir1 frame13 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame14 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame15 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame16 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame17 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame18 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame19 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame20 exact shared stance group0 texture=attack_stance_0.png
+PASS: kiem dir1 frame21 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir1 frame22 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir1 frame23 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir1 frame24 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir1 frame25 exact shared stance group1 texture=attack_stance_1.png
+PASS: kiem dir1 frame26 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir1 frame27 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir1 frame28 exact shared stance group2 texture=attack_stance_2.png
+PASS: kiem dir1 frame29 exact shared stance group2 texture=attack_stance_2.png
+PASS: exactly THREE actual attack-leg textures across13–29
+PASS: run asset contract: six distinct body and six distinct leg RGBA textures
+PASS: cung dir-1 frame13 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame14 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame15 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame16 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame17 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame18 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame19 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame20 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir-1 frame21 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir-1 frame22 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir-1 frame23 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir-1 frame24 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir-1 frame25 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir-1 frame26 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir-1 frame27 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir-1 frame28 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir-1 frame29 exact shared stance group2 texture=attack_stance_2.png
+PASS: exactly THREE actual attack-leg textures across13–29
+PASS: run asset contract: six distinct body and six distinct leg RGBA textures
+PASS: cung dir1 frame13 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame14 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame15 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame16 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame17 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame18 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame19 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame20 exact shared stance group0 texture=attack_stance_0.png
+PASS: cung dir1 frame21 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir1 frame22 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir1 frame23 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir1 frame24 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir1 frame25 exact shared stance group1 texture=attack_stance_1.png
+PASS: cung dir1 frame26 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir1 frame27 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir1 frame28 exact shared stance group2 texture=attack_stance_2.png
+PASS: cung dir1 frame29 exact shared stance group2 texture=attack_stance_2.png
+PASS: exactly THREE actual attack-leg textures across13–29
+PASS: run asset contract: six distinct body and six distinct leg RGBA textures
+Attack stance texture contracts failures=0; foot contact/visibility/seams are separate rendered-image tests
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/classic_headless.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+Classic checks failures: 0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/dao_uc_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: field map switch camera snapped while player input locked
+PASS: field 960 top HUD level actual rectangle matches Python checker
+PASS: field 960 top HUD hp actual rectangle matches Python checker
+PASS: field 960 top HUD mp actual rectangle matches Python checker
+PASS: field 960 top HUD menu actual rectangle matches Python checker
+PASS: field 960 top HUD gear actual rectangle matches Python checker
+PASS: field 960 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: field 1200 top HUD level actual rectangle matches Python checker
+PASS: field 1200 top HUD hp actual rectangle matches Python checker
+PASS: field 1200 top HUD mp actual rectangle matches Python checker
+PASS: field 1200 top HUD menu actual rectangle matches Python checker
+PASS: field 1200 top HUD gear actual rectangle matches Python checker
+PASS: field 1200 top HUD minimap actual rectangle matches Python checker
+PASS: field boss bar visibility
+PASS: boss map switch camera snapped while player input locked
+PASS: boss 960 top HUD level actual rectangle matches Python checker
+PASS: boss 960 top HUD hp actual rectangle matches Python checker
+PASS: boss 960 top HUD mp actual rectangle matches Python checker
+PASS: boss 960 top HUD menu actual rectangle matches Python checker
+PASS: boss 960 top HUD gear actual rectangle matches Python checker
+PASS: boss 960 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: boss 1200 top HUD level actual rectangle matches Python checker
+PASS: boss 1200 top HUD hp actual rectangle matches Python checker
+PASS: boss 1200 top HUD mp actual rectangle matches Python checker
+PASS: boss 1200 top HUD menu actual rectangle matches Python checker
+PASS: boss 1200 top HUD gear actual rectangle matches Python checker
+PASS: boss 1200 top HUD boss_hp actual rectangle matches Python checker
+PASS: boss boss bar visibility
+PASS: SCR-06 minimap hidden (A)
+PASS: SCR-06 minimap stays hidden immediately after HUD toggle
+PASS: field map switch camera snapped while player input locked
+PASS: field JSON source SHA256 matches canonical Markdown
+PASS: field original Markdown layout block found
+PASS: field JSON matches every original cell (2550 compared)
+GRID field '#': original=1216 loaded=1216
+PASS: field '#' counts match original grid
+GRID field '=': original=21 loaded=21
+PASS: field '=' counts match original grid
+GRID field '^': original=2 loaded=2
+PASS: field '^' counts match original grid
+GRID field '~': original=3 loaded=3
+PASS: field '~' counts match original grid
+GRID field 'L': original=5 loaded=5
+PASS: field 'L' counts match original grid
+PASS: boss JSON source SHA256 matches canonical Markdown
+PASS: boss original Markdown layout block found
+PASS: boss JSON matches every original cell (1020 compared)
+GRID boss '#': original=516 loaded=516
+PASS: boss '#' counts match original grid
+GRID boss '=': original=0 loaded=0
+PASS: boss '=' counts match original grid
+GRID boss '^': original=0 loaded=0
+PASS: boss '^' counts match original grid
+GRID boss '~': original=0 loaded=0
+PASS: boss '~' counts match original grid
+GRID boss 'L': original=0 loaded=0
+PASS: boss 'L' counts match original grid
+PASS: field appears at canonical S
+PASS: field S stays grounded and still after 1 second
+PASS: spawn camera reset before player input
+PASS: boss map switch camera snapped while player input locked
+WALK field: x400.00 -> map=boss x400.00; frames=1312 jumps=6 resets=0
+PASS: S -> field E right -> boss using real right/jump input, no falls
+PASS: boss appears at S and stays grounded after 1 second
+WALK boss: x400.00 -> map=boss x1863.33; frames=439 jumps=2 resets=0
+PASS: walk to rampart foot and climb the 32px steps from the grid
+PASS: player reaches top rampart at canonical y224
+PASS: required route never uses khinh cong
+PASS: field map switch camera snapped while player input locked
+PASS: boss left E returns to field right-side R
+PASS: return portal resets camera at right map clamp
+PASS: fall respawn camera snapped before input unlock
+PASS: fall into c44-45 -> preceding R c13, not A0 SPAWN
+PASS: spikes respawn camera snapped before input unlock
+PASS: spikes reset to preceding R without HP system
+PASS: water speed 140=0.7*200 while A0 RUN_SPEED stays 200
+PASS: one-way shelf passed from below and landed on top
+PASS: hold touch ↑ climbs ladder c109 above r4 shelf height
+PASS: hold down descends ladder
+PASS: leave ladder left and stand at r4 feet on upper shelf y160
+PASS: Space/context jump leaves ladder using original A0 jump resolver
+PASS: canonical N dummy accepts A0 slash damage
+Dao Uc checks failures: 0; physics frames=2343
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/frames30_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: exactly30 frame rows
+PASS: Lv1 head exact common-layer count
+PASS: Lv1 body exact common-layer count
+PASS: Lv1 legs exact common-layer count
+PASS: kiem frame0 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame1 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame2 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame3 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame4 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame5 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame6 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame7 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame8 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame9 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame10 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame11 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame12 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame13 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame14 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame15 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame16 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame17 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame18 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame19 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame20 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame21 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame22 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame23 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame24 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame25 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame26 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame27 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame28 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame29 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame0 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame1 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame2 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame3 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame4 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame5 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame6 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame7 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame8 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame9 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame10 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame11 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame12 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame13 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame14 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame15 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame16 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame17 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame18 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame19 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame20 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame21 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame22 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame23 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame24 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame25 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame26 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame27 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame28 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: kiem frame29 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: slash airfalse dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airfalse dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: slash airtrue dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000004 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airfalse dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000000 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000005 tip_forward=87.000 composite_centre_offset=40.000
+PASS: tram_kiem airtrue dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: actual centred Sprite2D grip-to-hand <=1
+PASS: sword actual grip gap=0.000003 tip_forward=87.000 composite_centre_offset=40.000
+PASS: cung frame0 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame1 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame2 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame3 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame4 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame5 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame6 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame7 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame8 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame9 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame10 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame11 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame12 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame13 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame14 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame15 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame16 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame17 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame18 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame19 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame20 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame21 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame22 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame23 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame24 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame25 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame26 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame27 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame28 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame29 dir-1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame0 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame1 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame2 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame3 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame4 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame5 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame6 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame7 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame8 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame9 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame10 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame11 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame12 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame13 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame14 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame15 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame16 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame17 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame18 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame19 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame20 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame21 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame22 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame23 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame24 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame25 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame26 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame27 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame28 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: cung frame29 dir1 four layers, rotation0 root flip
+PASS: exclusive class weapon/quiver; one shared held texture
+PASS: shoot airfalse dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir-1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir-1 beat7 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airfalse dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airfalse dir1 beat7 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir-1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: shoot airtrue dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: shoot airtrue dir1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir-1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir-1 beat7 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airfalse dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airfalse dir1 beat7 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir-1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir-1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir-1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir-1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir-1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir-1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir-1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir1 beat0 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir1 beat1 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir1 beat2 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir1 beat3 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: nocked tail on string
+PASS: nocked arrow tip beyond bow
+PASS: V string meets actual near-hand anchor
+PASS: xa_tien airtrue dir1 beat4 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir1 beat5 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: xa_tien airtrue dir1 beat6 <=3fx held weapon hidden
+PASS: all skill sprites rotation0
+PASS: bow belly forward, string behind
+PASS: nocked only draw; separate projectile only release
+PASS: slash t=0.01 hit=false window .10-.20
+PASS: slash t=0.02 hit=false window .10-.20
+PASS: slash t=0.03 hit=false window .10-.20
+PASS: slash t=0.04 hit=false window .10-.20
+PASS: slash t=0.05 hit=false window .10-.20
+PASS: slash t=0.06 hit=false window .10-.20
+PASS: slash t=0.07 hit=false window .10-.20
+PASS: slash t=0.08 hit=false window .10-.20
+PASS: slash t=0.09 hit=false window .10-.20
+PASS: slash t=0.10 hit=true window .10-.20
+PASS: slash t=0.11 hit=true window .10-.20
+PASS: slash t=0.12 hit=true window .10-.20
+PASS: slash t=0.13 hit=true window .10-.20
+PASS: slash t=0.14 hit=true window .10-.20
+PASS: slash t=0.15 hit=true window .10-.20
+PASS: slash t=0.16 hit=true window .10-.20
+PASS: slash t=0.17 hit=true window .10-.20
+PASS: slash t=0.18 hit=true window .10-.20
+PASS: slash t=0.19 hit=true window .10-.20
+PASS: slash t=0.20 hit=false window .10-.20
+PASS: slash t=0.21 hit=false window .10-.20
+PASS: slash t=0.22 hit=false window .10-.20
+PASS: slash t=0.23 hit=false window .10-.20
+PASS: slash t=0.24 hit=false window .10-.20
+PASS: slash t=0.25 hit=false window .10-.20
+PASS: slash t=0.26 hit=false window .10-.20
+PASS: slash t=0.27 hit=false window .10-.20
+PASS: slash t=0.28 hit=false window .10-.20
+PASS: slash t=0.29 hit=false window .10-.20
+PASS: slash exactly .30s and clears hit
+PASS: no projectile before release .20s
+PASS: one separate projectile at release .20s
+PASS: switch clears Cung accessories and projectiles
+PASS: baked somersault phase 0, zero runtime rotation
+PASS: baked somersault phase 1, zero runtime rotation
+PASS: baked somersault phase 2, zero runtime rotation
+PASS: baked somersault phase 3, zero runtime rotation
+PASS: 360 cycle completes at .20s and returns authored fall12
+Frames30 checks cases=228 failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/held_reference_placement_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem dir-1 frame0 exact frame0+reference delta actual=(0.0, 0.0) expected=(0.0, 0.0)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir-1 frame1 exact frame0+reference delta actual=(0.0, -3.9084) expected=(0.0, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir-1 frame2 exact frame0+reference delta actual=(-11.72519, -15.63359) expected=(-11.72519, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir-1 frame3 exact frame0+reference delta actual=(-15.63359, -7.8168) expected=(-15.63359, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir-1 frame4 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir-1 frame5 exact frame0+reference delta actual=(-15.63359, -15.63359) expected=(-15.63359, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir-1 frame6 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir-1 frame7 exact frame0+reference delta actual=(3.908395, -15.63359) expected=(3.908397, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir-1 frame12 exact frame0+reference delta actual=(0.0, -15.63359) expected=(0.0, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir-1 frame21 exact frame0+reference delta actual=(-3.9084, -3.9084) expected=(-3.908397, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir1 frame0 exact frame0+reference delta actual=(0.0, 0.0) expected=(0.0, 0.0)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir1 frame1 exact frame0+reference delta actual=(0.0, -3.9084) expected=(0.0, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir1 frame2 exact frame0+reference delta actual=(-11.72519, -15.63359) expected=(-11.72519, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir1 frame3 exact frame0+reference delta actual=(-15.63359, -7.8168) expected=(-15.63359, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir1 frame4 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir1 frame5 exact frame0+reference delta actual=(-15.63359, -15.63359) expected=(-15.63359, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir1 frame6 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: kiem dir1 frame7 exact frame0+reference delta actual=(3.908395, -15.63359) expected=(3.908397, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir1 frame12 exact frame0+reference delta actual=(0.0, -15.63359) expected=(0.0, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: kiem dir1 frame21 exact frame0+reference delta actual=(-3.9084, -3.9084) expected=(-3.908397, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir-1 frame0 exact frame0+reference delta actual=(0.0, 0.0) expected=(0.0, 0.0)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir-1 frame1 exact frame0+reference delta actual=(0.0, -3.9084) expected=(0.0, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir-1 frame2 exact frame0+reference delta actual=(-11.72519, -15.63359) expected=(-11.72519, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir-1 frame3 exact frame0+reference delta actual=(-15.63359, -7.8168) expected=(-15.63359, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir-1 frame4 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir-1 frame5 exact frame0+reference delta actual=(-15.63359, -15.63359) expected=(-15.63359, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir-1 frame6 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir-1 frame7 exact frame0+reference delta actual=(3.9084, -15.63359) expected=(3.908397, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir-1 frame12 exact frame0+reference delta actual=(0.0, -15.63359) expected=(0.0, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir-1 frame21 exact frame0+reference delta actual=(-3.9084, -3.9084) expected=(-3.908397, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir1 frame0 exact frame0+reference delta actual=(0.0, 0.0) expected=(0.0, 0.0)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir1 frame1 exact frame0+reference delta actual=(0.0, -3.9084) expected=(0.0, -3.908397)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir1 frame2 exact frame0+reference delta actual=(-11.72519, -15.63359) expected=(-11.72519, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir1 frame3 exact frame0+reference delta actual=(-15.63359, -7.8168) expected=(-15.63359, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir1 frame4 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir1 frame5 exact frame0+reference delta actual=(-15.63359, -15.63359) expected=(-15.63359, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir1 frame6 exact frame0+reference delta actual=(-11.72519, -7.8168) expected=(-11.72519, -7.816794)
+PASS: one unchanged held texture, rotation0
+PASS: run2–6 retreat>=10px rise>=6px, mirrored facing
+PASS: cung dir1 frame7 exact frame0+reference delta actual=(3.9084, -15.63359) expected=(3.908397, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir1 frame12 exact frame0+reference delta actual=(0.0, -15.63359) expected=(0.0, -15.63359)
+PASS: one unchanged held texture, rotation0
+PASS: cung dir1 frame21 exact frame0+reference delta actual=(-3.9084, -3.9084) expected=(-3.908397, -3.908397)
+PASS: one unchanged held texture, rotation0
+Held reference-placement contracts failures=0; visual grip tests measure actual rendered pixels separately
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/held_skill_contract_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem frame0 dir-1 held-state contract
+PASS: kiem frame1 dir-1 held-state contract
+PASS: kiem frame2 dir-1 held-state contract
+PASS: kiem frame3 dir-1 held-state contract
+PASS: kiem frame4 dir-1 held-state contract
+PASS: kiem frame5 dir-1 held-state contract
+PASS: kiem frame6 dir-1 held-state contract
+PASS: kiem frame7 dir-1 held-state contract
+PASS: kiem frame8 dir-1 held-state contract
+PASS: kiem frame9 dir-1 held-state contract
+PASS: kiem frame10 dir-1 held-state contract
+PASS: kiem frame11 dir-1 held-state contract
+PASS: kiem frame12 dir-1 held-state contract
+PASS: kiem frame13 dir-1 held-state contract
+PASS: kiem frame14 dir-1 held-state contract
+PASS: kiem frame15 dir-1 held-state contract
+PASS: kiem frame16 dir-1 held-state contract
+PASS: kiem frame17 dir-1 held-state contract
+PASS: kiem frame18 dir-1 held-state contract
+PASS: kiem frame19 dir-1 held-state contract
+PASS: kiem frame20 dir-1 held-state contract
+PASS: kiem frame21 dir-1 held-state contract
+PASS: kiem frame22 dir-1 held-state contract
+PASS: kiem frame23 dir-1 held-state contract
+PASS: kiem frame24 dir-1 held-state contract
+PASS: kiem frame25 dir-1 held-state contract
+PASS: kiem frame26 dir-1 held-state contract
+PASS: kiem frame27 dir-1 held-state contract
+PASS: kiem frame28 dir-1 held-state contract
+PASS: kiem frame29 dir-1 held-state contract
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: kiem frame0 dir1 held-state contract
+PASS: kiem frame1 dir1 held-state contract
+PASS: kiem frame2 dir1 held-state contract
+PASS: kiem frame3 dir1 held-state contract
+PASS: kiem frame4 dir1 held-state contract
+PASS: kiem frame5 dir1 held-state contract
+PASS: kiem frame6 dir1 held-state contract
+PASS: kiem frame7 dir1 held-state contract
+PASS: kiem frame8 dir1 held-state contract
+PASS: kiem frame9 dir1 held-state contract
+PASS: kiem frame10 dir1 held-state contract
+PASS: kiem frame11 dir1 held-state contract
+PASS: kiem frame12 dir1 held-state contract
+PASS: kiem frame13 dir1 held-state contract
+PASS: kiem frame14 dir1 held-state contract
+PASS: kiem frame15 dir1 held-state contract
+PASS: kiem frame16 dir1 held-state contract
+PASS: kiem frame17 dir1 held-state contract
+PASS: kiem frame18 dir1 held-state contract
+PASS: kiem frame19 dir1 held-state contract
+PASS: kiem frame20 dir1 held-state contract
+PASS: kiem frame21 dir1 held-state contract
+PASS: kiem frame22 dir1 held-state contract
+PASS: kiem frame23 dir1 held-state contract
+PASS: kiem frame24 dir1 held-state contract
+PASS: kiem frame25 dir1 held-state contract
+PASS: kiem frame26 dir1 held-state contract
+PASS: kiem frame27 dir1 held-state contract
+PASS: kiem frame28 dir1 held-state contract
+PASS: kiem frame29 dir1 held-state contract
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: six source beats .30s; hit .10–.20 unchanged
+PASS: cung frame0 dir-1 held-state contract
+PASS: cung frame1 dir-1 held-state contract
+PASS: cung frame2 dir-1 held-state contract
+PASS: cung frame3 dir-1 held-state contract
+PASS: cung frame4 dir-1 held-state contract
+PASS: cung frame5 dir-1 held-state contract
+PASS: cung frame6 dir-1 held-state contract
+PASS: cung frame7 dir-1 held-state contract
+PASS: cung frame8 dir-1 held-state contract
+PASS: cung frame9 dir-1 held-state contract
+PASS: cung frame10 dir-1 held-state contract
+PASS: cung frame11 dir-1 held-state contract
+PASS: cung frame12 dir-1 held-state contract
+PASS: cung frame13 dir-1 held-state contract
+PASS: cung frame14 dir-1 held-state contract
+PASS: cung frame15 dir-1 held-state contract
+PASS: cung frame16 dir-1 held-state contract
+PASS: cung frame17 dir-1 held-state contract
+PASS: cung frame18 dir-1 held-state contract
+PASS: cung frame19 dir-1 held-state contract
+PASS: cung frame20 dir-1 held-state contract
+PASS: cung frame21 dir-1 held-state contract
+PASS: cung frame22 dir-1 held-state contract
+PASS: cung frame23 dir-1 held-state contract
+PASS: cung frame24 dir-1 held-state contract
+PASS: cung frame25 dir-1 held-state contract
+PASS: cung frame26 dir-1 held-state contract
+PASS: cung frame27 dir-1 held-state contract
+PASS: cung frame28 dir-1 held-state contract
+PASS: cung frame29 dir-1 held-state contract
+PASS: cung frame0 dir1 held-state contract
+PASS: cung frame1 dir1 held-state contract
+PASS: cung frame2 dir1 held-state contract
+PASS: cung frame3 dir1 held-state contract
+PASS: cung frame4 dir1 held-state contract
+PASS: cung frame5 dir1 held-state contract
+PASS: cung frame6 dir1 held-state contract
+PASS: cung frame7 dir1 held-state contract
+PASS: cung frame8 dir1 held-state contract
+PASS: cung frame9 dir1 held-state contract
+PASS: cung frame10 dir1 held-state contract
+PASS: cung frame11 dir1 held-state contract
+PASS: cung frame12 dir1 held-state contract
+PASS: cung frame13 dir1 held-state contract
+PASS: cung frame14 dir1 held-state contract
+PASS: cung frame15 dir1 held-state contract
+PASS: cung frame16 dir1 held-state contract
+PASS: cung frame17 dir1 held-state contract
+PASS: cung frame18 dir1 held-state contract
+PASS: cung frame19 dir1 held-state contract
+PASS: cung frame20 dir1 held-state contract
+PASS: cung frame21 dir1 held-state contract
+PASS: cung frame22 dir1 held-state contract
+PASS: cung frame23 dir1 held-state contract
+PASS: cung frame24 dir1 held-state contract
+PASS: cung frame25 dir1 held-state contract
+PASS: cung frame26 dir1 held-state contract
+PASS: cung frame27 dir1 held-state contract
+PASS: cung frame28 dir1 held-state contract
+PASS: cung frame29 dir1 held-state contract
+PASS: bow eight source beats
+PASS: bow beat1 projectile only at fifth beat
+PASS: bow beat2 projectile only at fifth beat
+PASS: bow beat3 projectile only at fifth beat
+PASS: bow beat4 projectile only at fifth beat
+PASS: bow beat5 projectile only at fifth beat
+PASS: bow beat6 projectile only at fifth beat
+PASS: bow beat7 projectile only at fifth beat
+PASS: bow beat8 projectile only at fifth beat
+Held-state/skill timing contracts failures=0 (visual acceptance uses ablation images)
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/lv1_viewer_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: 30 static frames plus independent live preview
+PASS: dir1 frame0 bounds=[P: (98.09369, 81.99999), S: (79.81262, 102.0)] inside strip
+PASS: dir1 frame1 bounds=[P: (362.0937, 81.99999), S: (79.81262, 102.0)] inside strip
+PASS: dir1 frames0/1 no overlap
+PASS: dir1 frame2 bounds=[P: (618.0037, 82.0), S: (95.99274, 102.0)] inside strip
+PASS: dir1 frames0/2 no overlap
+PASS: dir1 frames1/2 no overlap
+PASS: dir1 frame3 bounds=[P: (887.0807, 82.0), S: (85.83862, 102.0)] inside strip
+PASS: dir1 frames0/3 no overlap
+PASS: dir1 frames1/3 no overlap
+PASS: dir1 frames2/3 no overlap
+PASS: dir1 frame4 bounds=[P: (1145.041, 81.99999), S: (97.91748, 102.0)] inside strip
+PASS: dir1 frames0/4 no overlap
+PASS: dir1 frames1/4 no overlap
+PASS: dir1 frames2/4 no overlap
+PASS: dir1 frames3/4 no overlap
+PASS: dir1 frame5 bounds=[P: (1410.917, 82.00001), S: (94.16492, 102.0)] inside strip
+PASS: dir1 frames0/5 no overlap
+PASS: dir1 frames1/5 no overlap
+PASS: dir1 frames2/5 no overlap
+PASS: dir1 frames3/5 no overlap
+PASS: dir1 frames4/5 no overlap
+PASS: dir1 frame6 bounds=[P: (91.92822, 210.0), S: (92.14359, 102.0)] inside strip
+PASS: dir1 frames0/6 no overlap
+PASS: dir1 frames1/6 no overlap
+PASS: dir1 frames2/6 no overlap
+PASS: dir1 frames3/6 no overlap
+PASS: dir1 frames4/6 no overlap
+PASS: dir1 frames5/6 no overlap
+PASS: dir1 frame7 bounds=[P: (362.0195, 210.0), S: (79.96106, 102.0)] inside strip
+PASS: dir1 frames0/7 no overlap
+PASS: dir1 frames1/7 no overlap
+PASS: dir1 frames2/7 no overlap
+PASS: dir1 frames3/7 no overlap
+PASS: dir1 frames4/7 no overlap
+PASS: dir1 frames5/7 no overlap
+PASS: dir1 frames6/7 no overlap
+PASS: dir1 frame8 bounds=[P: (615.75, 210.0), S: (100.5, 102.0)] inside strip
+PASS: dir1 frames0/8 no overlap
+PASS: dir1 frames1/8 no overlap
+PASS: dir1 frames2/8 no overlap
+PASS: dir1 frames3/8 no overlap
+PASS: dir1 frames4/8 no overlap
+PASS: dir1 frames5/8 no overlap
+PASS: dir1 frames6/8 no overlap
+PASS: dir1 frames7/8 no overlap
+PASS: dir1 frame9 bounds=[P: (878.2388, 210.0), S: (103.5223, 102.0)] inside strip
+PASS: dir1 frames0/9 no overlap
+PASS: dir1 frames1/9 no overlap
+PASS: dir1 frames2/9 no overlap
+PASS: dir1 frames3/9 no overlap
+PASS: dir1 frames4/9 no overlap
+PASS: dir1 frames5/9 no overlap
+PASS: dir1 frames6/9 no overlap
+PASS: dir1 frames7/9 no overlap
+PASS: dir1 frames8/9 no overlap
+PASS: dir1 frame10 bounds=[P: (1143.75, 210.0), S: (100.5, 102.0)] inside strip
+PASS: dir1 frames0/10 no overlap
+PASS: dir1 frames1/10 no overlap
+PASS: dir1 frames2/10 no overlap
+PASS: dir1 frames3/10 no overlap
+PASS: dir1 frames4/10 no overlap
+PASS: dir1 frames5/10 no overlap
+PASS: dir1 frames6/10 no overlap
+PASS: dir1 frames7/10 no overlap
+PASS: dir1 frames8/10 no overlap
+PASS: dir1 frames9/10 no overlap
+PASS: dir1 frame11 bounds=[P: (1406.239, 210.0), S: (103.5225, 102.0)] inside strip
+PASS: dir1 frames0/11 no overlap
+PASS: dir1 frames1/11 no overlap
+PASS: dir1 frames2/11 no overlap
+PASS: dir1 frames3/11 no overlap
+PASS: dir1 frames4/11 no overlap
+PASS: dir1 frames5/11 no overlap
+PASS: dir1 frames6/11 no overlap
+PASS: dir1 frames7/11 no overlap
+PASS: dir1 frames8/11 no overlap
+PASS: dir1 frames9/11 no overlap
+PASS: dir1 frames10/11 no overlap
+PASS: dir1 frame12 bounds=[P: (87.10829, 338.0), S: (101.7834, 102.0)] inside strip
+PASS: dir1 frames0/12 no overlap
+PASS: dir1 frames1/12 no overlap
+PASS: dir1 frames2/12 no overlap
+PASS: dir1 frames3/12 no overlap
+PASS: dir1 frames4/12 no overlap
+PASS: dir1 frames5/12 no overlap
+PASS: dir1 frames6/12 no overlap
+PASS: dir1 frames7/12 no overlap
+PASS: dir1 frames8/12 no overlap
+PASS: dir1 frames9/12 no overlap
+PASS: dir1 frames10/12 no overlap
+PASS: dir1 frames11/12 no overlap
+PASS: dir1 frame13 bounds=[P: (364.9963, 338.0), S: (74.00732, 102.0)] inside strip
+PASS: dir1 frames0/13 no overlap
+PASS: dir1 frames1/13 no overlap
+PASS: dir1 frames2/13 no overlap
+PASS: dir1 frames3/13 no overlap
+PASS: dir1 frames4/13 no overlap
+PASS: dir1 frames5/13 no overlap
+PASS: dir1 frames6/13 no overlap
+PASS: dir1 frames7/13 no overlap
+PASS: dir1 frames8/13 no overlap
+PASS: dir1 frames9/13 no overlap
+PASS: dir1 frames10/13 no overlap
+PASS: dir1 frames11/13 no overlap
+PASS: dir1 frames12/13 no overlap
+PASS: dir1 frame14 bounds=[P: (631.0021, 338.0), S: (69.99591, 102.0)] inside strip
+PASS: dir1 frames0/14 no overlap
+PASS: dir1 frames1/14 no overlap
+PASS: dir1 frames2/14 no overlap
+PASS: dir1 frames3/14 no overlap
+PASS: dir1 frames4/14 no overlap
+PASS: dir1 frames5/14 no overlap
+PASS: dir1 frames6/14 no overlap
+PASS: dir1 frames7/14 no overlap
+PASS: dir1 frames8/14 no overlap
+PASS: dir1 frames9/14 no overlap
+PASS: dir1 frames10/14 no overlap
+PASS: dir1 frames11/14 no overlap
+PASS: dir1 frames12/14 no overlap
+PASS: dir1 frames13/14 no overlap
+PASS: dir1 frame15 bounds=[P: (886.5247, 338.0), S: (86.95062, 102.0)] inside strip
+PASS: dir1 frames0/15 no overlap
+PASS: dir1 frames1/15 no overlap
+PASS: dir1 frames2/15 no overlap
+PASS: dir1 frames3/15 no overlap
+PASS: dir1 frames4/15 no overlap
+PASS: dir1 frames5/15 no overlap
+PASS: dir1 frames6/15 no overlap
+PASS: dir1 frames7/15 no overlap
+PASS: dir1 frames8/15 no overlap
+PASS: dir1 frames9/15 no overlap
+PASS: dir1 frames10/15 no overlap
+PASS: dir1 frames11/15 no overlap
+PASS: dir1 frames12/15 no overlap
+PASS: dir1 frames13/15 no overlap
+PASS: dir1 frames14/15 no overlap
+PASS: dir1 frame16 bounds=[P: (1159.229, 338.0), S: (69.54199, 102.0)] inside strip
+PASS: dir1 frames0/16 no overlap
+PASS: dir1 frames1/16 no overlap
+PASS: dir1 frames2/16 no overlap
+PASS: dir1 frames3/16 no overlap
+PASS: dir1 frames4/16 no overlap
+PASS: dir1 frames5/16 no overlap
+PASS: dir1 frames6/16 no overlap
+PASS: dir1 frames7/16 no overlap
+PASS: dir1 frames8/16 no overlap
+PASS: dir1 frames9/16 no overlap
+PASS: dir1 frames10/16 no overlap
+PASS: dir1 frames11/16 no overlap
+PASS: dir1 frames12/16 no overlap
+PASS: dir1 frames13/16 no overlap
+PASS: dir1 frames14/16 no overlap
+PASS: dir1 frames15/16 no overlap
+PASS: dir1 frame17 bounds=[P: (1423.229, 338.0), S: (69.54199, 102.0)] inside strip
+PASS: dir1 frames0/17 no overlap
+PASS: dir1 frames1/17 no overlap
+PASS: dir1 frames2/17 no overlap
+PASS: dir1 frames3/17 no overlap
+PASS: dir1 frames4/17 no overlap
+PASS: dir1 frames5/17 no overlap
+PASS: dir1 frames6/17 no overlap
+PASS: dir1 frames7/17 no overlap
+PASS: dir1 frames8/17 no overlap
+PASS: dir1 frames9/17 no overlap
+PASS: dir1 frames10/17 no overlap
+PASS: dir1 frames11/17 no overlap
+PASS: dir1 frames12/17 no overlap
+PASS: dir1 frames13/17 no overlap
+PASS: dir1 frames14/17 no overlap
+PASS: dir1 frames15/17 no overlap
+PASS: dir1 frames16/17 no overlap
+PASS: dir1 frame18 bounds=[P: (97.37817, 466.0), S: (81.24365, 102.0)] inside strip
+PASS: dir1 frames0/18 no overlap
+PASS: dir1 frames1/18 no overlap
+PASS: dir1 frames2/18 no overlap
+PASS: dir1 frames3/18 no overlap
+PASS: dir1 frames4/18 no overlap
+PASS: dir1 frames5/18 no overlap
+PASS: dir1 frames6/18 no overlap
+PASS: dir1 frames7/18 no overlap
+PASS: dir1 frames8/18 no overlap
+PASS: dir1 frames9/18 no overlap
+PASS: dir1 frames10/18 no overlap
+PASS: dir1 frames11/18 no overlap
+PASS: dir1 frames12/18 no overlap
+PASS: dir1 frames13/18 no overlap
+PASS: dir1 frames14/18 no overlap
+PASS: dir1 frames15/18 no overlap
+PASS: dir1 frames16/18 no overlap
+PASS: dir1 frames17/18 no overlap
+PASS: dir1 frame19 bounds=[P: (359.4969, 466.0), S: (85.00626, 102.0)] inside strip
+PASS: dir1 frames0/19 no overlap
+PASS: dir1 frames1/19 no overlap
+PASS: dir1 frames2/19 no overlap
+PASS: dir1 frames3/19 no overlap
+PASS: dir1 frames4/19 no overlap
+PASS: dir1 frames5/19 no overlap
+PASS: dir1 frames6/19 no overlap
+PASS: dir1 frames7/19 no overlap
+PASS: dir1 frames8/19 no overlap
+PASS: dir1 frames9/19 no overlap
+PASS: dir1 frames10/19 no overlap
+PASS: dir1 frames11/19 no overlap
+PASS: dir1 frames12/19 no overlap
+PASS: dir1 frames13/19 no overlap
+PASS: dir1 frames14/19 no overlap
+PASS: dir1 frames15/19 no overlap
+PASS: dir1 frames16/19 no overlap
+PASS: dir1 frames17/19 no overlap
+PASS: dir1 frames18/19 no overlap
+PASS: dir1 frame20 bounds=[P: (623.2496, 466.0), S: (85.50079, 102.0)] inside strip
+PASS: dir1 frames0/20 no overlap
+PASS: dir1 frames1/20 no overlap
+PASS: dir1 frames2/20 no overlap
+PASS: dir1 frames3/20 no overlap
+PASS: dir1 frames4/20 no overlap
+PASS: dir1 frames5/20 no overlap
+PASS: dir1 frames6/20 no overlap
+PASS: dir1 frames7/20 no overlap
+PASS: dir1 frames8/20 no overlap
+PASS: dir1 frames9/20 no overlap
+PASS: dir1 frames10/20 no overlap
+PASS: dir1 frames11/20 no overlap
+PASS: dir1 frames12/20 no overlap
+PASS: dir1 frames13/20 no overlap
+PASS: dir1 frames14/20 no overlap
+PASS: dir1 frames15/20 no overlap
+PASS: dir1 frames16/20 no overlap
+PASS: dir1 frames17/20 no overlap
+PASS: dir1 frames18/20 no overlap
+PASS: dir1 frames19/20 no overlap
+PASS: dir1 frame21 bounds=[P: (889.1919, 466.0), S: (81.61627, 102.0)] inside strip
+PASS: dir1 frames0/21 no overlap
+PASS: dir1 frames1/21 no overlap
+PASS: dir1 frames2/21 no overlap
+PASS: dir1 frames3/21 no overlap
+PASS: dir1 frames4/21 no overlap
+PASS: dir1 frames5/21 no overlap
+PASS: dir1 frames6/21 no overlap
+PASS: dir1 frames7/21 no overlap
+PASS: dir1 frames8/21 no overlap
+PASS: dir1 frames9/21 no overlap
+PASS: dir1 frames10/21 no overlap
+PASS: dir1 frames11/21 no overlap
+PASS: dir1 frames12/21 no overlap
+PASS: dir1 frames13/21 no overlap
+PASS: dir1 frames14/21 no overlap
+PASS: dir1 frames15/21 no overlap
+PASS: dir1 frames16/21 no overlap
+PASS: dir1 frames17/21 no overlap
+PASS: dir1 frames18/21 no overlap
+PASS: dir1 frames19/21 no overlap
+PASS: dir1 frames20/21 no overlap
+PASS: dir1 frame22 bounds=[P: (1164.63, 466.0), S: (58.73975, 102.0)] inside strip
+PASS: dir1 frames0/22 no overlap
+PASS: dir1 frames1/22 no overlap
+PASS: dir1 frames2/22 no overlap
+PASS: dir1 frames3/22 no overlap
+PASS: dir1 frames4/22 no overlap
+PASS: dir1 frames5/22 no overlap
+PASS: dir1 frames6/22 no overlap
+PASS: dir1 frames7/22 no overlap
+PASS: dir1 frames8/22 no overlap
+PASS: dir1 frames9/22 no overlap
+PASS: dir1 frames10/22 no overlap
+PASS: dir1 frames11/22 no overlap
+PASS: dir1 frames12/22 no overlap
+PASS: dir1 frames13/22 no overlap
+PASS: dir1 frames14/22 no overlap
+PASS: dir1 frames15/22 no overlap
+PASS: dir1 frames16/22 no overlap
+PASS: dir1 frames17/22 no overlap
+PASS: dir1 frames18/22 no overlap
+PASS: dir1 frames19/22 no overlap
+PASS: dir1 frames20/22 no overlap
+PASS: dir1 frames21/22 no overlap
+PASS: dir1 frame23 bounds=[P: (1429.703, 466.0), S: (56.59448, 102.0)] inside strip
+PASS: dir1 frames0/23 no overlap
+PASS: dir1 frames1/23 no overlap
+PASS: dir1 frames2/23 no overlap
+PASS: dir1 frames3/23 no overlap
+PASS: dir1 frames4/23 no overlap
+PASS: dir1 frames5/23 no overlap
+PASS: dir1 frames6/23 no overlap
+PASS: dir1 frames7/23 no overlap
+PASS: dir1 frames8/23 no overlap
+PASS: dir1 frames9/23 no overlap
+PASS: dir1 frames10/23 no overlap
+PASS: dir1 frames11/23 no overlap
+PASS: dir1 frames12/23 no overlap
+PASS: dir1 frames13/23 no overlap
+PASS: dir1 frames14/23 no overlap
+PASS: dir1 frames15/23 no overlap
+PASS: dir1 frames16/23 no overlap
+PASS: dir1 frames17/23 no overlap
+PASS: dir1 frames18/23 no overlap
+PASS: dir1 frames19/23 no overlap
+PASS: dir1 frames20/23 no overlap
+PASS: dir1 frames21/23 no overlap
+PASS: dir1 frames22/23 no overlap
+PASS: dir1 frame24 bounds=[P: (99.69662, 594.0), S: (76.60679, 102.0001)] inside strip
+PASS: dir1 frames0/24 no overlap
+PASS: dir1 frames1/24 no overlap
+PASS: dir1 frames2/24 no overlap
+PASS: dir1 frames3/24 no overlap
+PASS: dir1 frames4/24 no overlap
+PASS: dir1 frames5/24 no overlap
+PASS: dir1 frames6/24 no overlap
+PASS: dir1 frames7/24 no overlap
+PASS: dir1 frames8/24 no overlap
+PASS: dir1 frames9/24 no overlap
+PASS: dir1 frames10/24 no overlap
+PASS: dir1 frames11/24 no overlap
+PASS: dir1 frames12/24 no overlap
+PASS: dir1 frames13/24 no overlap
+PASS: dir1 frames14/24 no overlap
+PASS: dir1 frames15/24 no overlap
+PASS: dir1 frames16/24 no overlap
+PASS: dir1 frames17/24 no overlap
+PASS: dir1 frames18/24 no overlap
+PASS: dir1 frames19/24 no overlap
+PASS: dir1 frames20/24 no overlap
+PASS: dir1 frames21/24 no overlap
+PASS: dir1 frames22/24 no overlap
+PASS: dir1 frames23/24 no overlap
+PASS: dir1 frame25 bounds=[P: (375.3491, 594.0), S: (53.30179, 102.0)] inside strip
+PASS: dir1 frames0/25 no overlap
+PASS: dir1 frames1/25 no overlap
+PASS: dir1 frames2/25 no overlap
+PASS: dir1 frames3/25 no overlap
+PASS: dir1 frames4/25 no overlap
+PASS: dir1 frames5/25 no overlap
+PASS: dir1 frames6/25 no overlap
+PASS: dir1 frames7/25 no overlap
+PASS: dir1 frames8/25 no overlap
+PASS: dir1 frames9/25 no overlap
+PASS: dir1 frames10/25 no overlap
+PASS: dir1 frames11/25 no overlap
+PASS: dir1 frames12/25 no overlap
+PASS: dir1 frames13/25 no overlap
+PASS: dir1 frames14/25 no overlap
+PASS: dir1 frames15/25 no overlap
+PASS: dir1 frames16/25 no overlap
+PASS: dir1 frames17/25 no overlap
+PASS: dir1 frames18/25 no overlap
+PASS: dir1 frames19/25 no overlap
+PASS: dir1 frames20/25 no overlap
+PASS: dir1 frames21/25 no overlap
+PASS: dir1 frames22/25 no overlap
+PASS: dir1 frames23/25 no overlap
+PASS: dir1 frames24/25 no overlap
+PASS: dir1 frame26 bounds=[P: (633.6179, 594.0001), S: (64.76434, 101.9999)] inside strip
+PASS: dir1 frames0/26 no overlap
+PASS: dir1 frames1/26 no overlap
+PASS: dir1 frames2/26 no overlap
+PASS: dir1 frames3/26 no overlap
+PASS: dir1 frames4/26 no overlap
+PASS: dir1 frames5/26 no overlap
+PASS: dir1 frames6/26 no overlap
+PASS: dir1 frames7/26 no overlap
+PASS: dir1 frames8/26 no overlap
+PASS: dir1 frames9/26 no overlap
+PASS: dir1 frames10/26 no overlap
+PASS: dir1 frames11/26 no overlap
+PASS: dir1 frames12/26 no overlap
+PASS: dir1 frames13/26 no overlap
+PASS: dir1 frames14/26 no overlap
+PASS: dir1 frames15/26 no overlap
+PASS: dir1 frames16/26 no overlap
+PASS: dir1 frames17/26 no overlap
+PASS: dir1 frames18/26 no overlap
+PASS: dir1 frames19/26 no overlap
+PASS: dir1 frames20/26 no overlap
+PASS: dir1 frames21/26 no overlap
+PASS: dir1 frames22/26 no overlap
+PASS: dir1 frames23/26 no overlap
+PASS: dir1 frames24/26 no overlap
+PASS: dir1 frames25/26 no overlap
+PASS: dir1 frame27 bounds=[P: (889.3782, 594.0), S: (81.24365, 102.0)] inside strip
+PASS: dir1 frames0/27 no overlap
+PASS: dir1 frames1/27 no overlap
+PASS: dir1 frames2/27 no overlap
+PASS: dir1 frames3/27 no overlap
+PASS: dir1 frames4/27 no overlap
+PASS: dir1 frames5/27 no overlap
+PASS: dir1 frames6/27 no overlap
+PASS: dir1 frames7/27 no overlap
+PASS: dir1 frames8/27 no overlap
+PASS: dir1 frames9/27 no overlap
+PASS: dir1 frames10/27 no overlap
+PASS: dir1 frames11/27 no overlap
+PASS: dir1 frames12/27 no overlap
+PASS: dir1 frames13/27 no overlap
+PASS: dir1 frames14/27 no overlap
+PASS: dir1 frames15/27 no overlap
+PASS: dir1 frames16/27 no overlap
+PASS: dir1 frames17/27 no overlap
+PASS: dir1 frames18/27 no overlap
+PASS: dir1 frames19/27 no overlap
+PASS: dir1 frames20/27 no overlap
+PASS: dir1 frames21/27 no overlap
+PASS: dir1 frames22/27 no overlap
+PASS: dir1 frames23/27 no overlap
+PASS: dir1 frames24/27 no overlap
+PASS: dir1 frames25/27 no overlap
+PASS: dir1 frames26/27 no overlap
+PASS: dir1 frame28 bounds=[P: (1151.497, 594.0), S: (85.00623, 102.0)] inside strip
+PASS: dir1 frames0/28 no overlap
+PASS: dir1 frames1/28 no overlap
+PASS: dir1 frames2/28 no overlap
+PASS: dir1 frames3/28 no overlap
+PASS: dir1 frames4/28 no overlap
+PASS: dir1 frames5/28 no overlap
+PASS: dir1 frames6/28 no overlap
+PASS: dir1 frames7/28 no overlap
+PASS: dir1 frames8/28 no overlap
+PASS: dir1 frames9/28 no overlap
+PASS: dir1 frames10/28 no overlap
+PASS: dir1 frames11/28 no overlap
+PASS: dir1 frames12/28 no overlap
+PASS: dir1 frames13/28 no overlap
+PASS: dir1 frames14/28 no overlap
+PASS: dir1 frames15/28 no overlap
+PASS: dir1 frames16/28 no overlap
+PASS: dir1 frames17/28 no overlap
+PASS: dir1 frames18/28 no overlap
+PASS: dir1 frames19/28 no overlap
+PASS: dir1 frames20/28 no overlap
+PASS: dir1 frames21/28 no overlap
+PASS: dir1 frames22/28 no overlap
+PASS: dir1 frames23/28 no overlap
+PASS: dir1 frames24/28 no overlap
+PASS: dir1 frames25/28 no overlap
+PASS: dir1 frames26/28 no overlap
+PASS: dir1 frames27/28 no overlap
+PASS: dir1 frame29 bounds=[P: (1416.043, 594.0), S: (83.91357, 102.0)] inside strip
+PASS: dir1 frames0/29 no overlap
+PASS: dir1 frames1/29 no overlap
+PASS: dir1 frames2/29 no overlap
+PASS: dir1 frames3/29 no overlap
+PASS: dir1 frames4/29 no overlap
+PASS: dir1 frames5/29 no overlap
+PASS: dir1 frames6/29 no overlap
+PASS: dir1 frames7/29 no overlap
+PASS: dir1 frames8/29 no overlap
+PASS: dir1 frames9/29 no overlap
+PASS: dir1 frames10/29 no overlap
+PASS: dir1 frames11/29 no overlap
+PASS: dir1 frames12/29 no overlap
+PASS: dir1 frames13/29 no overlap
+PASS: dir1 frames14/29 no overlap
+PASS: dir1 frames15/29 no overlap
+PASS: dir1 frames16/29 no overlap
+PASS: dir1 frames17/29 no overlap
+PASS: dir1 frames18/29 no overlap
+PASS: dir1 frames19/29 no overlap
+PASS: dir1 frames20/29 no overlap
+PASS: dir1 frames21/29 no overlap
+PASS: dir1 frames22/29 no overlap
+PASS: dir1 frames23/29 no overlap
+PASS: dir1 frames24/29 no overlap
+PASS: dir1 frames25/29 no overlap
+PASS: dir1 frames26/29 no overlap
+PASS: dir1 frames27/29 no overlap
+PASS: dir1 frames28/29 no overlap
+PASS: dir-1 frame0 bounds=[P: (98.09369, 81.99999), S: (79.81262, 102.0)] inside strip
+PASS: dir-1 frame1 bounds=[P: (362.0937, 81.99999), S: (79.81262, 102.0)] inside strip
+PASS: dir-1 frames0/1 no overlap
+PASS: dir-1 frame2 bounds=[P: (618.0036, 82.0), S: (95.99274, 102.0)] inside strip
+PASS: dir-1 frames0/2 no overlap
+PASS: dir-1 frames1/2 no overlap
+PASS: dir-1 frame3 bounds=[P: (887.0807, 82.0), S: (85.83862, 102.0)] inside strip
+PASS: dir-1 frames0/3 no overlap
+PASS: dir-1 frames1/3 no overlap
+PASS: dir-1 frames2/3 no overlap
+PASS: dir-1 frame4 bounds=[P: (1145.041, 81.99999), S: (97.91748, 102.0)] inside strip
+PASS: dir-1 frames0/4 no overlap
+PASS: dir-1 frames1/4 no overlap
+PASS: dir-1 frames2/4 no overlap
+PASS: dir-1 frames3/4 no overlap
+PASS: dir-1 frame5 bounds=[P: (1410.918, 82.00001), S: (94.16492, 102.0)] inside strip
+PASS: dir-1 frames0/5 no overlap
+PASS: dir-1 frames1/5 no overlap
+PASS: dir-1 frames2/5 no overlap
+PASS: dir-1 frames3/5 no overlap
+PASS: dir-1 frames4/5 no overlap
+PASS: dir-1 frame6 bounds=[P: (91.9282, 210.0), S: (92.14358, 102.0)] inside strip
+PASS: dir-1 frames0/6 no overlap
+PASS: dir-1 frames1/6 no overlap
+PASS: dir-1 frames2/6 no overlap
+PASS: dir-1 frames3/6 no overlap
+PASS: dir-1 frames4/6 no overlap
+PASS: dir-1 frames5/6 no overlap
+PASS: dir-1 frame7 bounds=[P: (362.0195, 210.0), S: (79.96106, 102.0)] inside strip
+PASS: dir-1 frames0/7 no overlap
+PASS: dir-1 frames1/7 no overlap
+PASS: dir-1 frames2/7 no overlap
+PASS: dir-1 frames3/7 no overlap
+PASS: dir-1 frames4/7 no overlap
+PASS: dir-1 frames5/7 no overlap
+PASS: dir-1 frames6/7 no overlap
+PASS: dir-1 frame8 bounds=[P: (615.75, 210.0), S: (100.5, 102.0)] inside strip
+PASS: dir-1 frames0/8 no overlap
+PASS: dir-1 frames1/8 no overlap
+PASS: dir-1 frames2/8 no overlap
+PASS: dir-1 frames3/8 no overlap
+PASS: dir-1 frames4/8 no overlap
+PASS: dir-1 frames5/8 no overlap
+PASS: dir-1 frames6/8 no overlap
+PASS: dir-1 frames7/8 no overlap
+PASS: dir-1 frame9 bounds=[P: (878.2388, 210.0), S: (103.5223, 102.0)] inside strip
+PASS: dir-1 frames0/9 no overlap
+PASS: dir-1 frames1/9 no overlap
+PASS: dir-1 frames2/9 no overlap
+PASS: dir-1 frames3/9 no overlap
+PASS: dir-1 frames4/9 no overlap
+PASS: dir-1 frames5/9 no overlap
+PASS: dir-1 frames6/9 no overlap
+PASS: dir-1 frames7/9 no overlap
+PASS: dir-1 frames8/9 no overlap
+PASS: dir-1 frame10 bounds=[P: (1143.75, 210.0), S: (100.5, 102.0)] inside strip
+PASS: dir-1 frames0/10 no overlap
+PASS: dir-1 frames1/10 no overlap
+PASS: dir-1 frames2/10 no overlap
+PASS: dir-1 frames3/10 no overlap
+PASS: dir-1 frames4/10 no overlap
+PASS: dir-1 frames5/10 no overlap
+PASS: dir-1 frames6/10 no overlap
+PASS: dir-1 frames7/10 no overlap
+PASS: dir-1 frames8/10 no overlap
+PASS: dir-1 frames9/10 no overlap
+PASS: dir-1 frame11 bounds=[P: (1406.239, 210.0), S: (103.5225, 102.0)] inside strip
+PASS: dir-1 frames0/11 no overlap
+PASS: dir-1 frames1/11 no overlap
+PASS: dir-1 frames2/11 no overlap
+PASS: dir-1 frames3/11 no overlap
+PASS: dir-1 frames4/11 no overlap
+PASS: dir-1 frames5/11 no overlap
+PASS: dir-1 frames6/11 no overlap
+PASS: dir-1 frames7/11 no overlap
+PASS: dir-1 frames8/11 no overlap
+PASS: dir-1 frames9/11 no overlap
+PASS: dir-1 frames10/11 no overlap
+PASS: dir-1 frame12 bounds=[P: (87.10828, 338.0), S: (101.7834, 102.0)] inside strip
+PASS: dir-1 frames0/12 no overlap
+PASS: dir-1 frames1/12 no overlap
+PASS: dir-1 frames2/12 no overlap
+PASS: dir-1 frames3/12 no overlap
+PASS: dir-1 frames4/12 no overlap
+PASS: dir-1 frames5/12 no overlap
+PASS: dir-1 frames6/12 no overlap
+PASS: dir-1 frames7/12 no overlap
+PASS: dir-1 frames8/12 no overlap
+PASS: dir-1 frames9/12 no overlap
+PASS: dir-1 frames10/12 no overlap
+PASS: dir-1 frames11/12 no overlap
+PASS: dir-1 frame13 bounds=[P: (364.9963, 338.0), S: (74.00732, 102.0)] inside strip
+PASS: dir-1 frames0/13 no overlap
+PASS: dir-1 frames1/13 no overlap
+PASS: dir-1 frames2/13 no overlap
+PASS: dir-1 frames3/13 no overlap
+PASS: dir-1 frames4/13 no overlap
+PASS: dir-1 frames5/13 no overlap
+PASS: dir-1 frames6/13 no overlap
+PASS: dir-1 frames7/13 no overlap
+PASS: dir-1 frames8/13 no overlap
+PASS: dir-1 frames9/13 no overlap
+PASS: dir-1 frames10/13 no overlap
+PASS: dir-1 frames11/13 no overlap
+PASS: dir-1 frames12/13 no overlap
+PASS: dir-1 frame14 bounds=[P: (631.002, 338.0), S: (69.99591, 102.0)] inside strip
+PASS: dir-1 frames0/14 no overlap
+PASS: dir-1 frames1/14 no overlap
+PASS: dir-1 frames2/14 no overlap
+PASS: dir-1 frames3/14 no overlap
+PASS: dir-1 frames4/14 no overlap
+PASS: dir-1 frames5/14 no overlap
+PASS: dir-1 frames6/14 no overlap
+PASS: dir-1 frames7/14 no overlap
+PASS: dir-1 frames8/14 no overlap
+PASS: dir-1 frames9/14 no overlap
+PASS: dir-1 frames10/14 no overlap
+PASS: dir-1 frames11/14 no overlap
+PASS: dir-1 frames12/14 no overlap
+PASS: dir-1 frames13/14 no overlap
+PASS: dir-1 frame15 bounds=[P: (886.5247, 338.0), S: (86.95062, 102.0)] inside strip
+PASS: dir-1 frames0/15 no overlap
+PASS: dir-1 frames1/15 no overlap
+PASS: dir-1 frames2/15 no overlap
+PASS: dir-1 frames3/15 no overlap
+PASS: dir-1 frames4/15 no overlap
+PASS: dir-1 frames5/15 no overlap
+PASS: dir-1 frames6/15 no overlap
+PASS: dir-1 frames7/15 no overlap
+PASS: dir-1 frames8/15 no overlap
+PASS: dir-1 frames9/15 no overlap
+PASS: dir-1 frames10/15 no overlap
+PASS: dir-1 frames11/15 no overlap
+PASS: dir-1 frames12/15 no overlap
+PASS: dir-1 frames13/15 no overlap
+PASS: dir-1 frames14/15 no overlap
+PASS: dir-1 frame16 bounds=[P: (1159.229, 338.0), S: (69.54199, 102.0)] inside strip
+PASS: dir-1 frames0/16 no overlap
+PASS: dir-1 frames1/16 no overlap
+PASS: dir-1 frames2/16 no overlap
+PASS: dir-1 frames3/16 no overlap
+PASS: dir-1 frames4/16 no overlap
+PASS: dir-1 frames5/16 no overlap
+PASS: dir-1 frames6/16 no overlap
+PASS: dir-1 frames7/16 no overlap
+PASS: dir-1 frames8/16 no overlap
+PASS: dir-1 frames9/16 no overlap
+PASS: dir-1 frames10/16 no overlap
+PASS: dir-1 frames11/16 no overlap
+PASS: dir-1 frames12/16 no overlap
+PASS: dir-1 frames13/16 no overlap
+PASS: dir-1 frames14/16 no overlap
+PASS: dir-1 frames15/16 no overlap
+PASS: dir-1 frame17 bounds=[P: (1423.229, 338.0), S: (69.54199, 102.0)] inside strip
+PASS: dir-1 frames0/17 no overlap
+PASS: dir-1 frames1/17 no overlap
+PASS: dir-1 frames2/17 no overlap
+PASS: dir-1 frames3/17 no overlap
+PASS: dir-1 frames4/17 no overlap
+PASS: dir-1 frames5/17 no overlap
+PASS: dir-1 frames6/17 no overlap
+PASS: dir-1 frames7/17 no overlap
+PASS: dir-1 frames8/17 no overlap
+PASS: dir-1 frames9/17 no overlap
+PASS: dir-1 frames10/17 no overlap
+PASS: dir-1 frames11/17 no overlap
+PASS: dir-1 frames12/17 no overlap
+PASS: dir-1 frames13/17 no overlap
+PASS: dir-1 frames14/17 no overlap
+PASS: dir-1 frames15/17 no overlap
+PASS: dir-1 frames16/17 no overlap
+PASS: dir-1 frame18 bounds=[P: (97.37817, 466.0), S: (81.24365, 102.0)] inside strip
+PASS: dir-1 frames0/18 no overlap
+PASS: dir-1 frames1/18 no overlap
+PASS: dir-1 frames2/18 no overlap
+PASS: dir-1 frames3/18 no overlap
+PASS: dir-1 frames4/18 no overlap
+PASS: dir-1 frames5/18 no overlap
+PASS: dir-1 frames6/18 no overlap
+PASS: dir-1 frames7/18 no overlap
+PASS: dir-1 frames8/18 no overlap
+PASS: dir-1 frames9/18 no overlap
+PASS: dir-1 frames10/18 no overlap
+PASS: dir-1 frames11/18 no overlap
+PASS: dir-1 frames12/18 no overlap
+PASS: dir-1 frames13/18 no overlap
+PASS: dir-1 frames14/18 no overlap
+PASS: dir-1 frames15/18 no overlap
+PASS: dir-1 frames16/18 no overlap
+PASS: dir-1 frames17/18 no overlap
+PASS: dir-1 frame19 bounds=[P: (359.4969, 466.0), S: (85.00626, 102.0)] inside strip
+PASS: dir-1 frames0/19 no overlap
+PASS: dir-1 frames1/19 no overlap
+PASS: dir-1 frames2/19 no overlap
+PASS: dir-1 frames3/19 no overlap
+PASS: dir-1 frames4/19 no overlap
+PASS: dir-1 frames5/19 no overlap
+PASS: dir-1 frames6/19 no overlap
+PASS: dir-1 frames7/19 no overlap
+PASS: dir-1 frames8/19 no overlap
+PASS: dir-1 frames9/19 no overlap
+PASS: dir-1 frames10/19 no overlap
+PASS: dir-1 frames11/19 no overlap
+PASS: dir-1 frames12/19 no overlap
+PASS: dir-1 frames13/19 no overlap
+PASS: dir-1 frames14/19 no overlap
+PASS: dir-1 frames15/19 no overlap
+PASS: dir-1 frames16/19 no overlap
+PASS: dir-1 frames17/19 no overlap
+PASS: dir-1 frames18/19 no overlap
+PASS: dir-1 frame20 bounds=[P: (623.2496, 466.0), S: (85.50079, 102.0)] inside strip
+PASS: dir-1 frames0/20 no overlap
+PASS: dir-1 frames1/20 no overlap
+PASS: dir-1 frames2/20 no overlap
+PASS: dir-1 frames3/20 no overlap
+PASS: dir-1 frames4/20 no overlap
+PASS: dir-1 frames5/20 no overlap
+PASS: dir-1 frames6/20 no overlap
+PASS: dir-1 frames7/20 no overlap
+PASS: dir-1 frames8/20 no overlap
+PASS: dir-1 frames9/20 no overlap
+PASS: dir-1 frames10/20 no overlap
+PASS: dir-1 frames11/20 no overlap
+PASS: dir-1 frames12/20 no overlap
+PASS: dir-1 frames13/20 no overlap
+PASS: dir-1 frames14/20 no overlap
+PASS: dir-1 frames15/20 no overlap
+PASS: dir-1 frames16/20 no overlap
+PASS: dir-1 frames17/20 no overlap
+PASS: dir-1 frames18/20 no overlap
+PASS: dir-1 frames19/20 no overlap
+PASS: dir-1 frame21 bounds=[P: (889.1918, 466.0), S: (81.61627, 102.0)] inside strip
+PASS: dir-1 frames0/21 no overlap
+PASS: dir-1 frames1/21 no overlap
+PASS: dir-1 frames2/21 no overlap
+PASS: dir-1 frames3/21 no overlap
+PASS: dir-1 frames4/21 no overlap
+PASS: dir-1 frames5/21 no overlap
+PASS: dir-1 frames6/21 no overlap
+PASS: dir-1 frames7/21 no overlap
+PASS: dir-1 frames8/21 no overlap
+PASS: dir-1 frames9/21 no overlap
+PASS: dir-1 frames10/21 no overlap
+PASS: dir-1 frames11/21 no overlap
+PASS: dir-1 frames12/21 no overlap
+PASS: dir-1 frames13/21 no overlap
+PASS: dir-1 frames14/21 no overlap
+PASS: dir-1 frames15/21 no overlap
+PASS: dir-1 frames16/21 no overlap
+PASS: dir-1 frames17/21 no overlap
+PASS: dir-1 frames18/21 no overlap
+PASS: dir-1 frames19/21 no overlap
+PASS: dir-1 frames20/21 no overlap
+PASS: dir-1 frame22 bounds=[P: (1164.63, 466.0), S: (58.73975, 102.0)] inside strip
+PASS: dir-1 frames0/22 no overlap
+PASS: dir-1 frames1/22 no overlap
+PASS: dir-1 frames2/22 no overlap
+PASS: dir-1 frames3/22 no overlap
+PASS: dir-1 frames4/22 no overlap
+PASS: dir-1 frames5/22 no overlap
+PASS: dir-1 frames6/22 no overlap
+PASS: dir-1 frames7/22 no overlap
+PASS: dir-1 frames8/22 no overlap
+PASS: dir-1 frames9/22 no overlap
+PASS: dir-1 frames10/22 no overlap
+PASS: dir-1 frames11/22 no overlap
+PASS: dir-1 frames12/22 no overlap
+PASS: dir-1 frames13/22 no overlap
+PASS: dir-1 frames14/22 no overlap
+PASS: dir-1 frames15/22 no overlap
+PASS: dir-1 frames16/22 no overlap
+PASS: dir-1 frames17/22 no overlap
+PASS: dir-1 frames18/22 no overlap
+PASS: dir-1 frames19/22 no overlap
+PASS: dir-1 frames20/22 no overlap
+PASS: dir-1 frames21/22 no overlap
+PASS: dir-1 frame23 bounds=[P: (1429.703, 466.0), S: (56.59448, 102.0)] inside strip
+PASS: dir-1 frames0/23 no overlap
+PASS: dir-1 frames1/23 no overlap
+PASS: dir-1 frames2/23 no overlap
+PASS: dir-1 frames3/23 no overlap
+PASS: dir-1 frames4/23 no overlap
+PASS: dir-1 frames5/23 no overlap
+PASS: dir-1 frames6/23 no overlap
+PASS: dir-1 frames7/23 no overlap
+PASS: dir-1 frames8/23 no overlap
+PASS: dir-1 frames9/23 no overlap
+PASS: dir-1 frames10/23 no overlap
+PASS: dir-1 frames11/23 no overlap
+PASS: dir-1 frames12/23 no overlap
+PASS: dir-1 frames13/23 no overlap
+PASS: dir-1 frames14/23 no overlap
+PASS: dir-1 frames15/23 no overlap
+PASS: dir-1 frames16/23 no overlap
+PASS: dir-1 frames17/23 no overlap
+PASS: dir-1 frames18/23 no overlap
+PASS: dir-1 frames19/23 no overlap
+PASS: dir-1 frames20/23 no overlap
+PASS: dir-1 frames21/23 no overlap
+PASS: dir-1 frames22/23 no overlap
+PASS: dir-1 frame24 bounds=[P: (99.69661, 594.0), S: (76.60678, 102.0001)] inside strip
+PASS: dir-1 frames0/24 no overlap
+PASS: dir-1 frames1/24 no overlap
+PASS: dir-1 frames2/24 no overlap
+PASS: dir-1 frames3/24 no overlap
+PASS: dir-1 frames4/24 no overlap
+PASS: dir-1 frames5/24 no overlap
+PASS: dir-1 frames6/24 no overlap
+PASS: dir-1 frames7/24 no overlap
+PASS: dir-1 frames8/24 no overlap
+PASS: dir-1 frames9/24 no overlap
+PASS: dir-1 frames10/24 no overlap
+PASS: dir-1 frames11/24 no overlap
+PASS: dir-1 frames12/24 no overlap
+PASS: dir-1 frames13/24 no overlap
+PASS: dir-1 frames14/24 no overlap
+PASS: dir-1 frames15/24 no overlap
+PASS: dir-1 frames16/24 no overlap
+PASS: dir-1 frames17/24 no overlap
+PASS: dir-1 frames18/24 no overlap
+PASS: dir-1 frames19/24 no overlap
+PASS: dir-1 frames20/24 no overlap
+PASS: dir-1 frames21/24 no overlap
+PASS: dir-1 frames22/24 no overlap
+PASS: dir-1 frames23/24 no overlap
+PASS: dir-1 frame25 bounds=[P: (375.3491, 594.0), S: (53.30179, 102.0)] inside strip
+PASS: dir-1 frames0/25 no overlap
+PASS: dir-1 frames1/25 no overlap
+PASS: dir-1 frames2/25 no overlap
+PASS: dir-1 frames3/25 no overlap
+PASS: dir-1 frames4/25 no overlap
+PASS: dir-1 frames5/25 no overlap
+PASS: dir-1 frames6/25 no overlap
+PASS: dir-1 frames7/25 no overlap
+PASS: dir-1 frames8/25 no overlap
+PASS: dir-1 frames9/25 no overlap
+PASS: dir-1 frames10/25 no overlap
+PASS: dir-1 frames11/25 no overlap
+PASS: dir-1 frames12/25 no overlap
+PASS: dir-1 frames13/25 no overlap
+PASS: dir-1 frames14/25 no overlap
+PASS: dir-1 frames15/25 no overlap
+PASS: dir-1 frames16/25 no overlap
+PASS: dir-1 frames17/25 no overlap
+PASS: dir-1 frames18/25 no overlap
+PASS: dir-1 frames19/25 no overlap
+PASS: dir-1 frames20/25 no overlap
+PASS: dir-1 frames21/25 no overlap
+PASS: dir-1 frames22/25 no overlap
+PASS: dir-1 frames23/25 no overlap
+PASS: dir-1 frames24/25 no overlap
+PASS: dir-1 frame26 bounds=[P: (633.6178, 594.0001), S: (64.76434, 101.9999)] inside strip
+PASS: dir-1 frames0/26 no overlap
+PASS: dir-1 frames1/26 no overlap
+PASS: dir-1 frames2/26 no overlap
+PASS: dir-1 frames3/26 no overlap
+PASS: dir-1 frames4/26 no overlap
+PASS: dir-1 frames5/26 no overlap
+PASS: dir-1 frames6/26 no overlap
+PASS: dir-1 frames7/26 no overlap
+PASS: dir-1 frames8/26 no overlap
+PASS: dir-1 frames9/26 no overlap
+PASS: dir-1 frames10/26 no overlap
+PASS: dir-1 frames11/26 no overlap
+PASS: dir-1 frames12/26 no overlap
+PASS: dir-1 frames13/26 no overlap
+PASS: dir-1 frames14/26 no overlap
+PASS: dir-1 frames15/26 no overlap
+PASS: dir-1 frames16/26 no overlap
+PASS: dir-1 frames17/26 no overlap
+PASS: dir-1 frames18/26 no overlap
+PASS: dir-1 frames19/26 no overlap
+PASS: dir-1 frames20/26 no overlap
+PASS: dir-1 frames21/26 no overlap
+PASS: dir-1 frames22/26 no overlap
+PASS: dir-1 frames23/26 no overlap
+PASS: dir-1 frames24/26 no overlap
+PASS: dir-1 frames25/26 no overlap
+PASS: dir-1 frame27 bounds=[P: (889.3782, 594.0), S: (81.24365, 102.0)] inside strip
+PASS: dir-1 frames0/27 no overlap
+PASS: dir-1 frames1/27 no overlap
+PASS: dir-1 frames2/27 no overlap
+PASS: dir-1 frames3/27 no overlap
+PASS: dir-1 frames4/27 no overlap
+PASS: dir-1 frames5/27 no overlap
+PASS: dir-1 frames6/27 no overlap
+PASS: dir-1 frames7/27 no overlap
+PASS: dir-1 frames8/27 no overlap
+PASS: dir-1 frames9/27 no overlap
+PASS: dir-1 frames10/27 no overlap
+PASS: dir-1 frames11/27 no overlap
+PASS: dir-1 frames12/27 no overlap
+PASS: dir-1 frames13/27 no overlap
+PASS: dir-1 frames14/27 no overlap
+PASS: dir-1 frames15/27 no overlap
+PASS: dir-1 frames16/27 no overlap
+PASS: dir-1 frames17/27 no overlap
+PASS: dir-1 frames18/27 no overlap
+PASS: dir-1 frames19/27 no overlap
+PASS: dir-1 frames20/27 no overlap
+PASS: dir-1 frames21/27 no overlap
+PASS: dir-1 frames22/27 no overlap
+PASS: dir-1 frames23/27 no overlap
+PASS: dir-1 frames24/27 no overlap
+PASS: dir-1 frames25/27 no overlap
+PASS: dir-1 frames26/27 no overlap
+PASS: dir-1 frame28 bounds=[P: (1151.497, 594.0), S: (85.00623, 102.0)] inside strip
+PASS: dir-1 frames0/28 no overlap
+PASS: dir-1 frames1/28 no overlap
+PASS: dir-1 frames2/28 no overlap
+PASS: dir-1 frames3/28 no overlap
+PASS: dir-1 frames4/28 no overlap
+PASS: dir-1 frames5/28 no overlap
+PASS: dir-1 frames6/28 no overlap
+PASS: dir-1 frames7/28 no overlap
+PASS: dir-1 frames8/28 no overlap
+PASS: dir-1 frames9/28 no overlap
+PASS: dir-1 frames10/28 no overlap
+PASS: dir-1 frames11/28 no overlap
+PASS: dir-1 frames12/28 no overlap
+PASS: dir-1 frames13/28 no overlap
+PASS: dir-1 frames14/28 no overlap
+PASS: dir-1 frames15/28 no overlap
+PASS: dir-1 frames16/28 no overlap
+PASS: dir-1 frames17/28 no overlap
+PASS: dir-1 frames18/28 no overlap
+PASS: dir-1 frames19/28 no overlap
+PASS: dir-1 frames20/28 no overlap
+PASS: dir-1 frames21/28 no overlap
+PASS: dir-1 frames22/28 no overlap
+PASS: dir-1 frames23/28 no overlap
+PASS: dir-1 frames24/28 no overlap
+PASS: dir-1 frames25/28 no overlap
+PASS: dir-1 frames26/28 no overlap
+PASS: dir-1 frames27/28 no overlap
+PASS: dir-1 frame29 bounds=[P: (1416.043, 594.0), S: (83.91357, 102.0)] inside strip
+PASS: dir-1 frames0/29 no overlap
+PASS: dir-1 frames1/29 no overlap
+PASS: dir-1 frames2/29 no overlap
+PASS: dir-1 frames3/29 no overlap
+PASS: dir-1 frames4/29 no overlap
+PASS: dir-1 frames5/29 no overlap
+PASS: dir-1 frames6/29 no overlap
+PASS: dir-1 frames7/29 no overlap
+PASS: dir-1 frames8/29 no overlap
+PASS: dir-1 frames9/29 no overlap
+PASS: dir-1 frames10/29 no overlap
+PASS: dir-1 frames11/29 no overlap
+PASS: dir-1 frames12/29 no overlap
+PASS: dir-1 frames13/29 no overlap
+PASS: dir-1 frames14/29 no overlap
+PASS: dir-1 frames15/29 no overlap
+PASS: dir-1 frames16/29 no overlap
+PASS: dir-1 frames17/29 no overlap
+PASS: dir-1 frames18/29 no overlap
+PASS: dir-1 frames19/29 no overlap
+PASS: dir-1 frames20/29 no overlap
+PASS: dir-1 frames21/29 no overlap
+PASS: dir-1 frames22/29 no overlap
+PASS: dir-1 frames23/29 no overlap
+PASS: dir-1 frames24/29 no overlap
+PASS: dir-1 frames25/29 no overlap
+PASS: dir-1 frames26/29 no overlap
+PASS: dir-1 frames27/29 no overlap
+PASS: dir-1 frames28/29 no overlap
+PASS: kiem actual viewer human alpha height=128.000000 px, target128
+PASS: cung actual viewer human alpha height=128.000000 px, target128
+PASS: kiem dir1 live slash beat0 fits viewport
+PASS: kiem dir1 live slash beat1 fits viewport
+PASS: kiem dir1 live slash beat2 fits viewport
+PASS: kiem dir1 live slash beat3 fits viewport
+PASS: kiem dir1 live slash beat4 fits viewport
+PASS: kiem dir1 live slash beat5 fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 live tram_kiem beat0 fits viewport
+PASS: kiem dir1 live tram_kiem beat1 fits viewport
+PASS: kiem dir1 live tram_kiem beat2 fits viewport
+PASS: kiem dir1 live tram_kiem beat3 fits viewport
+PASS: kiem dir1 live tram_kiem beat4 fits viewport
+PASS: kiem dir1 live tram_kiem beat5 fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir1 static attack fits viewport
+PASS: kiem dir-1 live slash beat0 fits viewport
+PASS: kiem dir-1 live slash beat1 fits viewport
+PASS: kiem dir-1 live slash beat2 fits viewport
+PASS: kiem dir-1 live slash beat3 fits viewport
+PASS: kiem dir-1 live slash beat4 fits viewport
+PASS: kiem dir-1 live slash beat5 fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 live tram_kiem beat0 fits viewport
+PASS: kiem dir-1 live tram_kiem beat1 fits viewport
+PASS: kiem dir-1 live tram_kiem beat2 fits viewport
+PASS: kiem dir-1 live tram_kiem beat3 fits viewport
+PASS: kiem dir-1 live tram_kiem beat4 fits viewport
+PASS: kiem dir-1 live tram_kiem beat5 fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: kiem dir-1 static attack fits viewport
+PASS: cung dir1 live shoot beat0 fits viewport
+PASS: cung dir1 live shoot beat1 fits viewport
+PASS: cung dir1 live shoot beat2 fits viewport
+PASS: cung dir1 live shoot beat3 fits viewport
+PASS: cung dir1 live shoot beat4 fits viewport
+PASS: cung dir1 live shoot beat5 fits viewport
+PASS: cung dir1 live shoot beat6 fits viewport
+PASS: cung dir1 live shoot beat7 fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 live xa_tien beat0 fits viewport
+PASS: cung dir1 live xa_tien beat1 fits viewport
+PASS: cung dir1 live xa_tien beat2 fits viewport
+PASS: cung dir1 live xa_tien beat3 fits viewport
+PASS: cung dir1 live xa_tien beat4 fits viewport
+PASS: cung dir1 live xa_tien beat5 fits viewport
+PASS: cung dir1 live xa_tien beat6 fits viewport
+PASS: cung dir1 live xa_tien beat7 fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir1 static attack fits viewport
+PASS: cung dir-1 live shoot beat0 fits viewport
+PASS: cung dir-1 live shoot beat1 fits viewport
+PASS: cung dir-1 live shoot beat2 fits viewport
+PASS: cung dir-1 live shoot beat3 fits viewport
+PASS: cung dir-1 live shoot beat4 fits viewport
+PASS: cung dir-1 live shoot beat5 fits viewport
+PASS: cung dir-1 live shoot beat6 fits viewport
+PASS: cung dir-1 live shoot beat7 fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 live xa_tien beat0 fits viewport
+PASS: cung dir-1 live xa_tien beat1 fits viewport
+PASS: cung dir-1 live xa_tien beat2 fits viewport
+PASS: cung dir-1 live xa_tien beat3 fits viewport
+PASS: cung dir-1 live xa_tien beat4 fits viewport
+PASS: cung dir-1 live xa_tien beat5 fits viewport
+PASS: cung dir-1 live xa_tien beat6 fits viewport
+PASS: cung dir-1 live xa_tien beat7 fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+PASS: cung dir-1 static attack fits viewport
+Lv1 viewer checks failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/play_test_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: new pose player lands on flat greybox
+PASS: kiem walks via actual input and inherited A0 physics
+PASS: kiem jumps via actual input
+PASS: kiem shows baked apex somersault using A0 timing
+PASS: kiem hit displays the actual A0 damage number
+PASS: kiem normal attack hits dummy once and uses damage label
+PASS: kiem skill hits dummy once
+PASS: kiem left-facing attack hits dummy once
+PASS: cung walks via actual input and inherited A0 physics
+PASS: cung jumps via actual input
+PASS: cung shows baked apex somersault using A0 timing
+PASS: cung hit displays the actual A0 damage number
+PASS: cung normal attack hits dummy once and uses damage label
+PASS: Cung damage comes from separate projectile collision
+PASS: cung skill hits dummy once
+PASS: cung left-facing attack hits dummy once
+PASS: multitouch d-pad keeps independent movement and jump actions
+PASS: touch PHÁI switches school
+PASS: two skill slots visible
+Pose play-test checks failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/reference_contract_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: frame00 retains exact source row
+PASS: frame01 retains exact source row
+PASS: frame02 retains exact source row
+PASS: frame03 retains exact source row
+PASS: frame04 retains exact source row
+PASS: frame05 retains exact source row
+PASS: frame06 retains exact source row
+PASS: frame07 retains exact source row
+PASS: frame08 retains exact source row
+PASS: frame09 retains exact source row
+PASS: frame10 retains exact source row
+PASS: frame11 retains exact source row
+PASS: frame12 retains exact source row
+PASS: frame13 retains exact source row
+PASS: frame14 retains exact source row
+PASS: frame15 retains exact source row
+PASS: frame16 retains exact source row
+PASS: frame17 retains exact source row
+PASS: frame18 retains exact source row
+PASS: frame19 retains exact source row
+PASS: frame20 retains exact source row
+PASS: frame21 retains exact source row
+PASS: frame22 retains exact source row
+PASS: frame23 retains exact source row
+PASS: frame24 retains exact source row
+PASS: frame25 retains exact source row
+PASS: frame26 retains exact source row
+PASS: frame27 retains exact source row
+PASS: frame28 retains exact source row
+PASS: frame29 retains exact source row
+PASS: slash ground exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: slash air exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: tram_kiem ground exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: tram_kiem air exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: shoot ground exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: shoot air exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: xa_tien ground exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: xa_tien air exact source beat count
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+PASS: exact source body/effect/projectile beat row
+PASS: actual numeric effect uses source offset and centered image
+Reference frame/skill/effect numeric contracts failures=0 (not visual acceptance)
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/smoke.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Jump range: 152.0 px; gap: 96.0 px; required: 144.0 px
+PASS: default horizontal jump range has 1.5x gap margin
+PASS: classic controls and air jump default on with 96 px jump
+PASS: player lands on ground
+PASS: keyboard action moves player
+PASS: jump rises toward configured apex
+PASS: player falls and lands
+PASS: Area2D slash hits dummy exactly once
+PASS: damage label is spawned
+PASS: F1 action enables hitboxes and values
+PASS: fall resets player
+PASS: coyote jump works just after leaving ledge
+PASS: buffered jump fires on landing
+PASS: F1 action disables debug
+PASS: gear opens tuning panel
+PASS: slider updates live run speed
+PASS: player consumes live speed instead of default
+PASS: jump gravity and velocity recalculate immediately
+PASS: runtime edits leave tuning defaults unchanged
+PASS: clipboard text contains current and derived values
+PASS: gear closes tuning panel
+PASS: idle bob reaches +1 px at quarter period
+PASS: idle bob reaches -1 px at three-quarter period
+PASS: running leans 4 degrees right
+PASS: step frequency scales with speed and lean follows left movement
+PASS: takeoff stretches sprite to 0.9 x 1.1
+PASS: takeoff scale recovers in 0.1 seconds
+PASS: landing squashes sprite to 1.15 x 0.85
+PASS: landing scale recovers in 0.1 seconds
+PASS: slash shifts sprite 4 px toward facing inside hit window
+PASS: slash shift stops outside hit window
+PASS: sprite motion leaves body and hitbox transforms and dimensions unchanged
+PASS: gear switch disables all fake motion and restores neutral transform
+PASS: clipboard text includes live motion switch
+PASS: gear switch re-enables fake motion
+PASS: repeated arrow keys leave all tuning values unchanged while panel is open
+PASS: wheel events over every slider leave all tuning values unchanged
+PASS: gear, checkbox and copy button cannot take keyboard focus
+PASS: mouse drag still updates slider with focus disabled
+Android layout: (1920, 1080) viewport=(960.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (1920, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (1920, 1080)
+PASS: buttons remain anchored to live viewport corners at (1920, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1920, 1080)
+PASS: camera limits use live viewport at (1920, 1080)
+Android layout: (2400, 1080) viewport=(1200.0, 540.0) stretch=(2.0, 2.0)
+PASS: fractional expand fills (2400, 1080) without letterbox
+PASS: touch controls, gear and panel stay inside (2400, 1080)
+PASS: buttons remain anchored to live viewport corners at (2400, 1080)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (2400, 1080)
+PASS: camera limits use live viewport at (2400, 1080)
+Android layout: (1600, 720) viewport=(1200.0, 540.0) stretch=(1.333333, 1.333333)
+PASS: fractional expand fills (1600, 720) without letterbox
+PASS: touch controls, gear and panel stay inside (1600, 720)
+PASS: buttons remain anchored to live viewport corners at (1600, 720)
+PASS: all controls and HUD stay 24 px inside viewport without overlap at (1600, 720)
+PASS: camera limits use live viewport at (1600, 720)
+PASS: gear switches live stretch to integer
+PASS: gear switches live stretch back to fractional
+PASS: gear shows physical screen, viewport and current scale
+PASS: F1 debug includes the same live display diagnostics
+PASS: horizontal touch starting on track cannot change slider value
+PASS: vertical touch swipe across slider track never changes tuning
+PASS: vertical touch swipe scrolls the tuning panel
+PASS: vertical gesture starting on thumb does not drift its value
+PASS: horizontal touch drag starting on thumb adjusts value
+PASS: slider touch area is at least 44 px high
+PASS: only three movement buttons are drawn; diagonal zones have no normal drawing
+PASS: d-pad follows 2.2d spacing and 1.35d jump height with centered up button
+PASS: invisible zones are adjacent to both sides of up on the same row
+PASS: up button wins hit priority when a diagonal region overlaps
+PASS: diagonal wins hit priority over lower direction left
+PASS: diagonal wins hit priority over lower direction right
+PASS: F1 enables outline-only diagonal diagnostics
+PASS: diagonal zones remain touchable with debug drawing hidden
+PASS: diagonal jump regions are on matching sides and 0.9x wide
+PASS: diagonal region jumps and holds direction -1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: diagonal region jumps and holds direction 1
+PASS: invisible diagonal lights up and shrinks jump plus matching direction
+PASS: diagonal fake spin follows direction at quarter flight
+PASS: diagonal completes 360 degrees without rotating body or hitbox
+PASS: gear disables diagonal spin
+PASS: releasing diagonal clears its held actions
+PASS: sliding from diagonal to up keeps jump and releases direction feedback
+PASS: sliding to opposite diagonal updates direction and both visible highlights
+PASS: sliding down to right retains direction without jump
+PASS: sliding outside all regions releases actions and feedback
+PASS: multitouch release preserves another finger's direction
+PASS: holding up repeats jump after landing
+PASS: auto-jump switch off permits only one jump per hold
+Variable jump: held height=76.5905456542969 early-release height=28.2679748535156
+PASS: early release gives lower jump when variable jump is enabled
+PASS: variable jump off retains full-height early-release jump
+PASS: jump toggle defaults are auto-repeat on and variable height off
+A0 placeholder: health bottle count=4
+PASS: health placeholder decrements count on press
+A0 placeholder: target
+A0 placeholder: skill_1
+PASS: HUD switch hides menu and frees top-right space
+PASS: HUD can be restored and gear is at least 56x56
+PASS: slash trail and damage text render above dummy
+PASS: gear exposes all three classic timing sliders
+PASS: classic reaches RUN_SPEED on first physics frame
+PASS: classic release begins gradual braking
+PASS: classic braking stops within STOP_TIME plus one frame
+PASS: classic reverse first frame changes face and stands still
+PASS: classic turn pause lasts configured TURN_TIME
+PASS: classic starts reverse run after turn pause
+PASS: short opposite tap only turns face
+Classic flight: ascent=23 frames; descent=23 frames
+PASS: classic ascent and descent differ by at most one frame
+PASS: classic has no artificial apex hang
+PASS: apex flip completes 360 degrees before landing without body rotation
+PASS: left-facing apex flip rotates sprite left without rotating hitbox
+PASS: classic air direction reaches full speed immediately without turn pause
+PASS: classic diagonal starts at 0.8 RUN_SPEED and avoids slow full-flight spin
+PASS: air jump cannot activate early in ascent
+PASS: holding jump into near-apex window never counts as a second press
+PASS: fresh near-apex press launches exactly 0.7 JUMP_SPEED before gravity
+PASS: second near-apex press cannot grant another air jump
+PASS: normal jump and air jump each finish one apex flip before landing
+PASS: landing naturally resets the one-air-jump allowance
+PASS: Khinh cong switch disables the extra jump
+PASS: classic fall velocity and displacement respect 2x jump speed cap
+PASS: disabling classic restores legacy 80 px jump default
+PASS: legacy first frame retains acceleration
+PASS: legacy reversal keeps acceleration instead of classic turn pause
+PASS: legacy mode retains its previous uncapped fall behavior
+PASS: switching back recalls classic 96 px height
+A0 smoke failures: 0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/ui_label_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: skill_1 label 'Trảm' fits width at (960, 540)
+PASS: skill_1 label 'Kiếm' fits width at (960, 540)
+PASS: two skill text lines fit height with padding
+PASS: skill_2 label 'Xạ' fits width at (960, 540)
+PASS: skill_2 label 'Tiễn' fits width at (960, 540)
+PASS: two skill text lines fit height with padding
+PASS: skill_1 label 'Trảm' fits width at (1200, 540)
+PASS: skill_1 label 'Kiếm' fits width at (1200, 540)
+PASS: two skill text lines fit height with padding
+PASS: skill_2 label 'Xạ' fits width at (1200, 540)
+PASS: skill_2 label 'Tiễn' fits width at (1200, 540)
+PASS: two skill text lines fit height with padding
+UI label checks failures=0
+exit=0
+
+$ /workspace/.setup/tools/godot --headless --fixed-fps 60 --path prototype --script res://tests/weapon_masters_v5_checks.gd
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: kiem frame0 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame1 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame2 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame3 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame4 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame5 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame6 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame7 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame12 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame21 dir-1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame0 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame1 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame2 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame3 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame4 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame5 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame6 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame7 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame12 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: kiem frame21 dir1 SAME held texture RID=RID(154618822662)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: 20 direction/frame samples use one texture
+PASS: master long side exactly512px
+PASS: cung frame0 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame1 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame2 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame3 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame4 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame5 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame6 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame7 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame12 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame21 dir-1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame0 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame1 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame2 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame3 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame4 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame5 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame6 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame7 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame12 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: cung frame21 dir1 SAME held texture RID=RID(408021893137)
+PASS: held art uses fixed angle/scale/depth; only translation and root facing change
+PASS: no per-frame bow texture override
+PASS: 20 direction/frame samples use one texture
+PASS: master long side exactly512px
+PASS: attack_blade retains unchanged steel from its archived detailed action-material master
+PASS: attack_blade_only retains unchanged steel from its archived detailed action-material master
+PASS: swing_0 retains unchanged steel from its archived detailed action-material master
+PASS: swing_1 retains unchanged steel from its archived detailed action-material master
+PASS: swing_2 retains unchanged steel from its archived detailed action-material master
+PASS: swing_3 retains unchanged steel from its archived detailed action-material master
+PASS: swing_4 retains unchanged steel from its archived detailed action-material master
+PASS: swing_skill_0 retains unchanged steel from its archived detailed action-material master
+PASS: swing_skill_1 retains unchanged steel from its archived detailed action-material master
+PASS: swing_skill_2 retains unchanged steel from its archived detailed action-material master
+PASS: swing_skill_3 retains unchanged steel from its archived detailed action-material master
+PASS: swing_skill_4 retains unchanged steel from its archived detailed action-material master
+PASS: obsolete held variant removed: sword_hold
+PASS: obsolete held variant removed: sword_run
+PASS: obsolete held variant removed: bow_hold
+PASS: obsolete held variant removed: run_v3_bow
+PASS: obsolete held variant removed: carry_v4_bow
+Shared weapon master checks failures=0
+exit=0
+
+Godot standalone suites=14 passed=14 failed=0; classic_checks.gd runs through smoke/classic_headless wrappers.

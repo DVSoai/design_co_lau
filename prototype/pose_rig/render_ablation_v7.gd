@@ -19,7 +19,7 @@ func configure(a: Node2D,variant: String) -> void:
 	elif variant=="no_head":a.sprites.head.visible=false
 	elif variant=="no_fingers":a.held_fingers.visible=false
 func _ready() -> void:
-	var out:="res://pose_rig/reports/ablation_v9"
+	var out:="res://pose_rig/reports/ablation_v10"
 	var variants: Array=VARIANTS.duplicate()
 	if "--viewer-readability" in OS.get_cmdline_user_args():variants.append_array(["viewer_full","viewer_empty"])
 	for arg in OS.get_cmdline_user_args():

@@ -189,3 +189,6 @@ if __name__=='__main__':
 
     from update_bow_readability_v9 import run as update_bow_readability
     update_bow_readability()
+
+    from place_held_reference_v10 import run as place_held_reference
+    place_held_reference()

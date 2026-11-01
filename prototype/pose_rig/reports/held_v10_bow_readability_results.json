@@ -1,0 +1,527 @@
+{
+  "failures": [],
+  "failure_count": 0,
+  "measurements": [
+    {
+      "frame": 0,
+      "direction": -1,
+      "thickness_px": [
+        5.8337779560024545,
+        6.064055338384332
+      ],
+      "sample_points_from_paint": [
+        [
+          100.3,
+          123.8
+        ],
+        [
+          109.38461538461539,
+          144.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 4.601433065608605,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 1,
+      "direction": -1,
+      "thickness_px": [
+        5.804430347467614,
+        6.169694698839379
+      ],
+      "sample_points_from_paint": [
+        [
+          100.36363636363636,
+          119.9090909090909
+        ],
+        [
+          109.38461538461539,
+          140.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 71,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 4.7501660863860655,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 2,
+      "direction": -1,
+      "thickness_px": [
+        5.407911404478929,
+        6.308920429751363
+      ],
+      "sample_points_from_paint": [
+        [
+          112.36363636363636,
+          107.9090909090909
+        ],
+        [
+          121.1,
+          128.2
+        ]
+      ],
+      "solid_wood_samples": 67,
+      "contrast_min": 3.7084441234063563,
+      "contrast_median": 5.40395675063475,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 3,
+      "direction": -1,
+      "thickness_px": [
+        6.058833447429421,
+        6.059296354095843
+      ],
+      "sample_points_from_paint": [
+        [
+          116.36363636363636,
+          115.9090909090909
+        ],
+        [
+          125.16666666666667,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 67,
+      "contrast_min": 3.6332258609158297,
+      "contrast_median": 5.51102410259581,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 4,
+      "direction": -1,
+      "thickness_px": [
+        5.94159002917133,
+        6.03271470725765
+      ],
+      "sample_points_from_paint": [
+        [
+          112.36363636363636,
+          115.9090909090909
+        ],
+        [
+          121.16666666666667,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.6588958120988,
+      "contrast_median": 5.507992092843381,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 5,
+      "direction": -1,
+      "thickness_px": [
+        5.762788926428337,
+        5.676207125235685
+      ],
+      "sample_points_from_paint": [
+        [
+          116.36363636363636,
+          107.9090909090909
+        ],
+        [
+          124.83333333333333,
+          128.16666666666666
+        ]
+      ],
+      "solid_wood_samples": 66,
+      "contrast_min": 3.661067073666573,
+      "contrast_median": 5.282134419240594,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 6,
+      "direction": -1,
+      "thickness_px": [
+        5.94159002917133,
+        6.1008271010650255
+      ],
+      "sample_points_from_paint": [
+        [
+          112.36363636363636,
+          115.9090909090909
+        ],
+        [
+          121.16666666666667,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.6588958120988,
+      "contrast_median": 5.507992092843381,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 7,
+      "direction": -1,
+      "thickness_px": [
+        5.747945965433108,
+        6.006129896037984
+      ],
+      "sample_points_from_paint": [
+        [
+          96.5,
+          108.0
+        ],
+        [
+          105.5,
+          128.25
+        ]
+      ],
+      "solid_wood_samples": 70,
+      "contrast_min": 3.725543897442555,
+      "contrast_median": 5.0623515629671205,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 12,
+      "direction": -1,
+      "thickness_px": [
+        5.7330261386715335,
+        5.905094612725621
+      ],
+      "sample_points_from_paint": [
+        [
+          100.36363636363636,
+          107.9090909090909
+        ],
+        [
+          109.27272727272727,
+          128.1818181818182
+        ]
+      ],
+      "solid_wood_samples": 68,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 5.1018980142227495,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 21,
+      "direction": -1,
+      "thickness_px": [
+        6.368508431769909,
+        5.9950929141133
+      ],
+      "sample_points_from_paint": [
+        [
+          104.36363636363636,
+          119.9090909090909
+        ],
+        [
+          113.38461538461539,
+          140.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 66,
+      "contrast_min": 3.548976734322641,
+      "contrast_median": 4.893526115298676,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 0,
+      "direction": 1,
+      "thickness_px": [
+        5.833777956002447,
+        6.064058489991293
+      ],
+      "sample_points_from_paint": [
+        [
+          154.7,
+          123.8
+        ],
+        [
+          145.6153846153846,
+          144.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 4.601433065608605,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 1,
+      "direction": 1,
+      "thickness_px": [
+        5.804430347467607,
+        6.169694698839383
+      ],
+      "sample_points_from_paint": [
+        [
+          154.63636363636363,
+          119.9090909090909
+        ],
+        [
+          145.6153846153846,
+          140.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 71,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 4.7501660863860655,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 2,
+      "direction": 1,
+      "thickness_px": [
+        5.40791140447893,
+        6.308920429751364
+      ],
+      "sample_points_from_paint": [
+        [
+          142.63636363636363,
+          107.9090909090909
+        ],
+        [
+          133.9,
+          128.2
+        ]
+      ],
+      "solid_wood_samples": 67,
+      "contrast_min": 3.7084441234063563,
+      "contrast_median": 5.40395675063475,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 3,
+      "direction": 1,
+      "thickness_px": [
+        6.058833447429413,
+        6.059296354095843
+      ],
+      "sample_points_from_paint": [
+        [
+          138.63636363636363,
+          115.9090909090909
+        ],
+        [
+          129.83333333333334,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 67,
+      "contrast_min": 3.6332258609158297,
+      "contrast_median": 5.51102410259581,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 4,
+      "direction": 1,
+      "thickness_px": [
+        5.941590029171337,
+        6.032714707257654
+      ],
+      "sample_points_from_paint": [
+        [
+          142.63636363636363,
+          115.9090909090909
+        ],
+        [
+          133.83333333333334,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.6588958120988,
+      "contrast_median": 5.507992092843381,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 5,
+      "direction": 1,
+      "thickness_px": [
+        5.762788926428341,
+        5.676207125235683
+      ],
+      "sample_points_from_paint": [
+        [
+          138.63636363636363,
+          107.9090909090909
+        ],
+        [
+          130.16666666666666,
+          128.16666666666666
+        ]
+      ],
+      "solid_wood_samples": 66,
+      "contrast_min": 3.661067073666573,
+      "contrast_median": 5.282134419240594,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 6,
+      "direction": 1,
+      "thickness_px": [
+        5.941590029171337,
+        6.100827101065027
+      ],
+      "sample_points_from_paint": [
+        [
+          142.63636363636363,
+          115.9090909090909
+        ],
+        [
+          133.83333333333334,
+          136.08333333333334
+        ]
+      ],
+      "solid_wood_samples": 69,
+      "contrast_min": 3.6588958120988,
+      "contrast_median": 5.507992092843381,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 7,
+      "direction": 1,
+      "thickness_px": [
+        5.747945965433107,
+        6.006129896037985
+      ],
+      "sample_points_from_paint": [
+        [
+          158.5,
+          108.0
+        ],
+        [
+          149.5,
+          128.25
+        ]
+      ],
+      "solid_wood_samples": 70,
+      "contrast_min": 3.725543897442555,
+      "contrast_median": 5.0623515629671205,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 12,
+      "direction": 1,
+      "thickness_px": [
+        5.733026138671525,
+        5.90509461272562
+      ],
+      "sample_points_from_paint": [
+        [
+          154.63636363636363,
+          107.9090909090909
+        ],
+        [
+          145.72727272727272,
+          128.1818181818182
+        ]
+      ],
+      "solid_wood_samples": 68,
+      "contrast_min": 3.612037263627534,
+      "contrast_median": 5.1018980142227495,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    },
+    {
+      "frame": 21,
+      "direction": 1,
+      "thickness_px": [
+        6.368508431769905,
+        5.995092914113298
+      ],
+      "sample_points_from_paint": [
+        [
+          150.63636363636363,
+          119.9090909090909
+        ],
+        [
+          141.6153846153846,
+          140.15384615384616
+        ]
+      ],
+      "solid_wood_samples": 66,
+      "contrast_min": 3.548976734322641,
+      "contrast_median": 4.893526115298676,
+      "viewer_background_rgb": [
+        32,
+        40,
+        51
+      ]
+    }
+  ],
+  "method": "Real Godot viewer_full/viewer_empty + independent layer removals; minimum luminance contrast of exposed interior wood, excluding black contour and one-pixel antialias fringe."
+}

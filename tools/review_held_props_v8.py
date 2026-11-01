@@ -27,7 +27,7 @@ def original(source,client,school,frame):
     return cv
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v9');ap.add_argument('--server',type=Path,required=True);ap.add_argument('--client',type=Path,required=True);ap.add_argument('--comparison-out',type=Path,default=Path('/tmp/ref_render/review_lv1.png'));args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v10');ap.add_argument('--server',type=Path,required=True);ap.add_argument('--client',type=Path,required=True);ap.add_argument('--comparison-out',type=Path,default=Path('/tmp/ref_render/review_lv1.png'));args=ap.parse_args()
     resolved=args.comparison_out.resolve();assert not resolved.is_relative_to(R),'Do not write original reference pixels inside repo'
     own=Image.new('RGBA',(1600,980),BG);masters(own)
     for i,(school,frame) in enumerate([('kiem',0),('kiem',4),('cung',0),('cung',4)]):

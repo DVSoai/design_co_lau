@@ -6288,6 +6288,456 @@
         "roi": "art/sprites/characters/lv1_30/sources/chest_fall_raised_v8_roi.png"
       },
       "status": "drawn_unapproved"
+    },
+    "held_ref_01_v10": {
+      "file": "held_ref_01_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          160.0,
+          100.0
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          195.42727272727274,
+          96.0102317834837
+        ],
+        "near_hand": [
+          195.42727272727274,
+          96.0102317834837
+        ],
+        "far_hand": [
+          114.55199228391533,
+          161.08374384236453
+        ],
+        "free_hand": [
+          114.55199228391533,
+          161.08374384236453
+        ],
+        "back": [
+          151.462805180404,
+          142.61083743842366
+        ]
+      },
+      "source": {
+        "own_base": "chest_stand_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_01_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_01_v10_roi.png",
+        "held_hand_overlay": "held_ref_01_v10_hand.png",
+        "reference_frame": 1,
+        "palm_target_source": [
+          195.42727272727274,
+          96.0102317834837
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_02_v10": {
+      "file": "held_ref_02_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          165.86705898681473,
+          84.4500180430257
+        ],
+        "near_hand": [
+          165.86705898681473,
+          84.4500180430257
+        ],
+        "far_hand": [
+          160.67314614759715,
+          133.21805586976313
+        ],
+        "free_hand": [
+          160.67314614759715,
+          133.21805586976313
+        ],
+        "back": [
+          152.6368179143921,
+          142.8077382298985
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_0_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_02_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_02_v10_roi.png",
+        "held_hand_overlay": "held_ref_02_v10_hand.png",
+        "reference_frame": 2,
+        "palm_target_source": [
+          165.86705898681473,
+          84.4500180430257
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_03_v10": {
+      "file": "held_ref_03_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          172.01365440666206,
+          96.15682720333103
+        ],
+        "near_hand": [
+          172.01365440666206,
+          96.15682720333103
+        ],
+        "far_hand": [
+          158.12584457303356,
+          141.36928587587818
+        ],
+        "free_hand": [
+          158.12584457303356,
+          141.36928587587818
+        ],
+        "back": [
+          153.18425415410348,
+          142.8077382298985
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_1_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_03_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_03_v10_roi.png",
+        "held_hand_overlay": "held_ref_03_v10_hand.png",
+        "reference_frame": 3,
+        "palm_target_source": [
+          172.01365440666206,
+          96.15682720333103
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_04_v10": {
+      "file": "held_ref_04_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          159.86705898681473,
+          96.156827203331
+        ],
+        "near_hand": [
+          159.86705898681473,
+          96.156827203331
+        ],
+        "far_hand": [
+          112.24755236105838,
+          160.84153744655697
+        ],
+        "free_hand": [
+          112.24755236105838,
+          160.84153744655697
+        ],
+        "back": [
+          152.9990984623086,
+          142.77230836896203
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_2_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_04_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_04_v10_roi.png",
+        "held_hand_overlay": "held_ref_04_v10_hand.png",
+        "reference_frame": 4,
+        "palm_target_source": [
+          159.86705898681473,
+          96.156827203331
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_05_v10": {
+      "file": "held_ref_05_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          166.01365440666206,
+          90.4500180430257
+        ],
+        "near_hand": [
+          166.01365440666206,
+          90.4500180430257
+        ],
+        "far_hand": [
+          90.61866635864344,
+          120.9461108692929
+        ],
+        "free_hand": [
+          90.61866635864344,
+          120.9461108692929
+        ],
+        "back": [
+          152.6811614121948,
+          142.7365277173232
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_3_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_05_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_05_v10_roi.png",
+        "held_hand_overlay": "held_ref_05_v10_hand.png",
+        "reference_frame": 5,
+        "palm_target_source": [
+          166.01365440666206,
+          90.4500180430257
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_06_v10": {
+      "file": "held_ref_06_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          159.86705898681473,
+          96.15682720333103
+        ],
+        "near_hand": [
+          159.86705898681473,
+          96.15682720333103
+        ],
+        "far_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "free_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "back": [
+          152.93840212717498,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_4_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_06_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_06_v10_roi.png",
+        "held_hand_overlay": "held_ref_06_v10_hand.png",
+        "reference_frame": 6,
+        "palm_target_source": [
+          159.86705898681473,
+          96.15682720333103
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_07_v10": {
+      "file": "held_ref_07_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          195.2806773074254,
+          114.4500180430257
+        ],
+        "near_hand": [
+          195.2806773074254,
+          114.4500180430257
+        ],
+        "far_hand": [
+          111.92567417046558,
+          162.22684500917256
+        ],
+        "free_hand": [
+          111.92567417046558,
+          162.22684500917256
+        ],
+        "back": [
+          152.4642517422707,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_5_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_07_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_07_v10_roi.png",
+        "held_hand_overlay": "held_ref_07_v10_hand.png",
+        "reference_frame": 7,
+        "palm_target_source": [
+          195.2806773074254,
+          114.4500180430257
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_12_v10": {
+      "file": "held_ref_12_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          144.60675990675992,
+          132.45871035071798
+        ],
+        "near_hand": [
+          144.60675990675992,
+          132.45871035071798
+        ],
+        "far_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "free_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "back": [
+          152.93840212717498,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_fall_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_12_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_12_v10_roi.png",
+        "held_hand_overlay": "held_ref_12_v10_hand.png",
+        "reference_frame": 12,
+        "palm_target_source": [
+          144.60675990675992,
+          132.45871035071798
+        ]
+      },
+      "status": "drawn_unapproved"
+    },
+    "held_ref_21_v10": {
+      "file": "held_ref_21_v10.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          171.57386814712007,
+          96.39675809927317
+        ],
+        "near_hand": [
+          171.57386814712007,
+          96.39675809927317
+        ],
+        "far_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "free_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "back": [
+          152.93840212717498,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_fall_raised_v8",
+        "authorized_front_arm_only": true,
+        "svg": "art/sprites/characters/lv1_30/sources/held_ref_21_v10.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/held_ref_21_v10_roi.png",
+        "held_hand_overlay": "held_ref_21_v10_hand.png",
+        "reference_frame": 21,
+        "palm_target_source": [
+          171.57386814712007,
+          96.39675809927317
+        ]
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [
