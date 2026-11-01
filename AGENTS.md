@@ -46,6 +46,7 @@ Các giai đoạn trong `02_asset_list.md` sắp theo thứ tự nên làm để
 
 - **Chỉ làm hạng mục của giai đoạn đang mở** trong `02_asset_list.md`. Giai đoạn sau chỉ mở khi người dùng đã duyệt đủ giai đoạn trước.
 - **Không tự thay đổi những gì đã chốt:** phong cách, bảng màu, khối STYLE và AVOID, thiết kế nhân vật đã duyệt trong `art/approved/`. Muốn đổi thì đề xuất và chờ người dùng đồng ý.
+- **Vẽ nhân vật (đầu/thân/chân/vũ khí/hiệu ứng) phải theo `docs/20_quy_trinh_ve_nhan_vat.md`:** chạy `tools/ref_pose_guides.py` lấy khuôn tư thế từng khung, vẽ theo khuôn, tự soát bằng mắt 6 câu trước khi push.
 - **Luôn dùng ảnh tham chiếu** khi đã có trong `art/reference/`: nhân vật đính kèm `ref_dinh_bo_linh.png`; bản đồ đính kèm `ref_map_hoa_lu.png`; giao diện đính kèm `ref_ui_kit.png`.
 - **Mọi prompt kết thúc bằng khối STYLE và khối AVOID** đúng nguyên văn trong art bible.
   - Nhân vật người dùng khối **STYLE-V2** trong art bible thay khối STYLE pixel (chốt 30/10/2026).
