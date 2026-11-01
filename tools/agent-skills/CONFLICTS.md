@@ -1,5 +1,7 @@
 # Xung đột với quyết định dự án
 
+> Khi một hàng dưới đây khác `docs/` hiện hành (đặc biệt 01, 09, 16–20), **docs hiện hành thắng**; hàng này chỉ là ghi chú lịch sử.
+
 **Cách xử lý mọi hàng: quyết định dự án thắng.** Thứ tự: docs/ của dự án >
 AGENTS.md > skill tham khảo; chỉ dẫn trực tiếp của người dùng vẫn có ưu tiên.
 Skill là ví dụ để đọc, không cấp quyền chạy script, tải mạng hoặc thêm addon.
@@ -12,8 +14,8 @@ Skill là ví dụ để đọc, không cấp quyền chạy script, tải mạn
 | Ví dụ double-jump/variable-jump trong nhóm điều khiển/platformer | Khinh công chỉ lần bấm mới khi còn đi lên ≤30% vận tốc nhảy, bật 0,7 lần và tối đa 1 lần/cú nhảy; giữ nhảy lại bật, giữ lâu nhảy cao tắt; lộn đỉnh 0,2 s chỉ sprite |
 | `input-systems`, `mobile-development`, `hud-system`: layout cảm ứng chung/joystick/nút hành động | D-pad chỉ vẽ ←/→/↑, hai vùng chéo vô hình cạnh ↑; không có nút nhảy riêng bên phải. d=84, hệ số 2,2/1,35/0,9, lề≥24; cụm phải và 5 ô kỹ năng theo A0 |
 | `responsive-ui`, `mobile-development`, `hud-system`: focus/slider/cỡ nút mẫu | Không focus bàn phím cho bảng ⚙; slider không đổi bằng con lăn, chỉ kéo ngang bắt đầu trên núm, vuốt dọc cuộn bảng; neo viewport thật, fullscreen/immersive Android |
-| `create-game-assets`: chuẩn hóa chung/preview và kích thước ví dụ | Không dùng thẳng ảnh AI làm sprite. Nắn lưới, palette_v3, kiểm file thật bằng script, duyệt bằng mắt; giữ STYLE/AVOID và ảnh tham chiếu. Thông số mẫu của skill không đổi kích thước nhân vật 96 px |
-| `animation-system`, `godot-animation`: AnimatedSprite/toàn ảnh hoặc skeleton chung | Nhân vật chính ghép bộ phận có khớp/phần vẽ bù; frame theo 09_animation_spec.md, trang bị thay mảnh, khung đặc biệt bổ sung khi cần. Hitbox không xoay; hiệu ứng/số sát thương trên lớp thân |
+| `create-game-assets`: chuẩn hóa chung/preview và kích thước ví dụ | **Cập nhật 01/11/2026:** nhân vật người theo `01_art_bible.md` mục "Nhân vật chính" + `docs/20_quy_trinh_ve_nhan_vat.md`: ảnh độ phân giải cao, lọc linear, hiển thị ~128 px, KHÔNG nắn lưới pixel/palette 32 màu; vẽ theo khuôn tư thế `tools/ref_pose_guides.py`, duyệt bằng mắt. Lưới pixel/palette_v3/nearest chỉ còn cho bản đồ, vật thể, giao diện |
+| `animation-system`, `godot-animation`: AnimatedSprite/toàn ảnh hoặc skeleton chung | **Cập nhật 01/11/2026:** nhân vật dùng 4 lớp (đầu, thân kèm tay, chân, vũ khí) + bảng 30 khung chỉ dời/lật, không xoay, không khớp/skeleton (`09_animation_spec.md`, `19_he_bo_hinh.md`). Rig nhiều mảnh có khớp đã bỏ. Hitbox không xoay; hiệu ứng/số sát thương trên lớp thân |
 | `godot-nodes-scenes`, `hud-system`, `inventory-system`, `save-load`: singleton/autoload ví dụ | Kế hoạch chỉ GameState, SaveService, EventBus, Config; tính năng nhận phụ thuộc, signal/EventBus thông báo, lệnh xử lý luật. Không tự thêm autoload |
 | `resource-pattern`, `godot-resources`, `save-load`: dùng Resource làm save hoặc ghi Resource dùng chung | .tres chỉ cho cấu hình đáng tin cậy trong data/; snapshot người chơi tách riêng user://, có save_version/migration, không nạp .tres người dùng. ID theo 14_online_migration.md |
 | `rpg`, `prototype-fast` và ví dụ triển khai ngay | Chỉ code game thật sau Mốc A. A0/lát cắt mẫu Giai đoạn 1 chỉ là ngoại lệ prototype đã được cho phép, không chép mã prototype sang game |
