@@ -1,0 +1,1 @@
+Normalization of original chest/stance art: {"own_asset": "fall_legs_0", "uniform_scale": 0.7859002976190477, "hip_to_sole_source": 65}

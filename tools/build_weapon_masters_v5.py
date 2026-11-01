@@ -4,9 +4,10 @@ from pathlib import Path
 import copy,json,math
 import numpy as np
 from PIL import Image,ImageFilter
-from scipy.ndimage import label
+from scipy.ndimage import label,binary_dilation
 from build_carry_v4 import position,source_origin
 from weapon_v5_scope import RETIRED,HELD
+from held_weapon_pose import hand_key
 
 R=Path(__file__).resolve().parents[1];D=R/'prototype/pose_rig/data';ART=R/'prototype/pose_rig/art/lv1_30'
 OUT=R/'art/sprites/weapons/lv1';SRC=OUT/'sources';LEGACY=R/'art/sprites/characters/lv1_30'
@@ -38,8 +39,8 @@ def run():
     p=json.loads((D/'parts.json').read_text());f=json.loads((D/'frames30.json').read_text());before=copy.deepcopy(f)
     H=p['presentation']['standing_height_source'];p['weapon_masters']={}
     config={
-      'kiem':('sword_candidates',{'grip':[1100.,210.],'blade_root':[960.,260.],'tip':[222.,525.],'pommel':[1230.,155.]},0,0),
-      'cung':('bow_double_recurve',{'grip':[525.,460.],'top':[155.,802.],'bottom':[861.,32.],'belly':[525.,460.],'string':[575.,450.]},180+55-math.degrees(math.atan2(706,770)),1)}
+      'kiem':('sword_candidates',{'grip':[1100.,210.],'blade_root':[960.,260.],'tip':[222.,525.],'pommel':[1230.,155.]},155-math.degrees(math.atan2(265,-738)),0),
+      'cung':('bow_double_recurve',{'grip':[525.,460.],'top':[155.,802.],'bottom':[861.,32.],'belly':[525.,460.],'string':[575.,450.]},180+22-math.degrees(math.atan2(706,770)),1)}
     masters={}
     for school,(stem,points,rotation,sort_axis) in config.items():
         master,anchors=original_master(stem,points,rotation,sort_axis);masters[school]=(master,anchors)
@@ -47,7 +48,7 @@ def run():
         if school=='kiem':scale=.77*H/max(master.size)
         else:
             a=np.array(master);ys,xs=np.where(a[:,:,3]>=128);axis=np.array(anchors['top'])-anchors['bottom'];axis/=np.linalg.norm(axis)
-            span=np.ptp(np.column_stack([xs,ys])@axis)+1;scale=.94*H/span
+            span=np.ptp(np.column_stack([xs,ys])@axis)+1;scale=1.08*H/span
         size=tuple(round(v*scale) for v in master.size);im=master.resize(size,Image.Resampling.LANCZOS)
         if school=='cung':
             # Keep the originally painted white string at least one screen pixel wide.
@@ -59,16 +60,29 @@ def run():
         ar=np.array(im);yy,xx=np.indices(ar.shape[:2]);rr,gg,bb=ar[:,:,:3].astype(int).transpose(2,0,1);g=np.array(draw_anchors['grip'])
         mask=(ar[:,:,3]>=230)&(rr>=80)&(rr<160)&(gg>=38)&(rr-gg>20)&(bb<90)&((xx-g[0])**2+(yy-g[1])**2<=4)
         ys,xs=np.where(mask);j=np.argmin((xs-g[0])**2+(ys-g[1])**2);draw_anchors['grip']=[int(xs[j]),int(ys[j])]
+        if school=='cung':
+            # Register the actual middle leather between its painted brass collars.
+            ay,ax=np.where(ar[:,:,3]>127);span=ay.max()-ay.min()
+            gold=(ar[:,:,3]>127)&(rr>150)&(gg>100)&(bb<180)&(gg>1.15*bb)&(yy>ay.min()+.3*span)&(yy<ay.min()+.7*span)
+            labs,n=label(binary_dilation(gold));collars=[]
+            for lab in range(1,n+1):
+                region=(labs==lab)&gold
+                if region.sum()>=3:
+                    cy,cx=np.where(region);collars.append((int(region.sum()),np.array([cx.mean(),cy.mean()])))
+            collars=sorted(collars,key=lambda v:v[0],reverse=True)[:2];middle=(collars[0][1]+collars[1][1])*.5
+            brown=(ar[:,:,3]>=230)&(rr>=60)&(rr<170)&(gg>=25)&(bb<100)&(rr-gg>15)
+            cy,cx=np.where(brown);j=np.argmin((cx-middle[0])**2+(cy-middle[1])**2);draw_anchors['grip']=[int(cx[j]),int(cy[j])]
         id=school+'_lv1';im.save(ART/(id+'.png'));im.save(OUT/(id+'.png'))
         (OUT/(id+'.prompt.txt')).write_text((SRC/(stem+'.prompt.txt')).read_text())
         p['assets'][id]={'file':id+'.png','size':list(im.size),'anchors':draw_anchors,'source':{'master':'art/sprites/weapons/lv1/'+school+'_lv1_master.png','export':'art/sprites/weapons/lv1/'+id+'.png','uniform_scale':scale,'outline_source_px':1,'white_string_dilation_source_px':1 if school=='cung' else 0},'status':'drawn_unapproved'}
         p['weapon_masters'][school]={'asset':id,'master':'art/sprites/weapons/lv1/'+school+'_lv1_master.png','master_size':list(master.size),'master_anchors':anchors,'source_sheet':stem,'source_points':points,'offline_rotation_degrees':rotation}
     p['levels']['1']['weapons']={'kiem':'kiem_lv1','cung':'cung_lv1'};p['levels']['1']['run_weapon']='kiem_lv1'
     for frame in HELD:
-        row=f['frames'][frame];row['layers']['weapon'].pop('cung_asset',None);row['held_weapon_z']={'kiem':-1,'cung':-1}
+        row=f['frames'][frame];row['layers']['weapon'].pop('cung_asset',None);row['held_weapon_z']={'kiem':3,'cung':3}
+        row.pop('held_hand_by_school',None);row.pop('held_lower_leg_foreground',None)
         for school in ['kiem','cung']:
             layer=row['layers']['body'];bid=layer.get('cung_asset' if school=='cung' else 'asset',p['levels']['1']['body'][layer.get('cung_image',layer['image'])] if school=='cung' else p['levels']['1']['body'][layer['image']])
-            anchors=p['assets'][bid]['anchors'];key='grip' if row.get('held_hand')=='grip' or anchors['grip'][0]>=anchors['far_hand'][0] else 'far_hand'
+            anchors=p['assets'][bid]['anchors'];key=hand_key(row,school,anchors)
             hand=position(f,row,school,'body')+np.array(anchors[key])*.5
             own=hand-np.array(p['assets'][school+'_lv1']['anchors']['grip'])*.5
             row['registrations'][school]['weapon']=list(own-source_origin(f,row,school,'weapon'))

@@ -25,6 +25,8 @@ var reference_effects: Array[Dictionary] = []
 var held_fingers: Sprite2D
 var roll_wind: Sprite2D
 var hand_masks: Dictionary={}
+var held_lower_legs: Sprite2D
+var lower_leg_masks: Dictionary={}
 func _ready() -> void:
 	parts=read_data("parts")
 	frames_data=read_data("frames30")
@@ -38,6 +40,8 @@ func _ready() -> void:
 	nocked_arrow.z_index=8
 	held_fingers=make_sprite("held_fingers")
 	held_fingers.z_index=4
+	held_lower_legs=make_sprite("held_lower_legs")
+	held_lower_legs.z_index=4
 	roll_wind=make_sprite("roll_wind")
 	roll_wind.centered=true
 	roll_wind.z_index=preload("res://config/tuning.gd").COMBAT_EFFECT_Z
@@ -156,6 +160,14 @@ func sample_frame(index: int) -> void:
 			hand_masks[key]=ImageTexture.create_from_image(im)
 		held_fingers.texture=hand_masks[key]
 		held_fingers.position=sprites.body.position
+	held_lower_legs.visible=sprites.weapon.visible and f.get("held_lower_leg_foreground",{}).has(school)
+	if held_lower_legs.visible:
+		var cutoff: int=int(f.held_lower_leg_foreground[school]);var key:=legs+str(cutoff)
+		if not lower_leg_masks.has(key):
+			var source: Image=sprites.legs.texture.get_image();var im:=Image.create(source.get_width(),source.get_height(),false,Image.FORMAT_RGBA8)
+			var start:=clampi(int(ceil(anchor(legs,"hip").y*2+cutoff)),0,source.get_height())
+			im.blit_rect(source,Rect2i(0,start,source.get_width(),source.get_height()-start),Vector2i(0,start));lower_leg_masks[key]=ImageTexture.create_from_image(im)
+		held_lower_legs.texture=lower_leg_masks[key];held_lower_legs.position=sprites.legs.position
 	roll_wind.visible=index in range(8,12) and parts.has("roll_winds")
 	if roll_wind.visible:
 		roll_wind.texture=load("res://pose_rig/art/lv1_30/"+parts.assets[parts.roll_winds[index-8]].file)
@@ -185,6 +197,7 @@ func sample_beat(index: int, emit_projectile: bool=false) -> void:
 	sample_frame(int(beat.frame))
 	sprites.weapon.visible=false
 	held_fingers.visible=false
+	held_lower_legs.visible=false
 	for spec in beat.effects:
 		var s:=make_sprite("effect_"+spec.id)
 		s.z_index=int(effects_data[spec.id].z)
@@ -284,7 +297,7 @@ func _process(delta: float) -> void:
 		var id:=int(clip.frames[next])
 		if id!=frame_index:sample_frame(id)
 func all_visual_sprites() -> Array:
-	var out: Array=sprites.values()+[quiver,nocked_arrow,held_fingers,roll_wind]+effect_sprites+arrows
+	var out: Array=sprites.values()+[quiver,nocked_arrow,held_fingers,held_lower_legs,roll_wind]+effect_sprites+arrows
 	for fx in reference_effects:out.append(fx.sprite)
 	return out
 func spawn_reference_effects(beat: Dictionary,age: float) -> void:

@@ -1,0 +1,1231 @@
+{
+  "failures": [],
+  "failure_count": 0,
+  "measurements": [
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9948062576446582,
+      "weapon_whole_visible": 0.9414766966133129,
+      "grip_height_H": 0.5267619680851063
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9948062576446582,
+      "weapon_whole_visible": 0.9414766966133129,
+      "grip_height_H": 0.5267619680851063
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9962697704903423,
+      "weapon_whole_visible": 0.9451411446296278,
+      "grip_height_H": 0.5207122093023255,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737147
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.99560202865858,
+      "weapon_whole_visible": 0.94729201098831,
+      "grip_height_H": 0.5205078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9946215934534505,
+      "weapon_whole_visible": 0.9486213343696389,
+      "grip_height_H": 0.521780303030303,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.548583403711011
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9960895261758146,
+      "weapon_whole_visible": 0.9534680280736398,
+      "grip_height_H": 0.5280330882352942,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565925
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.996335549457576,
+      "weapon_whole_visible": 0.9556958375199633,
+      "grip_height_H": 0.5248161764705883,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9888603301620799,
+      "shoe_span_H": 0.3642028199870568
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9953477787577046,
+      "weapon_whole_visible": 0.9449678956049521,
+      "grip_height_H": 0.5238597972972973,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.40202692099748877
+    },
+    {
+      "school": "kiem",
+      "frame": 8,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 9,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 10,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 11,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9959847330572371,
+      "weapon_whole_visible": 0.948711066082085,
+      "grip_height_H": 0.5392530487804879
+    },
+    {
+      "school": "kiem",
+      "frame": 13,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 14,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 15,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 16,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 17,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 18,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 19,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 20,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9951786668323539,
+      "weapon_whole_visible": 0.9478317947018928,
+      "grip_height_H": 0.5240091463414633,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 22,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 23,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 24,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 25,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 26,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 27,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 28,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 29,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 0,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9948062576446582,
+      "weapon_whole_visible": 0.9414766966133129,
+      "grip_height_H": 0.5267619680851063
+    },
+    {
+      "school": "kiem",
+      "frame": 1,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9948062576446582,
+      "weapon_whole_visible": 0.9414766966133129,
+      "grip_height_H": 0.5267619680851063
+    },
+    {
+      "school": "kiem",
+      "frame": 2,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9962697704903423,
+      "weapon_whole_visible": 0.9451411446296278,
+      "grip_height_H": 0.5207122093023255,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737146
+    },
+    {
+      "school": "kiem",
+      "frame": 3,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.99560202865858,
+      "weapon_whole_visible": 0.9470635463828144,
+      "grip_height_H": 0.5205078125,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "kiem",
+      "frame": 4,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9946215934534505,
+      "weapon_whole_visible": 0.9486213343696389,
+      "grip_height_H": 0.521780303030303,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5485834037110107
+    },
+    {
+      "school": "kiem",
+      "frame": 5,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9960895261758146,
+      "weapon_whole_visible": 0.9534639494757439,
+      "grip_height_H": 0.5280330882352942,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565924
+    },
+    {
+      "school": "kiem",
+      "frame": 6,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.996335549457576,
+      "weapon_whole_visible": 0.9556958375199633,
+      "grip_height_H": 0.5248161764705883,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.9888603301620799,
+      "shoe_span_H": 0.3642028199870568
+    },
+    {
+      "school": "kiem",
+      "frame": 7,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.99534593840726,
+      "weapon_whole_visible": 0.9449667856293301,
+      "grip_height_H": 0.5238597972972973,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4020269209974887
+    },
+    {
+      "school": "kiem",
+      "frame": 8,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 9,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 10,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 11,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "kiem",
+      "frame": 12,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9959847330572371,
+      "weapon_whole_visible": 0.948711066082085,
+      "grip_height_H": 0.5392530487804879
+    },
+    {
+      "school": "kiem",
+      "frame": 13,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 14,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 15,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 16,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 17,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 18,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 19,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 20,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 21,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9951786668323539,
+      "weapon_whole_visible": 0.9478317947018928,
+      "grip_height_H": 0.5240091463414633,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 22,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 23,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 24,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 25,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 26,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 27,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 28,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "kiem",
+      "frame": 29,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9628570329915117,
+      "weapon_whole_visible": 0.9673433868017924,
+      "wrap_skin_gap_px": 0.7617523783729158,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9628570329915117,
+      "weapon_whole_visible": 0.9673433868017924,
+      "wrap_skin_gap_px": 0.7617523783729158,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9696089244887713,
+      "weapon_whole_visible": 0.9720578220030821,
+      "wrap_skin_gap_px": 0.800289612936832,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737147
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9701753894260003,
+      "weapon_whole_visible": 0.9719362253423501,
+      "wrap_skin_gap_px": 0.5260978833531571,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 0.7997022614343082,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.969547909759088,
+      "weapon_whole_visible": 0.9717313212523122,
+      "wrap_skin_gap_px": 0.25728132969182477,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.548583403711011
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9756770187293391,
+      "weapon_whole_visible": 0.9745136464012677,
+      "wrap_skin_gap_px": 0.5840655779555795,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565925
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9403375932983781,
+      "weapon_whole_visible": 0.9482096500888868,
+      "wrap_skin_gap_px": 0.7527408215154267,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.0234375,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.7680046229005127,
+      "shoe_span_H": 0.3652603707973431
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9167029721393071,
+      "weapon_whole_visible": 0.92645083460639,
+      "wrap_skin_gap_px": 0.3261263840405271,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.0234375,
+      "shoe0_visible": 0.9790261046238284,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4022059305996296
+    },
+    {
+      "school": "cung",
+      "frame": 8,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 9,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 10,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 11,
+      "direction": -1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9669680377240946,
+      "weapon_whole_visible": 0.970611656099198,
+      "wrap_skin_gap_px": 0.14845315544452178,
+      "bow_above_head_px": 4,
+      "bow_height_H": 1.0234375
+    },
+    {
+      "school": "cung",
+      "frame": 13,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 14,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 15,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 16,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 17,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 18,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 19,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 20,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.879928842414749,
+      "weapon_whole_visible": 0.8961196654337775,
+      "wrap_skin_gap_px": 0.8296916817554938,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 0.9923756221079625,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 22,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 23,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 24,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 25,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 26,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 27,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 28,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 29,
+      "direction": -1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 0,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9628570329915117,
+      "weapon_whole_visible": 0.9673433868017924,
+      "wrap_skin_gap_px": 0.7617523783729158,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625
+    },
+    {
+      "school": "cung",
+      "frame": 1,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9628570329915117,
+      "weapon_whole_visible": 0.9673433868017924,
+      "wrap_skin_gap_px": 0.7617523783729158,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625
+    },
+    {
+      "school": "cung",
+      "frame": 2,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9696089244887713,
+      "weapon_whole_visible": 0.9720578220030821,
+      "wrap_skin_gap_px": 0.8002896129368084,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5510609248737146
+    },
+    {
+      "school": "cung",
+      "frame": 3,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9702843896297136,
+      "weapon_whole_visible": 0.9718891943599183,
+      "wrap_skin_gap_px": 0.5260978833531449,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 0.7997022614343082,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.3024794465682797
+    },
+    {
+      "school": "cung",
+      "frame": 4,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.969547909759088,
+      "weapon_whole_visible": 0.9717313212523122,
+      "wrap_skin_gap_px": 0.25728132969182477,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5485834037110107
+    },
+    {
+      "school": "cung",
+      "frame": 5,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9756724148107413,
+      "weapon_whole_visible": 0.9745122124809753,
+      "wrap_skin_gap_px": 0.5840655779555705,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.5239713771565924
+    },
+    {
+      "school": "cung",
+      "frame": 6,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9403375932983781,
+      "weapon_whole_visible": 0.9482096500888868,
+      "wrap_skin_gap_px": 0.7527408215154267,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.0234375,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 0.7680046229005127,
+      "shoe_span_H": 0.3652603707973431
+    },
+    {
+      "school": "cung",
+      "frame": 7,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9167029721393071,
+      "weapon_whole_visible": 0.92645083460639,
+      "wrap_skin_gap_px": 0.3261263840405271,
+      "bow_above_head_px": 6,
+      "bow_height_H": 1.0234375,
+      "shoe0_visible": 0.9790261046238284,
+      "shoe1_visible": 1.0,
+      "shoe_span_H": 0.4022059305996296
+    },
+    {
+      "school": "cung",
+      "frame": 8,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 9,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 10,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 11,
+      "direction": 1,
+      "H_rendered_px": 128
+    },
+    {
+      "school": "cung",
+      "frame": 12,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.9669682725931342,
+      "weapon_whole_visible": 0.9706118198593352,
+      "wrap_skin_gap_px": 0.1484531554445258,
+      "bow_above_head_px": 4,
+      "bow_height_H": 1.0234375
+    },
+    {
+      "school": "cung",
+      "frame": 13,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 14,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 15,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 16,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 17,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 18,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 19,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 20,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 21,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "weapon_core_visible": 0.879928842414749,
+      "weapon_whole_visible": 0.8961198642044468,
+      "wrap_skin_gap_px": 0.8296916817554938,
+      "bow_above_head_px": 5,
+      "bow_height_H": 1.015625,
+      "shoe0_visible": 0.9923756221079625,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 22,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 23,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 24,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 25,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 26,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 27,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 28,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    },
+    {
+      "school": "cung",
+      "frame": 29,
+      "direction": 1,
+      "H_rendered_px": 128,
+      "shoe0_visible": 1.0,
+      "shoe1_visible": 1.0,
+      "sole_delta_px": 0,
+      "hem_gap_px": 0
+    }
+  ],
+  "method": "Only actual Godot full/removed/isolated RGBA images. No authored pose landmarks or registration coordinates."
+}

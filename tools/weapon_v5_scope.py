@@ -10,6 +10,8 @@ def frame_without_weapon(row):
     if row['id'] in HELD:
         row['layers']['weapon'].pop('cung_asset',None)
         row.pop('held_weapon_z',None)
+        row.pop('held_hand_by_school',None)
+        row.pop('held_lower_leg_foreground',None)
         for school in ['kiem','cung']:row['registrations'][school].pop('weapon',None)
     return row
 

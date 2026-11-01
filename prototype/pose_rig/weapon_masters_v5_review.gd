@@ -9,6 +9,7 @@ func _ready() -> void:
 	for school in ["kiem","cung"]:
 		var master_path: String=ProjectSettings.globalize_path("res://").path_join("../"+p.weapon_masters[school].master).simplify_path()
 		var master:=Sprite2D.new();master.centered=false;master.texture=ImageTexture.create_from_image(Image.load_from_file(master_path));master.position=Vector2(60,145) if school=="kiem" else Vector2(1000,65);add_child(master)
+		if school=="cung":master.scale=Vector2.ONE*.85
 		caption("Kiếm Lv1 • bản gốc" if school=="kiem" else "Cung Lv1 • bản gốc",Vector2(60,100) if school=="kiem" else Vector2(1000,40))
 		var vp:=SubViewport.new();vp.size=Vector2i(256,256);vp.transparent_bg=true;vp.render_target_update_mode=SubViewport.UPDATE_ALWAYS;add_child(vp)
 		var id: String=p.levels["1"].weapons[school];var s:=Sprite2D.new();s.centered=false;s.texture=load("res://pose_rig/art/lv1_30/"+p.assets[id].file);s.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR

@@ -179,3 +179,5 @@ if __name__=='__main__':
     update_carry()
     from build_weapon_masters_v5 import run as update_weapon_masters
     update_weapon_masters()
+    from build_chest_carry_v7 import run as update_chest_carry
+    update_chest_carry()

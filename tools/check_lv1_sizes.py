@@ -35,7 +35,7 @@ for id in ['bow_idle','bow_release','bow_draw_15','bow_draw_16',P['levels']['1']
  if id==P['levels']['1']['weapons']['cung']:
   axis=anchor(id,'top')-anchor(id,'bottom');axis/=np.linalg.norm(axis);height=np.ptp(ps@axis)+1
  else:height=np.ptp(ps[:,1])+1
- check(.9<=height/H<=1.0,f'{id} actual opaque axial span={height:.3f}, ratio={height/H:.6f}H (held bow measured along its tilted axis)')
+ check((1.0<=height/H<=1.1) if id==P['levels']['1']['weapons']['cung'] else (.9<=height/H<=1.0),f'{id} actual opaque axial span={height:.3f}, ratio={height/H:.6f}H (held1.0–1.1; shooting.9–1.0)')
 for id in ['arrow','skill_arrow']:
  ps=points(id,127);length=np.ptp(ps[:,0])+1;check(.55<=length/H<=.65,f'{id} actual length/H={length/H:.6f}')
 hashes={id:hashlib.sha256(rgba(id).tobytes()).hexdigest() for id in ['body_9','body_10','body_11','body_12']}

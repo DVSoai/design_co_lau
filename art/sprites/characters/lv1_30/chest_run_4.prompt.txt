@@ -1,0 +1,1 @@
+Normalization of original chest/stance art: {"sheet": "carry_chest_run", "phase": 4, "lean_offline_degrees": 12, "original_hem": true, "source_marks": [[808, 570], [775, 770], [976, 615], [611, 570]]}

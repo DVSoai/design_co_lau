@@ -1,0 +1,1 @@
+Normalization of original chest/stance art: {"sheet": "attack_stances_three", "phase": 1, "crop": [895, 174, 1312, 565], "uniform_scale": 0.17105263157894737}

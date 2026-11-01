@@ -1,0 +1,1342 @@
+$ python3 tools/check_lv1_30.py
+PASS: only Lv1 implemented; no new Lv10..60 completion claims
+PASS: head unique assets=8/8
+PASS: body unique assets=18/18
+PASS: legs unique assets=10/10
+PASS: head_without_hat_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_0 95x77 green=0 transparent=2291 copy/prompt OK
+PASS: head_without_hat_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_1 95x77 green=0 transparent=2284 copy/prompt OK
+PASS: head_without_hat_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_2 87x77 green=0 transparent=2304 copy/prompt OK
+PASS: head_without_hat_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_3 95x77 green=0 transparent=1837 copy/prompt OK
+PASS: head_without_hat_4 95x77 green=0 transparent=2418 copy/prompt OK
+PASS: head_4 256x256 green=0 transparent=60639 copy/prompt OK
+PASS: head_without_hat_5 92x77 green=0 transparent=2346 copy/prompt OK
+PASS: head_5 256x256 green=0 transparent=60798 copy/prompt OK
+PASS: head_without_hat_6 87x77 green=0 transparent=1897 copy/prompt OK
+PASS: head_6 256x256 green=0 transparent=60734 copy/prompt OK
+PASS: head_without_hat_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: head_7 95x77 green=0 transparent=2559 copy/prompt OK
+PASS: body_0 106x100 green=0 transparent=2674 copy/prompt OK
+PASS: body_1 105x98 green=0 transparent=2627 copy/prompt OK
+PASS: body_2 146x92 green=0 transparent=5119 copy/prompt OK
+PASS: body_3 150x94 green=0 transparent=5244 copy/prompt OK
+PASS: body_4 152x95 green=0 transparent=4745 copy/prompt OK
+PASS: body_5 160x94 green=0 transparent=6809 copy/prompt OK
+PASS: body_6 89x80 green=0 transparent=1924 copy/prompt OK
+PASS: body_7 96x74 green=0 transparent=1691 copy/prompt OK
+PASS: body_8 98x92 green=0 transparent=2200 copy/prompt OK
+PASS: body_9 99x84 green=0 transparent=2177 copy/prompt OK
+PASS: body_10 106x87 green=0 transparent=2715 copy/prompt OK
+PASS: body_11 142x81 green=0 transparent=4945 copy/prompt OK
+PASS: body_12 91x88 green=0 transparent=1869 copy/prompt OK
+PASS: body_13 145x87 green=0 transparent=5578 copy/prompt OK
+PASS: body_14 96x86 green=0 transparent=2112 copy/prompt OK
+PASS: body_15 158x100 green=0 transparent=7245 copy/prompt OK
+PASS: body_16 153x99 green=0 transparent=7181 copy/prompt OK
+PASS: body_17 160x98 green=0 transparent=7404 copy/prompt OK
+PASS: legs_0 57x70 green=0 transparent=1210 copy/prompt OK
+PASS: legs_1 70x63 green=0 transparent=1951 copy/prompt OK
+PASS: legs_2 60x67 green=0 transparent=1677 copy/prompt OK
+PASS: legs_3 82x54 green=0 transparent=2234 copy/prompt OK
+PASS: legs_4 70x69 green=0 transparent=2186 copy/prompt OK
+PASS: legs_5 91x65 green=0 transparent=2838 copy/prompt OK
+PASS: legs_6 81x68 green=0 transparent=1881 copy/prompt OK
+PASS: legs_7 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_8 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_9 192x192 green=0 transparent=33237 copy/prompt OK
+PASS: legs_guard 96x62 green=0 transparent=2670 copy/prompt OK
+PASS: legs_lunge 86x63 green=0 transparent=2666 copy/prompt OK
+PASS: sword 109x119 green=0 transparent=9717 copy/prompt OK
+PASS: bow_idle 55x185 green=0 transparent=4938 copy/prompt OK
+PASS: bow_draw 55x185 green=0 transparent=6747 copy/prompt OK
+PASS: bow_release 56x185 green=0 transparent=5040 copy/prompt OK
+PASS: quiver 37x70 green=0 transparent=1016 copy/prompt OK
+PASS: arrow 256x128 green=0 transparent=31355 copy/prompt OK
+PASS: skill_arrow 256x128 green=0 transparent=29687 copy/prompt OK
+PASS: arrow_draw_15 256x128 green=0 transparent=31428 copy/prompt OK
+PASS: arrow_draw_16 256x128 green=0 transparent=31429 copy/prompt OK
+PASS: bow_draw_15 123x205 green=0 transparent=21368 copy/prompt OK
+PASS: bow_draw_16 115x205 green=0 transparent=19745 copy/prompt OK
+PASS: attack_fragment 512x384 green=0 transparent=195673 copy/prompt OK
+PASS: swing_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_0 512x384 green=0 transparent=192049 copy/prompt OK
+PASS: swing_mask_1 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_1 512x384 green=0 transparent=191694 copy/prompt OK
+PASS: swing_mask_2 512x384 green=0 transparent=195481 copy/prompt OK
+PASS: swing_2 512x384 green=0 transparent=191303 copy/prompt OK
+PASS: swing_mask_3 512x384 green=0 transparent=195484 copy/prompt OK
+PASS: swing_3 512x384 green=0 transparent=191694 copy/prompt OK
+PASS: swing_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_4 512x384 green=0 transparent=192049 copy/prompt OK
+PASS: swing_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: swing_skill_mask_0 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_0 512x384 green=0 transparent=192049 copy/prompt OK
+PASS: swing_skill_mask_1 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_1 512x384 green=0 transparent=191428 copy/prompt OK
+PASS: swing_skill_mask_2 512x384 green=0 transparent=194893 copy/prompt OK
+PASS: swing_skill_2 512x384 green=0 transparent=190862 copy/prompt OK
+PASS: swing_skill_mask_3 512x384 green=0 transparent=194886 copy/prompt OK
+PASS: swing_skill_3 512x384 green=0 transparent=191428 copy/prompt OK
+PASS: swing_skill_mask_4 512x384 green=0 transparent=196608 copy/prompt OK
+PASS: swing_skill_4 512x384 green=0 transparent=192049 copy/prompt OK
+PASS: swing_skill_surge_2 512x384 green=0 transparent=196307 copy/prompt OK
+PASS: swing_skill_surge_3 512x384 green=0 transparent=196329 copy/prompt OK
+PASS: swing_skill_reverse_3 512x384 green=0 transparent=196385 copy/prompt OK
+PASS: attack_blade 512x384 green=0 transparent=192049 copy/prompt OK
+PASS: attack_blade_only 512x384 green=0 transparent=193574 copy/prompt OK
+PASS: pose_flash 24x24 green=0 transparent=423 copy/prompt OK
+PASS: run_leg_0 109x69 green=0 transparent=4207 copy/prompt OK
+PASS: run_leg_1 90x69 green=0 transparent=3139 copy/prompt OK
+PASS: run_leg_2 69x69 green=0 transparent=2040 copy/prompt OK
+PASS: run_leg_3 111x69 green=0 transparent=4399 copy/prompt OK
+PASS: run_leg_4 92x69 green=0 transparent=3411 copy/prompt OK
+PASS: run_leg_5 64x69 green=0 transparent=1772 copy/prompt OK
+PASS: roll_head_0 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_1 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_2 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_head_3 224x224 green=0 transparent=44726 copy/prompt OK
+PASS: roll_legs_0 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_1 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_2 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_legs_3 224x224 green=0 transparent=46112 copy/prompt OK
+PASS: roll_body_0 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_1 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_2 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: roll_body_3 224x224 green=0 transparent=48393 copy/prompt OK
+PASS: fall_head_0 256x256 green=0 transparent=60400 copy/prompt OK
+PASS: fall_legs_0 256x256 green=0 transparent=60290 copy/prompt OK
+PASS: fall_body_0 256x256 green=0 transparent=60858 copy/prompt OK
+PASS: roll_wind_0 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_1 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_2 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: roll_wind_3 208x208 green=0 transparent=25228 copy/prompt OK
+PASS: trail_slash_16_0 174x112 green=0 transparent=9912 copy/prompt OK
+PASS: trail_slash_16_1 268x150 green=0 transparent=21027 copy/prompt OK
+PASS: trail_slash_16_2 268x128 green=0 transparent=17785 copy/prompt OK
+PASS: trail_slash_16_3 214x112 green=0 transparent=12498 copy/prompt OK
+PASS: trail_slash_16_4 174x90 green=0 transparent=8406 copy/prompt OK
+PASS: trail_slash_39_0 156x64 green=0 transparent=4514 copy/prompt OK
+PASS: trail_slash_39_1 156x51 green=0 transparent=3672 copy/prompt OK
+PASS: trail_tram_kiem_16_0 188x127 green=0 transparent=12181 copy/prompt OK
+PASS: trail_tram_kiem_16_1 289x169 green=0 transparent=25634 copy/prompt OK
+PASS: trail_tram_kiem_16_2 289x144 green=0 transparent=21657 copy/prompt OK
+PASS: trail_tram_kiem_16_3 231x127 green=0 transparent=15328 copy/prompt OK
+PASS: trail_tram_kiem_16_4 188x101 green=0 transparent=10184 copy/prompt OK
+PASS: trail_tram_kiem_39_0 168x72 green=0 transparent=5480 copy/prompt OK
+PASS: trail_tram_kiem_39_1 168x58 green=0 transparent=4525 copy/prompt OK
+PASS: body_hold_cung 157x93 green=0 transparent=6568 copy/prompt OK
+PASS: run_v3_legs_0 130x70 green=0 transparent=5513 copy/prompt OK
+PASS: run_v3_legs_1 67x70 green=0 transparent=1973 copy/prompt OK
+PASS: run_v3_legs_2 128x70 green=0 transparent=5371 copy/prompt OK
+PASS: run_v3_legs_3 124x70 green=0 transparent=5143 copy/prompt OK
+PASS: run_v3_legs_4 91x70 green=0 transparent=3669 copy/prompt OK
+PASS: run_v3_legs_5 110x71 green=0 transparent=3868 copy/prompt OK
+PASS: run_v3_kiem_body_0 320x256 green=0 transparent=76589 copy/prompt OK
+PASS: run_v3_kiem_body_1 320x256 green=0 transparent=76685 copy/prompt OK
+PASS: run_v3_kiem_body_2 320x256 green=0 transparent=76559 copy/prompt OK
+PASS: run_v3_kiem_body_3 320x256 green=0 transparent=76654 copy/prompt OK
+PASS: run_v3_kiem_body_4 320x256 green=0 transparent=77135 copy/prompt OK
+PASS: run_v3_kiem_body_5 320x256 green=0 transparent=77077 copy/prompt OK
+PASS: run_v3_cung_body_0 320x256 green=0 transparent=76986 copy/prompt OK
+PASS: run_v3_cung_body_1 320x256 green=0 transparent=77150 copy/prompt OK
+PASS: run_v3_cung_body_2 320x256 green=0 transparent=76898 copy/prompt OK
+PASS: run_v3_cung_body_3 320x256 green=0 transparent=76766 copy/prompt OK
+PASS: run_v3_cung_body_4 320x256 green=0 transparent=76824 copy/prompt OK
+PASS: run_v3_cung_body_5 320x256 green=0 transparent=77296 copy/prompt OK
+PASS: carry_v4_legs_3 85x68 green=0 transparent=2722 copy/prompt OK
+PASS: kiem_lv1 150x76 green=0 transparent=8847 copy/prompt OK
+PASS: cung_lv1 92x195 green=0 transparent=13039 copy/prompt OK
+PASS: chest_run_0 320x256 green=0 transparent=77177 copy/prompt OK
+PASS: chest_run_1 320x256 green=0 transparent=77158 copy/prompt OK
+PASS: chest_run_2 320x256 green=0 transparent=76740 copy/prompt OK
+PASS: chest_run_3 320x256 green=0 transparent=76649 copy/prompt OK
+PASS: chest_run_4 320x256 green=0 transparent=76651 copy/prompt OK
+PASS: chest_run_5 320x256 green=0 transparent=76619 copy/prompt OK
+PASS: chest_stand 320x256 green=0 transparent=76626 copy/prompt OK
+PASS: chest_fall 320x256 green=0 transparent=76651 copy/prompt OK
+PASS: attack_stance_0 131x67 green=0 transparent=4779 copy/prompt OK
+PASS: attack_stance_1 71x67 green=0 transparent=1896 copy/prompt OK
+PASS: attack_stance_2 122x67 green=0 transparent=4385 copy/prompt OK
+PASS: chest_fall_legs 201x201 green=0 transparent=37002 copy/prompt OK
+PASS: 30 rows
+PASS: frame0 four layers
+PASS: frame0 valid head index
+PASS: frame0 valid body index
+PASS: frame0 valid legs index
+PASS: frame1 four layers
+PASS: frame1 valid head index
+PASS: frame1 valid body index
+PASS: frame1 valid legs index
+PASS: frame2 four layers
+PASS: frame2 valid head index
+PASS: frame2 valid body index
+PASS: frame2 valid legs index
+PASS: frame3 four layers
+PASS: frame3 valid head index
+PASS: frame3 valid body index
+PASS: frame3 valid legs index
+PASS: frame4 four layers
+PASS: frame4 valid head index
+PASS: frame4 valid body index
+PASS: frame4 valid legs index
+PASS: frame5 four layers
+PASS: frame5 valid head index
+PASS: frame5 valid body index
+PASS: frame5 valid legs index
+PASS: frame6 four layers
+PASS: frame6 valid head index
+PASS: frame6 valid body index
+PASS: frame6 valid legs index
+PASS: frame7 four layers
+PASS: frame7 valid head index
+PASS: frame7 valid body index
+PASS: frame7 valid legs index
+PASS: frame8 four layers
+PASS: frame8 valid head index
+PASS: frame8 valid body index
+PASS: frame8 valid legs index
+PASS: frame9 four layers
+PASS: frame9 valid head index
+PASS: frame9 valid body index
+PASS: frame9 valid legs index
+PASS: frame10 four layers
+PASS: frame10 valid head index
+PASS: frame10 valid body index
+PASS: frame10 valid legs index
+PASS: frame11 four layers
+PASS: frame11 valid head index
+PASS: frame11 valid body index
+PASS: frame11 valid legs index
+PASS: frame12 four layers
+PASS: frame12 valid head index
+PASS: frame12 valid body index
+PASS: frame12 valid legs index
+PASS: frame13 four layers
+PASS: frame13 valid head index
+PASS: frame13 valid body index
+PASS: frame13 valid legs index
+PASS: frame14 four layers
+PASS: frame14 valid head index
+PASS: frame14 valid body index
+PASS: frame14 valid legs index
+PASS: frame15 four layers
+PASS: frame15 valid head index
+PASS: frame15 valid body index
+PASS: frame15 valid legs index
+PASS: frame16 four layers
+PASS: frame16 valid head index
+PASS: frame16 valid body index
+PASS: frame16 valid legs index
+PASS: frame17 four layers
+PASS: frame17 valid head index
+PASS: frame17 valid body index
+PASS: frame17 valid legs index
+PASS: frame18 four layers
+PASS: frame18 valid head index
+PASS: frame18 valid body index
+PASS: frame18 valid legs index
+PASS: frame19 four layers
+PASS: frame19 valid head index
+PASS: frame19 valid body index
+PASS: frame19 valid legs index
+PASS: frame20 four layers
+PASS: frame20 valid head index
+PASS: frame20 valid body index
+PASS: frame20 valid legs index
+PASS: frame21 four layers
+PASS: frame21 valid head index
+PASS: frame21 valid body index
+PASS: frame21 valid legs index
+PASS: frame22 four layers
+PASS: frame22 valid head index
+PASS: frame22 valid body index
+PASS: frame22 valid legs index
+PASS: frame23 four layers
+PASS: frame23 valid head index
+PASS: frame23 valid body index
+PASS: frame23 valid legs index
+PASS: frame24 four layers
+PASS: frame24 valid head index
+PASS: frame24 valid body index
+PASS: frame24 valid legs index
+PASS: frame25 four layers
+PASS: frame25 valid head index
+PASS: frame25 valid body index
+PASS: frame25 valid legs index
+PASS: frame26 four layers
+PASS: frame26 valid head index
+PASS: frame26 valid body index
+PASS: frame26 valid legs index
+PASS: frame27 four layers
+PASS: frame27 valid head index
+PASS: frame27 valid body index
+PASS: frame27 valid legs index
+PASS: frame28 four layers
+PASS: frame28 valid head index
+PASS: frame28 valid body index
+PASS: frame28 valid legs index
+PASS: frame29 four layers
+PASS: frame29 valid head index
+PASS: frame29 valid body index
+PASS: frame29 valid legs index
+PASS: slash/ground frame13 valid beat
+PASS: slash/ground frame14 valid beat
+PASS: slash/ground frame15 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame16 valid beat
+PASS: slash/ground frame13 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash/air frame23 valid beat
+PASS: slash/air frame24 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame25 valid beat
+PASS: slash/air frame22 valid beat
+PASS: slash visual duration=0.300000s
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame14 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame18 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/ground frame17 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame23 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame27 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot/air frame26 valid beat
+PASS: shoot visual duration=0.400000s
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/ground frame14 valid beat
+PASS: tram_kiem/ground frame15 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame16 valid beat
+PASS: tram_kiem/ground frame13 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem/air frame23 valid beat
+PASS: tram_kiem/air frame24 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame25 valid beat
+PASS: tram_kiem/air frame22 valid beat
+PASS: tram_kiem visual duration=0.300000s
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame14 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame18 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/ground frame17 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame23 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame27 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien/air frame26 valid beat
+PASS: xa_tien visual duration=0.400000s
+PASS: slash .30s, hit .10-.20
+PASS: reference unchanged hash art/reference/chr_dbl_board_trang_bi.png
+PASS: reference unchanged hash art/reference/chr_dbl_board_animation.png
+PASS: reference unchanged hash art/reference/ref_dinh_bo_linh.png
+PASS: idle actual RGBA height=95.849 logic px sole=0.000; preview1600x720 height=128.000 px
+Lv1 real-file checks failures=0; assets=160 frames=30 skills=4
+Exit code: 0
+
+$ python3 tools/check_lv1_sizes.py
+PASS: frame00 bare head/hair=77.000 source pixels H=191.699000 ratio=0.401671, target.40 +/- .03
+PASS: all8 active heads have no hat
+PASS: frame00 head RGBA exactly equals bare-head asset; no hat hidden in measurement
+PASS: kiem_lv1 longest alpha side/H=0.782477 (same metric as ref_render, not axial length)
+PASS: bow_idle actual opaque axial span=185.000, ratio=0.965055H (held1.0–1.1; shooting.9–1.0)
+PASS: bow_release actual opaque axial span=185.000, ratio=0.965055H (held1.0–1.1; shooting.9–1.0)
+PASS: bow_draw_15 actual opaque axial span=185.000, ratio=0.965055H (held1.0–1.1; shooting.9–1.0)
+PASS: bow_draw_16 actual opaque axial span=185.000, ratio=0.965055H (held1.0–1.1; shooting.9–1.0)
+PASS: cung_lv1 actual opaque axial span=209.540, ratio=1.093070H (held1.0–1.1; shooting.9–1.0)
+PASS: arrow actual length/H=0.620765
+PASS: skill_arrow actual length/H=0.636414
+BODY RGBA SHA256 body_9 a16c11f1e093db95114172f17bcf7d015b1262ad0279a028415341bd259eb871
+BODY RGBA SHA256 body_10 c9f3d502499f994479ee9acc4c3a20ddb059754ffa84b5012c1960cb8de2470b
+BODY RGBA SHA256 body_11 cfb1e6be248c5018f4cbff910232747e377fba174320ac877f627c308de2af74
+BODY RGBA SHA256 body_12 8763ee3b849423c5f503456b70d1d439c5d5d9b9fe8588bfb42b37a8bb4da2ab
+PASS: four genuinely different torso RGBA hashes
+PASS: full attack blade length/H=0.777260, target .75..8
+PASS: swing_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_0 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_1 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_2 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_3 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: swing_skill_4 real single-texture full blade + tip-connected painted trail, final key cleanup
+PASS: slash six reference beats total.30s hit.10-.20
+PASS: slash beat2 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat4 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: slash beat5 combined visible VFX length/H=1.272829 including forward/reverse layers
+PASS: slash beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem six reference beats total.30s hit.10-.20
+PASS: tram_kiem beat2 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat3 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat4 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat4 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: tram_kiem beat5 combined visible VFX length/H=1.283262 including forward/reverse layers
+PASS: tram_kiem beat5 actual trail-to-blade-tip gap=0.000000 logic px
+PASS: actual opaque blade (excluding handle) span/H=0.782477
+Lv1 compact/proportion/weapon checks failures=0
+Exit code: 0
+
+$ python3 tools/check_arrow_alignment.py
+PASS: arrow_draw_15 actual shaft slope=0.101646; nock gap=0.048253 logic px; bow-rest gap=0.090401 logic px
+PASS: arrow_draw_16 actual shaft slope=0.097468; nock gap=0.021232 logic px; bow-rest gap=0.050987 logic px
+PASS: arrow actual shaft slope=-0.000927; nock gap=0.030580 logic px; bow-rest gap=0.012894 logic px
+PASS: skill_arrow actual shaft slope=-0.007192; nock gap=0.248981 logic px; bow-rest gap=0.111732 logic px
+Actual painted-shaft alignment failures=0
+Exit code: 0
+
+Actual rendered-pixel checker source:
+#!/usr/bin/env python3
+"""Image-only acceptance: real full-layer Godot renders versus layer removals.
+
+No parts.json, frame registrations, declared joints, or hand/foot landmarks are read.
+All geometric measurements come from rendered RGBA pixels and their ablations.
+"""
+from pathlib import Path
+import argparse,json,sys
+import numpy as np
+from PIL import Image
+from scipy.ndimage import label,find_objects,binary_dilation,distance_transform_edt
+
+ROOT=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser();parser.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v7');args=parser.parse_args()
+DIR=ROOT/args.renders;manifest=json.loads((DIR/'manifest.json').read_text());failures=[];measurements=[]
+def check(ok,message):
+    print(('PASS: ' if ok else 'FAIL: ')+message)
+    if not ok:failures.append(message)
+def tiles(file):
+    im=np.array(Image.open(DIR/file).convert('RGBA'),float)/255
+    return {name:im[(i//4)*256:(i//4+1)*256,(i%4)*256:(i%4+1)*256] for i,name in enumerate(manifest['variants'])}
+def premul(im):return np.dstack([im[:,:,:3]*im[:,:,3,None],im[:,:,3]])
+def visible_fraction(full,removed,isolated):
+    # Compare actual removal delta to the ideal foreground contribution at each pixel.
+    back=premul(removed);fg=premul(isolated);ideal=fg+back*(1-isolated[:,:,3,None])-back;actual=premul(full)-back
+    norm=(ideal*ideal).sum(axis=2);fraction=np.zeros_like(norm);valid=norm>1e-7
+    fraction[valid]=np.clip((actual*ideal).sum(axis=2)[valid]/norm[valid],0,1)
+    return fraction
+def bounds(mask):
+    y,x=np.where(mask)
+    return None if not len(x) else (int(x.min()),int(y.min()),int(x.max()),int(y.max()))
+def steel_mask(w):
+    rgb=w[:,:,:3];opaque=w[:,:,3]>.2
+    steel=opaque&(rgb.min(axis=2)>65/255)&(np.ptp(rgb,axis=2)<85/255)
+    labs,n=label(steel);sizes=np.bincount(labs.ravel());sizes[0]=0
+    return binary_dilation(labs==int(sizes.argmax()),iterations=2)&opaque
+def bow_wood_mask(w):
+    rgb=w[:,:,:3];warm=(w[:,:,3]>.05)&(rgb[:,:,0]-rgb[:,:,1]>12/255)&(rgb[:,:,1]-rgb[:,:,2]>5/255)&(rgb[:,:,0]>55/255)
+    return binary_dilation(warm,iterations=2)&(w[:,:,3]>.05)&(rgb.min(axis=2)<=.8)
+def feet_from_paint(legs,H):
+    # Brown shoe bodies are separated from trousers by light calf wraps. Pale outer
+    # sole edging ranks shoe components, independent of any authored foot points.
+    rgb=legs[:,:,:3]*255;rr,gg,bb=rgb.transpose(2,0,1);alpha=legs[:,:,3]>.5;box=bounds(alpha)
+    if box is None:return []
+    top,height=box[1],box[3]-box[1]+1
+    brown=alpha&(rr>65)&(rr<180)&(gg>25)&(gg<125)&(bb<85)&(rr>1.2*gg)
+    labs,n=label(brown);tan=alpha&(rr>160)&(gg>105)&(bb>40)&(rr-gg>20)&(gg-bb>15)&(distance_transform_edt(alpha)<4)
+    candidates=[]
+    for id,sl in enumerate(find_objects(labs),1):
+        if sl is None:continue
+        yy,xx=np.where(labs==id)
+        if len(xx)<20 or yy.mean()<top+.25*height or yy.max()-yy.min()+1>.19*H:continue
+        score=int((binary_dilation(labs==id,iterations=3)&tan).sum());candidates.append((score,len(xx),id))
+    chosen=[]
+    for score,area,id in sorted(candidates,reverse=True):
+        region=binary_dilation(labs==id,iterations=3)&(legs[:,:,3]>.05)
+        if score==0 or any(np.any(region&previous) for previous in chosen):continue
+        chosen.append(region)
+        if len(chosen)==2:break
+    return chosen
+def bow_wrap_midpoint(w):
+    rgb=w[:,:,:3]*255;rr,gg,bb=rgb.transpose(2,0,1);alpha=w[:,:,3]>.5;box=bounds(alpha)
+    if box is None:return None
+    yy=np.indices(alpha.shape)[0];span=box[3]-box[1]
+    gold=alpha&(rr>150)&(gg>100)&(bb<180)&(gg>1.15*bb)&(yy>box[1]+.3*span)&(yy<box[1]+.7*span)
+    labs,n=label(binary_dilation(gold));points=[]
+    for id in range(1,n+1):
+        region=(labs==id)&gold
+        if region.sum()<3:continue
+        y,x=np.where(region);points.append((int(region.sum()),np.array([x.mean(),y.mean()])))
+    points=sorted(points,key=lambda row:row[0],reverse=True)[:2]
+    return None if len(points)!=2 else (points[0][1]+points[1][1])*.5
+
+def contour_samples(full,w,core,school):
+    y,x=np.where(core&(w[:,:,3]>.5));points=np.column_stack([x,y]);centre=points.mean(axis=0);_,_,axes=np.linalg.svd(points-centre,full_matrices=False);axis=axes[0];normal=np.array([-axis[1],axis[0]]);projected=(points-centre)@axis;low,high=np.quantile(projected,[.02,.98]);result=[]
+    for fraction in [.2,.35,.65,.8]:
+        middle=centre+axis*(low+(high-low)*fraction);values=[]
+        for offset in np.arange(-32,32.001,.125):
+            at=middle+normal*offset;ix,iy=np.floor(at).astype(int)
+            if not (0<=ix<256 and 0<=iy<256):continue
+            values.append((offset,(ix,iy),w[iy,ix],full[iy,ix]))
+        if school=='kiem':material=[offset for offset,_,c,_ in values if c[3]>=.8 and c[:3].min()>90/255]
+        else:material=[offset for offset,_,c,_ in values if c[3]>=.8 and c[0]-c[1]>15/255 and c[1]-c[2]>8/255 and c[0]>75/255]
+        if not material:result.append((fraction,0,0));continue
+        start,end=min(material),max(material);counts=[]
+        for lo,hi in [(start-4,start),(end,end+4)]:
+            pixels={xy for offset,xy,_,c in values if lo<=offset<=hi and c[3]>=.8 and c[0]<80/255 and c[1]<70/255 and c[2]<70/255};counts.append(len(pixels))
+        result.append((fraction,*counts))
+    return result
+
+entries=manifest['entries'];check(len(entries)==120,'120 actually rendered poses:30 frames x2 schools x2 directions')
+controls={}
+for entry in entries:
+    if entry['frame']!=0:continue
+    t=tiles(entry['file']);alpha=np.maximum.reduce([t[k][:,:,3] for k in ['head_only','body_only','legs_only']]);box=bounds(alpha>.5)
+    controls[(entry['school'],entry['direction'])]=box[3]-box[1]+1
+    head_box=bounds(t['head_only'][:,:,3]>.5);ratio=(head_box[3]-head_box[1]+1)/controls[(entry['school'],entry['direction'])]
+    check(abs(ratio-.4)<=.03,f'{entry["school"]} dir{entry["direction"]} rendered bare head/H={ratio:.9f}, preserved target .40±.03')
+check(all(controls.values()),'H measured from actual neutral head/body/legs union, not declared joint coordinates')
+held=[0,1,2,3,4,5,6,7,12,21]
+for entry in entries:
+    school,frame,direction=entry['school'],entry['frame'],entry['direction'];name=f'{school} frame{frame} dir{direction}';t=tiles(entry['file']);H=controls[(school,direction)]
+    full=t['full'];legs=t['legs_only'];body=t['body_only'];head=t['head_only'];w=t['weapon_only'];row={'school':school,'frame':frame,'direction':direction,'H_rendered_px':H}
+    leg_fraction=visible_fraction(full,t['no_legs'],legs)
+    if frame in held:
+        fraction=visible_fraction(full,t['no_weapon'],w);core=steel_mask(w) if school=='kiem' else bow_wood_mask(w)
+        area=w[:,:,3]*core;whole=w[:,:,3];core_visible=(area*fraction).sum()/max(1e-9,area.sum());whole_visible=(whole*fraction).sum()/max(1e-9,whole.sum())
+        target=.8 if school=='kiem' else .7
+        check(core_visible>=target and whole_visible>=.7,f'{name} full/no-weapon/isolated: blade/wood visible={core_visible:.9%} >={target:.0%}; whole={whole_visible:.9%} >=70%')
+        row.update(weapon_core_visible=float(core_visible),weapon_whole_visible=float(whole_visible))
+        if school=='kiem':
+            box=bounds(w[:,:,3]>.5);ratio=max(box[2]-box[0]+1,box[3]-box[1]+1)/H
+            check(.75<=ratio<=.8,f'{name} actual rendered sword longest alpha side/H={ratio:.9f} in[.75,.8]')
+        if frame==0:
+            for at,left,right in contour_samples(full,w,core,school):check(left>=1 and right>=1,f'{name} FULL rendered contour section{at}: opaque dark pixel cells={left}/{right}, each>=1px')
+        fingers=t['fingers_only'];skin=(fingers[:,:,3]>.5)&(full[:,:,0]>.6)&(full[:,:,1]>.3)
+        # The grip must really replace visible handle paint with skin in the full render.
+        skin&=np.max(np.abs(premul(full)-premul(t['no_fingers'])),axis=2)>2/255
+        contact=skin&(w[:,:,3]>.5);check(bool(contact.any()),f'{name} actual foreground palm touches and occludes rendered handle')
+        if school=='kiem':
+            y,x=np.where(contact);grip_y=float(y.mean()) if len(y) else float('inf');foot_bottom=bounds(legs[:,:,3]>.5)[3];height=(foot_bottom-grip_y)/H
+            check(.45<=height<=.6,f'{name} rendered skin/handle grip height above feet/H={height:.9f} in[.45,.60]');row['grip_height_H']=height
+        else:
+            midpoint=bow_wrap_midpoint(w);gap=float('inf')
+            if midpoint is not None and skin.any():
+                y,x=np.where(skin);gap=float(np.sqrt((x-midpoint[0])**2+(y-midpoint[1])**2).min())
+            check(gap<=1,f'{name} image-detected middle-wrap midpoint to actual gripping skin={gap:.9f}px <=1')
+            weapon_top=bounds((w[:,:,3]*fraction)>.5)[1];head_top=bounds(head[:,:,3]>.5)[1]
+            check(weapon_top<head_top,f'{name} visible bow upper end y={weapon_top} ABOVE head y={head_top}')
+            box=bounds(w[:,:,3]>.5);height=(box[3]-box[1]+1)/H
+            check(1.0<=height<=1.1,f'{name} real rendered bow vertical height/H={height:.9f} in[1.0,1.1]');row.update(wrap_skin_gap_px=gap,bow_above_head_px=int(head_top-weapon_top),bow_height_H=height)
+    if frame in range(2,8) or frame in range(13,30):
+        feet=feet_from_paint(legs,H);check(len(feet)==2,f'{name} TWO shoes detected from actual brown paint, pale soles and separate image regions')
+        soles=[]
+        for i,foot in enumerate(feet):
+            area=legs[:,:,3]*foot;visible=(area*leg_fraction).sum()/max(1e-9,area.sum())
+            check(visible>=.7,f'{name} shoe{i} full/no-legs comparison visible={visible:.9%} >=70%');soles.append(bounds(foot&(legs[:,:,3]>.5))[3])
+            row['shoe%d_visible'%i]=float(visible)
+        if frame in range(2,8) and len(feet)==2:
+            centres=[]
+            for foot in feet:
+                yy,xx=np.where(foot&(legs[:,:,3]>.5));centres.append(np.array([xx.mean(),yy.mean()]))
+            row['shoe_span_H']=float(np.linalg.norm(centres[0]-centres[1])/H)
+        if frame in range(13,30):
+            check(len(soles)==2 and abs(soles[0]-soles[1])<=1,f'{name} actual shoe soles={soles}; same ground within1 rendered pixel')
+            lmask=legs[:,:,3]>.5;bmask=body[:,:,3]>.5;box=bounds(lmask);top=box[1];xs=np.where(lmask[top:top+3].any(axis=0))[0];gaps=[]
+            if len(xs):
+                low,high=np.quantile(xs,[.2,.8])
+                for x in range(int(np.ceil(low)),int(np.floor(high))+1):
+                    ly=np.where(lmask[:,x])[0];by=np.where(bmask[:,x]&(np.arange(256)>=top-.4*H)&(np.arange(256)<=top+.25*H))[0]
+                    if len(ly) and len(by):gaps.append(max(0,int(ly.min()-by.max()-1)))
+                    else:gaps.append(999)
+            max_gap=max(gaps,default=999);check(max_gap==0,f'{name} row-by-row central hem-to-leg transparent gap={max_gap}px (required0)')
+            union=bmask|lmask;labs,n=label(union);body_ids=np.bincount(labs[bmask]);leg_ids=np.bincount(labs[lmask]);body_ids[0]=0;leg_ids[0]=0
+            check(body_ids.argmax()==leg_ids.argmax() and body_ids.argmax()!=0,f'{name} rendered torso and legs form one connected painted silhouette')
+            expected='attack_stance_%d.png'%(0 if frame<=20 else (1 if frame<=25 else 2));check(entry['legs_texture']==expected,f'{name} actual rendered stance texture={entry["legs_texture"]}, expected={expected}')
+            row.update(sole_delta_px=None if len(soles)!=2 else abs(soles[0]-soles[1]),hem_gap_px=max_gap)
+    measurements.append(row)
+for school in ['kiem','cung']:
+    for direction in [-1,1]:
+        strides=[r.get('shoe_span_H',0) for r in measurements if r['school']==school and r['direction']==direction and r['frame'] in range(2,8)]
+        wide=sum(span>=.3 for span in strides);check(wide>=4,f'{school} dir{direction} actual shoe-region strides>=.30H: {wide}/6 (required>=4)')
+result={'failures':failures,'failure_count':len(failures),'measurements':measurements,'method':'Only actual Godot full/removed/isolated RGBA images. No authored pose landmarks or registration coordinates.'}
+(DIR.parent/'chest_v7_image_results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print(f'Rendered ablation acceptance: poses={len(entries)} held cases=40 attack cases=68 running cases=24; failures={len(failures)}')
+sys.exit(bool(failures))
+
+$ python3 tools/check_rendered_poses_v7.py
+PASS: 120 actually rendered poses:30 frames x2 schools x2 directions
+PASS: kiem dir-1 rendered bare head/H=0.398437500, preserved target .40±.03
+PASS: kiem dir1 rendered bare head/H=0.398437500, preserved target .40±.03
+PASS: cung dir-1 rendered bare head/H=0.398437500, preserved target .40±.03
+PASS: cung dir1 rendered bare head/H=0.398437500, preserved target .40±.03
+PASS: H measured from actual neutral head/body/legs union, not declared joint coordinates
+PASS: kiem frame0 dir-1 full/no-weapon/isolated: blade/wood visible=99.480625764% >=80%; whole=94.147669661% >=70%
+PASS: kiem frame0 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame0 dir-1 FULL rendered contour section0.2: opaque dark pixel cells=3/3, each>=1px
+PASS: kiem frame0 dir-1 FULL rendered contour section0.35: opaque dark pixel cells=4/2, each>=1px
+PASS: kiem frame0 dir-1 FULL rendered contour section0.65: opaque dark pixel cells=4/3, each>=1px
+PASS: kiem frame0 dir-1 FULL rendered contour section0.8: opaque dark pixel cells=2/2, each>=1px
+PASS: kiem frame0 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame0 dir-1 rendered skin/handle grip height above feet/H=0.526761968 in[.45,.60]
+PASS: kiem frame1 dir-1 full/no-weapon/isolated: blade/wood visible=99.480625764% >=80%; whole=94.147669661% >=70%
+PASS: kiem frame1 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame1 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame1 dir-1 rendered skin/handle grip height above feet/H=0.526761968 in[.45,.60]
+PASS: kiem frame2 dir-1 full/no-weapon/isolated: blade/wood visible=99.626977049% >=80%; whole=94.514114463% >=70%
+PASS: kiem frame2 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame2 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame2 dir-1 rendered skin/handle grip height above feet/H=0.520712209 in[.45,.60]
+PASS: kiem frame2 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame2 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame2 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame3 dir-1 full/no-weapon/isolated: blade/wood visible=99.560202866% >=80%; whole=94.729201099% >=70%
+PASS: kiem frame3 dir-1 actual rendered sword longest alpha side/H=0.789062500 in[.75,.8]
+PASS: kiem frame3 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame3 dir-1 rendered skin/handle grip height above feet/H=0.520507812 in[.45,.60]
+PASS: kiem frame3 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame3 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame3 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame4 dir-1 full/no-weapon/isolated: blade/wood visible=99.462159345% >=80%; whole=94.862133437% >=70%
+PASS: kiem frame4 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame4 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame4 dir-1 rendered skin/handle grip height above feet/H=0.521780303 in[.45,.60]
+PASS: kiem frame4 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame4 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame4 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame5 dir-1 full/no-weapon/isolated: blade/wood visible=99.608952618% >=80%; whole=95.346802807% >=70%
+PASS: kiem frame5 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame5 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame5 dir-1 rendered skin/handle grip height above feet/H=0.528033088 in[.45,.60]
+PASS: kiem frame5 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame5 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame5 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame6 dir-1 full/no-weapon/isolated: blade/wood visible=99.633554946% >=80%; whole=95.569583752% >=70%
+PASS: kiem frame6 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame6 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame6 dir-1 rendered skin/handle grip height above feet/H=0.524816176 in[.45,.60]
+PASS: kiem frame6 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame6 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame6 dir-1 shoe1 full/no-legs comparison visible=98.886033016% >=70%
+PASS: kiem frame7 dir-1 full/no-weapon/isolated: blade/wood visible=99.534777876% >=80%; whole=94.496789560% >=70%
+PASS: kiem frame7 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame7 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame7 dir-1 rendered skin/handle grip height above feet/H=0.523859797 in[.45,.60]
+PASS: kiem frame7 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame7 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame7 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame12 dir-1 full/no-weapon/isolated: blade/wood visible=99.598473306% >=80%; whole=94.871106608% >=70%
+PASS: kiem frame12 dir-1 actual rendered sword longest alpha side/H=0.789062500 in[.75,.8]
+PASS: kiem frame12 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame12 dir-1 rendered skin/handle grip height above feet/H=0.539253049 in[.45,.60]
+PASS: kiem frame13 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame13 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame13 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame13 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame13 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame13 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame13 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame14 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame14 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame14 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame14 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame14 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame14 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame14 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame15 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame15 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame15 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame15 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame15 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame15 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame15 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame16 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame16 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame16 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame16 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame16 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame16 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame16 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame17 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame17 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame17 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame17 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame17 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame17 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame17 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame18 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame18 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame18 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame18 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame18 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame18 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame18 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame19 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame19 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame19 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame19 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame19 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame19 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame19 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame20 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame20 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame20 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame20 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame20 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame20 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame20 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame21 dir-1 full/no-weapon/isolated: blade/wood visible=99.517866683% >=80%; whole=94.783179470% >=70%
+PASS: kiem frame21 dir-1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame21 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame21 dir-1 rendered skin/handle grip height above feet/H=0.524009146 in[.45,.60]
+PASS: kiem frame21 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame21 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame21 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame21 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame21 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame21 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame21 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame22 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame22 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame22 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame22 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame22 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame22 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame22 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame23 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame23 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame23 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame23 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame23 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame23 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame23 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame24 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame24 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame24 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame24 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame24 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame24 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame24 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame25 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame25 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame25 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame25 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame25 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame25 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame25 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame26 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame26 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame26 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame26 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame26 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame26 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame26 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame27 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame27 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame27 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame27 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame27 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame27 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame27 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame28 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame28 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame28 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame28 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame28 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame28 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame28 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame29 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame29 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame29 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame29 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame29 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame29 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame29 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame0 dir1 full/no-weapon/isolated: blade/wood visible=99.480625764% >=80%; whole=94.147669661% >=70%
+PASS: kiem frame0 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame0 dir1 FULL rendered contour section0.2: opaque dark pixel cells=2/3, each>=1px
+PASS: kiem frame0 dir1 FULL rendered contour section0.35: opaque dark pixel cells=2/4, each>=1px
+PASS: kiem frame0 dir1 FULL rendered contour section0.65: opaque dark pixel cells=3/4, each>=1px
+PASS: kiem frame0 dir1 FULL rendered contour section0.8: opaque dark pixel cells=1/3, each>=1px
+PASS: kiem frame0 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame0 dir1 rendered skin/handle grip height above feet/H=0.526761968 in[.45,.60]
+PASS: kiem frame1 dir1 full/no-weapon/isolated: blade/wood visible=99.480625764% >=80%; whole=94.147669661% >=70%
+PASS: kiem frame1 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame1 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame1 dir1 rendered skin/handle grip height above feet/H=0.526761968 in[.45,.60]
+PASS: kiem frame2 dir1 full/no-weapon/isolated: blade/wood visible=99.626977049% >=80%; whole=94.514114463% >=70%
+PASS: kiem frame2 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame2 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame2 dir1 rendered skin/handle grip height above feet/H=0.520712209 in[.45,.60]
+PASS: kiem frame2 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame2 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame2 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame3 dir1 full/no-weapon/isolated: blade/wood visible=99.560202866% >=80%; whole=94.706354638% >=70%
+PASS: kiem frame3 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame3 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame3 dir1 rendered skin/handle grip height above feet/H=0.520507812 in[.45,.60]
+PASS: kiem frame3 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame3 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame3 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame4 dir1 full/no-weapon/isolated: blade/wood visible=99.462159345% >=80%; whole=94.862133437% >=70%
+PASS: kiem frame4 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame4 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame4 dir1 rendered skin/handle grip height above feet/H=0.521780303 in[.45,.60]
+PASS: kiem frame4 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame4 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame4 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame5 dir1 full/no-weapon/isolated: blade/wood visible=99.608952618% >=80%; whole=95.346394948% >=70%
+PASS: kiem frame5 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame5 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame5 dir1 rendered skin/handle grip height above feet/H=0.528033088 in[.45,.60]
+PASS: kiem frame5 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame5 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame5 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame6 dir1 full/no-weapon/isolated: blade/wood visible=99.633554946% >=80%; whole=95.569583752% >=70%
+PASS: kiem frame6 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame6 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame6 dir1 rendered skin/handle grip height above feet/H=0.524816176 in[.45,.60]
+PASS: kiem frame6 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame6 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame6 dir1 shoe1 full/no-legs comparison visible=98.886033016% >=70%
+PASS: kiem frame7 dir1 full/no-weapon/isolated: blade/wood visible=99.534593841% >=80%; whole=94.496678563% >=70%
+PASS: kiem frame7 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame7 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame7 dir1 rendered skin/handle grip height above feet/H=0.523859797 in[.45,.60]
+PASS: kiem frame7 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame7 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame7 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame12 dir1 full/no-weapon/isolated: blade/wood visible=99.598473306% >=80%; whole=94.871106608% >=70%
+PASS: kiem frame12 dir1 actual rendered sword longest alpha side/H=0.789062500 in[.75,.8]
+PASS: kiem frame12 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame12 dir1 rendered skin/handle grip height above feet/H=0.539253049 in[.45,.60]
+PASS: kiem frame13 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame13 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame13 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame13 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame13 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame13 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame13 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame14 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame14 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame14 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame14 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame14 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame14 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame14 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame15 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame15 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame15 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame15 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame15 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame15 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame15 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame16 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame16 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame16 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame16 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame16 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame16 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame16 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame17 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame17 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame17 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame17 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame17 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame17 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame17 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame18 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame18 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame18 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame18 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame18 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame18 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame18 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame19 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame19 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame19 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame19 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame19 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame19 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame19 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame20 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame20 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame20 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame20 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame20 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame20 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame20 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: kiem frame21 dir1 full/no-weapon/isolated: blade/wood visible=99.517866683% >=80%; whole=94.783179470% >=70%
+PASS: kiem frame21 dir1 actual rendered sword longest alpha side/H=0.781250000 in[.75,.8]
+PASS: kiem frame21 dir1 actual foreground palm touches and occludes rendered handle
+PASS: kiem frame21 dir1 rendered skin/handle grip height above feet/H=0.524009146 in[.45,.60]
+PASS: kiem frame21 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame21 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame21 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame21 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame21 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame21 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame21 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame22 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame22 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame22 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame22 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame22 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame22 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame22 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame23 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame23 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame23 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame23 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame23 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame23 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame23 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame24 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame24 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame24 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame24 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame24 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame24 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame24 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame25 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame25 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame25 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame25 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame25 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame25 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame25 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: kiem frame26 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame26 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame26 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame26 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame26 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame26 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame26 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame27 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame27 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame27 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame27 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame27 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame27 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame27 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame28 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame28 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame28 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame28 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame28 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame28 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame28 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem frame29 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: kiem frame29 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame29 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: kiem frame29 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: kiem frame29 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: kiem frame29 dir1 rendered torso and legs form one connected painted silhouette
+PASS: kiem frame29 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame0 dir-1 full/no-weapon/isolated: blade/wood visible=96.285703299% >=70%; whole=96.734338680% >=70%
+PASS: cung frame0 dir-1 FULL rendered contour section0.2: opaque dark pixel cells=4/2, each>=1px
+PASS: cung frame0 dir-1 FULL rendered contour section0.35: opaque dark pixel cells=1/3, each>=1px
+PASS: cung frame0 dir-1 FULL rendered contour section0.65: opaque dark pixel cells=3/5, each>=1px
+PASS: cung frame0 dir-1 FULL rendered contour section0.8: opaque dark pixel cells=4/3, each>=1px
+PASS: cung frame0 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame0 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.761752378px <=1
+PASS: cung frame0 dir-1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame0 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame1 dir-1 full/no-weapon/isolated: blade/wood visible=96.285703299% >=70%; whole=96.734338680% >=70%
+PASS: cung frame1 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame1 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.761752378px <=1
+PASS: cung frame1 dir-1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame1 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame2 dir-1 full/no-weapon/isolated: blade/wood visible=96.960892449% >=70%; whole=97.205782200% >=70%
+PASS: cung frame2 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame2 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.800289613px <=1
+PASS: cung frame2 dir-1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame2 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame2 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame2 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame2 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame3 dir-1 full/no-weapon/isolated: blade/wood visible=97.017538943% >=70%; whole=97.193622534% >=70%
+PASS: cung frame3 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame3 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.526097883px <=1
+PASS: cung frame3 dir-1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame3 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame3 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame3 dir-1 shoe0 full/no-legs comparison visible=79.970226143% >=70%
+PASS: cung frame3 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame4 dir-1 full/no-weapon/isolated: blade/wood visible=96.954790976% >=70%; whole=97.173132125% >=70%
+PASS: cung frame4 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame4 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.257281330px <=1
+PASS: cung frame4 dir-1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame4 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame4 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame4 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame4 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame5 dir-1 full/no-weapon/isolated: blade/wood visible=97.567701873% >=70%; whole=97.451364640% >=70%
+PASS: cung frame5 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame5 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.584065578px <=1
+PASS: cung frame5 dir-1 visible bow upper end y=69 ABOVE head y=75
+PASS: cung frame5 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame5 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame5 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame5 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame6 dir-1 full/no-weapon/isolated: blade/wood visible=94.033759330% >=70%; whole=94.820965009% >=70%
+PASS: cung frame6 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame6 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.752740822px <=1
+PASS: cung frame6 dir-1 visible bow upper end y=73 ABOVE head y=79
+PASS: cung frame6 dir-1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame6 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame6 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame6 dir-1 shoe1 full/no-legs comparison visible=76.800462290% >=70%
+PASS: cung frame7 dir-1 full/no-weapon/isolated: blade/wood visible=91.670297214% >=70%; whole=92.645083461% >=70%
+PASS: cung frame7 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame7 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.326126384px <=1
+PASS: cung frame7 dir-1 visible bow upper end y=53 ABOVE head y=59
+PASS: cung frame7 dir-1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame7 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame7 dir-1 shoe0 full/no-legs comparison visible=97.902610462% >=70%
+PASS: cung frame7 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame12 dir-1 full/no-weapon/isolated: blade/wood visible=96.696803772% >=70%; whole=97.061165610% >=70%
+PASS: cung frame12 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame12 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.148453155px <=1
+PASS: cung frame12 dir-1 visible bow upper end y=41 ABOVE head y=45
+PASS: cung frame12 dir-1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame13 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame13 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame13 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame13 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame13 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame13 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame13 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame14 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame14 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame14 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame14 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame14 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame14 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame14 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame15 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame15 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame15 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame15 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame15 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame15 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame15 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame16 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame16 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame16 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame16 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame16 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame16 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame16 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame17 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame17 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame17 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame17 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame17 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame17 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame17 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame18 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame18 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame18 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame18 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame18 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame18 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame18 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame19 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame19 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame19 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame19 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame19 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame19 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame19 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame20 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame20 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame20 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame20 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame20 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame20 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame20 dir-1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame21 dir-1 full/no-weapon/isolated: blade/wood visible=87.992884241% >=70%; whole=89.611966543% >=70%
+PASS: cung frame21 dir-1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame21 dir-1 image-detected middle-wrap midpoint to actual gripping skin=0.829691682px <=1
+PASS: cung frame21 dir-1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame21 dir-1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame21 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame21 dir-1 shoe0 full/no-legs comparison visible=99.237562211% >=70%
+PASS: cung frame21 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame21 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame21 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame21 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame21 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame22 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame22 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame22 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame22 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame22 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame22 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame22 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame23 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame23 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame23 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame23 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame23 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame23 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame23 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame24 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame24 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame24 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame24 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame24 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame24 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame24 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame25 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame25 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame25 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame25 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame25 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame25 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame25 dir-1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame26 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame26 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame26 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame26 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame26 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame26 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame26 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame27 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame27 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame27 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame27 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame27 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame27 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame27 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame28 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame28 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame28 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame28 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame28 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame28 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame28 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame29 dir-1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame29 dir-1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame29 dir-1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame29 dir-1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame29 dir-1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame29 dir-1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame29 dir-1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame0 dir1 full/no-weapon/isolated: blade/wood visible=96.285703299% >=70%; whole=96.734338680% >=70%
+PASS: cung frame0 dir1 FULL rendered contour section0.2: opaque dark pixel cells=2/4, each>=1px
+PASS: cung frame0 dir1 FULL rendered contour section0.35: opaque dark pixel cells=2/1, each>=1px
+PASS: cung frame0 dir1 FULL rendered contour section0.65: opaque dark pixel cells=5/3, each>=1px
+PASS: cung frame0 dir1 FULL rendered contour section0.8: opaque dark pixel cells=2/4, each>=1px
+PASS: cung frame0 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame0 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.761752378px <=1
+PASS: cung frame0 dir1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame0 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame1 dir1 full/no-weapon/isolated: blade/wood visible=96.285703299% >=70%; whole=96.734338680% >=70%
+PASS: cung frame1 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame1 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.761752378px <=1
+PASS: cung frame1 dir1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame1 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame2 dir1 full/no-weapon/isolated: blade/wood visible=96.960892449% >=70%; whole=97.205782200% >=70%
+PASS: cung frame2 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame2 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.800289613px <=1
+PASS: cung frame2 dir1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame2 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame2 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame2 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame2 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame3 dir1 full/no-weapon/isolated: blade/wood visible=97.028438963% >=70%; whole=97.188919436% >=70%
+PASS: cung frame3 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame3 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.526097883px <=1
+PASS: cung frame3 dir1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame3 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame3 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame3 dir1 shoe0 full/no-legs comparison visible=79.970226143% >=70%
+PASS: cung frame3 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame4 dir1 full/no-weapon/isolated: blade/wood visible=96.954790976% >=70%; whole=97.173132125% >=70%
+PASS: cung frame4 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame4 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.257281330px <=1
+PASS: cung frame4 dir1 visible bow upper end y=74 ABOVE head y=79
+PASS: cung frame4 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame4 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame4 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame4 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame5 dir1 full/no-weapon/isolated: blade/wood visible=97.567241481% >=70%; whole=97.451221248% >=70%
+PASS: cung frame5 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame5 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.584065578px <=1
+PASS: cung frame5 dir1 visible bow upper end y=69 ABOVE head y=75
+PASS: cung frame5 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame5 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame5 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame5 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame6 dir1 full/no-weapon/isolated: blade/wood visible=94.033759330% >=70%; whole=94.820965009% >=70%
+PASS: cung frame6 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame6 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.752740822px <=1
+PASS: cung frame6 dir1 visible bow upper end y=73 ABOVE head y=79
+PASS: cung frame6 dir1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame6 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame6 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame6 dir1 shoe1 full/no-legs comparison visible=76.800462290% >=70%
+PASS: cung frame7 dir1 full/no-weapon/isolated: blade/wood visible=91.670297214% >=70%; whole=92.645083461% >=70%
+PASS: cung frame7 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame7 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.326126384px <=1
+PASS: cung frame7 dir1 visible bow upper end y=53 ABOVE head y=59
+PASS: cung frame7 dir1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame7 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame7 dir1 shoe0 full/no-legs comparison visible=97.902610462% >=70%
+PASS: cung frame7 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame12 dir1 full/no-weapon/isolated: blade/wood visible=96.696827259% >=70%; whole=97.061181986% >=70%
+PASS: cung frame12 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame12 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.148453155px <=1
+PASS: cung frame12 dir1 visible bow upper end y=41 ABOVE head y=45
+PASS: cung frame12 dir1 real rendered bow vertical height/H=1.023437500 in[1.0,1.1]
+PASS: cung frame13 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame13 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame13 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame13 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame13 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame13 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame13 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame14 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame14 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame14 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame14 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame14 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame14 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame14 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame15 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame15 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame15 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame15 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame15 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame15 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame15 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame16 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame16 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame16 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame16 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame16 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame16 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame16 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame17 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame17 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame17 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame17 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame17 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame17 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame17 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame18 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame18 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame18 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame18 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame18 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame18 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame18 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame19 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame19 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame19 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame19 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame19 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame19 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame19 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame20 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame20 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame20 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame20 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame20 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame20 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame20 dir1 actual rendered stance texture=attack_stance_0.png, expected=attack_stance_0.png
+PASS: cung frame21 dir1 full/no-weapon/isolated: blade/wood visible=87.992884241% >=70%; whole=89.611986420% >=70%
+PASS: cung frame21 dir1 actual foreground palm touches and occludes rendered handle
+PASS: cung frame21 dir1 image-detected middle-wrap midpoint to actual gripping skin=0.829691682px <=1
+PASS: cung frame21 dir1 visible bow upper end y=77 ABOVE head y=82
+PASS: cung frame21 dir1 real rendered bow vertical height/H=1.015625000 in[1.0,1.1]
+PASS: cung frame21 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame21 dir1 shoe0 full/no-legs comparison visible=99.237562211% >=70%
+PASS: cung frame21 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame21 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame21 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame21 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame21 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame22 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame22 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame22 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame22 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame22 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame22 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame22 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame23 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame23 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame23 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame23 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame23 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame23 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame23 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame24 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame24 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame24 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame24 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame24 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame24 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame24 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame25 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame25 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame25 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame25 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame25 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame25 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame25 dir1 actual rendered stance texture=attack_stance_1.png, expected=attack_stance_1.png
+PASS: cung frame26 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame26 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame26 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame26 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame26 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame26 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame26 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame27 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame27 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame27 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame27 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame27 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame27 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame27 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame28 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame28 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame28 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame28 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame28 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame28 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame28 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: cung frame29 dir1 TWO shoes detected from actual brown paint, pale soles and separate image regions
+PASS: cung frame29 dir1 shoe0 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame29 dir1 shoe1 full/no-legs comparison visible=100.000000000% >=70%
+PASS: cung frame29 dir1 actual shoe soles=[209, 209]; same ground within1 rendered pixel
+PASS: cung frame29 dir1 row-by-row central hem-to-leg transparent gap=0px (required0)
+PASS: cung frame29 dir1 rendered torso and legs form one connected painted silhouette
+PASS: cung frame29 dir1 actual rendered stance texture=attack_stance_2.png, expected=attack_stance_2.png
+PASS: kiem dir-1 actual shoe-region strides>=.30H: 6/6 (required>=4)
+PASS: kiem dir1 actual shoe-region strides>=.30H: 6/6 (required>=4)
+PASS: cung dir-1 actual shoe-region strides>=.30H: 6/6 (required>=4)
+PASS: cung dir1 actual shoe-region strides>=.30H: 6/6 (required>=4)
+Rendered ablation acceptance: poses=120 held cases=40 attack cases=68 running cases=24; failures=0
+
+Reproducibility:
+$ python3 tools/build_weapon_masters_v5.py
+Shared Lv1 weapon masters:512px, one held texture per school0–7/12/21; old variants removed; action blade samples identical master materials; anatomy/trails/timings unchanged.
+exit=0
+
+$ python3 tools/build_chest_carry_v7.py
+Chest carry v7: eight torso poses; front chest fist; three shared grounded attack stances13–20/21–25/26–29; raw reference rows and all skill timing retained. Acceptance requires rendered ablations.
+exit=0
+Byte changes after full current final stages: []
