@@ -1,0 +1,21 @@
+Character sprite part for a 2D side-view mobile game, facing right, transparent background.
+Redraw the attached COLOR-BLOCK POSE GUIDE as the attached character design:
+- keep exactly the same silhouette, pose and position of each color block
+  (red = head+hair, green = torso with arms, blue = legs, yellow = held prop);
+- render the COMPLETE person, one figure, from hair bun to both boot soles;
+- same face, hair, red hair ribbon, outfit and colors as the attached design sheet;
+- bold even dark outline, flat colors with 2–3 tone shading, no text.
+
+This is a DIRECT PAINT-OVER of image1. Keep its geometry and framing exactly. The head is HUGE, about 58–60% of the full person height, with a VERY SHORT broad torso and VERY SHORT sturdy legs. The bun and head itself must fill the large RED shape. The entire body below the chin is SHORTER than the head including hair. Do not reuse the more slender proportions or pose of image2: image2 is ONLY an identity/costume reference. Image3 supplies only the Lv1 brown outfit/material style, no higher-level costumes.
+
+Exact layout as percentages of the full square canvas (not a new layout, not a new pose):
+HEAD including hair: left 30.50%, right 71.50%, top 22.50%, bottom 59.75%.
+TORSO including arms: left 28.50%, right 69.50%, top 55.75%, bottom 77.25%.
+LEGS and BOTH BOOTS: left 36.25%, right 65.50%, top 71.25%, bottom 87.00%.
+HELD METAL PROP: left 24.50%, right 75.25%, top 50.00%, bottom 81.00%.
+These boxes belong to the painted silhouette, not decorative rectangles. Fill them with the corresponding anatomy/material. Keep the diagonal held prop across the front of the torso, handle upper-right, broad steel tip lower-left. Place the fist tightly around its brown handle; tiny brass crossguard, small red tassel. The body wears a dark brown crossover tunic with cream trim, belt, brown wrist wraps, brown short trousers and wrapped boots. Serious face, black bun, red ribbon. Exactly TWO distinct boot soles. Chin joins the collar. No hat, no scenery, no effects. Remove all guide colors, guide rectangles, ruler, origin marker and text from the final picture.
+
+The standing legs are tiny and planted under the torso, just the blue region. The oversized head must dominate the whole figure.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, magic glow or glowing energy slashes, modern objects, any text, letters, logos or watermarks.

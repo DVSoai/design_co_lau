@@ -1,0 +1,158 @@
+{
+  "order": "guide | new actual Godot preview | current actual Godot render",
+  "rows": [
+    {
+      "frame": 0,
+      "direction": 1,
+      "attempt": 3,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_alpha_bbox": [
+        25,
+        8,
+        1176,
+        1214
+      ],
+      "transparent_pixels": 1039488,
+      "raw_sha256": "04d4fd7cc91053787b8672594fb183fdccaabbd98bbc01c40e92cc1d68255c9b",
+      "actual_godot_bbox": [
+        49,
+        48,
+        154,
+        169
+      ],
+      "current_godot_bbox": [
+        71,
+        82,
+        171,
+        210
+      ],
+      "display_person_height_px": 256,
+      "current_commit": "769be38",
+      "current_actual_render": "prototype/pose_rig/reports/ablation_v10/kiem_right_00.png",
+      "guide_human_bbox": [
+        98,
+        90,
+        301,
+        348
+      ]
+    },
+    {
+      "frame": 4,
+      "direction": 1,
+      "attempt": 3,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_alpha_bbox": [
+        57,
+        19,
+        1236,
+        1254
+      ],
+      "transparent_pixels": 1029697,
+      "raw_sha256": "eb2d6ce02ccd3db44a1e7b2a6a46d2b4a5c028323fc1896d01a81802feb0570b",
+      "actual_godot_bbox": [
+        48,
+        42,
+        161,
+        164
+      ],
+      "current_godot_bbox": [
+        59,
+        79,
+        182,
+        206
+      ],
+      "display_person_height_px": 256,
+      "current_commit": "769be38",
+      "current_actual_render": "prototype/pose_rig/reports/ablation_v10/kiem_right_04.png",
+      "guide_human_bbox": [
+        75,
+        74,
+        286,
+        348
+      ]
+    },
+    {
+      "frame": 0,
+      "direction": -1,
+      "attempt": 3,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_alpha_bbox": [
+        25,
+        8,
+        1176,
+        1214
+      ],
+      "transparent_pixels": 1039488,
+      "raw_sha256": "04d4fd7cc91053787b8672594fb183fdccaabbd98bbc01c40e92cc1d68255c9b",
+      "actual_godot_bbox": [
+        46,
+        48,
+        151,
+        169
+      ],
+      "current_godot_bbox": [
+        85,
+        82,
+        185,
+        210
+      ],
+      "display_person_height_px": 256,
+      "current_commit": "769be38",
+      "current_actual_render": "prototype/pose_rig/reports/ablation_v10/kiem_left_00.png",
+      "guide_human_bbox": [
+        98,
+        90,
+        301,
+        348
+      ]
+    },
+    {
+      "frame": 4,
+      "direction": -1,
+      "attempt": 3,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_alpha_bbox": [
+        57,
+        19,
+        1236,
+        1254
+      ],
+      "transparent_pixels": 1029697,
+      "raw_sha256": "eb2d6ce02ccd3db44a1e7b2a6a46d2b4a5c028323fc1896d01a81802feb0570b",
+      "actual_godot_bbox": [
+        39,
+        42,
+        152,
+        164
+      ],
+      "current_godot_bbox": [
+        74,
+        79,
+        197,
+        206
+      ],
+      "display_person_height_px": 256,
+      "current_commit": "769be38",
+      "current_actual_render": "prototype/pose_rig/reports/ablation_v10/kiem_left_04.png",
+      "guide_human_bbox": [
+        75,
+        74,
+        286,
+        348
+      ]
+    }
+  ],
+  "note": "Concept-only normalization to equal human height; no part-fit or production-rig acceptance is inferred."
+}

@@ -1,0 +1,14 @@
+{
+  "selected_attempts": {
+    "0": 3,
+    "4": 3
+  },
+  "generation_counts": {
+    "0": 3,
+    "4": 3
+  },
+  "status": "experimental_unapproved",
+  "current_design_commit": "769be38",
+  "base_main": "a24ffca",
+  "note": "Final draft shows the carrying elbow/forearm; six-question visual review is recorded separately."
+}
