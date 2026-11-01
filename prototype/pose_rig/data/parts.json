@@ -2178,7 +2178,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2244,7 +2244,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2310,7 +2310,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2376,7 +2376,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2442,7 +2442,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2580,7 +2580,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2646,7 +2646,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2712,7 +2712,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2778,7 +2778,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2844,7 +2844,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2955,7 +2955,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -2990,7 +2990,7 @@
         ]
       },
       "source": {
-        "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "master": "art/sprites/weapons/lv1/kiem_action_material_v5.png",
         "blade_length_H": 0.7824766952357602,
         "offline_axis": "horizontal",
         "preserved_grip": [
@@ -5209,69 +5209,73 @@
       "file": "kiem_lv1.png",
       "size": [
         150,
-        76
+        88
       ],
       "anchors": {
         "grip": [
-          106,
-          23
+          120.46739130434783,
+          19.5
         ],
         "blade_root": [
-          89.37138756913424,
-          32.08954491290327
+          110.19247978414323,
+          25.13145448655651
         ],
         "tip": [
-          2.4924470432654067,
-          72.60186021250861
-        ],
-        "pommel": [
-          121.06636821775578,
-          16.288130259481893
+          1.603498542274036,
+          86.43213475866537
         ]
       },
       "source": {
         "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
+        "svg": "art/sprites/weapons/lv1/kiem_lv1_master.svg",
         "export": "art/sprites/weapons/lv1/kiem_lv1.png",
-        "uniform_scale": 0.28829732421875,
+        "uniform_scale": 0.29296875,
         "outline_source_px": 1,
-        "white_string_dilation_source_px": 0
+        "display_bbox_target": [
+          100,
+          59
+        ]
       },
       "status": "drawn_unapproved"
     },
     "cung_lv1": {
       "file": "cung_lv1.png",
       "size": [
-        92,
-        195
+        127,
+        193
       ],
       "anchors": {
         "grip": [
-          45,
-          96
+          116.86426807025317,
+          127.56800778462676
         ],
         "top": [
-          86.25537531103816,
-          7.987285834548207
+          85.2113136181725,
+          7.57271422874304
         ],
         "bottom": [
-          12.387042852774519,
-          190.8178243857807
+          9.502757039544795,
+          187.902781771467
         ],
         "belly": [
-          43.47112397755266,
-          92.92552299871019
+          116.86426807025317,
+          127.56800778462676
         ],
         "string": [
-          35.2935045938284,
-          98.00122176170822
+          48.668492550394376,
+          98.300583090379
         ]
       },
       "source": {
         "master": "art/sprites/weapons/lv1/cung_lv1_master.png",
+        "svg": "art/sprites/weapons/lv1/cung_lv1_master.svg",
         "export": "art/sprites/weapons/lv1/cung_lv1.png",
-        "uniform_scale": 0.37788606573088007,
+        "uniform_scale": 0.3768545994065282,
         "outline_source_px": 1,
-        "white_string_dilation_source_px": 1
+        "display_bbox_target": [
+          85,
+          129
+        ]
       },
       "status": "drawn_unapproved"
     },
@@ -5900,6 +5904,390 @@
         "hip_to_sole_source": 65
       },
       "status": "drawn_unapproved"
+    },
+    "chest_stand_raised_v8": {
+      "file": "chest_stand_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          160.0,
+          100.0
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          195.42727272727274,
+          101.86363636363636
+        ],
+        "near_hand": [
+          195.42727272727274,
+          101.86363636363636
+        ],
+        "far_hand": [
+          114.55199228391533,
+          161.08374384236453
+        ],
+        "free_hand": [
+          114.55199228391533,
+          161.08374384236453
+        ],
+        "back": [
+          151.462805180404,
+          142.61083743842366
+        ]
+      },
+      "source": {
+        "own_base": "chest_stand",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_stand_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_stand_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_0_raised_v8": {
+      "file": "chest_run_0_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          201.46610169491527,
+          102.58474576271186
+        ],
+        "near_hand": [
+          201.46610169491527,
+          102.58474576271186
+        ],
+        "far_hand": [
+          160.67314614759715,
+          133.21805586976313
+        ],
+        "free_hand": [
+          160.67314614759715,
+          133.21805586976313
+        ],
+        "back": [
+          152.6368179143921,
+          142.8077382298985
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_0",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_0_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_0_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_1_raised_v8": {
+      "file": "chest_run_1_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          203.48305084745763,
+          102.58474576271186
+        ],
+        "near_hand": [
+          203.48305084745763,
+          102.58474576271186
+        ],
+        "far_hand": [
+          158.12584457303356,
+          141.36928587587818
+        ],
+        "free_hand": [
+          158.12584457303356,
+          141.36928587587818
+        ],
+        "back": [
+          153.18425415410348,
+          142.8077382298985
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_1",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_1_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_1_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_2_raised_v8": {
+      "file": "chest_run_2_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          203.28947368421052,
+          102.79824561403508
+        ],
+        "near_hand": [
+          203.28947368421052,
+          102.79824561403508
+        ],
+        "far_hand": [
+          112.24755236105838,
+          160.84153744655697
+        ],
+        "free_hand": [
+          112.24755236105838,
+          160.84153744655697
+        ],
+        "back": [
+          152.9990984623086,
+          142.77230836896203
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_2",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_2_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_2_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_3_raised_v8": {
+      "file": "chest_run_3_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          191.28125,
+          101.40625
+        ],
+        "near_hand": [
+          191.28125,
+          101.40625
+        ],
+        "far_hand": [
+          90.61866635864344,
+          120.9461108692929
+        ],
+        "free_hand": [
+          90.61866635864344,
+          120.9461108692929
+        ],
+        "back": [
+          152.6811614121948,
+          142.7365277173232
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_3",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_3_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_3_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_4_raised_v8": {
+      "file": "chest_run_4_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          211.2,
+          102.38333333333334
+        ],
+        "near_hand": [
+          211.2,
+          102.38333333333334
+        ],
+        "far_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "free_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "back": [
+          152.93840212717498,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_4",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_4_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_4_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_run_5_raised_v8": {
+      "file": "chest_run_5_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          200.2,
+          102.38333333333334
+        ],
+        "near_hand": [
+          200.2,
+          102.38333333333334
+        ],
+        "far_hand": [
+          111.92567417046558,
+          162.22684500917256
+        ],
+        "free_hand": [
+          111.92567417046558,
+          162.22684500917256
+        ],
+        "back": [
+          152.4642517422707,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_run_5",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_run_5_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_run_5_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
+    },
+    "chest_fall_raised_v8": {
+      "file": "chest_fall_raised_v8.png",
+      "size": [
+        320,
+        256
+      ],
+      "anchors": {
+        "neck": [
+          170.39558454088797,
+          101.09261996330972
+        ],
+        "hip": [
+          160.0,
+          150.0
+        ],
+        "grip": [
+          211.2,
+          102.38333333333334
+        ],
+        "near_hand": [
+          211.2,
+          102.38333333333334
+        ],
+        "far_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "free_hand": [
+          121.80261446564427,
+          101.09261996330972
+        ],
+        "back": [
+          152.93840212717498,
+          142.66389299449645
+        ]
+      },
+      "source": {
+        "own_base": "chest_fall",
+        "authorized_front_arm_only": true,
+        "palm_shift_source_px": [
+          0,
+          -10
+        ],
+        "svg": "art/sprites/characters/lv1_30/sources/chest_fall_raised_v8.svg",
+        "roi": "art/sprites/characters/lv1_30/sources/chest_fall_raised_v8_roi.png"
+      },
+      "status": "drawn_unapproved"
     }
   },
   "references": [
@@ -5966,100 +6354,56 @@
       "master": "art/sprites/weapons/lv1/kiem_lv1_master.png",
       "master_size": [
         512,
-        255
+        302
       ],
       "master_anchors": {
         "grip": [
-          363.7061769616027,
-          81.29549248747914
+          415.8362060411878,
+          63.70664075153866
         ],
         "blade_root": [
-          306.528642985535,
-          107.83847889380203
+          376.12366432987557,
+          86.24658244250075
         ],
         "tip": [
-          5.176763424044095,
-          248.36116813272815
-        ],
-        "pommel": [
-          416.4671612652693,
-          53.02903972803366
+          5.473275024295376,
+          296.619371558147
         ]
       },
-      "source_sheet": "sword_candidates",
-      "source_points": {
-        "grip": [
-          1100.0,
-          210.0
-        ],
-        "blade_root": [
-          960.0,
-          260.0
-        ],
-        "tip": [
-          222.0,
-          525.0
-        ],
-        "pommel": [
-          1230.0,
-          155.0
-        ]
-      },
-      "offline_rotation_degrees": -5.247873251213974
+      "source_sheet": "original_svg_v8",
+      "offline_rotation_degrees": -30
     },
     "cung": {
       "asset": "cung_lv1",
       "master": "art/sprites/weapons/lv1/cung_lv1_master.png",
       "master_size": [
-        237,
+        337,
         512
       ],
       "master_anchors": {
         "grip": [
-          112.3913470993117,
-          243.26253687315634
+          310.1043963753962,
+          338.4187564027404
         ],
         "top": [
-          225.61132320701836,
-          18.490456431712825
+          226.11191093956006,
+          20.08927297987791
         ],
         "bottom": [
-          30.13353464291021,
-          502.314961041627
+          25.215977341154296,
+          498.4778459429591
         ],
         "belly": [
-          112.3913470993117,
-          243.26253687315634
+          310.1043963753962,
+          338.4187564027404
         ],
         "string": [
-          90.75091066800881,
-          256.69435991003115
+          129.14395267309374,
+          260.7766763848396
         ]
       },
-      "source_sheet": "bow_double_recurve",
-      "source_points": {
-        "grip": [
-          525.0,
-          460.0
-        ],
-        "top": [
-          155.0,
-          802.0
-        ],
-        "bottom": [
-          861.0,
-          32.0
-        ],
-        "belly": [
-          525.0,
-          460.0
-        ],
-        "string": [
-          575.0,
-          450.0
-        ]
-      },
-      "offline_rotation_degrees": 159.48281462031164
+      "source_sheet": "original_svg_v8",
+      "offline_rotation_degrees": 23
     }
   },
   "attack_stance_groups": [

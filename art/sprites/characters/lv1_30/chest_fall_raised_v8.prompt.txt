@@ -1,0 +1,1 @@
+User-authorized front-arm-only SVG edit; exact drawing in sources/chest_fall_raised_v8.svg; unchanged pixels outside saved ROI. Original own torso chest_fall; palm raised10 source pixels.

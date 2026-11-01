@@ -17,7 +17,9 @@ func configure(a: Node2D,variant: String) -> void:
 	elif variant=="no_head":a.sprites.head.visible=false
 	elif variant=="no_fingers":a.held_fingers.visible=false
 func _ready() -> void:
-	var out:="res://pose_rig/reports/ablation_v7"
+	var out:="res://pose_rig/reports/ablation_v8"
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--ablation-out="):out=arg.trim_prefix("--ablation-out=")
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(out))
 	var rigs: Array[Node2D]=[];var viewports: Array[SubViewport]=[]
 	for variant: String in VARIANTS:

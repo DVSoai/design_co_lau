@@ -4726,5 +4726,32 @@
   "kiem_cam_tay_dai_H": 0.78,
   "cung_cam_tay_cao_H": 1.01,
   "hinh_vung_lon_nhat": "rộng ≤1,6 H, cao ≤1,1 H"
- }
+ },
+ "khung_kich_thuoc_128": {
+  "kiem_cam_262": [
+   100,
+   59
+  ],
+  "cung_cam_283": [
+   85,
+   129
+  ],
+  "than_dung_5": [
+   80,
+   42
+  ],
+  "chan_dung_23": [
+   57,
+   30
+  ],
+  "than_danh_15": [
+   85,
+   42
+  ],
+  "chan_danh_31": [
+   72,
+   35
+  ]
+ },
+ "khung_kich_thuoc_128_ghi_chu": "BBox alpha > 0 tại icon/4, nhân 128/131, làm tròn gần nhất; chỉ lưu số liệu, không lưu ảnh nguồn."
 }

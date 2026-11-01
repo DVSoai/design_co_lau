@@ -11,7 +11,8 @@ from PIL import Image
 from scipy.ndimage import label,find_objects,binary_dilation,distance_transform_edt
 
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v7');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--renders',default='prototype/pose_rig/reports/ablation_v8');parser.add_argument('--out',default='prototype/pose_rig/reports/held_v8_image_results.json');args=parser.parse_args()
+BBOX_TARGETS=json.loads((ROOT/'docs/ref/so_lieu_tham_khao.json').read_text())['khung_kich_thuoc_128']
 DIR=ROOT/args.renders;manifest=json.loads((DIR/'manifest.json').read_text());failures=[];measurements=[]
 def check(ok,message):
     print(('PASS: ' if ok else 'FAIL: ')+message)
@@ -62,7 +63,7 @@ def bow_wrap_midpoint(w):
     rgb=w[:,:,:3]*255;rr,gg,bb=rgb.transpose(2,0,1);alpha=w[:,:,3]>.5;box=bounds(alpha)
     if box is None:return None
     yy=np.indices(alpha.shape)[0];span=box[3]-box[1]
-    gold=alpha&(rr>150)&(gg>100)&(bb<180)&(gg>1.15*bb)&(yy>box[1]+.3*span)&(yy<box[1]+.7*span)
+    gold=alpha&(rr>150)&(gg>130)&(bb<150)&(gg>1.6*bb)&(yy>box[1]+.15*span)&(yy<box[1]+.85*span)
     labs,n=label(binary_dilation(gold));points=[]
     for id in range(1,n+1):
         region=(labs==id)&gold
@@ -88,6 +89,35 @@ def contour_samples(full,w,core,school):
         result.append((fraction,*counts))
     return result
 
+def held_shape_measurements(full,removed,w,core,H,school):
+    # Fit only independently rendered paint. No JSON anchors/declared endpoints.
+    contribution=visible_fraction(full,removed,w)
+    paint=core&(w[:,:,3]>.5)
+    y,x=np.where(paint);pts=np.column_stack([x,y]).astype(float)
+    if len(pts)<3:return {}
+    centre=pts.mean(axis=0);_,_,axes=np.linalg.svd(pts-centre,full_matrices=False)
+    if school=='kiem':
+        axis=axes[0];normal=np.array([-axis[1],axis[0]])
+        along=(pts-centre)@axis;across=(pts-centre)@normal
+        low,high=np.quantile(along,[.02,.98]);widths=[]
+        for fraction in [.3,.4,.5,.6]:
+            section=np.abs(along-(low+fraction*(high-low)))<=1
+            # Count the blade's painted contour, and verify that section contributes
+            # to the full image instead of counting a hidden source silhouette.
+            if section.sum() and (contribution[y[section],x[section]]>=.5).mean()>=.8:
+                widths.append(float(np.ptp(across[section])+1))
+        width=float(np.median(widths))/H if widths else 0.
+        return {'blade_width_H':width,'blade_width_sections_px':widths}
+    # The two most distant wooden pixels identify actual painted limb ends.
+    d=((pts[:,None,:]-pts[None,:,:])**2).sum(axis=2)
+    i,j=np.unravel_index(d.argmax(),d.shape);a,b=pts[i],pts[j]
+    if a[1]>b[1]:a,b=b,a
+    chord=b-a;length=np.linalg.norm(chord);normal=np.array([-chord[1],chord[0]])/length
+    middle=bow_wrap_midpoint(w)
+    depth=0. if middle is None else float(abs((middle-a)@normal))/H
+    angle=float(np.degrees(np.arctan2(abs(chord[0]),abs(chord[1]))))
+    return {'bow_chord_angle_deg':angle,'bow_curve_depth_H':depth,'bow_painted_ends':[a.tolist(),b.tolist()]}
+
 entries=manifest['entries'];check(len(entries)==120,'120 actually rendered poses:30 frames x2 schools x2 directions')
 controls={}
 for entry in entries:
@@ -102,24 +132,55 @@ for entry in entries:
     school,frame,direction=entry['school'],entry['frame'],entry['direction'];name=f'{school} frame{frame} dir{direction}';t=tiles(entry['file']);H=controls[(school,direction)]
     full=t['full'];legs=t['legs_only'];body=t['body_only'];head=t['head_only'];w=t['weapon_only'];row={'school':school,'frame':frame,'direction':direction,'H_rendered_px':H}
     leg_fraction=visible_fraction(full,t['no_legs'],legs)
+    for part_name,paint in [('body',body),('legs',legs)]:
+        b=bounds(paint[:,:,3]>.05);size=[b[2]-b[0]+1,b[3]-b[1]+1]
+        row[part_name+'_bbox_px']=size
+        print(f'MEASURE ONLY: {name} {part_name} real rendered bbox={size}; no size acceptance target applied')
     if frame in held:
         fraction=visible_fraction(full,t['no_weapon'],w);core=steel_mask(w) if school=='kiem' else bow_wood_mask(w)
         area=w[:,:,3]*core;whole=w[:,:,3];core_visible=(area*fraction).sum()/max(1e-9,area.sum());whole_visible=(whole*fraction).sum()/max(1e-9,whole.sum())
         target=.8 if school=='kiem' else .7
         check(core_visible>=target and whole_visible>=.7,f'{name} full/no-weapon/isolated: blade/wood visible={core_visible:.9%} >={target:.0%}; whole={whole_visible:.9%} >=70%')
         row.update(weapon_core_visible=float(core_visible),weapon_whole_visible=float(whole_visible))
+        shape=held_shape_measurements(full,t['no_weapon'],w,core,H,school);row.update(shape)
+        if school=='kiem':
+            width=shape.get('blade_width_H',0.)
+            check(.12<=width<=.15,f'{name} actual blade perpendicular width/H={width:.9f} in[.12,.15]')
+        else:
+            angle=shape.get('bow_chord_angle_deg',0.);depth=shape.get('bow_curve_depth_H',0.)
+            check(20<=angle<=40,f'{name} actual painted limb-tip chord angle={angle:.9f}deg in[20,40]')
+            check(depth>=.2,f'{name} actual middle wood-to-string chord depth/H={depth:.9f} >=.20')
         if school=='kiem':
             box=bounds(w[:,:,3]>.5);ratio=max(box[2]-box[0]+1,box[3]-box[1]+1)/H
             check(.75<=ratio<=.8,f'{name} actual rendered sword longest alpha side/H={ratio:.9f} in[.75,.8]')
+        box_actual=bounds((w[:,:,3]>.05)&(fraction>.5));actual_size=[box_actual[2]-box_actual[0]+1,box_actual[3]-box_actual[1]+1] if box_actual else [0,0]
+        expected=BBOX_TARGETS['kiem_cam_262' if school=='kiem' else 'cung_cam_283']
+        check(all(abs(value/target-1)<=.10 for value,target in zip(actual_size,expected)),f'{name} FULL/no-weapon actual visible bbox={actual_size}, target={expected}, tolerance10%')
+        row['weapon_visible_bbox_px']=actual_size
         if frame==0:
             for at,left,right in contour_samples(full,w,core,school):check(left>=1 and right>=1,f'{name} FULL rendered contour section{at}: opaque dark pixel cells={left}/{right}, each>=1px')
         fingers=t['fingers_only'];skin=(fingers[:,:,3]>.5)&(full[:,:,0]>.6)&(full[:,:,1]>.3)
         # The grip must really replace visible handle paint with skin in the full render.
         skin&=np.max(np.abs(premul(full)-premul(t['no_fingers'])),axis=2)>2/255
         contact=skin&(w[:,:,3]>.5);check(bool(contact.any()),f'{name} actual foreground palm touches and occludes rendered handle')
+        tan=(fingers[:,:,3]>.5)&(fingers[:,:,0]>=200/255)&(fingers[:,:,1]>=100/255)&(fingers[:,:,2]>=45/255)
+        py,px=np.where(tan);palm=np.array([px.mean(),py.mean()]) if len(px) else None
+        if school=='kiem':
+            rr,gg,bb=(w[:,:,:3]*255).transpose(2,0,1)
+            leather=(w[:,:,3]>.5)&(rr>=70)&(rr<160)&(gg>=35)&(gg<115)&(rr-gg>20)&(gg-bb>10)
+            hy,hx=np.where(leather);grasp=np.array([hx.mean(),hy.mean()]) if len(hx) else None
+        else:grasp=bow_wrap_midpoint(w)
+        centre_gap=float(np.linalg.norm(grasp-palm)) if grasp is not None and palm is not None else float('inf')
+        check(centre_gap<=1,f'{name} actual painted palm CENTROID to painted middle grip={centre_gap:.9f}px <=1');row['palm_grip_centres_gap_px']=centre_gap
+
+        if school=='cung':
+            cy,cx=np.where(contact);height=(bounds(legs[:,:,3]>.5)[3]-float(cy.mean()))/H if len(cy) else float('inf')
+            check(.55<=height<=.7,f'{name} actual bow-gripping skin height/H={height:.9f} in[.55,.70]');row['grip_height_H']=height
+
         if school=='kiem':
             y,x=np.where(contact);grip_y=float(y.mean()) if len(y) else float('inf');foot_bottom=bounds(legs[:,:,3]>.5)[3];height=(foot_bottom-grip_y)/H
             check(.45<=height<=.6,f'{name} rendered skin/handle grip height above feet/H={height:.9f} in[.45,.60]');row['grip_height_H']=height
+            check(.55<=height<=.7,f'{name} NEW actual skin/handle grip height/H={height:.9f} in[.55,.70]; previous [.45,.60] retained above')
         else:
             midpoint=bow_wrap_midpoint(w);gap=float('inf')
             if midpoint is not None and skin.any():
@@ -158,9 +219,13 @@ for entry in entries:
     measurements.append(row)
 for school in ['kiem','cung']:
     for direction in [-1,1]:
+        if school in ['kiem','cung']:
+            grip_heights=[r['grip_height_H'] for r in measurements if r['school']==school and r['direction']==direction and r['frame'] in range(2,8)]
+            deviation=(max(grip_heights)-min(grip_heights))*.5
+            check(deviation<=.03,f'{school} dir{direction} real run gripping-palm vertical half-range={deviation:.9f}H <=.03H')
         strides=[r.get('shoe_span_H',0) for r in measurements if r['school']==school and r['direction']==direction and r['frame'] in range(2,8)]
         wide=sum(span>=.3 for span in strides);check(wide>=4,f'{school} dir{direction} actual shoe-region strides>=.30H: {wide}/6 (required>=4)')
 result={'failures':failures,'failure_count':len(failures),'measurements':measurements,'method':'Only actual Godot full/removed/isolated RGBA images. No authored pose landmarks or registration coordinates.'}
-(DIR.parent/'chest_v7_image_results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+(ROOT/args.out).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(f'Rendered ablation acceptance: poses={len(entries)} held cases=40 attack cases=68 running cases=24; failures={len(failures)}')
 sys.exit(bool(failures))

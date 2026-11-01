@@ -181,3 +181,8 @@ if __name__=='__main__':
     update_weapon_masters()
     from build_chest_carry_v7 import run as update_chest_carry
     update_chest_carry()
+
+    from raise_held_arms_v8 import run as raise_held_arms
+    raise_held_arms()
+    from build_held_props_v8 import run as update_held_props
+    update_held_props()

@@ -23,6 +23,6 @@ func run() -> void:
 		var master: Dictionary=a.parts.weapon_masters[school]
 		check(maxf(master.master_size[0],master.master_size[1])==512,"master long side exactly512px")
 	for id in ["attack_blade","attack_blade_only","swing_0","swing_1","swing_2","swing_3","swing_4","swing_skill_0","swing_skill_1","swing_skill_2","swing_skill_3","swing_skill_4"]:
-		check(a.parts.assets[id].source.master==a.parts.weapon_masters.kiem.master,"%s derives steel directly from the same detailed sword master" % id)
+		check(a.parts.assets[id].source.master=="art/sprites/weapons/lv1/kiem_action_material_v5.png","%s retains unchanged steel from its archived detailed action-material master" % id)
 	for retired in ["sword_hold","sword_run","bow_hold","run_v3_bow","carry_v4_bow"]:check(not a.parts.assets.has(retired),"obsolete held variant removed: "+retired)
 	print("Shared weapon master checks failures=%d" % failures);a.free();quit(1 if failures else 0)
