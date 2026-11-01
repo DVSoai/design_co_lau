@@ -4726,5 +4726,67 @@
   "kiem_cam_tay_dai_H": 0.78,
   "cung_cam_tay_cao_H": 1.01,
   "hinh_vung_lon_nhat": "rộng ≤1,6 H, cao ≤1,1 H"
+ },
+ "trang_thai_khung": {
+  "dung": [
+   0,
+   1
+  ],
+  "chay": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "dang_len": 7,
+  "dang_len_khi_cam_kieu_khac": 23,
+  "lon_dinh_theo_van_toc_doc": {
+   "-3": 8,
+   "-2": 9,
+   "-1": 10,
+   "0": 11
+  },
+  "roi": 12,
+  "tu_the_danh": [
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29
+  ],
+  "nguon": "Char.java ~1625–1650 (lên/lộn), ~2195–2212 (rơi/lộn)"
+ },
+ "chan_dung_chung_khi_danh": {
+  "13-20": 31,
+  "21-25": 30,
+  "26-29": 29,
+  "ghi_chu": "số ảnh trong icon/4; một hình chân dùng chung cho cả nhóm khung đánh"
+ },
+ "quy_mo_tham_khao": {
+  "bo_dau": 102,
+  "bo_than": 84,
+  "bo_chan": 87,
+  "vu_khi_cam_tay": 9,
+  "anh_dau": 169,
+  "anh_than": 899,
+  "anh_chan": 495,
+  "hieu_ung": 180,
+  "anh_hieu_ung": 477,
+  "chieu": 70,
+  "ghi_chu": "mỗi vũ khí cầm tay chỉ 1 ảnh; nhiều bộ đầu/chân dùng chung ảnh"
  }
 }
