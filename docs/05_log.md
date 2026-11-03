@@ -541,3 +541,9 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Mẫu băng đỏ (Lv1) và mũ đồng (bậc cao) là đề xuất của Claude, người dùng chưa xác nhận.
 - Đo: thân 05 rộng:cao 1,12 (khung NSO 1,91); chân 23 rộng:cao 0,85 (khung NSO 1,88). Ghép ba mảnh
   theo tỉ lệ ảnh mẫu thì khớp ảnh mẫu, cao hơn khoảng 6%.
+
+## 03/11/2026 — đổi tên ảnh chibi theo số ảnh NSO
+
+- Người dùng chốt: mảnh nhân vật đặt tên `dbl_<số ảnh NSO>.png` để biết đã làm theo ảnh nào.
+- Đổi tên trong `art/concept/characters/chr_dbl_chibi_gemini/`: `dbl_32` (đầu), `dbl_5` (thân),
+  `dbl_23` (chân), `dbl_mau_bang_do`, `dbl_mau_mu_dong`. Tiến độ bộ cơ bản: 3/33 mảnh, chưa duyệt.
