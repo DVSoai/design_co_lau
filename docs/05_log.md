@@ -556,3 +556,10 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thêm `dbl_33` (đầu nghiêm, chạy/đánh) và `dbl_35` (đầu choáng), do người dùng tạo bằng Gemini.
 - `dbl_33`: chỉnh màu da bằng script về tông `dbl_32` (RGB trung vị 239,168,112 → 250,185,142), không vẽ lại.
 - Tiến độ: 5/33 mảnh (đầu 32, 33, 35; thân 5; chân 23), chưa duyệt vào `art/approved/`.
+
+## 03/11/2026 — thêm các tấm gốc của bộ dbl
+
+- Thêm 5 tấm do người dùng tạo bằng Gemini vào `art/concept/characters/chr_dbl_chibi_gemini/tam_goc/`: chân 8 hình,
+  thân A 10 hình, thân A sửa 2 hình, thân B 10 hình, thân B sửa 4 hình. Ảnh gốc, chưa tách nền, chưa duyệt.
+- Người dùng chốt giữ nhân vật theo `dbl_mau_bang_do.png`, không theo tấm Gemini ghép sẵn.
+- Claude chốt theo yêu cầu của người dùng: để lốc xoáy 1–4 làm sau, ghép phần chạy và đánh trước.
