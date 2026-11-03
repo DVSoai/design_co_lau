@@ -1,0 +1,1461 @@
+{
+  "schema": 1,
+  "source_commit": "8764459003af23de08656ba254b42255435f55c4",
+  "source_figures": [
+    {
+      "id": 24,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        4,
+        88,
+        255,
+        318
+      ],
+      "size": [
+        251,
+        230
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 25,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        265,
+        70,
+        520,
+        325
+      ],
+      "size": [
+        255,
+        255
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 26,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        539,
+        77,
+        739,
+        319
+      ],
+      "size": [
+        200,
+        242
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 27,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        742,
+        78,
+        1021,
+        316
+      ],
+      "size": [
+        279,
+        238
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 28,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        12,
+        586,
+        250,
+        843
+      ],
+      "size": [
+        238,
+        257
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 29,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        290,
+        540,
+        494,
+        868
+      ],
+      "size": [
+        204,
+        328
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 30,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        548,
+        540,
+        732,
+        876
+      ],
+      "size": [
+        184,
+        336
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 31,
+      "source": "tam_chan_8_hinh.png",
+      "source_sha256": "d6de970f87e3c0f1b837cd5e674b5a0e1e80506e8d48efd738cb66da8497359f",
+      "bbox": [
+        731,
+        646,
+        1018,
+        880
+      ],
+      "size": [
+        287,
+        234
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 7,
+      "source": "tam_than_a_10_hinh.png",
+      "source_sha256": "9e216a247ff4f78a2d8cac70267d242938b10fd62cbdf2fcc9e0c2f277d8c9b5",
+      "bbox": [
+        664,
+        83,
+        1373,
+        604
+      ],
+      "size": [
+        709,
+        521
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 9,
+      "source": "tam_than_a_10_hinh.png",
+      "source_sha256": "9e216a247ff4f78a2d8cac70267d242938b10fd62cbdf2fcc9e0c2f277d8c9b5",
+      "bbox": [
+        22,
+        732,
+        754,
+        1246
+      ],
+      "size": [
+        732,
+        514
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 8,
+      "source": "tam_than_a_10_hinh.png",
+      "source_sha256": "9e216a247ff4f78a2d8cac70267d242938b10fd62cbdf2fcc9e0c2f277d8c9b5",
+      "bbox": [
+        1370,
+        692,
+        2010,
+        1240
+      ],
+      "size": [
+        640,
+        548
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 10,
+      "source": "tam_than_a_10_hinh.png",
+      "source_sha256": "9e216a247ff4f78a2d8cac70267d242938b10fd62cbdf2fcc9e0c2f277d8c9b5",
+      "bbox": [
+        18,
+        1533,
+        601,
+        2011
+      ],
+      "size": [
+        583,
+        478
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 12,
+      "source": "tam_than_a_10_hinh.png",
+      "source_sha256": "9e216a247ff4f78a2d8cac70267d242938b10fd62cbdf2fcc9e0c2f277d8c9b5",
+      "bbox": [
+        1050,
+        1272,
+        1541,
+        2018
+      ],
+      "size": [
+        491,
+        746
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 11,
+      "source": "tam_than_a_sua_2_hinh.png",
+      "source_sha256": "15fb603f07655c0dc59123807912b4cc3a55cde0170870aa8fcc3768706af972",
+      "bbox": [
+        27,
+        119,
+        552,
+        482
+      ],
+      "size": [
+        525,
+        363
+      ],
+      "collar_recolored": true
+    },
+    {
+      "id": 6,
+      "source": "tam_than_a_sua_2_hinh.png",
+      "source_sha256": "15fb603f07655c0dc59123807912b4cc3a55cde0170870aa8fcc3768706af972",
+      "bbox": [
+        622,
+        133,
+        997,
+        510
+      ],
+      "size": [
+        375,
+        377
+      ],
+      "collar_recolored": true
+    },
+    {
+      "id": 14,
+      "source": "tam_than_b_10_hinh.png",
+      "source_sha256": "eaea32b583148d2fa31ec583c8920ae589e73c489b74d189f0a9b7b77fca0744",
+      "bbox": [
+        62,
+        34,
+        316,
+        301
+      ],
+      "size": [
+        254,
+        267
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 16,
+      "source": "tam_than_b_10_hinh.png",
+      "source_sha256": "eaea32b583148d2fa31ec583c8920ae589e73c489b74d189f0a9b7b77fca0744",
+      "bbox": [
+        718,
+        40,
+        1013,
+        301
+      ],
+      "size": [
+        295,
+        261
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 17,
+      "source": "tam_than_b_10_hinh.png",
+      "source_sha256": "eaea32b583148d2fa31ec583c8920ae589e73c489b74d189f0a9b7b77fca0744",
+      "bbox": [
+        685,
+        346,
+        1005,
+        620
+      ],
+      "size": [
+        320,
+        274
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 19,
+      "source": "tam_than_b_10_hinh.png",
+      "source_sha256": "eaea32b583148d2fa31ec583c8920ae589e73c489b74d189f0a9b7b77fca0744",
+      "bbox": [
+        9,
+        767,
+        300,
+        1005
+      ],
+      "size": [
+        291,
+        238
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 20,
+      "source": "tam_than_b_10_hinh.png",
+      "source_sha256": "eaea32b583148d2fa31ec583c8920ae589e73c489b74d189f0a9b7b77fca0744",
+      "bbox": [
+        525,
+        636,
+        770,
+        1009
+      ],
+      "size": [
+        245,
+        373
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 15,
+      "source": "tam_than_b_sua_4_hinh.png",
+      "source_sha256": "5159e1b5a9bde551efa97799f5fc80d31c1ce9ef69a9f7dd42bd7f8c3d0f0e79",
+      "bbox": [
+        8,
+        66,
+        364,
+        295
+      ],
+      "size": [
+        356,
+        229
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 18,
+      "source": "tam_than_b_sua_4_hinh.png",
+      "source_sha256": "5159e1b5a9bde551efa97799f5fc80d31c1ce9ef69a9f7dd42bd7f8c3d0f0e79",
+      "bbox": [
+        364,
+        20,
+        740,
+        345
+      ],
+      "size": [
+        376,
+        325
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 21,
+      "source": "tam_than_b_sua_4_hinh.png",
+      "source_sha256": "5159e1b5a9bde551efa97799f5fc80d31c1ce9ef69a9f7dd42bd7f8c3d0f0e79",
+      "bbox": [
+        745,
+        318,
+        1013,
+        566
+      ],
+      "size": [
+        268,
+        248
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 32,
+      "source": "dbl_32.png",
+      "source_sha256": "805fc32e07d695961865c0031b7c723266cf613ba75d6c1c3725528be8fd5b98",
+      "bbox": [
+        515,
+        177,
+        1436,
+        1134
+      ],
+      "size": [
+        921,
+        957
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 33,
+      "source": "dbl_33.png",
+      "source_sha256": "ebac5f07a0ae2329f68611df6bcb5f3ed65c8a7cc81eaa8cca17d3b26d92a2fa",
+      "bbox": [
+        525,
+        82,
+        1440,
+        1030
+      ],
+      "size": [
+        915,
+        948
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 35,
+      "source": "dbl_35.png",
+      "source_sha256": "78713f361b903368ea511ad61926e96db4c9536399719d4af2445fb37732f2e3",
+      "bbox": [
+        516,
+        154,
+        1490,
+        1134
+      ],
+      "size": [
+        974,
+        980
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 5,
+      "source": "dbl_5.png",
+      "source_sha256": "698547d3c9965ba0723b07ec9df992497135037ee5b3e0a8b6e858a6fc68a2e8",
+      "bbox": [
+        74,
+        177,
+        1974,
+        1872
+      ],
+      "size": [
+        1900,
+        1695
+      ],
+      "collar_recolored": false
+    },
+    {
+      "id": 23,
+      "source": "dbl_23.png",
+      "source_sha256": "5743b022489291f478b82895c79b585594184153d4ea9a08449668b4bb6581c5",
+      "bbox": [
+        336,
+        212,
+        1789,
+        1932
+      ],
+      "size": [
+        1453,
+        1720
+      ],
+      "collar_recolored": false
+    }
+  ],
+  "canvas": [
+    220,
+    180
+  ],
+  "floor_y": 164,
+  "sample": {
+    "path": "dbl_mau_bang_do.png",
+    "top_y": 175,
+    "chin_y": 1125,
+    "neck_y": 1120,
+    "waist_y": 1440,
+    "floor_y": 1997,
+    "neutral_target_height": 130,
+    "note": "Neo do ảnh của bộ dbl; vị trí từng khung sửa trực tiếp bên dưới."
+  },
+  "frames": {
+    "0": {
+      "parts": {
+        "head": 32,
+        "leg": 23,
+        "body": 5
+      },
+      "order": [
+        "leg",
+        "body",
+        "head"
+      ],
+      "head": {
+        "x": 67.756,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 93.214,
+        "y": 124.258,
+        "scale": 0.023105838204886018
+      },
+      "body": {
+        "x": 84.163,
+        "y": 100.469,
+        "scale": 0.025657595380646003
+      },
+      "draw_condition": "statusMe 1/6"
+    },
+    "1": {
+      "parts": {
+        "head": 32,
+        "leg": 23,
+        "body": 5
+      },
+      "order": [
+        "leg",
+        "body",
+        "head"
+      ],
+      "head": {
+        "x": 67.756,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 93.214,
+        "y": 124.258,
+        "scale": 0.023105838204886018
+      },
+      "body": {
+        "x": 84.163,
+        "y": 100.469,
+        "scale": 0.025657595380646003
+      },
+      "draw_condition": "statusMe 1/6"
+    },
+    "2": {
+      "parts": {
+        "head": 33,
+        "leg": 24,
+        "body": 6
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 67.529,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 88.315,
+        "y": 124.258,
+        "scale": 0.17279148570610414
+      },
+      "body": {
+        "x": 90.469,
+        "y": 99.686,
+        "scale": 0.12112494795412392
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "3": {
+      "parts": {
+        "head": 33,
+        "leg": 25,
+        "body": 7
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.764,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 90.129,
+        "y": 124.258,
+        "scale": 0.15585114397021158
+      },
+      "body": {
+        "x": 78.332,
+        "y": 100.67,
+        "scale": 0.08427599545752383
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "4": {
+      "parts": {
+        "head": 33,
+        "leg": 26,
+        "body": 8
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 93.578,
+        "y": 124.258,
+        "scale": 0.16422331286117337
+      },
+      "body": {
+        "x": 80.557,
+        "y": 99.096,
+        "scale": 0.08680068692728238
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "5": {
+      "parts": {
+        "head": 33,
+        "leg": 27,
+        "body": 9
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 86.706,
+        "y": 124.258,
+        "scale": 0.1669833685395124
+      },
+      "body": {
+        "x": 75.906,
+        "y": 99.988,
+        "scale": 0.08625307955631584
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "6": {
+      "parts": {
+        "head": 33,
+        "leg": 28,
+        "body": 10
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.735,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 91.598,
+        "y": 124.258,
+        "scale": 0.1546382946007936
+      },
+      "body": {
+        "x": 80.448,
+        "y": 99.63,
+        "scale": 0.09748122572518297
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "7": {
+      "parts": {
+        "head": 32,
+        "leg": 29,
+        "body": 11
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.294,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 97.641,
+        "y": 124.258,
+        "scale": 0.12116476131830474
+      },
+      "body": {
+        "x": 83.316,
+        "y": 99.889,
+        "scale": 0.12706710459611184
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "12": {
+      "parts": {
+        "head": 32,
+        "leg": 30,
+        "body": 12
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 65.839,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 82.677,
+        "y": 74.751,
+        "scale": 0.09274535985600926
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "13": {
+      "parts": {
+        "head": 32,
+        "leg": 31,
+        "body": 14
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.716,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 88.49,
+        "y": 100.431,
+        "scale": 0.16604525427695255
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "14": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 15
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 74.506,
+        "y": 100.187,
+        "scale": 0.1954966408883668
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "15": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 16
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.668,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 84.444,
+        "y": 100.431,
+        "scale": 0.16986238655918134
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "16": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 17
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 80.557,
+        "y": 99.096,
+        "scale": 0.17360137385456476
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "17": {
+      "parts": {
+        "head": 32,
+        "leg": 31,
+        "body": 18
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.294,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 67.27,
+        "y": 82.28,
+        "scale": 0.20662491121585844
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "18": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 19
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.736,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 80.374,
+        "y": 99.63,
+        "scale": 0.19578162141444314
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "19": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 20
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 65.712,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 82.733,
+        "y": 74.751,
+        "scale": 0.18549071971201853
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "20": {
+      "parts": {
+        "head": 33,
+        "leg": 31,
+        "body": 21
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 63.145,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 85.628,
+        "y": 124.258,
+        "scale": 0.16983778509574338
+      },
+      "body": {
+        "x": 90.866,
+        "y": 99.63,
+        "scale": 0.18788720119611882
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "21": {
+      "parts": {
+        "head": 35,
+        "leg": 30,
+        "body": 12
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 64.408,
+        "y": 35.847,
+        "scale": 0.06916597594032124
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 82.677,
+        "y": 74.751,
+        "scale": 0.09274535985600926
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "22": {
+      "parts": {
+        "head": 32,
+        "leg": 30,
+        "body": 14
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.716,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 88.49,
+        "y": 100.431,
+        "scale": 0.16604525427695255
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "23": {
+      "parts": {
+        "head": 33,
+        "leg": 30,
+        "body": 15
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 74.506,
+        "y": 100.187,
+        "scale": 0.1954966408883668
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "24": {
+      "parts": {
+        "head": 33,
+        "leg": 30,
+        "body": 16
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.668,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 84.444,
+        "y": 100.431,
+        "scale": 0.16986238655918134
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "25": {
+      "parts": {
+        "head": 33,
+        "leg": 30,
+        "body": 17
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.167,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 99.118,
+        "y": 124.258,
+        "scale": 0.1182798860488213
+      },
+      "body": {
+        "x": 80.557,
+        "y": 99.096,
+        "scale": 0.17360137385456476
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "26": {
+      "parts": {
+        "head": 32,
+        "leg": 29,
+        "body": 18
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.294,
+        "y": 35.847,
+        "scale": 0.070828272122795
+      },
+      "leg": {
+        "x": 97.641,
+        "y": 124.258,
+        "scale": 0.12116476131830474
+      },
+      "body": {
+        "x": 67.27,
+        "y": 82.28,
+        "scale": 0.20662491121585844
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "27": {
+      "parts": {
+        "head": 33,
+        "leg": 29,
+        "body": 19
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 66.736,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 97.641,
+        "y": 124.258,
+        "scale": 0.12116476131830474
+      },
+      "body": {
+        "x": 80.374,
+        "y": 99.63,
+        "scale": 0.19578162141444314
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "28": {
+      "parts": {
+        "head": 33,
+        "leg": 29,
+        "body": 20
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 65.712,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 97.641,
+        "y": 124.258,
+        "scale": 0.12116476131830474
+      },
+      "body": {
+        "x": 82.733,
+        "y": 74.751,
+        "scale": 0.18549071971201853
+      },
+      "draw_condition": "statusMe khác 1/6"
+    },
+    "29": {
+      "parts": {
+        "head": 33,
+        "leg": 29,
+        "body": 21
+      },
+      "order": [
+        "leg",
+        "head",
+        "body"
+      ],
+      "head": {
+        "x": 63.145,
+        "y": 35.847,
+        "scale": 0.07150069242775825
+      },
+      "leg": {
+        "x": 97.641,
+        "y": 124.258,
+        "scale": 0.12116476131830474
+      },
+      "body": {
+        "x": 90.866,
+        "y": 99.63,
+        "scale": 0.18788720119611882
+      },
+      "draw_condition": "statusMe khác 1/6"
+    }
+  },
+  "measured_frames": [
+    {
+      "frame": 0,
+      "parts": [
+        32,
+        23,
+        5
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 1,
+      "parts": [
+        32,
+        23,
+        5
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 2,
+      "parts": [
+        33,
+        24,
+        6
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 3,
+      "parts": [
+        33,
+        25,
+        7
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 4,
+      "parts": [
+        33,
+        26,
+        8
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 5,
+      "parts": [
+        33,
+        27,
+        9
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 6,
+      "parts": [
+        33,
+        28,
+        10
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 7,
+      "parts": [
+        32,
+        29,
+        11
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 12,
+      "parts": [
+        32,
+        30,
+        12
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 13,
+      "parts": [
+        32,
+        31,
+        14
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 14,
+      "parts": [
+        33,
+        31,
+        15
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 15,
+      "parts": [
+        33,
+        31,
+        16
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 16,
+      "parts": [
+        33,
+        31,
+        17
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 17,
+      "parts": [
+        32,
+        31,
+        18
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 18,
+      "parts": [
+        33,
+        31,
+        19
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 19,
+      "parts": [
+        33,
+        31,
+        20
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 20,
+      "parts": [
+        33,
+        31,
+        21
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 21,
+      "parts": [
+        35,
+        30,
+        12
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 22,
+      "parts": [
+        32,
+        30,
+        14
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 23,
+      "parts": [
+        33,
+        30,
+        15
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 24,
+      "parts": [
+        33,
+        30,
+        16
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 25,
+      "parts": [
+        33,
+        30,
+        17
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 26,
+      "parts": [
+        32,
+        29,
+        18
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 27,
+      "parts": [
+        33,
+        29,
+        19
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 28,
+      "parts": [
+        33,
+        29,
+        20
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    },
+    {
+      "frame": 29,
+      "parts": [
+        33,
+        29,
+        21
+      ],
+      "height": 128,
+      "head_ratio": 0.53125
+    }
+  ]
+}

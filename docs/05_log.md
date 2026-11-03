@@ -556,3 +556,42 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thêm `dbl_33` (đầu nghiêm, chạy/đánh) và `dbl_35` (đầu choáng), do người dùng tạo bằng Gemini.
 - `dbl_33`: chỉnh màu da bằng script về tông `dbl_32` (RGB trung vị 239,168,112 → 250,185,142), không vẽ lại.
 - Tiến độ: 5/33 mảnh (đầu 32, 33, 35; thân 5; chân 23), chưa duyệt vào `art/approved/`.
+
+## 03/11/2026 — cắt mảnh và ghép thử bộ dbl theo ảnh mẫu
+
+- Nhánh `art/dbl-cat-ghep` tạo từ `origin/main` tại `271f688`; không thay bộ đang dùng.
+  Main chưa có `tam_goc/`, nên đọc đúng 5 tấm từ nhánh `art/dbl-tam-goc`, commit
+  `8764459003af23de08656ba254b42255435f55c4`, vào `/tmp/dbl_tam_goc/` để xử lý.
+  Không thêm tấm gốc hoặc hình tham khảo vào nhánh kết quả.
+- Thêm `tools/dbl_cat_ghep.py`: kiểm số hình liền nhau trước khi ghi bất kỳ mảnh nào;
+  đủ 8/10/2/10/4 hình, nhóm theo hàng rồi trái sang phải. In bbox, SHA256 và số mảnh
+  cho mọi hình, kể cả hình không được gán số. Nếu khác số lượng thì dừng, không đoán.
+- Xuất 28 mảnh nền trong suốt trong `cat/`; bỏ chữ và dấu sao rời. Giữ RGB gốc,
+  chỉ đổi cổ áo xanh đen của `dbl_6` và `dbl_11` thành nâu sẫm (3.636/3.794 pixel).
+  Không vẽ lại, không dùng công cụ tạo ảnh, không vá phần bị dấu sao che.
+- Đọc bảng Class127 và phần đầu/chân/thân mặc định chỉ để lấy ID mảnh. Ghép đủ khung
+  00–07, 12–29, không dùng bbox hoặc dx/dy của nguồn tham khảo để đặt hình.
+  Tỉ lệ lấy từ chính `dbl_mau_bang_do.png`: đỉnh tóc y=175, cằm=1125, cổ=1120,
+  đai=1440, sàn=1997 trên canvas 2048. Mỗi mảnh co đều; không xoay hoặc sửa nét.
+  Các vị trí/scale cụ thể lưu ở `ghep/dbl_vi_tri.json`; chạy lại giữ vị trí chỉnh tay.
+- Thứ tự ghép: chân/đầu/thân; bản đứng 00–01 dùng điều kiện trạng thái 1/6,
+  chân/thân/đầu. Không nhầm trạng thái 6 với chỉ số khung 06.
+- Xuất 26 PNG riêng và `ghep/to_soat.png`, nền phẳng, nhãn số khung và ba số mảnh.
+  Tờ soát đọc PNG thực trên đĩa, phóng NEAREST 3×. Chiều cao hiện đo được 128 px,
+  đầu/người 0,5312; đáy chân chung y=164. Đây là số đo, không phải kết luận duyệt hình.
+- Kiểm tra pixel: 28 mảnh giữ RGB nguồn ngoài vùng cổ áo cho phép; bảng ID 26 khung
+  đúng nguồn; từng ô tờ soát bằng PNG thực phóng NEAREST; thử tấm thiếu một hình thì
+  script dừng với thông báo có 7 hình, cần 8. Kiểm tra kỹ thuật hiện không báo khung
+  vượt canvas, sai sàn hoặc thân che vùng miệng đã đánh dấu trên ảnh đầu.
+- Chưa xử lý/chưa duyệt: hình hàng 3 cột 4 tấm thân A bị dấu sao đè vạt áo,
+  nên không xuất `dbl_13`; mảnh này không được dùng trong 26 khung đã ghép.
+  Hàng 3 cột 4 tấm thân B cũng bị dấu sao đè eo nhưng không được gán số;
+  `dbl_21` lấy đúng từ tấm sửa. Các hình không được gán số không tự suy đoán để dùng.
+  Khung 08–11 bỏ theo yêu cầu. Người dùng cần duyệt bằng mắt tỉ lệ, cổ/eo và dáng
+  từng khung; chưa đưa vào `art/approved/`. Output script nguyên văn nằm trong commit message.
+
+Lệnh tái lập (tấm gốc đọc từ commit nguồn nêu trên):
+
+```bash
+python3 tools/dbl_cat_ghep.py --source-dir /tmp/dbl_tam_goc --source-commit 8764459003af23de08656ba254b42255435f55c4 --server /workspace/ns-server --client /workspace/ns-201
+```
