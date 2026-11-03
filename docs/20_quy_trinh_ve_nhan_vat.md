@@ -36,6 +36,9 @@ python3 tools/ref_pose_guides.py --server <zip server> --client <zip client> --o
 
 ## B3. Khung kích thước
 
+> **Ngoại lệ người dùng chốt 03/11/2026 cho bộ `dbl_*` (Gemini):** không ép hình vào khung và offset của game tham khảo.
+> Mảnh ghép theo tỉ lệ `art/concept/characters/chr_dbl_chibi_gemini/dbl_mau_bang_do.png`; game tham khảo chỉ dùng để biết tư thế và thứ tự hoạt ảnh.
+
 - Khung bao từng hình = khung bao lớp tương ứng trong `khuon.json` (±8%), trừ đầu nếu người dùng chốt
   tỉ lệ khác (xem `01_art_bible.md` mục 8).
 - Vũ khí cầm tay: 1 hình/cấp; điểm cầm (grip) đặt cùng vị trí tỉ lệ như hình tham khảo; vẽ TRÊN thân.

@@ -547,3 +547,12 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Người dùng chốt: mảnh nhân vật đặt tên `dbl_<số ảnh NSO>.png` để biết đã làm theo ảnh nào.
 - Đổi tên trong `art/concept/characters/chr_dbl_chibi_gemini/`: `dbl_32` (đầu), `dbl_5` (thân),
   `dbl_23` (chân), `dbl_mau_bang_do`, `dbl_mau_mu_dong`. Tiến độ bộ cơ bản: 3/33 mảnh, chưa duyệt.
+
+## 03/11/2026 — chốt ghép bộ dbl theo ảnh mẫu Gemini
+
+- Người dùng chốt: bộ `dbl_*` ghép theo tỉ lệ `dbl_mau_bang_do.png`, không ép vào khung/offset NSO.
+  NSO chỉ dùng để biết tư thế và thứ tự hoạt ảnh. Vị trí từng mảnh theo khung sẽ chỉnh riêng rồi soát bằng mắt.
+- Người dùng xác nhận giữ `dbl_5` và `dbl_23` bản hiện có.
+- Thêm `dbl_33` (đầu nghiêm, chạy/đánh) và `dbl_35` (đầu choáng), do người dùng tạo bằng Gemini.
+- `dbl_33`: chỉnh màu da bằng script về tông `dbl_32` (RGB trung vị 239,168,112 → 250,185,142), không vẽ lại.
+- Tiến độ: 5/33 mảnh (đầu 32, 33, 35; thân 5; chân 23), chưa duyệt vào `art/approved/`.
