@@ -531,3 +531,13 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
   thoại để phạm vi sau; bỏ động tác "đi". Bảng gán hiệu ứng → chiêu ghi ở 01_art_bible mục 8.
 - Người dùng chốt: hai bảng thiết kế là mẫu chính về hình nhân vật (thay v2_a làm mẫu); vẽ độ
   phân giải cao giống bảng, so cạnh bảng khi duyệt.
+
+## 03/11/2026 — chr_dbl_chibi (Gemini), bản nháp để duyệt
+
+- Thêm vào `art/concept/characters/chr_dbl_chibi_gemini/`: mẫu băng đỏ, mẫu mũ đồng, đầu 32,
+  thân 05, chân 23 (tư thế đứng). Tất cả v1, do người dùng tạo bằng Gemini; prompt nguyên văn
+  không được lưu ở đây. Ảnh gốc 2048×2048, chưa tách nền.
+- Chưa duyệt, chưa chép sang `art/approved/`. Chưa quyết định theo dáng Gemini hay dáng NSO.
+- Mẫu băng đỏ (Lv1) và mũ đồng (bậc cao) là đề xuất của Claude, người dùng chưa xác nhận.
+- Đo: thân 05 rộng:cao 1,12 (khung NSO 1,91); chân 23 rộng:cao 0,85 (khung NSO 1,88). Ghép ba mảnh
+  theo tỉ lệ ảnh mẫu thì khớp ảnh mẫu, cao hơn khoảng 6%.
