@@ -569,3 +569,8 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 
 - Người dùng chốt `dbl_goc_kiem_v1`. Chép sang `art/approved/characters/chr_dbl_goc_kiem_v1.png`, thêm `chr_dbl_goc_kiem` vào `docs/02_asset_list.md`.
 - Đây là mẫu nhân vật chính từ nay. Chưa cập nhật `docs/01_art_bible.md`, `docs/20_quy_trinh_ve_nhan_vat.md` và ảnh tham chiếu ghi trong `AGENTS.md`.
+
+## 06/11/2026 — mảnh đứng phái Kiếm (Muse AI)
+
+- Vẽ theo bộ phận, không kiếm: `chr_dbl_kiem/manh/dbl_32.png` (đầu), `dbl_5.png` (thân), `dbl_23.png` (chân), 1600×1600, nền #00FF00, cùng khung. Do người dùng tạo bằng Muse AI, theo lời nhắc Claude soạn.
+- Chồng 3 mảnh không xê dịch (chân, thân, đầu) ra đúng dáng hình gốc; chân hơi lệch phải và ngắn hơn. Chưa duyệt.
