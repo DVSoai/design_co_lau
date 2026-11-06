@@ -574,3 +574,8 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 
 - Vẽ theo bộ phận, không kiếm: `chr_dbl_kiem/manh/dbl_32.png` (đầu), `dbl_5.png` (thân), `dbl_23.png` (chân), 1600×1600, nền #00FF00, cùng khung. Do người dùng tạo bằng Muse AI, theo lời nhắc Claude soạn.
 - Chồng 3 mảnh không xê dịch (chân, thân, đầu) ra đúng dáng hình gốc; chân hơi lệch phải và ngắn hơn. Chưa duyệt.
+
+## 06/11/2026 — mảnh chạy đầu tiên phái Kiếm (Muse AI)
+
+- Thêm `chr_dbl_kiem/manh/dbl_33.png`, `dbl_6.png`, `dbl_24.png`, `dbl_25.png`, do người dùng tạo bằng Muse AI, theo lời nhắc Claude soạn. Chưa duyệt.
+- Đo: đầu 33 cùng khung và vị trí với đầu 32. Điểm cần xử lý: mắt đầu 33 khác đầu 32; `dbl_24` chạm mép dưới ảnh; thân chưa có cổ.
