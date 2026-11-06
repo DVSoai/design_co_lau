@@ -564,3 +564,8 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thiết kế: băng đầu đỏ, búi tóc, áo nâu, giáp vảy vàng đồng, thắt lưng đỏ, kiếm thẳng đeo sau lưng, chuôi trên mũi dưới.
 - Đo: đầu kể cả búi khoảng 0,51 chiều cao. Chưa đưa vào `art/approved/`; chưa làm tư thế.
 - Các nhánh `art/dbl-tam-goc`, `art/dbl-khung-gemini`, `art/dbl-cat-ghep` không dùng tiếp.
+
+## 06/11/2026 — duyệt hình gốc phái Kiếm
+
+- Người dùng chốt `dbl_goc_kiem_v1`. Chép sang `art/approved/characters/chr_dbl_goc_kiem_v1.png`, thêm `chr_dbl_goc_kiem` vào `docs/02_asset_list.md`.
+- Đây là mẫu nhân vật chính từ nay. Chưa cập nhật `docs/01_art_bible.md`, `docs/20_quy_trinh_ve_nhan_vat.md` và ảnh tham chiếu ghi trong `AGENTS.md`.
