@@ -579,3 +579,8 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 
 - Thêm `chr_dbl_kiem/manh/dbl_33.png`, `dbl_6.png`, `dbl_24.png`, `dbl_25.png`, do người dùng tạo bằng Muse AI, theo lời nhắc Claude soạn. Chưa duyệt.
 - Đo: đầu 33 cùng khung và vị trí với đầu 32. Điểm cần xử lý: mắt đầu 33 khác đầu 32; `dbl_24` chạm mép dưới ảnh; thân chưa có cổ.
+
+## 06/11/2026 — bộ dbl: mảnh sửa và bảng vị trí
+
+- Thay `dbl_32` (mắt thường), `dbl_6` (có cổ), `dbl_25`; thêm `manh/vi_tri.json`. Người dùng duyệt bộ đứng với đầu nâng 24 px. Do người dùng tạo bằng Muse AI, theo lời nhắc Claude soạn.
+- Đo diện tích giày trung bình: `dbl_23` 9.204 px², `dbl_25` mới 10.784 px². Bản `chan_24` vừa nhận chỉ 4.024 px², không lưu; `dbl_24` trên nhánh vẫn là bản tạm, cần vẽ lại.

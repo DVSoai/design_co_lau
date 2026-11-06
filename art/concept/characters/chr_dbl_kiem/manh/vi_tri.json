@@ -1,0 +1,6 @@
+{
+  "ghi_chu": "Ảnh mảnh 1600x1600. Co mảnh theo scale rồi đặt góc trên-trái tại (x, y). Thứ tự vẽ: chân, thân, đầu.",
+  "chan": {"scale": 0.86, "x": 144, "y": 200},
+  "than": {"scale": 0.96, "x": 112, "y": 10},
+  "dau": {"scale": 0.96, "x": -17, "y": -24}
+}
