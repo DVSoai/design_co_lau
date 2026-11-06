@@ -556,3 +556,11 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thêm `dbl_33` (đầu nghiêm, chạy/đánh) và `dbl_35` (đầu choáng), do người dùng tạo bằng Gemini.
 - `dbl_33`: chỉnh màu da bằng script về tông `dbl_32` (RGB trung vị 239,168,112 → 250,185,142), không vẽ lại.
 - Tiến độ: 5/33 mảnh (đầu 32, 33, 35; thân 5; chân 23), chưa duyệt vào `art/approved/`.
+
+## 06/11/2026 — hình gốc nhân vật chính phái Kiếm
+
+- Người dùng chốt làm lại từ đầu bằng Muse AI: chỉ phái Kiếm, phái Cung làm sau. Bỏ các ảnh đã vẽ trước đó cho nhân vật này.
+- Thêm `art/concept/characters/chr_dbl_kiem/dbl_goc_kiem_v1.png` (1600×1600, nền #00FF00), do người dùng tạo bằng Muse AI và gửi; chuyển từ webp sang png, không chỉnh hình. Prompt: làm theo lời nhắc Claude soạn, không lưu nguyên văn lần chạy cuối.
+- Thiết kế: băng đầu đỏ, búi tóc, áo nâu, giáp vảy vàng đồng, thắt lưng đỏ, kiếm thẳng đeo sau lưng, chuôi trên mũi dưới.
+- Đo: đầu kể cả búi khoảng 0,51 chiều cao. Chưa đưa vào `art/approved/`; chưa làm tư thế.
+- Các nhánh `art/dbl-tam-goc`, `art/dbl-khung-gemini`, `art/dbl-cat-ghep` không dùng tiếp.
