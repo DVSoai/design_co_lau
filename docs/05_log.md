@@ -577,3 +577,8 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thêm `chr_dbl_kiem/bo_tu_the.json`: danh sách khung, mảnh và `dx, dy` (hệ số 40, ảnh 1600×1600). Khuôn khối màu dựng từ ảnh NSO không commit, theo `docs/20_quy_trinh_ve_nhan_vat.md`.
 - Mảnh trong `chr_dbl_kiem/manh/` vẽ theo tỉ lệ cũ, không dùng tiếp; giữ đầu 32, 33. Cần cập nhật `docs/09_animation_spec.md` theo bộ gọn.
 - Nhắc pháp lý: không chép code NSO, không đồ lại hình NSO; tự chỉnh tư thế và số trước khi phát hành, hỏi luật sư trước Mốc B.
+
+## 07/11/2026 — bộ dbl tỉ lệ NSO: thân đợt 1
+
+- Lưu `chr_dbl_kiem/bo_phan/than_5.png`, `than_6.png`, `than_7.png`, `than_8.png` (Muse AI, theo khuôn tỉ lệ NSO; `than_5` và `than_7` là bản vẽ lại). Chưa duyệt vào `art/approved/`.
+- Đo: khung khớp khuôn trong vòng 2 px; da cùng tông (khoảng 246,193,157); `than_6` làm thước cho ngực, nắm tay, bao cổ tay. `than_5` ngực to hơn khoảng 8%, chấp nhận.
