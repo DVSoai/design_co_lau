@@ -569,3 +569,11 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 
 - Người dùng chốt `dbl_goc_kiem_v1`. Chép sang `art/approved/characters/chr_dbl_goc_kiem_v1.png`, thêm `chr_dbl_goc_kiem` vào `docs/02_asset_list.md`.
 - Đây là mẫu nhân vật chính từ nay. Chưa cập nhật `docs/01_art_bible.md`, `docs/20_quy_trinh_ve_nhan_vat.md` và ảnh tham chiếu ghi trong `AGENTS.md`.
+
+## 07/11/2026 — chốt bộ tư thế gọn, vẽ theo tỉ lệ NSO
+
+- Người dùng chốt: mảnh vẽ đúng tỉ lệ NSO để ghép bằng `dx, dy` ít lệch; vẽ đủ bộ phận trước, ghép sau.
+- Người dùng chốt bộ tư thế gọn thay 30 khung: đứng 2, chạy 5, nhảy lên 1, rơi 1 (theo nhịp NSO, rủi ro thấp); chém kiếm 3–4 khung tự thiết kế, làm sau. Bỏ các khung đánh tay không.
+- Thêm `chr_dbl_kiem/bo_tu_the.json`: danh sách khung, mảnh và `dx, dy` (hệ số 40, ảnh 1600×1600). Khuôn khối màu dựng từ ảnh NSO không commit, theo `docs/20_quy_trinh_ve_nhan_vat.md`.
+- Mảnh trong `chr_dbl_kiem/manh/` vẽ theo tỉ lệ cũ, không dùng tiếp; giữ đầu 32, 33. Cần cập nhật `docs/09_animation_spec.md` theo bộ gọn.
+- Nhắc pháp lý: không chép code NSO, không đồ lại hình NSO; tự chỉnh tư thế và số trước khi phát hành, hỏi luật sư trước Mốc B.
