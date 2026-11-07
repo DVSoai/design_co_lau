@@ -583,3 +583,4 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Lưu `chr_dbl_kiem/bo_phan/than_5.png`, `than_6.png`, `than_7.png`, `than_8.png` (Muse AI, theo khuôn tỉ lệ NSO; `than_5` và `than_7` là bản vẽ lại). Chưa duyệt vào `art/approved/`.
 - Đo: khung khớp khuôn trong vòng 2 px; da cùng tông (khoảng 246,193,157); `than_6` làm thước cho ngực, nắm tay, bao cổ tay. `than_5` ngực to hơn khoảng 8%, chấp nhận.
 - Thêm `bo_phan/than_9.png`, `than_10.png`, `than_11.png`. `than_11` là bản Muse AI trước, phóng thêm 9% bằng code để ngực khớp các thân khác (hai bản vẽ lại sau có tay quá dài, không dùng). Bộ thân đủ 7/7, chưa duyệt.
+- Chân: lưu `chan_23` (vẽ lại), `chan_24`, `chan_25`, `chan_27`–`chan_30`. Bỏ `chan_26` theo người dùng. Đo: chiều cao khớp khuôn; giày `chan_24` to hơn các chân khác khoảng 15–20%, viền 8 px so với 6 px; cần soát khi xem chạy thử. Chưa duyệt.
