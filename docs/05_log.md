@@ -609,3 +609,10 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Chiêu chính (hồi chiêu ngắn, dùng liên tục): 10, 30, 50 — vẽ trước. Sau đó 40, 60, rồi 20, 25, 35; nội tại 15, 45 chỉ cần icon.
 - Mỗi chiêu tách tư thế nhân vật (nền #00FF00) và hiệu ứng (nền đen #000000, hòa sáng trong game). Số liệu chiêu vẫn đặt lại trước Mốc A1.
 - Hiệu ứng chiêu Kiếm, bản kiểu dáng 1 khung (Muse AI, nền đen #000000): `art/concept/vfx/kiem/fx_tram_kiem.png` (lưỡi liềm trắng xanh), `fx_quet_ngang.png` (vòng vàng), `fx_van_quan_chem.png` (vệt cam vàng), `fx_van_quan_bui.png` (bụi đất, đá). Ghép thử bằng hòa sáng (screen); bụi đất nhạt khi hòa sáng, cần lớp thường. Chưa duyệt.
+
+## 09/11/2026 — đổi vũ khí sang cờ lau, bỏ hai phái Kiếm và Cung
+
+- **Người dùng chốt:** bỏ phái Kiếm và phái Cung. Nhân vật chính chỉ dùng **cờ lau** (cán gỗ dài, đầu bó bông lau trắng). Không còn chọn phái khi vào game.
+- **Ảnh nháp:** `art/concept/characters/chr_dbl_v2/co_lau/co_lau_nhap_4_tu_the.png` (Muse AI, 1254×1254, lưới 2×2: đứng chống cờ, lấy đà, quét có vệt trắng vẽ chung, cầm ngang). Nhân vật khớp ảnh gốc v2 (mặt, băng đầu, dải lụa đỏ, giáp đỏ viền vàng, ủng). Cán cờ dài khoảng 1,3 lần chiều cao người.
+- **Ảnh hưởng:** 13 khung cầm kiếm trong `chr_dbl_v2/kiem/` và `chr_dbl_v2_goc_cung.png` chỉ còn là mẫu tư thế, không dùng trong game. Bảng chiêu Cung trong GDD bỏ. Bảng chiêu Kiếm giữ cấp mở và tác dụng, tên chiêu chờ người dùng chốt lại cho hợp cờ lau. Nhánh `design/kiem-hieu-ung-chieu` chưa merge, cần sửa theo vũ khí mới.
+- **Chưa cập nhật:** `docs/GDD.md`, `docs/01_art_bible.md`, `docs/02_asset_list.md`, `docs/09_animation_spec.md`, `docs/17_ngoai_hinh.md`.
