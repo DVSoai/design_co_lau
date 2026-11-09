@@ -600,3 +600,4 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Lưu bản nháp `art/concept/characters/chr_dbl_v2/chr_dbl_v2_kiem_cung_nhap.png` (ảnh chụp màn hình, chưa phải ảnh gốc), hai phái Kiếm và Cung.
 - Thay hình gốc `chr_dbl_goc_kiem_v1` (áo nâu, giáp vảy). Cần sửa trước khi chốt: dây cung không vắt qua mặt, giảm chi tiết nhỏ, phái Cung dáng đứng cầm cung.
 - Duyệt hình gốc v2 hai phái (Muse AI): `art/approved/characters/chr_dbl_v2_goc_kiem.png`, `chr_dbl_v2_goc_cung.png`, 1600×1600, nền #00FF00. Đo: cao 1334–1340 px, chân chạm đất y≈1501, viền khoảng 22 px; ở cỡ 130 px vẫn rõ mặt, giáp, vũ khí. Thêm `chr_dbl_v2_goc` vào `02_asset_list.md`.
+- Phái Kiếm v2 (Muse AI): lưu `chr_dbl_v2/kiem/dung_2.png`, `chay_1.png`, `chay_2.png`, `chay_3.png`. Đo: mặt 196–201 px rộng ở mọi khung (lệch ≤2%), chân chạm đất y≈1497–1501 (chay_2 bay, y=1465). Chưa duyệt.
