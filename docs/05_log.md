@@ -608,3 +608,4 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Người dùng chốt danh sách chiêu Kiếm theo GDD: 10 Trảm Kiếm, 15 Kiếm Tâm, 20 Song Trảm, 25 Chấn Uy, 30 Quét Ngang, 35 Thiết Kỵ Xung Phong, 40 Khai Sơn Trảm, 45 Kiên Cường, 50 Vạn Quân Trảm, 60 Vạn Thắng; không có chiêu 55. Khuôn cấp mở đối chiếu bảng `skill` (class 1) trong `nja.sql`.
 - Chiêu chính (hồi chiêu ngắn, dùng liên tục): 10, 30, 50 — vẽ trước. Sau đó 40, 60, rồi 20, 25, 35; nội tại 15, 45 chỉ cần icon.
 - Mỗi chiêu tách tư thế nhân vật (nền #00FF00) và hiệu ứng (nền đen #000000, hòa sáng trong game). Số liệu chiêu vẫn đặt lại trước Mốc A1.
+- Hiệu ứng chiêu Kiếm, bản kiểu dáng 1 khung (Muse AI, nền đen #000000): `art/concept/vfx/kiem/fx_tram_kiem.png` (lưỡi liềm trắng xanh), `fx_quet_ngang.png` (vòng vàng), `fx_van_quan_chem.png` (vệt cam vàng), `fx_van_quan_bui.png` (bụi đất, đá). Ghép thử bằng hòa sáng (screen); bụi đất nhạt khi hòa sáng, cần lớp thường. Chưa duyệt.
