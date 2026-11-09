@@ -629,3 +629,10 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - **Nguồn:** người dùng gửi `dinh-bo-linh-combat-extension-v1-player-ui-v2.zip`. Thay `art/approved/characters/chr_dbl_v3/rig.json` bằng bản 2 (21 khung, 54 PNG bộ phận). Thêm 30 PNG mới vào `assets/` và ảnh dựng lại `chr_dbl_v3_21_khung.png` do Claude tự ghép từ rig.json.
 - **Claude kiểm:** 24 PNG gốc giống hệt từng byte bản đã chốt. 13 tư thế mới cùng nhân vật, cao 143–147 px so với 141 px khi đứng, không hở ở cổ và eo. Tư thế mới: thủ thế, đấm thẳng, nhảy lên, đỉnh nhảy, rơi xuống, lộn 4 khung (xoay ảnh nhảy quanh tâm [0,-46]), cùng 4 tư thế nghiên cứu tay không (`dao-*`, `knife-*`) chưa dùng trong hoạt ảnh nào. Bản thử tự ghi là chưa kiểm trên trình duyệt và chưa có hitbox.
 - **Vũ khí:** phác thảo trường đao và phi đao lưu ở `art/concept/weapons/dao_nhap/`, chưa gắn vào nhân vật. Khác quyết định sáng 09/11 (chỉ dùng cờ lau), chờ người dùng chọn vũ khí.
+
+## 09/11/2026 — thêm 4 dáng phóng phi đao cho nhân vật v3
+
+- **Nguồn:** người dùng gửi `dinh-bo-linh-otama-poses-v2.zip`. Claude gộp 4 khung `throw-0..3` (12 PNG) và hai hoạt ảnh `otama-study`, `otama-slow` vào `art/approved/characters/chr_dbl_v3/rig.json`, nay có 25 khung và 66 bộ phận. Ảnh dựng lại `chr_dbl_v3_25_khung.png` thay `chr_dbl_v3_21_khung.png`.
+- **Claude kiểm:** 24 PNG gốc giống hệt từng byte; bộ phận cũ chỉ khác một trường ghi nguồn (`sourceModel`). Bốn dáng mới cùng nhân vật, cùng gốc và tỉ lệ. Dáng theo nhịp cf13–16 của NSO (thân 10–13, chân 9); hình vẽ là của mình.
+- **Không đưa vào repo:** `source-comparison.png` (có ảnh gốc NSO), `references/`, `index.html`, `renderer.js`, GIF.
+- **Chưa xong:** chưa gắn phi đao/đạn/hiệu ứng; thời lượng là xem thử, chưa đối chiếu nj_skill. Vũ khí chính vẫn chờ người dùng chốt (cờ lau hay đao).
