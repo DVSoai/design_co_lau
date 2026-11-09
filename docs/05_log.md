@@ -623,3 +623,9 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - **Đã lưu:** `art/approved/characters/chr_dbl_v3/rig.json` (bản trong zip; bản rời chỉ thêm `editorOverrides` rỗng, số liệu giống hệt), 24 PNG `assets/` (head/body/leg cho 8 khung), ảnh dựng lại từ rig: `chr_dbl_v3_goc.png` 192×192 và `chr_dbl_v3_8_khung.png` 1536×192 (nền trong suốt). Không lưu `index.html`/`renderer.js` của bản thử.
 - **Claude kiểm:** ghép lại 8 khung khớp, không hở ở cổ/eo. Mỗi khung có đầu/thân/chân riêng cắt từ một ảnh toàn thân, không bộ phận dùng chung giữa các khung. Đầu chiếm khoảng 44% chiều cao. Chưa có cờ lau; nhảy mới 1 tư thế.
 - **Còn phải làm:** vẽ lại các khung cầm cờ lau theo nhân vật này; ảnh cờ lau giáp đỏ (`chr_dbl_v2/co_lau/`) và khung kiếm v2 chỉ còn là mẫu tư thế.
+
+## 09/11/2026 — mở rộng nhân vật v3: đánh tay không, nhảy, lộn
+
+- **Nguồn:** người dùng gửi `dinh-bo-linh-combat-extension-v1-player-ui-v2.zip`. Thay `art/approved/characters/chr_dbl_v3/rig.json` bằng bản 2 (21 khung, 54 PNG bộ phận). Thêm 30 PNG mới vào `assets/` và ảnh dựng lại `chr_dbl_v3_21_khung.png` do Claude tự ghép từ rig.json.
+- **Claude kiểm:** 24 PNG gốc giống hệt từng byte bản đã chốt. 13 tư thế mới cùng nhân vật, cao 143–147 px so với 141 px khi đứng, không hở ở cổ và eo. Tư thế mới: thủ thế, đấm thẳng, nhảy lên, đỉnh nhảy, rơi xuống, lộn 4 khung (xoay ảnh nhảy quanh tâm [0,-46]), cùng 4 tư thế nghiên cứu tay không (`dao-*`, `knife-*`) chưa dùng trong hoạt ảnh nào. Bản thử tự ghi là chưa kiểm trên trình duyệt và chưa có hitbox.
+- **Vũ khí:** phác thảo trường đao và phi đao lưu ở `art/concept/weapons/dao_nhap/`, chưa gắn vào nhân vật. Khác quyết định sáng 09/11 (chỉ dùng cờ lau), chờ người dùng chọn vũ khí.
