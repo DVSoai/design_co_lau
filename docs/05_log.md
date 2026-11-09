@@ -584,3 +584,12 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Đo: khung khớp khuôn trong vòng 2 px; da cùng tông (khoảng 246,193,157); `than_6` làm thước cho ngực, nắm tay, bao cổ tay. `than_5` ngực to hơn khoảng 8%, chấp nhận.
 - Thêm `bo_phan/than_9.png`, `than_10.png`, `than_11.png`. `than_11` là bản Muse AI trước, phóng thêm 9% bằng code để ngực khớp các thân khác (hai bản vẽ lại sau có tay quá dài, không dùng). Bộ thân đủ 7/7, chưa duyệt.
 - Chân: lưu `chan_23` (vẽ lại), `chan_24`, `chan_25`, `chan_27`–`chan_30`. Bỏ `chan_26` theo người dùng. Đo: chiều cao khớp khuôn; giày `chan_24` to hơn các chân khác khoảng 15–20%, viền 8 px so với 6 px; cần soát khi xem chạy thử. Chưa duyệt.
+
+## 09/11/2026 — đổi hướng: ảnh nhân vật toàn thân, không ghép bộ phận
+
+- Người dùng chốt: do ghép đầu/thân/chân theo tọa độ không khớp, mỗi khung là một ảnh nhân vật toàn thân, cầm sẵn vũ khí.
+- Vào game chọn phái Kiếm hoặc Cung. Một bộ quần áo cố định cho cả game, không đổi đồ trên người.
+- Cường hóa +12, +14, +16 có hào quang (3 mức), là lớp hiệu ứng riêng đặt theo tâm nhân vật.
+- Thú cưỡi: chỉ một con ngựa, tiến hóa ở Lv30, Lv50, Lv100 (3 dạng). Lv100 vượt mốc Lv60 cũ, cần cập nhật GDD về cấp tối đa.
+- Ước tính khoảng 54 ảnh: 2 phái × ~13 khung, ngựa 3 dạng × 6 khung, người ngồi ~4, hào quang 3 × 4.
+- Các mảnh trong `chr_dbl_kiem/bo_phan/` không dùng tiếp, giữ để tham khảo. Cần cập nhật `docs/09_animation_spec.md`, `docs/17_ngoai_hinh.md`, GDD theo hướng mới.
