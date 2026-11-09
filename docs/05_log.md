@@ -636,3 +636,11 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - **Claude kiểm:** 24 PNG gốc giống hệt từng byte; bộ phận cũ chỉ khác một trường ghi nguồn (`sourceModel`). Bốn dáng mới cùng nhân vật, cùng gốc và tỉ lệ. Dáng theo nhịp cf13–16 của NSO (thân 10–13, chân 9); hình vẽ là của mình.
 - **Không đưa vào repo:** `source-comparison.png` (có ảnh gốc NSO), `references/`, `index.html`, `renderer.js`, GIF.
 - **Chưa xong:** chưa gắn phi đao/đạn/hiệu ứng; thời lượng là xem thử, chưa đối chiếu nj_skill. Vũ khí chính vẫn chờ người dùng chốt (cờ lau hay đao).
+
+## 09/11/2026 — phi đao lá lúa mẫu A
+
+- **Nguồn:** người dùng gửi `dinh-bo-linh-phi-dao-viet-A-v3.zip`; mẫu A lá lúa người dùng đã duyệt (lưỡi lá lúa, chuôi quấn nâu, hai dải vải đỏ).
+- **Đã lưu:** `art/approved/weapons/wpn_phi_dao_la_lua_A.png` (1121×185, ảnh lớn) và `_2x.png` (40×7). Gộp vào `chr_dbl_v3/rig.json` 11 khung bay (`phi-straight-0..5`, `phi-up-0..4`), 2 ảnh dao trong game (`la-lua-A-0-0` ngang, `la-lua-A-1-0` nghiêng), 3 hoạt ảnh. Rig nay 36 khung, 68 bộ phận.
+- **Claude kiểm:** ảnh người không đổi (14 PNG giống hệt từng byte). Dao là lớp riêng, sinh tại (3,-15) ở dáng 15 rồi bay; thân chuyển sang dáng 16.
+- **Cần sửa:** điểm sinh y=-15 chỉ ngang khoảng 22% chiều cao người (gần gối), dao bay thấp. Đề xuất nâng lên ngang tay hoặc hông (khoảng -28 đến -35). Dao trong game 20×4 px logic, hơi nhỏ và nhòe; cân nhắc 24–28 px và viền tối.
+- **Không đưa vào repo:** `projectile_motion.js` (chép lại công thức từ mã nguồn NSO Game24/Arrow; chỉ ghi lại số liệu, không chép mã), `projectile-traces.json`, `index.html`, GIF, ảnh kỹ thuật.
