@@ -593,3 +593,9 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Thú cưỡi: chỉ một con ngựa, tiến hóa ở Lv30, Lv50, Lv100 (3 dạng). Lv100 vượt mốc Lv60 cũ, cần cập nhật GDD về cấp tối đa.
 - Ước tính khoảng 54 ảnh: 2 phái × ~13 khung, ngựa 3 dạng × 6 khung, người ngồi ~4, hào quang 3 × 4.
 - Các mảnh trong `chr_dbl_kiem/bo_phan/` không dùng tiếp, giữ để tham khảo. Cần cập nhật `docs/09_animation_spec.md`, `docs/17_ngoai_hinh.md`, GDD theo hướng mới.
+
+## 09/11/2026 — chọn thiết kế nhân vật mới (giáp đỏ)
+
+- Người dùng chọn thiết kế mới do Muse AI vẽ: giáp lá đỏ viền vàng, vai giáp, áo lót xanh đen, ủng giáp, vành đầu vàng với dải đỏ buộc búi tóc; đầu khoảng 1/3 chiều cao (không còn chibi đầu to).
+- Lưu bản nháp `art/concept/characters/chr_dbl_v2/chr_dbl_v2_kiem_cung_nhap.png` (ảnh chụp màn hình, chưa phải ảnh gốc), hai phái Kiếm và Cung.
+- Thay hình gốc `chr_dbl_goc_kiem_v1` (áo nâu, giáp vảy). Cần sửa trước khi chốt: dây cung không vắt qua mặt, giảm chi tiết nhỏ, phái Cung dáng đứng cầm cung.
