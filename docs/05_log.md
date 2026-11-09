@@ -627,3 +627,32 @@ STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile acti
 
 Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
 ```
+
+
+## 09/11/2026 — mẫu tư thế ghép hiệu ứng Kiếm
+
+- Bốn concept nhịp phát chiêu, nền #00FF00, khung 1600×1600. Tham chiếu hình gốc Kiếm v2 và PNG hiệu ứng cùng tên ở commit `09a6de9`. Giữ nguyên ảnh nhân vật và ảnh hiệu ứng nguồn. Trạng thái chờ duyệt.
+
+### chan_uy
+
+```text
+One single full-body 2D mobile action game keyframe, Đinh Bộ Lĩnh Lv60 from FIRST reference. Keep exact identity, chibi head, golden headband, red ribbon topknot, red gold plate armor, navy clothes, belt, boots, double-edged straight steel sword with gold guard and red tassel, thick clean outlines and bold cel colors. SECOND reference is the effect shape and color. Plant both boots firmly in a broad low stance, bend knees and lower sword point diagonally toward the ground with right hand, left fist drawn tight near waist. Do not strike the ground. Copy the effect reference's bronze drum-inspired concentric rings onto the ground centered at the boots; the rear rim occluded by the body. Ground support skill, not an attack swing. Character faces screen right. Effects rendered as solid sharply defined opaque shapes with no haze and occluded behind face and torso wherever they overlap. One character, one sword, all feet and sword and effect inside frame with generous margins. Square composition, pure flat #00FF00 backdrop, no text no shadow no scenery, no dragons.
+```
+
+### thiet_ky_xung_phong
+
+```text
+One single full-body 2D mobile action game keyframe, Đinh Bộ Lĩnh Lv60 from FIRST reference. Keep exact identity, chibi head, golden headband, red ribbon topknot, red gold plate armor, navy clothes, belt, boots, double-edged straight steel sword with gold guard and red tassel, thick clean outlines and bold cel colors. SECOND reference is the effect shape and color. Fast low forward dash to screen right on foot, torso pitched forward, rear leg pushes and front boot reaches, right hand leading with low steel blade and left arm counterbalances. Attach reference's two ivory straw-gold wind ribbons behind the moving hip and compact dust behind rear foot. No horse. Character faces screen right. Effects rendered as solid sharply defined opaque shapes with no haze and occluded behind face and torso wherever they overlap. One character, one sword, all feet and sword and effect inside frame with generous margins. Square composition, pure flat #00FF00 backdrop, no text no shadow no scenery, no dragons.
+```
+
+### khai_son_tram
+
+```text
+One single full-body 2D mobile action game keyframe, Đinh Bộ Lĩnh Lv60 from FIRST reference. Keep exact identity, chibi head, golden headband, red ribbon topknot, red gold plate armor, navy clothes, belt, boots, double-edged straight steel sword with gold guard and red tassel, thick clean outlines and bold cel colors. SECOND reference is the effect shape and color. Heavy two-handed sword chop from overhead to down-right. Front knee deep and wide planted lunge, rear leg straight, both hands clasp same hilt, sword tip touching earth ahead. Reference's compact white-gold streak follows the blade tip down into the tiny limestone fissure, with two big angular stones there. Keep impact localized. Character faces screen right. Effects rendered as solid sharply defined opaque shapes with no haze and occluded behind face and torso wherever they overlap. One character, one sword, all feet and sword and effect inside frame with generous margins. Square composition, pure flat #00FF00 backdrop, no text no shadow no scenery, no dragons.
+```
+
+### van_thang
+
+```text
+One single full-body 2D mobile action game keyframe, Đinh Bộ Lĩnh Lv60 from FIRST reference. Keep exact identity, chibi head, golden headband, red ribbon topknot, red gold plate armor, navy clothes, belt, boots, double-edged straight steel sword with gold guard and red tassel, thick clean outlines and bold cel colors. SECOND reference is the effect shape and color. Heroic wide open step and two-handed horizontal-diagonal sweep to the right, full body facing right. Sword blade clearly visible and ends on the leading golden rim, deep vermilion trailing layer, three white feathery reeds with stems follow the red-gold wake behind the body below eye level. Reed plumes are soft plant shapes, not feather emblems or red flags. Character faces screen right. Effects rendered as solid sharply defined opaque shapes with no haze and occluded behind face and torso wherever they overlap. One character, one sword, all feet and sword and effect inside frame with generous margins. Square composition, pure flat #00FF00 backdrop, no text no shadow no scenery, no dragons.
+```
