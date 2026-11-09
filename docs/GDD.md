@@ -540,6 +540,8 @@ Người chơi học chiêu bằng **sách võ công** mua ở cửa hàng hoặ
 
 ### Phái Kiếm — cận chiến, gây choáng
 
+> **Chốt 09/11/2026 (người dùng):** giữ danh sách, tên và cấp mở chiêu Kiếm dưới đây, xếp theo khuôn game tham khảo. Ba chiêu đánh chính: Trảm Kiếm (10), Quét Ngang (30), Vạn Quân Trảm (50). Không có chiêu cấp 55. Số liệu vẫn tự đặt lại trước Mốc A1.
+
 **Phải tự đặt lại số trước Mốc A1** — số tham khảo, chưa duyệt để triển khai; giữ nguyên số trong lượt này.
 
 | Cấp mở | Tên đề xuất | Loại | Tác dụng khi tối đa | Hồi chiêu | MP |

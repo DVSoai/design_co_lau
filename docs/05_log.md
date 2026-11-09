@@ -602,3 +602,9 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - Duyệt hình gốc v2 hai phái (Muse AI): `art/approved/characters/chr_dbl_v2_goc_kiem.png`, `chr_dbl_v2_goc_cung.png`, 1600×1600, nền #00FF00. Đo: cao 1334–1340 px, chân chạm đất y≈1501, viền khoảng 22 px; ở cỡ 130 px vẫn rõ mặt, giáp, vũ khí. Thêm `chr_dbl_v2_goc` vào `02_asset_list.md`.
 - Phái Kiếm v2 (Muse AI): lưu `chr_dbl_v2/kiem/dung_2.png`, `chay_1.png`, `chay_2.png`, `chay_3.png`. Đo: mặt 196–201 px rộng ở mọi khung (lệch ≤2%), chân chạm đất y≈1497–1501 (chay_2 bay, y=1465). Chưa duyệt.
 - Phái Kiếm v2: lưu `chem_1.png`, `chem_2.png`, `chem_3.png`, `nhay.png` (Muse AI). Đo: mặt 202–206 px ở chem_1, chem_2, nhay; chem_3 mặt rộng 256 px (to hơn khoảng 25%, cần soát); chân chạm đất y≈1497–1501, nhảy y=1350; kiếm cách mép ≥40 px. Vệt chém ở chem_2 mờ, gần như không thấy. Chưa duyệt.
+
+## 09/11/2026 — chốt bảng chiêu phái Kiếm
+
+- Người dùng chốt danh sách chiêu Kiếm theo GDD: 10 Trảm Kiếm, 15 Kiếm Tâm, 20 Song Trảm, 25 Chấn Uy, 30 Quét Ngang, 35 Thiết Kỵ Xung Phong, 40 Khai Sơn Trảm, 45 Kiên Cường, 50 Vạn Quân Trảm, 60 Vạn Thắng; không có chiêu 55. Khuôn cấp mở đối chiếu bảng `skill` (class 1) trong `nja.sql`.
+- Chiêu chính (hồi chiêu ngắn, dùng liên tục): 10, 30, 50 — vẽ trước. Sau đó 40, 60, rồi 20, 25, 35; nội tại 15, 45 chỉ cần icon.
+- Mỗi chiêu tách tư thế nhân vật (nền #00FF00) và hiệu ứng (nền đen #000000, hòa sáng trong game). Số liệu chiêu vẫn đặt lại trước Mốc A1.
