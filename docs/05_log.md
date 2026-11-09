@@ -616,3 +616,10 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 - **Ảnh nháp:** `art/concept/characters/chr_dbl_v2/co_lau/co_lau_nhap_4_tu_the.png` (Muse AI, 1254×1254, lưới 2×2: đứng chống cờ, lấy đà, quét có vệt trắng vẽ chung, cầm ngang). Nhân vật khớp ảnh gốc v2 (mặt, băng đầu, dải lụa đỏ, giáp đỏ viền vàng, ủng). Cán cờ dài khoảng 1,3 lần chiều cao người.
 - **Ảnh hưởng:** 13 khung cầm kiếm trong `chr_dbl_v2/kiem/` và `chr_dbl_v2_goc_cung.png` chỉ còn là mẫu tư thế, không dùng trong game. Bảng chiêu Cung trong GDD bỏ. Bảng chiêu Kiếm giữ cấp mở và tác dụng, tên chiêu chờ người dùng chốt lại cho hợp cờ lau. Nhánh `design/kiem-hieu-ung-chieu` chưa merge, cần sửa theo vũ khí mới.
 - **Chưa cập nhật:** `docs/GDD.md`, `docs/01_art_bible.md`, `docs/02_asset_list.md`, `docs/09_animation_spec.md`, `docs/17_ngoai_hinh.md`.
+
+## 09/11/2026 — chốt nhân vật chính v3 (áo nâu)
+
+- **Người dùng chốt** bộ "Đinh Bộ Lĩnh — mẫu ghép tay không" (người dùng gửi `dinh-bo-linh-rig.json` và `dinh-bo-linh-source.zip`) làm nhân vật chính, thay thiết kế giáp đỏ v2. Đánh dấu `chr_dbl_v3` trong `docs/02_asset_list.md`.
+- **Đã lưu:** `art/approved/characters/chr_dbl_v3/rig.json` (bản trong zip; bản rời chỉ thêm `editorOverrides` rỗng, số liệu giống hệt), 24 PNG `assets/` (head/body/leg cho 8 khung), ảnh dựng lại từ rig: `chr_dbl_v3_goc.png` 192×192 và `chr_dbl_v3_8_khung.png` 1536×192 (nền trong suốt). Không lưu `index.html`/`renderer.js` của bản thử.
+- **Claude kiểm:** ghép lại 8 khung khớp, không hở ở cổ/eo. Mỗi khung có đầu/thân/chân riêng cắt từ một ảnh toàn thân, không bộ phận dùng chung giữa các khung. Đầu chiếm khoảng 44% chiều cao. Chưa có cờ lau; nhảy mới 1 tư thế.
+- **Còn phải làm:** vẽ lại các khung cầm cờ lau theo nhân vật này; ảnh cờ lau giáp đỏ (`chr_dbl_v2/co_lau/`) và khung kiếm v2 chỉ còn là mẫu tư thế.
