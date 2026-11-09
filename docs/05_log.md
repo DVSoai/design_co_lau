@@ -569,3 +569,61 @@ Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dr
 
 - Người dùng chốt `dbl_goc_kiem_v1`. Chép sang `art/approved/characters/chr_dbl_goc_kiem_v1.png`, thêm `chr_dbl_goc_kiem` vào `docs/02_asset_list.md`.
 - Đây là mẫu nhân vật chính từ nay. Chưa cập nhật `docs/01_art_bible.md`, `docs/20_quy_trinh_ve_nhan_vat.md` và ảnh tham chiếu ghi trong `AGENTS.md`.
+
+
+## 09/11/2026 — thiết kế hiệu ứng tám chiêu phái Kiếm
+
+- **Mã:** `kiem_hieu_ung_chieu_v1`.
+- **Việc đã làm:** đặc tả pose, hình, nhịp, điểm trúng/chạm đất; thêm bốn ảnh concept độc lập. Nhịp NSO chỉ tham khảo, không dùng ảnh nguồn NSO. Ảnh nhân vật và mẫu cũ đọc từ `art/dbl-bo-tu-the-gon` tại `9456f69`. Trạng thái chờ duyệt.
+
+### chan_uy
+
+- **Ảnh tham chiếu nét:** `art/concept/vfx/kiem/fx_quet_ngang.png` tại `9456f69`.
+- **Prompt nguyên văn:**
+
+```text
+One isolated effect-only concept asset for a side-scrolling game. A low three-quarter flattened ground shock ring inspired by concentric bands of Vietnamese bronze drum faces. One pale bronze thick outer ring split into four large wedges, one inner ivory ring with a few broad triangular incisions. The center is entirely empty black for the future caster. Wide and low, readable at phone size. No upright disk, drum object, star icon or crest. Pure flat black #000000 background, centered with generous margins, solid opaque cel colors and sharp boundaries, no glow halo or gradients. No human, body part, character, horse, drawn sword, scenery, dragon, foreign symbol, text or label. The supplied reference is for VFX linework only. References to anatomy or equipment in the style block define project context only and must not be depicted.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
+```
+
+### thiet_ky_xung_phong
+
+- **Ảnh tham chiếu nét:** `art/concept/vfx/kiem/fx_van_quan_bui.png` tại `9456f69`.
+- **Prompt nguyên văn:**
+
+```text
+One isolated effect-only concept asset for a side-scrolling game. A low left-to-right sprint wake. Two long flat ivory and straw-gold wind ribbons taper to the left and converge to a sharp narrow leading point on the right, with a compact ochre dust kick at the left end only. Long horizontal silhouette, low and directional, no horse, no hoofprints, no projectile or weapon. Pure flat black #000000 background, centered with generous margins, solid opaque cel colors and sharp boundaries, no glow halo or gradients. No human, body part, character, horse, drawn sword, scenery, dragon, foreign symbol, text or label. The supplied reference is for VFX linework only. References to anatomy or equipment in the style block define project context only and must not be depicted.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
+```
+
+### khai_son_tram
+
+- **Ảnh tham chiếu nét:** `art/concept/vfx/kiem/fx_van_quan_chem.png` tại `9456f69`.
+- **Prompt nguyên văn:**
+
+```text
+One isolated effect-only concept asset for a side-scrolling game. A compact upright stagger impact at the end of a descending strike: one short solid ivory wedge cutting upper left to lower right ends at a narrow stylized split limestone fissure; two broad charcoal-gray limestone shards edged bronze rise at the base. Sharp angular silhouette, restrained gold, concentrated close to the impact. No broad dust wave and no terrain background. Pure flat black #000000 background, centered with generous margins, solid opaque cel colors and sharp boundaries, no glow halo or gradients. No human, body part, character, horse, drawn sword, scenery, dragon, foreign symbol, text or label. The supplied reference is for VFX linework only. References to anatomy or equipment in the style block define project context only and must not be depicted.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
+```
+
+### van_thang
+
+- **Ảnh tham chiếu nét:** `art/concept/vfx/kiem/fx_quet_ngang.png` tại `9456f69`.
+- **Prompt nguyên văn:**
+
+```text
+One isolated effect-only concept asset for a side-scrolling game. An epic low sweeping red and warm gold stroke from left to right, a sharp solid ivory-gold leading rim, one vermilion ribbon of color curling below it, and three large cream-white feathery reed plumes on slim stems following the rear of the sweep like historic Vietnamese white reed standards, identifiable as reeds, with no cloth flag or insignia. Clear silhouette, reeds behind the leading edge, no tiny particles. Pure flat black #000000 background, centered with generous margins, solid opaque cel colors and sharp boundaries, no glow halo or gradients. No human, body part, character, horse, drawn sword, scenery, dragon, foreign symbol, text or label. The supplied reference is for VFX linework only. References to anatomy or equipment in the style block define project context only and must not be depicted.
+
+STYLE-V2: bold clean vector-like cartoon art for a 2D side-scrolling mobile action RPG. Smooth solid dark brown-black outlines, visibly THICK AND UNIFORM, about 2–3 percent of the complete character height, including clear interior contour lines. Large simple solid shapes, FLAT earth colors, 2–3 sharply separated cel-shading tones and one clean highlight. Strong chunky limbs, oversized sturdy fists and broad bare feet, very few LARGE clothing folds. NO fabric grain, NO watercolor/gouache, NO soft painterly blending, NO sketch marks, NO fine hatching, NO tiny noisy details, NO gradients, NO pixel grid. Joint-friendly design: no elaborate folds/straps crossing elbow or knee seams; can later support either whole-pose layers or padded separate 2D skeletal pieces. A simple broad STRAIGHT DOUBLE-EDGED pointed sword, tiny plain crossguard and cord-wrapped grip, outline equally thick as the person. Slash trail is a SOLID OPAQUE WHITE CRESCENT with a thin dark contour, no speckles, blur or glow. A bow curves/bulges toward the enemy at RIGHT; string is behind at LEFT toward the archer. Northern Vietnam, tenth century, undyed cream cloth, earth-brown belt and knee-length pants, tan skin, black hair in a SMALL TOPKNOT. No ornate foreign costume.
+
+Avoid: Japanese covert-warrior or samurai clothing, katanas, Chinese imperial dragon robes, Nguyen-dynasty ao dai, conical palm-leaf hats with tassels, winged mandarin hats, multi-tiered curved palace roofs, stone castles with towers, red flags, fantasy monsters, modern objects, any text, letters, logos or watermarks.
+```
